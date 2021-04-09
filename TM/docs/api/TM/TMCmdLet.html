@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../../styles/docfx.css">
     <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:navrel" content="">
     <meta property="docfx:tocrel" content="toc.html">
     
     <meta property="docfx:rel" content="../../">
@@ -104,14 +104,22 @@ Disconnects from remote server.
 <br>Implements the <span class="xref">System.Management.Automation.Cmdlet</span>
 <br>Implements the <a class="xref" href="TMCmdLet.PlanCmdlet.html">PlanCmdlet</a>
 </section>
-      <h4><a class="xref" href="TMCmdLet.GetPlanCmdlet.html">GetPlanCmdlet</a></h4>
+      <h4><a class="xref" href="TMCmdLet.ExecutePlanCmdlet.html">ExecutePlanCmdlet</a></h4>
       <section>
-Read plan data from file specified by -Path
-Returns plan data as list of <a class="xref" href="TMPlan.Spot.html">Spot</a> objects.
-For example:
-$plan = Get-Plan -Path test_plan.txt
-<br>Implements the <span class="xref">System.Management.Automation.Cmdlet</span>
-<br>Implements the <span class="xref">System.Management.Automation.PSCmdlet</span>
+1. reads plan data from file
+<p>
+2. sends plan to server
+<p>
+3. sends command to start plan processing
+<p>
+4. waits for processing finished
+<p>
+Use Control-C - to stop plan processing
+<p>
+To resume plan processing - use Start-Plan -resume
+<example>
+<pre><code> Execute-Plan &quot;test_plan.txt&quot; &quot;localhost&quot; 9996 | Format-Table</code></pre>
+</example>
 </section>
       <h4><a class="xref" href="TMCmdLet.GetPlanResultsCmdlet.html">GetPlanResultsCmdlet</a></h4>
       <section>
@@ -125,19 +133,18 @@ Returns Server State.
 <br>Implements the <span class="xref">System.Management.Automation.Cmdlet</span>
 <br>Implements the <a class="xref" href="TMCmdLet.PlanCmdlet.html">PlanCmdlet</a>
 </section>
-      <h4><a class="xref" href="TMCmdLet.InvokePlanCmdlet.html">InvokePlanCmdlet</a></h4>
+      <h4><a class="xref" href="TMCmdLet.LoadPlanCmdlet.html">LoadPlanCmdlet</a></h4>
       <section>
-1. reads plan data from file
-<p>
-2. sends plan to server
-<p>
-3. sends command to start plan processing
-<p>
-4. waits for processing finished
-<p>
-Use Control-C - to stop plan processing
-<p>
-To resume processing - use Start-Plan -resume
+Read plan data from file specified by -Path
+Returns plan data as list of <a class="xref" href="TMPlan.Spot.html">Spot</a> objects.
+<example>
+<pre><code>$plan = Load-Plan test_plan.txt
+  or
+// load plan and print out it to console 
+$plan = Load-Plan test_plan.txt -debug</code></pre>
+</example>
+<br>Implements the <span class="xref">System.Management.Automation.Cmdlet</span>
+<br>Implements the <span class="xref">System.Management.Automation.PSCmdlet</span>
 </section>
       <h4><a class="xref" href="TMCmdLet.PlanCmdlet.html">PlanCmdlet</a></h4>
       <section>
@@ -185,16 +192,14 @@ Send &quot;info&quot; message to server
       <h4><a class="xref" href="TMCmdLet.SendPlanCmdlet.html">SendPlanCmdlet</a></h4>
       <section>
 Sends plan data to remote server.
-Returns <a class="xref" href="TM.Client.html">Client</a> object (the same object as in Connect-Server)
+Returns <a class="xref" href="TMPlan.PlanClient.html">PlanClient</a> object (the same object as in Connect-Server)
 <example>
-<pre><code>$client = Get-Plan test_plan.txt | Send-Plan
+<pre><code>$client = Load-Plan test_plan.txt | Send-Plan
 or
-$plan = Get-Plan test_plan.txt
+$plan = Load-Plan test_plan.txt
 $client = Send-Plan $plan</code></pre>
 </example>
-<br>Implements the <span class="xref">System.Management.Automation.Cmdlet</span>
 <br>Implements the <a class="xref" href="TMCmdLet.PlanCmdlet.html">PlanCmdlet</a>
-<br>Implements the <span class="xref">System.Management.Automation.PSCmdlet</span>
 </section>
       <h4><a class="xref" href="TMCmdLet.SetDefaultsCmdlet.html">SetDefaultsCmdlet</a></h4>
       <section>

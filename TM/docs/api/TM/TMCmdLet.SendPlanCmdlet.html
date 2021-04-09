@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="../../styles/docfx.vendor.css">
     <link rel="stylesheet" href="../../styles/docfx.css">
     <link rel="stylesheet" href="../../styles/main.css">
-    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:navrel" content="">
     <meta property="docfx:tocrel" content="toc.html">
     
     <meta property="docfx:rel" content="../../">
@@ -85,16 +85,14 @@
   </h1>
   <div class="markdown level0 summary">
 Sends plan data to remote server.
-Returns <a class="xref" href="TM.Client.html">Client</a> object (the same object as in Connect-Server)
+Returns <a class="xref" href="TMPlan.PlanClient.html">PlanClient</a> object (the same object as in Connect-Server)
 <example>
-<pre><code>$client = Get-Plan test_plan.txt | Send-Plan
+<pre><code>$client = Load-Plan test_plan.txt | Send-Plan
 or
-$plan = Get-Plan test_plan.txt
+$plan = Load-Plan test_plan.txt
 $client = Send-Plan $plan</code></pre>
 </example>
-<br>Implements the <span class="xref">System.Management.Automation.Cmdlet</span>
 <br>Implements the <a class="xref" href="TMCmdLet.PlanCmdlet.html">PlanCmdlet</a>
-<br>Implements the <span class="xref">System.Management.Automation.PSCmdlet</span>
 </div>
   <div class="markdown level0 conceptual"></div>
   <div class="inheritance">
@@ -103,10 +101,20 @@ $client = Send-Plan $plan</code></pre>
     <div class="level1"><span class="xref">System.Management.Automation.Internal.InternalCommand</span></div>
     <div class="level2"><span class="xref">System.Management.Automation.Cmdlet</span></div>
     <div class="level3"><span class="xref">System.Management.Automation.PSCmdlet</span></div>
-    <div class="level4"><span class="xref">SendPlanCmdlet</span></div>
+    <div class="level4"><a class="xref" href="TMCmdLet.PlanCmdlet.html">PlanCmdlet</a></div>
+    <div class="level5"><span class="xref">SendPlanCmdlet</span></div>
   </div>
   <div class="inheritedMembers">
     <h5>Inherited Members</h5>
+    <div>
+      <a class="xref" href="TMCmdLet.PlanCmdlet.html#TMCmdLet_PlanCmdlet_IpAddress">PlanCmdlet.IpAddress</a>
+    </div>
+    <div>
+      <a class="xref" href="TMCmdLet.PlanCmdlet.html#TMCmdLet_PlanCmdlet_Port">PlanCmdlet.Port</a>
+    </div>
+    <div>
+      <a class="xref" href="TMCmdLet.PlanCmdlet.html#TMCmdLet_PlanCmdlet_OK">PlanCmdlet.OK</a>
+    </div>
     <div>
       <span class="xref">System.Management.Automation.PSCmdlet.CurrentProviderLocation(System.String)</span>
     </div>
@@ -245,8 +253,8 @@ $client = Send-Plan $plan</code></pre>
   <h5 id="TMCmdLet_SendPlanCmdlet_syntax">Syntax</h5>
   <div class="codewrapper">
     <pre><code class="lang-csharp hljs">[Cmdlet(&quot;Send&quot;, &quot;Plan&quot;)]
-[OutputType(new Type[]{typeof(Client)})]
-public class SendPlanCmdlet : PSCmdlet</code></pre>
+[OutputType(new Type[]{typeof(PlanClient)})]
+public class SendPlanCmdlet : PlanCmdlet</code></pre>
   </div>
   <h3 id="properties">Properties
   </h3>
@@ -255,17 +263,17 @@ public class SendPlanCmdlet : PSCmdlet</code></pre>
     <a href="https://github.com/x2v0/tm/new/master/apiSpec/new?filename=TMCmdLet_SendPlanCmdlet_Input.md&amp;value=---%0Auid%3A%20TMCmdLet.SendPlanCmdlet.Input%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/x2v0/tm/blob/master/TM/TMClientCmdlet.cs/#L371">View Source</a>
+    <a href="https://github.com/x2v0/tm/blob/master/TM/TMClientCmdlet.cs/#L315">View Source</a>
   </span>
   <a id="TMCmdLet_SendPlanCmdlet_Input_" data-uid="TMCmdLet.SendPlanCmdlet.Input*"></a>
   <h4 id="TMCmdLet_SendPlanCmdlet_Input" data-uid="TMCmdLet.SendPlanCmdlet.Input">Input</h4>
   <div class="markdown level1 summary">
-Gets or sets the input object.
+Input List&lt;Spot> Plan object
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
   <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Parameter(Position = 0, ValueFromPipeline = true)]
+    <pre><code class="lang-csharp hljs">[Parameter(Position = 0, Mandatory = true, ValueFromPipeline = true)]
 [Alias(new string[]{&quot;Plan&quot;})]
 public object Input { get; set; }</code></pre>
   </div>
@@ -284,74 +292,6 @@ public object Input { get; set; }</code></pre>
       </tr>
     </tbody>
   </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/x2v0/tm/new/master/apiSpec/new?filename=TMCmdLet_SendPlanCmdlet_IpAddress.md&amp;value=---%0Auid%3A%20TMCmdLet.SendPlanCmdlet.IpAddress%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/x2v0/tm/blob/master/TM/TMClientCmdlet.cs/#L383">View Source</a>
-  </span>
-  <a id="TMCmdLet_SendPlanCmdlet_IpAddress_" data-uid="TMCmdLet.SendPlanCmdlet.IpAddress*"></a>
-  <h4 id="TMCmdLet_SendPlanCmdlet_IpAddress" data-uid="TMCmdLet.SendPlanCmdlet.IpAddress">IpAddress</h4>
-  <div class="markdown level1 summary">
-Gets or sets the destination hostname or IP address.
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Parameter(Position = 1, ValueFromPipeline = true, ValueFromPipelineByPropertyName = true)]
-[Alias(new string[]{&quot;ComputerName&quot;, &quot;IP&quot;, &quot;Host&quot;})]
-public string IpAddress { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.String</span></td>
-        <td>The IP address.</td>
-      </tr>
-    </tbody>
-  </table>
-  <span class="small pull-right mobile-hide">
-    <span class="divider">|</span>
-    <a href="https://github.com/x2v0/tm/new/master/apiSpec/new?filename=TMCmdLet_SendPlanCmdlet_Port.md&amp;value=---%0Auid%3A%20TMCmdLet.SendPlanCmdlet.Port%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
-  </span>
-  <span class="small pull-right mobile-hide">
-    <a href="https://github.com/x2v0/tm/blob/master/TM/TMClientCmdlet.cs/#L395">View Source</a>
-  </span>
-  <a id="TMCmdLet_SendPlanCmdlet_Port_" data-uid="TMCmdLet.SendPlanCmdlet.Port*"></a>
-  <h4 id="TMCmdLet_SendPlanCmdlet_Port" data-uid="TMCmdLet.SendPlanCmdlet.Port">Port</h4>
-  <div class="markdown level1 summary">
-Gets or sets the TCP port
-</div>
-  <div class="markdown level1 conceptual"></div>
-  <h5 class="decalaration">Declaration</h5>
-  <div class="codewrapper">
-    <pre><code class="lang-csharp hljs">[Parameter(Position = 2, ValueFromPipeline = true, ValueFromPipelineByPropertyName = true)]
-[Alias(new string[]{&quot;TcpPort&quot;})]
-public int Port { get; set; }</code></pre>
-  </div>
-  <h5 class="propertyValue">Property Value</h5>
-  <table class="table table-bordered table-striped table-condensed">
-    <thead>
-      <tr>
-        <th>Type</th>
-        <th>Description</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><span class="xref">System.Int32</span></td>
-        <td>The port.</td>
-      </tr>
-    </tbody>
-  </table>
   <h3 id="methods">Methods
   </h3>
   <span class="small pull-right mobile-hide">
@@ -359,7 +299,7 @@ public int Port { get; set; }</code></pre>
     <a href="https://github.com/x2v0/tm/new/master/apiSpec/new?filename=TMCmdLet_SendPlanCmdlet_EndProcessing.md&amp;value=---%0Auid%3A%20TMCmdLet.SendPlanCmdlet.EndProcessing%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/x2v0/tm/blob/master/TM/TMClientCmdlet.cs/#L410">View Source</a>
+    <a href="https://github.com/x2v0/tm/blob/master/TM/TMClientCmdlet.cs/#L330">View Source</a>
   </span>
   <a id="TMCmdLet_SendPlanCmdlet_EndProcessing_" data-uid="TMCmdLet.SendPlanCmdlet.EndProcessing*"></a>
   <h4 id="TMCmdLet_SendPlanCmdlet_EndProcessing" data-uid="TMCmdLet.SendPlanCmdlet.EndProcessing">EndProcessing()</h4>
@@ -378,7 +318,7 @@ Ends the processing.
     <a href="https://github.com/x2v0/tm/new/master/apiSpec/new?filename=TMCmdLet_SendPlanCmdlet_ProcessRecord.md&amp;value=---%0Auid%3A%20TMCmdLet.SendPlanCmdlet.ProcessRecord%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/x2v0/tm/blob/master/TM/TMClientCmdlet.cs/#L441">View Source</a>
+    <a href="https://github.com/x2v0/tm/blob/master/TM/TMClientCmdlet.cs/#L361">View Source</a>
   </span>
   <a id="TMCmdLet_SendPlanCmdlet_ProcessRecord_" data-uid="TMCmdLet.SendPlanCmdlet.ProcessRecord*"></a>
   <h4 id="TMCmdLet_SendPlanCmdlet_ProcessRecord" data-uid="TMCmdLet.SendPlanCmdlet.ProcessRecord">ProcessRecord()</h4>
@@ -391,13 +331,13 @@ ProcessRecord implementation
     <pre><code class="lang-csharp hljs">protected override void ProcessRecord()</code></pre>
   </div>
   <h5 class="overrides">Overrides</h5>
-  <div><span class="xref">System.Management.Automation.Cmdlet.ProcessRecord()</span></div>
+  <div><a class="xref" href="TMCmdLet.PlanCmdlet.html#TMCmdLet_PlanCmdlet_ProcessRecord">PlanCmdlet.ProcessRecord()</a></div>
   <span class="small pull-right mobile-hide">
     <span class="divider">|</span>
     <a href="https://github.com/x2v0/tm/new/master/apiSpec/new?filename=TMCmdLet_SendPlanCmdlet_StopProcessing.md&amp;value=---%0Auid%3A%20TMCmdLet.SendPlanCmdlet.StopProcessing%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A">Improve this Doc</a>
   </span>
   <span class="small pull-right mobile-hide">
-    <a href="https://github.com/x2v0/tm/blob/master/TM/TMClientCmdlet.cs/#L496">View Source</a>
+    <a href="https://github.com/x2v0/tm/blob/master/TM/TMClientCmdlet.cs/#L417">View Source</a>
   </span>
   <a id="TMCmdLet_SendPlanCmdlet_StopProcessing_" data-uid="TMCmdLet.SendPlanCmdlet.StopProcessing*"></a>
   <h4 id="TMCmdLet_SendPlanCmdlet_StopProcessing" data-uid="TMCmdLet.SendPlanCmdlet.StopProcessing">StopProcessing()</h4>
@@ -415,12 +355,6 @@ to wait for the timeout.
   </div>
   <h5 class="overrides">Overrides</h5>
   <div><span class="xref">System.Management.Automation.Cmdlet.StopProcessing()</span></div>
-  <h3 id="seealso">See Also</h3>
-  <div class="seealso">
-      <div><span class="xref">System.Management.Automation.PSCmdlet</span></div>
-      <div><a class="xref" href="TMCmdLet.PlanCmdlet.html">PlanCmdlet</a></div>
-      <div><span class="xref">System.Management.Automation.Cmdlet</span></div>
-  </div>
 </article>
           </div>
           
@@ -432,7 +366,7 @@ to wait for the timeout.
                     <a href="https://github.com/x2v0/tm/new/master/apiSpec/new?filename=TMCmdLet_SendPlanCmdlet.md&amp;value=---%0Auid%3A%20TMCmdLet.SendPlanCmdlet%0Asummary%3A%20'*You%20can%20override%20summary%20for%20the%20API%20here%20using%20*MARKDOWN*%20syntax'%0A---%0A%0A*Please%20type%20below%20more%20information%20about%20this%20API%3A*%0A%0A" class="contribution-link">Improve this Doc</a>
                   </li>
                   <li>
-                    <a href="https://github.com/x2v0/tm/blob/master/TM/TMClientCmdlet.cs/#L352" class="contribution-link">View Source</a>
+                    <a href="https://github.com/x2v0/tm/blob/master/TM/TMClientCmdlet.cs/#L296" class="contribution-link">View Source</a>
                   </li>
                 </ul>
               </div>

@@ -1100,19 +1100,6 @@ references:
   isSpec: "True"
   fullName: TM.Client.ProcessData
   nameWithType: Client.ProcessData
-- uid: TM.Client.ProcessingIsOn
-  name: ProcessingIsOn
-  href: api/TM/TM.Client.html#TM_Client_ProcessingIsOn
-  commentId: P:TM.Client.ProcessingIsOn
-  fullName: TM.Client.ProcessingIsOn
-  nameWithType: Client.ProcessingIsOn
-- uid: TM.Client.ProcessingIsOn*
-  name: ProcessingIsOn
-  href: api/TM/TM.Client.html#TM_Client_ProcessingIsOn_
-  commentId: Overload:TM.Client.ProcessingIsOn
-  isSpec: "True"
-  fullName: TM.Client.ProcessingIsOn
-  nameWithType: Client.ProcessingIsOn
 - uid: TM.Client.ProcessState(TMSrv.StateData)
   name: ProcessState(StateData)
   href: api/TM/TM.Client.html#TM_Client_ProcessState_TMSrv_StateData_
@@ -3545,38 +3532,51 @@ references:
   isSpec: "True"
   fullName: TMCmdLet.DisconnectServerCmdlet.ProcessRecord
   nameWithType: DisconnectServerCmdlet.ProcessRecord
-- uid: TMCmdLet.GetPlanCmdlet
-  name: GetPlanCmdlet
-  href: api/TM/TMCmdLet.GetPlanCmdlet.html
-  commentId: T:TMCmdLet.GetPlanCmdlet
-  fullName: TMCmdLet.GetPlanCmdlet
-  nameWithType: GetPlanCmdlet
-- uid: TMCmdLet.GetPlanCmdlet.Path
+- uid: TMCmdLet.ExecutePlanCmdlet
+  name: ExecutePlanCmdlet
+  href: api/TM/TMCmdLet.ExecutePlanCmdlet.html
+  commentId: T:TMCmdLet.ExecutePlanCmdlet
+  fullName: TMCmdLet.ExecutePlanCmdlet
+  nameWithType: ExecutePlanCmdlet
+- uid: TMCmdLet.ExecutePlanCmdlet.Path
   name: Path
-  href: api/TM/TMCmdLet.GetPlanCmdlet.html#TMCmdLet_GetPlanCmdlet_Path
-  commentId: P:TMCmdLet.GetPlanCmdlet.Path
-  fullName: TMCmdLet.GetPlanCmdlet.Path
-  nameWithType: GetPlanCmdlet.Path
-- uid: TMCmdLet.GetPlanCmdlet.Path*
+  href: api/TM/TMCmdLet.ExecutePlanCmdlet.html#TMCmdLet_ExecutePlanCmdlet_Path
+  commentId: P:TMCmdLet.ExecutePlanCmdlet.Path
+  fullName: TMCmdLet.ExecutePlanCmdlet.Path
+  nameWithType: ExecutePlanCmdlet.Path
+- uid: TMCmdLet.ExecutePlanCmdlet.Path*
   name: Path
-  href: api/TM/TMCmdLet.GetPlanCmdlet.html#TMCmdLet_GetPlanCmdlet_Path_
-  commentId: Overload:TMCmdLet.GetPlanCmdlet.Path
+  href: api/TM/TMCmdLet.ExecutePlanCmdlet.html#TMCmdLet_ExecutePlanCmdlet_Path_
+  commentId: Overload:TMCmdLet.ExecutePlanCmdlet.Path
   isSpec: "True"
-  fullName: TMCmdLet.GetPlanCmdlet.Path
-  nameWithType: GetPlanCmdlet.Path
-- uid: TMCmdLet.GetPlanCmdlet.ProcessRecord
+  fullName: TMCmdLet.ExecutePlanCmdlet.Path
+  nameWithType: ExecutePlanCmdlet.Path
+- uid: TMCmdLet.ExecutePlanCmdlet.ProcessRecord
   name: ProcessRecord()
-  href: api/TM/TMCmdLet.GetPlanCmdlet.html#TMCmdLet_GetPlanCmdlet_ProcessRecord
-  commentId: M:TMCmdLet.GetPlanCmdlet.ProcessRecord
-  fullName: TMCmdLet.GetPlanCmdlet.ProcessRecord()
-  nameWithType: GetPlanCmdlet.ProcessRecord()
-- uid: TMCmdLet.GetPlanCmdlet.ProcessRecord*
+  href: api/TM/TMCmdLet.ExecutePlanCmdlet.html#TMCmdLet_ExecutePlanCmdlet_ProcessRecord
+  commentId: M:TMCmdLet.ExecutePlanCmdlet.ProcessRecord
+  fullName: TMCmdLet.ExecutePlanCmdlet.ProcessRecord()
+  nameWithType: ExecutePlanCmdlet.ProcessRecord()
+- uid: TMCmdLet.ExecutePlanCmdlet.ProcessRecord*
   name: ProcessRecord
-  href: api/TM/TMCmdLet.GetPlanCmdlet.html#TMCmdLet_GetPlanCmdlet_ProcessRecord_
-  commentId: Overload:TMCmdLet.GetPlanCmdlet.ProcessRecord
+  href: api/TM/TMCmdLet.ExecutePlanCmdlet.html#TMCmdLet_ExecutePlanCmdlet_ProcessRecord_
+  commentId: Overload:TMCmdLet.ExecutePlanCmdlet.ProcessRecord
   isSpec: "True"
-  fullName: TMCmdLet.GetPlanCmdlet.ProcessRecord
-  nameWithType: GetPlanCmdlet.ProcessRecord
+  fullName: TMCmdLet.ExecutePlanCmdlet.ProcessRecord
+  nameWithType: ExecutePlanCmdlet.ProcessRecord
+- uid: TMCmdLet.ExecutePlanCmdlet.StopProcessing
+  name: StopProcessing()
+  href: api/TM/TMCmdLet.ExecutePlanCmdlet.html#TMCmdLet_ExecutePlanCmdlet_StopProcessing
+  commentId: M:TMCmdLet.ExecutePlanCmdlet.StopProcessing
+  fullName: TMCmdLet.ExecutePlanCmdlet.StopProcessing()
+  nameWithType: ExecutePlanCmdlet.StopProcessing()
+- uid: TMCmdLet.ExecutePlanCmdlet.StopProcessing*
+  name: StopProcessing
+  href: api/TM/TMCmdLet.ExecutePlanCmdlet.html#TMCmdLet_ExecutePlanCmdlet_StopProcessing_
+  commentId: Overload:TMCmdLet.ExecutePlanCmdlet.StopProcessing
+  isSpec: "True"
+  fullName: TMCmdLet.ExecutePlanCmdlet.StopProcessing
+  nameWithType: ExecutePlanCmdlet.StopProcessing
 - uid: TMCmdLet.GetPlanResultsCmdlet
   name: GetPlanResultsCmdlet
   href: api/TM/TMCmdLet.GetPlanResultsCmdlet.html
@@ -3628,77 +3628,51 @@ references:
   isSpec: "True"
   fullName: TMCmdLet.GetServerStateCmdlet.WaitTime
   nameWithType: GetServerStateCmdlet.WaitTime
-- uid: TMCmdLet.InvokePlanCmdlet
-  name: InvokePlanCmdlet
-  href: api/TM/TMCmdLet.InvokePlanCmdlet.html
-  commentId: T:TMCmdLet.InvokePlanCmdlet
-  fullName: TMCmdLet.InvokePlanCmdlet
-  nameWithType: InvokePlanCmdlet
-- uid: TMCmdLet.InvokePlanCmdlet.IpAddress
-  name: IpAddress
-  href: api/TM/TMCmdLet.InvokePlanCmdlet.html#TMCmdLet_InvokePlanCmdlet_IpAddress
-  commentId: P:TMCmdLet.InvokePlanCmdlet.IpAddress
-  fullName: TMCmdLet.InvokePlanCmdlet.IpAddress
-  nameWithType: InvokePlanCmdlet.IpAddress
-- uid: TMCmdLet.InvokePlanCmdlet.IpAddress*
-  name: IpAddress
-  href: api/TM/TMCmdLet.InvokePlanCmdlet.html#TMCmdLet_InvokePlanCmdlet_IpAddress_
-  commentId: Overload:TMCmdLet.InvokePlanCmdlet.IpAddress
+- uid: TMCmdLet.LoadPlanCmdlet
+  name: LoadPlanCmdlet
+  href: api/TM/TMCmdLet.LoadPlanCmdlet.html
+  commentId: T:TMCmdLet.LoadPlanCmdlet
+  fullName: TMCmdLet.LoadPlanCmdlet
+  nameWithType: LoadPlanCmdlet
+- uid: TMCmdLet.LoadPlanCmdlet.Dump
+  name: Dump
+  href: api/TM/TMCmdLet.LoadPlanCmdlet.html#TMCmdLet_LoadPlanCmdlet_Dump
+  commentId: P:TMCmdLet.LoadPlanCmdlet.Dump
+  fullName: TMCmdLet.LoadPlanCmdlet.Dump
+  nameWithType: LoadPlanCmdlet.Dump
+- uid: TMCmdLet.LoadPlanCmdlet.Dump*
+  name: Dump
+  href: api/TM/TMCmdLet.LoadPlanCmdlet.html#TMCmdLet_LoadPlanCmdlet_Dump_
+  commentId: Overload:TMCmdLet.LoadPlanCmdlet.Dump
   isSpec: "True"
-  fullName: TMCmdLet.InvokePlanCmdlet.IpAddress
-  nameWithType: InvokePlanCmdlet.IpAddress
-- uid: TMCmdLet.InvokePlanCmdlet.Path
+  fullName: TMCmdLet.LoadPlanCmdlet.Dump
+  nameWithType: LoadPlanCmdlet.Dump
+- uid: TMCmdLet.LoadPlanCmdlet.Path
   name: Path
-  href: api/TM/TMCmdLet.InvokePlanCmdlet.html#TMCmdLet_InvokePlanCmdlet_Path
-  commentId: P:TMCmdLet.InvokePlanCmdlet.Path
-  fullName: TMCmdLet.InvokePlanCmdlet.Path
-  nameWithType: InvokePlanCmdlet.Path
-- uid: TMCmdLet.InvokePlanCmdlet.Path*
+  href: api/TM/TMCmdLet.LoadPlanCmdlet.html#TMCmdLet_LoadPlanCmdlet_Path
+  commentId: P:TMCmdLet.LoadPlanCmdlet.Path
+  fullName: TMCmdLet.LoadPlanCmdlet.Path
+  nameWithType: LoadPlanCmdlet.Path
+- uid: TMCmdLet.LoadPlanCmdlet.Path*
   name: Path
-  href: api/TM/TMCmdLet.InvokePlanCmdlet.html#TMCmdLet_InvokePlanCmdlet_Path_
-  commentId: Overload:TMCmdLet.InvokePlanCmdlet.Path
+  href: api/TM/TMCmdLet.LoadPlanCmdlet.html#TMCmdLet_LoadPlanCmdlet_Path_
+  commentId: Overload:TMCmdLet.LoadPlanCmdlet.Path
   isSpec: "True"
-  fullName: TMCmdLet.InvokePlanCmdlet.Path
-  nameWithType: InvokePlanCmdlet.Path
-- uid: TMCmdLet.InvokePlanCmdlet.Port
-  name: Port
-  href: api/TM/TMCmdLet.InvokePlanCmdlet.html#TMCmdLet_InvokePlanCmdlet_Port
-  commentId: P:TMCmdLet.InvokePlanCmdlet.Port
-  fullName: TMCmdLet.InvokePlanCmdlet.Port
-  nameWithType: InvokePlanCmdlet.Port
-- uid: TMCmdLet.InvokePlanCmdlet.Port*
-  name: Port
-  href: api/TM/TMCmdLet.InvokePlanCmdlet.html#TMCmdLet_InvokePlanCmdlet_Port_
-  commentId: Overload:TMCmdLet.InvokePlanCmdlet.Port
-  isSpec: "True"
-  fullName: TMCmdLet.InvokePlanCmdlet.Port
-  nameWithType: InvokePlanCmdlet.Port
-- uid: TMCmdLet.InvokePlanCmdlet.ProcessRecord
+  fullName: TMCmdLet.LoadPlanCmdlet.Path
+  nameWithType: LoadPlanCmdlet.Path
+- uid: TMCmdLet.LoadPlanCmdlet.ProcessRecord
   name: ProcessRecord()
-  href: api/TM/TMCmdLet.InvokePlanCmdlet.html#TMCmdLet_InvokePlanCmdlet_ProcessRecord
-  commentId: M:TMCmdLet.InvokePlanCmdlet.ProcessRecord
-  fullName: TMCmdLet.InvokePlanCmdlet.ProcessRecord()
-  nameWithType: InvokePlanCmdlet.ProcessRecord()
-- uid: TMCmdLet.InvokePlanCmdlet.ProcessRecord*
+  href: api/TM/TMCmdLet.LoadPlanCmdlet.html#TMCmdLet_LoadPlanCmdlet_ProcessRecord
+  commentId: M:TMCmdLet.LoadPlanCmdlet.ProcessRecord
+  fullName: TMCmdLet.LoadPlanCmdlet.ProcessRecord()
+  nameWithType: LoadPlanCmdlet.ProcessRecord()
+- uid: TMCmdLet.LoadPlanCmdlet.ProcessRecord*
   name: ProcessRecord
-  href: api/TM/TMCmdLet.InvokePlanCmdlet.html#TMCmdLet_InvokePlanCmdlet_ProcessRecord_
-  commentId: Overload:TMCmdLet.InvokePlanCmdlet.ProcessRecord
+  href: api/TM/TMCmdLet.LoadPlanCmdlet.html#TMCmdLet_LoadPlanCmdlet_ProcessRecord_
+  commentId: Overload:TMCmdLet.LoadPlanCmdlet.ProcessRecord
   isSpec: "True"
-  fullName: TMCmdLet.InvokePlanCmdlet.ProcessRecord
-  nameWithType: InvokePlanCmdlet.ProcessRecord
-- uid: TMCmdLet.InvokePlanCmdlet.StopProcessing
-  name: StopProcessing()
-  href: api/TM/TMCmdLet.InvokePlanCmdlet.html#TMCmdLet_InvokePlanCmdlet_StopProcessing
-  commentId: M:TMCmdLet.InvokePlanCmdlet.StopProcessing
-  fullName: TMCmdLet.InvokePlanCmdlet.StopProcessing()
-  nameWithType: InvokePlanCmdlet.StopProcessing()
-- uid: TMCmdLet.InvokePlanCmdlet.StopProcessing*
-  name: StopProcessing
-  href: api/TM/TMCmdLet.InvokePlanCmdlet.html#TMCmdLet_InvokePlanCmdlet_StopProcessing_
-  commentId: Overload:TMCmdLet.InvokePlanCmdlet.StopProcessing
-  isSpec: "True"
-  fullName: TMCmdLet.InvokePlanCmdlet.StopProcessing
-  nameWithType: InvokePlanCmdlet.StopProcessing
+  fullName: TMCmdLet.LoadPlanCmdlet.ProcessRecord
+  nameWithType: LoadPlanCmdlet.ProcessRecord
 - uid: TMCmdLet.PlanCmdlet
   name: PlanCmdlet
   href: api/TM/TMCmdLet.PlanCmdlet.html
@@ -3885,32 +3859,6 @@ references:
   isSpec: "True"
   fullName: TMCmdLet.SendPlanCmdlet.Input
   nameWithType: SendPlanCmdlet.Input
-- uid: TMCmdLet.SendPlanCmdlet.IpAddress
-  name: IpAddress
-  href: api/TM/TMCmdLet.SendPlanCmdlet.html#TMCmdLet_SendPlanCmdlet_IpAddress
-  commentId: P:TMCmdLet.SendPlanCmdlet.IpAddress
-  fullName: TMCmdLet.SendPlanCmdlet.IpAddress
-  nameWithType: SendPlanCmdlet.IpAddress
-- uid: TMCmdLet.SendPlanCmdlet.IpAddress*
-  name: IpAddress
-  href: api/TM/TMCmdLet.SendPlanCmdlet.html#TMCmdLet_SendPlanCmdlet_IpAddress_
-  commentId: Overload:TMCmdLet.SendPlanCmdlet.IpAddress
-  isSpec: "True"
-  fullName: TMCmdLet.SendPlanCmdlet.IpAddress
-  nameWithType: SendPlanCmdlet.IpAddress
-- uid: TMCmdLet.SendPlanCmdlet.Port
-  name: Port
-  href: api/TM/TMCmdLet.SendPlanCmdlet.html#TMCmdLet_SendPlanCmdlet_Port
-  commentId: P:TMCmdLet.SendPlanCmdlet.Port
-  fullName: TMCmdLet.SendPlanCmdlet.Port
-  nameWithType: SendPlanCmdlet.Port
-- uid: TMCmdLet.SendPlanCmdlet.Port*
-  name: Port
-  href: api/TM/TMCmdLet.SendPlanCmdlet.html#TMCmdLet_SendPlanCmdlet_Port_
-  commentId: Overload:TMCmdLet.SendPlanCmdlet.Port
-  isSpec: "True"
-  fullName: TMCmdLet.SendPlanCmdlet.Port
-  nameWithType: SendPlanCmdlet.Port
 - uid: TMCmdLet.SendPlanCmdlet.ProcessRecord
   name: ProcessRecord()
   href: api/TM/TMCmdLet.SendPlanCmdlet.html#TMCmdLet_SendPlanCmdlet_ProcessRecord
@@ -3988,6 +3936,19 @@ references:
   commentId: T:TMCmdLet.StartPlanCmdlet
   fullName: TMCmdLet.StartPlanCmdlet
   nameWithType: StartPlanCmdlet
+- uid: TMCmdLet.StartPlanCmdlet.ProcessingIsOn
+  name: ProcessingIsOn
+  href: api/TM/TMCmdLet.StartPlanCmdlet.html#TMCmdLet_StartPlanCmdlet_ProcessingIsOn
+  commentId: P:TMCmdLet.StartPlanCmdlet.ProcessingIsOn
+  fullName: TMCmdLet.StartPlanCmdlet.ProcessingIsOn
+  nameWithType: StartPlanCmdlet.ProcessingIsOn
+- uid: TMCmdLet.StartPlanCmdlet.ProcessingIsOn*
+  name: ProcessingIsOn
+  href: api/TM/TMCmdLet.StartPlanCmdlet.html#TMCmdLet_StartPlanCmdlet_ProcessingIsOn_
+  commentId: Overload:TMCmdLet.StartPlanCmdlet.ProcessingIsOn
+  isSpec: "True"
+  fullName: TMCmdLet.StartPlanCmdlet.ProcessingIsOn
+  nameWithType: StartPlanCmdlet.ProcessingIsOn
 - uid: TMCmdLet.StartPlanCmdlet.ProcessRecord
   name: ProcessRecord()
   href: api/TM/TMCmdLet.StartPlanCmdlet.html#TMCmdLet_StartPlanCmdlet_ProcessRecord
@@ -4107,6 +4068,25 @@ references:
   commentId: F:TMPlan.EPlanCommand.STOPPLAN
   fullName: TMPlan.EPlanCommand.STOPPLAN
   nameWithType: EPlanCommand.STOPPLAN
+- uid: TMPlan.global
+  name: global
+  href: api/TM/TMPlan.global.html
+  commentId: T:TMPlan.global
+  fullName: TMPlan.global
+  nameWithType: global
+- uid: TMPlan.global.Client
+  name: Client
+  href: api/TM/TMPlan.global.html#TMPlan_global_Client
+  commentId: P:TMPlan.global.Client
+  fullName: TMPlan.global.Client
+  nameWithType: global.Client
+- uid: TMPlan.global.Client*
+  name: Client
+  href: api/TM/TMPlan.global.html#TMPlan_global_Client_
+  commentId: Overload:TMPlan.global.Client
+  isSpec: "True"
+  fullName: TMPlan.global.Client
+  nameWithType: global.Client
 - uid: TMPlan.PlanClient
   name: PlanClient
   href: api/TM/TMPlan.PlanClient.html
@@ -4152,6 +4132,32 @@ references:
   isSpec: "True"
   fullName: TMPlan.PlanClient.Clear
   nameWithType: PlanClient.Clear
+- uid: TMPlan.PlanClient.ClearPlan
+  name: ClearPlan()
+  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_ClearPlan
+  commentId: M:TMPlan.PlanClient.ClearPlan
+  fullName: TMPlan.PlanClient.ClearPlan()
+  nameWithType: PlanClient.ClearPlan()
+- uid: TMPlan.PlanClient.ClearPlan*
+  name: ClearPlan
+  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_ClearPlan_
+  commentId: Overload:TMPlan.PlanClient.ClearPlan
+  isSpec: "True"
+  fullName: TMPlan.PlanClient.ClearPlan
+  nameWithType: PlanClient.ClearPlan
+- uid: TMPlan.PlanClient.Disconnect
+  name: Disconnect()
+  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_Disconnect
+  commentId: M:TMPlan.PlanClient.Disconnect
+  fullName: TMPlan.PlanClient.Disconnect()
+  nameWithType: PlanClient.Disconnect()
+- uid: TMPlan.PlanClient.Disconnect*
+  name: Disconnect
+  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_Disconnect_
+  commentId: Overload:TMPlan.PlanClient.Disconnect
+  isSpec: "True"
+  fullName: TMPlan.PlanClient.Disconnect
+  nameWithType: PlanClient.Disconnect
 - uid: TMPlan.PlanClient.Dump
   name: Dump()
   href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_Dump
@@ -4183,19 +4189,6 @@ references:
   isSpec: "True"
   fullName: TMPlan.PlanClient.Dump
   nameWithType: PlanClient.Dump
-- uid: TMPlan.PlanClient.EPlanState
-  name: EPlanState
-  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_EPlanState
-  commentId: P:TMPlan.PlanClient.EPlanState
-  fullName: TMPlan.PlanClient.EPlanState
-  nameWithType: PlanClient.EPlanState
-- uid: TMPlan.PlanClient.EPlanState*
-  name: EPlanState
-  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_EPlanState_
-  commentId: Overload:TMPlan.PlanClient.EPlanState
-  isSpec: "True"
-  fullName: TMPlan.PlanClient.EPlanState
-  nameWithType: PlanClient.EPlanState
 - uid: TMPlan.PlanClient.Execute(System.String,System.String,System.Int32)
   name: Execute(String, String, Int32)
   href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_Execute_System_String_System_String_System_Int32_
@@ -4209,6 +4202,58 @@ references:
   isSpec: "True"
   fullName: TMPlan.PlanClient.Execute
   nameWithType: PlanClient.Execute
+- uid: TMPlan.PlanClient.IsFinished
+  name: IsFinished
+  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_IsFinished
+  commentId: P:TMPlan.PlanClient.IsFinished
+  fullName: TMPlan.PlanClient.IsFinished
+  nameWithType: PlanClient.IsFinished
+- uid: TMPlan.PlanClient.IsFinished*
+  name: IsFinished
+  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_IsFinished_
+  commentId: Overload:TMPlan.PlanClient.IsFinished
+  isSpec: "True"
+  fullName: TMPlan.PlanClient.IsFinished
+  nameWithType: PlanClient.IsFinished
+- uid: TMPlan.PlanClient.IsPlanLoaded
+  name: IsPlanLoaded
+  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_IsPlanLoaded
+  commentId: P:TMPlan.PlanClient.IsPlanLoaded
+  fullName: TMPlan.PlanClient.IsPlanLoaded
+  nameWithType: PlanClient.IsPlanLoaded
+- uid: TMPlan.PlanClient.IsPlanLoaded*
+  name: IsPlanLoaded
+  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_IsPlanLoaded_
+  commentId: Overload:TMPlan.PlanClient.IsPlanLoaded
+  isSpec: "True"
+  fullName: TMPlan.PlanClient.IsPlanLoaded
+  nameWithType: PlanClient.IsPlanLoaded
+- uid: TMPlan.PlanClient.IsProcessing
+  name: IsProcessing
+  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_IsProcessing
+  commentId: P:TMPlan.PlanClient.IsProcessing
+  fullName: TMPlan.PlanClient.IsProcessing
+  nameWithType: PlanClient.IsProcessing
+- uid: TMPlan.PlanClient.IsProcessing*
+  name: IsProcessing
+  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_IsProcessing_
+  commentId: Overload:TMPlan.PlanClient.IsProcessing
+  isSpec: "True"
+  fullName: TMPlan.PlanClient.IsProcessing
+  nameWithType: PlanClient.IsProcessing
+- uid: TMPlan.PlanClient.IsReady
+  name: IsReady
+  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_IsReady
+  commentId: P:TMPlan.PlanClient.IsReady
+  fullName: TMPlan.PlanClient.IsReady
+  nameWithType: PlanClient.IsReady
+- uid: TMPlan.PlanClient.IsReady*
+  name: IsReady
+  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_IsReady_
+  commentId: Overload:TMPlan.PlanClient.IsReady
+  isSpec: "True"
+  fullName: TMPlan.PlanClient.IsReady
+  nameWithType: PlanClient.IsReady
 - uid: TMPlan.PlanClient.Load(System.String)
   name: Load(String)
   href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_Load_System_String_
@@ -4273,6 +4318,12 @@ references:
   commentId: E:TMPlan.PlanClient.PlanFinished
   fullName: TMPlan.PlanClient.PlanFinished
   nameWithType: PlanClient.PlanFinished
+- uid: TMPlan.PlanClient.PlanInProcess
+  name: PlanInProcess
+  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_PlanInProcess
+  commentId: E:TMPlan.PlanClient.PlanInProcess
+  fullName: TMPlan.PlanClient.PlanInProcess
+  nameWithType: PlanClient.PlanInProcess
 - uid: TMPlan.PlanClient.PlanLoaded
   name: PlanLoaded
   href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_PlanLoaded
@@ -4368,15 +4419,12 @@ references:
   isSpec: "True"
   fullName: TMPlan.PlanClient.Reset
   nameWithType: PlanClient.Reset
-- uid: TMPlan.PlanClient.Send(System.Collections.Generic.List{TMPlan.Spot})
-  name: Send(List<Spot>)
-  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_Send_System_Collections_Generic_List_TMPlan_Spot__
-  commentId: M:TMPlan.PlanClient.Send(System.Collections.Generic.List{TMPlan.Spot})
-  name.vb: Send(List(Of Spot))
-  fullName: TMPlan.PlanClient.Send(System.Collections.Generic.List<TMPlan.Spot>)
-  fullName.vb: TMPlan.PlanClient.Send(System.Collections.Generic.List(Of TMPlan.Spot))
-  nameWithType: PlanClient.Send(List<Spot>)
-  nameWithType.vb: PlanClient.Send(List(Of Spot))
+- uid: TMPlan.PlanClient.Send
+  name: Send()
+  href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_Send
+  commentId: M:TMPlan.PlanClient.Send
+  fullName: TMPlan.PlanClient.Send()
+  nameWithType: PlanClient.Send()
 - uid: TMPlan.PlanClient.Send(System.Collections.Generic.List{TMPlan.Spot},System.UInt32)
   name: Send(List<Spot>, UInt32)
   href: api/TM/TMPlan.PlanClient.html#TMPlan_PlanClient_Send_System_Collections_Generic_List_TMPlan_Spot__System_UInt32_
