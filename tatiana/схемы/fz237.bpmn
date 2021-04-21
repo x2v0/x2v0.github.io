@@ -1,0 +1,1093 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" xmlns:documentation="http://documentation.sh4.red" id="Definitions_009r1nk" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
+  <bpmn:collaboration id="Collaboration_AcceptDecision">
+    <bpmn:documentation>&lt;p style="text-align:justify;"&gt;&amp;nbsp;&lt;strong&gt;  Статья 11. Принятие решения о проведении государственной кадастровой оценки &lt;/strong&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&amp;nbsp;1. Государственная кадастровая оценка проводится:&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1) одновременно в отношении всех учтенных в Едином государственном&lt;br&gt;реестре недвижимости на территории субъекта Российской Федерации зданий,&lt;br&gt;помещений, сооружений, объектов незавершенного строительства, машино-мест, за&lt;br&gt;исключением случаев, предусмотренных &lt;a href="#P136" target="_self"&gt;&lt;span style="color: blue;"&gt;частью 3&lt;/span&gt;&lt;/a&gt; настоящей статьи;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) одновременно в отношении всех учтенных в Едином государственном&lt;br&gt;реестре недвижимости на территории субъекта Российской Федерации земельных&lt;br&gt;участков, за исключением случаев, предусмотренных &lt;a href="#P136" target="_self"&gt;&lt;span style="color: blue;"&gt;частью 3&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящей статьи.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2. Государственная кадастровая оценка единых недвижимых комплексов,&lt;br&gt;предприятий как имущественных комплексов не проводится.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;3. В случае отсутствия в Едином государственном&lt;br&gt;реестре недвижимости по состоянию на 1 января года проведения государственной&lt;br&gt;кадастровой оценки отдельных сведений об объекте недвижимости, определенных&lt;br&gt;порядком формирования и предоставления перечней объектов недвижимости, в&lt;br&gt;отношении такого объекта недвижимости государственная кадастровая оценка не проводится.&amp;nbsp;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&amp;nbsp;4. Очередная государственная кадастровая оценка проводится через четыре&lt;br&gt;года с года проведения последней государственной кадастровой оценки&lt;br&gt;соответствующих видов объектов недвижимости, указанных в &lt;a href="#P132" target="_self"&gt;&lt;span style="color: blue;"&gt;части 1&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящей статьи, в городах федерального значения в случае принятия высшим&lt;br&gt;исполнительным органом государственной власти субъекта Российской Федерации&lt;br&gt;соответствующего решения - через два года.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;5. Решение о проведении государственной кадастровой&lt;br&gt;оценки принимается уполномоченным органом субъекта Российской Федерации. В&lt;br&gt;таком решении должны быть указаны следующие сведения:&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1) год проведения государственной кадастровой оценки;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) наименование субъекта Российской Федерации, на территории которого&lt;br&gt;проводится государственная кадастровая оценка;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;3) виды объектов недвижимости, определенные в соответствии с &lt;a href="#P132" target="_self"&gt;&lt;span style="color: blue;"&gt;частью&lt;/span&gt;&lt;/a&gt;&lt;br&gt;&lt;a href="#P132" target="_self"&gt;&lt;span style="color: blue;"&gt;1&lt;/span&gt;&lt;/a&gt; настоящей статьи, в отношении которых проводится государственная&lt;br&gt;кадастровая оценка.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;6. Указание в решении о проведении государственной кадастровой оценки&lt;br&gt;сведений, отличных от предусмотренных &lt;a href="#P140" target="_self"&gt;&lt;span style="color: blue;"&gt;частью 5&lt;/span&gt;&lt;/a&gt; настоящей статьи,&lt;br&gt;не допускается.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;7. Решение о проведении государственной кадастровой оценки принимается&lt;br&gt;не позднее чем за шесть месяцев до 1 января года проведения государственной&lt;br&gt;кадастровой оценки.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;8. Уполномоченный орган субъекта Российской Федерации в течение&lt;br&gt;тридцати календарных дней со дня принятия решения о проведении государственной&lt;br&gt;кадастровой оценки обеспечивает информирование о принятии этого решения, а&lt;br&gt;также о приеме бюджетным учреждением документов, содержащих сведения о&lt;br&gt;характеристиках объектов недвижимости, путем:&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1) размещения извещения и копии решения о проведении государственной&lt;br&gt;кадастровой оценки на своем официальном сайте в&lt;br&gt;информационно-телекоммуникационной сети "Интернет";&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) опубликования извещения в печатном средстве массовой информации, в&lt;br&gt;котором осуществляется обнародование (официальное опубликование) правовых актов&lt;br&gt;органов государственной власти субъекта Российской Федерации;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;3) размещения извещения на своих информационных щитах;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;4) направления копии решения о проведении государственной кадастровой&lt;br&gt;оценки в орган регистрации прав для его размещения в фонде данных&lt;br&gt;государственной кадастровой оценки;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;5) направления копии решения о проведении государственной кадастровой&lt;br&gt;оценки в органы местного самоуправления поселений, муниципальных районов,&lt;br&gt;городских округов, муниципальных округов для его доведения до сведения&lt;br&gt;заинтересованных лиц.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;9. Органы местного самоуправления поселений, муниципальных районов,&lt;br&gt;городских округов, муниципальных округов в течение десяти рабочих дней со дня&lt;br&gt;поступления копии решения о проведении государственной кадастровой оценки&lt;br&gt;обеспечивают информирование о принятии такого решения, а также о приеме&lt;br&gt;бюджетным учреждением документов, содержащих сведения о характеристиках&lt;br&gt;объектов недвижимости, путем размещения извещения и копии решения о проведении&lt;br&gt;государственной кадастровой оценки на своих официальных сайтах в&lt;br&gt;информационно-телекоммуникационной сети "Интернет" (при их наличии),&lt;br&gt;опубликования извещения в печатных средствах массовой информации, а также&lt;br&gt;размещения извещения на своих информационных щитах.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;10. Подведомственное органу регистрации прав федеральное&lt;br&gt;государственное бюджетное учреждение в течение двадцати рабочих дней со дня&lt;br&gt;размещения органом регистрации прав копии решения о проведении государственной&lt;br&gt;кадастровой оценки в фонде данных государственной кадастровой оценки формирует&lt;br&gt;и бесплатно предоставляет в уполномоченный орган субъекта Российской Федерации&lt;br&gt;в соответствии с &lt;a href="consultantplus://offline/ref=40D3C8F0F7C7AAF5EC612E63C0F9AEA5370C933419E3BF64932B39046A05A83DD8A2AAE7D208AE96CA080AD256D5108A1E8DBB619B3D0D9AcA24L" target="_self"&gt;&lt;span style="color: blue;"&gt;порядком&lt;/span&gt;&lt;/a&gt;&lt;br&gt;формирования и предоставления перечней объектов недвижимости предварительный&lt;br&gt;перечень объектов недвижимости, предусмотренных решением о проведении&lt;br&gt;государственной кадастровой оценки.&amp;nbsp;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+    <bpmn:participant id="Participant_Decision_GKO" name="Принятие решения о проведении ГКО" processRef="Process_Decision_GKO">
+      <bpmn:documentation>&lt;p style="text-align:justify;"&gt;&lt;strong&gt; Статья 11. Принятие решения о проведении государственной кадастровой оценки &lt;/strong&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1. Государственная кадастровая оценка проводится:&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1) одновременно в отношении всех учтенных в Едином государственном&lt;br&gt;реестре недвижимости на территории субъекта Российской Федерации зданий,&lt;br&gt;помещений, сооружений, объектов незавершенного строительства, машино-мест, за&lt;br&gt;исключением случаев, предусмотренных &lt;a href="#P136" target="_self"&gt;&lt;span style="color: blue;"&gt;частью 3&lt;/span&gt;&lt;/a&gt; настоящей статьи;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) одновременно в отношении всех учтенных в Едином государственном&lt;br&gt;реестре недвижимости на территории субъекта Российской Федерации земельных&lt;br&gt;участков, за исключением случаев, предусмотренных &lt;a href="#P136" target="_self"&gt;&lt;span style="color: blue;"&gt;частью 3&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящей статьи.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2. Государственная кадастровая оценка единых недвижимых комплексов,&lt;br&gt;предприятий как имущественных комплексов не проводится.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;3. В случае отсутствия в Едином государственном&lt;br&gt;реестре недвижимости по состоянию на 1 января года проведения государственной&lt;br&gt;кадастровой оценки отдельных сведений об объекте недвижимости, определенных&lt;br&gt;порядком формирования и предоставления перечней объектов недвижимости, в&lt;br&gt;отношении такого объекта недвижимости государственная кадастровая оценка не проводится.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;4. Очередная государственная кадастровая оценка проводится через четыре&lt;br&gt;года с года проведения последней государственной кадастровой оценки&lt;br&gt;соответствующих видов объектов недвижимости, указанных в &lt;a href="#P132" target="_self"&gt;&lt;span style="color: blue;"&gt;части 1&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящей статьи, в городах федерального значения в случае принятия высшим&lt;br&gt;исполнительным органом государственной власти субъекта Российской Федерации&lt;br&gt;соответствующего решения - через два года.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;5. Решение о проведении государственной кадастровой&lt;br&gt;оценки принимается уполномоченным органом субъекта Российской Федерации. В&lt;br&gt;таком решении должны быть указаны следующие сведения:&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1) год проведения государственной кадастровой оценки;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) наименование субъекта Российской Федерации, на территории которого&lt;br&gt;проводится государственная кадастровая оценка;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;3) виды объектов недвижимости, определенные в соответствии с &lt;a href="#P132" target="_self"&gt;&lt;span style="color: blue;"&gt;частью&lt;/span&gt;&lt;/a&gt;&lt;br&gt;&lt;a href="#P132" target="_self"&gt;&lt;span style="color: blue;"&gt;1&lt;/span&gt;&lt;/a&gt; настоящей статьи, в отношении которых проводится государственная&lt;br&gt;кадастровая оценка.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;6. Указание в решении о проведении государственной кадастровой оценки&lt;br&gt;сведений, отличных от предусмотренных &lt;a href="#P140" target="_self"&gt;&lt;span style="color: blue;"&gt;частью 5&lt;/span&gt;&lt;/a&gt; настоящей статьи,&lt;br&gt;не допускается.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;7. Решение о проведении государственной кадастровой оценки принимается&lt;br&gt;не позднее чем за шесть месяцев до 1 января года проведения государственной&lt;br&gt;кадастровой оценки.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;8. Уполномоченный орган субъекта Российской Федерации в течение&lt;br&gt;тридцати календарных дней со дня принятия решения о проведении государственной&lt;br&gt;кадастровой оценки обеспечивает информирование о принятии этого решения, а&lt;br&gt;также о приеме бюджетным учреждением документов, содержащих сведения о&lt;br&gt;характеристиках объектов недвижимости, путем:&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1) размещения извещения и копии решения о проведении государственной&lt;br&gt;кадастровой оценки на своем официальном сайте в&lt;br&gt;информационно-телекоммуникационной сети "Интернет";&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) опубликования извещения в печатном средстве массовой информации, в&lt;br&gt;котором осуществляется обнародование (официальное опубликование) правовых актов&lt;br&gt;органов государственной власти субъекта Российской Федерации;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;3) размещения извещения на своих информационных щитах;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;4) направления копии решения о проведении государственной кадастровой&lt;br&gt;оценки в орган регистрации прав для его размещения в фонде данных&lt;br&gt;государственной кадастровой оценки;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;5) направления копии решения о проведении государственной кадастровой&lt;br&gt;оценки в органы местного самоуправления поселений, муниципальных районов,&lt;br&gt;городских округов, муниципальных округов для его доведения до сведения&lt;br&gt;заинтересованных лиц.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;9. Органы местного самоуправления поселений, муниципальных районов,&lt;br&gt;городских округов, муниципальных округов в течение десяти рабочих дней со дня&lt;br&gt;поступления копии решения о проведении государственной кадастровой оценки&lt;br&gt;обеспечивают информирование о принятии такого решения, а также о приеме&lt;br&gt;бюджетным учреждением документов, содержащих сведения о характеристиках&lt;br&gt;объектов недвижимости, путем размещения извещения и копии решения о проведении&lt;br&gt;государственной кадастровой оценки на своих официальных сайтах в&lt;br&gt;информационно-телекоммуникационной сети "Интернет" (при их наличии),&lt;br&gt;опубликования извещения в печатных средствах массовой информации, а также&lt;br&gt;размещения извещения на своих информационных щитах.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;10. Подведомственное органу регистрации прав федеральное&lt;br&gt;государственное бюджетное учреждение в течение двадцати рабочих дней со дня&lt;br&gt;размещения органом регистрации прав копии решения о проведении государственной&lt;br&gt;кадастровой оценки в фонде данных государственной кадастровой оценки формирует&lt;br&gt;и бесплатно предоставляет в уполномоченный орган субъекта Российской Федерации&lt;br&gt;в соответствии с &lt;a href="consultantplus://offline/ref=40D3C8F0F7C7AAF5EC612E63C0F9AEA5370C933419E3BF64932B39046A05A83DD8A2AAE7D208AE96CA080AD256D5108A1E8DBB619B3D0D9AcA24L" target="_self"&gt;&lt;span style="color: blue;"&gt;порядком&lt;/span&gt;&lt;/a&gt; формирования и предоставления перечней объектов &lt;br&gt;недвижимости предварительный перечень объектов недвижимости, предусмотренных &lt;br&gt;решением о проведении государственной кадастровой оценки.&amp;nbsp;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+    </bpmn:participant>
+    <bpmn:participant id="Participant_GKO" name="Государственная Кадастровая Оценка" processRef="Process_GKO">
+      <bpmn:documentation>&lt;p style="text-align:left;"&gt;&amp;nbsp;&lt;strong&gt;ФЕДЕРАЛЬНЫЙ ЗАКОН  О ГОСУДАРСТВЕННОЙ КАДАСТРОВОЙ ОЦЕНКЕ &lt;/strong&gt; &lt;br&gt; N 237-ФЗ&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;strong&gt;Статья 6. Порядок проведения государственной кадастровой оценки &lt;/strong&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;3. Государственная кадастровая оценка включает в себя следующие процедуры:&amp;nbsp;&lt;/p&gt;&lt;p&gt;1) принятие решения о проведении государственной кадастровой оценки;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) определение кадастровой стоимости и составление отчета об итогах&lt;br&gt;государственной кадастровой оценки (далее - отчет);&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;3) утверждение результатов определения кадастровой стоимости.&amp;nbsp;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+    </bpmn:participant>
+    <bpmn:participant id="Participant_18wly4e" name="Подготовка к проведению ГКО" processRef="Process_1dsni6e" />
+    <bpmn:participant id="Participant_053exmm" name="РАССМОТРЕНИЕ ДЕКЛАРАЦИИ О ХАРАКТЕРИСТИКАХ ОБЪЕКТА НЕДВИЖИМОСТИ, В ТОМ ЧИСЛЕ ЕЕ ФОРМЫ (prikaz318.bpmn)">
+      <bpmn:documentation />
+    </bpmn:participant>
+    <bpmn:participant id="Participant_0p9ba83" name="Определение кадастровой стоимости и составление отчета об итогах государственной кадастровой оценки" processRef="Process_08gugmg" />
+    <bpmn:participant id="Participant_0lougu7" name="Определение кадастровой стоимости" processRef="Process_0ie3nr0" />
+    <bpmn:participant id="Participant_1yfsytq" name="Определение кадастровой стоимости вновь учтенных и изменённых объектов недвижимости" processRef="Process_0cx8t91" />
+    <bpmn:participant id="Participant_1d1auby" name="Внесение в ЕГРН сведений о кадастровой стоимости" processRef="Process_0g25l3h" />
+    <bpmn:participant id="Participant_0u2l3fs" name="Применение сведений о кадастровой стоимости" processRef="Process_1dc5am8" />
+    <bpmn:participant id="Participant_1qfayh5" name="Предоставление разъяснений, связанных с определением кадастровой стоимости (Статья 20)" processRef="Process_17vpw9z" />
+    <bpmn:participant id="Participant_0r69arg" name="Рассмотрение обращений об исправлении ошибок, допущенных при определении кадастровой стоимости (Статья 21)" processRef="Process_0tik7db" />
+    <bpmn:participant id="Participant_13zr3g6" name="Рассмотрение споров о результатах определения кадастровой стоимости (Статья 22)" processRef="Process_1v0nukl" />
+    <bpmn:participant id="Participant_0n54ypz" name="Установление кадастровой стоимости в размере рыночной стоимости (Статья 22.1)" processRef="Process_1f9eo2t" />
+    <bpmn:messageFlow id="Flow_1d28xoq" sourceRef="Participant_053exmm" targetRef="Event_0bhn0j7" />
+    <bpmn:messageFlow id="Flow_1llwmgz" sourceRef="Participant_053exmm" targetRef="Event_0bhn0j7" />
+    <bpmn:messageFlow id="Flow_1nn9773" sourceRef="Participant_053exmm" targetRef="Event_1brzonb" />
+    <bpmn:messageFlow id="Flow_0pozdb7" sourceRef="Event_0y8e2dk" targetRef="Participant_053exmm" />
+  </bpmn:collaboration>
+  <bpmn:process id="Process_Decision_GKO" name="Принятие решения о проведении ГКО&#10;&#10;&#10;&#10;" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_1peh3mf">
+      <bpmn:lane id="Lane_UO" name="Уполномоченный орган субъекта РФ орган исполнительной власти субъекта РФ">
+        <bpmn:flowNodeRef>Event_CheckDeadLine</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_ReceiveListOfObjects</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_InformDecision</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_Info</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_InfoMassMedia</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_InfoStand</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_ApproveDecision</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_00lij7w</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_InfoNet</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_InfoDuration</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_1ftybez</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_DecisionDone</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_Local_Authority" name="Органы местного самоуправления поселений, &#10;муниципальных районов, городских округов, муниципальных округов ">
+        <bpmn:flowNodeRef>Event_1bxwmcc</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1b3wifj</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1gysjaw</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_1miogrp</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0ukc3rq</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0cqd8ca</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1gn0anm</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_InfoDecisionLocals</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_BU" name="Бюджетное Учреждение субъекта РФ" />
+      <bpmn:lane id="Lane_FGBU" name="Подведомственное органу регистрации прав Федеральное Государственное Бюджетное Учреждение ">
+        <bpmn:flowNodeRef>Activity_SendListOfObjects</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0ald4gn</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0gshr9k</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_FKP" name="Орган регистрации прав">
+        <bpmn:flowNodeRef>Event_0g8ohx4</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_10w2ybh</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_1jrauy3</bpmn:flowNodeRef>
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:intermediateCatchEvent id="Event_CheckDeadLine">
+      <bpmn:incoming>Flow_1nygjph</bpmn:incoming>
+      <bpmn:outgoing>Flow_0cypl5n</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_0cc1czl">
+        <bpmn:timeDate xsi:type="bpmn:tFormalExpression">6 месяцев до 1 января года проведения ГКО</bpmn:timeDate>
+      </bpmn:timerEventDefinition>
+    </bpmn:intermediateCatchEvent>
+    <bpmn:receiveTask id="Activity_ReceiveListOfObjects" name="ФЗ-237 11.10">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;Федеральный Закон-237, статья&lt;/strong&gt;&lt;/span&gt;&lt;span style="font-size: 16px;"&gt; &lt;/span&gt;&lt;span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;11.&lt;/strong&gt;&lt;/span&gt;&lt;span style="font-size: 16px;"&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Подведомственное органу регистрации прав федеральное&lt;br&gt;государственное бюджетное учреждение в течение двадцати рабочих дней со дня&lt;br&gt;размещения органом регистрации прав копии решения о проведении государственной&lt;br&gt;кадастровой оценки в фонде данных государственной кадастровой оценки формирует&lt;br&gt;и бесплатно предоставляет в &lt;strong&gt;уполномоченный орган субъекта Российской Федерации&lt;/strong&gt;&lt;br&gt;в соответствии с &lt;a href="consultantplus://offline/ref=40D3C8F0F7C7AAF5EC612E63C0F9AEA5370C933419E3BF64932B39046A05A83DD8A2AAE7D208AE96CA080AD256D5108A1E8DBB619B3D0D9AcA24L" target="_self"&gt;&lt;span style="color: blue;"&gt;порядком&lt;/span&gt;&lt;/a&gt; формирования и предоставления перечней объектов недвижимости &lt;br&gt;предварительный перечень объектов недвижимости, предусмотренных решением о проведении&lt;br&gt;государственной кадастровой оценки.&amp;nbsp;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_1siuguq</bpmn:incoming>
+      <bpmn:outgoing>Flow_1p6tbme</bpmn:outgoing>
+      <bpmn:outgoing>Flow_10s587z</bpmn:outgoing>
+      <bpmn:property id="Property_0f5nf1d" name="__targetRef_placeholder" />
+      <bpmn:dataInputAssociation id="DataInputAssociation_0l2rwdu">
+        <bpmn:sourceRef>DataObjectReference_0pbn9yq</bpmn:sourceRef>
+        <bpmn:targetRef>Property_0f5nf1d</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+      <bpmn:dataInputAssociation id="DataInputAssociation_19v3ygc">
+        <bpmn:sourceRef>DataObjectReference_DecisionData</bpmn:sourceRef>
+        <bpmn:targetRef>Property_0f5nf1d</bpmn:targetRef>
+      </bpmn:dataInputAssociation>
+    </bpmn:receiveTask>
+    <bpmn:intermediateCatchEvent id="Event_0g8ohx4" name="копия решения о проведении ГКО получена">
+      <bpmn:incoming>Flow_15ipe1e</bpmn:incoming>
+      <bpmn:outgoing>Flow_1vupohi</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0kfhz9a" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:dataStoreReference id="DataStoreReference_DataFundGKO" name="Фонд Данных ГКО">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;&lt;strong&gt;Федеральный Закон-237 Статья 23.&lt;/strong&gt; Фонд данных государственной кадастровой оценки &lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;1. Ведение фонда данных государственной кадастровой оценки осуществляется органом&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;регистрации прав. &lt;/span&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;2. Орган регистрации прав обеспечивает включение в фонд данных&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;государственной кадастровой оценки сведений и материалов, поступающих в такой&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;орган в соответствии со &lt;/span&gt;&lt;a href="#P127" target="_self"&gt;&lt;span style="color: blue;background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;статьями 11&lt;/span&gt;&lt;/a&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;, &lt;/span&gt;&lt;a href="#P179" target="_self"&gt;&lt;span style="color: blue;background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;13&lt;/span&gt;&lt;/a&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt; - &lt;/span&gt;&lt;a href="#P260" target="_self"&gt;&lt;span style="color: blue;background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;16&lt;/span&gt;&lt;/a&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;,&lt;/span&gt;&lt;br&gt;&lt;a href="#P302" target="_self"&gt;&lt;span style="color: blue;background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;19.1&lt;/span&gt;&lt;/a&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;, &lt;/span&gt;&lt;a href="#P367" target="_self"&gt;&lt;span style="color: blue;background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;22&lt;/span&gt;&lt;/a&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;, &lt;/span&gt;&lt;a href="#P404" target="_self"&gt;&lt;span style="color: blue;background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;22.1&lt;/span&gt;&lt;/a&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;настоящего Федерального закона, в течение пяти рабочих дней со дня их&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;поступления, если иное не предусмотрено настоящим Федеральным законом. &lt;/span&gt;&lt;/p&gt;&lt;p style="text-align:left;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;3. В фонд данных государственной кадастровой оценки включаются иные&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;сведения о кадастровой стоимости, о порядке и об основаниях ее определения, &lt;/span&gt;&lt;a href="consultantplus://offline/ref=40D3C8F0F7C7AAF5EC612E63C0F9AEA5370C923F1EE2BF64932B39046A05A83DD8A2AAE7D208AE93C1080AD256D5108A1E8DBB619B3D0D9AcA24L" target="_self"&gt;&lt;span style="color: blue;background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;перечень&lt;/span&gt;&lt;/a&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;которых и требования к включению которых в фонд данных государственной&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;кадастровой оценки определяются федеральным органом, осуществляющим функции по&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;нормативно-правовому регулированию в сфере государственной кадастровой оценки,&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;при установлении порядка ведения фонда данных государственной кадастровой&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;оценки. &lt;/span&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;4. Утратил силу. - Федеральный &lt;/span&gt;&lt;a href="consultantplus://offline/ref=40D3C8F0F7C7AAF5EC612E63C0F9AEA5370F983B16EBBF64932B39046A05A83DD8A2AAE7D208AC9FC1080AD256D5108A1E8DBB619B3D0D9AcA24L" target="_self"&gt;&lt;span style="color: blue;background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;закон&lt;/span&gt;&lt;/a&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt; от&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;31.07.2020 N 269-ФЗ. &lt;/span&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;5. &lt;/span&gt;&lt;a href="consultantplus://offline/ref=40D3C8F0F7C7AAF5EC612E63C0F9AEA5370C923F1EE2BF64932B39046A05A83DD8A2AAE7D208AE96C0080AD256D5108A1E8DBB619B3D0D9AcA24L" target="_self"&gt;&lt;span style="color: blue;background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;Порядок&lt;/span&gt;&lt;/a&gt; &lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;ведения фонда данных государственной кадастровой оценки и предоставления&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;сведений, включенных в этот фонд, устанавливается федеральным органом, осуществляющим&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;функции по нормативно-правовому регулированию в сфере государственной&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;кадастровой оценки.  &lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+    </bpmn:dataStoreReference>
+    <bpmn:sendTask id="Activity_InformDecision" name="ФЗ-237 11.8">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;Федеральный Закон-237, статья&lt;/strong&gt;&lt;/span&gt;&lt;span style="font-size: 16px;"&gt; &lt;/span&gt;&lt;span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;11.8&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Уполномоченный орган субъекта Российской Федерации в течение тридцати календарных дней&lt;br&gt;со дня принятия решения о проведении государственной кадастровой оценки обеспечивает &lt;br&gt;информирование о принятии этого решения, а также о приеме бюджетным учреждением документов,&lt;br&gt;содержащих сведения о характеристиках объектов недвижимости&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_Decision_Data</bpmn:incoming>
+      <bpmn:outgoing>Flow_12s2cpc</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:parallelGateway id="Gateway_Info">
+      <bpmn:incoming>Flow_12s2cpc</bpmn:incoming>
+      <bpmn:outgoing>Flow_0h8zx3i</bpmn:outgoing>
+      <bpmn:outgoing>Flow_123ss7m</bpmn:outgoing>
+      <bpmn:outgoing>Flow_0z4h4z6</bpmn:outgoing>
+      <bpmn:outgoing>Flow_15ipe1e</bpmn:outgoing>
+      <bpmn:outgoing>Flow_00vnp34</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:dataObjectReference id="DataObjectReference_DecisionData" name="копия решения о проведении ГКО" dataObjectRef="DataObject_1mm0n8d">
+      <bpmn:documentation>&lt;p style="text-align:justify;"&gt;&amp;nbsp;5. &lt;strong&gt;Решение о проведении государственной кадастровой оценки принимается&lt;br&gt;уполномоченным органом субъекта Российской Федерации. В таком решении должны&lt;br&gt;быть указаны следующие сведения: &lt;/strong&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1) год проведения государственной кадастровой оценки;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) наименование субъекта Российской Федерации, на территории которого&lt;br&gt;проводится государственная кадастровая оценка;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;3) виды объектов недвижимости, определенные в соответствии с &lt;a href="#P132" target="_self"&gt;&lt;span style="color: blue;"&gt;частью&lt;br&gt;1&lt;/span&gt;&lt;/a&gt; настоящей статьи, в отношении которых проводится государственная&lt;br&gt;кадастровая оценка.&amp;nbsp;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+    </bpmn:dataObjectReference>
+    <bpmn:dataObject id="DataObject_1mm0n8d" />
+    <bpmn:userTask id="Activity_InfoMassMedia" name="ФЗ-237 11.8.2" documentation:order="undefined">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;Федеральный Закон-237, Статья&lt;/strong&gt;&lt;/span&gt; &lt;span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;11.8&lt;/strong&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;/p&gt;&lt;p&gt;2) опубликования извещения в печатном средстве массовой информации, &lt;br&gt;в котором осуществляется обнародование (официальное опубликование) &lt;br&gt;правовых актов органов государственной власти субъекта Российской Федерации&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_0h8zx3i</bpmn:incoming>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_InfoStand" name="ФЗ-237 11.8.3">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;Федеральный Закон-237, Статья&lt;/strong&gt;&lt;/span&gt; &lt;span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;11.8&lt;/strong&gt;&lt;/span&gt;&amp;nbsp;&amp;nbsp;&lt;/p&gt;&lt;p&gt;3) размещения извещения на своих информационных щитах;&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_0z4h4z6</bpmn:incoming>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_ApproveDecision" name="ФЗ-237 11.5">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;Федеральный Закон-237, статья&lt;/strong&gt;&lt;/span&gt; &lt;span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;11.5&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Решение о проведении государственной кадастровой оценки принимается &lt;br&gt;уполномоченным органом субъекта Российской Федерации.&lt;br&gt;В таком решении должны быть указаны следующие сведения:&lt;br&gt;&lt;br&gt;1) год проведения государственной кадастровой оценки;&lt;br&gt;2) наименование субъекта Российской Федерации, на территории которого проводится государственная кадастровая оценка;&lt;br&gt;3) виды объектов недвижимости в отношении которых проводится государственная кадастровая оценка.&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_0cypl5n</bpmn:incoming>
+      <bpmn:outgoing>Flow_Decision_Data</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1rfmwtg">
+        <bpmn:targetRef>DataObjectReference_DecisionData</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:startEvent id="Event_00lij7w" name="ФЗ-237 6.1">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;&lt;strong&gt;Федеральный Закон 237,&lt;/strong&gt;&lt;/span&gt; &lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;статья&lt;/strong&gt;&lt;/span&gt;  &lt;strong&gt;6.1&lt;/strong&gt;&lt;br&gt;Государственная кадастровая оценка проводится по решению исполнительного органа&lt;br&gt;государственной власти субъекта Российской Федерации (далее - уполномоченный&lt;br&gt;орган субъекта Российской Федерации).&amp;nbsp;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+      <bpmn:outgoing>Flow_1nygjph</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:userTask id="Activity_InfoNet" name="ФЗ-237 11.8.1">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;Федеральный Закон-237, Статья&lt;/strong&gt;&lt;/span&gt; &lt;span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;11.8&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;1) размещения извещения и копии решения о проведении государственной кадастровой оценки &lt;br&gt;на своем официальном сайте в информационно-телекоммуникационной сети "Интернет";&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_123ss7m</bpmn:incoming>
+    </bpmn:userTask>
+    <bpmn:userTask id="Activity_10w2ybh" name="ФЗ-237 11.8.4">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;Федеральный Закон-237, Статья&lt;/strong&gt;&lt;/span&gt; &lt;span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;11.8&lt;/strong&gt;&lt;/span&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;strong&gt; 4) &lt;/strong&gt;направлени&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;е&lt;/span&gt; копии решения о проведении государственной кадастровой&lt;br&gt;оценки в орган регистрации прав для его размещения в фонде данных&lt;br&gt;государственной кадастровой оценки;&amp;nbsp;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_1vupohi</bpmn:incoming>
+      <bpmn:outgoing>Flow_0z5uqlx</bpmn:outgoing>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1b8q3fq" name="извещение и копия решения о проведении ГКО">
+        <bpmn:targetRef>DataStoreReference_DataFundGKO</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:boundaryEvent id="Event_InfoDuration" name="30 календарных дней" attachedToRef="Activity_InformDecision">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;Федеральный Закон-237, Статья&lt;/strong&gt;&lt;/span&gt; &lt;span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;11.8&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Уполномоченный орган субъекта Российской Федерации в течение тридцати календарных дней &lt;br&gt;со дня принятия решения о проведении государственной кадастровой оценки обеспечивает &lt;br&gt;информирование о принятии этого решения, а также о приеме бюджетным учреждением документов, &lt;br&gt;содержащих сведения о характеристиках объектов недвижимости&lt;/p&gt;</bpmn:documentation>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_1qtbndc">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">30 календарных дней</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:boundaryEvent>
+    <bpmn:sequenceFlow id="Flow_12s2cpc" sourceRef="Activity_InformDecision" targetRef="Gateway_Info" />
+    <bpmn:sequenceFlow id="Flow_Decision_Data" sourceRef="Activity_ApproveDecision" targetRef="Activity_InformDecision">
+      <bpmn:documentation>&lt;p&gt;- год проведения ГКО&lt;br&gt;- наименование субъекта РФ, на территории которого проводится ГКО&lt;br&gt;- виды Объектов Недвижимости (ОН), в отношении которых проводится ГКО&lt;/p&gt;</bpmn:documentation>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_0cypl5n" sourceRef="Event_CheckDeadLine" targetRef="Activity_ApproveDecision" />
+    <bpmn:sequenceFlow id="Flow_0h8zx3i" sourceRef="Gateway_Info" targetRef="Activity_InfoMassMedia" />
+    <bpmn:sequenceFlow id="Flow_123ss7m" sourceRef="Gateway_Info" targetRef="Activity_InfoNet" />
+    <bpmn:sequenceFlow id="Flow_0z4h4z6" sourceRef="Gateway_Info" targetRef="Activity_InfoStand" />
+    <bpmn:sequenceFlow id="Flow_1p6tbme" sourceRef="Activity_ReceiveListOfObjects" targetRef="Event_DecisionDone" />
+    <bpmn:sequenceFlow id="Flow_038vh0v" sourceRef="Event_1jrauy3" targetRef="Event_0ald4gn" />
+    <bpmn:sequenceFlow id="Flow_0z5uqlx" sourceRef="Activity_10w2ybh" targetRef="Event_1jrauy3" />
+    <bpmn:sequenceFlow id="Flow_15ipe1e" sourceRef="Gateway_Info" targetRef="Event_0g8ohx4" />
+    <bpmn:sequenceFlow id="Flow_130rsuh" sourceRef="Event_0ald4gn" targetRef="Activity_SendListOfObjects" />
+    <bpmn:sequenceFlow id="Flow_00vnp34" sourceRef="Gateway_Info" targetRef="Event_1bxwmcc" />
+    <bpmn:sequenceFlow id="Flow_1vupohi" sourceRef="Event_0g8ohx4" targetRef="Activity_10w2ybh" />
+    <bpmn:sequenceFlow id="Flow_1siuguq" sourceRef="Event_0gshr9k" targetRef="Activity_ReceiveListOfObjects" />
+    <bpmn:sequenceFlow id="Flow_1nygjph" sourceRef="Event_00lij7w" targetRef="Event_CheckDeadLine" />
+    <bpmn:intermediateThrowEvent id="Event_1jrauy3" name="сообщение о размещении в Фонде Данных копии решения о проведении ГКО">
+      <bpmn:incoming>Flow_0z5uqlx</bpmn:incoming>
+      <bpmn:outgoing>Flow_038vh0v</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0ep2ioj" messageRef="Message_1lr8fv4" />
+    </bpmn:intermediateThrowEvent>
+    <bpmn:userTask id="Activity_SendListOfObjects" name="ФЗ-237 11.10">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;Федеральный Закон-237, статья&lt;/strong&gt;&lt;/span&gt; &lt;span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;11.&lt;/strong&gt;&lt;/span&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;10&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;Подведомственное органу регистрации прав федеральное&lt;br&gt;государственное бюджетное учреждение в течение двадцати рабочих дней со дня&lt;br&gt;размещения органом регистрации прав копии решения о проведении государственной&lt;br&gt;кадастровой оценки в фонде данных государственной кадастровой оценки формирует&lt;br&gt;и бесплатно предоставляет в уполномоченный орган субъекта Российской Федерации&lt;br&gt;в соответствии с &lt;a href="consultantplus://offline/ref=40D3C8F0F7C7AAF5EC612E63C0F9AEA5370C933419E3BF64932B39046A05A83DD8A2AAE7D208AE96CA080AD256D5108A1E8DBB619B3D0D9AcA24L" target="_self"&gt;&lt;span style="color: blue;"&gt;порядком&lt;/span&gt;&lt;/a&gt; формирования и предоставления перечней &lt;br&gt;объектов недвижимости предварительный перечень объектов недвижимости, &lt;br&gt;предусмотренных решением о проведении государственной кадастровой оценки.  .&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_130rsuh</bpmn:incoming>
+      <bpmn:dataOutputAssociation id="DataOutputAssociation_1vpsvkb">
+        <bpmn:targetRef>DataObjectReference_0pbn9yq</bpmn:targetRef>
+      </bpmn:dataOutputAssociation>
+    </bpmn:userTask>
+    <bpmn:boundaryEvent id="Event_0gshr9k" name="20 рабочих дней" attachedToRef="Activity_SendListOfObjects">
+      <bpmn:documentation>&lt;p style="text-align:justify;"&gt;&lt;strong&gt; 10.&lt;/strong&gt; Подведомственное органу регистрации прав федеральное&lt;br&gt;государственное бюджетное учреждение в течение двадцати рабочих дней со дня&lt;br&gt;размещения органом регистрации прав копии решения о проведении государственной&lt;br&gt;кадастровой оценки в фонде данных государственной кадастровой оценки формирует&lt;br&gt;и бесплатно предоставляет в уполномоченный орган субъекта Российской Федерации&lt;br&gt;в соответствии с &lt;a href="consultantplus://offline/ref=40D3C8F0F7C7AAF5EC612E63C0F9AEA5370C933419E3BF64932B39046A05A83DD8A2AAE7D208AE96CA080AD256D5108A1E8DBB619B3D0D9AcA24L" target="_self"&gt;&lt;span style="color: blue;"&gt;порядком&lt;/span&gt;&lt;/a&gt;&lt;br&gt;формирования и предоставления перечней объектов недвижимости предварительный&lt;br&gt;перечень объектов недвижимости, предусмотренных решением о проведении&lt;br&gt;государственной кадастровой оценки.&amp;nbsp;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+      <bpmn:outgoing>Flow_1siuguq</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_0496v07">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">20 рабочих дней</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:boundaryEvent>
+    <bpmn:dataObjectReference id="DataObjectReference_0pbn9yq" name="перечень объектов недвижимости" dataObjectRef="DataObject_0vnvb4n">
+      <bpmn:documentation>&lt;p style="text-align:start;"&gt;&lt;span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 14px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;ФЗ-237 статья 13&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;&lt;strong&gt; 4.&lt;/strong&gt;&lt;/span&gt; &lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;Порядок формирования и предоставления перечней объектов недвижимости&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;устанавливается федеральным органом, осуществляющим функции по&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;нормативно-правовому регулированию в сфере государственной кадастровой оценки.  &lt;/span&gt;&lt;/p&gt;&lt;p style="text-align:start;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 14px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;5.&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;В перечень включаются сведения Единого Государственного Реестра&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;Недвижимости (ЕГРН), актуальные по состоянию на 1 января года проведения&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;государственной кадастровой оценки. В перечень также включаются иные сведения и&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;материалы в объеме, определенном порядком формирования и предоставления&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;перечня.  &lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+    </bpmn:dataObjectReference>
+    <bpmn:dataObject id="DataObject_0vnvb4n" />
+    <bpmn:intermediateCatchEvent id="Event_0ald4gn" name="сообщение о размещении в Фонде Данных копии решения о проведении ГКО   получено">
+      <bpmn:incoming>Flow_038vh0v</bpmn:incoming>
+      <bpmn:outgoing>Flow_130rsuh</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0aqwobm" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:intermediateCatchEvent id="Event_1bxwmcc" name="копия решения о проведении ГКО получена">
+      <bpmn:incoming>Flow_00vnp34</bpmn:incoming>
+      <bpmn:outgoing>Flow_0xcpyoo</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0sw1r69" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:userTask id="Activity_1b3wifj" name="ФЗ-237 11.8.5">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;Федеральный Закон-237, статья&lt;/strong&gt;&lt;/span&gt; &lt;span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;11.8&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;br&gt;&lt;strong&gt; 5) &lt;/strong&gt;направления копии решения о проведении государственной кадастровой&lt;br&gt;оценки в органы местного самоуправления поселений, муниципальных районов,&lt;br&gt;городских округов, муниципальных округов для его доведения до сведения&lt;br&gt;заинтересованных лиц.&amp;nbsp;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_0xcpyoo</bpmn:incoming>
+    </bpmn:userTask>
+    <bpmn:task id="Activity_1gysjaw" name="ФЗ-237 11.9">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;Федеральный Закон-237, статья&lt;/strong&gt;&lt;/span&gt; &lt;span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 16px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;11.9&lt;/strong&gt;&lt;/span&gt;&lt;br&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;Органы местного самоуправления поселений, муниципальных районов, городских&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;округов, муниципальных округов в течение десяти рабочих дней со дня поступления&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;копии решения о проведении государственной кадастровой оценки обеспечивают&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;информирование о принятии такого решения, а также о приеме бюджетным&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;учреждением документов, содержащих сведения о характеристиках объектов&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;недвижимости, путем размещения извещения и копии решения о проведении&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;государственной кадастровой оценки на своих официальных сайтах в&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;информационно-телекоммуникационной сети "Интернет" (при их наличии),&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;опубликования извещения в печатных средствах массовой информации, а также&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;размещения извещения на своих информационных &lt;/span&gt; &lt;span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 12px;font-family: Arial, sans-serif;"&gt;щитах.&lt;/span&gt;&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_1qo7f7k</bpmn:incoming>
+      <bpmn:outgoing>Flow_18qgs4l</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:parallelGateway id="Gateway_1miogrp">
+      <bpmn:incoming>Flow_18qgs4l</bpmn:incoming>
+      <bpmn:outgoing>Flow_1m0e0vc</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1clilqq</bpmn:outgoing>
+      <bpmn:outgoing>Flow_18fcs6k</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:userTask id="Activity_0ukc3rq" name="размещение извещения и копии решения о проведении ГКО в печатных средствах массовой информации">
+      <bpmn:documentation>&lt;p&gt;опубликования извещения в печатном средстве массовой информации, &lt;br&gt;в котором осуществляется обнародование (официальное опубликование) &lt;br&gt;правовых актов органов государственной власти субъекта Российской Федерации&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_18fcs6k</bpmn:incoming>
+    </bpmn:userTask>
+    <bpmn:task id="Activity_0cqd8ca" name="размещение извещения и копии решения о проведении ГКО на официальных сайтах в сети &#34;Интернет&#34;  ">
+      <bpmn:documentation>&lt;p&gt;размещения извещения и копии решения о проведении государственной кадастровой оценки &lt;br&gt;на своем официальном сайте в информационно-телекоммуникационной сети "Интернет";&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_1m0e0vc</bpmn:incoming>
+    </bpmn:task>
+    <bpmn:userTask id="Activity_1gn0anm" name="размещение извещения и копии решения о проведении ГКО на информационных щитах">
+      <bpmn:documentation>размещения извещения на своих информационных щитах;</bpmn:documentation>
+      <bpmn:incoming>Flow_1clilqq</bpmn:incoming>
+    </bpmn:userTask>
+    <bpmn:boundaryEvent id="Event_InfoDecisionLocals" name="10 рабочих дней" attachedToRef="Activity_1b3wifj">
+      <bpmn:outgoing>Flow_1qo7f7k</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_0q4lm30">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">10 рабочих дней</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:boundaryEvent>
+    <bpmn:sequenceFlow id="Flow_0xcpyoo" sourceRef="Event_1bxwmcc" targetRef="Activity_1b3wifj" />
+    <bpmn:sequenceFlow id="Flow_1qo7f7k" sourceRef="Event_InfoDecisionLocals" targetRef="Activity_1gysjaw" />
+    <bpmn:sequenceFlow id="Flow_18qgs4l" sourceRef="Activity_1gysjaw" targetRef="Gateway_1miogrp" />
+    <bpmn:sequenceFlow id="Flow_1m0e0vc" sourceRef="Gateway_1miogrp" targetRef="Activity_0cqd8ca" />
+    <bpmn:sequenceFlow id="Flow_1clilqq" sourceRef="Gateway_1miogrp" targetRef="Activity_1gn0anm" />
+    <bpmn:sequenceFlow id="Flow_18fcs6k" sourceRef="Gateway_1miogrp" targetRef="Activity_0ukc3rq" />
+    <bpmn:endEvent id="Event_1ftybez" name="предварительный перечень ОН сформирован">
+      <bpmn:incoming>Flow_10s587z</bpmn:incoming>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1xry5ql" />
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_10s587z" sourceRef="Activity_ReceiveListOfObjects" targetRef="Event_1ftybez" />
+    <bpmn:endEvent id="Event_DecisionDone" name="Решение о проведении ГКО принято">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="color: rgb(0,0,0);background-color: rgb(255,255,255);font-size: 12px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt;ФЗ-237 11.10&lt;/strong&gt;&lt;/span&gt; &lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;Подведомственное органу регистрации прав федеральное государственное бюджетное&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;учреждение в течение двадцати рабочих дней со дня размещения органом&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;регистрации прав копии решения о проведении государственной кадастровой оценки&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;в фонде данных государственной кадастровой оценки формирует и бесплатно&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;предоставляет в &lt;strong&gt;уполномоченный орган субъекта Российской Федерации &lt;/strong&gt;в&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;соответствии с &lt;/span&gt;&lt;a href="consultantplus://offline/ref=40D3C8F0F7C7AAF5EC612E63C0F9AEA5370C933419E3BF64932B39046A05A83DD8A2AAE7D208AE96CA080AD256D5108A1E8DBB619B3D0D9AcA24L" target="_self"&gt;&lt;span style="color: blue;font-size: 11pt;font-family: Calibri, sans-serif;"&gt;порядком&lt;/span&gt;&lt;/a&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;формирования и предоставления перечней объектов недвижимости предварительный&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;перечень объектов недвижимости, предусмотренных решением о проведении&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;государственной кадастровой оценки.&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_1p6tbme</bpmn:incoming>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1k4zw6p" />
+    </bpmn:endEvent>
+    <bpmn:textAnnotation id="TextAnnotation_0wonh6g">
+      <bpmn:text>предварительный перечень объектов недвижимости и решение о проведении ГКО</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_ApproveDecision">
+      <bpmn:text>Принятие решения о проведении ГКО</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_022sr7x">
+      <bpmn:text>не позднее чем за 6 месяцев до 1 января года проведения ГКО</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_InformDecision">
+      <bpmn:text>Информирование о принятии решения о проведении ГКО</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0g7kj4c">
+      <bpmn:text>размещение извещения и копии решения о проведении ГКО на своем официальном сайте</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_161p7eg">
+      <bpmn:text>размещение извещения и копии решения о проведении ГКО в печатном средстве массовой информации</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0vup24m">
+      <bpmn:text>размещение извещения и копии решения о проведении ГКО на своих информационных щитах</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_17zui3c">
+      <bpmn:text>Решение о проведении ГКО</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0mt7z64" sourceRef="Activity_ReceiveListOfObjects" targetRef="TextAnnotation_0wonh6g" />
+    <bpmn:association id="Association_1xxrye7" sourceRef="Event_CheckDeadLine" targetRef="TextAnnotation_022sr7x" />
+    <bpmn:association id="Association_0d9i988" sourceRef="Activity_InformDecision" targetRef="TextAnnotation_InformDecision" />
+    <bpmn:association id="Association_13gkpn1" sourceRef="Activity_InfoMassMedia" targetRef="TextAnnotation_161p7eg" />
+    <bpmn:association id="Association_02oilpd" sourceRef="Activity_InfoStand" targetRef="TextAnnotation_0vup24m" />
+    <bpmn:association id="Association_18hekxl" sourceRef="Activity_ApproveDecision" targetRef="TextAnnotation_ApproveDecision" />
+    <bpmn:association id="Association_19xa3fo" sourceRef="Event_00lij7w" targetRef="TextAnnotation_17zui3c" />
+    <bpmn:association id="Association_0g3myq8" sourceRef="Activity_InfoNet" targetRef="TextAnnotation_0g7kj4c" />
+    <bpmn:textAnnotation id="TextAnnotation_1dsqv78">
+      <bpmn:text>Размещение извещения и копии решения о проведении ГКО в Фонде Данных ГКО</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1hzanq3" sourceRef="Activity_10w2ybh" targetRef="TextAnnotation_1dsqv78" />
+    <bpmn:textAnnotation id="TextAnnotation_1isuvj5">
+      <bpmn:text>формирование и предоставление предварительного перечня Объектов Недвижимости (ОН)</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_00r5dju" sourceRef="Activity_SendListOfObjects" targetRef="TextAnnotation_1isuvj5" />
+    <bpmn:textAnnotation id="TextAnnotation_1jhzbda">
+      <bpmn:text>Доведение до сведения заинтересованных лиц о решении проведения ГКО</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_17w6qt1">
+      <bpmn:text>Информирование о принятии решения проведения ГКО, а также о приеме бюджетным учреждением документов, содержащих сведения о характеристиках объектов недвижимости</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0bt9ggs" sourceRef="Activity_1gysjaw" targetRef="TextAnnotation_17w6qt1" />
+  </bpmn:process>
+  <bpmn:message id="Message_11xgncg" name="Решение о проведении ГКО" />
+  <bpmn:process id="Process_GKO" name="Государственная Кадастровая Оценка" isExecutable="false">
+    <bpmn:sequenceFlow id="Flow_19ruwtk" sourceRef="Event_05r7evf" targetRef="Activity_1qyvxok" />
+    <bpmn:subProcess id="Activity_1qyvxok" name="Принятие решения о проведении ГКО">
+      <bpmn:incoming>Flow_19ruwtk</bpmn:incoming>
+    </bpmn:subProcess>
+    <bpmn:sequenceFlow id="Flow_0cp5vbm" sourceRef="Activity_Result" targetRef="Event_1pj5ntx" />
+    <bpmn:startEvent id="Event_05r7evf" name="Решение о проведении ГКО">
+      <bpmn:outgoing>Flow_19ruwtk</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:sequenceFlow id="Flow_0z5clgc" sourceRef="Event_17o29df" targetRef="Activity_Calc" />
+    <bpmn:subProcess id="Activity_Calc" name="Определение кадастровой стоимости&#10;и составление отчета об итогах ГКО">
+      <bpmn:incoming>Flow_0z5clgc</bpmn:incoming>
+    </bpmn:subProcess>
+    <bpmn:boundaryEvent id="Event_17o29df" name="предварительный перечень ОН сформирован" attachedToRef="Activity_1qyvxok">
+      <bpmn:outgoing>Flow_0z5clgc</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0uvxoge" />
+    </bpmn:boundaryEvent>
+    <bpmn:subProcess id="Activity_Result" name="Утверждение результатов определения кадастровой стоимости">
+      <bpmn:incoming>Flow_1qsojd0</bpmn:incoming>
+      <bpmn:outgoing>Flow_0cp5vbm</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:sequenceFlow id="Flow_1qsojd0" sourceRef="Event_14xwckt" targetRef="Activity_Result" />
+    <bpmn:boundaryEvent id="Event_14xwckt" attachedToRef="Activity_Calc">
+      <bpmn:outgoing>Flow_1qsojd0</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0xsuv08" />
+    </bpmn:boundaryEvent>
+    <bpmn:endEvent id="Event_1pj5ntx">
+      <bpmn:incoming>Flow_0cp5vbm</bpmn:incoming>
+    </bpmn:endEvent>
+  </bpmn:process>
+  <bpmn:message id="Message_0yaxsbc" />
+  <bpmn:message id="Message_1lr8fv4" name="извещение и копия решения о проведении ГКО размещено в Фонде Данных" />
+  <bpmn:process id="Process_1dsni6e" isExecutable="false">
+    <bpmn:laneSet id="LaneSet_1npmb1j">
+      <bpmn:lane id="Lane_1n5qfoe" name="Правообладатели объектов недвижимости">
+        <bpmn:flowNodeRef>Event_1qwfrzu</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_1uoxrlm" name="Орган регистрации прав">
+        <bpmn:flowNodeRef>Activity_13to5gl</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_1vkb1nu</bpmn:flowNodeRef>
+      </bpmn:lane>
+      <bpmn:lane id="Lane_00gcme8" name="Бюджетное Учреждение">
+        <bpmn:flowNodeRef>Event_0y8e2dk</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0bhn0j7</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_1brzonb</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Gateway_0ep1ie9</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_16r20yy</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0k4727a</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_191o71w</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0g37udj</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0x6u1s9</bpmn:flowNodeRef>
+        <bpmn:childLaneSet id="LaneSet_1ihhssd" />
+      </bpmn:lane>
+    </bpmn:laneSet>
+    <bpmn:sequenceFlow id="Flow_10bknkm" sourceRef="Event_1qwfrzu" targetRef="Event_0y8e2dk" />
+    <bpmn:sequenceFlow id="Flow_0l50x63" sourceRef="Event_1vkb1nu" targetRef="Activity_13to5gl" />
+    <bpmn:sequenceFlow id="Flow_0ya9d2n" sourceRef="Event_0bhn0j7" targetRef="Event_1vkb1nu" />
+    <bpmn:userTask id="Activity_13to5gl" name="Рассмотрение ошибок в сведениях ЕГРН">
+      <bpmn:incoming>Flow_0l50x63</bpmn:incoming>
+    </bpmn:userTask>
+    <bpmn:intermediateCatchEvent id="Event_1vkb1nu">
+      <bpmn:incoming>Flow_0ya9d2n</bpmn:incoming>
+      <bpmn:outgoing>Flow_0l50x63</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_07ivx0j" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:intermediateThrowEvent id="Event_1qwfrzu" name="подача декларации о характеристиках объекта недвижимости">
+      <bpmn:outgoing>Flow_10bknkm</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1c3p8db" />
+    </bpmn:intermediateThrowEvent>
+    <bpmn:intermediateThrowEvent id="Event_0y8e2dk" name="рассмотрение декларации о характеристиках объекта недвижимости">
+      <bpmn:incoming>Flow_10bknkm</bpmn:incoming>
+    </bpmn:intermediateThrowEvent>
+    <bpmn:intermediateCatchEvent id="Event_0bhn0j7" name="обнаружены ошибки в сведениях ЕГРН">
+      <bpmn:outgoing>Flow_0ya9d2n</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0c2mces" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:intermediateCatchEvent id="Event_1brzonb" name="список учтённой информации в&#10;декларации">
+      <bpmn:outgoing>Flow_1k3u9l3</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1s728cm" />
+    </bpmn:intermediateCatchEvent>
+    <bpmn:subProcess id="Activity_0k4727a" name="Сбор, обработка и учет информации об ОН, кадастровая стоимость которых была установлена в размере рыночной стоимости" />
+    <bpmn:parallelGateway id="Gateway_0ep1ie9">
+      <bpmn:incoming>Flow_1k3u9l3</bpmn:incoming>
+      <bpmn:incoming>Flow_0oan00f</bpmn:incoming>
+      <bpmn:incoming>Flow_0o08r1z</bpmn:incoming>
+      <bpmn:outgoing>Flow_12k2xj8</bpmn:outgoing>
+    </bpmn:parallelGateway>
+    <bpmn:sequenceFlow id="Flow_1k3u9l3" sourceRef="Event_1brzonb" targetRef="Gateway_0ep1ie9" />
+    <bpmn:sequenceFlow id="Flow_0oan00f" sourceRef="Event_191o71w" targetRef="Gateway_0ep1ie9" />
+    <bpmn:sequenceFlow id="Flow_0o08r1z" sourceRef="Event_0x6u1s9" targetRef="Gateway_0ep1ie9" />
+    <bpmn:boundaryEvent id="Event_191o71w" attachedToRef="Activity_0k4727a">
+      <bpmn:outgoing>Flow_0oan00f</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0g8kh17" />
+    </bpmn:boundaryEvent>
+    <bpmn:sequenceFlow id="Flow_12k2xj8" sourceRef="Gateway_0ep1ie9" targetRef="Event_16r20yy" />
+    <bpmn:endEvent id="Event_16r20yy">
+      <bpmn:incoming>Flow_12k2xj8</bpmn:incoming>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0zhtvkg" />
+    </bpmn:endEvent>
+    <bpmn:subProcess id="Activity_0g37udj" name="Сбор недостающей информации, необходимой для определения кадастровой стоимости" />
+    <bpmn:boundaryEvent id="Event_0x6u1s9" attachedToRef="Activity_0g37udj">
+      <bpmn:outgoing>Flow_0o08r1z</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1b5bnf5" />
+    </bpmn:boundaryEvent>
+  </bpmn:process>
+  <bpmn:process id="Process_08gugmg" isExecutable="false">
+    <bpmn:startEvent id="Event_02xdw6z">
+      <bpmn:outgoing>Flow_03f0ki5</bpmn:outgoing>
+      <bpmn:timerEventDefinition id="TimerEventDefinition_0heza7h">
+        <bpmn:timeCycle xsi:type="bpmn:tFormalExpression">0</bpmn:timeCycle>
+      </bpmn:timerEventDefinition>
+    </bpmn:startEvent>
+    <bpmn:inclusiveGateway id="Gateway_0q852gc">
+      <bpmn:incoming>Flow_11wbgze</bpmn:incoming>
+      <bpmn:incoming>Flow_1c9ad3o</bpmn:incoming>
+      <bpmn:outgoing>Flow_1p4b3tr</bpmn:outgoing>
+    </bpmn:inclusiveGateway>
+    <bpmn:subProcess id="Activity_0t8itco" name="Определение кадастровой стоимости">
+      <bpmn:incoming>Flow_1p4b3tr</bpmn:incoming>
+      <bpmn:outgoing>Flow_1jr90xu</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:subProcess id="Activity_1co0qjq" name="Подготовка к проведению ГКО">
+      <bpmn:documentation>&lt;p style="text-align:justify;"&gt;&lt;strong&gt; Статья 12. Подготовка к проведению государственной кадастровой оценки &lt;/strong&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&amp;nbsp;&amp;nbsp;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;1. Подготовка к проведению государственной кадастровой&lt;br&gt;оценки осуществляется бюджетным учреждением на постоянной основе&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_03f0ki5</bpmn:incoming>
+    </bpmn:subProcess>
+    <bpmn:subProcess id="Activity_1qq2wj8" name="Составление отчета об итогах ГКО">
+      <bpmn:incoming>Flow_1jr90xu</bpmn:incoming>
+    </bpmn:subProcess>
+    <bpmn:sequenceFlow id="Flow_03f0ki5" sourceRef="Event_02xdw6z" targetRef="Activity_1co0qjq" />
+    <bpmn:sequenceFlow id="Flow_11wbgze" sourceRef="Activity_10iqc3v" targetRef="Gateway_0q852gc" />
+    <bpmn:sequenceFlow id="Flow_1c9ad3o" sourceRef="Activity_0427949" targetRef="Gateway_0q852gc" />
+    <bpmn:sequenceFlow id="Flow_1p4b3tr" sourceRef="Gateway_0q852gc" targetRef="Activity_0t8itco" />
+    <bpmn:sequenceFlow id="Flow_1jr90xu" sourceRef="Activity_0t8itco" targetRef="Activity_1qq2wj8" />
+    <bpmn:subProcess id="Activity_10iqc3v" name="Формирование перечня вновь учтенных ОН и ОН, в сведения ЕГРН о которых внесены изменения">
+      <bpmn:outgoing>Flow_11wbgze</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:boundaryEvent id="Event_1g1g7kg" attachedToRef="Activity_1co0qjq">
+      <bpmn:outgoing>Flow_08ebwmq</bpmn:outgoing>
+    </bpmn:boundaryEvent>
+    <bpmn:subProcess id="Activity_0427949" name="Формирование, предоставление и обработка перечня ОН, подлежащих ГКО">
+      <bpmn:incoming>Flow_08ebwmq</bpmn:incoming>
+      <bpmn:outgoing>Flow_1c9ad3o</bpmn:outgoing>
+    </bpmn:subProcess>
+    <bpmn:sequenceFlow id="Flow_08ebwmq" sourceRef="Event_1g1g7kg" targetRef="Activity_0427949" />
+    <bpmn:textAnnotation id="TextAnnotation_12lgwe7">
+      <bpmn:text>осуществляется бюджетным учреждением на постоянной основе</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_1suygdn">
+      <bpmn:text>Приказ 318</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:textAnnotation id="TextAnnotation_0efg9h5">
+      <bpmn:text>Приказ 226</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_1ssxkuj" sourceRef="Event_02xdw6z" targetRef="TextAnnotation_12lgwe7" />
+    <bpmn:association id="Association_0k3ci5h" sourceRef="Activity_1co0qjq" targetRef="TextAnnotation_1suygdn" />
+    <bpmn:association id="Association_1v1y9o4" sourceRef="Activity_0t8itco" targetRef="TextAnnotation_0efg9h5" />
+    <bpmn:textAnnotation id="TextAnnotation_14glwh9">
+      <bpmn:text>Приказ 283</bpmn:text>
+    </bpmn:textAnnotation>
+    <bpmn:association id="Association_0b01dzf" sourceRef="Activity_0427949" targetRef="TextAnnotation_14glwh9" />
+  </bpmn:process>
+  <bpmn:process id="Process_0ie3nr0" isExecutable="false" />
+  <bpmn:process id="Process_0cx8t91" isExecutable="false" />
+  <bpmn:process id="Process_0g25l3h" isExecutable="false" />
+  <bpmn:process id="Process_1dc5am8" isExecutable="false" />
+  <bpmn:process id="Process_17vpw9z" isExecutable="false" />
+  <bpmn:process id="Process_0tik7db" isExecutable="false" />
+  <bpmn:process id="Process_1v0nukl" isExecutable="false" />
+  <bpmn:process id="Process_1f9eo2t" isExecutable="false" />
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_AcceptDecision">
+      <bpmndi:BPMNShape id="Participant_0nov83j_di" bpmnElement="Participant_Decision_GKO" isHorizontal="true">
+        <dc:Bounds x="136" y="1950" width="994" height="1890" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0udxaka_di" bpmnElement="Lane_FKP" isHorizontal="true">
+        <dc:Bounds x="166" y="2605" width="964" height="265" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1yseeua_di" bpmnElement="Lane_FGBU" isHorizontal="true">
+        <dc:Bounds x="166" y="2870" width="964" height="320" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0js3nre_di" bpmnElement="Lane_BU" isHorizontal="true">
+        <dc:Bounds x="166" y="3190" width="964" height="220" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_0dbyjxu_di" bpmnElement="Lane_Local_Authority" isHorizontal="true">
+        <dc:Bounds x="166" y="3410" width="964" height="430" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_17d3sgk_di" bpmnElement="Lane_UO" isHorizontal="true">
+        <dc:Bounds x="166" y="1950" width="964" height="655" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1dsqv78_di" bpmnElement="TextAnnotation_1dsqv78">
+        <dc:Bounds x="443" y="2630" width="253" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1isuvj5_di" bpmnElement="TextAnnotation_1isuvj5">
+        <dc:Bounds x="638" y="2890" width="205" height="54" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1jhzbda_di" bpmnElement="TextAnnotation_1jhzbda">
+        <dc:Bounds x="351" y="3440" width="156" height="54" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_17w6qt1_di" bpmnElement="TextAnnotation_17w6qt1">
+        <dc:Bounds x="554" y="3440" width="374" height="54" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_10s587z_di" bpmnElement="Flow_10s587z">
+        <di:waypoint x="990" y="2120" />
+        <di:waypoint x="1072" y="2120" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1nygjph_di" bpmnElement="Flow_1nygjph">
+        <di:waypoint x="258" y="2090" />
+        <di:waypoint x="338" y="2090" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1siuguq_di" bpmnElement="Flow_1siuguq" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="758" y="2998" />
+        <di:waypoint x="758" y="3020" />
+        <di:waypoint x="920" y="3020" />
+        <di:waypoint x="920" y="2130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1vupohi_di" bpmnElement="Flow_1vupohi">
+        <di:waypoint x="398" y="2730" />
+        <di:waypoint x="520" y="2730" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_00vnp34_di" bpmnElement="Flow_00vnp34" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="613" y="2350" />
+        <di:waypoint x="300" y="2350" />
+        <di:waypoint x="300" y="3542" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_130rsuh_di" bpmnElement="Flow_130rsuh" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="588" y="3020" />
+        <di:waypoint x="679" y="3020" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15ipe1e_di" bpmnElement="Flow_15ipe1e" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="613" y="2350" />
+        <di:waypoint x="300" y="2350" />
+        <di:waypoint x="300" y="2730" />
+        <di:waypoint x="362" y="2730" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0z5uqlx_di" bpmnElement="Flow_0z5uqlx" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="570" y="2772" />
+        <di:waypoint x="570" y="2802" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_038vh0v_di" bpmnElement="Flow_038vh0v" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="570" y="2838" />
+        <di:waypoint x="570" y="3002" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1p6tbme_di" bpmnElement="Flow_1p6tbme" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="990" y="2060" />
+        <di:waypoint x="1072" y="2060" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0z4h4z6_di" bpmnElement="Flow_0z4h4z6" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="613" y="2350" />
+        <di:waypoint x="447" y="2350" />
+        <di:waypoint x="447" y="2400" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_123ss7m_di" bpmnElement="Flow_123ss7m" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="663" y="2350" />
+        <di:waypoint x="809" y="2350" />
+        <di:waypoint x="809" y="2400" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0h8zx3i_di" bpmnElement="Flow_0h8zx3i" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="638" y="2375" />
+        <di:waypoint x="638" y="2400" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0cypl5n_di" bpmnElement="Flow_0cypl5n" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="374" y="2090" />
+        <di:waypoint x="422" y="2090" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rmdliy_di" bpmnElement="Flow_Decision_Data" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="516" y="2090" />
+        <di:waypoint x="588" y="2090" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="517" y="196" width="85" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_12s2cpc_di" bpmnElement="Flow_12s2cpc">
+        <di:waypoint x="638" y="2130" />
+        <di:waypoint x="638" y="2325" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0xcpyoo_di" bpmnElement="Flow_0xcpyoo" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="318" y="3560" />
+        <di:waypoint x="379" y="3560" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1qo7f7k_di" bpmnElement="Flow_1qo7f7k" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="479" y="3538" />
+        <di:waypoint x="479" y="3560" />
+        <di:waypoint x="648" y="3560" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18qgs4l_di" bpmnElement="Flow_18qgs4l" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="699" y="3600" />
+        <di:waypoint x="699" y="3635" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1m0e0vc_di" bpmnElement="Flow_1m0e0vc" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="724" y="3660" />
+        <di:waypoint x="950" y="3660" />
+        <di:waypoint x="950" y="3720" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="749" y="2212" width="13" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1clilqq_di" bpmnElement="Flow_1clilqq" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="674" y="3660" />
+        <di:waypoint x="441" y="3660" />
+        <di:waypoint x="441" y="3720" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_18fcs6k_di" bpmnElement="Flow_18fcs6k" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="699" y="3685" />
+        <di:waypoint x="699" y="3720" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_1xhg087_di" bpmnElement="Event_CheckDeadLine">
+        <dc:Bounds x="338" y="2072" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="488" y="395" width="85" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0rwqgrr_di" bpmnElement="Activity_ReceiveListOfObjects">
+        <dc:Bounds x="890" y="2050" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1iawhzx_di" bpmnElement="Event_0g8ohx4">
+        <dc:Bounds x="362" y="2712" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="337" y="2755" width="87" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataStoreReference_1escp5n_di" bpmnElement="DataStoreReference_DataFundGKO">
+        <dc:Bounds x="695" y="2705" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="685" y="2770" width="70" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1eh5y8h_di" bpmnElement="Activity_InformDecision">
+        <dc:Bounds x="588" y="2050" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_0ork0mb_di" bpmnElement="Gateway_Info">
+        <dc:Bounds x="613" y="2325" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="747" y="267" width="86" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataObjectReference_0c94gfv_di" bpmnElement="DataObjectReference_DecisionData">
+        <dc:Bounds x="451" y="2245" width="36" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="356" y="2256" width="87" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_187tgo6_di" bpmnElement="Activity_InfoMassMedia">
+        <dc:Bounds x="586" y="2400" width="104" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1wq7zx7_di" bpmnElement="Activity_InfoStand">
+        <dc:Bounds x="397" y="2400" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_13ssjp7_di" bpmnElement="Activity_ApproveDecision">
+        <dc:Bounds x="422" y="2050" width="94" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_00lij7w_di" bpmnElement="Event_00lij7w">
+        <dc:Bounds x="222" y="2072" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="252" y="2053" width="56" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_02w2184_di" bpmnElement="Activity_InfoNet">
+        <dc:Bounds x="759" y="2400" width="101" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1uk936m_di" bpmnElement="Activity_10w2ybh">
+        <dc:Bounds x="520" y="2687" width="100" height="85" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0al2xk1_di" bpmnElement="Event_1ftybez">
+        <dc:Bounds x="1072" y="2102" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1027" y="2147" width="86" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0wonh6g_di" bpmnElement="TextAnnotation_0wonh6g">
+        <dc:Bounds x="770" y="1980" width="268" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0jpj5px_di" bpmnElement="TextAnnotation_ApproveDecision">
+        <dc:Bounds x="404" y="1975" width="129" height="39" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_022sr7x_di" bpmnElement="TextAnnotation_022sr7x">
+        <dc:Bounds x="290" y="2142" width="132" height="56" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1fe1bq2_di" bpmnElement="TextAnnotation_InformDecision">
+        <dc:Bounds x="540" y="1975" width="196" height="40" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0g7kj4c_di" bpmnElement="TextAnnotation_0g7kj4c">
+        <dc:Bounds x="744" y="2513" width="169" height="69" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_161p7eg_di" bpmnElement="TextAnnotation_161p7eg">
+        <dc:Bounds x="541" y="2513" width="194" height="69" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0vup24m_di" bpmnElement="TextAnnotation_0vup24m">
+        <dc:Bounds x="361" y="2513" width="172" height="69" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_17zui3c_di" bpmnElement="TextAnnotation_17zui3c">
+        <dc:Bounds x="200" y="1975" width="180" height="30" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0fzzq5c_di" bpmnElement="Event_1jrauy3">
+        <dc:Bounds x="552" y="2802" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="446" y="2787" width="87" height="66" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1gm6q29_di" bpmnElement="Activity_SendListOfObjects">
+        <dc:Bounds x="679" y="2980" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="DataObjectReference_0pbn9yq_di" bpmnElement="DataObjectReference_0pbn9yq">
+        <dc:Bounds x="952" y="2955" width="36" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="992" y="2960" width="75" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0iwikzr_di" bpmnElement="Event_0ald4gn">
+        <dc:Bounds x="552" y="3002" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="536" y="3052" width="88" height="80" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1axi5yx_di" bpmnElement="Event_1bxwmcc">
+        <dc:Bounds x="282" y="3542" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="266" y="3590" width="87" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1y08o34_di" bpmnElement="Activity_1b3wifj">
+        <dc:Bounds x="379" y="3520" width="100" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1eooae3_di" bpmnElement="Activity_1gysjaw" bioc:stroke="black" bioc:fill="white">
+        <dc:Bounds x="648" y="3520" width="101" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1kyuj3h_di" bpmnElement="Gateway_1miogrp">
+        <dc:Bounds x="674" y="3635" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1lqohl0_di" bpmnElement="Activity_0ukc3rq">
+        <dc:Bounds x="580" y="3720" width="238" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0tegbw9_di" bpmnElement="Activity_0cqd8ca">
+        <dc:Bounds x="830" y="3720" width="240" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0mf72mz_di" bpmnElement="Activity_1gn0anm">
+        <dc:Bounds x="312" y="3720" width="233" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_01jkcpq_di" bpmnElement="Event_DecisionDone">
+        <dc:Bounds x="1072" y="2042" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1037" y="1990" width="85" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1hzanq3_di" bpmnElement="Association_1hzanq3">
+        <di:waypoint x="570" y="2687" />
+        <di:waypoint x="570" y="2670" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_00r5dju_di" bpmnElement="Association_00r5dju">
+        <di:waypoint x="728" y="2980" />
+        <di:waypoint x="728" y="2944" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0bt9ggs_di" bpmnElement="Association_0bt9ggs">
+        <di:waypoint x="699" y="3520" />
+        <di:waypoint x="699" y="3494" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_18ni3dg_di" bpmnElement="Event_InfoDuration">
+        <dc:Bounds x="670" y="2032" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="708" y="2036" width="84" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0mt7z64_di" bpmnElement="Association_0mt7z64">
+        <di:waypoint x="904" y="2050" />
+        <di:waypoint x="904" y="2020" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1xxrye7_di" bpmnElement="Association_1xxrye7">
+        <di:waypoint x="356" y="2108" />
+        <di:waypoint x="356" y="2142" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0d9i988_di" bpmnElement="Association_0d9i988">
+        <di:waypoint x="638" y="2050" />
+        <di:waypoint x="638" y="2015" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_13gkpn1_di" bpmnElement="Association_13gkpn1">
+        <di:waypoint x="637" y="2480" />
+        <di:waypoint x="638" y="2513" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_02oilpd_di" bpmnElement="Association_02oilpd">
+        <di:waypoint x="447" y="2480" />
+        <di:waypoint x="447" y="2513" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_18hekxl_di" bpmnElement="Association_18hekxl">
+        <di:waypoint x="469" y="2050" />
+        <di:waypoint x="469" y="2014" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_19xa3fo_di" bpmnElement="Association_19xa3fo">
+        <di:waypoint x="240" y="2072" />
+        <di:waypoint x="240" y="2010" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0g3myq8_di" bpmnElement="Association_0g3myq8">
+        <di:waypoint x="809" y="2480" />
+        <di:waypoint x="809" y="2513" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_1labpre_di" bpmnElement="Event_0gshr9k">
+        <dc:Bounds x="740" y="2962" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="775" y="2963" width="85" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1g8merf_di" bpmnElement="Event_InfoDecisionLocals">
+        <dc:Bounds x="461" y="3502" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="497" y="3513" width="85" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_0n7qor8_di" bpmnElement="Participant_GKO" isHorizontal="true">
+        <dc:Bounds x="136" y="80" width="994" height="280" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_19ruwtk_di" bpmnElement="Flow_19ruwtk">
+        <di:waypoint x="275" y="158" />
+        <di:waypoint x="275" y="195" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0cp5vbm_di" bpmnElement="Flow_0cp5vbm">
+        <di:waypoint x="1000" y="246" />
+        <di:waypoint x="1062" y="246" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0z5clgc_di" bpmnElement="Flow_0z5clgc">
+        <di:waypoint x="388" y="246" />
+        <di:waypoint x="480" y="246" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1qsojd0_di" bpmnElement="Flow_1qsojd0">
+        <di:waypoint x="748" y="246" />
+        <di:waypoint x="810" y="246" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_05r7evf_di" bpmnElement="Event_05r7evf">
+        <dc:Bounds x="257" y="122" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="237" y="86" width="85" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0n6ofvd_di" bpmnElement="Event_1pj5ntx">
+        <dc:Bounds x="1062" y="228" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_02exz6m_di" bpmnElement="Activity_1qyvxok">
+        <dc:Bounds x="180" y="195" width="190" height="95" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1a8xyxv_di" bpmnElement="Activity_Calc">
+        <dc:Bounds x="480" y="195" width="250" height="101" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_166kkjy_di" bpmnElement="Activity_Result">
+        <dc:Bounds x="810" y="195" width="190" height="101" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_099ia9d_di" bpmnElement="Event_17o29df">
+        <dc:Bounds x="352" y="228" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="377" y="190" width="86" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_158pbu0_di" bpmnElement="Event_14xwckt">
+        <dc:Bounds x="712" y="228" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_18wly4e_di" bpmnElement="Participant_18wly4e" isHorizontal="true">
+        <dc:Bounds x="136" y="1180" width="1104" height="630" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_00gcme8_di" bpmnElement="Lane_00gcme8" isHorizontal="true">
+        <dc:Bounds x="166" y="1490" width="1074" height="320" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1uoxrlm_di" bpmnElement="Lane_1uoxrlm" isHorizontal="true">
+        <dc:Bounds x="166" y="1180" width="1074" height="170" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Lane_1n5qfoe_di" bpmnElement="Lane_1n5qfoe" isHorizontal="true">
+        <dc:Bounds x="166" y="1350" width="1074" height="140" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_0ya9d2n_di" bpmnElement="Flow_0ya9d2n">
+        <di:waypoint x="400" y="1642" />
+        <di:waypoint x="400" y="1270" />
+        <di:waypoint x="482" y="1270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0l50x63_di" bpmnElement="Flow_0l50x63">
+        <di:waypoint x="518" y="1270" />
+        <di:waypoint x="577" y="1270" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_10bknkm_di" bpmnElement="Flow_10bknkm">
+        <di:waypoint x="250" y="1418" />
+        <di:waypoint x="250" y="1642" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1k3u9l3_di" bpmnElement="Flow_1k3u9l3">
+        <di:waypoint x="560" y="1642" />
+        <di:waypoint x="560" y="1590" />
+        <di:waypoint x="755" y="1590" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0oan00f_di" bpmnElement="Flow_0oan00f">
+        <di:waypoint x="780" y="1642" />
+        <di:waypoint x="780" y="1615" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0o08r1z_di" bpmnElement="Flow_0o08r1z">
+        <di:waypoint x="1000" y="1642" />
+        <di:waypoint x="1000" y="1590" />
+        <di:waypoint x="805" y="1590" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_12k2xj8_di" bpmnElement="Flow_12k2xj8">
+        <di:waypoint x="780" y="1565" />
+        <di:waypoint x="780" y="1538" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_15f4cjj_di" bpmnElement="Activity_13to5gl">
+        <dc:Bounds x="577" y="1230" width="145" height="80" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1g5opfk_di" bpmnElement="Event_1vkb1nu">
+        <dc:Bounds x="482" y="1252" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_01q3e00_di" bpmnElement="Event_1qwfrzu">
+        <dc:Bounds x="232" y="1382" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="277" y="1377" width="85" height="66" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_14ldx4s_di" bpmnElement="Event_0y8e2dk">
+        <dc:Bounds x="232" y="1642" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="277" y="1627" width="85" height="66" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1qwl4ag_di" bpmnElement="Event_0bhn0j7">
+        <dc:Bounds x="382" y="1642" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="417" y="1640" width="85" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1ui42a6_di" bpmnElement="Event_1brzonb">
+        <dc:Bounds x="542" y="1642" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="585.5" y="1640" width="85" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_05nuzt5_di" bpmnElement="Gateway_0ep1ie9">
+        <dc:Bounds x="755" y="1565" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_04bfhbe_di" bpmnElement="Event_16r20yy">
+        <dc:Bounds x="762" y="1502" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0fmogv8_di" bpmnElement="Activity_0k4727a">
+        <dc:Bounds x="690" y="1660" width="180" height="120" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_00cr169_di" bpmnElement="Activity_0g37udj">
+        <dc:Bounds x="920" y="1660" width="170" height="119" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_08vb768_di" bpmnElement="Event_191o71w">
+        <dc:Bounds x="762" y="1642" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1ioh1ka_di" bpmnElement="Event_0x6u1s9">
+        <dc:Bounds x="982" y="1642" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_0d7dkvy_di" bpmnElement="Participant_053exmm" isHorizontal="true">
+        <dc:Bounds x="136" y="1840" width="994" height="60" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_0p9ba83_di" bpmnElement="Participant_0p9ba83" isHorizontal="true">
+        <dc:Bounds x="136" y="660" width="994" height="340" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_14glwh9_di" bpmnElement="TextAnnotation_14glwh9">
+        <dc:Bounds x="440" y="671" width="100" height="30" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1jr90xu_di" bpmnElement="Flow_1jr90xu">
+        <di:waypoint x="800" y="840" />
+        <di:waypoint x="860" y="840" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1p4b3tr_di" bpmnElement="Flow_1p4b3tr">
+        <di:waypoint x="645" y="840" />
+        <di:waypoint x="700" y="840" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1c9ad3o_di" bpmnElement="Flow_1c9ad3o">
+        <di:waypoint x="558" y="764" />
+        <di:waypoint x="620" y="764" />
+        <di:waypoint x="620" y="815" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_11wbgze_di" bpmnElement="Flow_11wbgze">
+        <di:waypoint x="558" y="920" />
+        <di:waypoint x="620" y="920" />
+        <di:waypoint x="620" y="865" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_03f0ki5_di" bpmnElement="Flow_03f0ki5">
+        <di:waypoint x="253" y="862" />
+        <di:waypoint x="253" y="825" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_08ebwmq_di" bpmnElement="Flow_08ebwmq">
+        <di:waypoint x="356" y="780" />
+        <di:waypoint x="390" y="780" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_0qdhb9w_di" bpmnElement="Event_02xdw6z">
+        <dc:Bounds x="235" y="862" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1jqn12s_di" bpmnElement="Gateway_0q852gc">
+        <dc:Bounds x="595" y="815" width="50" height="50" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_15901ip_di" bpmnElement="Activity_0t8itco">
+        <dc:Bounds x="700" y="790" width="100" height="90" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_0mie9np_di" bpmnElement="Activity_1co0qjq">
+        <dc:Bounds x="190" y="735" width="148" height="90" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1q1mwhu_di" bpmnElement="Activity_1qq2wj8">
+        <dc:Bounds x="860" y="790" width="100" height="90" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_12lgwe7_di" bpmnElement="TextAnnotation_12lgwe7">
+        <dc:Bounds x="178" y="910" width="160" height="48" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_1suygdn_di" bpmnElement="TextAnnotation_1suygdn">
+        <dc:Bounds x="216" y="671" width="83" height="30" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="TextAnnotation_0efg9h5_di" bpmnElement="TextAnnotation_0efg9h5">
+        <dc:Bounds x="700" y="740" width="100" height="30" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_1ssxkuj_di" bpmnElement="Association_1ssxkuj">
+        <di:waypoint x="255" y="898" />
+        <di:waypoint x="256" y="910" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0k3ci5h_di" bpmnElement="Association_0k3ci5h">
+        <di:waypoint x="266" y="735" />
+        <di:waypoint x="268" y="701" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_1v1y9o4_di" bpmnElement="Association_1v1y9o4">
+        <di:waypoint x="750" y="790" />
+        <di:waypoint x="750" y="770" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_0oxhp2d_di" bpmnElement="Activity_10iqc3v">
+        <dc:Bounds x="390" y="870" width="168" height="100" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_08hjdqv_di" bpmnElement="Activity_0427949">
+        <dc:Bounds x="390" y="727" width="168" height="105" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0b01dzf_di" bpmnElement="Association_0b01dzf">
+        <di:waypoint x="476" y="727" />
+        <di:waypoint x="481" y="701" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_0hhq4hg_di" bpmnElement="Event_1g1g7kg">
+        <dc:Bounds x="320" y="762" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_0lougu7_di" bpmnElement="Participant_0lougu7" isHorizontal="true">
+        <dc:Bounds x="136" y="370" width="994" height="250" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_1yfsytq_di" bpmnElement="Participant_1yfsytq" isHorizontal="true">
+        <dc:Bounds x="136" y="3990" width="994" height="310" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_1d1auby_di" bpmnElement="Participant_1d1auby" isHorizontal="true">
+        <dc:Bounds x="136" y="4340" width="994" height="350" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_0u2l3fs_di" bpmnElement="Participant_0u2l3fs" isHorizontal="true">
+        <dc:Bounds x="136" y="4720" width="994" height="300" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_1qfayh5_di" bpmnElement="Participant_1qfayh5" isHorizontal="true">
+        <dc:Bounds x="136" y="5050" width="994" height="550" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_0r69arg_di" bpmnElement="Participant_0r69arg" isHorizontal="true">
+        <dc:Bounds x="136" y="5650" width="998" height="670" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_13zr3g6_di" bpmnElement="Participant_13zr3g6" isHorizontal="true">
+        <dc:Bounds x="136" y="6380" width="994" height="500" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Participant_0n54ypz_di" bpmnElement="Participant_0n54ypz" isHorizontal="true">
+        <dc:Bounds x="136" y="6940" width="984" height="510" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="DataInputAssociation_0l2rwdu_di" bpmnElement="DataInputAssociation_0l2rwdu" bioc:stroke="rgb(67, 160, 71)" bioc:fill="rgb(200, 230, 201)">
+        <di:waypoint x="970" y="2955" />
+        <di:waypoint x="970" y="2130" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataInputAssociation_19v3ygc_di" bpmnElement="DataInputAssociation_19v3ygc" bioc:stroke="rgb(67, 160, 71)" bioc:fill="rgb(200, 230, 201)">
+        <di:waypoint x="487" y="2270" />
+        <di:waypoint x="810" y="2270" />
+        <di:waypoint x="810" y="2090" />
+        <di:waypoint x="890" y="2090" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_1rfmwtg_di" bpmnElement="DataOutputAssociation_1rfmwtg" bioc:stroke="rgb(67, 160, 71)" bioc:fill="rgb(200, 230, 201)">
+        <di:waypoint x="469" y="2130" />
+        <di:waypoint x="469" y="2245" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_1b8q3fq_di" bpmnElement="DataOutputAssociation_1b8q3fq">
+        <di:waypoint x="620" y="2730" />
+        <di:waypoint x="695" y="2730" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="DataOutputAssociation_1vpsvkb_di" bpmnElement="DataOutputAssociation_1vpsvkb" bioc:stroke="rgb(67, 160, 71)" bioc:fill="rgb(200, 230, 201)">
+        <di:waypoint x="779" y="2990" />
+        <di:waypoint x="952" y="2990" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1d28xoq_di" bpmnElement="Flow_1d28xoq">
+        <di:waypoint x="400" y="1840" />
+        <di:waypoint x="400" y="1678" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1llwmgz_di" bpmnElement="Flow_1llwmgz">
+        <di:waypoint x="400" y="1840" />
+        <di:waypoint x="400" y="1678" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1nn9773_di" bpmnElement="Flow_1nn9773">
+        <di:waypoint x="560" y="1840" />
+        <di:waypoint x="560" y="1678" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="677" y="1800" width="85" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0pozdb7_di" bpmnElement="Flow_0pozdb7">
+        <di:waypoint x="250" y="1678" />
+        <di:waypoint x="250" y="1840" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
