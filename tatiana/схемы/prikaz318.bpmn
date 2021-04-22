@@ -7,8 +7,8 @@
         <camunda:property />
       </camunda:properties>
     </bpmn:extensionElements>
-    <bpmn:participant id="Participant_DeclarationCheck" name="проверка декларации" processRef="Process_DeclarationCheck" />
-    <bpmn:participant id="Participant_DeclarationApprovement" name="рассмотрение декларации" processRef="Process_DeclarationApprovement">
+    <bpmn:participant id="Participant_DeclarationCheck" name="проверка декларации" processRef="DeclarationCheck" />
+    <bpmn:participant id="Participant_DeclarationApprovement" name="рассмотрение декларации" processRef="DeclarationApprovement">
       <bpmn:documentation>&lt;p style="text-align:left;"&gt;&lt;strong&gt; II. Правила рассмотрения декларации &lt;/strong&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;9&lt;/strong&gt;. Днем представления декларации считается день ее&lt;br&gt;поступления в бюджетное учреждение или многофункциональный центр, день,&lt;br&gt;указанный на оттиске календарного почтового штемпеля уведомления о вручении &lt;br&gt;(в случае его направления почтовой связью), либо день ее подачи с использованием&lt;br&gt;информационно-телекоммуникационных сетей общего пользования, в том числе сети "Интернет".&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;10.&lt;/strong&gt; Декларация рассматривается в течение 50&lt;br&gt;рабочих дней со дня представления декларации.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;11.&lt;/strong&gt; В течение срока&lt;br&gt;рассмотрения декларации бюджетное учреждение вправе:&amp;nbsp;&lt;/p&gt;&lt;p&gt;1) использовать информацию, полученную из&lt;br&gt;официальных источников, в том числе в соответствии с частью 7 статьи 12&lt;br&gt;Федерального закона от 3 июля 2016 г. N 237-ФЗ "О государственной&lt;br&gt;кадастровой оценке" (Собрание законодательства Российской Федерации, 2016, N 27, ст. 4170); &lt;br&gt;______________________________________________________________________&lt;br&gt; 7. Федеральные органы исполнительной власти и подведомственные им&lt;br&gt;организации, в частности организации, подведомственные федеральным органам&lt;br&gt;исполнительной власти, осуществляющим функции по выработке государственной&lt;br&gt;политики и нормативно-правовому регулированию в сфере ценообразования и сметного&lt;br&gt;нормирования в сфере градостроительной деятельности, в сфере земельных&lt;br&gt;отношений, государственного мониторинга земель, изучения, использования,&lt;br&gt;воспроизводства и охраны природных ресурсов, органы исполнительной власти&lt;br&gt;субъекта Российской Федерации и органы местного самоуправления, а также&lt;br&gt;подведомственные им организации, организации, осуществляющие управление&lt;br&gt;многоквартирными домами, указанные в &lt;a href="consultantplus://offline/ref=40D3C8F0F7C7AAF5EC612E63C0F9AEA5370C963D1AEFBF64932B39046A05A83DD8A2AAE7D208A790C6080AD256D5108A1E8DBB619B3D0D9AcA24L" target="_self"&gt;&lt;span style="color: blue;"&gt;пунктах 2&lt;/span&gt;&lt;/a&gt; и &lt;a href="consultantplus://offline/ref=40D3C8F0F7C7AAF5EC612E63C0F9AEA5370C963D1AEFBF64932B39046A05A83DD8A2AAE7D208A790C7080AD256D5108A1E8DBB619B3D0D9AcA24L" target="_self"&gt;&lt;span style="color: blue;"&gt;3 части 2 статьи 161&lt;/span&gt;&lt;/a&gt; &lt;br&gt;Жилищного кодекса Российской Федерации (далее - организации,&lt;br&gt;осуществляющие управление многоквартирными домами), ресурсоснабжающие&lt;br&gt;организации и организации, осуществлявшие до 1 января 2013 года государственный&lt;br&gt;технический учет и техническую инвентаризацию объектов недвижимости, обязаны&lt;br&gt;бесплатно предоставить бюджетному учреждению имеющуюся в их распоряжении&lt;br&gt;информацию или уведомить об отсутствии запрошенной информации в течение&lt;br&gt;двадцати рабочих дней со дня получения запроса, указанного в &lt;a href="#P168" target="_self"&gt;&lt;span style="color: blue;"&gt;части 6&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящей статьи.  &lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;______________________________________________________________________&lt;/span&gt;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) использовать общедоступную информацию,&lt;br&gt;содержащуюся на официальных сайтах федеральных органов исполнительной власти и&lt;br&gt;подведомственных им организаций, органов исполнительной власти субъекта&lt;br&gt;Российской Федерации и органов местного самоуправления, а также&lt;br&gt;подведомственных им организаций в информационно-телекоммуникационной сети&lt;br&gt;"Интернет".&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;12.&lt;/strong&gt; Бюджетное учреждение&lt;br&gt;в ходе рассмотрения декларации проверяет информацию, содержащуюся в декларации,&lt;br&gt;путем сопоставления указанной информации с имеющимися в распоряжении бюджетного&lt;br&gt;учреждения сведениями и информацией, полученными в том числе в соответствии с &lt;a href="#Par59" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 11&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящего Порядка.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;Содержащаяся в декларации информация&lt;br&gt;считается подтвержденной бюджетным учреждением в случае ее соответствия&lt;br&gt;сведениям и информации, имеющимся в распоряжении бюджетного учреждения,&lt;br&gt;полученным в том числе в соответствии с &lt;a href="#Par59" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 11&lt;/span&gt;&lt;/a&gt; настоящего Порядка.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;13.&lt;/strong&gt; В случае если в ходе проверки, предусмотренной &lt;a href="#Par62" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 12&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящего Порядка, достоверность информации, содержащейся в декларации,&lt;br&gt;подтверждена, такая информация учитывается бюджетным учреждением, за&lt;br&gt;исключением случая, предусмотренного &lt;a href="#Par65" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 14&lt;/span&gt;&lt;/a&gt; настоящего Порядка.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;14.&lt;/strong&gt; В случае если информация, содержащаяся в декларации, противоречит сведениям, содержащимся в&lt;br&gt;Едином государственном реестре недвижимости, или в ходе проверки,&lt;br&gt;предусмотренной &lt;a href="#Par62" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 12&lt;/span&gt;&lt;/a&gt; настоящего Порядка, достоверность указанной информации не подтверждена, &lt;br&gt;такая информация не учитывается бюджетным учреждением.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;15.&lt;/strong&gt; В случае если по мнению бюджетного&lt;br&gt;учреждения в Едином государственном реестре недвижимости содержится описка,&lt;br&gt;опечатка, грамматическая или арифметическая ошибка либо подобная ошибка,&lt;br&gt;выявленная в ходе рассмотрения декларации, информация о такой ошибке&lt;br&gt;направляется бюджетным учреждением в адрес уполномоченного Правительством&lt;br&gt;Российской Федерации федерального органа исполнительной власти, осуществляющего&lt;br&gt;государственный кадастровый учет, государственную регистрацию прав, ведение Единого&lt;br&gt;государственного реестра недвижимости и предоставление сведений, содержащихся в&lt;br&gt;Едином государственном реестре недвижимости, в течение 10 рабочих дней со дня&lt;br&gt;завершения рассмотрения декларации.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;16. &lt;/strong&gt;В течение 5 рабочих дней со дня&lt;br&gt;завершения рассмотрения декларации бюджетным учреждением в адрес заявителя и&lt;br&gt;представителя заявителя направляется уведомление с указанием учтенной&lt;br&gt;информации, содержащейся в декларации, а также неучтенной информации и причин,&lt;br&gt;по которым она не была учтена.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;17.&lt;/strong&gt; Сведения об объектах недвижимости&lt;br&gt;(адрес (описание местоположения), кадастровый номер), в отношении которых&lt;br&gt;рассмотрены декларации, ежеквартально публикуются бюджетным учреждением на&lt;br&gt;своем официальном сайте в информационно-телекоммуникационной сети "Интернет".&amp;nbsp;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
     </bpmn:participant>
     <bpmn:participant id="Participant_1bowgbd" name="Федеральные органы исполнительной власти и подведомственные им организации, в частности организации, подведомственные федеральным органам исполнительной власти, осуществляющим функции по выработке государственной&#10;политики и нормативно-правовому регулированию в сфере ценообразования и сметного нормирования в сфере градостроительной деятельности, в сфере земельных отношений, государственного мониторинга земель, изучения,&#10;использования, воспроизводства и охраны природных ресурсов, органы исполнительной власти субъекта Российской Федерации и органы местного самоуправления, а также подведомственные им организации, организации,&#10;осуществляющие управление многоквартирными домами, указанные в пунктах 2 и 3 части 2 статьи 161 Жилищного кодекса Российской Федерации (далее - организации, осуществляющие управление многоквартирными домами),&#10;ресурсоснабжающие организации и организации, осуществлявшие до 1 января 2013 года государственныйтехнический учет и техническую инвентаризацию объектов недвижимости." />
@@ -18,7 +18,7 @@
     <bpmn:messageFlow id="Flow_1q1nd4i" name="запрос о характеристиках объекта" sourceRef="Activity_0vfm32z" targetRef="Participant_1bowgbd" />
     <bpmn:messageFlow id="Flow_0tewk70" name="ответ" sourceRef="Participant_1bowgbd" targetRef="Activity_0vfm32z" />
   </bpmn:collaboration>
-  <bpmn:process id="Process_DeclarationCheck" name="проверка декларации" isExecutable="false">
+  <bpmn:process id="DeclarationCheck" name="проверка декларации" isExecutable="false">
     <bpmn:startEvent id="Event_DeclarationIn" name="декларация о характеристиках объекта недвижимости">
       <bpmn:outgoing>Flow_1pf2dhc</bpmn:outgoing>
       <bpmn:messageEventDefinition id="MessageEventDefinition_1yynns3" />
@@ -152,7 +152,7 @@
       <bpmn:messageEventDefinition id="MessageEventDefinition_0ff9pk7" />
     </bpmn:endEvent>
   </bpmn:process>
-  <bpmn:process id="Process_DeclarationApprovement" name="рассмотрение декларации" isExecutable="false">
+  <bpmn:process id="DeclarationApprovement" name="рассмотрение декларации" isExecutable="false">
     <bpmn:userTask id="Activity_0wta31m" name="сопоставление информации о характеристике объекта недвижимости объявленного в декларации со сведениями в ЕГРН и проверка информации ЕГРН на предмет описки, опечатки, грамматической или арифметической ошибки либо подобной ошибки">
       <bpmn:incoming>Flow_187c2sq</bpmn:incoming>
       <bpmn:outgoing>Flow_1enbbjz</bpmn:outgoing>
@@ -293,11 +293,11 @@
       <bpmn:incoming>Flow_0n5io2l</bpmn:incoming>
       <bpmn:outgoing>Flow_0vlz3qg</bpmn:outgoing>
     </bpmn:userTask>
-    <bpmn:endEvent id="Event_1jpp497" name="обнаружены ошибки в сведениях ЕГРН">
+    <bpmn:intermediateThrowEvent id="Event_1jpp497" name="обнаружены ошибки в сведениях ЕГРН">
       <bpmn:documentation>&lt;p&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;&lt;strong&gt; 15.&lt;/strong&gt; В случае если по мнению бюджетного&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;учреждения в Едином государственном реестре недвижимости содержится описка,&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;опечатка, грамматическая или арифметическая ошибка либо подобная ошибка,&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;выявленная в ходе рассмотрения декларации, информация о такой ошибке&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;направляется бюджетным учреждением в адрес уполномоченного Правительством&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;Российской Федерации федерального органа исполнительной власти, осуществляющего&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;государственный кадастровый учет, государственную регистрацию прав, ведение Единого&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;государственного реестра недвижимости и предоставление сведений, содержащихся в&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;Едином государственном реестре недвижимости, в течение 10 рабочих дней со дня&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;завершения рассмотрения декларации.  &lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
       <bpmn:incoming>Flow_1340hsw</bpmn:incoming>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_053wu17" />
-    </bpmn:endEvent>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0abey66" />
+    </bpmn:intermediateThrowEvent>
     <bpmn:textAnnotation id="TextAnnotation_0hu03p5">
       <bpmn:text>каждая характеристика объекта недвижимости рассматривается по отдельности</bpmn:text>
     </bpmn:textAnnotation>
@@ -322,15 +322,14 @@
         <bpmn:flowNodeRef>Gateway_19fw47w</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1mzfxhb</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0iooihf</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Gateway_1bveeur</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1n9z8e5</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0d6aolo</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0qpngti</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_DeclarationApprovement</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1ocyugl</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0k3p10n</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1kbrta8</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_1n9z8e5</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0ljipyd</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_0d6aolo</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_0qpngti</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_1je9th5" name="Орган регистрации прав">
         <bpmn:flowNodeRef>Activity_0uu08ee</bpmn:flowNodeRef>
@@ -436,10 +435,21 @@
       <bpmn:incoming>Flow_0601gj3</bpmn:incoming>
       <bpmn:messageEventDefinition id="MessageEventDefinition_0clpmhm" />
     </bpmn:endEvent>
-    <bpmn:eventBasedGateway id="Gateway_1bveeur" />
-    <bpmn:subProcess id="Activity_DeclarationApprovement" name="рассмотрение декларации">
+    <bpmn:callActivity id="Activity_1n9z8e5" name="проверка декларации" calledElement="DeclarationCheck">
+      <bpmn:incoming>Flow_175t3aa</bpmn:incoming>
+    </bpmn:callActivity>
+    <bpmn:boundaryEvent id="Event_0d6aolo" name="декларация отклонена" attachedToRef="Activity_1n9z8e5">
+      <bpmn:documentation>&lt;p style="text-align:start;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 14px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt; ПОРЯДОК РАССМОТРЕНИЯ ДЕКЛАРАЦИИ О ХАРАКТЕРИСТИКАХ ОБЪЕКТА НЕДВИЖИМОСТИ &lt;/strong&gt;&lt;/span&gt;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:start;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;&lt;strong&gt; 7.&lt;/strong&gt; &lt;br&gt;Декларация не подлежит рассмотрению в&lt;br&gt;соответствии с настоящим Порядком в случае, если: &lt;/span&gt;&lt;/p&gt;&lt;p style="text-align:left;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;1) заявитель, подавший декларацию, не является правообладателем объекта недвижимости,&lt;br&gt;в отношении которого подается декларация; &lt;/span&gt;&lt;/p&gt;&lt;p style="text-align:left;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;2) к декларации не приложены документы, предусмотренные &lt;/span&gt;&lt;a href="#Par37" target="_self"&gt;&lt;span style="color: windowtext;background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;пунктом 2&lt;/span&gt;&lt;/a&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt; настоящего Порядка; &lt;/span&gt;&lt;/p&gt;&lt;p style="text-align:left;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;3) декларация не соответствует &lt;/span&gt;&lt;a href="#Par81" target="_self"&gt;&lt;span style="color: windowtext;background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;форме&lt;/span&gt;&lt;/a&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;, предусмотренной приложением N 2 к настоящему приказу; &lt;/span&gt;&lt;/p&gt;&lt;p style="text-align:left;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;4) декларация не заверена в соответствии с &lt;/span&gt;&lt;a href="#Par41" target="_self"&gt;&lt;span style="color: windowtext;background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;пунктом 3&lt;/span&gt;&lt;/a&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt; настоящего Порядка; &lt;/span&gt;&lt;/p&gt;&lt;p style="text-align:left;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;5) декларация и прилагаемые к ней документы представлены не в соответствии с требованиями, &lt;br&gt;предусмотренными &lt;/span&gt;&lt;a href="#Par44" target="_self"&gt;&lt;span style="color: windowtext;background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;пунктом 4&lt;/span&gt;&lt;/a&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt; настоящего Порядка.  &lt;/span&gt;&lt;/p&gt;</bpmn:documentation>
+      <bpmn:outgoing>Flow_1mgj9hs</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_1h1s9wg" />
+    </bpmn:boundaryEvent>
+    <bpmn:boundaryEvent id="Event_0qpngti" name="декларация принята" attachedToRef="Activity_1n9z8e5">
+      <bpmn:outgoing>Flow_0gukv35</bpmn:outgoing>
+      <bpmn:messageEventDefinition id="MessageEventDefinition_0lubxy0" />
+    </bpmn:boundaryEvent>
+    <bpmn:callActivity id="Activity_DeclarationApprovement" name="рассмотрение декларации" calledElement="DeclarationApprovement">
       <bpmn:incoming>Flow_0gukv35</bpmn:incoming>
-    </bpmn:subProcess>
+    </bpmn:callActivity>
     <bpmn:boundaryEvent id="Event_1ocyugl" name="список учтённой информации в&#10;декларации составлен" attachedToRef="Activity_DeclarationApprovement">
       <bpmn:outgoing>Flow_04q9zsp</bpmn:outgoing>
       <bpmn:messageEventDefinition id="MessageEventDefinition_14dx5uu" />
@@ -454,23 +464,11 @@
       <bpmn:outgoing>Flow_0gtr5cy</bpmn:outgoing>
       <bpmn:messageEventDefinition id="MessageEventDefinition_0p9ieqb" />
     </bpmn:boundaryEvent>
-    <bpmn:subProcess id="Activity_1n9z8e5" name="проверка декларации">
-      <bpmn:incoming>Flow_175t3aa</bpmn:incoming>
-    </bpmn:subProcess>
-    <bpmn:boundaryEvent id="Event_0ljipyd" name="5 рабочих дней" cancelActivity="false" attachedToRef="Activity_1n9z8e5">
+    <bpmn:boundaryEvent id="Event_0ljipyd" name="5 рабочих дней" attachedToRef="Activity_1n9z8e5">
       <bpmn:documentation>&lt;p&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;&lt;strong&gt;8.&lt;/strong&gt; В случае если декларация не подлежит рассмотрению, &lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;бюджетным учреждением в адрес заявителя и представителя заявителя&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;в течение&lt;strong&gt; 5 рабочих дней со дня ее представления направляется уведомление &lt;/strong&gt;о&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;причинах, по которым такая декларация не подлежит рассмотрению, а также&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;приложенные к декларации документы, указание на которые содержится в&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;декларации, в том числе подтверждающие значения (описания) декларируемых&lt;/span&gt;&lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;характеристик. &lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
-      <bpmn:timerEventDefinition id="TimerEventDefinition_0j6dycg">
+      <bpmn:timerEventDefinition id="TimerEventDefinition_1pzhndv">
         <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">5 рабочих дней</bpmn:timeDuration>
       </bpmn:timerEventDefinition>
-    </bpmn:boundaryEvent>
-    <bpmn:boundaryEvent id="Event_0d6aolo" name="декларация отклонена" attachedToRef="Activity_1n9z8e5">
-      <bpmn:documentation>&lt;p style="text-align:start;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 14px;font-family: Arial, sans-serif;"&gt;&lt;strong&gt; ПОРЯДОК РАССМОТРЕНИЯ ДЕКЛАРАЦИИ О ХАРАКТЕРИСТИКАХ ОБЪЕКТА НЕДВИЖИМОСТИ &lt;/strong&gt;&lt;/span&gt;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:start;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;&lt;strong&gt; 7.&lt;/strong&gt; &lt;br&gt;Декларация не подлежит рассмотрению в&lt;br&gt;соответствии с настоящим Порядком в случае, если: &lt;/span&gt;&lt;/p&gt;&lt;p style="text-align:left;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;1) заявитель, подавший декларацию, не является правообладателем объекта недвижимости,&lt;br&gt;в отношении которого подается декларация; &lt;/span&gt;&lt;/p&gt;&lt;p style="text-align:left;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;2) к декларации не приложены документы, предусмотренные &lt;/span&gt;&lt;a href="#Par37" target="_self"&gt;&lt;span style="color: windowtext;background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;пунктом 2&lt;/span&gt;&lt;/a&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt; настоящего Порядка; &lt;/span&gt;&lt;/p&gt;&lt;p style="text-align:left;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;3) декларация не соответствует &lt;/span&gt;&lt;a href="#Par81" target="_self"&gt;&lt;span style="color: windowtext;background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;форме&lt;/span&gt;&lt;/a&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;, предусмотренной приложением N 2 к настоящему приказу; &lt;/span&gt;&lt;/p&gt;&lt;p style="text-align:left;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;4) декларация не заверена в соответствии с &lt;/span&gt;&lt;a href="#Par41" target="_self"&gt;&lt;span style="color: windowtext;background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;пунктом 3&lt;/span&gt;&lt;/a&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt; настоящего Порядка; &lt;/span&gt;&lt;/p&gt;&lt;p style="text-align:left;"&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;5) декларация и прилагаемые к ней документы представлены не в соответствии с требованиями, &lt;br&gt;предусмотренными &lt;/span&gt;&lt;a href="#Par44" target="_self"&gt;&lt;span style="color: windowtext;background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt;пунктом 4&lt;/span&gt;&lt;/a&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-size: 15.4;font-family: Arial, sans-serif;"&gt; настоящего Порядка.  &lt;/span&gt;&lt;/p&gt;</bpmn:documentation>
-      <bpmn:outgoing>Flow_1mgj9hs</bpmn:outgoing>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_1h1s9wg" />
-    </bpmn:boundaryEvent>
-    <bpmn:boundaryEvent id="Event_0qpngti" name="декларация принята" attachedToRef="Activity_1n9z8e5">
-      <bpmn:outgoing>Flow_0gukv35</bpmn:outgoing>
-      <bpmn:messageEventDefinition id="MessageEventDefinition_0lubxy0" />
     </bpmn:boundaryEvent>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_Declaration">
@@ -918,7 +916,7 @@
       <bpmndi:BPMNShape id="Activity_0y2kbpa_di" bpmnElement="Activity_0y2kbpa">
         <dc:Bounds x="1420" y="1905" width="120" height="90" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1pvfher_di" bpmnElement="Event_1jpp497">
+      <bpmndi:BPMNShape id="Event_0oxyf88_di" bpmnElement="Event_1jpp497">
         <dc:Bounds x="1052" y="1492" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="957" y="1490" width="85" height="40" />
@@ -1099,14 +1097,23 @@
           <dc:Bounds x="787" y="590" width="85" height="40" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Gateway_1v8c3kl_di" bpmnElement="Gateway_1bveeur">
-        <dc:Bounds x="995" y="801" width="50" height="50" />
+      <bpmndi:BPMNShape id="Activity_17f7ma8_di" bpmnElement="Activity_1n9z8e5">
+        <dc:Bounds x="323" y="800" width="114" height="107" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_13rbgfd_di" bpmnElement="Activity_DeclarationApprovement">
+      <bpmndi:BPMNShape id="Activity_047ezy8_di" bpmnElement="Activity_DeclarationApprovement">
         <dc:Bounds x="580" y="826" width="352" height="107" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_07q90on_di" bpmnElement="Activity_1n9z8e5">
-        <dc:Bounds x="323" y="800" width="114" height="107" />
+      <bpmndi:BPMNShape id="Event_0d6aolo_di" bpmnElement="Event_0d6aolo">
+        <dc:Bounds x="419" y="812" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="458" y="803" width="60" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_165sspx_di" bpmnElement="Event_0qpngti">
+        <dc:Bounds x="419" y="862" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="460" y="850" width="60" height="27" />
+        </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1wow6im_di" bpmnElement="Event_1ocyugl">
         <dc:Bounds x="862" y="808" width="36" height="36" />
@@ -1126,22 +1133,10 @@
           <dc:Bounds x="560" y="760" width="60" height="53" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0ljipyd_di" bpmnElement="Event_0ljipyd">
+      <bpmndi:BPMNShape id="Event_17c66rr_di" bpmnElement="Event_0ljipyd">
         <dc:Bounds x="392" y="782" width="36" height="36" />
         <bpmndi:BPMNLabel>
           <dc:Bounds x="390" y="763" width="79" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0d6aolo_di" bpmnElement="Event_0d6aolo">
-        <dc:Bounds x="419" y="812" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="458" y="803" width="60" height="27" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_165sspx_di" bpmnElement="Event_0qpngti">
-        <dc:Bounds x="419" y="862" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="460" y="850" width="60" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1q1nd4i_di" bpmnElement="Flow_1q1nd4i">
