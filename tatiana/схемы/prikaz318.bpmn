@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:camunda="http://camunda.org/schema/1.0/bpmn" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:bioc="http://bpmn.io/schema/bpmn/biocolor/1.0" id="Definitions_1w0x48a" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="4.6.0">
-  <bpmn:collaboration id="Collaboration_1of8k8s">
+  <bpmn:collaboration id="Collaboration_Declaration">
     <bpmn:documentation>&lt;p style="text-align:left;"&gt;&lt;strong&gt;   ПОРЯДОК РАССМОТРЕНИЯ ДЕКЛАРАЦИИ О ХАРАКТЕРИСТИКАХ ОБЪЕКТА НЕДВИЖИМОСТИ &lt;/strong&gt;&lt;/p&gt;&lt;p style="text-align:left;"&gt;&lt;strong&gt;  I. Общие положения &lt;/strong&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1. Настоящий Порядок устанавливает правила рассмотрения&lt;br&gt;декларации о характеристиках объекта недвижимости (далее - декларация)&lt;br&gt;бюджетным учреждением, наделенным полномочиями, связанными с определением&lt;br&gt;кадастровой стоимости, созданным субъектом Российской Федерации (далее -&lt;br&gt;бюджетное учреждение).&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2. Бюджетным учреждением&lt;br&gt;рассматривается декларация, поданная правообладателем объекта недвижимости&lt;br&gt;(далее - заявитель), или его представителем, по &lt;a href="#Par81" target="_self"&gt;&lt;span style="color: windowtext;"&gt;форме&lt;/span&gt;&lt;/a&gt;,&lt;br&gt;предусмотренной приложением N 2 к настоящему приказу, с приложением:&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1) документов, указание на которые&lt;br&gt;содержится в декларации, в том числе подтверждающих значения (описания)&lt;br&gt;декларируемых характеристик;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) правоустанавливающих документов,&lt;br&gt;подтверждающих права заявителя на объект недвижимости;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;3) доверенности или иного подтверждающего&lt;br&gt;полномочия представителя заявителя документа, удостоверенных в соответствии с&lt;br&gt;законодательством Российской Федерации.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;3. Рассмотрению подлежит декларация, составленная:&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1) на бумажном носителе, каждый лист&lt;br&gt;которой заверен собственноручной подписью заявителя или его представителя;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) в форме электронного документа,&lt;br&gt;подписанного усиленной квалифицированной электронной подписью заявителя или его&lt;br&gt;представителя.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;4. Декларация,&lt;br&gt;составленная в форме электронного документа, а также электронные документы&lt;br&gt;(электронные образы документов, в том числе доверенностей), прилагаемые к&lt;br&gt;декларации, подлежат рассмотрению в случае их составления в виде файлов в&lt;br&gt;форматах, обеспечивающих просмотр и копирование подписанных электронных&lt;br&gt;документов без использования специальных программных средств.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;5. Бюджетное учреждение обеспечивает&lt;br&gt;принятие и рассмотрение деклараций, предоставленных лично или с использованием&lt;br&gt;информационно-телекоммуникационных сетей общего пользования, в том числе сети&lt;br&gt;"Интернет", а также в случае, если заявителем является физическое&lt;br&gt;лицо, предоставленных почтовым отправлением с уведомлением о вручении.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;6. Бюджетное учреждение также обеспечивает&lt;br&gt;рассмотрение деклараций, поданных в многофункциональные центры предоставления&lt;br&gt;государственных и муниципальных услуг (далее - многофункциональный центр), а&lt;br&gt;также с использованием портала государственных и муниципальных услуг.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;7. Декларация не подлежит рассмотрению в&lt;br&gt;соответствии с настоящим Порядком в случае, если:&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1) заявитель, подавший декларацию, не&lt;br&gt;является правообладателем объекта недвижимости, &lt;br&gt;в отношении которого подается декларация;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) к декларации не приложены документы,&lt;br&gt;предусмотренные &lt;a href="#Par37" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 2&lt;/span&gt;&lt;/a&gt; настоящего Порядка;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;3) декларация не соответствует &lt;a href="#Par81" target="_self"&gt;&lt;span style="color: windowtext;"&gt;форме&lt;/span&gt;&lt;/a&gt;,&lt;br&gt;предусмотренной приложением N 2 к настоящему приказу;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;4) декларация не заверена в соответствии с &lt;a href="#Par41" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 3&lt;/span&gt;&lt;/a&gt; настоящего Порядка;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;5) декларация и прилагаемые к ней документы&lt;br&gt;представлены не в соответствии с требованиями, предусмотренными &lt;a href="#Par44" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 4&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящего Порядка.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;8. В случае если декларация не подлежит рассмотрению, &lt;br&gt;бюджетным учреждением в адрес заявителя и представителя заявителя&lt;br&gt;в течение 5 рабочих дней со дня ее представления направляется уведомление о&lt;br&gt;причинах, по которым такая декларация не подлежит рассмотрению, а также&lt;br&gt;приложенные к декларации документы, указание на которые содержится в&lt;br&gt;декларации, в том числе подтверждающие значения (описания) декларируемых&lt;br&gt;характеристик.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;  II. Правила рассмотрения декларации &lt;/strong&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;9. Днем представления декларации считается день ее&lt;br&gt;поступления в бюджетное учреждение или многофункциональный центр, день,&lt;br&gt;указанный на оттиске календарного почтового штемпеля уведомления о вручении (в&lt;br&gt;случае его направления почтовой связью), либо день ее подачи с использованием&lt;br&gt;информационно-телекоммуникационных сетей общего пользования, в том числе сети&lt;br&gt;"Интернет".&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;10. Декларация рассматривается в течение 50&lt;br&gt;рабочих дней со дня представления декларации.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;11. В течение срока рассмотрения декларации бюджетное учреждение вправе:&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1) использовать информацию, полученную из&lt;br&gt;официальных источников, в том числе в соответствии с частью 7 статьи 12&lt;br&gt;Федерального закона от 3 июля 2016 г. N 237-ФЗ "О государственной&lt;br&gt;кадастровой оценке" (Собрание законодательства Российской Федерации, 2016,&lt;br&gt;N 27, ст. 4170);&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) использовать общедоступную информацию,&lt;br&gt;содержащуюся на официальных сайтах федеральных органов исполнительной власти и&lt;br&gt;подведомственных им организаций, органов исполнительной власти субъекта&lt;br&gt;Российской Федерации и органов местного самоуправления, а также&lt;br&gt;подведомственных им организаций в информационно-телекоммуникационной сети "Интернет".&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;12. Бюджетное учреждение&lt;br&gt;в ходе рассмотрения декларации проверяет информацию, содержащуюся в декларации,&lt;br&gt;путем сопоставления указанной информации с имеющимися в распоряжении бюджетного&lt;br&gt;учреждения сведениями и информацией, полученными в том числе в соответствии с &lt;a href="#Par59" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 11&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящего Порядка.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;Содержащаяся в декларации информация&lt;br&gt;считается подтвержденной бюджетным учреждением в случае ее соответствия&lt;br&gt;сведениям и информации, имеющимся в распоряжении бюджетного учреждения,&lt;br&gt;полученным в том числе в соответствии с &lt;a href="#Par59" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 11&lt;/span&gt;&lt;/a&gt; настоящего Порядка.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;13. В случае если в ходе проверки, предусмотренной &lt;a href="#Par62" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 12&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящего Порядка, достоверность информации, содержащейся в декларации,&lt;br&gt;подтверждена, такая информация учитывается бюджетным учреждением, за&lt;br&gt;исключением случая, предусмотренного &lt;a href="#Par65" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 14&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящего Порядка.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;14. В случае если информация, содержащаяся в декларации, противоречит сведениям, содержащимся в&lt;br&gt;Едином государственном реестре недвижимости, или в ходе проверки,&lt;br&gt;предусмотренной &lt;a href="#Par62" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 12&lt;/span&gt;&lt;/a&gt; настоящего Порядка, достоверность указанной информации не подтверждена, &lt;br&gt;такая информация не учитывается бюджетным учреждением.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;15. В случае если по мнению бюджетного&lt;br&gt;учреждения в Едином государственном реестре недвижимости содержится описка,&lt;br&gt;опечатка, грамматическая или арифметическая ошибка либо подобная ошибка,&lt;br&gt;выявленная в ходе рассмотрения декларации, информация о такой ошибке&lt;br&gt;направляется бюджетным учреждением в адрес уполномоченного Правительством&lt;br&gt;Российской Федерации федерального органа исполнительной власти, осуществляющего&lt;br&gt;государственный кадастровый учет, государственную регистрацию прав, ведение Единого&lt;br&gt;государственного реестра недвижимости и предоставление сведений, содержащихся в&lt;br&gt;Едином государственном реестре недвижимости, в течение 10 рабочих дней со дня&lt;br&gt;завершения рассмотрения декларации.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;16. В течение 5 рабочих дней со дня завершения рассмотрения декларации бюджетным учреждением &lt;br&gt;в адрес заявителя и представителя заявителя направляется уведомление с указанием учтенной&lt;br&gt;информации, содержащейся в декларации, а также неучтенной информации и причин,&lt;br&gt;по которым она не была учтена.&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;17. Сведения об объектах недвижимости (адрес(описание местоположения), кадастровый номер), &lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;в отношении которых рассмотрены декларации, ежеквартально публикуются бюджетным учреждением на своем&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 11pt;font-family: Calibri, sans-serif;"&gt;официальном сайте в информационно-телекоммуникационной сети "Интернет".&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
     <bpmn:extensionElements>
       <camunda:properties>
@@ -12,7 +12,7 @@
       <bpmn:documentation>&lt;p style="text-align:left;"&gt;&lt;strong&gt; II. Правила рассмотрения декларации &lt;/strong&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;9&lt;/strong&gt;. Днем представления декларации считается день ее&lt;br&gt;поступления в бюджетное учреждение или многофункциональный центр, день,&lt;br&gt;указанный на оттиске календарного почтового штемпеля уведомления о вручении &lt;br&gt;(в случае его направления почтовой связью), либо день ее подачи с использованием&lt;br&gt;информационно-телекоммуникационных сетей общего пользования, в том числе сети "Интернет".&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;10.&lt;/strong&gt; Декларация рассматривается в течение 50&lt;br&gt;рабочих дней со дня представления декларации.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;11.&lt;/strong&gt; В течение срока&lt;br&gt;рассмотрения декларации бюджетное учреждение вправе:&amp;nbsp;&lt;/p&gt;&lt;p&gt;1) использовать информацию, полученную из&lt;br&gt;официальных источников, в том числе в соответствии с частью 7 статьи 12&lt;br&gt;Федерального закона от 3 июля 2016 г. N 237-ФЗ "О государственной&lt;br&gt;кадастровой оценке" (Собрание законодательства Российской Федерации, 2016, N 27, ст. 4170); &lt;br&gt;______________________________________________________________________&lt;br&gt; 7. Федеральные органы исполнительной власти и подведомственные им&lt;br&gt;организации, в частности организации, подведомственные федеральным органам&lt;br&gt;исполнительной власти, осуществляющим функции по выработке государственной&lt;br&gt;политики и нормативно-правовому регулированию в сфере ценообразования и сметного&lt;br&gt;нормирования в сфере градостроительной деятельности, в сфере земельных&lt;br&gt;отношений, государственного мониторинга земель, изучения, использования,&lt;br&gt;воспроизводства и охраны природных ресурсов, органы исполнительной власти&lt;br&gt;субъекта Российской Федерации и органы местного самоуправления, а также&lt;br&gt;подведомственные им организации, организации, осуществляющие управление&lt;br&gt;многоквартирными домами, указанные в &lt;a href="consultantplus://offline/ref=40D3C8F0F7C7AAF5EC612E63C0F9AEA5370C963D1AEFBF64932B39046A05A83DD8A2AAE7D208A790C6080AD256D5108A1E8DBB619B3D0D9AcA24L" target="_self"&gt;&lt;span style="color: blue;"&gt;пунктах 2&lt;/span&gt;&lt;/a&gt; и &lt;a href="consultantplus://offline/ref=40D3C8F0F7C7AAF5EC612E63C0F9AEA5370C963D1AEFBF64932B39046A05A83DD8A2AAE7D208A790C7080AD256D5108A1E8DBB619B3D0D9AcA24L" target="_self"&gt;&lt;span style="color: blue;"&gt;3 части 2 статьи 161&lt;/span&gt;&lt;/a&gt; &lt;br&gt;Жилищного кодекса Российской Федерации (далее - организации,&lt;br&gt;осуществляющие управление многоквартирными домами), ресурсоснабжающие&lt;br&gt;организации и организации, осуществлявшие до 1 января 2013 года государственный&lt;br&gt;технический учет и техническую инвентаризацию объектов недвижимости, обязаны&lt;br&gt;бесплатно предоставить бюджетному учреждению имеющуюся в их распоряжении&lt;br&gt;информацию или уведомить об отсутствии запрошенной информации в течение&lt;br&gt;двадцати рабочих дней со дня получения запроса, указанного в &lt;a href="#P168" target="_self"&gt;&lt;span style="color: blue;"&gt;части 6&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящей статьи.  &lt;br&gt;&lt;span style="color: rgb(83,83,83);background-color: rgb(252,252,252);font-family: Arial, sans-serif;"&gt;______________________________________________________________________&lt;/span&gt;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) использовать общедоступную информацию,&lt;br&gt;содержащуюся на официальных сайтах федеральных органов исполнительной власти и&lt;br&gt;подведомственных им организаций, органов исполнительной власти субъекта&lt;br&gt;Российской Федерации и органов местного самоуправления, а также&lt;br&gt;подведомственных им организаций в информационно-телекоммуникационной сети&lt;br&gt;"Интернет".&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;12.&lt;/strong&gt; Бюджетное учреждение&lt;br&gt;в ходе рассмотрения декларации проверяет информацию, содержащуюся в декларации,&lt;br&gt;путем сопоставления указанной информации с имеющимися в распоряжении бюджетного&lt;br&gt;учреждения сведениями и информацией, полученными в том числе в соответствии с &lt;a href="#Par59" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 11&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящего Порядка.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;Содержащаяся в декларации информация&lt;br&gt;считается подтвержденной бюджетным учреждением в случае ее соответствия&lt;br&gt;сведениям и информации, имеющимся в распоряжении бюджетного учреждения,&lt;br&gt;полученным в том числе в соответствии с &lt;a href="#Par59" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 11&lt;/span&gt;&lt;/a&gt; настоящего Порядка.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;13.&lt;/strong&gt; В случае если в ходе проверки, предусмотренной &lt;a href="#Par62" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 12&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящего Порядка, достоверность информации, содержащейся в декларации,&lt;br&gt;подтверждена, такая информация учитывается бюджетным учреждением, за&lt;br&gt;исключением случая, предусмотренного &lt;a href="#Par65" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 14&lt;/span&gt;&lt;/a&gt; настоящего Порядка.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;14.&lt;/strong&gt; В случае если информация, содержащаяся в декларации, противоречит сведениям, содержащимся в&lt;br&gt;Едином государственном реестре недвижимости, или в ходе проверки,&lt;br&gt;предусмотренной &lt;a href="#Par62" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 12&lt;/span&gt;&lt;/a&gt; настоящего Порядка, достоверность указанной информации не подтверждена, &lt;br&gt;такая информация не учитывается бюджетным учреждением.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;15.&lt;/strong&gt; В случае если по мнению бюджетного&lt;br&gt;учреждения в Едином государственном реестре недвижимости содержится описка,&lt;br&gt;опечатка, грамматическая или арифметическая ошибка либо подобная ошибка,&lt;br&gt;выявленная в ходе рассмотрения декларации, информация о такой ошибке&lt;br&gt;направляется бюджетным учреждением в адрес уполномоченного Правительством&lt;br&gt;Российской Федерации федерального органа исполнительной власти, осуществляющего&lt;br&gt;государственный кадастровый учет, государственную регистрацию прав, ведение Единого&lt;br&gt;государственного реестра недвижимости и предоставление сведений, содержащихся в&lt;br&gt;Едином государственном реестре недвижимости, в течение 10 рабочих дней со дня&lt;br&gt;завершения рассмотрения декларации.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;16. &lt;/strong&gt;В течение 5 рабочих дней со дня&lt;br&gt;завершения рассмотрения декларации бюджетным учреждением в адрес заявителя и&lt;br&gt;представителя заявителя направляется уведомление с указанием учтенной&lt;br&gt;информации, содержащейся в декларации, а также неучтенной информации и причин,&lt;br&gt;по которым она не была учтена.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;&lt;strong&gt;17.&lt;/strong&gt; Сведения об объектах недвижимости&lt;br&gt;(адрес (описание местоположения), кадастровый номер), в отношении которых&lt;br&gt;рассмотрены декларации, ежеквартально публикуются бюджетным учреждением на&lt;br&gt;своем официальном сайте в информационно-телекоммуникационной сети "Интернет".&amp;nbsp;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
     </bpmn:participant>
     <bpmn:participant id="Participant_1bowgbd" name="Федеральные органы исполнительной власти и подведомственные им организации, в частности организации, подведомственные федеральным органам исполнительной власти, осуществляющим функции по выработке государственной&#10;политики и нормативно-правовому регулированию в сфере ценообразования и сметного нормирования в сфере градостроительной деятельности, в сфере земельных отношений, государственного мониторинга земель, изучения,&#10;использования, воспроизводства и охраны природных ресурсов, органы исполнительной власти субъекта Российской Федерации и органы местного самоуправления, а также подведомственные им организации, организации,&#10;осуществляющие управление многоквартирными домами, указанные в пунктах 2 и 3 части 2 статьи 161 Жилищного кодекса Российской Федерации (далее - организации, осуществляющие управление многоквартирными домами),&#10;ресурсоснабжающие организации и организации, осуществлявшие до 1 января 2013 года государственныйтехнический учет и техническую инвентаризацию объектов недвижимости." />
-    <bpmn:participant id="Participant_0lqp9s9" name="Сбор информации об ОН от правообладателей, или их представителей" processRef="Process_1g92t8q">
+    <bpmn:participant id="Participant_0lqp9s9" name="Сбор информации об ОН от правообладателей, или их представителей" processRef="Process_Declaration">
       <bpmn:documentation />
     </bpmn:participant>
     <bpmn:messageFlow id="Flow_1q1nd4i" name="запрос о характеристиках объекта" sourceRef="Activity_0vfm32z" targetRef="Participant_1bowgbd" />
@@ -303,7 +303,7 @@
     </bpmn:textAnnotation>
     <bpmn:association id="Association_0u5jhya" sourceRef="Gateway_0f8gg83" targetRef="TextAnnotation_0hu03p5" />
   </bpmn:process>
-  <bpmn:process id="Process_1g92t8q" name="Сбор информации об ОН от правообладателей, или их представителей" isExecutable="false">
+  <bpmn:process id="Process_Declaration" name="Сбор информации об ОН от правообладателей, или их представителей" isExecutable="false">
     <bpmn:documentation>&lt;p style="text-align:center;"&gt;&lt;strong&gt;ПОРЯДОК РАССМОТРЕНИЯ ДЕКЛАРАЦИИ О ХАРАКТЕРИСТИКАХ ОБЪЕКТА НЕДВИЖИМОСТИ &lt;/strong&gt;&lt;/p&gt;&lt;p style="text-align:center;"&gt;&lt;strong&gt;I. Общие положения &lt;/strong&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1. Настоящий Порядок устанавливает правила рассмотрения&lt;br&gt;декларации о характеристиках объекта недвижимости (далее - декларация)&lt;br&gt;бюджетным учреждением, наделенным полномочиями, связанными с определением&lt;br&gt;кадастровой стоимости, созданным субъектом Российской Федерации (далее -&lt;br&gt;бюджетное учреждение).&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2. Бюджетным учреждением&lt;br&gt;рассматривается декларация, поданная правообладателем объекта недвижимости&lt;br&gt;(далее - заявитель), или его представителем, по &lt;a href="#Par81" target="_self"&gt;&lt;span style="color: windowtext;"&gt;форме&lt;/span&gt;&lt;/a&gt;,&lt;br&gt;предусмотренной приложением N 2 к настоящему приказу, с приложением:&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1) документов, указание на которые&lt;br&gt;содержится в декларации, в том числе подтверждающих значения (описания)&lt;br&gt;декларируемых характеристик;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) правоустанавливающих документов,&lt;br&gt;подтверждающих права заявителя на объект недвижимости;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;3) доверенности или иного подтверждающего&lt;br&gt;полномочия представителя заявителя документа, удостоверенных в соответствии с&lt;br&gt;законодательством Российской Федерации.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;3. Рассмотрению подлежит&lt;br&gt;декларация, составленная:&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1) на бумажном носителе, каждый лист&lt;br&gt;которой заверен собственноручной подписью заявителя или его представителя;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) в форме электронного документа,&lt;br&gt;подписанного усиленной квалифицированной электронной подписью заявителя или его&lt;br&gt;представителя.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;4. Декларация,&lt;br&gt;составленная в форме электронного документа, а также электронные документы&lt;br&gt;(электронные образы документов, в том числе доверенностей), прилагаемые к&lt;br&gt;декларации, подлежат рассмотрению в случае их составления в виде файлов в&lt;br&gt;форматах, обеспечивающих просмотр и копирование подписанных электронных&lt;br&gt;документов без использования специальных программных средств.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;5. Бюджетное учреждение обеспечивает&lt;br&gt;принятие и рассмотрение деклараций, предоставленных лично или с использованием&lt;br&gt;информационно-телекоммуникационных сетей общего пользования, в том числе сети&lt;br&gt;"Интернет", а также в случае, если заявителем является физическое&lt;br&gt;лицо, предоставленных почтовым отправлением с уведомлением о вручении.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;6. Бюджетное учреждение также обеспечивает&lt;br&gt;рассмотрение деклараций, поданных в многофункциональные центры предоставления&lt;br&gt;государственных и муниципальных услуг (далее - многофункциональный центр), а&lt;br&gt;также с использованием портала государственных и муниципальных услуг.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;7. Декларация не подлежит рассмотрению в&lt;br&gt;соответствии с настоящим Порядком в случае, если:&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1) заявитель, подавший декларацию, не&lt;br&gt;является правообладателем объекта недвижимости, в отношении которого подается&lt;br&gt;декларация;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) к декларации не приложены документы,&lt;br&gt;предусмотренные &lt;a href="#Par37" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 2&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящего Порядка;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;3) декларация не соответствует &lt;a href="#Par81" target="_self"&gt;&lt;span style="color: windowtext;"&gt;форме&lt;/span&gt;&lt;/a&gt;,&lt;br&gt;предусмотренной приложением N 2 к настоящему приказу;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;4) декларация не заверена в соответствии с &lt;a href="#Par41" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 3&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящего Порядка;&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;5) декларация и прилагаемые к ней документы&lt;br&gt;представлены не в соответствии с требованиями, предусмотренными &lt;a href="#Par44" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 4&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящего Порядка.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;8. В случае если декларация не подлежит&lt;br&gt;рассмотрению, бюджетным учреждением в адрес заявителя и представителя заявителя&lt;br&gt;в течение 5 рабочих дней со дня ее представления направляется уведомление о&lt;br&gt;причинах, по которым такая декларация не подлежит рассмотрению, а также&lt;br&gt;приложенные к декларации документы, указание на которые содержится в&lt;br&gt;декларации, в том числе подтверждающие значения (описания) декларируемых&lt;br&gt;характеристик.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:center;"&gt;&lt;strong&gt;II. Правила рассмотрения декларации &lt;/strong&gt;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;9. Днем представления декларации считается день ее&lt;br&gt;поступления в бюджетное учреждение или многофункциональный центр, день,&lt;br&gt;указанный на оттиске календарного почтового штемпеля уведомления о вручении (в&lt;br&gt;случае его направления почтовой связью), либо день ее подачи с использованием&lt;br&gt;информационно-телекоммуникационных сетей общего пользования, в том числе сети&lt;br&gt;"Интернет".&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;10. Декларация рассматривается в течение 50&lt;br&gt;рабочих дней со дня представления декларации.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;11. В течение срока&lt;br&gt;рассмотрения декларации бюджетное учреждение вправе:&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;1) использовать информацию, полученную из&lt;br&gt;официальных источников, в том числе в соответствии с частью 7 статьи 12&lt;br&gt;Федерального закона от 3 июля 2016 г. N 237-ФЗ "О государственной&lt;br&gt;кадастровой оценке" (Собрание законодательства Российской Федерации, 2016,&lt;br&gt;N 27, ст. 4170);&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;2) использовать общедоступную информацию,&lt;br&gt;содержащуюся на официальных сайтах федеральных органов исполнительной власти и&lt;br&gt;подведомственных им организаций, органов исполнительной власти субъекта&lt;br&gt;Российской Федерации и органов местного самоуправления, а также&lt;br&gt;подведомственных им организаций в информационно-телекоммуникационной сети&lt;br&gt;"Интернет".&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;12. Бюджетное учреждение&lt;br&gt;в ходе рассмотрения декларации проверяет информацию, содержащуюся в декларации,&lt;br&gt;путем сопоставления указанной информации с имеющимися в распоряжении бюджетного&lt;br&gt;учреждения сведениями и информацией, полученными в том числе в соответствии с &lt;a href="#Par59" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 11&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящего Порядка.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;Содержащаяся в декларации информация&lt;br&gt;считается подтвержденной бюджетным учреждением в случае ее соответствия&lt;br&gt;сведениям и информации, имеющимся в распоряжении бюджетного учреждения,&lt;br&gt;полученным в том числе в соответствии с &lt;a href="#Par59" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 11&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящего Порядка.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;13. В случае если в ходе проверки,&lt;br&gt;предусмотренной &lt;a href="#Par62" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 12&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящего Порядка, достоверность информации, содержащейся в декларации,&lt;br&gt;подтверждена, такая информация учитывается бюджетным учреждением, за&lt;br&gt;исключением случая, предусмотренного &lt;a href="#Par65" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 14&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящего Порядка.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;14. В случае если&lt;br&gt;информация, содержащаяся в декларации, противоречит сведениям, содержащимся в&lt;br&gt;Едином государственном реестре недвижимости, или в ходе проверки,&lt;br&gt;предусмотренной &lt;a href="#Par62" target="_self"&gt;&lt;span style="color: windowtext;"&gt;пунктом 12&lt;/span&gt;&lt;/a&gt;&lt;br&gt;настоящего Порядка, достоверность указанной информации не подтверждена, такая&lt;br&gt;информация не учитывается бюджетным учреждением.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;15. В случае если по мнению бюджетного&lt;br&gt;учреждения в Едином государственном реестре недвижимости содержится описка,&lt;br&gt;опечатка, грамматическая или арифметическая ошибка либо подобная ошибка,&lt;br&gt;выявленная в ходе рассмотрения декларации, информация о такой ошибке&lt;br&gt;направляется бюджетным учреждением в адрес уполномоченного Правительством&lt;br&gt;Российской Федерации федерального органа исполнительной власти, осуществляющего&lt;br&gt;государственный кадастровый учет, государственную регистрацию прав, ведение Единого&lt;br&gt;государственного реестра недвижимости и предоставление сведений, содержащихся в&lt;br&gt;Едином государственном реестре недвижимости, в течение 10 рабочих дней со дня&lt;br&gt;завершения рассмотрения декларации.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;16. В течение 5 рабочих дней со дня&lt;br&gt;завершения рассмотрения декларации бюджетным учреждением в адрес заявителя и&lt;br&gt;представителя заявителя направляется уведомление с указанием учтенной&lt;br&gt;информации, содержащейся в декларации, а также неучтенной информации и причин,&lt;br&gt;по которым она не была учтена.&amp;nbsp;&lt;/p&gt;&lt;p style="text-align:justify;"&gt;17. Сведения об объектах недвижимости&lt;br&gt;(адрес (описание местоположения), кадастровый номер), в отношении которых&lt;br&gt;рассмотрены декларации, ежеквартально публикуются бюджетным учреждением на&lt;br&gt;своем официальном сайте в информационно-телекоммуникационной сети&lt;br&gt;"Интернет".&amp;nbsp;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
     <bpmn:laneSet id="LaneSet_10sb6t2">
       <bpmn:lane id="Lane_0fx7ckf" name="правообладатель объекта недвижимости, или его представитель">
@@ -472,7 +472,7 @@
     </bpmn:boundaryEvent>
   </bpmn:process>
   <bpmndi:BPMNDiagram id="BPMNDiagram_Declaration">
-    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_1of8k8s">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="Collaboration_Declaration">
       <bpmndi:BPMNShape id="Participant_0b4fd1y_di" bpmnElement="Participant_DeclarationCheck" isHorizontal="true">
         <dc:Bounds x="160" y="1030" width="1400" height="420" />
       </bpmndi:BPMNShape>
@@ -624,18 +624,6 @@
           <dc:Bounds x="217" y="1043" width="85" height="53" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0v9gdbr_di" bpmnElement="Event_DeclarationAcceptedd">
-        <dc:Bounds x="1492" y="1232" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1480" y="1276" width="60" height="27" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0n7yy4u_di" bpmnElement="Event_DeclarationRejected">
-        <dc:Bounds x="1492" y="1072" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1480" y="1115" width="60" height="27" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_02tfno1_di" bpmnElement="Activity_02tfno1">
         <dc:Bounds x="1321" y="1050" width="138" height="80" />
       </bpmndi:BPMNShape>
@@ -702,9 +690,50 @@
       <bpmndi:BPMNShape id="Gateway_1mgtcsd_di" bpmnElement="Gateway_1nn5ry4">
         <dc:Bounds x="1175" y="1225" width="50" height="50" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0n7yy4u_di" bpmnElement="Event_DeclarationRejected">
+        <dc:Bounds x="1492" y="1072" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1480" y="1115" width="60" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0v9gdbr_di" bpmnElement="Event_DeclarationAcceptedd">
+        <dc:Bounds x="1492" y="1232" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1480" y="1276" width="60" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Participant_0xkvugg_di" bpmnElement="Participant_DeclarationApprovement" isHorizontal="true">
         <dc:Bounds x="160" y="1480" width="1400" height="710" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1mj4xrc_di" bpmnElement="Flow_1mj4xrc" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="1275" y="1760" />
+        <di:waypoint x="1365" y="1760" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1vklmdb_di" bpmnElement="Flow_1vklmdb" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="1250" y="1735" />
+        <di:waypoint x="1250" y="1528" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1sbk7yn_di" bpmnElement="Flow_1sbk7yn" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="1250" y="1905" />
+        <di:waypoint x="1250" y="1785" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0x5h341_di" bpmnElement="Flow_0x5h341">
+        <di:waypoint x="1390" y="1735" />
+        <di:waypoint x="1390" y="1640" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1iylaiu_di" bpmnElement="Flow_1iylaiu">
+        <di:waypoint x="1390" y="1560" />
+        <di:waypoint x="1390" y="1528" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_17k54y0_di" bpmnElement="Flow_17k54y0">
+        <di:waypoint x="230" y="1720" />
+        <di:waypoint x="230" y="1890" />
+        <di:waypoint x="315" y="1890" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_187c2sq_di" bpmnElement="Flow_187c2sq">
+        <di:waypoint x="255" y="1695" />
+        <di:waypoint x="670" y="1695" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_1enbbjz_di" bpmnElement="Flow_1enbbjz">
         <di:waypoint x="990" y="1695" />
         <di:waypoint x="1140" y="1695" />
@@ -806,35 +835,6 @@
           <dc:Bounds x="1137" y="2003" width="86" height="53" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_187c2sq_di" bpmnElement="Flow_187c2sq">
-        <di:waypoint x="255" y="1695" />
-        <di:waypoint x="670" y="1695" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_17k54y0_di" bpmnElement="Flow_17k54y0">
-        <di:waypoint x="230" y="1720" />
-        <di:waypoint x="230" y="1890" />
-        <di:waypoint x="315" y="1890" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1iylaiu_di" bpmnElement="Flow_1iylaiu">
-        <di:waypoint x="1390" y="1560" />
-        <di:waypoint x="1390" y="1528" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0x5h341_di" bpmnElement="Flow_0x5h341">
-        <di:waypoint x="1390" y="1735" />
-        <di:waypoint x="1390" y="1640" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1sbk7yn_di" bpmnElement="Flow_1sbk7yn" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <di:waypoint x="1250" y="1905" />
-        <di:waypoint x="1250" y="1785" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1vklmdb_di" bpmnElement="Flow_1vklmdb" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <di:waypoint x="1250" y="1735" />
-        <di:waypoint x="1250" y="1528" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1mj4xrc_di" bpmnElement="Flow_1mj4xrc" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <di:waypoint x="1275" y="1760" />
-        <di:waypoint x="1365" y="1760" />
-      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Activity_18r06uf_di" bpmnElement="Activity_0wta31m">
         <dc:Bounds x="670" y="1634" width="320" height="121" />
       </bpmndi:BPMNShape>
@@ -864,9 +864,6 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0p1bxh6_di" bpmnElement="Activity_0vfm32z">
         <dc:Bounds x="410" y="1991" width="220" height="99" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="TextAnnotation_0hu03p5_di" bpmnElement="TextAnnotation_0hu03p5">
-        <dc:Bounds x="230" y="1910" width="109.99201509872242" height="109.17537746806039" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_1bmmm42_di" bpmnElement="Activity_1ug8f2b">
         <dc:Bounds x="410" y="1837" width="220" height="106" />
@@ -922,15 +919,8 @@
           <dc:Bounds x="957" y="1490" width="85" height="40" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Association_0u5jhya_di" bpmnElement="Association_0u5jhya">
-        <di:waypoint x="327" y="1902" />
-        <di:waypoint x="309" y="1910" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="Event_1c5u45e_di" bpmnElement="Event_1i1whc1">
-        <dc:Bounds x="942" y="1616" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="867" y="1586" width="85" height="27" />
-        </bpmndi:BPMNLabel>
+      <bpmndi:BPMNShape id="TextAnnotation_0hu03p5_di" bpmnElement="TextAnnotation_0hu03p5">
+        <dc:Bounds x="230" y="1910" width="109.99201509872242" height="109.17537746806039" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_00w3754_di" bpmnElement="Event_06w5p6e">
         <dc:Bounds x="596" y="1973" width="36" height="36" />
@@ -938,6 +928,16 @@
           <dc:Bounds x="511" y="1974" width="85" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1c5u45e_di" bpmnElement="Event_1i1whc1">
+        <dc:Bounds x="942" y="1616" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="867" y="1586" width="85" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0u5jhya_di" bpmnElement="Association_0u5jhya">
+        <di:waypoint x="327" y="1902" />
+        <di:waypoint x="309" y="1910" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Participant_1e2zj2i_di" bpmnElement="Participant_1bowgbd" isHorizontal="true">
         <dc:Bounds x="160" y="2260" width="1400" height="110" />
       </bpmndi:BPMNShape>
@@ -953,6 +953,37 @@
       <bpmndi:BPMNShape id="Lane_0fx7ckf_di" bpmnElement="Lane_0fx7ckf" isHorizontal="true">
         <dc:Bounds x="190" y="270" width="940" height="240" />
       </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1pk0e53_di" bpmnElement="Flow_1pk0e53">
+        <di:waypoint x="630" y="542" />
+        <di:waypoint x="630" y="468" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_15f48et_di" bpmnElement="Flow_15f48et">
+        <di:waypoint x="905" y="730" />
+        <di:waypoint x="995" y="730" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0601gj3_di" bpmnElement="Flow_0601gj3">
+        <di:waypoint x="880" y="705" />
+        <di:waypoint x="880" y="578" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0tuqpaq_di" bpmnElement="Flow_0tuqpaq">
+        <di:waypoint x="865" y="180" />
+        <di:waypoint x="932" y="180" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_09350dm_di" bpmnElement="Flow_09350dm">
+        <di:waypoint x="1020" y="705" />
+        <di:waypoint x="1020" y="680" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_012vw2k_di" bpmnElement="Flow_012vw2k">
+        <di:waypoint x="962" y="560" />
+        <di:waypoint x="930" y="560" />
+        <di:waypoint x="930" y="730" />
+        <di:waypoint x="995" y="730" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0q6p3q5_di" bpmnElement="Flow_0q6p3q5">
+        <di:waypoint x="1020" y="600" />
+        <di:waypoint x="1020" y="560" />
+        <di:waypoint x="998" y="560" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_13hit40_di" bpmnElement="Flow_13hit40">
         <di:waypoint x="770" y="542" />
         <di:waypoint x="770" y="220" />
@@ -993,37 +1024,6 @@
       <bpmndi:BPMNEdge id="Flow_1ux0k5n_di" bpmnElement="Flow_1ux0k5n">
         <di:waypoint x="278" y="420" />
         <di:waypoint x="330" y="420" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0q6p3q5_di" bpmnElement="Flow_0q6p3q5">
-        <di:waypoint x="1020" y="600" />
-        <di:waypoint x="1020" y="560" />
-        <di:waypoint x="998" y="560" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_09350dm_di" bpmnElement="Flow_09350dm">
-        <di:waypoint x="1020" y="705" />
-        <di:waypoint x="1020" y="680" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_012vw2k_di" bpmnElement="Flow_012vw2k">
-        <di:waypoint x="962" y="560" />
-        <di:waypoint x="930" y="560" />
-        <di:waypoint x="930" y="730" />
-        <di:waypoint x="995" y="730" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0tuqpaq_di" bpmnElement="Flow_0tuqpaq">
-        <di:waypoint x="865" y="180" />
-        <di:waypoint x="932" y="180" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0601gj3_di" bpmnElement="Flow_0601gj3">
-        <di:waypoint x="880" y="705" />
-        <di:waypoint x="880" y="578" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_15f48et_di" bpmnElement="Flow_15f48et">
-        <di:waypoint x="905" y="730" />
-        <di:waypoint x="995" y="730" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1pk0e53_di" bpmnElement="Flow_1pk0e53">
-        <di:waypoint x="630" y="542" />
-        <di:waypoint x="630" y="468" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Event_1bjwqs7_di" bpmnElement="Event_1bjwqs7">
         <dc:Bounds x="362" y="708" width="36" height="43" />
@@ -1103,28 +1103,10 @@
       <bpmndi:BPMNShape id="Activity_047ezy8_di" bpmnElement="Activity_DeclarationApprovement">
         <dc:Bounds x="580" y="826" width="352" height="107" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0d6aolo_di" bpmnElement="Event_0d6aolo">
-        <dc:Bounds x="419" y="812" width="36" height="36" />
+      <bpmndi:BPMNShape id="Event_17c66rr_di" bpmnElement="Event_0ljipyd">
+        <dc:Bounds x="392" y="782" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="458" y="803" width="60" height="27" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_165sspx_di" bpmnElement="Event_0qpngti">
-        <dc:Bounds x="419" y="862" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="460" y="850" width="60" height="27" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1wow6im_di" bpmnElement="Event_1ocyugl">
-        <dc:Bounds x="862" y="808" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="787" y="763" width="85" height="53" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0bmjj48_di" bpmnElement="Event_0k3p10n">
-        <dc:Bounds x="752" y="808" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="677" y="770" width="85" height="40" />
+          <dc:Bounds x="390" y="763" width="79" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1xynov4_di" bpmnElement="Event_1kbrta8">
@@ -1133,10 +1115,28 @@
           <dc:Bounds x="560" y="760" width="60" height="53" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_17c66rr_di" bpmnElement="Event_0ljipyd">
-        <dc:Bounds x="392" y="782" width="36" height="36" />
+      <bpmndi:BPMNShape id="Event_0bmjj48_di" bpmnElement="Event_0k3p10n">
+        <dc:Bounds x="752" y="808" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="390" y="763" width="79" height="14" />
+          <dc:Bounds x="677" y="770" width="85" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1wow6im_di" bpmnElement="Event_1ocyugl">
+        <dc:Bounds x="862" y="808" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="787" y="763" width="85" height="53" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_165sspx_di" bpmnElement="Event_0qpngti">
+        <dc:Bounds x="419" y="862" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="460" y="850" width="60" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0d6aolo_di" bpmnElement="Event_0d6aolo">
+        <dc:Bounds x="419" y="812" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="458" y="803" width="60" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNEdge id="Flow_1q1nd4i_di" bpmnElement="Flow_1q1nd4i">
