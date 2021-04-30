@@ -8,15 +8,15 @@
       <bpmn:lane id="Lane_1q8ej3n" name="Орган регистрации прав">
         <bpmn:flowNodeRef>Activity_1k4wcb5</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_056zpkj</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_10ro5zq</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0wcnk2w</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0p0z36f</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0q47hef</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1dbhl13</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_1l3dg6r</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_0cxpvpc</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_179ayar</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0ah0rpk</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1l3dg6r</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0cxpvpc</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_10ro5zq</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_1x4zrln" name="Уполномоченный орган исполнительной власти">
         <bpmn:flowNodeRef>Activity_1l36w0r</bpmn:flowNodeRef>
@@ -30,28 +30,20 @@
         <bpmn:flowNodeRef>Event_0iikbtt</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Gateway_18db69l</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_15832ih</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_0elzf7y</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_03w3oze</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_06aum6y</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_161ou29</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0elzf7y</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_03w3oze</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_0cf3t1g" name="Бюджетное учреждение">
         <bpmn:flowNodeRef>Activity_1qsg02t</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_1nl2kqo</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_0rspq38</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_0evpsff</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1xaym5p</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_0rq7g35</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_1apodqb</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1fq9wxz</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_02pmj6e</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_1op9ge2</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_0a0x9ln</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1be7mnx</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_0pc3za4</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1vbzcs2</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Activity_1nd9iqn</bpmn:flowNodeRef>
-        <bpmn:flowNodeRef>Event_0k0uw37</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_18obts6</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1ghx63i</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_09tt83i</bpmn:flowNodeRef>
@@ -59,6 +51,14 @@
         <bpmn:flowNodeRef>Activity_0abmc4q</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Event_1loi3ns</bpmn:flowNodeRef>
         <bpmn:flowNodeRef>Activity_1avlkk8</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0evpsff</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_1op9ge2</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_0rspq38</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1nl2kqo</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1apodqb</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0pc3za4</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Activity_1nd9iqn</bpmn:flowNodeRef>
+        <bpmn:flowNodeRef>Event_0k0uw37</bpmn:flowNodeRef>
       </bpmn:lane>
       <bpmn:lane id="Lane_0b2bgy0" name="ФГБУ">
         <bpmn:flowNodeRef>Gateway_0cox3mi</bpmn:flowNodeRef>
@@ -73,24 +73,10 @@
       <bpmn:incoming>Flow_07uqhuk</bpmn:incoming>
       <bpmn:outgoing>Flow_0f1h641</bpmn:outgoing>
     </bpmn:callActivity>
-    <bpmn:callActivity id="Activity_1nl2kqo" name="7. Размещение результатов результатов обработки перечня официальном сайте">
-      <bpmn:documentation>&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;Размещение результатов&lt;br&gt;обработки перечня официальном сайте в информационно-телекоммуникационной сети&lt;br&gt;"Интернет"&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
-      <bpmn:incoming>Flow_0f1h641</bpmn:incoming>
-      <bpmn:outgoing>Flow_1m7okt3</bpmn:outgoing>
-    </bpmn:callActivity>
     <bpmn:callActivity id="Activity_06aum6y" name="Информирование о принятии решения, а также о приеме бюджетным учреждением деклараций о характеристиках объектов недвижимости">
       <bpmn:documentation>&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;&lt;strong&gt;ч.5 ст.11 Закона&lt;/strong&gt;&lt;/span&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;Размещение извещения на&lt;br&gt;своем официальном сайте в информационно-телекоммуникационной сети "Интернет";&lt;br&gt;опубликование извещения в печатном средстве массовой информации, в котором&lt;br&gt;осуществляется обнародование (официальное опубликование) правовых актов органов&lt;br&gt;&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
       <bpmn:incoming>Flow_0sipk5e</bpmn:incoming>
     </bpmn:callActivity>
-    <bpmn:callActivity id="Activity_0rspq38" name="8. Составление промежуточных отчетных документов">
-      <bpmn:documentation>&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;По итогам определения&lt;br&gt;кадастровой стоимости, за исключением проведения внеочередной ГКО, в&lt;br&gt;соответствии с требованиями к отчету составляются в форме электронного&lt;br&gt;документа промежуточные отчетные документы, являющиеся проектом отчета&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
-      <bpmn:incoming>Flow_1m7okt3</bpmn:incoming>
-      <bpmn:outgoing>Flow_14mw5sy</bpmn:outgoing>
-    </bpmn:callActivity>
-    <bpmn:task id="Activity_0evpsff" name="9. Направление промежуточных отчетных документов в орган регистрации прав">
-      <bpmn:incoming>Flow_14mw5sy</bpmn:incoming>
-      <bpmn:outgoing>Flow_14cgfta</bpmn:outgoing>
-    </bpmn:task>
     <bpmn:callActivity id="Activity_1k4wcb5" name="10. Проверка промежуточных отчетных документов">
       <bpmn:documentation>&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;&lt;strong&gt;ч.9 ст.14 Закона&lt;/strong&gt;&lt;/span&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif;"&gt;Осуществление проверки&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif;"&gt;промежуточных отчетных документов на соответствие требованиям к отчету&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
       <bpmn:incoming>Flow_14cgfta</bpmn:incoming>
@@ -106,11 +92,6 @@
       <bpmn:incoming>Flow_0xuqq95</bpmn:incoming>
       <bpmn:outgoing>Flow_0moyz64</bpmn:outgoing>
     </bpmn:callActivity>
-    <bpmn:task id="Activity_10ro5zq" name="14. Направление уведомления о соответствии промежуточных отчетных документов требованиям к отчету">
-      <bpmn:documentation>&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;&lt;strong&gt;ч.10 ст.14 Закона&lt;/strong&gt;&lt;/span&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;Направление в бюджетное&lt;br&gt;учреждение и уполномоченный орган субъекта Российской Федерации уведомления о&lt;br&gt;соответствии промежуточных отчетных документов требованиям к отчету&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
-      <bpmn:incoming>Flow_0hbisgu</bpmn:incoming>
-      <bpmn:outgoing>Flow_1pun6vt</bpmn:outgoing>
-    </bpmn:task>
     <bpmn:parallelGateway id="Gateway_0cox3mi">
       <bpmn:incoming>Flow_1pun6vt</bpmn:incoming>
       <bpmn:outgoing>Flow_1rv2ldy</bpmn:outgoing>
@@ -135,11 +116,6 @@
       <bpmn:documentation>&lt;p&gt;&amp;nbsp;&lt;span style="font-size: 12pt;font-family: Liberation Serif;"&gt;&lt;strong&gt;ч.12 ст.14 Закона&lt;/strong&gt;&lt;/span&gt;&amp;nbsp;&lt;/p&gt;&lt;p&gt;&lt;span style="background-color: white;"&gt;В случае соответствия промежуточных отчетных документов&lt;/span&gt;&lt;br&gt;&lt;span style="background-color: white;"&gt;  требованиям к отчету размещение в фонде данных государственной кадастровой&lt;/span&gt;&lt;br&gt;&lt;span style="background-color: white;"&gt;  оценки сведений и материалов, содержащихся в промежуточных отчетных&lt;/span&gt;&lt;br&gt;&lt;span style="background-color: white;"&gt;  документах, в объеме, предусмотренном порядком ведения фонда данных&lt;/span&gt;&lt;br&gt;&lt;span style="background-color: white;"&gt;  государственной кадастровой оценки, а также сведения о месте размещения таких&lt;/span&gt;&lt;br&gt;&lt;span style="background-color: white;"&gt;  документов на официальном сайте бюджетного учреждения в&lt;/span&gt;&lt;br&gt;&lt;span style="background-color: white;"&gt;  информационно-телекоммуникационной сети "Интернет" на шестьдесят&lt;/span&gt;&lt;br&gt;&lt;span style="background-color: white;"&gt;  дней для представления замечаний, связанных с определением кадастровой&lt;/span&gt;&lt;br&gt;&lt;span style="background-color: white;"&gt;  стоимости, информация о котором содержится в промежуточных отчетных&lt;/span&gt;&lt;br&gt;&lt;span style="background-color: white;"&gt;  документах (далее - замечания к промежуточным отчетным документам)&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
       <bpmn:incoming>Flow_1rv2ldy</bpmn:incoming>
     </bpmn:callActivity>
-    <bpmn:task id="Activity_1apodqb" name="22. Направление отчета для повторной проверки">
-      <bpmn:documentation>&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;&lt;strong&gt;ч.26 ст.14 Закона&lt;/strong&gt;&lt;/span&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;Направление в орган&lt;br&gt;регистрации прав отчета на электронном носителе в форме электронного документа&lt;br&gt;для проведения повторной проверки&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
-      <bpmn:incoming>Flow_1uoscsg</bpmn:incoming>
-      <bpmn:outgoing>Flow_1tvhpsb</bpmn:outgoing>
-    </bpmn:task>
     <bpmn:callActivity id="Activity_1fq9wxz" name="24. Если нарушений требований к отчету не выявлено, направление отчета в уполномоченный орган">
       <bpmn:documentation>&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;&lt;strong&gt;ч.27 ст.14 Закона&lt;/strong&gt;&lt;/span&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;Если нарушений требований к&lt;br&gt;отчету не выявлено, направление в уполномоченный орган субъекта Российской&lt;br&gt;Федерации трех экземпляров отчета на электронном носителе в форме электронного&lt;br&gt;документа и одной копии отчета на бумажном носителе&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
       <bpmn:incoming>Flow_0fqwxtp</bpmn:incoming>
@@ -182,11 +158,6 @@
         <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">10 рабочих дней</bpmn:timeDuration>
       </bpmn:timerEventDefinition>
     </bpmn:boundaryEvent>
-    <bpmn:boundaryEvent id="Event_1op9ge2" name="В течение 3 рабочих дней" attachedToRef="Activity_0evpsff">
-      <bpmn:timerEventDefinition id="TimerEventDefinition_0aflaoz">
-        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">В течение 3 рабочих дней</bpmn:timeDuration>
-      </bpmn:timerEventDefinition>
-    </bpmn:boundaryEvent>
     <bpmn:boundaryEvent id="Event_0p0z36f" name="10 рабочих дней" attachedToRef="Activity_056zpkj">
       <bpmn:timerEventDefinition id="TimerEventDefinition_0jw85u3">
         <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">10 рабочих дней</bpmn:timeDuration>
@@ -212,14 +183,9 @@
         <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">3 + 60</bpmn:timeDuration>
       </bpmn:timerEventDefinition>
     </bpmn:boundaryEvent>
-    <bpmn:boundaryEvent id="Event_0pc3za4" name="3 рабочих дня" attachedToRef="Activity_1apodqb">
-      <bpmn:timerEventDefinition id="TimerEventDefinition_1r50vn1">
-        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">3 рабочих дня</bpmn:timeDuration>
-      </bpmn:timerEventDefinition>
-    </bpmn:boundaryEvent>
     <bpmn:boundaryEvent id="Event_1vbzcs2" name="В течение трех рабочих дней со дня получения уведомления" attachedToRef="Activity_1fq9wxz">
       <bpmn:timerEventDefinition id="TimerEventDefinition_0fjdvux">
-        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">3 рабочих дней </bpmn:timeDuration>
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">3 рабочих дней</bpmn:timeDuration>
       </bpmn:timerEventDefinition>
     </bpmn:boundaryEvent>
     <bpmn:boundaryEvent id="Event_1yrms77" name="В течение 30 дней со дня принятия акта" attachedToRef="Activity_0w933b5">
@@ -263,19 +229,6 @@
     <bpmn:sequenceFlow id="Flow_12wizug" sourceRef="Gateway_04a9buv" targetRef="Activity_0txiz4g" />
     <bpmn:sequenceFlow id="Flow_0cgoekn" sourceRef="Gateway_04a9buv" targetRef="Activity_0fttih2" />
     <bpmn:sequenceFlow id="Flow_0fbxwxp" sourceRef="Activity_179ayar" targetRef="Activity_18obts6" />
-    <bpmn:task id="Activity_0elzf7y" name="5. Направление перечня объектов недвижимости в бюджетное учреждение">
-      <bpmn:incoming>Flow_16tf178</bpmn:incoming>
-      <bpmn:outgoing>Flow_07uqhuk</bpmn:outgoing>
-    </bpmn:task>
-    <bpmn:task id="Activity_1nd9iqn" name="19. Направление отчета в орган регистрации прав">
-      <bpmn:incoming>Flow_1f5zwvz</bpmn:incoming>
-      <bpmn:outgoing>Flow_00kjql2</bpmn:outgoing>
-    </bpmn:task>
-    <bpmn:boundaryEvent id="Event_0k0uw37" name="В течение 3 рабочих дней со дня составления отчета" attachedToRef="Activity_1nd9iqn">
-      <bpmn:timerEventDefinition id="TimerEventDefinition_08krovt">
-        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">3 рабочих дней </bpmn:timeDuration>
-      </bpmn:timerEventDefinition>
-    </bpmn:boundaryEvent>
     <bpmn:callActivity id="Activity_18obts6" name="21. В случае выявления нарушений требований к отчету осуществляется их устранение">
       <bpmn:documentation>&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;&lt;strong&gt;ч.26 ст.14 Закона&lt;/strong&gt;&lt;/span&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;В случае выявления&lt;br&gt;нарушений требований к отчету осуществляется их устранение&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
       <bpmn:incoming>Flow_0fbxwxp</bpmn:incoming>
@@ -306,16 +259,6 @@
         <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">В течение 7 рабочих дней</bpmn:timeDuration>
       </bpmn:timerEventDefinition>
     </bpmn:boundaryEvent>
-    <bpmn:task id="Activity_1l3dg6r" name="11. Направление уведомления о несоответствии промежуточных отчетных документов требованиям к отчету">
-      <bpmn:documentation>&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;&lt;strong&gt;ч.10 ст.14 Закона&lt;/strong&gt;&lt;/span&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif;"&gt;Направление в бюджетное&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif;"&gt;учреждение и уполномоченный орган субъекта Российской Федерации уведомления о&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif;"&gt;несоответствии промежуточных отчетных документов требованиям к отчету с&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif;"&gt;указанием требований к отчету, которым не соответствуют промежуточные отчетные&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif;"&gt;документы&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
-      <bpmn:incoming>Flow_0g0nvp6</bpmn:incoming>
-      <bpmn:outgoing>Flow_0xuqq95</bpmn:outgoing>
-    </bpmn:task>
-    <bpmn:boundaryEvent id="Event_0cxpvpc" name="3 рабочих дня" attachedToRef="Activity_1l3dg6r">
-      <bpmn:timerEventDefinition id="TimerEventDefinition_1wjavwe">
-        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">3 рабочих дня</bpmn:timeDuration>
-      </bpmn:timerEventDefinition>
-    </bpmn:boundaryEvent>
     <bpmn:boundaryEvent id="Event_1loi3ns" name="В течение 10 дней" attachedToRef="Activity_0abmc4q">
       <bpmn:timerEventDefinition id="TimerEventDefinition_0ykj7uc">
         <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">10 дней</bpmn:timeDuration>
@@ -344,11 +287,6 @@
       <bpmn:outgoing>Flow_0sipk5e</bpmn:outgoing>
       <bpmn:outgoing>Flow_0iwilkb</bpmn:outgoing>
     </bpmn:parallelGateway>
-    <bpmn:boundaryEvent id="Event_03w3oze" name="3 рабочих дня со дня поступления" attachedToRef="Activity_0elzf7y">
-      <bpmn:timerEventDefinition id="TimerEventDefinition_1joqllh">
-        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">3 рабочих дня</bpmn:timeDuration>
-      </bpmn:timerEventDefinition>
-    </bpmn:boundaryEvent>
     <bpmn:boundaryEvent id="Event_161ou29" name="30 дней" attachedToRef="Activity_06aum6y">
       <bpmn:timerEventDefinition id="TimerEventDefinition_1hpx01q">
         <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">30 дней</bpmn:timeDuration>
@@ -357,6 +295,68 @@
     <bpmn:adHocSubProcess id="Activity_1avlkk8" name="Сбор и обработка информации, необходимой для определения кадастровой стоимости">
       <bpmn:documentation>&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;&lt;strong&gt;ч.2 ст.12 Закона&lt;/strong&gt;&lt;/span&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;Сбор и обработка&lt;br&gt;информации, необходимой для определения кадастровой стоимости, в соответствии с&lt;br&gt;методическими указаниями о государственной кадастровой оценке&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
     </bpmn:adHocSubProcess>
+    <bpmn:sendTask id="Activity_0evpsff" name="9. Направление промежуточных отчетных документов в орган регистрации прав">
+      <bpmn:incoming>Flow_14mw5sy</bpmn:incoming>
+      <bpmn:outgoing>Flow_14cgfta</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:boundaryEvent id="Event_1op9ge2" name="В течение 3 рабочих дней" attachedToRef="Activity_0evpsff">
+      <bpmn:timerEventDefinition id="TimerEventDefinition_0aflaoz">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">В течение 3 рабочих дней</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:boundaryEvent>
+    <bpmn:sendTask id="Activity_0elzf7y" name="5. Направление перечня объектов недвижимости в бюджетное учреждение">
+      <bpmn:incoming>Flow_16tf178</bpmn:incoming>
+      <bpmn:outgoing>Flow_07uqhuk</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:boundaryEvent id="Event_03w3oze" name="3 рабочих дня со дня поступления" attachedToRef="Activity_0elzf7y">
+      <bpmn:timerEventDefinition id="TimerEventDefinition_1joqllh">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">3 рабочих дня</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:boundaryEvent>
+    <bpmn:sendTask id="Activity_1l3dg6r" name="11. Направление уведомления о несоответствии промежуточных отчетных документов требованиям к отчету">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;&lt;strong&gt;ч.10 ст.14 Закона&lt;/strong&gt;&lt;/span&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif;"&gt;Направление в бюджетное&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif;"&gt;учреждение и уполномоченный орган субъекта Российской Федерации уведомления о&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif;"&gt;несоответствии промежуточных отчетных документов требованиям к отчету с&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif;"&gt;указанием требований к отчету, которым не соответствуют промежуточные отчетные&lt;/span&gt;&lt;br&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif;"&gt;документы&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_0g0nvp6</bpmn:incoming>
+      <bpmn:outgoing>Flow_0xuqq95</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:boundaryEvent id="Event_0cxpvpc" name="3 рабочих дня" attachedToRef="Activity_1l3dg6r">
+      <bpmn:timerEventDefinition id="TimerEventDefinition_1wjavwe">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">3 рабочих дня</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:boundaryEvent>
+    <bpmn:sendTask id="Activity_10ro5zq" name="14. Направление уведомления о соответствии промежуточных отчетных документов требованиям к отчету">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;&lt;strong&gt;ч.10 ст.14 Закона&lt;/strong&gt;&lt;/span&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;Направление в бюджетное&lt;br&gt;учреждение и уполномоченный орган субъекта Российской Федерации уведомления о&lt;br&gt;соответствии промежуточных отчетных документов требованиям к отчету&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_0hbisgu</bpmn:incoming>
+      <bpmn:outgoing>Flow_1pun6vt</bpmn:outgoing>
+    </bpmn:sendTask>
+    <bpmn:callActivity id="Activity_0rspq38" name="8. Составление промежуточных отчетных документов">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;По итогам определения&lt;br&gt;кадастровой стоимости, за исключением проведения внеочередной ГКО, в&lt;br&gt;соответствии с требованиями к отчету составляются в форме электронного&lt;br&gt;документа промежуточные отчетные документы, являющиеся проектом отчета&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_1m7okt3</bpmn:incoming>
+      <bpmn:outgoing>Flow_14mw5sy</bpmn:outgoing>
+    </bpmn:callActivity>
+    <bpmn:callActivity id="Activity_1nl2kqo" name="7. Размещение результатов результатов обработки перечня официальном сайте">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;Размещение результатов&lt;br&gt;обработки перечня официальном сайте в информационно-телекоммуникационной сети&lt;br&gt;"Интернет"&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_0f1h641</bpmn:incoming>
+      <bpmn:outgoing>Flow_1m7okt3</bpmn:outgoing>
+    </bpmn:callActivity>
+    <bpmn:task id="Activity_1apodqb" name="22. Направление отчета для повторной проверки">
+      <bpmn:documentation>&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;&lt;strong&gt;ч.26 ст.14 Закона&lt;/strong&gt;&lt;/span&gt;&lt;strong&gt; &lt;/strong&gt;&lt;/p&gt;&lt;p&gt;&lt;span style="font-size: 12pt;font-family: Liberation Serif", serif;"&gt;Направление в орган&lt;br&gt;регистрации прав отчета на электронном носителе в форме электронного документа&lt;br&gt;для проведения повторной проверки&lt;/span&gt;&amp;nbsp;&lt;/p&gt;</bpmn:documentation>
+      <bpmn:incoming>Flow_1uoscsg</bpmn:incoming>
+      <bpmn:outgoing>Flow_1tvhpsb</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:boundaryEvent id="Event_0pc3za4" name="3 рабочих дня" attachedToRef="Activity_1apodqb">
+      <bpmn:timerEventDefinition id="TimerEventDefinition_1r50vn1">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">3 рабочих дня</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:boundaryEvent>
+    <bpmn:task id="Activity_1nd9iqn" name="19. Направление отчета в орган регистрации прав">
+      <bpmn:incoming>Flow_1f5zwvz</bpmn:incoming>
+      <bpmn:outgoing>Flow_00kjql2</bpmn:outgoing>
+    </bpmn:task>
+    <bpmn:boundaryEvent id="Event_0k0uw37" name="В течение 3 рабочих дней со дня составления отчета" attachedToRef="Activity_1nd9iqn">
+      <bpmn:timerEventDefinition id="TimerEventDefinition_08krovt">
+        <bpmn:timeDuration xsi:type="bpmn:tFormalExpression">3 рабочих дней</bpmn:timeDuration>
+      </bpmn:timerEventDefinition>
+    </bpmn:boundaryEvent>
     <bpmn:textAnnotation id="TextAnnotation_1370fsp">
       <bpmn:text>Не реже одного раза в 4 года, за исключением проведения внеочередной государственной кадастровой оценки.</bpmn:text>
     </bpmn:textAnnotation>
@@ -371,156 +371,147 @@
       <bpmndi:BPMNShape id="Participant_1ofup8k_di" bpmnElement="Participant_1ofup8k" isHorizontal="true">
         <dc:Bounds x="128" y="80" width="3292" height="1300" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Lane_1q8ej3n_di" bpmnElement="Lane_1q8ej3n" isHorizontal="true">
-        <dc:Bounds x="158" y="80" width="3262" height="250" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Lane_1x4zrln_di" bpmnElement="Lane_1x4zrln" isHorizontal="true">
-        <dc:Bounds x="158" y="530" width="3262" height="358" />
+      <bpmndi:BPMNShape id="Lane_0b2bgy0_di" bpmnElement="Lane_0b2bgy0" isHorizontal="true">
+        <dc:Bounds x="158" y="330" width="3262" height="200" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Lane_0cf3t1g_di" bpmnElement="Lane_0cf3t1g" isHorizontal="true">
         <dc:Bounds x="158" y="888" width="3262" height="492" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Lane_0b2bgy0_di" bpmnElement="Lane_0b2bgy0" isHorizontal="true">
-        <dc:Bounds x="158" y="330" width="3262" height="200" />
+      <bpmndi:BPMNShape id="Lane_1x4zrln_di" bpmnElement="Lane_1x4zrln" isHorizontal="true">
+        <dc:Bounds x="158" y="530" width="3262" height="358" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="TextAnnotation_1370fsp_di" bpmnElement="TextAnnotation_1370fsp">
-        <dc:Bounds x="230" y="540" width="244" height="54" />
+      <bpmndi:BPMNShape id="Lane_1q8ej3n_di" bpmnElement="Lane_1q8ej3n" isHorizontal="true">
+        <dc:Bounds x="158" y="80" width="3262" height="250" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="TextAnnotation_0d7s8pp_di" bpmnElement="TextAnnotation_0d7s8pp">
-        <dc:Bounds x="282" y="920" width="140" height="30" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Flow_1ynp7zb_di" bpmnElement="Flow_1ynp7zb">
-        <di:waypoint x="422" y="655" />
-        <di:waypoint x="495" y="655" />
+      <bpmndi:BPMNEdge id="Flow_0fbxwxp_di" bpmnElement="Flow_0fbxwxp" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="2130" y="236" />
+        <di:waypoint x="2241" y="236" />
+        <di:waypoint x="2241" y="960" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0sipk5e_di" bpmnElement="Flow_0sipk5e">
-        <di:waypoint x="520" y="680" />
-        <di:waypoint x="520" y="740" />
+      <bpmndi:BPMNEdge id="Flow_0cgoekn_di" bpmnElement="Flow_0cgoekn">
+        <di:waypoint x="3010" y="680" />
+        <di:waypoint x="3010" y="758" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0iwilkb_di" bpmnElement="Flow_0iwilkb">
-        <di:waypoint x="520" y="630" />
-        <di:waypoint x="520" y="480" />
+      <bpmndi:BPMNEdge id="Flow_12wizug_di" bpmnElement="Flow_12wizug">
+        <di:waypoint x="3035" y="655" />
+        <di:waypoint x="3098" y="655" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0g0nvp6_di" bpmnElement="Flow_0g0nvp6">
-        <di:waypoint x="1050" y="240" />
-        <di:waypoint x="1123" y="240" />
+      <bpmndi:BPMNEdge id="Flow_0l8disg_di" bpmnElement="Flow_0l8disg">
+        <di:waypoint x="2908" y="655" />
+        <di:waypoint x="2985" y="655" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_16tf178_di" bpmnElement="Flow_16tf178">
-        <di:waypoint x="622" y="425" />
-        <di:waypoint x="710" y="425" />
-        <di:waypoint x="710" y="610" />
+      <bpmndi:BPMNEdge id="Flow_14ay98f_di" bpmnElement="Flow_14ay98f">
+        <di:waypoint x="3091" y="810" />
+        <di:waypoint x="3222" y="810" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_01dv1r2_di" bpmnElement="Flow_01dv1r2">
-        <di:waypoint x="268" y="655" />
-        <di:waypoint x="317" y="655" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_07uqhuk_di" bpmnElement="Flow_07uqhuk">
-        <di:waypoint x="714" y="700" />
-        <di:waypoint x="714" y="970" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0f1h641_di" bpmnElement="Flow_0f1h641">
-        <di:waypoint x="710" y="1070" />
-        <di:waypoint x="710" y="1119" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1m7okt3_di" bpmnElement="Flow_1m7okt3">
-        <di:waypoint x="807" y="1170" />
-        <di:waypoint x="853" y="1170" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0xuqq95_di" bpmnElement="Flow_0xuqq95" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <di:waypoint x="1223" y="290" />
-        <di:waypoint x="1223" y="970" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_14cgfta_di" bpmnElement="Flow_14cgfta" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <di:waypoint x="950" y="970" />
-        <di:waypoint x="950" y="290" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0moyz64_di" bpmnElement="Flow_0moyz64" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <di:waypoint x="1350" y="1010" />
-        <di:waypoint x="1450" y="1010" />
-        <di:waypoint x="1450" y="290" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0hbisgu_di" bpmnElement="Flow_0hbisgu">
-        <di:waypoint x="1550" y="236" />
-        <di:waypoint x="1592" y="236" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_14mw5sy_di" bpmnElement="Flow_14mw5sy">
-        <di:waypoint x="950" y="1120" />
-        <di:waypoint x="950" y="1070" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1pun6vt_di" bpmnElement="Flow_1pun6vt" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <di:waypoint x="1690" y="290" />
-        <di:waypoint x="1690" y="400" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1rv2ldy_di" bpmnElement="Flow_1rv2ldy">
-        <di:waypoint x="1715" y="425" />
-        <di:waypoint x="1745" y="425" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0xf787r_di" bpmnElement="Flow_0xf787r" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <di:waypoint x="1690" y="450" />
-        <di:waypoint x="1690" y="970" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1meonso_di" bpmnElement="Flow_1meonso">
-        <di:waypoint x="1690" y="1070" />
-        <di:waypoint x="1690" y="1199" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0sb1ck8_di" bpmnElement="Flow_0sb1ck8">
-        <di:waypoint x="1814" y="1250" />
-        <di:waypoint x="1941" y="1250" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1f5zwvz_di" bpmnElement="Flow_1f5zwvz">
-        <di:waypoint x="2030" y="1199" />
-        <di:waypoint x="2030" y="1060" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_00kjql2_di" bpmnElement="Flow_00kjql2" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <di:waypoint x="2030" y="960" />
-        <di:waypoint x="2030" y="290" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1uoscsg_di" bpmnElement="Flow_1uoscsg">
-        <di:waypoint x="2332" y="1010" />
-        <di:waypoint x="2367" y="1010" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_1tvhpsb_di" bpmnElement="Flow_1tvhpsb" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <di:waypoint x="2444" y="959" />
-        <di:waypoint x="2444" y="291" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0fqwxtp_di" bpmnElement="Flow_0fqwxtp" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <di:waypoint x="2544" y="236" />
-        <di:waypoint x="2660" y="236" />
-        <di:waypoint x="2660" y="960" />
+      <bpmndi:BPMNEdge id="Flow_0pta4kw_di" bpmnElement="Flow_0pta4kw">
+        <di:waypoint x="2810" y="758" />
+        <di:waypoint x="2810" y="711" />
       </bpmndi:BPMNEdge>
       <bpmndi:BPMNEdge id="Flow_0w3ps6u_di" bpmnElement="Flow_0w3ps6u">
         <di:waypoint x="2762" y="1010" />
         <di:waypoint x="2810" y="1010" />
         <di:waypoint x="2810" y="862" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0pta4kw_di" bpmnElement="Flow_0pta4kw">
-        <di:waypoint x="2810" y="758" />
-        <di:waypoint x="2810" y="711" />
+      <bpmndi:BPMNEdge id="Flow_0fqwxtp_di" bpmnElement="Flow_0fqwxtp" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="2544" y="236" />
+        <di:waypoint x="2660" y="236" />
+        <di:waypoint x="2660" y="960" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_14ay98f_di" bpmnElement="Flow_14ay98f">
-        <di:waypoint x="3091" y="810" />
-        <di:waypoint x="3222" y="810" />
+      <bpmndi:BPMNEdge id="Flow_1tvhpsb_di" bpmnElement="Flow_1tvhpsb" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="2444" y="959" />
+        <di:waypoint x="2444" y="291" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0l8disg_di" bpmnElement="Flow_0l8disg">
-        <di:waypoint x="2908" y="655" />
-        <di:waypoint x="2985" y="655" />
+      <bpmndi:BPMNEdge id="Flow_1uoscsg_di" bpmnElement="Flow_1uoscsg">
+        <di:waypoint x="2332" y="1010" />
+        <di:waypoint x="2367" y="1010" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_12wizug_di" bpmnElement="Flow_12wizug">
-        <di:waypoint x="3035" y="655" />
-        <di:waypoint x="3098" y="655" />
+      <bpmndi:BPMNEdge id="Flow_00kjql2_di" bpmnElement="Flow_00kjql2" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="2030" y="960" />
+        <di:waypoint x="2030" y="290" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0cgoekn_di" bpmnElement="Flow_0cgoekn">
-        <di:waypoint x="3010" y="680" />
-        <di:waypoint x="3010" y="758" />
+      <bpmndi:BPMNEdge id="Flow_1f5zwvz_di" bpmnElement="Flow_1f5zwvz">
+        <di:waypoint x="2030" y="1199" />
+        <di:waypoint x="2030" y="1060" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Flow_0fbxwxp_di" bpmnElement="Flow_0fbxwxp" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
-        <di:waypoint x="2130" y="236" />
-        <di:waypoint x="2241" y="236" />
-        <di:waypoint x="2241" y="960" />
+      <bpmndi:BPMNEdge id="Flow_0sb1ck8_di" bpmnElement="Flow_0sb1ck8">
+        <di:waypoint x="1814" y="1250" />
+        <di:waypoint x="1941" y="1250" />
       </bpmndi:BPMNEdge>
-      <bpmndi:BPMNShape id="Activity_0elzf7y_di" bpmnElement="Activity_0elzf7y">
-        <dc:Bounds x="650" y="610" width="120" height="90" />
-      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1meonso_di" bpmnElement="Flow_1meonso">
+        <di:waypoint x="1690" y="1070" />
+        <di:waypoint x="1690" y="1199" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0xf787r_di" bpmnElement="Flow_0xf787r" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="1690" y="450" />
+        <di:waypoint x="1690" y="970" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rv2ldy_di" bpmnElement="Flow_1rv2ldy">
+        <di:waypoint x="1715" y="425" />
+        <di:waypoint x="1745" y="425" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1pun6vt_di" bpmnElement="Flow_1pun6vt" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="1690" y="290" />
+        <di:waypoint x="1690" y="400" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_14mw5sy_di" bpmnElement="Flow_14mw5sy">
+        <di:waypoint x="950" y="1120" />
+        <di:waypoint x="950" y="1070" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0hbisgu_di" bpmnElement="Flow_0hbisgu">
+        <di:waypoint x="1550" y="236" />
+        <di:waypoint x="1592" y="236" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0moyz64_di" bpmnElement="Flow_0moyz64" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="1350" y="1010" />
+        <di:waypoint x="1450" y="1010" />
+        <di:waypoint x="1450" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_14cgfta_di" bpmnElement="Flow_14cgfta" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="950" y="970" />
+        <di:waypoint x="950" y="290" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0xuqq95_di" bpmnElement="Flow_0xuqq95" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
+        <di:waypoint x="1223" y="290" />
+        <di:waypoint x="1223" y="970" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1m7okt3_di" bpmnElement="Flow_1m7okt3">
+        <di:waypoint x="807" y="1170" />
+        <di:waypoint x="853" y="1170" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0f1h641_di" bpmnElement="Flow_0f1h641">
+        <di:waypoint x="710" y="1070" />
+        <di:waypoint x="710" y="1119" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_07uqhuk_di" bpmnElement="Flow_07uqhuk">
+        <di:waypoint x="714" y="700" />
+        <di:waypoint x="714" y="970" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_01dv1r2_di" bpmnElement="Flow_01dv1r2">
+        <di:waypoint x="268" y="655" />
+        <di:waypoint x="317" y="655" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_16tf178_di" bpmnElement="Flow_16tf178">
+        <di:waypoint x="622" y="425" />
+        <di:waypoint x="714" y="425" />
+        <di:waypoint x="714" y="610" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0g0nvp6_di" bpmnElement="Flow_0g0nvp6">
+        <di:waypoint x="1050" y="240" />
+        <di:waypoint x="1123" y="240" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0iwilkb_di" bpmnElement="Flow_0iwilkb">
+        <di:waypoint x="520" y="630" />
+        <di:waypoint x="520" y="480" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0sipk5e_di" bpmnElement="Flow_0sipk5e">
+        <di:waypoint x="520" y="680" />
+        <di:waypoint x="520" y="740" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1ynp7zb_di" bpmnElement="Flow_1ynp7zb">
+        <di:waypoint x="422" y="655" />
+        <di:waypoint x="495" y="655" />
+      </bpmndi:BPMNEdge>
       <bpmndi:BPMNShape id="Activity_0el44tt_di" bpmnElement="Activity_1qsg02t">
         <dc:Bounds x="613" y="970" width="193" height="100" />
       </bpmndi:BPMNShape>
@@ -533,9 +524,6 @@
       <bpmndi:BPMNShape id="Activity_0fx0gbn_di" bpmnElement="Activity_0rspq38">
         <dc:Bounds x="853" y="1120" width="193" height="99" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_0evpsff_di" bpmnElement="Activity_0evpsff">
-        <dc:Bounds x="853" y="970" width="193" height="100" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0f49fu1_di" bpmnElement="Activity_1k4wcb5">
         <dc:Bounds x="849" y="182" width="201" height="108" />
       </bpmndi:BPMNShape>
@@ -544,9 +532,6 @@
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0w14hs4_di" bpmnElement="Activity_09tt83i">
         <dc:Bounds x="1095" y="970" width="255" height="100" />
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_10ro5zq_di" bpmnElement="Activity_10ro5zq">
-        <dc:Bounds x="1592" y="182" width="196" height="108" />
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Gateway_1ickbcj_di" bpmnElement="Gateway_0cox3mi" bioc:stroke="rgb(30, 136, 229)" bioc:fill="rgb(187, 222, 251)">
         <dc:Bounds x="1665" y="400" width="50" height="50" />
@@ -599,9 +584,6 @@
       <bpmndi:BPMNShape id="Activity_0rystsi_di" bpmnElement="Activity_0q47hef">
         <dc:Bounds x="2344" y="181" width="200" height="110" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Activity_1l3dg6r_di" bpmnElement="Activity_1l3dg6r">
-        <dc:Bounds x="1123" y="182" width="199" height="108" />
-      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_0n41zje_di" bpmnElement="Activity_179ayar">
         <dc:Bounds x="1930" y="182" width="200" height="108" />
       </bpmndi:BPMNShape>
@@ -614,123 +596,31 @@
       <bpmndi:BPMNShape id="Gateway_0bta6dg_di" bpmnElement="Gateway_18db69l">
         <dc:Bounds x="495" y="630" width="50" height="50" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNEdge id="Association_0lgoiwb_di" bpmnElement="Association_0lgoiwb">
-        <di:waypoint x="250" y="637" />
-        <di:waypoint x="250" y="594" />
-      </bpmndi:BPMNEdge>
-      <bpmndi:BPMNEdge id="Association_0xmdi30_di" bpmnElement="Association_0xmdi30">
-        <di:waypoint x="352" y="970" />
-        <di:waypoint x="352" y="950" />
-      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Activity_0cvtbft_di" bpmnElement="Activity_0evpsff">
+        <dc:Bounds x="853" y="970" width="193" height="100" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1xqxycu_di" bpmnElement="Activity_0elzf7y">
+        <dc:Bounds x="622" y="610" width="184" height="90" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_06vanva_di" bpmnElement="Activity_1l3dg6r">
+        <dc:Bounds x="1123" y="182" width="199" height="108" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1kpaw1k_di" bpmnElement="Activity_10ro5zq">
+        <dc:Bounds x="1592" y="182" width="196" height="108" />
+      </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Activity_00rj01e_di" bpmnElement="Activity_1avlkk8">
         <dc:Bounds x="266" y="970" width="172" height="100" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1af4my4_di" bpmnElement="Event_02pmj6e">
-        <dc:Bounds x="788" y="952" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="807" y="903" width="85" height="53" />
-        </bpmndi:BPMNLabel>
+      <bpmndi:BPMNShape id="TextAnnotation_1370fsp_di" bpmnElement="TextAnnotation_1370fsp">
+        <dc:Bounds x="230" y="540" width="244" height="54" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_10q6uey_di" bpmnElement="Event_0wcnk2w">
-        <dc:Bounds x="1032" y="164" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="947" y="155" width="85" height="14" />
-        </bpmndi:BPMNLabel>
+      <bpmndi:BPMNShape id="TextAnnotation_0d7s8pp_di" bpmnElement="TextAnnotation_0d7s8pp">
+        <dc:Bounds x="282" y="920" width="140" height="30" />
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0uxb4wx_di" bpmnElement="Event_1op9ge2">
-        <dc:Bounds x="1028" y="952" width="36" height="36" />
+      <bpmndi:BPMNShape id="Event_1qpfpkw_di" bpmnElement="Event_161ou29">
+        <dc:Bounds x="604" y="722" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="999" y="921" width="70" height="27" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_105mkd5_di" bpmnElement="Event_0p0z36f">
-        <dc:Bounds x="1532" y="164" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1437" y="155" width="85" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0wch6ea_di" bpmnElement="Event_06rvkq1">
-        <dc:Bounds x="604" y="352" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="519" y="353" width="85" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1fq6omh_di" bpmnElement="Event_0a0x9ln">
-        <dc:Bounds x="1796" y="952" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1727" y="910" width="66" height="40" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_11p88vl_di" bpmnElement="Event_1be7mnx">
-        <dc:Bounds x="1796" y="1181" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1827" y="1103" width="86" height="93" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_09au8sp_di" bpmnElement="Event_1wec7ga">
-        <dc:Bounds x="1897" y="352" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1929" y="383" width="82" height="93" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1i1df1j_di" bpmnElement="Event_0pc3za4">
-        <dc:Bounds x="2502" y="941" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="2483" y="923" width="73" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1f11r1k_di" bpmnElement="Event_1vbzcs2">
-        <dc:Bounds x="2744" y="942" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="2667" y="893" width="85" height="53" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1db2e2q_di" bpmnElement="Event_1yrms77">
-        <dc:Bounds x="2890" y="581" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="2923" y="540" width="73" height="40" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_17g6ige_di" bpmnElement="Event_0nplalo">
-        <dc:Bounds x="3263" y="580" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="3306" y="554" width="88" height="80" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_0awmm9p_di" bpmnElement="Event_0k0uw37">
-        <dc:Bounds x="2101" y="942" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="2047" y="893" width="86" height="53" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1e4yfti_di" bpmnElement="Event_1ghx63i">
-        <dc:Bounds x="2314" y="942" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="2295" y="923" width="85" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1g4kq1c_di" bpmnElement="Event_1dbhl13">
-        <dc:Bounds x="2526" y="163" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="2560" y="154" width="85" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_07ru7v8_di" bpmnElement="Event_1g97kqy">
-        <dc:Bounds x="1332" y="952" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1257" y="908" width="85" height="53" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_02ffelk_di" bpmnElement="Event_0cxpvpc">
-        <dc:Bounds x="1304" y="164" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="1235" y="155" width="73" height="14" />
-        </bpmndi:BPMNLabel>
-      </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1mwncfd_di" bpmnElement="Event_1loi3ns">
-        <dc:Bounds x="2101" y="1181" width="36" height="36" />
-        <bpmndi:BPMNLabel>
-          <dc:Bounds x="2056" y="1145" width="67" height="27" />
+          <dc:Bounds x="569" y="713" width="41" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
       <bpmndi:BPMNShape id="Event_1eq90ew_di" bpmnElement="Event_0ah0rpk">
@@ -739,16 +629,126 @@
           <dc:Bounds x="2146" y="155" width="85" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_06dy2mv_di" bpmnElement="Event_03w3oze">
-        <dc:Bounds x="752" y="592" width="36" height="36" />
+      <bpmndi:BPMNShape id="Event_1mwncfd_di" bpmnElement="Event_1loi3ns">
+        <dc:Bounds x="2101" y="1181" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="756" y="556" width="88" height="27" />
+          <dc:Bounds x="2056" y="1145" width="67" height="27" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
-      <bpmndi:BPMNShape id="Event_1qpfpkw_di" bpmnElement="Event_161ou29">
-        <dc:Bounds x="604" y="722" width="36" height="36" />
+      <bpmndi:BPMNShape id="Event_07ru7v8_di" bpmnElement="Event_1g97kqy">
+        <dc:Bounds x="1332" y="952" width="36" height="36" />
         <bpmndi:BPMNLabel>
-          <dc:Bounds x="569" y="713" width="41" height="14" />
+          <dc:Bounds x="1257" y="908" width="85" height="53" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1g4kq1c_di" bpmnElement="Event_1dbhl13">
+        <dc:Bounds x="2526" y="163" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2560" y="154" width="85" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1e4yfti_di" bpmnElement="Event_1ghx63i">
+        <dc:Bounds x="2314" y="942" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2295" y="923" width="85" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0awmm9p_di" bpmnElement="Event_0k0uw37">
+        <dc:Bounds x="2101" y="942" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2047" y="893" width="86" height="53" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_17g6ige_di" bpmnElement="Event_0nplalo">
+        <dc:Bounds x="3263" y="580" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="3306" y="554" width="88" height="80" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1db2e2q_di" bpmnElement="Event_1yrms77">
+        <dc:Bounds x="2890" y="581" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2923" y="540" width="73" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1f11r1k_di" bpmnElement="Event_1vbzcs2">
+        <dc:Bounds x="2744" y="942" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2667" y="893" width="85" height="53" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1i1df1j_di" bpmnElement="Event_0pc3za4">
+        <dc:Bounds x="2502" y="941" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="2483" y="923" width="73" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_09au8sp_di" bpmnElement="Event_1wec7ga">
+        <dc:Bounds x="1897" y="352" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1929" y="383" width="82" height="93" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_11p88vl_di" bpmnElement="Event_1be7mnx">
+        <dc:Bounds x="1796" y="1181" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1827" y="1103" width="86" height="93" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1fq6omh_di" bpmnElement="Event_0a0x9ln">
+        <dc:Bounds x="1796" y="952" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1727" y="910" width="66" height="40" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_0wch6ea_di" bpmnElement="Event_06rvkq1">
+        <dc:Bounds x="604" y="352" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="519" y="353" width="85" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_105mkd5_di" bpmnElement="Event_0p0z36f">
+        <dc:Bounds x="1532" y="164" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1437" y="155" width="85" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_10q6uey_di" bpmnElement="Event_0wcnk2w">
+        <dc:Bounds x="1032" y="164" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="947" y="155" width="85" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1af4my4_di" bpmnElement="Event_02pmj6e">
+        <dc:Bounds x="788" y="952" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="807" y="903" width="85" height="53" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Association_0lgoiwb_di" bpmnElement="Association_0lgoiwb">
+        <di:waypoint x="250" y="637" />
+        <di:waypoint x="250" y="594" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Association_0xmdi30_di" bpmnElement="Association_0xmdi30">
+        <di:waypoint x="352" y="970" />
+        <di:waypoint x="352" y="950" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNShape id="Event_0uxb4wx_di" bpmnElement="Event_1op9ge2">
+        <dc:Bounds x="1028" y="952" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="999" y="921" width="70" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_06dy2mv_di" bpmnElement="Event_03w3oze">
+        <dc:Bounds x="788" y="592" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="792" y="556" width="88" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_02ffelk_di" bpmnElement="Event_0cxpvpc">
+        <dc:Bounds x="1304" y="164" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1235" y="155" width="73" height="14" />
         </bpmndi:BPMNLabel>
       </bpmndi:BPMNShape>
     </bpmndi:BPMNPlane>
