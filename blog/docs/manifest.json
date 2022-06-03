@@ -1,0 +1,2109 @@
+{
+  "homepages": [],
+  "source_base_path": "D:/x2v0/tmp/fuseD/docfx_project",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/images/picking_img.png",
+      "output": {
+        "resource": {
+          "relative_path": "examples/images/picking_img.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/images/simple_img.png",
+      "output": {
+        "resource": {
+          "relative_path": "examples/images/simple_img.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/Assets/FuseeAnim.gif",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/Assets/FuseeAnim.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/Assets/FuseeSpinning.gif",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/Assets/FuseeSpinning.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/Assets/FuseeText.png",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/Assets/FuseeText.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/Assets/Lato-Black.ttf",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/Assets/Lato-Black.ttf"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/Assets/RocketModelAnim.fus",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/Assets/RocketModelAnim.fus"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/Assets/RocketModelNoAnim.fus",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/Assets/RocketModelNoAnim.fus"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/Assets/Styles/browser.css",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/Assets/Styles/browser.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/Assets/nineSlice.vert",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/Assets/nineSlice.vert"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/Assets/nineSliceTile.frag",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/Assets/nineSliceTile.frag"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/Assets/texture.frag",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/Assets/texture.frag"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/Assets/texture.vert",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/Assets/texture.vert"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/Fusee.Examples.Picking.WebAsm.Natives/SkiaSharp.Wasm.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/Fusee.Examples.Picking.WebAsm.Natives/SkiaSharp.Wasm.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/Fusee.Examples.Picking.WebAsm.deps.json",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/Fusee.Examples.Picking.WebAsm.deps.json"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/Scripts/SkiaSharp.js",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/Scripts/SkiaSharp.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/Scripts/loading.js",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/Scripts/loading.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/Scripts/mono_support.js",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/Scripts/mono_support.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/canvaskit.js",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/canvaskit.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/canvaskit.wasm",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/canvaskit.wasm"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/index.html",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/index.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Base.Common.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Base.Common.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Base.Common.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Base.Common.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Base.Core.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Base.Core.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Base.Core.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Base.Core.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Base.Imp.WebAsm.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Base.Imp.WebAsm.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Base.Imp.WebAsm.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Base.Imp.WebAsm.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Engine.Common.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Engine.Common.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Engine.Common.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Engine.Common.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Engine.Core.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Engine.Core.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Engine.Core.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Engine.Core.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Engine.GUI.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Engine.GUI.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Engine.GUI.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Engine.GUI.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Engine.Imp.Graphics.WebAsm.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Engine.Imp.Graphics.WebAsm.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Engine.Imp.Graphics.WebAsm.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Engine.Imp.Graphics.WebAsm.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Examples.Picking.Core.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Examples.Picking.Core.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Examples.Picking.Core.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Examples.Picking.Core.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Examples.Picking.WebAsm.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Examples.Picking.WebAsm.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Examples.Picking.WebAsm.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Examples.Picking.WebAsm.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Jometri.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Jometri.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Jometri.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Jometri.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Math.Core.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Math.Core.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Math.Core.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Math.Core.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Serialization.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Serialization.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Serialization.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Serialization.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.SerializationSerializer.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.SerializationSerializer.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Xene.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Xene.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Xene.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Xene.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Xirkit.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Xirkit.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Fusee.Xirkit.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Fusee.Xirkit.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Mono.Security.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Mono.Security.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/Mono.Security.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/Mono.Security.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/SharpFont_mngd.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/SharpFont_mngd.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/SharpFont_mngd.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/SharpFont_mngd.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/SkiaSharp.Wasm.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/SkiaSharp.Wasm.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/System.Core.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/System.Core.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/System.Core.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/System.Core.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/System.Drawing.Common.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/System.Drawing.Common.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/System.Drawing.Common.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/System.Drawing.Common.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/System.Net.Http.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/System.Net.Http.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/System.Net.Http.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/System.Net.Http.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/System.Numerics.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/System.Numerics.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/System.Numerics.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/System.Numerics.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/System.Runtime.Serialization.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/System.Runtime.Serialization.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/System.Runtime.Serialization.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/System.Runtime.Serialization.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/System.ServiceModel.Internals.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/System.ServiceModel.Internals.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/System.ServiceModel.Internals.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/System.ServiceModel.Internals.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/System.Xml.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/System.Xml.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/System.Xml.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/System.Xml.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/System.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/System.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/System.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/System.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/WebAssembly.Bindings.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/WebAssembly.Bindings.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/WebAssembly.Bindings.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/WebAssembly.Bindings.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/WebAssembly.Net.Http.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/WebAssembly.Net.Http.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/WebAssembly.Net.Http.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/WebAssembly.Net.Http.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/WebAssembly.Net.WebSockets.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/WebAssembly.Net.WebSockets.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/WebAssembly.Net.WebSockets.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/WebAssembly.Net.WebSockets.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/mscorlib.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/mscorlib.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/mscorlib.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/mscorlib.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/netstandard.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/netstandard.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/managed/protobuf-net.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/managed/protobuf-net.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/mono.js",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/mono.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/mono.wasm",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/mono.wasm"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/mono.wasm.map",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/mono.wasm.map"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/picking/runtime.js",
+      "output": {
+        "resource": {
+          "relative_path": "examples/picking/runtime.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/9SliceSprites-4.png",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/9SliceSprites-4.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/FUSEERocket.fus",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/FUSEERocket.fus"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/FuseeAnim.gif",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/FuseeAnim.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/FuseeSpinning.gif",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/FuseeSpinning.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/FuseeText.png",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/FuseeText.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/Kitti.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/Kitti.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/Lato-Black.ttf",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/Lato-Black.ttf"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/OpenSans-Bold.ttf",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/OpenSans-Bold.ttf"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/Styles/browser.css",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/Styles/browser.css"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/SuperMario.png",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/SuperMario.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/censored_79_16.png",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/censored_79_16.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/holz.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/holz.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/nineSlice.vert",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/nineSlice.vert"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/nineSliceTile.frag",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/nineSliceTile.frag"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/testTex.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/testTex.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/texture.frag",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/texture.frag"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/texture.vert",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/texture.vert"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Assets/townmusicians.jpg",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Assets/townmusicians.jpg"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Fusee.Examples.RocketOnly.WebAsm.Natives/SkiaSharp.Wasm.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Fusee.Examples.RocketOnly.WebAsm.Natives/SkiaSharp.Wasm.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Fusee.Examples.RocketOnly.WebAsm.deps.json",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Fusee.Examples.RocketOnly.WebAsm.deps.json"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Scripts/SkiaSharp.js",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Scripts/SkiaSharp.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Scripts/loading.js",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Scripts/loading.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/Scripts/mono_support.js",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/Scripts/mono_support.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/canvaskit.js",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/canvaskit.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/canvaskit.wasm",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/canvaskit.wasm"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/index.html",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/index.html"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Base.Common.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Base.Common.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Base.Common.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Base.Common.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Base.Core.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Base.Core.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Base.Core.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Base.Core.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Base.Imp.WebAsm.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Base.Imp.WebAsm.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Base.Imp.WebAsm.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Base.Imp.WebAsm.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Engine.Common.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Engine.Common.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Engine.Common.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Engine.Common.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Engine.Core.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Engine.Core.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Engine.Core.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Engine.Core.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Engine.GUI.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Engine.GUI.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Engine.GUI.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Engine.GUI.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Engine.Imp.Graphics.WebAsm.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Engine.Imp.Graphics.WebAsm.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Engine.Imp.Graphics.WebAsm.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Engine.Imp.Graphics.WebAsm.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Examples.RocketOnly.Core.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Examples.RocketOnly.Core.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Examples.RocketOnly.Core.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Examples.RocketOnly.Core.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Examples.RocketOnly.WebAsm.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Examples.RocketOnly.WebAsm.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Examples.RocketOnly.WebAsm.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Examples.RocketOnly.WebAsm.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Examples.UI.Core.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Examples.UI.Core.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Examples.UI.Core.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Examples.UI.Core.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Jometri.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Jometri.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Jometri.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Jometri.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Math.Core.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Math.Core.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Math.Core.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Math.Core.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Serialization.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Serialization.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Serialization.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Serialization.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.SerializationSerializer.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.SerializationSerializer.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Xene.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Xene.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Xene.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Xene.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Xirkit.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Xirkit.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Fusee.Xirkit.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Fusee.Xirkit.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Mono.Security.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Mono.Security.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/Mono.Security.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/Mono.Security.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/SharpFont_mngd.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/SharpFont_mngd.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/SharpFont_mngd.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/SharpFont_mngd.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/SkiaSharp.Wasm.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/SkiaSharp.Wasm.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/System.Core.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/System.Core.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/System.Core.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/System.Core.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/System.Drawing.Common.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/System.Drawing.Common.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/System.Drawing.Common.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/System.Drawing.Common.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/System.Net.Http.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/System.Net.Http.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/System.Net.Http.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/System.Net.Http.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/System.Numerics.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/System.Numerics.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/System.Numerics.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/System.Numerics.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/System.Runtime.Serialization.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/System.Runtime.Serialization.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/System.Runtime.Serialization.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/System.Runtime.Serialization.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/System.ServiceModel.Internals.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/System.ServiceModel.Internals.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/System.ServiceModel.Internals.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/System.ServiceModel.Internals.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/System.Xml.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/System.Xml.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/System.Xml.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/System.Xml.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/System.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/System.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/System.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/System.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/WebAssembly.Bindings.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/WebAssembly.Bindings.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/WebAssembly.Bindings.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/WebAssembly.Bindings.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/WebAssembly.Net.Http.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/WebAssembly.Net.Http.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/WebAssembly.Net.Http.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/WebAssembly.Net.Http.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/WebAssembly.Net.WebSockets.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/WebAssembly.Net.WebSockets.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/WebAssembly.Net.WebSockets.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/WebAssembly.Net.WebSockets.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/mscorlib.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/mscorlib.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/mscorlib.pdb",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/mscorlib.pdb"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/netstandard.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/netstandard.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/managed/protobuf-net.dll",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/managed/protobuf-net.dll"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/mono.js",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/mono.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/mono.wasm",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/mono.wasm"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/mono.wasm.map",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/mono.wasm.map"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "examples/rocket/runtime.js",
+      "output": {
+        "resource": {
+          "relative_path": "examples/rocket/runtime.js"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "examples/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "examples/toc.html",
+          "hash": "LIq5smZmfUkHX4LIHbawT4SiFSL2UnnegEdmT+I44sA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "getting-started/images/buildandruntheapp.gif",
+      "output": {
+        "resource": {
+          "relative_path": "getting-started/images/buildandruntheapp.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "getting-started/images/createsimplefuseeapp.gif",
+      "output": {
+        "resource": {
+          "relative_path": "getting-started/images/createsimplefuseeapp.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "getting-started/images/enableblenderaddon.gif",
+      "output": {
+        "resource": {
+          "relative_path": "getting-started/images/enableblenderaddon.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "getting-started/images/publishaswebapp.gif",
+      "output": {
+        "resource": {
+          "relative_path": "getting-started/images/publishaswebapp.gif"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "getting-started/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "getting-started/toc.html",
+          "hash": "LIq5smZmfUkHX4LIHbawT4SiFSL2UnnegEdmT+I44sA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/Fusee.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/Fusee.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Resource",
+      "source_relative_path": "images/github.png",
+      "output": {
+        "resource": {
+          "relative_path": "images/github.png"
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "LIq5smZmfUkHX4LIHbawT4SiFSL2UnnegEdmT+I44sA="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": false,
+        "details": "Cannot build incrementally because docfx version changed from 2.58.9.0 to 2.59.2.0.",
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0,
+        "full_build_reason_code": "DocfxVersionChanged"
+      },
+      "processors": {
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 6,
+          "skipped_file_count": 0
+        },
+        "ResourceDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor ResourceDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}
