@@ -1,6 +1,0 @@
-# Auto detect text files and perform LF normalization
-*	text=auto
-
-# GitHub Linguist
-bin/**/* linguist-vendored
-docs/**/* linguist-generated
