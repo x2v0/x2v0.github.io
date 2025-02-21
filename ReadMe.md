@@ -1,15 +1,12 @@
-Linux For SPD
 
+
+**Linux for SPD**
 [https://x2v0.github.io/lfspd](https://x2v0.github.io/lfspd)
 
-DICOM вьюер
-
+**3D DICOM вьюер**
 [https://dicom2fmm.github.io](https://dicom2fmm.github.io) 
 
-**C# реализация сетевого протокола обмена данными в** https://protom.ru
-
-[https://x2v0.github.io/TM/docs](https://x2v0.github.io/TM/docs)
+**C# реализация сетевого протокола обмена данными в** [https://x2v0.github.io/TM/docs](https://x2v0.github.io/TM/docs)
 
 **Программа обработки дозиметрических плёнок EBT**
-
-[https://github.com/x2v0/EBTfilm](https://github.com/x2v0/EBTfilm)
+[https://x2v0.github.io/EBTfilm](https://x2v0.github.io/EBTfilm)
