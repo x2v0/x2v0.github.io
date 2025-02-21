@@ -1,4 +1,6 @@
+[https://x2v0.github.io/cpp.pdf](https://x2v0.github.io/cpp.pdf)
 
+[https://x2v0.github.io/cmake.pdf](htts://x2v0.github.io/cmake.pdf)
 
 **Linux for SPD**
 [https://x2v0.github.io/lfspd](https://x2v0.github.io/lfspd)
