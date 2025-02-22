@@ -17,3 +17,8 @@
 
 **Программа обработки дозиметрических плёнок EBT**
 [https://x2v0.github.io/EBTfilm](https://x2v0.github.io/EBTfilm)
+
+**Система удаленной видео-фиксации положения пациента**
+19 [https://github.com/x2v0/AlignPatient](https://github.com/x2v0/AlignPatient)
+
+
