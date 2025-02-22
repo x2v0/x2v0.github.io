@@ -4,6 +4,9 @@
 **CMake**
 [https://x2v0.github.io/cmake.pdf](htts://x2v0.github.io/cmake.pdf)
 
+**Android**
+[https://x2v0.github.io/Android.pdf](htts://x2v0.github.io/Android.pdf)
+
 **Linux for SPD**
 [https://x2v0.github.io/lfspd](https://x2v0.github.io/lfspd)
 
