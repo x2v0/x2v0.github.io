@@ -1,14 +1,14 @@
-**C++**
-[https://x2v0.github.io/cpp.pdf](https://x2v0.github.io/cpp.pdf)
+**C++:**
+- [https://x2v0.github.io/cpp.pdf](https://x2v0.github.io/cpp.pdf)
 
-**CMake**
-[https://x2v0.github.io/cmake.pdf](htts://x2v0.github.io/cmake.pdf)
+**CMake:**
+- [https://x2v0.github.io/cmake.pdf](htts://x2v0.github.io/cmake.pdf)
 
-**Android**
-[https://x2v0.github.io/Android.pdf](htts://x2v0.github.io/Android.pdf)
+**Android:**
+- [https://x2v0.github.io/Android.pdf](htts://x2v0.github.io/Android.pdf)
 
-**Go**
-[https://x2v0.github.io/golang.pdf](htts://x2v0.github.io/golang.pdf)
+**Go:**
+- [https://x2v0.github.io/golang.pdf](htts://x2v0.github.io/golang.pdf)
 
 **Linux for SPD**
 [https://github.com/x2v0/lfspd](https://github.com/x2v0/lfspd)
