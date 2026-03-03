@@ -1,64 +1,105 @@
+## **Резюме**  
+### **Онучин Валерий Анатольевич**  
+![фото](./me1.jpg)  
+
+📞 **+7 (916) 794-74-98**  
+✉ **valeriy.onuchin@yandex.ru** *(предпочитаемый способ связи)*  
+📍 **Проживает:** Протвино, Московская область  
+🛂 **Гражданство:** Россия  
+**Возраст** 62 года
+
+[Индекс Хирша = 43](https://www.scopus.com/authid/detail.uri?authorId=8401982000).
+
+**Специализация**  
+- ~30 лет в профессии. Программист общего профиля: **<sub>Linux (включая ядро 6.18), Windows, Android, Embedded/SoC (ARM8, aarch64), Эльбрус/e2k. C++, C#, Kotlin, Python, bash, Go, Rust, Ruby, JavaScript ... Make, CMake, Meson/Ninja, autotools/pkg-config ... VS Studio, VS Code, Android Studio, Eclipse ... Win32, X11, GL, Vulkan ... Qt, Winforms/WPF, DevExpress Forms, JetBrains Compose ... DirectShow, FFmpeg, GStreamer, OpenCV ... TCP/IP, UDP, RTSP ... ODBC, SQLite, MySQL, Maria DB, PostgeSQL .. docker, LXC ... PulseAudio, PipeWire, ALSA, HDA ...  ++ и тд. и тп.</sub>**
+- DevOps: кросс-платформенная сборка Linux и его ядра. Платформы: Эльбрус, aarch64
+- Разработка проектов на **C++** и **C#**
+- Разговорный английский 
+ 
+
 ---
-layout: archive
-title: "CV"
-permalink: /cv/
-author_profile: true
-redirect_from:
-  - /resume
+
+## **Опыт работы**  
+
+### **"АО НПЦ ЭЛВИС "** *(апрель- ноябрь 2025)* 
+
+🔗 [elvees.ru](https://elvees.ru)
+
+**Инженер-программист**
+
+Разработка Альтель ОС на базе Альт ОС под платформы Эльбрус (e2k6), aarch64 (Скиф процессор: SoC,ARM Cortex-A53)
+
 ---
 
-{% include base_path %}
+### **ОИЯИ, Дубна, Московская область** *(январь 2022 — декабрь 2024)*  
+🔗 [jinr.ru](https://jinr.ru)  
 
-Education
-======
-* Ph.D in Version Control Theory, GitHub University, 2018 (expected)
-* M.S. in Jekyll, GitHub University, 2014
-* B.S. in GitHub, GitHub University, 2012
+**Программист-физик**  
+Разработка ПО для эксперимента SPD ([spd.jinr.ru](https://spd.jinr.ru)):  
+- создание docker image для распределенных вычислений, включающий в себя
+  - моделирование детектора
+  - реконструкцию физических событий (Geant4, Pythia8, ROOT, Gaudi)  
 
-Work experience
-======
-* Spring 2024: Academic Pages Collaborator
-  * GitHub University
-  * Duties includes: Updates and improvements to template
-  * Supervisor: The Users
+**Избранные репозитории:**  
+- [lfspd](https://github.com/lfspd/lfspd) — docker image для параллельных вычислений. Основан на https://linuxfromscratch.org
+	Автоматическая сборка Linux дистрибутива ~200 пакетов, включающего математические, физические пакеты.
+   - Технологии: chroot, python, docker, bash, cmake, системы сборки и компиляторы  
+- [SpdCMake](https://git.jinr.ru/x2v0/SpdCMake) — CMake-функции для SPD эксперимента.  
 
-* Fall 2015: Research Assistant
-  * GitHub University
-  * Duties included: Merging pull requests
-  * Supervisor: Professor Hub
+---
 
-* Summer 2015: Research Assistant
-  * GitHub University
-  * Duties included: Tagging issues
-  * Supervisor: Professor Git
-  
-Skills
-======
-* Skill 1
-* Skill 2
-  * Sub-skill 2.1
-  * Sub-skill 2.2
-  * Sub-skill 2.3
-* Skill 3
+### **АО ПРОТОМ, Протвино, Московская область** *(январь 2009 — декабрь 2021)*  
+🔗 [protom.ru](https://protom.ru)  
 
-Publications
-======
-  <ul>{% for post in site.publications reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Talks
-======
-  <ul>{% for post in site.talks reversed %}
-    {% include archive-single-talk-cv.html  %}
-  {% endfor %}</ul>
-  
-Teaching
-======
-  <ul>{% for post in site.teaching reversed %}
-    {% include archive-single-cv.html %}
-  {% endfor %}</ul>
-  
-Service and leadership
-======
-* Currently signed in to 43 different slack teams
+**Инженер-программист**  
+Разработка ПО для протонной терапии в медицине.  
+
+**Избранные репозитории:**  
+- [3D DICOM Viewer](https://dicom2fmm.github.io) — 3D просмотрщик, конвертер DICOM 
+    - Технологии: C#, C++, DevExpress, DICOM
+- [PFS/TM](https://x2v0.github.io/TM/docs) — C#-реализация протокола обмена данными  
+- [EBTfilm](https://x2v0.github.io/EBTfilm) — обработка дозиметрических плёнок 
+    - Технологии: C#, C++, ROOT 
+- [AlignPatient](https://github.com/x2v0/AlignPatient) — система видеоконтроля положения пациента  
+    - Технологии: C#, C++, COM, DirectShow, network, real time video editting
+    - Протоколы: multicast UDP, TCP/IP, RTP, SIP
+
+---
+
+### **ЦЕРН, Женева, Швейцария** *(сентябрь 2001 — сентябрь 2008)*  
+🔗 [cern.ch](https://cern.ch)  
+
+**Программист-физик**  
+Соавтор пакета 🔗 [ROOT](https://root.cern.ch) для экспериментов Физики Высоких Энергий.  
+http://ru.m.wikipedia.org/wiki/ROOT
+
+- более 4 миллионов линий C++ кода
+- сотни тысяч пользователей
+- сегодня в файлах ROOT хранится более 2 эксабайт. Бозон Хиггса был открыт с помощью ROOT.
+
+**Основной вклад:**  
+- Windows-версия ROOT (Win32 API) 
+- GUI-классы и GuiBuilder ([документация](https://root.cern.ch/root/htmldoc/guides/users-guide/WritingGUI.html))  
+- Классы обработки изображений ([пример](https://root.cern.ch/doc/v630/group__tutorial__image.html))  
+- Carrot — Apache-модуль для выполнения C++ скриптов на стороне сервера (аналог PHP)([подробнее](https://sourceforge.net/projects/carrot))  
+- QtRoot (Qt, C++) ([детали](https://www.gnome-look.org/p/1131848/)) 
+
+
+---
+
+### **ИФВЭ, Протвино, Московская область** *(май 1987 — сентябрь 2001)*  
+🔗 [ihep.ru](http://ihep.ru)  
+
+**Научный сотрудник. Физик-экспериментатор**  
+- Разработка и эксплуатация калориметров  
+- Участие в международных экспериментах (Америка: PHENIX, Minos.
+   ЦЕРН: ATLAS, Alice  
+
+---
+
+## **Образование**  
+
+### **Харьковский национальный университет имени В.Н. Каразина** *(1981—1987)*  
+**Физико-Технический Факультет**  
+📚 **Специальность:** экспериментальная ядерная физика  
+
