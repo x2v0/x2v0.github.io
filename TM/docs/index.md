@@ -7,5 +7,7 @@ C# реализация сетевого протокола обмена дан�
 ## Документация
 
 * [Список классов и структур](api/TM/TM.html)
-* [Описание библиотеки](articles/overview.html)
+* [Описание библиотеки](articles/overview.md)
+* [Примеры](https://github.com/x2v0/MainCClient.NET)
+* [Тесты](https://github.com/x2v0/TM/blob/master/TM/Test/ReadMe.md)
 
