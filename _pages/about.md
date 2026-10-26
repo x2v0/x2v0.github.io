@@ -12,7 +12,6 @@ redirect_from:
 - ✉️ **[valeriy.onuchin@yandex.ru](mailto:valeriy.onuchin@yandex.ru)** — предпочтительный способ связи
 - 📍 Протвино, Московская область
 - 🐙 **[github.com/x2v0](https://github.com/x2v0?tab=repositories)**
-- 🎓 **[Google Scholar](https://scholar.google.com/citations?user=PS_CX0AAAAAJ)** · **[ORCID](https://orcid.org/yourorcidurl)**
 
 ## Квалификация
 
