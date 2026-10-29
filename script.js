@@ -510,3 +510,37 @@ fetch('https://api.github.com/users/x2v0')
             el.innerHTML = `<span>Repos: <b>${data.public_repos}</b></span><span>Followers: <b>${data.followers}</b></span>`;
         }
     }).catch(e => console.log('GitHub API error', e));
+
+// PWA Service Worker
+if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+        navigator.serviceWorker.register('/sw.js').catch(err => console.log('SW reg failed', err));
+    });
+}
+
+// Анимации при скролле
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('active');
+            observer.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+// Контактная форма (mailto)
+const contactForm = document.getElementById('contact-form');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        const name = document.getElementById('c-name').value;
+        const email = document.getElementById('c-email').value;
+        const msg = document.getElementById('c-msg').value;
+        
+        // Замени 'valeriy.onuchin@ya.ru' на свой реальный email!
+        const mailtoLink = `mailto:valeriy.onuchin@ya.ru?subject=Contact from ${encodeURIComponent(name)}&body=${encodeURIComponent(msg + '\n\nОт: ' + email)}`;
+        window.location.href = mailtoLink;
+    });
+}
