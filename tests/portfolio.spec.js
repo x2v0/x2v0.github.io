@@ -27,6 +27,6 @@ test.describe('Portfolio UI Tests', () => {
 
   test('Contact form exists', async ({ page }) => {
     await page.goto(URL, { waitUntil: 'networkidle' });
-    await expect(page.locator('#contact-form')).toBeVisible();
+    await expect(page.locator('#home-page #contact-form')).toBeVisible();
   });
 });
