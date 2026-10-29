@@ -77,7 +77,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 6. Портфолио и Блог (ЧЕРЕЗ IFRAME, чтобы стили не ломались)
+    // 6. Портфолио и Блог (через iframe)
     function loadPage(url, title) {
         if (!dynamicContent || !mainContent) return;
         
@@ -87,7 +87,6 @@ document.addEventListener('DOMContentLoaded', function() {
         if (resumePage) resumePage.style.display = 'none';
         window.scrollTo(0, 0);
 
-        // Кнопка Назад
         var backBtn = document.createElement('button');
         backBtn.innerHTML = '← Назад на главную';
         backBtn.style.cssText = 'margin: 20px; padding: 10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer; font-size:16px;';
@@ -98,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function() {
         };
         dynamicContent.appendChild(backBtn);
 
-        // Iframe с сайтом
         var iframe = document.createElement('iframe');
         iframe.src = url;
         iframe.style.cssText = 'width: 100%; height: 85vh; border: none; border-top: 1px solid #ddd;';
