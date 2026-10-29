@@ -1649,3 +1649,20 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
     padding-top: 10px !important;
     margin-top: 10px !important;
 }
+
+/* === ИСПРАВЛЕНИЕ ЛЕВОЙ КОЛОНКИ НА ДЕСКТОПЕ === */
+@media (min-width: 901px) {
+    /* Убираем sticky, чтобы ничего не пряталось за шапкой */
+    aside.profile {
+        position: relative !important;
+        top: 0 !important;
+        margin-top: 20px !important; /* Отступ от шапки */
+    }
+}
+
+/* === ОТСТУП ДЛЯ ТЕКСТА ПОД ФОТО === */
+.profile-role {
+    margin-top: 15px !important;    /* Опускаем текст ниже фото */
+    margin-bottom: 20px !important;
+    display: block !important;
+}
