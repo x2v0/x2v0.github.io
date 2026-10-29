@@ -1232,3 +1232,17 @@ details.orcid-details[open] summary::before {
     color: #eee !important;
     border-bottom-color: #333 !important;
 }
+
+/* Фикс главного заголовка (чтобы влезал в 2 строки) */
+.hero-title, .hero h1, #home-page h1 {
+    font-size: clamp(2.5rem, 8vw, 4.5rem) !important; /* Адаптивный размер */
+    line-height: 1.1 !important;
+    letter-spacing: -1px !important;
+    word-wrap: break-word !important;
+}
+
+@media (max-width: 500px) {
+    .hero-title, .hero h1, #home-page h1 {
+        font-size: 3.2rem !important; /* На телефонах делаем чуть крупнее, но чтобы влезало */
+    }
+}
