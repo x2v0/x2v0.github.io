@@ -364,6 +364,9 @@
     const isOpen = menuButton.getAttribute("aria-expanded") === "true";
     menuButton.setAttribute("aria-expanded", String(!isOpen));
     menuButton.setAttribute("aria-label", isOpen ? "Открыть меню" : "Закрыть меню");
+    if (navigation) {
+      navigation.classList.toggle("is-open", !isOpen);
+    }
     navigation.classList.toggle("is-open", !isOpen);
   });
 
