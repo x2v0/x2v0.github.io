@@ -1629,3 +1629,23 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
     flex-direction: column !important;
     gap: 8px !important;
 }
+
+/* Фикс пробелов из-за анимации */
+.reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+/* Убираем огромные отступы у заголовков */
+.section-title {
+    margin-top: 20px !important;
+    margin-bottom: 10px !important;
+}
+.section {
+    padding-top: 10px !important;
+    margin-top: 10px !important;
+}

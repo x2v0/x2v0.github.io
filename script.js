@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var resumePage = document.getElementById('resume-page');
     var resumeContent = document.getElementById('resume-content');
 
-    // 1. Мобильное меню (с анимацией крестика)
+    // 1. Мобильное меню
     if (menuBtn && nav) {
         menuBtn.onclick = function(e) {
             e.preventDefault();
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 2. Закрытие меню при клике вне его
+    // Закрытие меню вне
     document.addEventListener('click', function(e) {
         if (nav && nav.classList.contains('is-open')) {
             if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
@@ -28,18 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 3. Закрываем меню при клике на ссылку
-    if (nav) {
-        var links = nav.querySelectorAll('a');
-        for (var i = 0; i < links.length; i++) {
-            links[i].addEventListener('click', function() {
-                nav.classList.remove('is-open');
-                if (menuBtn) menuBtn.classList.remove('is-active');
-            });
-        }
-    }
-
-    // 4. Переключение темы
+    // 2. Тема
     var themeBtn = document.getElementById('theme-toggle');
     var currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -54,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 5. API Загрузки (GitHub, ORCID)
+    // 3. Загрузка API (GitHub, ORCID)
     var ghEl = document.getElementById('github-stats');
     if (ghEl) {
         fetch('https://api.github.com/users/x2v0')
@@ -105,25 +94,39 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
     }
 
-    // 6. Кнопка вверх и форма
-    var scrollBtn = document.getElementById('scroll-top');
-    if (scrollBtn) {
-        window.addEventListener('scroll', function() { scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none'; });
-        scrollBtn.onclick = function() { window.scrollTo({ top: 0, behavior: 'smooth' }); };
-    }
-
-    var contactForm = document.getElementById('contact-form');
-    if (contactForm) {
-        contactForm.onsubmit = function(e) {
+    // 4. Резюме (SPA)
+    var resumeLink = document.querySelector('a[href="#resume"]');
+    if (resumeLink && resumePage) {
+        resumeLink.onclick = function(e) {
             e.preventDefault();
-            var name = document.getElementById('c-name').value;
-            var email = document.getElementById('c-email').value;
-            var msg = document.getElementById('c-msg').value;
-            window.location.href = 'mailto:valeriy.onuchin@yandex.ru?subject=Contact from ' + encodeURIComponent(name) + '&body=' + encodeURIComponent(msg + '\n\nОт: ' + email);
+            if (mainContent) mainContent.style.display = 'none';
+            if (dynamicContent) dynamicContent.style.display = 'none';
+            resumePage.style.display = 'block';
+            window.scrollTo(0, 0);
+
+            // Если резюме еще не загружено
+            if (resumeContent && resumeContent.innerHTML === 'Загрузка резюме с GitHub...') {
+                fetch('https://raw.githubusercontent.com/x2v0/Resume/main/README.md')
+                    .then(function(r) {
+                        if (!r.ok) throw new Error('Network error');
+                        return r.text();
+                    })
+                    .then(function(md) {
+                        if (typeof marked !== 'undefined') {
+                            resumeContent.innerHTML = marked.parse(md);
+                        } else {
+                            // Если marked не загрузился, выводим как есть
+                            resumeContent.innerHTML = '<pre style="white-space: pre-wrap;">' + md + '</pre>';
+                        }
+                    })
+                    .catch(function(err) {
+                        resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме. Проверьте подключение к интернету.<br>Ошибка: ' + err.message + '</p>';
+                    });
+            }
         };
     }
 
-    // 7. SPA Навигация (Портфолио и Блог)
+    // 5. Навигация (Портфолио, Блог)
     function loadPage(url) {
         if (!dynamicContent || !mainContent) return;
         dynamicContent.innerHTML = '';
@@ -156,33 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 8. Резюме (SPA)
-    var resumeLink = document.querySelector('a[href="#resume"]');
-    if (resumeLink && resumePage) {
-        resumeLink.onclick = function(e) {
-            e.preventDefault();
-            if (mainContent) mainContent.style.display = 'none';
-            if (dynamicContent) dynamicContent.style.display = 'none';
-            resumePage.style.display = 'block';
-            window.scrollTo(0, 0);
-            
-            // Загружаем Markdown, если еще не загружен
-            if (resumeContent && resumeContent.innerHTML === 'Загрузка резюме с GitHub...') {
-                fetch('https://raw.githubusercontent.com/x2v0/Resume/main/README.md')
-                    .then(function(r) { return r.text(); })
-                    .then(function(md) {
-                        if (typeof marked !== 'undefined') {
-                            resumeContent.innerHTML = marked.parse(md);
-                        } else {
-                            resumeContent.innerHTML = '<pre>' + md + '</pre>';
-                        }
-                    })
-                    .catch(function() { resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме.</p>'; });
-            }
-        };
-    }
-
-    // 9. Логотип (ВО) — возврат на главную
+    // 6. Логотип (ВО) - возврат
     if (brandLink) {
         brandLink.onclick = function(e) {
             if ((dynamicContent && dynamicContent.style.display === 'block') || (resumePage && resumePage.style.display === 'block')) {
@@ -195,7 +172,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 10. Анимация появления блоков при скролле
+    // 7. Анимация скролла
     if ('IntersectionObserver' in window) {
         var observer = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
@@ -205,10 +182,8 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             });
         }, { threshold: 0.1 });
-
-        var reveals = document.querySelectorAll('.reveal');
-        for (var r = 0; r < reveals.length; r++) {
-            observer.observe(reveals[r]);
-        }
+        document.querySelectorAll('.reveal').forEach(function(el) {
+            observer.observe(el);
+        });
     }
 });
