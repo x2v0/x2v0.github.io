@@ -1990,3 +1990,17 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
         display: none !important;
     }
 }
+
+/* --- СУЖАЕМ ОТСТУП В КОНТАКТАХ --- */
+.meta-label {
+    display: inline-block;
+    width: 60px !important; /* Было 90px, стало 60px */
+    font-weight: bold;
+    color: #666;
+    flex-shrink: 0;
+}
+.profile-meta a, .profile-meta span {
+    display: flex;
+    align-items: center;
+    gap: 5px !important; /* Уменьшаем расстояние между иконкой и текстом */
+}
