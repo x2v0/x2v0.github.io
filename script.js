@@ -376,15 +376,64 @@
   updateNavigation();
 })();
 
-// ── ORCID Publications ──
+// ── ORCID Publications with Search ──
 document.addEventListener('DOMContentLoaded', async () => {
     const listContainer = document.getElementById('orcid-publications-list');
+    const searchInput = document.getElementById('pub-search');
     if (!listContainer) return;
+    
+    let allPubs = [];
+
+    function renderPubs(filter = '') {
+        const filtered = allPubs.filter(p => 
+            p.title.toLowerCase().includes(filter.toLowerCase()) || 
+            p.year.includes(filter)
+        );
+        if (filtered.length === 0) {
+            listContainer.innerHTML = '<p style="color:#666;">Ничего не найдено.</p>';
+            return;
+        }
+        let html = '<ol style="padding-left: 20px; display: flex; flex-direction: column; gap: 12px;">';
+        filtered.forEach(p => {
+            html += `<li style="margin-bottom: 0;"><strong>${p.title}</strong> (${p.year})`;
+            if (p.journal) html += ` <i>${p.journal}</i>.`;
+            if (p.doi) html += ` <a href="https://doi.org/${p.doi}" target="_blank" style="color: #0288d1; text-decoration: none;">[DOI]</a>`;
+            html += `</li>`;
+        });
+        html += '</ol>';
+        listContainer.innerHTML = html;
+    }
 
     try {
-        const response = await fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', {
-            headers: { 'Accept': 'application/json' }
-        });
+        const response = await fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } });
+        if (!response.ok) throw new Error('Network error');
+        const data = await response.json();
+        
+        if (data.group && data.group.length > 0) {
+            allPubs = data.group.map(item => {
+                const work = item['work-summary'][0];
+                const title = work.title.title.value;
+                const year = work['publication-date']?.year?.value || 'N/A';
+                const journal = work['journal-title']?.value || '';
+                let doi = '';
+                if (work['external-ids'] && work['external-ids']['external-id']) {
+                    const doiObj = work['external-ids']['external-id'].find(id => id['external-id-type'] === 'doi');
+                    if (doiObj) doi = doiObj['external-id-value'];
+                }
+                return { title, year, journal, doi };
+            });
+            renderPubs();
+            if (searchInput) {
+                searchInput.addEventListener('input', (e) => renderPubs(e.target.value));
+            }
+        } else {
+            listContainer.innerHTML = '<p>No publications found.</p>';
+        }
+    } catch (error) {
+        console.error('Error fetching ORCID:', error);
+        listContainer.innerHTML = '<p style="color: red;">Failed to load publications.</p>';
+    }
+});
         if (!response.ok) throw new Error('Network response was not ok');
         
         const data = await response.json();
@@ -424,3 +473,40 @@ document.addEventListener('DOMContentLoaded', async () => {
         listContainer.innerHTML = '<p style="color: red;">Failed to load publications. Please check your connection or the ORCID API.</p>';
     }
 });
+
+// Theme Toggle
+const themeToggle = document.getElementById('theme-toggle');
+const currentTheme = localStorage.getItem('theme') || 'light';
+document.documentElement.setAttribute('data-theme', currentTheme);
+if (currentTheme === 'dark' && themeToggle) themeToggle.textContent = '☀️';
+if (themeToggle) {
+    themeToggle.addEventListener('click', () => {
+        const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+        const newTheme = isDark ? 'light' : 'dark';
+        document.documentElement.setAttribute('data-theme', newTheme);
+        localStorage.setItem('theme', newTheme);
+        themeToggle.textContent = newTheme === 'dark' ? '☀️' : '🌙';
+    });
+}
+
+// Scroll to Top
+const scrollBtn = document.getElementById('scroll-top');
+window.addEventListener('scroll', () => {
+    if (scrollBtn) {
+        if (window.scrollY > 300) scrollBtn.classList.add('show');
+        else scrollBtn.classList.remove('show');
+    }
+});
+if (scrollBtn) {
+    scrollBtn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+}
+
+// GitHub Stats
+fetch('https://api.github.com/users/x2v0')
+    .then(r => r.json())
+    .then(data => {
+        const el = document.getElementById('github-stats');
+        if (el) {
+            el.innerHTML = `<span>Repos: <b>${data.public_repos}</b></span><span>Followers: <b>${data.followers}</b></span>`;
+        }
+    }).catch(e => console.log('GitHub API error', e));

@@ -27,6 +27,7 @@
         <a href="https://x2v0.github.io/portfolio/" target="_blank" rel="noopener noreferrer">Portfolio</a>
         <a href="https://x2v0.github.io/year-archive/" target="_blank" rel="noopener noreferrer">Блог</a>
         <a href="#resume" data-resume-link>Резюме</a>
+        <button id="theme-toggle" type="button" style="background:none; border:none; font-size:20px; cursor:pointer; margin-left:15px;" title="Сменить тему">🌙</button>
       </nav>
     </header>
 
@@ -37,7 +38,11 @@
         </div>
         <h2 class="profile-name">Валерий Онучин</h2>
         <p class="profile-role">Senior Software Engineer: C++, Go, cross-compilation, Linux kernel, CI/CD, Android</p>
-        <div class="profile-rule" aria-hidden="true"></div>
+        
+        <div id="github-stats" style="margin-top: 15px; font-size: 12px; color: #666; display: flex; gap: 10px;">
+            <span>GitHub: <b>...</b></span>
+        </div>
+<div class="profile-rule" aria-hidden="true"></div>
         <div class="profile-meta">
           <span><span class="meta-label">LOC</span>Протвино, Московская область</span>
           <a href="mailto:valeriy.onuchin@yandex.ru"><span class="meta-label">MAIL</span>Email</a>
@@ -160,7 +165,8 @@
         
             <div class="orcid-list" style="margin-top: 30px; border-top: 1px solid var(--border-color, #ddd); padding-top: 20px;">
                 <h3 style="margin-bottom: 15px;">All Publications (ORCID)</h3>
-                <div id="orcid-publications-list" style="font-size: 14px; line-height: 1.6;">
+                            <input type="text" id="pub-search" placeholder="Поиск по названию или году..." style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-family: inherit;">
+<div id="orcid-publications-list" style="font-size: 14px; line-height: 1.6;">
                     <p style="color: #666;">Loading publications from ORCID...</p>
                 </div>
             </div>
@@ -209,5 +215,6 @@
         <a href="#top">На главную ↑</a>
       </footer>
     </main>
-  <script src="https://replit-cdn.com/replit-pill/replit-pill.global.js" data-referral-code="c0f4ol704kib" data-repl-id="c9fcad4a-4a1b-4c83-987e-bb60c71392ff"></script></body>
+  <script src="https://replit-cdn.com/replit-pill/replit-pill.global.js" data-referral-code="c0f4ol704kib" data-repl-id="c9fcad4a-4a1b-4c83-987e-bb60c71392ff"></script>  <button id="scroll-top" title="Наверх">↑</button>
+</body>
 </html>
