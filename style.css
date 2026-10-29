@@ -2175,7 +2175,6 @@ aside.profile {
     padding-top: 10px !important;
 }
 
-/* --- ТОЧНЫЙ РАЗМЕР 200x200 --- */
 
 /* 1. Контейнер (рамка) */
 .portrait-frame, .profile > div:first-child {
@@ -2200,6 +2199,48 @@ aside.profile {
     object-position: center !important;
     display: block !important;
     margin: 0 !important;
+    border: none !important;
+}
+
+/* 3. Скрываем текст под фото */
+.profile-role {
+    display: none !important;
+}
+
+/* 4. Контакты идут ровно под фото */
+.profile-meta {
+    margin-top: 10px !important;
+    padding-top: 0 !important;
+}
+
+/* --- ЧИСТОЕ ФОТО БЕЗ РАМКИ --- */
+
+/* 1. Убираем все рамки у контейнера */
+.portrait-frame, .profile > div:first-child {
+    width: 200px !important;
+    height: 200px !important;
+    max-width: 200px !important;
+    max-height: 200px !important;
+    margin: 0 0 20px 0 !important;
+    padding: 0 !important;
+    border: none !important;       /* Убираем рамку */
+    background: transparent !important;
+    overflow: visible !important;  /* Чтобы тень не обрезалась */
+    display: block !important;
+}
+
+/* 2. Само фото */
+.portrait, .profile img {
+    width: 200px !important;
+    height: 200px !important;
+    max-width: 200px !important;
+    max-height: 200px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    display: block !important;
+    margin: 0 !important;
+    border-radius: 8px !important; /* Скругляем углы фото */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15) !important; /* Легкая тень вместо рамки */
     border: none !important;
 }
 
