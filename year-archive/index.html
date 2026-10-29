@@ -22,7 +22,7 @@
     </style>
 </head>
 <body style="font-family: monospace;">
-    
+    <!-- Никаких кнопок "На главную" здесь больше нет! -->
     
     <div class="blog-container">
         <!-- Список статей -->
@@ -30,18 +30,18 @@
             <h1>Блог</h1>
             <p>Мои заметки о коде и инженерии.</p>
             <ul class="post-list" id="posts-ul">
-                <!-- Сюда будут подставляться статьи -->
                 <li onclick="loadPost('hello-world.md')">Добро пожаловать в мой блог!</li>
-                <!-- Чтобы добавить статью, просто допиши сюда <li onclick="loadPost('filename.md')">Название</li> -->
             </ul>
         </div>
 
         <!-- Просмотр статьи -->
         <div id="article-view" class="article-view">
+            <!-- Эта кнопка возвращает из статьи к списку статей (внутри блога) -->
             <button onclick="backToList()" style="margin-bottom:20px; padding:8px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer;">← К списку статей</button>
+            
             <div id="article-content"></div>
             
-            <!-- Блок комментариев Giscus (Форум) -->
+            <!-- Блок комментариев Utterances -->
             <div id="giscus-container" style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd;">
                 <h3>Обсуждение статьи</h3>
                 <div class="giscus"></div>
@@ -64,14 +64,14 @@
                 .then(r => r.text())
                 .then(md => {
                     document.getElementById('article-content').innerHTML = marked.parse(md);
-                    loadGiscus(filename);
+                    loadUtterances(filename);
                 })
                 .catch(e => {
                     document.getElementById('article-content').innerHTML = '<p style="color:red;">Ошибка загрузки статьи.</p>';
                 });
         }
 
-        function loadGiscus(filename) {
+        function loadUtterances(filename) {
             const container = document.querySelector('.giscus');
             container.innerHTML = ''; // Очищаем старые комментарии
             
