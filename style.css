@@ -2006,13 +2006,6 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
 }
 
 
-/* --- УМЕНЬШАЕМ БОЛЬШОЕ ФОТО В 2 РАЗА --- */
-.portrait {
-    max-width: 100% !important;
-    height: auto !important;
-    width: 100% !important;
-    filter: none !important; /* Убираем черно-белый */
-}
 
 /* Сужаем контейнер с фото (было 250px или больше, станет 150px) */
 .portrait-frame {
@@ -2026,4 +2019,23 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
 /* Убираем жесткие размеры из HTML, если они там застряли */
 img.portrait[width] {
     width: 100% !important;
+}
+
+/* --- ФИНАЛЬНЫЙ ФИКС ФОТО (УМЕНЬШЕНО И ПОДНЯТО) --- */
+.portrait {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: top center !important; /* Поднимаем фото повыше */
+    filter: none !important;
+    display: block !important;
+}
+
+.portrait-frame {
+    width: 150px !important;   /* Уменьшаем ширину */
+    height: 180px !important;  /* Немного вытягиваем по вертикали */
+    overflow: hidden !important;
+    border: 1px solid #ddd !important;
+    margin-bottom: 15px !important;
+    margin-top: -10px !important; /* Поднимаем контейнер выше */
 }
