@@ -5,13 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блог — Валерий Онучин</title>
     <link rel="stylesheet" href="../style.css">
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <style>
+        .article { max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.7; }
+        .article h1 { color: #0288d1; }
+        .article pre { background: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; }
+        .article code { font-family: monospace; background: #eee; padding: 2px 4px; border-radius: 3px; }
+    </style>
 </head>
-<body style="display: flex; align-items: center; justify-content: center; height: 100vh; text-align: center; font-family: monospace;">
-    <div>
-        <h1 style="color: #0288d1;">Блог</h1>
-        <p>Раздел находится в разработке.</p>
-        <p>Здесь будут публиковаться статьи о системном программировании и проектах.</p>
-        <a href="../" style="display: inline-block; margin-top: 20px; padding: 10px 20px; background: #0288d1; color: white; text-decoration: none; border-radius: 5px;">← Вернуться на главную</a>
+<body style="font-family: monospace;">
+    <nav style="padding: 20px; background: #f9f9f9; border-bottom: 1px solid #ddd;">
+        <a href="../" style="color: #0288d1; text-decoration: none; font-weight: bold;">← На главную</a>
+    </nav>
+    <div class="article" id="content">
+        <p style="color: #666;">Загрузка статьи...</p>
     </div>
+
+    <script>
+        // Загружаем тестовую статью (hello-world.md)
+        fetch('./posts/hello-world.md')
+            .then(r => {
+                if (!r.ok) throw new Error('File not found');
+                return r.text();
+            })
+            .then(md => {
+                document.getElementById('content').innerHTML = marked.parse(md);
+            })
+            .catch(e => {
+                document.getElementById('content').innerHTML = '<p style="color:red;">Статья не найдена.</p>';
+            });
+    </script>
 </body>
 </html>

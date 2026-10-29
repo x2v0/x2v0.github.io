@@ -6,49 +6,48 @@
     <title>Portfolio — Валерий Онучин</title>
     <link rel="stylesheet" href="../style.css">
     <style>
-        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 30px; }
-        .project-card { padding: 20px; border: 1px solid var(--border-color, #ddd); border-radius: 8px; background: var(--card-bg, #fff); transition: transform 0.2s, box-shadow 0.2s; }
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 30px; }
+        .project-card { padding: 20px; border: 1px solid var(--border-color, #ddd); border-radius: 8px; background: var(--card-bg, #fff); transition: transform 0.2s; display: flex; flex-direction: column; }
         .project-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
         .project-card h3 { margin-top: 0; color: #0288d1; }
         .tech-stack { font-size: 12px; color: #666; margin-bottom: 15px; }
         .tech-stack span { background: #e3f2fd; color: #0288d1; padding: 2px 6px; border-radius: 4px; margin-right: 5px; display: inline-block; margin-bottom: 5px; }
-        .btn { display: inline-block; padding: 8px 16px; background: #0288d1; color: #fff; text-decoration: none; border-radius: 4px; font-size: 14px; margin-top: 10px; }
+        .btn { display: inline-block; padding: 8px 16px; background: #0288d1; color: #fff; text-decoration: none; border-radius: 4px; font-size: 14px; margin-top: auto; text-align: center; }
         .btn:hover { background: #0277bd; color: #fff; }
     </style>
 </head>
 <body style="font-family: monospace; padding: 20px; max-width: 1000px; margin: auto;">
     <a href="../" style="color: #0288d1; text-decoration: none;">← На главную</a>
     <h1 style="color: #0288d1; margin-top: 20px;">Portfolio</h1>
-    <p>Здесь собраны мои ключевые проекты в области системного программирования, Android и веба.</p>
+    <p>Мои открытые проекты (подгружаются напрямую из GitHub API).</p>
+    <div id="loading" style="color: #666; margin-top: 20px;">Загрузка репозиториев...</div>
+    <div class="projects-grid" id="repos-grid"></div>
 
-    <div class="projects-grid">
-        <div class="project-card">
-            <h3>mtapi</h3>
-            <div class="tech-stack"><span>Go</span><span>Kotlin</span><span>Android</span><span>JNI</span></div>
-            <p>Android HTTP bridge. Предоставляет 60+ API эндпоинтов для доступа к датчикам, камере, сети и системе прямо из WebView или браузера.</p>
-            <a href="https://github.com/x2v0/mtapi" class="btn" target="_blank">GitHub</a>
-        </div>
-
-        <div class="project-card">
-            <h3>w2a</h3>
-            <div class="tech-stack"><span>Go</span><span>Bash</span><span>Termux</span></div>
-            <p>Инструмент для сборки Android APK прямо на телефоне с помощью Termux. Включает шаблоны и встроенный AI-чат.</p>
-            <a href="#" class="btn" style="background:#666; cursor:not-allowed;">В разработке</a>
-        </div>
-
-        <div class="project-card">
-            <h3>x2v0.github.io</h3>
-            <div class="tech-stack"><span>Vanilla JS</span><span>HTML5</span><span>CSS3</span></div>
-            <p>Этот сайт-портфолио. Легковесное статическое приложение с динамической подгрузкой публикаций из ORCID и интеграцией с GitHub.</p>
-            <a href="https://github.com/x2v0/x2v0.github.io" class="btn" target="_blank">GitHub</a>
-        </div>
-
-        <div class="project-card">
-            <h3>ROOT Framework</h3>
-            <div class="tech-stack"><span>C++</span><span>CERN</span><span>Physics</span></div>
-            <p>Соавтор легендарного фреймворка для анализа данных в физике высоких энергий. Более 1500 цитирований.</p>
-            <a href="https://root.cern/" class="btn" target="_blank">Сайт</a>
-        </div>
-    </div>
+    <script>
+        fetch('https://api.github.com/users/x2v0/repos?sort=updated&per_page=20')
+            .then(r => r.json())
+            .then(repos => {
+                document.getElementById('loading').style.display = 'none';
+                const grid = document.getElementById('repos-grid');
+                repos.forEach(repo => {
+                    if (repo.fork) return; // Пропускаем форки
+                    const card = document.createElement('div');
+                    card.className = 'project-card';
+                    card.innerHTML = `
+                        <h3>${repo.name}</h3>
+                        <div class="tech-stack">
+                            ${repo.language ? `<span>${repo.language}</span>` : ''}
+                            <span>⭐ ${repo.stargazers_count}</span>
+                        </div>
+                        <p>${repo.description || 'Без описания'}</p>
+                        <a href="${repo.html_url}" class="btn" target="_blank">Открыть на GitHub</a>
+                    `;
+                    grid.appendChild(card);
+                });
+            })
+            .catch(e => {
+                document.getElementById('loading').innerText = 'Ошибка загрузки репозиториев.';
+            });
+    </script>
 </body>
 </html>
