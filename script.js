@@ -11,7 +11,57 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 2. Переключение темы
+    // 2. SPA Навигация
+    var mainContent = document.getElementById('home-page');
+    var dynamicContent = document.getElementById('dynamic-content');
+
+    function loadPage(url) {
+        if (!dynamicContent || !mainContent) return;
+        
+        dynamicContent.innerHTML = '<p style="text-align:center; padding:50px;">Загрузка...</p>';
+        dynamicContent.style.display = 'block';
+        mainContent.style.display = 'none';
+
+        fetch(url)
+            .then(function(r) { return r.text(); })
+            .then(function(htmlText) {
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(htmlText, 'text/html');
+                dynamicContent.innerHTML = doc.body.innerHTML;
+                
+                var backBtn = document.createElement('button');
+                backBtn.innerHTML = '← Назад на главную';
+                backBtn.style.cssText = 'margin-bottom:20px; padding:10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer; font-family:inherit;';
+                backBtn.onclick = function() {
+                    dynamicContent.style.display = 'none';
+                    mainContent.style.display = ''; 
+                };
+                dynamicContent.insertBefore(backBtn, dynamicContent.firstChild);
+            })
+            .catch(function(e) {
+                dynamicContent.innerHTML = '<p style="color:red;">Ошибка загрузки страницы.</p>';
+            });
+    }
+
+    var navPortfolio = document.getElementById('nav-portfolio');
+    var navBlog = document.getElementById('nav-blog');
+
+    if (navPortfolio) {
+        navPortfolio.onclick = function(e) {
+            e.preventDefault();
+            if (nav) nav.classList.remove('is-open');
+            loadPage('./portfolio/index.html');
+        };
+    }
+    if (navBlog) {
+        navBlog.onclick = function(e) {
+            e.preventDefault();
+            if (nav) nav.classList.remove('is-open');
+            loadPage('./year-archive/index.html');
+        };
+    }
+
+    // 3. Темы
     var themeBtn = document.getElementById('theme-toggle');
     var currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -26,18 +76,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 3. Кнопка Наверх
-    var scrollBtn = document.getElementById('scroll-top');
-    if (scrollBtn) {
-        window.addEventListener('scroll', function() {
-            scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-        scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    }
-
-    // 4. Статистика GitHub
+    // 4. API Загрузки (GitHub, ORCID)
     var ghEl = document.getElementById('github-stats');
     if (ghEl) {
         fetch('https://api.github.com/users/x2v0')
@@ -49,7 +88,6 @@ document.addEventListener('DOMContentLoaded', function() {
             }).catch(function() { ghEl.innerHTML = 'GitHub API Error'; });
     }
 
-    // 5. Публикации ORCID
     var listContainer = document.getElementById('orcid-publications-list');
     if (listContainer) {
         fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } })
@@ -89,24 +127,13 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID (VPN?)</p>'; });
     }
 
-    // 6. Анимации
-    if ('IntersectionObserver' in window) {
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.1 });
-        var reveals = document.querySelectorAll('.reveal');
-        for (var r = 0; r < reveals.length; r++) { observer.observe(reveals[r]); }
-    } else {
-        var revealsFallback = document.querySelectorAll('.reveal');
-        for (var f = 0; f < revealsFallback.length; f++) { revealsFallback[f].classList.add('active'); }
+    // 5. Кнопка вверх и форма
+    var scrollBtn = document.getElementById('scroll-top');
+    if (scrollBtn) {
+        window.addEventListener('scroll', function() { scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none'; });
+        scrollBtn.onclick = function() { window.scrollTo({ top: 0, behavior: 'smooth' }); };
     }
 
-    // 7. Контактная форма
     var contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.onsubmit = function(e) {
@@ -115,56 +142,6 @@ document.addEventListener('DOMContentLoaded', function() {
             var email = document.getElementById('c-email').value;
             var msg = document.getElementById('c-msg').value;
             window.location.href = 'mailto:valeriy.onuchin@ya.ru?subject=Contact from ' + encodeURIComponent(name) + '&body=' + encodeURIComponent(msg + '\n\nОт: ' + email);
-        };
-    }
-
-    // 8. SPA Навигация (Portfolio и Блог)
-    var mainContent = document.getElementById('home-page');
-    var dynamicContent = document.getElementById('dynamic-content');
-
-    function loadPage(url) {
-        if (!dynamicContent || !mainContent) return;
-        
-        dynamicContent.innerHTML = '<p style="text-align:center; padding:50px;">Загрузка...</p>';
-        dynamicContent.style.display = 'block';
-        mainContent.style.display = 'none';
-
-        fetch(url)
-            .then(function(r) { return r.text(); })
-            .then(function(htmlText) {
-                var parser = new DOMParser();
-                var doc = parser.parseFromString(htmlText, 'text/html');
-                dynamicContent.innerHTML = doc.body.innerHTML;
-                
-                var backBtn = document.createElement('button');
-                backBtn.innerHTML = '← Назад на главную';
-                backBtn.style.cssText = 'margin-bottom:20px; padding:10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer; font-family:inherit;';
-                backBtn.onclick = function() {
-                    dynamicContent.style.display = 'none';
-                    mainContent.style.display = ''; // Возвращаем исходное CSS-значение (flex/grid)
-                };
-                dynamicContent.insertBefore(backBtn, dynamicContent.firstChild);
-            })
-            .catch(function(e) {
-                dynamicContent.innerHTML = '<p style="color:red;">Ошибка загрузки страницы.</p>';
-            });
-    }
-
-    var navPortfolio = document.getElementById('nav-portfolio');
-    var navBlog = document.getElementById('nav-blog');
-
-    if (navPortfolio) {
-        navPortfolio.onclick = function(e) {
-            e.preventDefault();
-            loadPage('./portfolio/index.html');
-            if (nav) nav.classList.remove('is-open');
-        };
-    }
-    if (navBlog) {
-        navBlog.onclick = function(e) {
-            e.preventDefault();
-            loadPage('./year-archive/index.html');
-            if (nav) nav.classList.remove('is-open');
         };
     }
 });

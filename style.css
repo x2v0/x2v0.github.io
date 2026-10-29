@@ -814,229 +814,7 @@ button:focus-visible {
   }
 }
 
-@media (max-width: 900px) {
-  .topbar {
-    padding-right: 5vw;
-    padding-left: 5vw;
-  }
 
-  .main-nav {
-    gap: 18px;
-  }
-
-  .layout {
-    grid-template-columns: 190px minmax(0, 1fr);
-    gap: 42px;
-    padding-top: 50px;
-  }
-
-  .portrait-frame {
-    width: 145px;
-    height: 145px;
-  }
-}
-
-@media (max-width: 680px) {
-  html {
-    scroll-padding-top: 72px;
-  }
-
-  .topbar {
-    min-height: 62px;
-  }
-
-  .nav-menu {
-    display: flex;
-  }
-
-  .main-nav {
-    position: absolute;
-    top: 61px;
-    right: 0;
-    left: 0;
-    display: none;
-    flex-wrap: wrap;
-    gap: 6px 22px;
-    padding: 10px 5vw 17px;
-    border-bottom: 1px solid var(--rule);
-    background: var(--paper);
-  }
-
-  .main-nav.is-open {
-    display: flex;
-  }
-
-  .main-nav a {
-    padding: 8px 0;
-    font-size: 12px;
-  }
-
-  .layout {
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-    width: 88vw;
-    padding: 32px 0 48px;
-  }
-
-  .profile {
-    position: relative;
-    top: auto;
-    display: grid;
-    grid-template-columns: 104px minmax(0, 1fr);
-    align-items: center;
-    column-gap: 19px;
-  }
-
-  .portrait-frame {
-    grid-row: span 4;
-    width: 104px;
-    height: 104px;
-    padding: 6px;
-  }
-
-  .portrait-frame::after {
-    inset: 10px -5px -5px 10px;
-  }
-
-  .profile-name {
-    margin: 0 0 4px;
-    font-size: 18px;
-  }
-
-  .profile-role {
-    font-size: 10px;
-    line-height: 1.55;
-  }
-
-  .profile-rule {
-    display: none;
-  }
-
-  .profile-meta {
-    grid-column: 1 / -1;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 9px 16px;
-    padding-top: 17px;
-    font-size: 10px;
-  }
-
-  .meta-label {
-    min-width: 48px;
-    margin-right: 5px;
-    font-size: 8px;
-  }
-
-  .content {
-    width: 100%;
-  }
-
-  .hero {
-    padding-bottom: 31px;
-  }
-
-  .hero h1 {
-    font-size: clamp(36px, 9vw, 52px);
-  }
-
-  .hero-subtitle {
-    font-size: 13px;
-  }
-
-  .section {
-    padding: 30px 0;
-  }
-
-  .section-head {
-    gap: 10px;
-  }
-
-  .section-title {
-    font-size: 21px;
-  }
-
-  .section-caption {
-    font-size: 8px;
-    text-align: right;
-  }
-
-  .skills-table {
-    font-size: 10px;
-  }
-
-  .skills-table th,
-  .skills-table td {
-    padding: 9px 7px;
-  }
-
-  .skills-table tbody th {
-    width: 90px;
-    font-size: 9px;
-  }
-
-  .career-list {
-    gap: 19px;
-  }
-
-  .career-item h3 {
-    font-size: 12px;
-  }
-
-  .career-date {
-    font-size: 8px;
-  }
-
-  .career-item p {
-    font-size: 10px;
-  }
-
-  .metric-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .metric-card-wide {
-    grid-column: 1 / -1;
-  }
-
-  .publication-list li {
-    gap: 6px 10px;
-  }
-
-  .publication-title {
-    font-size: 11px;
-  }
-
-  .project {
-    padding: 17px;
-  }
-
-  .footer {
-    flex-direction: column;
-    gap: 8px;
-  }
-
-  .resume-page {
-    width: 90vw;
-    padding-top: 38px;
-  }
-
-  .resume-card {
-    padding: 19px 15px;
-  }
-
-  .markdown-content {
-    font-size: 12px;
-  }
-
-  .markdown-content h1 {
-    font-size: 26px;
-  }
-
-  .markdown-content h2 {
-    font-size: 22px;
-  }
-}
 
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -1089,31 +867,7 @@ button:focus-visible {
 }
 
 /* Мобильная версия */
-@media (max-width: 900px) {
-    .main-nav {
-        display: none !important; /* Скрыто по умолчанию */
-    }
-    .main-nav.is-open {
-        display: flex !important;
-        flex-direction: column !important;
-        position: absolute !important;
-        top: 100% !important;
-        left: 0 !important;
-        width: 100% !important;
-        background: var(--bg-color, #fff) !important;
-        padding: 20px !important;
-        z-index: 99999 !important;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.1) !important;
-        border-bottom: 1px solid var(--border-color, #ddd) !important;
-    }
-    .main-nav.is-open a {
-        padding: 12px 0 !important;
-        border-bottom: 1px solid var(--border-color, #eee) !important;
-        width: 100% !important;
-        text-align: center !important;
-        display: block !important;
-    }
-}
+
 
 /* Темная тема для меню */
 [data-theme="dark"] .main-nav.is-open {
@@ -1129,4 +883,32 @@ a[href*="replit.com"], iframe[src*="replit.com"], .replit-badge, #replit-badge, 
     display: none !important;
     opacity: 0 !important;
     pointer-events: none !important;
+}
+
+@media (max-width: 900px) {
+    .main-nav { display: none !important; }
+    .main-nav.is-open {
+        display: flex !important;
+        flex-direction: column !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100vw !important;
+        background: var(--bg-color, #fff) !important;
+        padding: 10px 0 !important;
+        z-index: 99999 !important;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.2) !important;
+    }
+    .main-nav.is-open a {
+        padding: 15px 20px !important;
+        border-bottom: 1px solid var(--border-color, #ddd) !important;
+        color: var(--text-color, #333) !important;
+        text-decoration: none !important;
+        display: block !important;
+        font-size: 16px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+    [data-theme="dark"] .main-nav.is-open { background: #1e1e1e !important; }
+    [data-theme="dark"] .main-nav.is-open a { border-bottom-color: #333 !important; color: #eee !important; }
 }
