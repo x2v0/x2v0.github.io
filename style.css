@@ -1947,3 +1947,20 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
         margin-left: auto !important; /* Прижимаем меню к правому краю */
     }
 }
+
+/* === МЕНЮ В ОДИН РЯД (ЛАНДШАФТ / ДЕСКТОП) === */
+@media (min-width: 900px), (orientation: landscape) and (max-height: 600px) {
+    .main-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important; /* Запрещаем перенос на новую строку */
+        gap: 15px !important; /* Чуть уменьшаем отступ, чтобы влезло */
+        margin-left: auto !important;
+        width: auto !important;
+    }
+    .main-nav a {
+        white-space: nowrap !important; /* Текст не переносится */
+        font-size: 14px !important; /* Немного уменьшаем шрифт для узких экранов */
+        padding: 0 !important;
+    }
+}
