@@ -1419,3 +1419,67 @@ aside.profile h2,
         border-bottom-color: #333 !important;
     }
 }
+
+/* === ФИНАЛЬНЫЙ ФИКС ОТ КОЛИ === */
+
+/* 1. Плавающая шапка */
+.topbar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 1000 !important;
+    background: var(--bg-color, #f5f3eb) !important;
+    border-bottom: 1px solid var(--border-color, #ddd) !important;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05) !important;
+}
+[data-theme="dark"] .topbar {
+    background: #121212 !important;
+    border-bottom-color: #333 !important;
+}
+
+/* 2. Увеличение шрифта для десктопа */
+@media (min-width: 900px) {
+    body {
+        font-size: 18px !important; /* Крупнее для десктопа */
+    }
+    .profile-meta a, .profile-meta span {
+        font-size: 15px !important;
+    }
+    h1 {
+        font-size: 3.5rem !important;
+    }
+}
+
+/* 3. Стили для контактов и копирования */
+.profile-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.profile-meta a, .profile-meta span {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: var(--text-color, #333);
+    font-family: monospace;
+    transition: color 0.2s;
+}
+.profile-meta a:hover {
+    color: #0288d1;
+}
+.meta-label {
+    display: inline-block;
+    width: 90px;
+    font-weight: bold;
+    color: #666;
+    flex-shrink: 0;
+}
+[data-theme="dark"] .meta-label {
+    color: #aaa;
+}
+.email-row {
+    display: flex;
+    align-items: center;
+}
+.email-row a {
+    margin-right: 5px;
+}
