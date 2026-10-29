@@ -950,3 +950,42 @@ a[href*="replit.com"], iframe[src*="replit.com"], .replit-badge, #replit-badge, 
         word-break: break-word !important;
     }
 }
+
+/* --- БРОНЕБОЙНЫЙ ФИКС ШАПКИ --- */
+.topbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    flex-wrap: nowrap !important;
+    padding: 10px 15px !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+}
+.topbar .brand {
+    flex: 1 1 auto !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+}
+#theme-toggle {
+    flex: 0 0 auto !important;
+    margin-left: auto !important;
+    margin-right: 15px !important;
+    display: block !important;
+}
+.nav-menu {
+    display: flex !important;
+    flex: 0 0 auto !important; 
+    flex-direction: column !important;
+    justify-content: space-around !important;
+    width: 24px !important;
+    height: 24px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+}
+.nav-menu span {
+    display: block !important;
+    width: 100% !important;
+    height: 2px !important;
+    background: var(--text-color, #333) !important;
+}
