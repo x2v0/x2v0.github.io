@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     var nav = document.getElementById('site-navigation');
     var menuBtn = document.getElementById('menu-toggle');
@@ -7,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var resumeContent = document.getElementById('resume-content');
     var scrollBtn = document.getElementById('scroll-top');
 
+    // 1. Мобильное меню
     if (menuBtn && nav) {
         menuBtn.onclick = function(e) {
             e.preventDefault();
@@ -16,6 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
+    // 2. Закрытие меню при клике вне его
     document.addEventListener('click', function(e) {
         if (nav && nav.classList.contains('is-open')) {
             if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
@@ -25,6 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
+    // 3. Переключение темы
     var themeBtn = document.getElementById('theme-toggle');
     var currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -39,6 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
+    // 4. Кнопка Наверх
     if (scrollBtn) {
         window.addEventListener('scroll', function() {
             scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
@@ -48,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
+    // 5. Резюме (Загружаем локальный файл и парсим Markdown)
     var resumeLink = document.querySelector('a[href="#resume"]');
     if (resumeLink && resumePage) {
         resumeLink.onclick = function(e) {
@@ -57,8 +63,11 @@ document.addEventListener('DOMContentLoaded', function() {
             resumePage.hidden = false;
             resumePage.style.display = 'block';
             window.scrollTo(0, 0);
+
+            // Закрываем меню
             if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
 
+            // Если текст еще не загружен — грузим
             if (resumeContent && resumeContent.innerHTML.indexOf('Загрузка') !== -1) {
                 fetch('./resume.md')
                     .then(function(r) { return r.text(); })
@@ -66,27 +75,18 @@ document.addEventListener('DOMContentLoaded', function() {
                         if (typeof marked !== 'undefined') {
                             resumeContent.innerHTML = marked.parse(md);
                         } else {
+                            // Если marked не загрузился, просто выводим текст
                             resumeContent.innerHTML = '<pre>' + md + '</pre>';
                         }
                     })
-                    .catch(function() {
-                        resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки</p>';
+                    .catch(function(err) {
+                        resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки: ' + err.message + '</p>';
                     });
             }
         };
     }
 
-    var resumeBack = document.querySelector('[data-resume-back]');
-    if (resumeBack) {
-        resumeBack.onclick = function(e) {
-            e.preventDefault();
-            resumePage.hidden = true;
-            resumePage.style.display = 'none';
-            if (mainContent) mainContent.style.display = '';
-            window.scrollTo(0, 0);
-        };
-    }
-
+    // 6. Навигация Портфолио и Блог
     function loadPage(url, title) {
         if (!dynamicContent || !mainContent) return;
         dynamicContent.innerHTML = '<p style="text-align:center; padding:50px;">Загрузка ' + title + '...</p>';
@@ -147,6 +147,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
+    // 7. Логотип (ВО) — возврат
     var brandLink = document.querySelector('.brand');
     if (brandLink) {
         brandLink.onclick = function(e) {
