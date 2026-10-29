@@ -1600,3 +1600,32 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
         transform: translateY(-8px) rotate(-45deg) !important;
     }
 }
+
+/* === СУЖАЕМ МЕНЮ В 2 РАЗА === */
+@media (max-width: 900px) {
+    .main-nav.is-open {
+        width: 140px !important; /* Было 280px, стало 140px */
+    }
+    .main-nav.is-open a {
+        padding: 12px 10px !important;
+        font-size: 14px !important; /* Уменьшаем шрифт для компактности */
+    }
+}
+
+/* === ФИКС EMAIL (ЧТОБЫ НЕ НАЕЗЖАЛ) === */
+.email-row {
+    display: flex !important;
+    flex-wrap: wrap !important; /* Разрешаем перенос на новую строку */
+    align-items: center !important;
+    gap: 5px !important;
+    margin-bottom: 10px !important;
+}
+.email-row a {
+    word-break: break-all !important; /* Ломаем длинную строку, если не влезает */
+    max-width: 100% !important;
+}
+.profile-meta {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+}
