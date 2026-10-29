@@ -2054,29 +2054,54 @@ img.portrait[width] {
     display: block !important;
 }
 
-/* --- УМЕНЬШАЕМ ФОТО ЕЩЕ НА 20% (130px) --- */
+
+/* Очистка обтекания, чтобы контакты были ниже */
+.profile-meta {
+    clear: both !important;
+    padding-top: 15px !important;
+}
+
+/* --- ЖЕСТКИЙ ФИКС: ФОТО И ТЕКСТ В ДВЕ КОЛОНКИ --- */
+.profile-top {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 20px !important; /* Расстояние между фото и текстом */
+    margin-bottom: 20px !important;
+}
+
+/* Если Replit не использует .profile-top, применяем к самой aside */
+aside.profile {
+    display: flex !important;
+    flex-direction: column !important;
+}
+
+/* Контейнер с фото */
 .portrait-frame, .profile > div:first-child {
     width: 130px !important;
-    max-width: 130px !important;
-    margin: 0 0 10px 0 !important;
-    float: left !important; /* Заставляем текст обтекать фото */
-    margin-right: 20px !important; /* Отступ от фото до текста */
-    background: transparent !important;
-    border: none !important;
+    flex-shrink: 0 !important; /* Запрещаем фото сжиматься */
+    margin: 0 !important;
 }
 
 .portrait, .profile img {
     width: 130px !important;
     height: 130px !important;
     object-fit: cover !important;
-    object-position: center !important;
     border-radius: 4px !important;
     border: 1px solid #ddd !important;
     display: block !important;
 }
 
-/* Очистка обтекания, чтобы контакты были ниже */
+/* Текст справа от фото (занимает всё оставшееся место) */
+.profile-role {
+    margin: 0 !important;
+    font-size: 14px !important;
+    flex-grow: 1 !important;
+    padding-top: 5px !important;
+}
+
+/* Контакты всегда идут ниже */
 .profile-meta {
     clear: both !important;
-    padding-top: 15px !important;
+    width: 100% !important;
+    margin-top: 20px !important;
 }
