@@ -1597,12 +1597,6 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
 }
 
 
-/* === ЕДИНОЕ МЕНЮ ДЛЯ ВСЕХ ЭКРАНОВ === */
-.header-actions {
-    display: flex !important;
-    align-items: center !important;
-    gap: 15px !important;
-}
 
 /* Кнопка гамбургера видна ВСЕГДА */
 .nav-menu {
@@ -1672,4 +1666,65 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
 }
 [data-theme="dark"] .main-nav a:hover {
     background: rgba(255,255,255,0.05) !important;
+}
+
+/* === ДЕСКТОП / ЛАНДШАФТ (широкие экраны) === */
+@media (min-width: 901px) {
+    .nav-menu { display: none !important; } /* Прячем гамбургер */
+    .main-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        position: static !important;
+        width: auto !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        gap: 20px !important;
+    }
+    .main-nav a {
+        border: none !important;
+        padding: 0 !important;
+        font-size: 16px !important;
+        color: var(--text-color, #333) !important;
+    }
+    [data-theme="dark"] .main-nav a { color: #eee !important; }
+}
+
+/* === ТЕЛЕФОН ПОРТРЕТ (узкие экраны) === */
+@media (max-width: 900px) {
+    .nav-menu { display: flex !important; } /* Показываем гамбургер */
+    
+    .main-nav {
+        display: none !important;
+        flex-direction: column !important;
+        position: absolute !important;
+        top: 100% !important;
+        right: 0 !important;
+        left: auto !important; /* Привязка к правому краю */
+        width: 180px !important;
+        background: var(--bg-color, #f5f3eb) !important;
+        padding: 10px 0 !important;
+        z-index: 10000 !important;
+        box-shadow: -5px 10px 15px rgba(0,0,0,0.1) !important;
+        border: 1px solid var(--border-color, #ddd) !important;
+        border-radius: 8px 0 8px 8px !important;
+    }
+    .main-nav.is-open { display: flex !important; }
+    
+    .main-nav a {
+        padding: 15px 20px !important;
+        border-bottom: 1px solid var(--border-color, #ddd) !important;
+        color: var(--text-color, #333) !important;
+        text-decoration: none !important;
+        text-align: right !important; /* Текст по правому краю */
+    }
+    [data-theme="dark"] .main-nav {
+        background: #1e1e1e !important;
+        border-color: #333 !important;
+    }
+    [data-theme="dark"] .main-nav a {
+        color: #eee !important;
+        border-bottom-color: #333 !important;
+    }
 }
