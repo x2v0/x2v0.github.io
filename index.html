@@ -166,14 +166,18 @@
             </li>
           </ol>
         
-            <div class="orcid-list" style="margin-top: 30px; border-top: 1px solid var(--border-color, #ddd); padding-top: 20px;">
-                <h3 style="margin-bottom: 15px;">All Publications (ORCID)</h3>
-                            <input type="text" id="pub-search" placeholder="Поиск по названию или году..." style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-family: inherit;">
-<div id="orcid-publications-list" style="font-size: 14px; line-height: 1.6;">
-                    <p style="color: #666;">Loading publications from ORCID...</p>
+            <details class="orcid-details" style="margin-top: 30px; border-top: 1px solid var(--border-color, #ddd); padding-top: 20px; margin-bottom: 20px;">
+                <summary style="cursor: pointer; font-weight: bold; font-size: 18px; color: #0288d1; outline: none; display: list-item; padding: 10px 0;">
+                    📚 All Publications (ORCID) — нажмите, чтобы раскрыть список
+                </summary>
+                <div style="padding-top: 15px;">
+                    <input type="text" id="pub-search" placeholder="Поиск по названию или году..." style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; font-family: inherit; box-sizing: border-box;">
+                    <div id="orcid-publications-list" style="font-size: 14px; line-height: 1.6;">
+                        <p style="color: #666;">Loading publications from ORCID...</p>
+                    </div>
                 </div>
-            </div>
-</section>
+            </details>
+            </section>
 
         <section class="section" id="projects">
           <div class="section-head">

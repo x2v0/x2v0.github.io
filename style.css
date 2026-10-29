@@ -1140,3 +1140,30 @@ a[href*="replit.com"], iframe[src*="replit.com"], .replit-badge, #replit-badge, 
     object-fit: cover !important;
     display: inline-block !important;
 }
+
+/* Аккордеон для публикаций */
+details.orcid-details summary {
+    list-style: none;
+    transition: color 0.2s;
+}
+details.orcid-details summary::-webkit-details-marker {
+    display: none;
+}
+details.orcid-details summary::before {
+    content: '▶ ';
+    font-size: 14px;
+    display: inline-block;
+    transition: transform 0.2s;
+    margin-right: 5px;
+}
+details.orcid-details[open] summary::before {
+    transform: rotate(90deg);
+}
+[data-theme="dark"] details.orcid-details summary {
+    color: #4fc3f7 !important;
+}
+[data-theme="dark"] #pub-search {
+    background: #1e1e1e !important;
+    color: #eee !important;
+    border-color: #444 !important;
+}
