@@ -1292,3 +1292,10 @@ section.hero h1,
 #home-page > .layout > div > h1:first-of-type {
     display: none !important;
 }
+
+/* Скрываем дублирующееся имя в профиле (оставляем только в шапке) */
+.profile-name, 
+aside.profile h2, 
+.profile h2:first-of-type {
+    display: none !important;
+}
