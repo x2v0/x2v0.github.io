@@ -1925,14 +1925,6 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
     }
 }
 
-/* --- ПЕРЕНОС ЛУНЫ ВЛЕВО --- */
-.header-actions {
-    display: flex !important;
-    flex-direction: row !important;
-    align-items: center !important;
-    gap: 15px !important;
-    margin-right: auto !important; /* Прижимает блок с луной и гамбургером влево */
-}
 
 /* Если меню идет после header-actions, оно автоматически уедет вправо */
 .topbar {
@@ -1962,5 +1954,39 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
         white-space: nowrap !important; /* Текст не переносится */
         font-size: 14px !important; /* Немного уменьшаем шрифт для узких экранов */
         padding: 0 !important;
+    }
+}
+
+/* --- ГАМБУРГЕР НА ПРАВЫЙ КРАЙ --- */
+.topbar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important; /* Разносим элементы по краям */
+    padding: 15px 20px !important;
+}
+
+.brand {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    margin-right: auto !important; /* Логотип и имя прижимаются влево */
+}
+
+.header-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+    margin-left: auto !important; /* Луна и гамбургер прижимаются вправо */
+}
+
+/* На десктопе, если меню в строке, оно будет между логотипом и кнопками */
+@media (min-width: 900px) {
+    .main-nav {
+        margin-left: auto !important;
+        margin-right: 20px !important;
+    }
+    /* На десктопе гамбургер скрыт, но если он есть, он тоже справа */
+    .nav-menu {
+        display: none !important;
     }
 }
