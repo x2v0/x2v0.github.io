@@ -1268,3 +1268,19 @@ h1 span, .hero-title span, .hero-title br + span {
     font-size: inherit !important;
     line-height: inherit !important;
 }
+
+/* --- ЭКСТРЕННЫЙ ФИКС ШРИФТА (В 2 РАЗА МЕНЬШЕ) --- */
+h1, .hero-title, .display-title, .hero h1, #home-page h1, .profile-name {
+    font-size: 2.2rem !important; /* Жестко 2.2rem */
+    line-height: 1.1 !important;
+    letter-spacing: -0.5px !important;
+    margin-bottom: 10px !important;
+}
+h1 span, .hero-title span {
+    font-size: inherit !important;
+}
+@media (max-width: 500px) {
+    h1, .hero-title, .display-title, .hero h1, #home-page h1 {
+        font-size: 1.8rem !important; /* На телефоне 1.8rem */
+    }
+}
