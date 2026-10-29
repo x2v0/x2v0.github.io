@@ -7,6 +7,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var brandLink = document.querySelector('.brand');
     var resumePage = document.getElementById('resume-page');
     var resumeContent = document.getElementById('resume-content');
+    var pubPage = document.getElementById('publications-page');
     var scrollBtn = document.getElementById('scroll-top');
 
     // 1. Мобильное меню (гамбургер)
@@ -27,54 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuBtn.classList.remove('is-active');
             }
         }
-    
-    // Навигация: Публикации
-    var navPub = document.getElementById('nav-publications');
-    var pubPage = document.getElementById('publications-page');
-    if (navPub && pubPage) {
-        navPub.onclick = function(e) {
-            e.preventDefault();
-            if (mainContent) mainContent.style.display = 'none';
-            if (dynamicContent) dynamicContent.style.display = 'none';
-            if (resumePage) resumePage.style.display = 'none';
-            pubPage.style.display = 'block';
-            window.scrollTo(0, 0);
-
-            // Загружаем ORCID, если еще не загружено
-            var listContainer = document.getElementById('orcid-publications-list');
-            if (listContainer && listContainer.innerHTML.indexOf('Загрузка') !== -1) {
-                fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } })
-                    .then(function(r) { return r.json(); })
-                    .then(function(data) {
-                        if (!data.group) throw new Error('No data');
-                        var allPubs = data.group.map(function(item) {
-                            var work = item['work-summary'][0];
-                            var year = work['publication-date'] && work['publication-date'].year ? work['publication-date'].year.value : '';
-                            var doi = '';
-                            if (work['external-ids'] && work['external-ids']['external-id']) {
-                                var ids = work['external-ids']['external-id'];
-                                for (var k = 0; k < ids.length; k++) {
-                                    if (ids[k]['external-id-type'] === 'doi') doi = ids[k]['external-id-value'];
-                                }
-                            }
-                            return { title: work.title.title.value, year: year, doi: doi };
-                        });
-
-                        var html = '';
-                        for (var i = 0; i < allPubs.length; i++) {
-                            var p = allPubs[i];
-                            html += '<li><strong>' + p.title + '</strong> (' + p.year + ')';
-                            if (p.doi) html += ' <a href="https://doi.org/' + p.doi + '" target="_blank">[DOI]</a>';
-                            html += '</li>';
-                        }
-                        listContainer.innerHTML = html;
-                    })
-                    .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
-            }
-        };
-    }
-
-});
+    });
 
     // 3. Переключение темы (луна)
     var themeBtn = document.getElementById('theme-toggle');
@@ -95,294 +49,20 @@ document.addEventListener('DOMContentLoaded', function() {
     if (scrollBtn) {
         window.addEventListener('scroll', function() {
             scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        
-    // Навигация: Публикации
-    var navPub = document.getElementById('nav-publications');
-    var pubPage = document.getElementById('publications-page');
-    if (navPub && pubPage) {
-        navPub.onclick = function(e) {
-            e.preventDefault();
-            if (mainContent) mainContent.style.display = 'none';
-            if (dynamicContent) dynamicContent.style.display = 'none';
-            if (resumePage) resumePage.style.display = 'none';
-            pubPage.style.display = 'block';
-            window.scrollTo(0, 0);
-
-            // Загружаем ORCID, если еще не загружено
-            var listContainer = document.getElementById('orcid-publications-list');
-            if (listContainer && listContainer.innerHTML.indexOf('Загрузка') !== -1) {
-                fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } })
-                    .then(function(r) { return r.json(); })
-                    .then(function(data) {
-                        if (!data.group) throw new Error('No data');
-                        var allPubs = data.group.map(function(item) {
-                            var work = item['work-summary'][0];
-                            var year = work['publication-date'] && work['publication-date'].year ? work['publication-date'].year.value : '';
-                            var doi = '';
-                            if (work['external-ids'] && work['external-ids']['external-id']) {
-                                var ids = work['external-ids']['external-id'];
-                                for (var k = 0; k < ids.length; k++) {
-                                    if (ids[k]['external-id-type'] === 'doi') doi = ids[k]['external-id-value'];
-                                }
-                            }
-                            return { title: work.title.title.value, year: year, doi: doi };
-                        });
-
-                        var html = '';
-                        for (var i = 0; i < allPubs.length; i++) {
-                            var p = allPubs[i];
-                            html += '<li><strong>' + p.title + '</strong> (' + p.year + ')';
-                            if (p.doi) html += ' <a href="https://doi.org/' + p.doi + '" target="_blank">[DOI]</a>';
-                            html += '</li>';
-                        }
-                        listContainer.innerHTML = html;
-                    })
-                    .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
-            }
-        };
-    }
-
-});
+        });
         scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' 
-    // Навигация: Публикации
-    var navPub = document.getElementById('nav-publications');
-    var pubPage = document.getElementById('publications-page');
-    if (navPub && pubPage) {
-        navPub.onclick = function(e) {
-            e.preventDefault();
-            if (mainContent) mainContent.style.display = 'none';
-            if (dynamicContent) dynamicContent.style.display = 'none';
-            if (resumePage) resumePage.style.display = 'none';
-            pubPage.style.display = 'block';
-            window.scrollTo(0, 0);
-
-            // Загружаем ORCID, если еще не загружено
-            var listContainer = document.getElementById('orcid-publications-list');
-            if (listContainer && listContainer.innerHTML.indexOf('Загрузка') !== -1) {
-                fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } })
-                    .then(function(r) { return r.json(); })
-                    .then(function(data) {
-                        if (!data.group) throw new Error('No data');
-                        var allPubs = data.group.map(function(item) {
-                            var work = item['work-summary'][0];
-                            var year = work['publication-date'] && work['publication-date'].year ? work['publication-date'].year.value : '';
-                            var doi = '';
-                            if (work['external-ids'] && work['external-ids']['external-id']) {
-                                var ids = work['external-ids']['external-id'];
-                                for (var k = 0; k < ids.length; k++) {
-                                    if (ids[k]['external-id-type'] === 'doi') doi = ids[k]['external-id-value'];
-                                }
-                            }
-                            return { title: work.title.title.value, year: year, doi: doi };
-                        });
-
-                        var html = '';
-                        for (var i = 0; i < allPubs.length; i++) {
-                            var p = allPubs[i];
-                            html += '<li><strong>' + p.title + '</strong> (' + p.year + ')';
-                            if (p.doi) html += ' <a href="https://doi.org/' + p.doi + '" target="_blank">[DOI]</a>';
-                            html += '</li>';
-                        }
-                        listContainer.innerHTML = html;
-                    })
-                    .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
-            }
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         };
     }
 
-});
-        };
-    }
-
-    // 5. Загрузка Публикаций (ORCID)
-    var listContainer = document.getElementById('orcid-publications-list');
-    if (listContainer) {
-        fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } })
-            .then(function(r) { return r.json(); })
-            .then(function(data) {
-                if (!data.group) throw new Error('No data');
-                var allPubs = data.group.map(function(item) {
-                    var work = item['work-summary'][0];
-                    var year = work['publication-date'] && work['publication-date'].year ? work['publication-date'].year.value : '';
-                    var doi = '';
-                    if (work['external-ids'] && work['external-ids']['external-id']) {
-                        var ids = work['external-ids']['external-id'];
-                        for (var k = 0; k < ids.length; k++) {
-                            if (ids[k]['external-id-type'] === 'doi') doi = ids[k]['external-id-value'];
-                        }
-                    }
-                    return { title: work.title.title.value, year: year, doi: doi };
-                
-    // Навигация: Публикации
-    var navPub = document.getElementById('nav-publications');
-    var pubPage = document.getElementById('publications-page');
-    if (navPub && pubPage) {
-        navPub.onclick = function(e) {
-            e.preventDefault();
-            if (mainContent) mainContent.style.display = 'none';
-            if (dynamicContent) dynamicContent.style.display = 'none';
-            if (resumePage) resumePage.style.display = 'none';
-            pubPage.style.display = 'block';
-            window.scrollTo(0, 0);
-
-            // Загружаем ORCID, если еще не загружено
-            var listContainer = document.getElementById('orcid-publications-list');
-            if (listContainer && listContainer.innerHTML.indexOf('Загрузка') !== -1) {
-                fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } })
-                    .then(function(r) { return r.json(); })
-                    .then(function(data) {
-                        if (!data.group) throw new Error('No data');
-                        var allPubs = data.group.map(function(item) {
-                            var work = item['work-summary'][0];
-                            var year = work['publication-date'] && work['publication-date'].year ? work['publication-date'].year.value : '';
-                            var doi = '';
-                            if (work['external-ids'] && work['external-ids']['external-id']) {
-                                var ids = work['external-ids']['external-id'];
-                                for (var k = 0; k < ids.length; k++) {
-                                    if (ids[k]['external-id-type'] === 'doi') doi = ids[k]['external-id-value'];
-                                }
-                            }
-                            return { title: work.title.title.value, year: year, doi: doi };
-                        });
-
-                        var html = '';
-                        for (var i = 0; i < allPubs.length; i++) {
-                            var p = allPubs[i];
-                            html += '<li><strong>' + p.title + '</strong> (' + p.year + ')';
-                            if (p.doi) html += ' <a href="https://doi.org/' + p.doi + '" target="_blank">[DOI]</a>';
-                            html += '</li>';
-                        }
-                        listContainer.innerHTML = html;
-                    })
-                    .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
-            }
-        };
-    }
-
-});
-
-                var render = function(filter) {
-                    filter = filter || '';
-                    var filtered = allPubs.filter(function(p){ return p.title.toLowerCase().indexOf(filter.toLowerCase()) !== -1 || p.year.indexOf(filter) !== -1; 
-    // Навигация: Публикации
-    var navPub = document.getElementById('nav-publications');
-    var pubPage = document.getElementById('publications-page');
-    if (navPub && pubPage) {
-        navPub.onclick = function(e) {
-            e.preventDefault();
-            if (mainContent) mainContent.style.display = 'none';
-            if (dynamicContent) dynamicContent.style.display = 'none';
-            if (resumePage) resumePage.style.display = 'none';
-            pubPage.style.display = 'block';
-            window.scrollTo(0, 0);
-
-            // Загружаем ORCID, если еще не загружено
-            var listContainer = document.getElementById('orcid-publications-list');
-            if (listContainer && listContainer.innerHTML.indexOf('Загрузка') !== -1) {
-                fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } })
-                    .then(function(r) { return r.json(); })
-                    .then(function(data) {
-                        if (!data.group) throw new Error('No data');
-                        var allPubs = data.group.map(function(item) {
-                            var work = item['work-summary'][0];
-                            var year = work['publication-date'] && work['publication-date'].year ? work['publication-date'].year.value : '';
-                            var doi = '';
-                            if (work['external-ids'] && work['external-ids']['external-id']) {
-                                var ids = work['external-ids']['external-id'];
-                                for (var k = 0; k < ids.length; k++) {
-                                    if (ids[k]['external-id-type'] === 'doi') doi = ids[k]['external-id-value'];
-                                }
-                            }
-                            return { title: work.title.title.value, year: year, doi: doi };
-                        });
-
-                        var html = '';
-                        for (var i = 0; i < allPubs.length; i++) {
-                            var p = allPubs[i];
-                            html += '<li><strong>' + p.title + '</strong> (' + p.year + ')';
-                            if (p.doi) html += ' <a href="https://doi.org/' + p.doi + '" target="_blank">[DOI]</a>';
-                            html += '</li>';
-                        }
-                        listContainer.innerHTML = html;
-                    })
-                    .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
-            }
-        };
-    }
-
-});
-                    if (!filtered.length) { listContainer.innerHTML = '<p>Нет результатов.</p>'; return; }
-                    var html = '<ol style="padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">';
-                    for (var i = 0; i < filtered.length; i++) {
-                        var p = filtered[i];
-                        html += '<li><strong>' + p.title + '</strong> (' + p.year + ')';
-                        if (p.doi) html += ' <a href="https://doi.org/' + p.doi + '" target="_blank">[DOI]</a>';
-                        html += '</li>';
-                    }
-                    listContainer.innerHTML = html + '</ol>';
-                };
-                render();
-                var searchInput = document.getElementById('pub-search');
-                if (searchInput) searchInput.oninput = function(e) { render(e.target.value); };
-            })
-            .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; 
-    // Навигация: Публикации
-    var navPub = document.getElementById('nav-publications');
-    var pubPage = document.getElementById('publications-page');
-    if (navPub && pubPage) {
-        navPub.onclick = function(e) {
-            e.preventDefault();
-            if (mainContent) mainContent.style.display = 'none';
-            if (dynamicContent) dynamicContent.style.display = 'none';
-            if (resumePage) resumePage.style.display = 'none';
-            pubPage.style.display = 'block';
-            window.scrollTo(0, 0);
-
-            // Загружаем ORCID, если еще не загружено
-            var listContainer = document.getElementById('orcid-publications-list');
-            if (listContainer && listContainer.innerHTML.indexOf('Загрузка') !== -1) {
-                fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } })
-                    .then(function(r) { return r.json(); })
-                    .then(function(data) {
-                        if (!data.group) throw new Error('No data');
-                        var allPubs = data.group.map(function(item) {
-                            var work = item['work-summary'][0];
-                            var year = work['publication-date'] && work['publication-date'].year ? work['publication-date'].year.value : '';
-                            var doi = '';
-                            if (work['external-ids'] && work['external-ids']['external-id']) {
-                                var ids = work['external-ids']['external-id'];
-                                for (var k = 0; k < ids.length; k++) {
-                                    if (ids[k]['external-id-type'] === 'doi') doi = ids[k]['external-id-value'];
-                                }
-                            }
-                            return { title: work.title.title.value, year: year, doi: doi };
-                        });
-
-                        var html = '';
-                        for (var i = 0; i < allPubs.length; i++) {
-                            var p = allPubs[i];
-                            html += '<li><strong>' + p.title + '</strong> (' + p.year + ')';
-                            if (p.doi) html += ' <a href="https://doi.org/' + p.doi + '" target="_blank">[DOI]</a>';
-                            html += '</li>';
-                        }
-                        listContainer.innerHTML = html;
-                    })
-                    .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
-            }
-        };
-    }
-
-});
-    }
-
-    // 6. Резюме (SPA)
+    // 5. Резюме (SPA)
     var resumeLink = document.querySelector('a[href="#resume"]');
     if (resumeLink && resumePage) {
         resumeLink.onclick = function(e) {
             e.preventDefault();
             if (mainContent) mainContent.style.display = 'none';
             if (dynamicContent) dynamicContent.style.display = 'none';
+            if (pubPage) pubPage.style.display = 'none';
             resumePage.style.display = 'block';
             window.scrollTo(0, 0);
 
@@ -401,10 +81,13 @@ document.addEventListener('DOMContentLoaded', function() {
                     })
                     .catch(function(err) {
                         resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме. Ошибка: ' + err.message + '</p>';
-                    
-    // Навигация: Публикации
+                    });
+            }
+        };
+    }
+
+    // 6. Публикации (SPA)
     var navPub = document.getElementById('nav-publications');
-    var pubPage = document.getElementById('publications-page');
     if (navPub && pubPage) {
         navPub.onclick = function(e) {
             e.preventDefault();
@@ -414,7 +97,6 @@ document.addEventListener('DOMContentLoaded', function() {
             pubPage.style.display = 'block';
             window.scrollTo(0, 0);
 
-            // Загружаем ORCID, если еще не загружено
             var listContainer = document.getElementById('orcid-publications-list');
             if (listContainer && listContainer.innerHTML.indexOf('Загрузка') !== -1) {
                 fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } })
@@ -448,11 +130,6 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-});
-            }
-        };
-    }
-
     // 7. Навигация (Портфолио, Блог)
     function loadPage(url) {
         if (!dynamicContent || !mainContent) return;
@@ -460,6 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
         dynamicContent.style.display = 'block';
         mainContent.style.display = 'none';
         if (resumePage) resumePage.style.display = 'none';
+        if (pubPage) pubPage.style.display = 'none';
         window.scrollTo(0, 0);
 
         var iframe = document.createElement('iframe');
@@ -486,219 +164,19 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 8. Логотип (ВО) — возврат
+    // 8. Логотип (ВО) — возврат на главную
     if (brandLink) {
         brandLink.onclick = function(e) {
-            if ((dynamicContent && dynamicContent.style.display === 'block') || (resumePage && resumePage.style.display === 'block')) {
+            if ((dynamicContent && dynamicContent.style.display === 'block') || 
+                (resumePage && resumePage.style.display === 'block') || 
+                (pubPage && pubPage.style.display === 'block')) {
                 e.preventDefault();
                 if (dynamicContent) dynamicContent.style.display = 'none';
                 if (resumePage) resumePage.style.display = 'none';
+                if (pubPage) pubPage.style.display = 'none';
                 if (mainContent) mainContent.style.display = '';
                 window.scrollTo(0, 0);
             }
         };
     }
-
-    // 9. Анимация скролла
-    if ('IntersectionObserver' in window) {
-        var observer = new IntersectionObserver(function(entries) {
-            entries.forEach(function(entry) {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                    observer.unobserve(entry.target);
-                }
-            
-    // Навигация: Публикации
-    var navPub = document.getElementById('nav-publications');
-    var pubPage = document.getElementById('publications-page');
-    if (navPub && pubPage) {
-        navPub.onclick = function(e) {
-            e.preventDefault();
-            if (mainContent) mainContent.style.display = 'none';
-            if (dynamicContent) dynamicContent.style.display = 'none';
-            if (resumePage) resumePage.style.display = 'none';
-            pubPage.style.display = 'block';
-            window.scrollTo(0, 0);
-
-            // Загружаем ORCID, если еще не загружено
-            var listContainer = document.getElementById('orcid-publications-list');
-            if (listContainer && listContainer.innerHTML.indexOf('Загрузка') !== -1) {
-                fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } })
-                    .then(function(r) { return r.json(); })
-                    .then(function(data) {
-                        if (!data.group) throw new Error('No data');
-                        var allPubs = data.group.map(function(item) {
-                            var work = item['work-summary'][0];
-                            var year = work['publication-date'] && work['publication-date'].year ? work['publication-date'].year.value : '';
-                            var doi = '';
-                            if (work['external-ids'] && work['external-ids']['external-id']) {
-                                var ids = work['external-ids']['external-id'];
-                                for (var k = 0; k < ids.length; k++) {
-                                    if (ids[k]['external-id-type'] === 'doi') doi = ids[k]['external-id-value'];
-                                }
-                            }
-                            return { title: work.title.title.value, year: year, doi: doi };
-                        });
-
-                        var html = '';
-                        for (var i = 0; i < allPubs.length; i++) {
-                            var p = allPubs[i];
-                            html += '<li><strong>' + p.title + '</strong> (' + p.year + ')';
-                            if (p.doi) html += ' <a href="https://doi.org/' + p.doi + '" target="_blank">[DOI]</a>';
-                            html += '</li>';
-                        }
-                        listContainer.innerHTML = html;
-                    })
-                    .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
-            }
-        };
-    }
-
-});
-        }, { threshold: 0.1 
-    // Навигация: Публикации
-    var navPub = document.getElementById('nav-publications');
-    var pubPage = document.getElementById('publications-page');
-    if (navPub && pubPage) {
-        navPub.onclick = function(e) {
-            e.preventDefault();
-            if (mainContent) mainContent.style.display = 'none';
-            if (dynamicContent) dynamicContent.style.display = 'none';
-            if (resumePage) resumePage.style.display = 'none';
-            pubPage.style.display = 'block';
-            window.scrollTo(0, 0);
-
-            // Загружаем ORCID, если еще не загружено
-            var listContainer = document.getElementById('orcid-publications-list');
-            if (listContainer && listContainer.innerHTML.indexOf('Загрузка') !== -1) {
-                fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } })
-                    .then(function(r) { return r.json(); })
-                    .then(function(data) {
-                        if (!data.group) throw new Error('No data');
-                        var allPubs = data.group.map(function(item) {
-                            var work = item['work-summary'][0];
-                            var year = work['publication-date'] && work['publication-date'].year ? work['publication-date'].year.value : '';
-                            var doi = '';
-                            if (work['external-ids'] && work['external-ids']['external-id']) {
-                                var ids = work['external-ids']['external-id'];
-                                for (var k = 0; k < ids.length; k++) {
-                                    if (ids[k]['external-id-type'] === 'doi') doi = ids[k]['external-id-value'];
-                                }
-                            }
-                            return { title: work.title.title.value, year: year, doi: doi };
-                        });
-
-                        var html = '';
-                        for (var i = 0; i < allPubs.length; i++) {
-                            var p = allPubs[i];
-                            html += '<li><strong>' + p.title + '</strong> (' + p.year + ')';
-                            if (p.doi) html += ' <a href="https://doi.org/' + p.doi + '" target="_blank">[DOI]</a>';
-                            html += '</li>';
-                        }
-                        listContainer.innerHTML = html;
-                    })
-                    .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
-            }
-        };
-    }
-
-});
-        document.querySelectorAll('.reveal').forEach(function(el) {
-            observer.observe(el);
-        
-    // Навигация: Публикации
-    var navPub = document.getElementById('nav-publications');
-    var pubPage = document.getElementById('publications-page');
-    if (navPub && pubPage) {
-        navPub.onclick = function(e) {
-            e.preventDefault();
-            if (mainContent) mainContent.style.display = 'none';
-            if (dynamicContent) dynamicContent.style.display = 'none';
-            if (resumePage) resumePage.style.display = 'none';
-            pubPage.style.display = 'block';
-            window.scrollTo(0, 0);
-
-            // Загружаем ORCID, если еще не загружено
-            var listContainer = document.getElementById('orcid-publications-list');
-            if (listContainer && listContainer.innerHTML.indexOf('Загрузка') !== -1) {
-                fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } })
-                    .then(function(r) { return r.json(); })
-                    .then(function(data) {
-                        if (!data.group) throw new Error('No data');
-                        var allPubs = data.group.map(function(item) {
-                            var work = item['work-summary'][0];
-                            var year = work['publication-date'] && work['publication-date'].year ? work['publication-date'].year.value : '';
-                            var doi = '';
-                            if (work['external-ids'] && work['external-ids']['external-id']) {
-                                var ids = work['external-ids']['external-id'];
-                                for (var k = 0; k < ids.length; k++) {
-                                    if (ids[k]['external-id-type'] === 'doi') doi = ids[k]['external-id-value'];
-                                }
-                            }
-                            return { title: work.title.title.value, year: year, doi: doi };
-                        });
-
-                        var html = '';
-                        for (var i = 0; i < allPubs.length; i++) {
-                            var p = allPubs[i];
-                            html += '<li><strong>' + p.title + '</strong> (' + p.year + ')';
-                            if (p.doi) html += ' <a href="https://doi.org/' + p.doi + '" target="_blank">[DOI]</a>';
-                            html += '</li>';
-                        }
-                        listContainer.innerHTML = html;
-                    })
-                    .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
-            }
-        };
-    }
-
-});
-    }
-
-    // Навигация: Публикации
-    var navPub = document.getElementById('nav-publications');
-    var pubPage = document.getElementById('publications-page');
-    if (navPub && pubPage) {
-        navPub.onclick = function(e) {
-            e.preventDefault();
-            if (mainContent) mainContent.style.display = 'none';
-            if (dynamicContent) dynamicContent.style.display = 'none';
-            if (resumePage) resumePage.style.display = 'none';
-            pubPage.style.display = 'block';
-            window.scrollTo(0, 0);
-
-            // Загружаем ORCID, если еще не загружено
-            var listContainer = document.getElementById('orcid-publications-list');
-            if (listContainer && listContainer.innerHTML.indexOf('Загрузка') !== -1) {
-                fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } })
-                    .then(function(r) { return r.json(); })
-                    .then(function(data) {
-                        if (!data.group) throw new Error('No data');
-                        var allPubs = data.group.map(function(item) {
-                            var work = item['work-summary'][0];
-                            var year = work['publication-date'] && work['publication-date'].year ? work['publication-date'].year.value : '';
-                            var doi = '';
-                            if (work['external-ids'] && work['external-ids']['external-id']) {
-                                var ids = work['external-ids']['external-id'];
-                                for (var k = 0; k < ids.length; k++) {
-                                    if (ids[k]['external-id-type'] === 'doi') doi = ids[k]['external-id-value'];
-                                }
-                            }
-                            return { title: work.title.title.value, year: year, doi: doi };
-                        });
-
-                        var html = '';
-                        for (var i = 0; i < allPubs.length; i++) {
-                            var p = allPubs[i];
-                            html += '<li><strong>' + p.title + '</strong> (' + p.year + ')';
-                            if (p.doi) html += ' <a href="https://doi.org/' + p.doi + '" target="_blank">[DOI]</a>';
-                            html += '</li>';
-                        }
-                        listContainer.innerHTML = html;
-                    })
-                    .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
-            }
-        };
-    }
-
 });
