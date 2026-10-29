@@ -67,12 +67,17 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (resumeContent && resumeContent.innerHTML.indexOf('Загрузка') !== -1) {
                 fetch('./resume.md')
-                    .then(function(r) { return r.text(); })
-                    .then(function(md) {
-                        if (typeof marked !== 'undefined') resumeContent.innerHTML = marked.parse(md);
-                        else resumeContent.innerHTML = '<pre>' + md + '</pre>';
+                    .then(function(r) {
+                        if (!r.ok) throw new Error('Network response was not ok');
+                        return r.text();
                     })
-                    .catch(function() { resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки</p>'; });
+                    .then(function(md) {
+                        // Выводим как обычный текст, чтобы проверить, что он вообще загрузился
+                        resumeContent.innerHTML = '<pre style="white-space: pre-wrap; font-family: monospace;">' + md + '</pre>';
+                    })
+                    .catch(function(err) {
+                        resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки: ' + err.message + '</p>';
+                    });
             }
         };
     }
