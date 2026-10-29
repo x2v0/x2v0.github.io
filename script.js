@@ -26,7 +26,34 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuBtn.classList.remove('is-active');
             }
         }
-    });
+    
+    // Резюме (SPA через iframe)
+    var resumeLink = document.querySelector('a[href="#resume"]');
+    var resumePage = document.getElementById('resume-page');
+    var resumeBackBtn = document.getElementById('resume-back-btn');
+    var mainContent = document.getElementById('home-page');
+    var dynamicContent = document.getElementById('dynamic-content');
+
+    if (resumeLink && resumePage) {
+        resumeLink.onclick = function(e) {
+            e.preventDefault();
+            if (mainContent) mainContent.style.display = 'none';
+            if (dynamicContent) dynamicContent.style.display = 'none';
+            resumePage.style.display = 'block';
+            window.scrollTo(0, 0);
+            if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
+        };
+    }
+
+    if (resumeBackBtn) {
+        resumeBackBtn.onclick = function() {
+            resumePage.style.display = 'none';
+            if (mainContent) mainContent.style.display = '';
+            window.scrollTo(0, 0);
+        };
+    }
+
+});
 
     // 3. Тема
     var themeBtn = document.getElementById('theme-toggle');
@@ -47,14 +74,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (scrollBtn) {
         window.addEventListener('scroll', function() {
             scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
-        scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    }
-
-    // 5. Резюме (как в Replit)
+        
+    // Резюме (SPA через iframe)
     var resumeLink = document.querySelector('a[href="#resume"]');
+    var resumePage = document.getElementById('resume-page');
+    var resumeBackBtn = document.getElementById('resume-back-btn');
+    var mainContent = document.getElementById('home-page');
+    var dynamicContent = document.getElementById('dynamic-content');
+
     if (resumeLink && resumePage) {
         resumeLink.onclick = function(e) {
             e.preventDefault();
@@ -62,20 +89,53 @@ document.addEventListener('DOMContentLoaded', function() {
             if (dynamicContent) dynamicContent.style.display = 'none';
             resumePage.style.display = 'block';
             window.scrollTo(0, 0);
+            if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
+        };
+    }
 
-            if (resumeContent && resumeContent.innerHTML === 'Загрузка резюме с GitHub...') {
-                fetch('https://raw.githubusercontent.com/x2v0/Resume/main/README.md')
-                    .then(function(r) { return r.text(); })
-                    .then(function(md) {
-                        if (typeof marked !== 'undefined') {
-                            resumeContent.innerHTML = marked.parse(md);
-                        } else {
-                            resumeContent.innerHTML = '<pre>' + md + '</pre>';
-                        }
-                    })
-                    .catch(function(err) {
-                        resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки</p>';
-                    });
+    if (resumeBackBtn) {
+        resumeBackBtn.onclick = function() {
+            resumePage.style.display = 'none';
+            if (mainContent) mainContent.style.display = '';
+            window.scrollTo(0, 0);
+        };
+    }
+
+});
+        scrollBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' 
+    // Резюме (SPA через iframe)
+    var resumeLink = document.querySelector('a[href="#resume"]');
+    var resumePage = document.getElementById('resume-page');
+    var resumeBackBtn = document.getElementById('resume-back-btn');
+    var mainContent = document.getElementById('home-page');
+    var dynamicContent = document.getElementById('dynamic-content');
+
+    if (resumeLink && resumePage) {
+        resumeLink.onclick = function(e) {
+            e.preventDefault();
+            if (mainContent) mainContent.style.display = 'none';
+            if (dynamicContent) dynamicContent.style.display = 'none';
+            resumePage.style.display = 'block';
+            window.scrollTo(0, 0);
+            if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
+        };
+    }
+
+    if (resumeBackBtn) {
+        resumeBackBtn.onclick = function() {
+            resumePage.style.display = 'none';
+            if (mainContent) mainContent.style.display = '';
+            window.scrollTo(0, 0);
+        };
+    }
+
+});
+        };
+    }
+
+    // 5. Резюме (как в Replit)
+    
             }
         };
     }
@@ -123,7 +183,34 @@ document.addEventListener('DOMContentLoaded', function() {
             })
             .catch(function() {
                 dynamicContent.innerHTML = '<p style="color:red; padding:20px;">Ошибка загрузки.</p>';
-            });
+            
+    // Резюме (SPA через iframe)
+    var resumeLink = document.querySelector('a[href="#resume"]');
+    var resumePage = document.getElementById('resume-page');
+    var resumeBackBtn = document.getElementById('resume-back-btn');
+    var mainContent = document.getElementById('home-page');
+    var dynamicContent = document.getElementById('dynamic-content');
+
+    if (resumeLink && resumePage) {
+        resumeLink.onclick = function(e) {
+            e.preventDefault();
+            if (mainContent) mainContent.style.display = 'none';
+            if (dynamicContent) dynamicContent.style.display = 'none';
+            resumePage.style.display = 'block';
+            window.scrollTo(0, 0);
+            if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
+        };
+    }
+
+    if (resumeBackBtn) {
+        resumeBackBtn.onclick = function() {
+            resumePage.style.display = 'none';
+            if (mainContent) mainContent.style.display = '';
+            window.scrollTo(0, 0);
+        };
+    }
+
+});
     }
 
     var navPortfolio = document.getElementById('nav-portfolio');
@@ -158,4 +245,31 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
     }
+
+    // Резюме (SPA через iframe)
+    var resumeLink = document.querySelector('a[href="#resume"]');
+    var resumePage = document.getElementById('resume-page');
+    var resumeBackBtn = document.getElementById('resume-back-btn');
+    var mainContent = document.getElementById('home-page');
+    var dynamicContent = document.getElementById('dynamic-content');
+
+    if (resumeLink && resumePage) {
+        resumeLink.onclick = function(e) {
+            e.preventDefault();
+            if (mainContent) mainContent.style.display = 'none';
+            if (dynamicContent) dynamicContent.style.display = 'none';
+            resumePage.style.display = 'block';
+            window.scrollTo(0, 0);
+            if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
+        };
+    }
+
+    if (resumeBackBtn) {
+        resumeBackBtn.onclick = function() {
+            resumePage.style.display = 'none';
+            if (mainContent) mainContent.style.display = '';
+            window.scrollTo(0, 0);
+        };
+    }
+
 });
