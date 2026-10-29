@@ -1483,3 +1483,48 @@ aside.profile h2,
 .email-row a {
     margin-right: 5px;
 }
+
+/* === СТИЛЬНЫЕ ПИЛЮЛИ ДЛЯ ТЕХНОЛОГИЙ === */
+.tech-tag {
+    display: inline-block;
+    background: #e3f2fd;
+    color: #0288d1;
+    padding: 4px 10px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-family: monospace;
+    margin: 3px;
+    border: 1px solid #bbdefb;
+}
+[data-theme="dark"] .tech-tag {
+    background: #1e1e1e;
+    color: #4fc3f7;
+    border-color: #333;
+}
+
+/* === ПЛАВНАЯ СМЕНА ТЕМЫ === */
+body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease !important;
+}
+
+/* === АНИМАЦИЯ ПОЯВЛЕНИЯ ПРИ СКРОЛЛЕ === */
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* === КРАСИВЫЕ ЗАГОЛОВКИ РАЗДЕЛОВ === */
+.section-title {
+    border-bottom: 2px solid #0288d1;
+    padding-bottom: 8px;
+    margin-top: 50px;
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

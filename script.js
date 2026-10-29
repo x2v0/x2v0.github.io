@@ -24,7 +24,70 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuBtn.classList.remove('is-active');
             }
         }
+    
+    // ── Загрузка Резюме с GitHub ──
+    var resumeContent = document.getElementById('resume-content');
+    var resumePage = document.getElementById('resume-page');
+    
+    if (resumeContent && resumePage) {
+        fetch('https://raw.githubusercontent.com/x2v0/Resume/main/README.md')
+            .then(function(r) { return r.text(); })
+            .then(function(md) {
+                if (typeof marked !== 'undefined') {
+                    resumeContent.innerHTML = marked.parse(md);
+                } else {
+                    resumeContent.innerHTML = '<pre>' + md + '</pre>';
+                }
+            })
+            .catch(function(e) {
+                resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме с GitHub.</p>';
+            
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
     });
+
+});
+    }
+
+    // Обработка клика по ссылке "Резюме" в меню
+    var resumeLink = document.querySelector('a[href="#resume"]');
+    if (resumeLink && resumePage) {
+        resumeLink.onclick = function(e) {
+            e.preventDefault();
+            // Скрываем главную, показываем резюме
+            var mainContent = document.getElementById('home-page');
+            if (mainContent) mainContent.style.display = 'none';
+            resumePage.style.display = 'block';
+            window.scrollTo(0, 0);
+        };
+    }
+
+
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
+});
 
     // 3. Закрываем меню при клике на ссылку
     if (nav) {
@@ -33,7 +96,70 @@ document.addEventListener('DOMContentLoaded', function() {
             links[i].addEventListener('click', function() {
                 nav.classList.remove('is-open');
                 if (menuBtn) menuBtn.classList.remove('is-active');
-            });
+            
+    // ── Загрузка Резюме с GitHub ──
+    var resumeContent = document.getElementById('resume-content');
+    var resumePage = document.getElementById('resume-page');
+    
+    if (resumeContent && resumePage) {
+        fetch('https://raw.githubusercontent.com/x2v0/Resume/main/README.md')
+            .then(function(r) { return r.text(); })
+            .then(function(md) {
+                if (typeof marked !== 'undefined') {
+                    resumeContent.innerHTML = marked.parse(md);
+                } else {
+                    resumeContent.innerHTML = '<pre>' + md + '</pre>';
+                }
+            })
+            .catch(function(e) {
+                resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме с GitHub.</p>';
+            
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
+});
+    }
+
+    // Обработка клика по ссылке "Резюме" в меню
+    var resumeLink = document.querySelector('a[href="#resume"]');
+    if (resumeLink && resumePage) {
+        resumeLink.onclick = function(e) {
+            e.preventDefault();
+            // Скрываем главную, показываем резюме
+            var mainContent = document.getElementById('home-page');
+            if (mainContent) mainContent.style.display = 'none';
+            resumePage.style.display = 'block';
+            window.scrollTo(0, 0);
+        };
+    }
+
+
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
+});
         }
     }
 
@@ -73,7 +199,70 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (data.public_repos !== undefined) {
                     ghEl.innerHTML = '<span>Repos: <b>' + data.public_repos + '</b></span> | <span>Followers: <b>' + data.followers + '</b></span>';
                 }
-            }).catch(function() { ghEl.innerHTML = 'GitHub API Error'; });
+            }).catch(function() { ghEl.innerHTML = 'GitHub API Error'; 
+    // ── Загрузка Резюме с GitHub ──
+    var resumeContent = document.getElementById('resume-content');
+    var resumePage = document.getElementById('resume-page');
+    
+    if (resumeContent && resumePage) {
+        fetch('https://raw.githubusercontent.com/x2v0/Resume/main/README.md')
+            .then(function(r) { return r.text(); })
+            .then(function(md) {
+                if (typeof marked !== 'undefined') {
+                    resumeContent.innerHTML = marked.parse(md);
+                } else {
+                    resumeContent.innerHTML = '<pre>' + md + '</pre>';
+                }
+            })
+            .catch(function(e) {
+                resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме с GitHub.</p>';
+            
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
+});
+    }
+
+    // Обработка клика по ссылке "Резюме" в меню
+    var resumeLink = document.querySelector('a[href="#resume"]');
+    if (resumeLink && resumePage) {
+        resumeLink.onclick = function(e) {
+            e.preventDefault();
+            // Скрываем главную, показываем резюме
+            var mainContent = document.getElementById('home-page');
+            if (mainContent) mainContent.style.display = 'none';
+            resumePage.style.display = 'block';
+            window.scrollTo(0, 0);
+        };
+    }
+
+
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
+});
     }
 
     var listContainer = document.getElementById('orcid-publications-list');
@@ -93,11 +282,137 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                     return { title: work.title.title.value, year: year, doi: doi };
-                });
+                
+    // ── Загрузка Резюме с GitHub ──
+    var resumeContent = document.getElementById('resume-content');
+    var resumePage = document.getElementById('resume-page');
+    
+    if (resumeContent && resumePage) {
+        fetch('https://raw.githubusercontent.com/x2v0/Resume/main/README.md')
+            .then(function(r) { return r.text(); })
+            .then(function(md) {
+                if (typeof marked !== 'undefined') {
+                    resumeContent.innerHTML = marked.parse(md);
+                } else {
+                    resumeContent.innerHTML = '<pre>' + md + '</pre>';
+                }
+            })
+            .catch(function(e) {
+                resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме с GitHub.</p>';
+            
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
+});
+    }
+
+    // Обработка клика по ссылке "Резюме" в меню
+    var resumeLink = document.querySelector('a[href="#resume"]');
+    if (resumeLink && resumePage) {
+        resumeLink.onclick = function(e) {
+            e.preventDefault();
+            // Скрываем главную, показываем резюме
+            var mainContent = document.getElementById('home-page');
+            if (mainContent) mainContent.style.display = 'none';
+            resumePage.style.display = 'block';
+            window.scrollTo(0, 0);
+        };
+    }
+
+
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
+});
 
                 var render = function(filter) {
                     filter = filter || '';
-                    var filtered = allPubs.filter(function(p){ return p.title.toLowerCase().indexOf(filter.toLowerCase()) !== -1 || p.year.indexOf(filter) !== -1; });
+                    var filtered = allPubs.filter(function(p){ return p.title.toLowerCase().indexOf(filter.toLowerCase()) !== -1 || p.year.indexOf(filter) !== -1; 
+    // ── Загрузка Резюме с GitHub ──
+    var resumeContent = document.getElementById('resume-content');
+    var resumePage = document.getElementById('resume-page');
+    
+    if (resumeContent && resumePage) {
+        fetch('https://raw.githubusercontent.com/x2v0/Resume/main/README.md')
+            .then(function(r) { return r.text(); })
+            .then(function(md) {
+                if (typeof marked !== 'undefined') {
+                    resumeContent.innerHTML = marked.parse(md);
+                } else {
+                    resumeContent.innerHTML = '<pre>' + md + '</pre>';
+                }
+            })
+            .catch(function(e) {
+                resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме с GitHub.</p>';
+            
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
+});
+    }
+
+    // Обработка клика по ссылке "Резюме" в меню
+    var resumeLink = document.querySelector('a[href="#resume"]');
+    if (resumeLink && resumePage) {
+        resumeLink.onclick = function(e) {
+            e.preventDefault();
+            // Скрываем главную, показываем резюме
+            var mainContent = document.getElementById('home-page');
+            if (mainContent) mainContent.style.display = 'none';
+            resumePage.style.display = 'block';
+            window.scrollTo(0, 0);
+        };
+    }
+
+
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
+});
                     if (!filtered.length) { listContainer.innerHTML = '<p>Нет результатов.</p>'; return; }
                     var html = '<ol style="padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">';
                     for (var i = 0; i < filtered.length; i++) {
@@ -112,14 +427,203 @@ document.addEventListener('DOMContentLoaded', function() {
                 var searchInput = document.getElementById('pub-search');
                 if (searchInput) searchInput.oninput = function(e) { render(e.target.value); };
             })
-            .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
+            .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; 
+    // ── Загрузка Резюме с GitHub ──
+    var resumeContent = document.getElementById('resume-content');
+    var resumePage = document.getElementById('resume-page');
+    
+    if (resumeContent && resumePage) {
+        fetch('https://raw.githubusercontent.com/x2v0/Resume/main/README.md')
+            .then(function(r) { return r.text(); })
+            .then(function(md) {
+                if (typeof marked !== 'undefined') {
+                    resumeContent.innerHTML = marked.parse(md);
+                } else {
+                    resumeContent.innerHTML = '<pre>' + md + '</pre>';
+                }
+            })
+            .catch(function(e) {
+                resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме с GitHub.</p>';
+            
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
+});
+    }
+
+    // Обработка клика по ссылке "Резюме" в меню
+    var resumeLink = document.querySelector('a[href="#resume"]');
+    if (resumeLink && resumePage) {
+        resumeLink.onclick = function(e) {
+            e.preventDefault();
+            // Скрываем главную, показываем резюме
+            var mainContent = document.getElementById('home-page');
+            if (mainContent) mainContent.style.display = 'none';
+            resumePage.style.display = 'block';
+            window.scrollTo(0, 0);
+        };
+    }
+
+
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
+});
     }
 
     // 7. Кнопка вверх и форма
     var scrollBtn = document.getElementById('scroll-top');
     if (scrollBtn) {
-        window.addEventListener('scroll', function() { scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none'; });
-        scrollBtn.onclick = function() { window.scrollTo({ top: 0, behavior: 'smooth' }); };
+        window.addEventListener('scroll', function() { scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none'; 
+    // ── Загрузка Резюме с GitHub ──
+    var resumeContent = document.getElementById('resume-content');
+    var resumePage = document.getElementById('resume-page');
+    
+    if (resumeContent && resumePage) {
+        fetch('https://raw.githubusercontent.com/x2v0/Resume/main/README.md')
+            .then(function(r) { return r.text(); })
+            .then(function(md) {
+                if (typeof marked !== 'undefined') {
+                    resumeContent.innerHTML = marked.parse(md);
+                } else {
+                    resumeContent.innerHTML = '<pre>' + md + '</pre>';
+                }
+            })
+            .catch(function(e) {
+                resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме с GitHub.</p>';
+            
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
+});
+    }
+
+    // Обработка клика по ссылке "Резюме" в меню
+    var resumeLink = document.querySelector('a[href="#resume"]');
+    if (resumeLink && resumePage) {
+        resumeLink.onclick = function(e) {
+            e.preventDefault();
+            // Скрываем главную, показываем резюме
+            var mainContent = document.getElementById('home-page');
+            if (mainContent) mainContent.style.display = 'none';
+            resumePage.style.display = 'block';
+            window.scrollTo(0, 0);
+        };
+    }
+
+
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
+});
+        scrollBtn.onclick = function() { window.scrollTo({ top: 0, behavior: 'smooth' 
+    // ── Загрузка Резюме с GitHub ──
+    var resumeContent = document.getElementById('resume-content');
+    var resumePage = document.getElementById('resume-page');
+    
+    if (resumeContent && resumePage) {
+        fetch('https://raw.githubusercontent.com/x2v0/Resume/main/README.md')
+            .then(function(r) { return r.text(); })
+            .then(function(md) {
+                if (typeof marked !== 'undefined') {
+                    resumeContent.innerHTML = marked.parse(md);
+                } else {
+                    resumeContent.innerHTML = '<pre>' + md + '</pre>';
+                }
+            })
+            .catch(function(e) {
+                resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме с GitHub.</p>';
+            
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
+});
+    }
+
+    // Обработка клика по ссылке "Резюме" в меню
+    var resumeLink = document.querySelector('a[href="#resume"]');
+    if (resumeLink && resumePage) {
+        resumeLink.onclick = function(e) {
+            e.preventDefault();
+            // Скрываем главную, показываем резюме
+            var mainContent = document.getElementById('home-page');
+            if (mainContent) mainContent.style.display = 'none';
+            resumePage.style.display = 'block';
+            window.scrollTo(0, 0);
+        };
+    }
+
+
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
+}); };
     }
 
     var contactForm = document.getElementById('contact-form');
@@ -164,4 +668,67 @@ document.addEventListener('DOMContentLoaded', function() {
             loadPage('./year-archive/index.html');
         };
     }
+
+    // ── Загрузка Резюме с GitHub ──
+    var resumeContent = document.getElementById('resume-content');
+    var resumePage = document.getElementById('resume-page');
+    
+    if (resumeContent && resumePage) {
+        fetch('https://raw.githubusercontent.com/x2v0/Resume/main/README.md')
+            .then(function(r) { return r.text(); })
+            .then(function(md) {
+                if (typeof marked !== 'undefined') {
+                    resumeContent.innerHTML = marked.parse(md);
+                } else {
+                    resumeContent.innerHTML = '<pre>' + md + '</pre>';
+                }
+            })
+            .catch(function(e) {
+                resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме с GitHub.</p>';
+            
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
+});
+    }
+
+    // Обработка клика по ссылке "Резюме" в меню
+    var resumeLink = document.querySelector('a[href="#resume"]');
+    if (resumeLink && resumePage) {
+        resumeLink.onclick = function(e) {
+            e.preventDefault();
+            // Скрываем главную, показываем резюме
+            var mainContent = document.getElementById('home-page');
+            if (mainContent) mainContent.style.display = 'none';
+            resumePage.style.display = 'block';
+            window.scrollTo(0, 0);
+        };
+    }
+
+
+    // 9. Анимация появления блоков при скролле
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('active');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.reveal').forEach(function(el) {
+        observer.observe(el);
+    });
+
 });
