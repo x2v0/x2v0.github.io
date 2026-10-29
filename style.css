@@ -1709,7 +1709,6 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
 
 
 
-/* --- ФИНАЛЬНАЯ ЛОГИКА МЕНЮ --- */
 
 /* По умолчанию (десктоп/ландшафт) - меню в строку, гамбургера нет */
 .nav-menu { display: none !important; }
@@ -1756,6 +1755,70 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
         border-color: #333 !important;
     }
     [data-theme="dark"] .main-nav a {
+        color: #eee !important;
+        border-bottom-color: #333 !important;
+    }
+}
+
+/* === ЖЕЛЕЗОБЕТОННОЕ МЕНЮ === */
+
+/* По умолчанию (Десктоп / Ландшафт) */
+.main-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 20px !important;
+    margin-left: auto !important; /* Прижимаем к правому краю */
+    margin-right: 20px !important;
+}
+.main-nav a {
+    font-size: 16px !important;
+    color: var(--text-color, #333) !important;
+    border: none !important;
+}
+.nav-menu {
+    display: none !important; /* Гамбургер скрыт */
+}
+
+/* Мобильный портрет (узкий экран) */
+@media (max-width: 900px) {
+    .nav-menu {
+        display: flex !important;
+    }
+    
+    .main-nav {
+        display: none !important; /* Скрываем обычное меню */
+    }
+
+    /* Когда меню открыто */
+    .main-nav.is-open {
+        display: flex !important;
+        flex-direction: column !important;
+        position: fixed !important; /* Фиксируем относительно экрана */
+        top: 70px !important; /* Чуть ниже шапки */
+        right: 0 !important; /* Прижимаем к правому краю */
+        left: auto !important; /* Отменяем левый край */
+        width: 220px !important; /* Аккуратная ширина */
+        background: var(--bg-color, #f5f3eb) !important;
+        padding: 10px 0 !important;
+        z-index: 99999 !important;
+        box-shadow: -5px 5px 15px rgba(0,0,0,0.15) !important;
+        border: 1px solid var(--border-color, #ddd) !important;
+        border-radius: 8px 0 8px 8px !important;
+    }
+    
+    .main-nav.is-open a {
+        padding: 15px 20px !important;
+        border-bottom: 1px solid var(--border-color, #ddd) !important;
+        text-align: right !important; /* Текст справа */
+        width: 100% !important;
+        box-sizing: border-box !important;
+    }
+
+    [data-theme="dark"] .main-nav.is-open {
+        background: #1e1e1e !important;
+        border-color: #333 !important;
+    }
+    [data-theme="dark"] .main-nav.is-open a {
         color: #eee !important;
         border-bottom-color: #333 !important;
     }
