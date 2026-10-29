@@ -1,8 +1,9 @@
 
 document.addEventListener('DOMContentLoaded', function() {
-    // 1. Мобильное меню
-    var menuBtn = document.getElementById('menu-toggle');
     var nav = document.getElementById('site-navigation');
+    var menuBtn = document.getElementById('menu-toggle');
+    
+    // 1. Мобильное меню
     if (menuBtn && nav) {
         menuBtn.onclick = function(e) {
             e.preventDefault();
@@ -30,62 +31,9 @@ document.addEventListener('DOMContentLoaded', function() {
     if (scrollBtn) {
         window.addEventListener('scroll', function() {
             scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        
-    // 9. SPA Навигация (Portfolio и Блог)
-    var mainContent = document.getElementById('home-page');
-    var dynamicContent = document.getElementById('dynamic-content');
-
-    function loadPage(url) {
-        if (!dynamicContent || !mainContent) return;
-        
-        dynamicContent.innerHTML = '<p style="text-align:center; padding:50px;">Загрузка...</p>';
-        dynamicContent.style.display = 'block';
-        mainContent.style.display = 'none';
-
-        fetch(url)
-            .then(function(r) { return r.text(); })
-            .then(function(htmlText) {
-                // Парсим HTML и вытаскиваем только содержимое body
-                var parser = new DOMParser();
-                var doc = parser.parseFromString(htmlText, 'text/html');
-                dynamicContent.innerHTML = doc.body.innerHTML;
-                
-                // Добавляем кнопку "Назад"
-                var backBtn = document.createElement('button');
-                backBtn.innerHTML = '← Назад на главную';
-                backBtn.style.cssText = 'margin-bottom:20px; padding:10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer;';
-                backBtn.onclick = function() {
-                    dynamicContent.style.display = 'none';
-                    mainContent.style.display = 'flex'; // Возвращаем сетку
-                };
-                dynamicContent.insertBefore(backBtn, dynamicContent.firstChild);
-            })
-            .catch(function(e) {
-                dynamicContent.innerHTML = '<p style="color:red;">Ошибка загрузки страницы.</p>';
-            });
-    }
-
-    var navPortfolio = document.getElementById('nav-portfolio');
-    var navBlog = document.getElementById('nav-blog');
-
-    if (navPortfolio) {
-        navPortfolio.onclick = function(e) {
-            e.preventDefault();
-            loadPage('./portfolio/index.html');
-            if (typeof nav !== 'undefined' && nav) nav.classList.remove('is-open');
-        };
-    }
-    if (navBlog) {
-        navBlog.onclick = function(e) {
-            e.preventDefault();
-            loadPage('./year-archive/index.html');
-            if (typeof nav !== 'undefined' && nav) nav.classList.remove('is-open');
-        };
-    }
-
-});
+        });
         scrollBtn.onclick = function() {
-            window.scrollTo(0, 0);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         };
     }
 
@@ -98,60 +46,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 if (data.public_repos !== undefined) {
                     ghEl.innerHTML = '<span>Repos: <b>' + data.public_repos + '</b></span> | <span>Followers: <b>' + data.followers + '</b></span>';
                 }
-            }).catch(function() { ghEl.innerHTML = 'GitHub API Error'; 
-    // 9. SPA Навигация (Portfolio и Блог)
-    var mainContent = document.getElementById('home-page');
-    var dynamicContent = document.getElementById('dynamic-content');
-
-    function loadPage(url) {
-        if (!dynamicContent || !mainContent) return;
-        
-        dynamicContent.innerHTML = '<p style="text-align:center; padding:50px;">Загрузка...</p>';
-        dynamicContent.style.display = 'block';
-        mainContent.style.display = 'none';
-
-        fetch(url)
-            .then(function(r) { return r.text(); })
-            .then(function(htmlText) {
-                // Парсим HTML и вытаскиваем только содержимое body
-                var parser = new DOMParser();
-                var doc = parser.parseFromString(htmlText, 'text/html');
-                dynamicContent.innerHTML = doc.body.innerHTML;
-                
-                // Добавляем кнопку "Назад"
-                var backBtn = document.createElement('button');
-                backBtn.innerHTML = '← Назад на главную';
-                backBtn.style.cssText = 'margin-bottom:20px; padding:10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer;';
-                backBtn.onclick = function() {
-                    dynamicContent.style.display = 'none';
-                    mainContent.style.display = 'flex'; // Возвращаем сетку
-                };
-                dynamicContent.insertBefore(backBtn, dynamicContent.firstChild);
-            })
-            .catch(function(e) {
-                dynamicContent.innerHTML = '<p style="color:red;">Ошибка загрузки страницы.</p>';
-            });
-    }
-
-    var navPortfolio = document.getElementById('nav-portfolio');
-    var navBlog = document.getElementById('nav-blog');
-
-    if (navPortfolio) {
-        navPortfolio.onclick = function(e) {
-            e.preventDefault();
-            loadPage('./portfolio/index.html');
-            if (typeof nav !== 'undefined' && nav) nav.classList.remove('is-open');
-        };
-    }
-    if (navBlog) {
-        navBlog.onclick = function(e) {
-            e.preventDefault();
-            loadPage('./year-archive/index.html');
-            if (typeof nav !== 'undefined' && nav) nav.classList.remove('is-open');
-        };
-    }
-
-});
+            }).catch(function() { ghEl.innerHTML = 'GitHub API Error'; });
     }
 
     // 5. Публикации ORCID
@@ -172,117 +67,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                     return { title: work.title.title.value, year: year, doi: doi };
-                
-    // 9. SPA Навигация (Portfolio и Блог)
-    var mainContent = document.getElementById('home-page');
-    var dynamicContent = document.getElementById('dynamic-content');
-
-    function loadPage(url) {
-        if (!dynamicContent || !mainContent) return;
-        
-        dynamicContent.innerHTML = '<p style="text-align:center; padding:50px;">Загрузка...</p>';
-        dynamicContent.style.display = 'block';
-        mainContent.style.display = 'none';
-
-        fetch(url)
-            .then(function(r) { return r.text(); })
-            .then(function(htmlText) {
-                // Парсим HTML и вытаскиваем только содержимое body
-                var parser = new DOMParser();
-                var doc = parser.parseFromString(htmlText, 'text/html');
-                dynamicContent.innerHTML = doc.body.innerHTML;
-                
-                // Добавляем кнопку "Назад"
-                var backBtn = document.createElement('button');
-                backBtn.innerHTML = '← Назад на главную';
-                backBtn.style.cssText = 'margin-bottom:20px; padding:10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer;';
-                backBtn.onclick = function() {
-                    dynamicContent.style.display = 'none';
-                    mainContent.style.display = 'flex'; // Возвращаем сетку
-                };
-                dynamicContent.insertBefore(backBtn, dynamicContent.firstChild);
-            })
-            .catch(function(e) {
-                dynamicContent.innerHTML = '<p style="color:red;">Ошибка загрузки страницы.</p>';
-            });
-    }
-
-    var navPortfolio = document.getElementById('nav-portfolio');
-    var navBlog = document.getElementById('nav-blog');
-
-    if (navPortfolio) {
-        navPortfolio.onclick = function(e) {
-            e.preventDefault();
-            loadPage('./portfolio/index.html');
-            if (typeof nav !== 'undefined' && nav) nav.classList.remove('is-open');
-        };
-    }
-    if (navBlog) {
-        navBlog.onclick = function(e) {
-            e.preventDefault();
-            loadPage('./year-archive/index.html');
-            if (typeof nav !== 'undefined' && nav) nav.classList.remove('is-open');
-        };
-    }
-
-});
+                });
 
                 var render = function(filter) {
                     filter = filter || '';
-                    var filtered = allPubs.filter(function(p){ return p.title.toLowerCase().indexOf(filter.toLowerCase()) !== -1 || p.year.indexOf(filter) !== -1; 
-    // 9. SPA Навигация (Portfolio и Блог)
-    var mainContent = document.getElementById('home-page');
-    var dynamicContent = document.getElementById('dynamic-content');
-
-    function loadPage(url) {
-        if (!dynamicContent || !mainContent) return;
-        
-        dynamicContent.innerHTML = '<p style="text-align:center; padding:50px;">Загрузка...</p>';
-        dynamicContent.style.display = 'block';
-        mainContent.style.display = 'none';
-
-        fetch(url)
-            .then(function(r) { return r.text(); })
-            .then(function(htmlText) {
-                // Парсим HTML и вытаскиваем только содержимое body
-                var parser = new DOMParser();
-                var doc = parser.parseFromString(htmlText, 'text/html');
-                dynamicContent.innerHTML = doc.body.innerHTML;
-                
-                // Добавляем кнопку "Назад"
-                var backBtn = document.createElement('button');
-                backBtn.innerHTML = '← Назад на главную';
-                backBtn.style.cssText = 'margin-bottom:20px; padding:10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer;';
-                backBtn.onclick = function() {
-                    dynamicContent.style.display = 'none';
-                    mainContent.style.display = 'flex'; // Возвращаем сетку
-                };
-                dynamicContent.insertBefore(backBtn, dynamicContent.firstChild);
-            })
-            .catch(function(e) {
-                dynamicContent.innerHTML = '<p style="color:red;">Ошибка загрузки страницы.</p>';
-            });
-    }
-
-    var navPortfolio = document.getElementById('nav-portfolio');
-    var navBlog = document.getElementById('nav-blog');
-
-    if (navPortfolio) {
-        navPortfolio.onclick = function(e) {
-            e.preventDefault();
-            loadPage('./portfolio/index.html');
-            if (typeof nav !== 'undefined' && nav) nav.classList.remove('is-open');
-        };
-    }
-    if (navBlog) {
-        navBlog.onclick = function(e) {
-            e.preventDefault();
-            loadPage('./year-archive/index.html');
-            if (typeof nav !== 'undefined' && nav) nav.classList.remove('is-open');
-        };
-    }
-
-});
+                    var filtered = allPubs.filter(function(p){ return p.title.toLowerCase().indexOf(filter.toLowerCase()) !== -1 || p.year.indexOf(filter) !== -1; });
                     if (!filtered.length) { listContainer.innerHTML = '<p>Нет результатов.</p>'; return; }
                     var html = '<ol style="padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">';
                     for (var i = 0; i < filtered.length; i++) {
@@ -297,63 +86,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 var searchInput = document.getElementById('pub-search');
                 if (searchInput) searchInput.oninput = function(e) { render(e.target.value); };
             })
-            .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID (VPN?)</p>'; 
-    // 9. SPA Навигация (Portfolio и Блог)
-    var mainContent = document.getElementById('home-page');
-    var dynamicContent = document.getElementById('dynamic-content');
-
-    function loadPage(url) {
-        if (!dynamicContent || !mainContent) return;
-        
-        dynamicContent.innerHTML = '<p style="text-align:center; padding:50px;">Загрузка...</p>';
-        dynamicContent.style.display = 'block';
-        mainContent.style.display = 'none';
-
-        fetch(url)
-            .then(function(r) { return r.text(); })
-            .then(function(htmlText) {
-                // Парсим HTML и вытаскиваем только содержимое body
-                var parser = new DOMParser();
-                var doc = parser.parseFromString(htmlText, 'text/html');
-                dynamicContent.innerHTML = doc.body.innerHTML;
-                
-                // Добавляем кнопку "Назад"
-                var backBtn = document.createElement('button');
-                backBtn.innerHTML = '← Назад на главную';
-                backBtn.style.cssText = 'margin-bottom:20px; padding:10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer;';
-                backBtn.onclick = function() {
-                    dynamicContent.style.display = 'none';
-                    mainContent.style.display = 'flex'; // Возвращаем сетку
-                };
-                dynamicContent.insertBefore(backBtn, dynamicContent.firstChild);
-            })
-            .catch(function(e) {
-                dynamicContent.innerHTML = '<p style="color:red;">Ошибка загрузки страницы.</p>';
-            });
+            .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID (VPN?)</p>'; });
     }
 
-    var navPortfolio = document.getElementById('nav-portfolio');
-    var navBlog = document.getElementById('nav-blog');
-
-    if (navPortfolio) {
-        navPortfolio.onclick = function(e) {
-            e.preventDefault();
-            loadPage('./portfolio/index.html');
-            if (typeof nav !== 'undefined' && nav) nav.classList.remove('is-open');
-        };
-    }
-    if (navBlog) {
-        navBlog.onclick = function(e) {
-            e.preventDefault();
-            loadPage('./year-archive/index.html');
-            if (typeof nav !== 'undefined' && nav) nav.classList.remove('is-open');
-        };
-    }
-
-});
-    }
-
-    // 6. Анимации (безопасная проверка)
+    // 6. Анимации
     if ('IntersectionObserver' in window) {
         var observer = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
@@ -361,114 +97,8 @@ document.addEventListener('DOMContentLoaded', function() {
                     entry.target.classList.add('active');
                     observer.unobserve(entry.target);
                 }
-            
-    // 9. SPA Навигация (Portfolio и Блог)
-    var mainContent = document.getElementById('home-page');
-    var dynamicContent = document.getElementById('dynamic-content');
-
-    function loadPage(url) {
-        if (!dynamicContent || !mainContent) return;
-        
-        dynamicContent.innerHTML = '<p style="text-align:center; padding:50px;">Загрузка...</p>';
-        dynamicContent.style.display = 'block';
-        mainContent.style.display = 'none';
-
-        fetch(url)
-            .then(function(r) { return r.text(); })
-            .then(function(htmlText) {
-                // Парсим HTML и вытаскиваем только содержимое body
-                var parser = new DOMParser();
-                var doc = parser.parseFromString(htmlText, 'text/html');
-                dynamicContent.innerHTML = doc.body.innerHTML;
-                
-                // Добавляем кнопку "Назад"
-                var backBtn = document.createElement('button');
-                backBtn.innerHTML = '← Назад на главную';
-                backBtn.style.cssText = 'margin-bottom:20px; padding:10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer;';
-                backBtn.onclick = function() {
-                    dynamicContent.style.display = 'none';
-                    mainContent.style.display = 'flex'; // Возвращаем сетку
-                };
-                dynamicContent.insertBefore(backBtn, dynamicContent.firstChild);
-            })
-            .catch(function(e) {
-                dynamicContent.innerHTML = '<p style="color:red;">Ошибка загрузки страницы.</p>';
             });
-    }
-
-    var navPortfolio = document.getElementById('nav-portfolio');
-    var navBlog = document.getElementById('nav-blog');
-
-    if (navPortfolio) {
-        navPortfolio.onclick = function(e) {
-            e.preventDefault();
-            loadPage('./portfolio/index.html');
-            if (typeof nav !== 'undefined' && nav) nav.classList.remove('is-open');
-        };
-    }
-    if (navBlog) {
-        navBlog.onclick = function(e) {
-            e.preventDefault();
-            loadPage('./year-archive/index.html');
-            if (typeof nav !== 'undefined' && nav) nav.classList.remove('is-open');
-        };
-    }
-
-});
-        }, { threshold: 0.1 
-    // 9. SPA Навигация (Portfolio и Блог)
-    var mainContent = document.getElementById('home-page');
-    var dynamicContent = document.getElementById('dynamic-content');
-
-    function loadPage(url) {
-        if (!dynamicContent || !mainContent) return;
-        
-        dynamicContent.innerHTML = '<p style="text-align:center; padding:50px;">Загрузка...</p>';
-        dynamicContent.style.display = 'block';
-        mainContent.style.display = 'none';
-
-        fetch(url)
-            .then(function(r) { return r.text(); })
-            .then(function(htmlText) {
-                // Парсим HTML и вытаскиваем только содержимое body
-                var parser = new DOMParser();
-                var doc = parser.parseFromString(htmlText, 'text/html');
-                dynamicContent.innerHTML = doc.body.innerHTML;
-                
-                // Добавляем кнопку "Назад"
-                var backBtn = document.createElement('button');
-                backBtn.innerHTML = '← Назад на главную';
-                backBtn.style.cssText = 'margin-bottom:20px; padding:10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer;';
-                backBtn.onclick = function() {
-                    dynamicContent.style.display = 'none';
-                    mainContent.style.display = 'flex'; // Возвращаем сетку
-                };
-                dynamicContent.insertBefore(backBtn, dynamicContent.firstChild);
-            })
-            .catch(function(e) {
-                dynamicContent.innerHTML = '<p style="color:red;">Ошибка загрузки страницы.</p>';
-            });
-    }
-
-    var navPortfolio = document.getElementById('nav-portfolio');
-    var navBlog = document.getElementById('nav-blog');
-
-    if (navPortfolio) {
-        navPortfolio.onclick = function(e) {
-            e.preventDefault();
-            loadPage('./portfolio/index.html');
-            if (typeof nav !== 'undefined' && nav) nav.classList.remove('is-open');
-        };
-    }
-    if (navBlog) {
-        navBlog.onclick = function(e) {
-            e.preventDefault();
-            loadPage('./year-archive/index.html');
-            if (typeof nav !== 'undefined' && nav) nav.classList.remove('is-open');
-        };
-    }
-
-});
+        }, { threshold: 0.1 });
         var reveals = document.querySelectorAll('.reveal');
         for (var r = 0; r < reveals.length; r++) { observer.observe(reveals[r]); }
     } else {
@@ -488,7 +118,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 9. SPA Навигация (Portfolio и Блог)
+    // 8. SPA Навигация (Portfolio и Блог)
     var mainContent = document.getElementById('home-page');
     var dynamicContent = document.getElementById('dynamic-content');
 
@@ -502,18 +132,16 @@ document.addEventListener('DOMContentLoaded', function() {
         fetch(url)
             .then(function(r) { return r.text(); })
             .then(function(htmlText) {
-                // Парсим HTML и вытаскиваем только содержимое body
                 var parser = new DOMParser();
                 var doc = parser.parseFromString(htmlText, 'text/html');
                 dynamicContent.innerHTML = doc.body.innerHTML;
                 
-                // Добавляем кнопку "Назад"
                 var backBtn = document.createElement('button');
                 backBtn.innerHTML = '← Назад на главную';
-                backBtn.style.cssText = 'margin-bottom:20px; padding:10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer;';
+                backBtn.style.cssText = 'margin-bottom:20px; padding:10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer; font-family:inherit;';
                 backBtn.onclick = function() {
                     dynamicContent.style.display = 'none';
-                    mainContent.style.display = 'flex'; // Возвращаем сетку
+                    mainContent.style.display = ''; // Возвращаем исходное CSS-значение (flex/grid)
                 };
                 dynamicContent.insertBefore(backBtn, dynamicContent.firstChild);
             })
@@ -529,15 +157,14 @@ document.addEventListener('DOMContentLoaded', function() {
         navPortfolio.onclick = function(e) {
             e.preventDefault();
             loadPage('./portfolio/index.html');
-            if (typeof nav !== 'undefined' && nav) nav.classList.remove('is-open');
+            if (nav) nav.classList.remove('is-open');
         };
     }
     if (navBlog) {
         navBlog.onclick = function(e) {
             e.preventDefault();
             loadPage('./year-archive/index.html');
-            if (typeof nav !== 'undefined' && nav) nav.classList.remove('is-open');
+            if (nav) nav.classList.remove('is-open');
         };
     }
-
 });
