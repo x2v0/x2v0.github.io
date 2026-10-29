@@ -2126,7 +2126,6 @@ aside.profile {
     display: block !important;
 }
 
-/* --- ФИНАЛЬНЫЙ ФИКС: ФОТО 275x275 И ПОДЪЕМ КОНТАКТОВ --- */
 
 /* 1. Прячем текст под фото */
 .profile-role {
@@ -2167,4 +2166,34 @@ aside.profile {
     .profile-meta {
         margin-top: 20px !important; /* На ПК возвращаем нормальный отступ */
     }
+}
+
+/* --- ФОТО 400x400 --- */
+.profile-role {
+    display: none !important;
+}
+
+.portrait-frame, .profile > div:first-child {
+    width: 400px !important;
+    height: 400px !important;
+    margin: 0 auto 20px auto !important; /* Центрируем фото */
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+.portrait, .profile img {
+    width: 400px !important;
+    height: 400px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 8px !important;
+    border: 1px solid #ddd !important;
+    display: block !important;
+}
+
+/* Контакты идут ниже */
+.profile-meta {
+    margin-top: 20px !important;
+    padding-top: 10px !important;
 }
