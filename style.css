@@ -152,7 +152,14 @@ button:focus-visible {
   align-self: start;
 }
 
-
+.portrait-frame {
+  position: relative;
+  width: 164px;
+  height: 164px;
+  padding: 8px;
+  border: 1px solid var(--rule);
+  background: var(--paper-deep);
+}
 
 .portrait-frame::after {
   position: absolute;
@@ -162,7 +169,13 @@ button:focus-visible {
   content: "";
 }
 
-
+.portrait {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.06);
+}
 
 .profile-name {
   margin: 27px 0 4px;
@@ -817,7 +830,10 @@ button:focus-visible {
     padding-top: 50px;
   }
 
-  
+  .portrait-frame {
+    width: 145px;
+    height: 145px;
+  }
 }
 
 @media (max-width: 680px) {
@@ -872,7 +888,12 @@ button:focus-visible {
     column-gap: 19px;
   }
 
-  
+  .portrait-frame {
+    grid-row: span 4;
+    width: 104px;
+    height: 104px;
+    padding: 6px;
+  }
 
   .portrait-frame::after {
     inset: 10px -5px -5px 10px;
@@ -1984,19 +2005,7 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
     gap: 5px !important; /* Уменьшаем расстояние между иконкой и текстом */
 }
 
-/* --- ЦВЕТНОЕ И УМЕНЬШЕННОЕ ФОТО --- */
+/* Легкий фикс для фото */
 .portrait {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center !important;
-    filter: none !important; /* Убираем черно-белый фильтр */
-    display: block !important;
-}
-.portrait-frame {
-    width: 200px !important; /* Уменьшаем ширину до 200px */
-    height: 200px !important; /* Уменьшаем высоту до 200px */
-    overflow: hidden !important;
-    border: 1px solid #ddd !important;
-    margin-bottom: 20px !important;
+    filter: none !important;
 }
