@@ -1666,3 +1666,45 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
     margin-bottom: 20px !important;
     display: block !important;
 }
+
+/* === ЖЕСТКИЙ ФИКС ДЛЯ ЛАНДШАФТА (ТЕЛЕФОНЫ) === */
+@media (orientation: landscape) and (max-height: 600px) {
+    .layout {
+        display: flex !important;
+        flex-direction: column !important;
+        padding: 0 15px !important;
+        gap: 15px !important;
+    }
+    aside.profile {
+        position: relative !important;
+        top: 0 !important;
+        width: 100% !important;
+        margin-top: 10px !important;
+        border-bottom: 1px solid var(--border-color, #ddd) !important;
+        padding-bottom: 10px !important;
+        display: flex !important; /* Размещаем фото и текст в строку (если влезет) */
+        flex-direction: row !important;
+        gap: 15px !important;
+        align-items: flex-start !important;
+    }
+    .portrait-frame {
+        width: 120px !important; /* Уменьшаем фото, чтобы поместилось */
+        margin-bottom: 0 !important;
+        flex-shrink: 0 !important;
+    }
+    .profile-meta {
+        font-size: 12px !important;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important; /* Контакты в 2 колонки */
+        gap: 5px !important;
+    }
+    .profile-role {
+        display: none !important; /* Скрываем длинный текст, чтобы не мешал */
+    }
+    .main-nav.is-open {
+        top: auto !important;
+        bottom: 0 !important;
+        right: 0 !important;
+        width: 200px !important;
+    }
+}
