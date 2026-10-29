@@ -2030,7 +2030,7 @@ img.portrait[width] {
     object-fit: cover !important;
 }
 
-/* --- ИДЕАЛЬНАЯ РАМКА ДЛЯ ФОТО --- */
+
 /* Обертка (или сам img) должна быть строго 160x160 */
 .portrait-frame, .profile-img-wrap, .profile > div:first-child {
     width: 160px !important;
@@ -2052,4 +2052,31 @@ img.portrait[width] {
     border: 1px solid #ddd !important;
     margin: 0 !important;
     display: block !important;
+}
+
+/* --- УМЕНЬШАЕМ ФОТО ЕЩЕ НА 20% (130px) --- */
+.portrait-frame, .profile > div:first-child {
+    width: 130px !important;
+    max-width: 130px !important;
+    margin: 0 0 10px 0 !important;
+    float: left !important; /* Заставляем текст обтекать фото */
+    margin-right: 20px !important; /* Отступ от фото до текста */
+    background: transparent !important;
+    border: none !important;
+}
+
+.portrait, .profile img {
+    width: 130px !important;
+    height: 130px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 4px !important;
+    border: 1px solid #ddd !important;
+    display: block !important;
+}
+
+/* Очистка обтекания, чтобы контакты были ниже */
+.profile-meta {
+    clear: both !important;
+    padding-top: 15px !important;
 }
