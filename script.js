@@ -380,7 +380,8 @@
 })();
 
 // ── ORCID Publications with Search ──
-document.addEventListener('DOMContentLoaded', async () => {
+document.addEventListener('DOMContentLoaded', () => {
+    (async () => {
     const listContainer = document.getElementById('orcid-publications-list');
     const searchInput = document.getElementById('pub-search');
     if (!listContainer) return;
@@ -402,7 +403,8 @@ document.addEventListener('DOMContentLoaded', async () => {
             if (p.journal) html += ` <i>${p.journal}</i>.`;
             if (p.doi) html += ` <a href="https://doi.org/${p.doi}" target="_blank" style="color: #0288d1; text-decoration: none;">[DOI]</a>`;
             html += `</li>`;
-        });
+        })();
+});
         html += '</ol>';
         listContainer.innerHTML = html;
     }

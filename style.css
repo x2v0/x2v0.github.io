@@ -1123,3 +1123,10 @@ button:focus-visible {
 [data-theme="dark"] .main-nav.is-open a {
     border-bottom-color: #333 !important;
 }
+
+/* Скрываем бейдж Replit */
+a[href*="replit.com"], iframe[src*="replit.com"], .replit-badge, #replit-badge, div[id^="replit-badge"] {
+    display: none !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
