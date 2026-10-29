@@ -2021,21 +2021,28 @@ img.portrait[width] {
     width: 100% !important;
 }
 
-/* --- ФИНАЛЬНЫЙ ФИКС ФОТО (УМЕНЬШЕНО И ПОДНЯТО) --- */
+
+/* --- ФОТО КАК В REPLIT (Маленькое и аккуратное) --- */
+.portrait-frame {
+    width: 160px !important;  /* Размер как в оригинале */
+    height: 160px !important; /* Квадрат */
+    overflow: hidden !important;
+    border: none !important;  /* Убираем лишние рамки, если есть */
+    margin: 0 0 15px 0 !important;
+}
+
 .portrait {
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: top center !important; /* Поднимаем фото повыше */
+    object-position: center !important;
     filter: none !important;
     display: block !important;
 }
 
-.portrait-frame {
-    width: 150px !important;   /* Уменьшаем ширину */
-    height: 180px !important;  /* Немного вытягиваем по вертикали */
-    overflow: hidden !important;
-    border: 1px solid #ddd !important;
-    margin-bottom: 15px !important;
-    margin-top: -10px !important; /* Поднимаем контейнер выше */
+/* Если Replit использовал другую обертку для фото, фиксим и её */
+.profile img:first-child {
+    width: 160px !important;
+    height: 160px !important;
+    object-fit: cover !important;
 }
