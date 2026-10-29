@@ -18,7 +18,7 @@
   <body>
     <header class="topbar" id="top">
       <a class="brand" href="#top" aria-label="Валерий Онучин — главная">
-        <img class="portrait" src="./images/me_pro.jpg" alt="Валерий Онучин" width="199" height="199" style="border-radius: 8px; object-fit: cover; box-shadow: 0 4px 15px rgba(0,0,0,0.1);">
+        <img src="./images/me.jpg" alt="Avatar" class="brand-mark">
         <span>Валерий Онучин</span>
       </a>
       <button id="theme-toggle" type="button" style="background:none; border:none; font-size:20px; cursor:pointer; margin-left:15px;" title="Сменить тему">🌙</button>
@@ -38,7 +38,7 @@
     <main class="layout" id="home-page">
       <aside class="profile" aria-label="Профиль">
         <div class="portrait-frame">
-          <img class="portrait" src="./images/me_pro.jpg" alt="Аватар Валерия Онучина" width="199" height="199">
+          <img class="portrait" src="./images/me.jpg" alt="Аватар Валерия Онучина" width="199" height="199">
         </div>
         <h2 class="profile-name">Валерий Онучин</h2>
         <p class="profile-role">Senior Software Engineer: C++, Go, cross-compilation, Linux kernel, CI/CD, Android</p>
@@ -48,15 +48,11 @@
         </div>
 <div class="profile-rule" aria-hidden="true"></div>
         <div class="profile-meta">
-          <span>📍 Протвино, Московская область</span>
+          <span><span class="meta-label">📍 LOC</span>Протвино, Московская область</span>
           <div class="email-row">
-            <a href="mailto:valeriy.onuchin@yandex.ru">✉️ valeriy.onuchin@yandex.ru</a>
+            <a href="mailto:valeriy.onuchin@yandex.ru" id="email-link"><span class="meta-label">✉️ MAIL</span>valeriy.onuchin@yandex.ru</a>
             <button onclick="navigator.clipboard.writeText('valeriy.onuchin@yandex.ru'); alert('Email copied!')" title="Copy Email" style="background:none; border:none; cursor:pointer; font-size:16px; margin-left:5px;">📋</button>
           </div>
-          <a href="https://github.com/x2v0" target="_blank" rel="noopener noreferrer">🐙 github.com/x2v0</a>
-          <a href="https://www.scopus.com/authid/detail.uri?authorId=8401982000" target="_blank" rel="noopener noreferrer">🔬 Scopus</a>
-          <a href="https://orcid.org/0009-0000-3022-3529" target="_blank" rel="noopener noreferrer">🆔 0009-0000-3022-3529</a>
-        </div>
           <a href="https://github.com/x2v0" target="_blank" rel="noopener noreferrer"><span class="meta-label">🐙 GIT</span>github.com/x2v0</a>
           <a href="https://www.scopus.com/authid/detail.uri?authorId=8401982000" target="_blank" rel="noopener noreferrer"><span class="meta-label">🔬 SCOPUS</span>Author profile</a>
           <a href="https://orcid.org/0009-0000-3022-3529" target="_blank" rel="noopener noreferrer"><span class="meta-label">🆔 ORCID</span>0009-0000-3022-3529</a>
