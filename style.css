@@ -2061,13 +2061,6 @@ img.portrait[width] {
     padding-top: 15px !important;
 }
 
-/* --- ЖЕСТКИЙ ФИКС: ФОТО И ТЕКСТ В ДВЕ КОЛОНКИ --- */
-.profile-top {
-    display: flex !important;
-    align-items: flex-start !important;
-    gap: 20px !important; /* Расстояние между фото и текстом */
-    margin-bottom: 20px !important;
-}
 
 /* Если Replit не использует .profile-top, применяем к самой aside */
 aside.profile {
@@ -2104,4 +2097,32 @@ aside.profile {
     clear: both !important;
     width: 100% !important;
     margin-top: 20px !important;
+}
+
+/* --- ФИНАЛЬНЫЙ ФИКС: БОЛЬШОЕ ФОТО, БЕЗ ТЕКСТА ПОД НИМ --- */
+
+/* Прячем текст "Senior Software Engineer..." */
+.profile-role {
+    display: none !important;
+}
+
+/* Контейнер для фото */
+.portrait-frame, .profile > div:first-child {
+    width: 200px !important;
+    height: 200px !important;
+    margin: 0 0 20px 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+/* Само фото */
+.portrait, .profile img {
+    width: 200px !important;
+    height: 200px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 4px !important;
+    border: 1px solid #ddd !important;
+    display: block !important;
 }
