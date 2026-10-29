@@ -1299,3 +1299,22 @@ aside.profile h2,
 .profile h2:first-of-type {
     display: none !important;
 }
+
+/* --- УМЕНЬШЕНИЕ МЕТРИК SCOPUS --- */
+/* Ищем блок с метриками и уменьшаем его */
+.metrics, .scopus-metrics, .stats-block {
+    font-size: 12px !important; /* Уменьшаем шрифт */
+    line-height: 1.4 !important;
+    padding: 10px !important; /* Уменьшаем отступы */
+    margin-bottom: 15px !important;
+}
+.metrics b, .scopus-metrics b, .stats-block b {
+    font-size: 14px !important; /* Чуть крупнее только цифры */
+}
+/* Если метрики сделаны через flex-сетку, уменьшаем и её */
+.metrics-grid, .stats-grid {
+    gap: 10px !important;
+}
+.metrics-grid > div, .stats-grid > div {
+    padding: 5px !important;
+}
