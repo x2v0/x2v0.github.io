@@ -7,8 +7,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var brandLink = document.querySelector('.brand');
     var resumePage = document.getElementById('resume-page');
     var resumeContent = document.getElementById('resume-content');
+    var scrollBtn = document.getElementById('scroll-top');
 
-    // 1. Мобильное меню (с анимацией крестика)
+    // 1. Мобильное меню (гамбургер)
     if (menuBtn && nav) {
         menuBtn.onclick = function(e) {
             e.preventDefault();
@@ -26,25 +27,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuBtn.classList.remove('is-active');
             }
         }
-    
-    // Логика кнопки "Наверх"
-    var scrollBtn = document.getElementById('scroll-top');
-    if (scrollBtn) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                scrollBtn.style.display = 'block';
-            } else {
-                scrollBtn.style.display = 'none';
-            }
-        });
-        scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    }
+    });
 
-});
-
-    // 3. Переключение темы
+    // 3. Переключение темы (луна)
     var themeBtn = document.getElementById('theme-toggle');
     var currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -59,7 +44,17 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 4. Загрузка Публикаций (ORCID)
+    // 4. Кнопка "Наверх"
+    if (scrollBtn) {
+        window.addEventListener('scroll', function() {
+            scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
+        });
+        scrollBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    }
+
+    // 5. Загрузка Публикаций (ORCID)
     var listContainer = document.getElementById('orcid-publications-list');
     if (listContainer) {
         fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } })
@@ -77,43 +72,11 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                     return { title: work.title.title.value, year: year, doi: doi };
-                
-    // Логика кнопки "Наверх"
-    var scrollBtn = document.getElementById('scroll-top');
-    if (scrollBtn) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                scrollBtn.style.display = 'block';
-            } else {
-                scrollBtn.style.display = 'none';
-            }
-        });
-        scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    }
-
-});
+                });
 
                 var render = function(filter) {
                     filter = filter || '';
-                    var filtered = allPubs.filter(function(p){ return p.title.toLowerCase().indexOf(filter.toLowerCase()) !== -1 || p.year.indexOf(filter) !== -1; 
-    // Логика кнопки "Наверх"
-    var scrollBtn = document.getElementById('scroll-top');
-    if (scrollBtn) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                scrollBtn.style.display = 'block';
-            } else {
-                scrollBtn.style.display = 'none';
-            }
-        });
-        scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    }
-
-});
+                    var filtered = allPubs.filter(function(p){ return p.title.toLowerCase().indexOf(filter.toLowerCase()) !== -1 || p.year.indexOf(filter) !== -1; });
                     if (!filtered.length) { listContainer.innerHTML = '<p>Нет результатов.</p>'; return; }
                     var html = '<ol style="padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">';
                     for (var i = 0; i < filtered.length; i++) {
@@ -128,26 +91,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 var searchInput = document.getElementById('pub-search');
                 if (searchInput) searchInput.oninput = function(e) { render(e.target.value); };
             })
-            .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; 
-    // Логика кнопки "Наверх"
-    var scrollBtn = document.getElementById('scroll-top');
-    if (scrollBtn) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                scrollBtn.style.display = 'block';
-            } else {
-                scrollBtn.style.display = 'none';
-            }
-        });
-        scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
+            .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
     }
 
-});
-    }
-
-    // 5. Резюме (SPA)
+    // 6. Резюме (SPA)
     var resumeLink = document.querySelector('a[href="#resume"]');
     if (resumeLink && resumePage) {
         resumeLink.onclick = function(e) {
@@ -172,28 +119,12 @@ document.addEventListener('DOMContentLoaded', function() {
                     })
                     .catch(function(err) {
                         resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме. Ошибка: ' + err.message + '</p>';
-                    
-    // Логика кнопки "Наверх"
-    var scrollBtn = document.getElementById('scroll-top');
-    if (scrollBtn) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                scrollBtn.style.display = 'block';
-            } else {
-                scrollBtn.style.display = 'none';
-            }
-        });
-        scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    }
-
-});
+                    });
             }
         };
     }
 
-    // 6. Навигация (Портфолио, Блог)
+    // 7. Навигация (Портфолио, Блог)
     function loadPage(url) {
         if (!dynamicContent || !mainContent) return;
         dynamicContent.innerHTML = '';
@@ -226,7 +157,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 7. Логотип (ВО) — возврат
+    // 8. Логотип (ВО) — возврат
     if (brandLink) {
         brandLink.onclick = function(e) {
             if ((dynamicContent && dynamicContent.style.display === 'block') || (resumePage && resumePage.style.display === 'block')) {
@@ -239,7 +170,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 8. Анимация скролла
+    // 9. Анимация скролла
     if ('IntersectionObserver' in window) {
         var observer = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
@@ -247,74 +178,10 @@ document.addEventListener('DOMContentLoaded', function() {
                     entry.target.classList.add('active');
                     observer.unobserve(entry.target);
                 }
-            
-    // Логика кнопки "Наверх"
-    var scrollBtn = document.getElementById('scroll-top');
-    if (scrollBtn) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                scrollBtn.style.display = 'block';
-            } else {
-                scrollBtn.style.display = 'none';
-            }
-        });
-        scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    }
-
-});
-        }, { threshold: 0.1 
-    // Логика кнопки "Наверх"
-    var scrollBtn = document.getElementById('scroll-top');
-    if (scrollBtn) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                scrollBtn.style.display = 'block';
-            } else {
-                scrollBtn.style.display = 'none';
-            }
-        });
-        scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    }
-
-});
+            });
+        }, { threshold: 0.1 });
         document.querySelectorAll('.reveal').forEach(function(el) {
             observer.observe(el);
-        
-    // Логика кнопки "Наверх"
-    var scrollBtn = document.getElementById('scroll-top');
-    if (scrollBtn) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                scrollBtn.style.display = 'block';
-            } else {
-                scrollBtn.style.display = 'none';
-            }
         });
-        scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
     }
-
-});
-    }
-
-    // Логика кнопки "Наверх"
-    var scrollBtn = document.getElementById('scroll-top');
-    if (scrollBtn) {
-        window.addEventListener('scroll', function() {
-            if (window.scrollY > 300) {
-                scrollBtn.style.display = 'block';
-            } else {
-                scrollBtn.style.display = 'none';
-            }
-        });
-        scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
-        };
-    }
-
 });
