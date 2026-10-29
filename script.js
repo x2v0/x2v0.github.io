@@ -1,3 +1,4 @@
+
 document.addEventListener('DOMContentLoaded', function() {
     var nav = document.getElementById('site-navigation');
     var menuBtn = document.getElementById('menu-toggle');
@@ -73,17 +74,16 @@ document.addEventListener('DOMContentLoaded', function() {
                 var searchInput = document.getElementById('pub-search');
                 if (searchInput) searchInput.oninput = function(e) { render(e.target.value); };
             })
-            .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID (VPN?)</p>'; });
+            .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
     }
 
-    // 4. Кнопка вверх
+    // 4. Кнопка вверх и форма
     var scrollBtn = document.getElementById('scroll-top');
     if (scrollBtn) {
         window.addEventListener('scroll', function() { scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none'; });
         scrollBtn.onclick = function() { window.scrollTo({ top: 0, behavior: 'smooth' }); };
     }
 
-    // 5. Форма
     var contactForm = document.getElementById('contact-form');
     if (contactForm) {
         contactForm.onsubmit = function(e) {
@@ -91,39 +91,34 @@ document.addEventListener('DOMContentLoaded', function() {
             var name = document.getElementById('c-name').value;
             var email = document.getElementById('c-email').value;
             var msg = document.getElementById('c-msg').value;
-            window.location.href = 'mailto:valeriy.onuchin@ya.ru?subject=Contact from ' + encodeURIComponent(name) + '&body=' + encodeURIComponent(msg + '\\n\\nОт: ' + email);
+            window.location.href = 'mailto:valeriy.onuchin@ya.ru?subject=Contact from ' + encodeURIComponent(name) + '&body=' + encodeURIComponent(msg + '\n\nОт: ' + email);
         };
     }
 
-    // 6. SPA Навигация
+    // 5. SPA Навигация ЧЕРЕЗ IFRAME (чтобы скрипты работали)
     var mainContent = document.getElementById('home-page');
     var dynamicContent = document.getElementById('dynamic-content');
 
     function loadPage(url) {
         if (!dynamicContent || !mainContent) return;
-        dynamicContent.innerHTML = '<p style="text-align:center; padding:50px;">Загрузка...</p>';
+        
+        dynamicContent.innerHTML = '';
         dynamicContent.style.display = 'block';
         mainContent.style.display = 'none';
 
-        fetch(url)
-            .then(function(r) { return r.text(); })
-            .then(function(htmlText) {
-                var parser = new DOMParser();
-                var doc = parser.parseFromString(htmlText, 'text/html');
-                dynamicContent.innerHTML = doc.body.innerHTML;
-                
-                var backBtn = document.createElement('button');
-                backBtn.innerHTML = '← Назад на главную';
-                backBtn.style.cssText = 'margin-bottom:20px; padding:10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer; font-family:inherit;';
-                backBtn.onclick = function() {
-                    dynamicContent.style.display = 'none';
-                    mainContent.style.display = ''; 
-                };
-                dynamicContent.insertBefore(backBtn, dynamicContent.firstChild);
-            })
-            .catch(function(e) {
-                dynamicContent.innerHTML = '<p style="color:red;">Ошибка загрузки страницы.</p>';
-            });
+        var backBtn = document.createElement('button');
+        backBtn.innerHTML = '← Назад на главную';
+        backBtn.style.cssText = 'margin: 20px; padding: 10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer; font-family:inherit;';
+        backBtn.onclick = function() {
+            dynamicContent.style.display = 'none';
+            mainContent.style.display = ''; 
+        };
+        dynamicContent.appendChild(backBtn);
+
+        var iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.style.cssText = 'width: 100%; height: 85vh; border: none; border-top: 1px solid #ddd;';
+        dynamicContent.appendChild(iframe);
     }
 
     var navPortfolio = document.getElementById('nav-portfolio');
