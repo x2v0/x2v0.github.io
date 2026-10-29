@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 5. Резюме (Локальный Markdown)
+    // 5. Резюме (Загрузка локального Markdown)
     var resumeLink = document.querySelector('a[href="#resume"]');
     if (resumeLink && resumePage) {
         resumeLink.onclick = function(e) {
@@ -67,16 +67,18 @@ document.addEventListener('DOMContentLoaded', function() {
 
             if (resumeContent && resumeContent.innerHTML.indexOf('Загрузка') !== -1) {
                 fetch('./resume.md')
-                    .then(function(r) {
-                        if (!r.ok) throw new Error('Network response was not ok');
-                        return r.text();
-                    })
+                    .then(function(r) { return r.text(); })
                     .then(function(md) {
-                        // Выводим как обычный текст, чтобы проверить, что он вообще загрузился
-                        resumeContent.innerHTML = '<pre style="white-space: pre-wrap; font-family: monospace;">' + md + '</pre>';
+                        // Если marked загружен, рендерим красиво
+                        if (typeof marked !== 'undefined') {
+                            resumeContent.innerHTML = marked.parse(md);
+                        } else {
+                            // Если нет — выводим как текст
+                            resumeContent.innerHTML = '<pre style="white-space: pre-wrap;">' + md + '</pre>';
+                        }
                     })
                     .catch(function(err) {
-                        resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки: ' + err.message + '</p>';
+                        resumeContent.innerHTML = '<p style="color:red;">Ошибка: ' + err.message + '</p>';
                     });
             }
         };
