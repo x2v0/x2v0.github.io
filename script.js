@@ -44,15 +44,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // 3. Загрузка API (GitHub, ORCID)
-    var ghEl = document.getElementById('github-stats');
-    if (ghEl) {
-        fetch('https://api.github.com/users/x2v0')
-            .then(function(r) { return r.json(); })
-            .then(function(data) {
-                if (data.public_repos !== undefined) {
-                    ghEl.innerHTML = '<span>Repos: <b>' + data.public_repos + '</b></span> | <span>Followers: <b>' + data.followers + '</b></span>';
-                }
-            }).catch(function() { ghEl.innerHTML = 'GitHub API Error'; });
+    
     }
 
     var listContainer = document.getElementById('orcid-publications-list');
