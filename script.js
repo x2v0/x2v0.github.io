@@ -375,3 +375,52 @@
   updateYear();
   updateNavigation();
 })();
+
+// ── ORCID Publications ──
+document.addEventListener('DOMContentLoaded', async () => {
+    const listContainer = document.getElementById('orcid-publications-list');
+    if (!listContainer) return;
+
+    try {
+        const response = await fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', {
+            headers: { 'Accept': 'application/json' }
+        });
+        if (!response.ok) throw new Error('Network response was not ok');
+        
+        const data = await response.json();
+        
+        if (!data.group || data.group.length === 0) {
+            listContainer.innerHTML = '<p>No publications found.</p>';
+            return;
+        }
+
+        let html = '<ol style="padding-left: 20px; display: flex; flex-direction: column; gap: 12px;">';
+        
+        data.group.forEach(item => {
+            const work = item['work-summary'][0];
+            const title = work.title.title.value;
+            const year = work['publication-date']?.year?.value || 'N/A';
+            const journal = work['journal-title']?.value || '';
+            
+            // Ищем DOI
+            let doi = '';
+            if (work['external-ids'] && work['external-ids']['external-id']) {
+                const doiObj = work['external-ids']['external-id'].find(id => id['external-id-type'] === 'doi');
+                if (doiObj) doi = doiObj['external-id-value'];
+            }
+
+            html += `<li style="margin-bottom: 0;">`;
+            html += `<strong>${title}</strong> (${year})`;
+            if (journal) html += ` <i>${journal}</i>.`;
+            if (doi) html += ` <a href="https://doi.org/${doi}" target="_blank" style="color: #0288d1; text-decoration: none;">[DOI]</a>`;
+            html += `</li>`;
+        });
+        
+        html += '</ol>';
+        listContainer.innerHTML = html;
+
+    } catch (error) {
+        console.error('Error fetching ORCID:', error);
+        listContainer.innerHTML = '<p style="color: red;">Failed to load publications. Please check your connection or the ORCID API.</p>';
+    }
+});
