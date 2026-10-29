@@ -1,25 +1,205 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
   <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1" />
-    <title>Валерий Онучин — Senior Software Engineer и DevOps</title>
-    <meta name="description" content="Портфолио Валерия Онучина: системное программирование, DevOps, научное и медицинское ПО, опыт в CERN и ОИЯИ, технологии, проекты и полные версии резюме." />
-    <meta name="robots" content="index, follow" />
-    <meta property="og:title" content="Валерий Онучин — Senior Software Engineer и DevOps" />
-    <meta property="og:description" content="Портфолио Валерия Онучина: системное программирование, DevOps, научное и медицинское ПО, опыт в CERN и ОИЯИ, технологии, проекты и полные версии резюме." />
-    <meta property="og:type" content="website" />
-    <meta name="twitter:card" content="summary" />
-    <meta name="twitter:title" content="Валерий Онучин — Senior Software Engineer и DevOps" />
-    <meta name="twitter:description" content="Портфолио Валерия Онучина: системное программирование, DevOps, научное и медицинское ПО, опыт в CERN и ОИЯИ, технологии, проекты и полные версии резюме." />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script type="module" crossorigin src="/assets/index-sYFxUDgL.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-Cu8pA1iS.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Портфолио Валерия Онучина: системное программирование, DevOps, научное и медицинское ПО, Scopus metrics и публикации.">
+    <meta name="theme-color" content="#f5f3eb">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Валерий Онучин — инженер-программист">
+    <meta property="og:description" content="Системное программирование, DevOps, научное и медицинское ПО.">
+    <title>Валерий Онучин — инженер-программист</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="./script.js" defer></script>
   </head>
   <body>
-    <div id="root"></div>
+    <header class="topbar" id="top">
+      <a class="brand" href="#top" aria-label="Валерий Онучин — главная">
+        <span class="brand-mark" aria-hidden="true">ВО</span>
+        <span>Валерий Онучин</span>
+      </a>
+      <button class="nav-menu" id="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+      </button>
+      <nav class="main-nav" id="site-navigation" aria-label="Основная навигация">
+        <a href="#publications">Публикации</a>
+        <a href="https://x2v0.github.io/portfolio/" target="_blank" rel="noopener noreferrer">Portfolio</a>
+        <a href="https://x2v0.github.io/year-archive/" target="_blank" rel="noopener noreferrer">Блог</a>
+        <a href="#resume" data-resume-link>Резюме</a>
+      </nav>
+    </header>
+
+    <main class="layout" id="home-page">
+      <aside class="profile" aria-label="Профиль">
+        <div class="portrait-frame">
+          <img class="portrait" src="./images/me.jpg" alt="Аватар Валерия Онучина" width="199" height="199">
+        </div>
+        <h2 class="profile-name">Валерий Онучин</h2>
+        <p class="profile-role">Senior Software Engineer: C++, Go, cross-compilation, Linux kernel, CI/CD, Android</p>
+        <div class="profile-rule" aria-hidden="true"></div>
+        <div class="profile-meta">
+          <span><span class="meta-label">LOC</span>Протвино, Московская область</span>
+          <a href="mailto:valeriy.onuchin@yandex.ru"><span class="meta-label">MAIL</span>Email</a>
+          <a href="https://github.com/x2v0" target="_blank" rel="noopener noreferrer"><span class="meta-label">GIT</span>GitHub</a>
+          <a href="https://www.scopus.com/authid/detail.uri?authorId=8401982000" target="_blank" rel="noopener noreferrer"><span class="meta-label">SCOPUS</span>Author profile</a>
+          <a href="https://orcid.org/0009-0000-3022-3529" target="_blank" rel="noopener noreferrer"><span class="meta-label">ORCID</span>0009-0000-3022-3529</a>
+        </div>
+      </aside>
+
+      <div class="content">
+        <section class="hero" aria-labelledby="page-title">
+          <p class="eyebrow">Senior Software Engineer · Protvino, Russia</p>
+          <h1 id="page-title">Валерий Онучин <span>— Senior Software Engineer</span></h1>
+          <p class="hero-subtitle">Прикладное и системное программирование, разработка научного и медицинского ПО, DevOps.</p>
+          <div class="hero-note">
+            <span class="hero-note-mark">ROOT / CERN</span>
+            <span><strong>Соавтор пакета ROOT (CERN)</strong> — использовался при открытии бозона Хиггса.</span>
+          </div>
+        </section>
+
+        <section class="section" id="qualification">
+          <div class="section-head">
+            <span class="section-index">01 /</span>
+            <h2 class="section-title">Квалификация</h2>
+            <span class="section-caption">ИНСТРУМЕНТАРИЙ И ЭКСПЕРТИЗА</span>
+          </div>
+          <p class="qualification">Прикладное и системное программирование, разработка научного и медицинского ПО, DevOps.</p>
+          <table class="skills-table">
+            <thead>
+              <tr><th scope="col">Область</th><th scope="col">Технологии</th></tr>
+            </thead>
+            <tbody>
+              <tr><th scope="row">Языки</th><td>C++, C#, Kotlin, Python, bash, PowerShell, Go</td></tr>
+              <tr><th scope="row">Сборка</th><td>CMake, Meson/Ninja, autotools, Make, msbuild, pkg-config</td></tr>
+              <tr><th scope="row">DevOps</th><td>Docker, CI/CD, кросс-компиляция, ядро Linux, сборка ОС</td></tr>
+              <tr><th scope="row">Платформы</th><td>Linux, Windows, Android, Эльбрус-2000, Скиф (aarch64)</td></tr>
+              <tr><th scope="row">Экспертиза</th><td>Высоконагруженные системы, кросс-платформенная сборка, научные данные, медицинское ПО</td></tr>
+            </tbody>
+          </table>
+        </section>
+
+        <section class="section" id="experience">
+          <div class="section-head">
+            <span class="section-index">02 /</span>
+            <h2 class="section-title">Опыт работы</h2>
+            <span class="section-caption">2004 — 2025</span>
+          </div>
+          <div class="career-list">
+            <article class="career-item">
+              <h3>АО НПЦ ЭЛВИС <span class="career-date">(03/2025 – 12/2025)</span> <span class="career-role">· Инженер-программист.</span></h3>
+              <p>Разработка «Альтель ОС» под Эльбрус-2000 и Скиф (aarch64), кросс-компиляция.</p>
+            </article>
+            <article class="career-item">
+              <h3>ОИЯИ, Дубна <span class="career-date">(2022 – 2024)</span> <span class="career-role">· Системный программист.</span></h3>
+              <p>Автоматическая сборка Linux-дистрибутива (200+ пакетов) на Python и bash.</p>
+            </article>
+            <article class="career-item">
+              <h3>АО ПРОТОМ, Протвино <span class="career-date">(2009 – 2021)</span> <span class="career-role">· Ведущий разработчик медицинского ПО.</span></h3>
+              <p>Клиент-серверная система протонной терапии.</p>
+            </article>
+            <article class="career-item">
+              <h3>ЦЕРН, Женева <span class="career-date">(2004 – 2008)</span> <span class="career-role">· Соавтор ROOT.</span></h3>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="scopus">
+          <div class="section-head">
+            <span class="section-index">03 /</span>
+            <h2 class="section-title">Scopus Metrics</h2>
+            <a class="section-caption external-link" href="https://www.scopus.com/authid/detail.uri?authorId=8401982000" target="_blank" rel="noopener noreferrer">SCOPUS PROFILE ↗</a>
+          </div>
+          <p class="affiliation-label">Affiliation</p>
+          <p class="affiliation">Joint Institute for Nuclear Research, Dubna, Russian Federation</p>
+          <div class="metric-grid">
+            <article class="metric-card">
+              <span class="metric-label">h-index</span>
+              <strong>43</strong>
+            </article>
+            <article class="metric-card">
+              <span class="metric-label">Documents</span>
+              <strong>78</strong>
+            </article>
+            <article class="metric-card metric-card-wide">
+              <span class="metric-label">Citations</span>
+              <strong>15,102</strong>
+              <span class="metric-note">by 10,390 documents</span>
+            </article>
+          </div>
+        </section>
+
+        <section class="section" id="publications">
+          <div class="section-head">
+            <span class="section-index">04 /</span>
+            <h2 class="section-title">Key Publications</h2>
+            <span class="section-caption">SELECTED WORK</span>
+          </div>
+          <ol class="publication-list">
+            <li>
+              <span class="publication-title">The ALICE experiment at the CERN LHC</span>
+              <span class="publication-year">2008</span>
+              <strong class="publication-citations">1,996 citations</strong>
+            </li>
+            <li>
+              <span class="publication-title">ROOT - A C++ framework for petabyte data storage, statistical analysis and visualization</span>
+              <span class="publication-year">2009</span>
+              <strong class="publication-citations">421 citations</strong>
+            </li>
+            <li>
+              <span class="publication-title">The magnetized steel and scintillator calorimeters of the MINOS experiment</span>
+              <span class="publication-year">2008</span>
+              <strong class="publication-citations">294 citations</strong>
+            </li>
+            <li>
+              <span class="publication-title">ROOT-A C++ framework for petabyte data storage, statistical analysis and visualization</span>
+              <span class="publication-year">2011</span>
+              <strong class="publication-citations">126 citations</strong>
+            </li>
+          </ol>
+        </section>
+
+        <section class="section" id="projects">
+          <div class="section-head">
+            <span class="section-index">05 /</span>
+            <h2 class="section-title">Проекты</h2>
+            <span class="section-caption">ANDROID · HTTP</span>
+          </div>
+          <article class="project">
+            <div class="project-top">
+              <h3 class="project-name">mtapi</h3>
+              <span class="project-kicker">Android HTTP bridge</span>
+            </div>
+            <p>Android HTTP bridge: 60+ API endpoints, debug overlay, browser.</p>
+            <div class="project-links">
+              <a href="https://x2v0.github.io/mtapi/demo/" target="_blank" rel="noopener noreferrer">Demo (mock)</a>
+              <a href="https://github.com/x2v0/mtapi" target="_blank" rel="noopener noreferrer">GitHub</a>
+            </div>
+          </article>
+          <p class="resume-callout">Полный текст опыта и резюме — <a href="#resume" data-resume-link>на странице резюме</a>.</p>
+        </section>
+
+        <footer class="footer">
+          <span>© <span id="current-year">2026</span> Валерий Онучин</span>
+          <a href="https://github.com/x2v0" target="_blank" rel="noopener noreferrer">github.com/x2v0 ↗</a>
+        </footer>
+      </div>
+    </main>
+
+    <main class="resume-page" id="resume-page" hidden>
+      <header class="resume-heading">
+        <p class="eyebrow">ВАЛЕРИЙ ОНУЧИН · РЕЗЮМЕ</p>
+        <h1>Полное резюме</h1>
+        <a class="back-link" href="#top">← На главную</a>
+      </header>
+      <section class="resume-card" aria-label="Текст резюме">
+        <div class="resume-status" id="resume-status" role="status" aria-live="polite">Загружаем резюме…</div>
+        <article class="markdown-content" id="resume-content"></article>
+      </section>
+      <footer class="footer resume-footer">
+        <span>© <span data-current-year>2026</span> Валерий Онучин</span>
+        <a href="#top">На главную ↑</a>
+      </footer>
+    </main>
   <script src="https://replit-cdn.com/replit-pill/replit-pill.global.js" data-referral-code="c0f4ol704kib" data-repl-id="c9fcad4a-4a1b-4c83-987e-bb60c71392ff"></script></body>
 </html>
