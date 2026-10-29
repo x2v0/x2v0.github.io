@@ -1246,3 +1246,25 @@ details.orcid-details[open] summary::before {
         font-size: 3.2rem !important; /* На телефонах делаем чуть крупнее, но чтобы влезало */
     }
 }
+
+/* --- ЖЕСТКИЙ ФИКС ЗАГОЛОВКА (В 2 СТРОКИ) --- */
+/* Ищем все возможные классы, которые Replit мог использовать для этого заголовка */
+h1, .hero-title, .display-title, .hero h1, #home-page h1 {
+    font-size: 2.2rem !important; /* Уменьшаем базовый размер */
+    line-height: 1.1 !important; 
+    letter-spacing: -0.5px !important;
+    word-wrap: break-word !important;
+}
+
+/* На планшетах и десктопах делаем чуть крупнее, но чтобы влезало */
+@media (min-width: 768px) {
+    h1, .hero-title, .display-title, .hero h1, #home-page h1 {
+        font-size: 3.5rem !important;
+    }
+}
+
+/* Если есть внутренний тег <span> или <br>, тоже уменьшаем */
+h1 span, .hero-title span, .hero-title br + span {
+    font-size: inherit !important;
+    line-height: inherit !important;
+}
