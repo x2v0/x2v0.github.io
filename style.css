@@ -2288,3 +2288,35 @@ aside.profile {
 .profile-meta {
     margin-top: 10px !important;
 }
+
+/* === ФИКС ТЕМНОЙ ТЕМЫ ДЛЯ КОНТАКТОВ И РАМКИ === */
+
+/* 1. Убираем белый фон у контактов в темной теме */
+[data-theme="dark"] .profile-meta {
+    background: transparent !important;
+}
+
+/* 2. Делаем текст контактов белым/светло-серым, а ссылки - аккуратными */
+[data-theme="dark"] .profile-meta span,
+[data-theme="dark"] .profile-meta a {
+    color: #e0e0e0 !important;
+    text-decoration: none !important;
+}
+
+[data-theme="dark"] .profile-meta a:hover {
+    color: #4fc3f7 !important;
+}
+
+[data-theme="dark"] .meta-label {
+    color: #aaa !important;
+}
+
+/* 3. Убираем зеленую полоску (остаток рамки) */
+.portrait-frame::after, .profile > div:first-child::after {
+    display: none !important;
+}
+[data-theme="dark"] .portrait-frame, 
+[data-theme="dark"] .profile > div:first-child {
+    border: none !important;
+    background: transparent !important;
+}
