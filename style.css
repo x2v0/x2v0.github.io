@@ -1130,3 +1130,13 @@ a[href*="replit.com"], iframe[src*="replit.com"], .replit-badge, #replit-badge, 
     opacity: 0 !important;
     pointer-events: none !important;
 }
+
+/* Аватарка в шапке */
+.brand-mark {
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 50% !important;
+    border: 1px solid #0288d1 !important;
+    object-fit: cover !important;
+    display: inline-block !important;
+}
