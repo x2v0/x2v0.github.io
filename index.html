@@ -13,100 +13,6 @@
     <script src="./script.js" defer></script>
       <link rel="manifest" href="/manifest.json">
     <script data-goatcounter="https://x2v0.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
-
-    <style id="header-fix">
-        /* АВАРИЙНОЕ ВОССТАНОВЛЕНИЕ ШАПКИ */
-        header.topbar {
-            display: flex !important;
-            justify-content: space-between !important;
-            align-items: center !important;
-            padding: 15px 20px !important;
-            background: var(--bg, #f5f3eb) !important;
-            border-bottom: 1px solid #ddd !important;
-            width: 100% !important;
-            box-sizing: border-box !important;
-            position: relative !important;
-            z-index: 1000 !important;
-            visibility: visible !important;
-            opacity: 1 !important;
-            height: auto !important;
-        }
-        .brand {
-            display: flex !important;
-            align-items: center !important;
-            gap: 10px !important;
-            text-decoration: none !important;
-            color: #333 !important;
-            font-weight: bold !important;
-        }
-        .brand-mark {
-            display: flex !important;
-            align-items: center !important;
-            justify-content: center !important;
-            width: 36px !important;
-            height: 36px !important;
-            border: 1px solid #0288d1 !important;
-            border-radius: 50% !important;
-            color: #0288d1 !important;
-            font-size: 14px !important;
-        }
-        .header-actions {
-            display: flex !important;
-            align-items: center !important;
-            gap: 15px !important;
-        }
-        #theme-toggle {
-            background: none !important;
-            border: none !important;
-            font-size: 24px !important;
-            cursor: pointer !important;
-            padding: 0 !important;
-            display: block !important;
-        }
-        .nav-menu {
-            background: none !important;
-            border: none !important;
-            cursor: pointer !important;
-            display: flex !important;
-            flex-direction: column !important;
-            gap: 5px !important;
-            padding: 0 !important;
-        }
-        .nav-menu span {
-            display: block !important;
-            width: 24px !important;
-            height: 2px !important;
-            background: #333 !important;
-        }
-        /* Мобильное меню */
-        @media (max-width: 900px) {
-            .main-nav { display: none !important; }
-            .main-nav.is-open {
-                display: flex !important;
-                flex-direction: column !important;
-                position: absolute !important;
-                top: 100% !important;
-                left: 0 !important;
-                width: 100% !important;
-                background: #f5f3eb !important;
-                padding: 10px 0 !important;
-                z-index: 9999 !important;
-                box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
-            }
-            .main-nav.is-open a {
-                padding: 15px 20px !important;
-                border-bottom: 1px solid #ddd !important;
-                color: #333 !important;
-                text-decoration: none !important;
-                display: block !important;
-            }
-        }
-        /* Темная тема */
-        [data-theme="dark"] header.topbar { background: #121212 !important; border-color: #333 !important; }
-        [data-theme="dark"] .brand, [data-theme="dark"] .nav-menu span { color: #eee !important; background-color: #eee !important; }
-        [data-theme="dark"] .main-nav.is-open { background: #1e1e1e !important; }
-        [data-theme="dark"] .main-nav.is-open a { color: #eee !important; border-bottom-color: #333 !important; }
-    </style>
 </head>
   <body>
     <header class="topbar" id="top">
@@ -114,21 +20,19 @@
         <span class="brand-mark" aria-hidden="true">ВО</span>
         <span>Валерий Онучин</span>
       </a>
-      <div class="header-actions">
-        <button id="theme-toggle" type="button" title="Сменить тему">🌙</button>
-        <button class="nav-menu" id="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="Открыть меню">
-          <span></span>
-          <span></span>
-        </button>
-      </div>
+      <button id="theme-toggle" type="button" style="background:none; border:none; font-size:20px; cursor:pointer; margin-left:15px;" title="Сменить тему">🌙</button>
+      <button class="nav-menu" id="menu-toggle" type="button" aria-controls="site-navigation" aria-expanded="false" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+      </button>
       <nav class="main-nav" id="site-navigation" aria-label="Основная навигация">
         <a href="#publications">Публикации</a>
         <a href="#portfolio" id="nav-portfolio">Portfolio</a>
         <a href="#blog" id="nav-blog">Блог</a>
         <a href="https://github.com/x2v0/Resume" target="_blank" rel="noopener noreferrer">Резюме ↗</a>
+        
       </nav>
     </header>
-    
 
     <main class="layout" id="home-page">
       <aside class="profile" aria-label="Профиль">
@@ -309,9 +213,8 @@
     
     
     
-      
+      <div id="dynamic-content" style="display: none; padding: 20px;"></div>
     </main>
-<div id="dynamic-content" style="display: none; padding: 20px; max-width: 800px; margin: 0 auto;"></div>
 
     <main class="resume-page" id="resume-page" hidden>
       <header class="resume-heading">
@@ -339,9 +242,8 @@
     
     
     
-      
+      <div id="dynamic-content" style="display: none; padding: 20px;"></div>
     </main>
-<div id="dynamic-content" style="display: none; padding: 20px; max-width: 800px; margin: 0 auto;"></div>
     <button id="scroll-top" title="Наверх">↑</button>
   <script src="./test.js"></script>
 </body>
