@@ -4,13 +4,19 @@ document.addEventListener('DOMContentLoaded', function() {
     var menuBtn = document.getElementById('menu-toggle');
     var mainContent = document.getElementById('home-page');
     var dynamicContent = document.getElementById('dynamic-content');
-    var brandLink = document.querySelector('.brand');
     var resumePage = document.getElementById('resume-page');
     var resumeContent = document.getElementById('resume-content');
-    var pubPage = document.getElementById('publications-page');
     var scrollBtn = document.getElementById('scroll-top');
 
-    // 1. Мобильное меню (гамбургер)
+    // Функция "Вернуться на главную" (сбрасывает все окна)
+    function goHome() {
+        if (mainContent) mainContent.style.display = '';
+        if (dynamicContent) dynamicContent.style.display = 'none';
+        if (resumePage) resumePage.style.display = 'none';
+        if (dynamicContent) dynamicContent.innerHTML = ''; // Очищаем iframe/контент
+    }
+
+    // 1. Мобильное меню
     if (menuBtn && nav) {
         menuBtn.onclick = function(e) {
             e.preventDefault();
@@ -20,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 2. Закрытие меню при клике вне его
+    // 2. Закрытие меню
     document.addEventListener('click', function(e) {
         if (nav && nav.classList.contains('is-open')) {
             if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
@@ -30,7 +36,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 3. Переключение темы (луна)
+    // 3. Тема
     var themeBtn = document.getElementById('theme-toggle');
     var currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -45,7 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 4. Кнопка "Наверх"
+    // 4. Кнопка Наверх
     if (scrollBtn) {
         window.addEventListener('scroll', function() {
             scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
@@ -55,95 +61,69 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 5. Резюме (SPA)
+    // 5. Резюме
     var resumeLink = document.querySelector('a[href="#resume"]');
-    if (resumeLink && resumePage) {
+    if (resumeLink) {
         resumeLink.onclick = function(e) {
             e.preventDefault();
-            if (mainContent) mainContent.style.display = 'none';
-            if (dynamicContent) dynamicContent.style.display = 'none';
-            if (pubPage) pubPage.style.display = 'none';
-            resumePage.style.display = 'block';
+            goHome();
+            if (resumePage) resumePage.style.display = 'block';
             window.scrollTo(0, 0);
 
             if (resumeContent && resumeContent.innerHTML === 'Загрузка резюме с GitHub...') {
                 fetch('https://raw.githubusercontent.com/x2v0/Resume/main/README.md')
-                    .then(function(r) {
-                        if (!r.ok) throw new Error('Network error');
-                        return r.text();
-                    })
+                    .then(function(r) { return r.text(); })
                     .then(function(md) {
-                        if (typeof marked !== 'undefined') {
-                            resumeContent.innerHTML = marked.parse(md);
-                        } else {
-                            resumeContent.innerHTML = '<pre style="white-space: pre-wrap;">' + md + '</pre>';
-                        }
+                        if (typeof marked !== 'undefined') resumeContent.innerHTML = marked.parse(md);
+                        else resumeContent.innerHTML = '<pre>' + md + '</pre>';
                     })
-                    .catch(function(err) {
-                        resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме. Ошибка: ' + err.message + '</p>';
-                    });
+                    .catch(function() { resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки</p>'; });
             }
         };
     }
 
-    // 6. Публикации (SPA)
-    var navPub = document.getElementById('nav-publications');
-    if (navPub && pubPage) {
-        navPub.onclick = function(e) {
-            e.preventDefault();
-            if (mainContent) mainContent.style.display = 'none';
-            if (dynamicContent) dynamicContent.style.display = 'none';
-            if (resumePage) resumePage.style.display = 'none';
-            pubPage.style.display = 'block';
-            window.scrollTo(0, 0);
-
-            var listContainer = document.getElementById('orcid-publications-list');
-            if (listContainer && listContainer.innerHTML.indexOf('Загрузка') !== -1) {
-                fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } })
-                    .then(function(r) { return r.json(); })
-                    .then(function(data) {
-                        if (!data.group) throw new Error('No data');
-                        var allPubs = data.group.map(function(item) {
-                            var work = item['work-summary'][0];
-                            var year = work['publication-date'] && work['publication-date'].year ? work['publication-date'].year.value : '';
-                            var doi = '';
-                            if (work['external-ids'] && work['external-ids']['external-id']) {
-                                var ids = work['external-ids']['external-id'];
-                                for (var k = 0; k < ids.length; k++) {
-                                    if (ids[k]['external-id-type'] === 'doi') doi = ids[k]['external-id-value'];
-                                }
-                            }
-                            return { title: work.title.title.value, year: year, doi: doi };
-                        });
-
-                        var html = '';
-                        for (var i = 0; i < allPubs.length; i++) {
-                            var p = allPubs[i];
-                            html += '<li><strong>' + p.title + '</strong> (' + p.year + ')';
-                            if (p.doi) html += ' <a href="https://doi.org/' + p.doi + '" target="_blank">[DOI]</a>';
-                            html += '</li>';
-                        }
-                        listContainer.innerHTML = html;
-                    })
-                    .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
-            }
-        };
-    }
-
-    // 7. Навигация (Портфолио, Блог)
-    function loadPage(url) {
+    // 6. Загрузка Портфолио и Блога (с выполнением скриптов)
+    function loadPage(url, title) {
         if (!dynamicContent || !mainContent) return;
-        dynamicContent.innerHTML = '';
+        
+        goHome(); // Сначала сбрасываем всё
+        dynamicContent.innerHTML = '<p style="text-align:center; padding:50px;">Загрузка ' + title + '...</p>';
         dynamicContent.style.display = 'block';
         mainContent.style.display = 'none';
-        if (resumePage) resumePage.style.display = 'none';
-        if (pubPage) pubPage.style.display = 'none';
         window.scrollTo(0, 0);
 
-        var iframe = document.createElement('iframe');
-        iframe.src = url;
-        iframe.style.cssText = 'width: 100%; height: 85vh; border: none; border-top: 1px solid #ddd;';
-        dynamicContent.appendChild(iframe);
+        fetch(url)
+            .then(function(r) { return r.text(); })
+            .then(function(htmlText) {
+                var parser = new DOMParser();
+                var doc = parser.parseFromString(htmlText, 'text/html');
+                
+                dynamicContent.innerHTML = '';
+
+                var backBtn = document.createElement('button');
+                backBtn.innerHTML = '← Назад на главную';
+                backBtn.style.cssText = 'margin: 20px; padding: 10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer; font-size:16px;';
+                backBtn.onclick = function() {
+                    goHome();
+                };
+                dynamicContent.appendChild(backBtn);
+
+                var contentDiv = document.createElement('div');
+                contentDiv.innerHTML = doc.body.innerHTML;
+                
+                // Выполняем скрипты
+                var scripts = contentDiv.querySelectorAll('script');
+                for (var i = 0; i < scripts.length; i++) {
+                    var newScript = document.createElement('script');
+                    if (scripts[i].src) newScript.src = scripts[i].src;
+                    else newScript.textContent = scripts[i].textContent;
+                    scripts[i].parentNode.replaceChild(newScript, scripts[i]);
+                }
+                dynamicContent.appendChild(contentDiv);
+            })
+            .catch(function() {
+                dynamicContent.innerHTML = '<p style="color:red; padding:20px;">Ошибка загрузки.</p>';
+            });
     }
 
     var navPortfolio = document.getElementById('nav-portfolio');
@@ -153,30 +133,51 @@ document.addEventListener('DOMContentLoaded', function() {
         navPortfolio.onclick = function(e) {
             e.preventDefault();
             if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
-            loadPage('./portfolio/index.html');
+            loadPage('./portfolio/index.html', 'Portfolio');
         };
     }
     if (navBlog) {
         navBlog.onclick = function(e) {
             e.preventDefault();
             if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
-            loadPage('./year-archive/index.html');
+            loadPage('./year-archive/index.html', 'Блог');
         };
     }
 
-    // 8. Логотип (ВО) — возврат на главную
+    // 7. Логотип (возврат)
+    var brandLink = document.querySelector('.brand');
     if (brandLink) {
         brandLink.onclick = function(e) {
-            if ((dynamicContent && dynamicContent.style.display === 'block') || 
-                (resumePage && resumePage.style.display === 'block') || 
-                (pubPage && pubPage.style.display === 'block')) {
+            if ((dynamicContent && dynamicContent.style.display === 'block') || (resumePage && resumePage.style.display === 'block')) {
                 e.preventDefault();
-                if (dynamicContent) dynamicContent.style.display = 'none';
-                if (resumePage) resumePage.style.display = 'none';
-                if (pubPage) pubPage.style.display = 'none';
-                if (mainContent) mainContent.style.display = '';
-                window.scrollTo(0, 0);
+                goHome();
             }
         };
+    }
+
+    // 8. ССЫЛКИ ЯКОРЕЙ (Публикации, Квалификация и т.д.) — Сначала Назад, потом Скролл
+    var allLinks = document.querySelectorAll('.main-nav a');
+    for (var l = 0; l < allLinks.length; l++) {
+        var link = allLinks[l];
+        var href = link.getAttribute('href');
+        
+        // Если это якорь (начинается с #), но не те, что мы уже обработали
+        if (href && href.indexOf('#') === 0 && href !== '#portfolio' && href !== '#blog' && href !== '#resume') {
+            link.onclick = function(e) {
+                e.preventDefault();
+                var targetId = this.getAttribute('href');
+                var targetEl = document.querySelector(targetId);
+                
+                goHome(); // 1. Возвращаемся на главную
+                if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
+                
+                // 2. Скроллим к нужному блоку
+                if (targetEl) {
+                    setTimeout(function() {
+                        targetEl.scrollIntoView({ behavior: 'smooth' });
+                    }, 50);
+                }
+            };
+        }
     }
 });
