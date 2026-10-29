@@ -2099,7 +2099,6 @@ aside.profile {
     margin-top: 20px !important;
 }
 
-/* --- ФИНАЛЬНЫЙ ФИКС: БОЛЬШОЕ ФОТО, БЕЗ ТЕКСТА ПОД НИМ --- */
 
 /* Прячем текст "Senior Software Engineer..." */
 .profile-role {
@@ -2125,4 +2124,47 @@ aside.profile {
     border-radius: 4px !important;
     border: 1px solid #ddd !important;
     display: block !important;
+}
+
+/* --- ФИНАЛЬНЫЙ ФИКС: ФОТО 275x275 И ПОДЪЕМ КОНТАКТОВ --- */
+
+/* 1. Прячем текст под фото */
+.profile-role {
+    display: none !important;
+}
+
+/* 2. Увеличиваем фото до 275x275 */
+.portrait-frame, .profile > div:first-child {
+    width: 275px !important;
+    height: 275px !important;
+    margin: 0 0 15px 0 !important; /* Чуть уменьшаем нижний отступ */
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+}
+
+.portrait, .profile img {
+    width: 275px !important;
+    height: 275px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    border-radius: 4px !important;
+    border: 1px solid #ddd !important;
+    display: block !important;
+}
+
+/* 3. Поднимаем блок с контактами (LOC, MAIL и т.д.) на 75px вверх */
+.profile-meta {
+    margin-top: -75px !important; /* Поднимаем контакты вверх */
+    position: relative !important;
+    z-index: 10 !important; /* Чтобы они были поверх пустоты */
+    background: var(--bg-color, #f5f3eb) !important; /* Закрашиваем фон под ними */
+    padding: 10px 0 !important;
+}
+
+/* 4. Если на широком экране контакты сбоку, поднимаем их там тоже */
+@media (min-width: 900px) {
+    .profile-meta {
+        margin-top: 20px !important; /* На ПК возвращаем нормальный отступ */
+    }
 }
