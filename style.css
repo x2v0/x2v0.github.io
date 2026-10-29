@@ -2022,27 +2022,34 @@ img.portrait[width] {
 }
 
 
-/* --- ФОТО КАК В REPLIT (Маленькое и аккуратное) --- */
-.portrait-frame {
-    width: 160px !important;  /* Размер как в оригинале */
-    height: 160px !important; /* Квадрат */
-    overflow: hidden !important;
-    border: none !important;  /* Убираем лишние рамки, если есть */
-    margin: 0 0 15px 0 !important;
-}
-
-.portrait {
-    width: 100% !important;
-    height: 100% !important;
-    object-fit: cover !important;
-    object-position: center !important;
-    filter: none !important;
-    display: block !important;
-}
 
 /* Если Replit использовал другую обертку для фото, фиксим и её */
 .profile img:first-child {
     width: 160px !important;
     height: 160px !important;
     object-fit: cover !important;
+}
+
+/* --- ИДЕАЛЬНАЯ РАМКА ДЛЯ ФОТО --- */
+/* Обертка (или сам img) должна быть строго 160x160 */
+.portrait-frame, .profile-img-wrap, .profile > div:first-child {
+    width: 160px !important;
+    height: auto !important;
+    max-width: 160px !important;
+    margin: 0 0 15px 0 !important;
+    padding: 0 !important;
+    background: transparent !important;
+    border: none !important;
+}
+
+.portrait, .profile img {
+    width: 160px !important;
+    height: 160px !important;
+    object-fit: cover !important;
+    object-position: center !important;
+    filter: none !important;
+    border-radius: 4px !important;
+    border: 1px solid #ddd !important;
+    margin: 0 !important;
+    display: block !important;
 }
