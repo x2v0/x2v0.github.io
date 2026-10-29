@@ -27,8 +27,8 @@
       </button>
       <nav class="main-nav" id="site-navigation" aria-label="Основная навигация">
         <a href="#publications">Публикации</a>
-        <a href="https://x2v0.github.io/portfolio/" target="_blank" rel="noopener noreferrer">Portfolio</a>
-        <a href="https://x2v0.github.io/year-archive/" target="_blank" rel="noopener noreferrer">Блог</a>
+        <a href="#portfolio" id="nav-portfolio">Portfolio</a>
+        <a href="#blog" id="nav-blog">Блог</a>
         <a href="https://github.com/x2v0/Resume" target="_blank" rel="noopener noreferrer">Резюме ↗</a>
         
       </nav>
@@ -196,13 +196,7 @@
         </section>
 
         
-<footer class="footer">
-          <span>© <span id="current-year">2026</span> Валерий Онучин</span>
-          <a href="https://github.com/x2v0" target="_blank" rel="noopener noreferrer">github.com/x2v0 ↗</a>
-        </footer>
-      </div>
-    
-    <section class="section reveal" id="contact" style="margin-top: 40px;">
+<section class="section reveal" id="contact" style="margin: 40px auto; max-width: 600px; width: 90%;">
         <h2 class="section-title">Связаться со мной</h2>
         <form id="contact-form" style="display: flex; flex-direction: column; gap: 10px; max-width: 500px;">
             <input type="text" id="c-name" placeholder="Ваше имя" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
@@ -211,7 +205,15 @@
             <button type="submit" style="padding: 10px; background: #0288d1; color: white; border: none; border-radius: 4px; cursor: pointer;">Отправить</button>
         </form>
     </section>
+    <footer class="footer">
+          <span>© <span id="current-year">2026</span> Валерий Онучин</span>
+          <a href="https://github.com/x2v0" target="_blank" rel="noopener noreferrer">github.com/x2v0 ↗</a>
+        </footer>
+      </div>
     
+    
+    
+      <div id="dynamic-content" style="display: none; padding: 20px;"></div>
     </main>
 
     <main class="resume-page" id="resume-page" hidden>
@@ -224,12 +226,7 @@
         <div class="resume-status" id="resume-status" role="status" aria-live="polite">Загружаем резюме…</div>
         <article class="markdown-content" id="resume-content"></article>
       </section>
-      <footer class="footer resume-footer">
-        <span>© <span data-current-year>2026</span> Валерий Онучин</span>
-        <a href="#top">На главную ↑</a>
-      </footer>
-    
-    <section class="section reveal" id="contact" style="margin-top: 40px;">
+      <section class="section reveal" id="contact" style="margin: 40px auto; max-width: 600px; width: 90%;">
         <h2 class="section-title">Связаться со мной</h2>
         <form id="contact-form" style="display: flex; flex-direction: column; gap: 10px; max-width: 500px;">
             <input type="text" id="c-name" placeholder="Ваше имя" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
@@ -238,7 +235,14 @@
             <button type="submit" style="padding: 10px; background: #0288d1; color: white; border: none; border-radius: 4px; cursor: pointer;">Отправить</button>
         </form>
     </section>
+    <footer class="footer resume-footer">
+        <span>© <span data-current-year>2026</span> Валерий Онучин</span>
+        <a href="#top">На главную ↑</a>
+      </footer>
     
+    
+    
+      <div id="dynamic-content" style="display: none; padding: 20px;"></div>
     </main>
     <button id="scroll-top" title="Наверх">↑</button>
   <script src="./test.js"></script>
