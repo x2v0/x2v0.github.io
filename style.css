@@ -1827,17 +1827,77 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
 
 
 
-/* === ЛАНДШАФТ И ДЕСКТОП: МЕНЮ ПОЛНОСТЬЮ СКРЫТО === */
-@media (min-width: 900px), (orientation: landscape) and (max-height: 600px) {
+
+/* === ПОРТРЕТ (ТЕЛЕФОН): ГАМБУРГЕР ЕСТЬ, МЕНЮ СПРАВА === */
+@media (max-width: 899px) and (orientation: portrait) {
     .nav-menu {
-        display: none !important;
+        display: flex !important;
     }
     .main-nav {
         display: none !important;
     }
+    .main-nav.is-open {
+        display: flex !important;
+        flex-direction: column !important;
+        position: absolute !important;
+        top: 100% !important;
+        right: 0 !important;
+        width: 150px !important;
+        background: var(--bg-color, #f5f3eb) !important;
+        padding: 5px 0 !important;
+        box-shadow: -5px 5px 15px rgba(0,0,0,0.1) !important;
+        border: 1px solid var(--border-color, #ddd) !important;
+        z-index: 10000 !important;
+    }
+    .main-nav.is-open a {
+        padding: 12px 15px !important;
+        border-bottom: 1px solid var(--border-color, #ddd) !important;
+        text-align: right !important;
+    }
 }
 
-/* === ПОРТРЕТ (ТЕЛЕФОН): ГАМБУРГЕР ЕСТЬ, МЕНЮ СПРАВА === */
+/* === ДЕСКТОП И ЛАНДШАФТ === */
+@media (min-width: 900px), (orientation: landscape) and (max-height: 600px) {
+    /* 1. Скрываем гамбургер */
+    .nav-menu {
+        display: none !important;
+    }
+    
+    /* 2. Показываем меню в строку */
+    .main-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        gap: 20px !important;
+        margin-left: auto !important;
+        position: static !important;
+        background: transparent !important;
+        padding: 0 !important;
+        box-shadow: none !important;
+        border: none !important;
+    }
+    .main-nav a {
+        border: none !important;
+        padding: 0 !important;
+        font-size: 16px !important;
+        color: var(--text-color, #333) !important;
+    }
+    [data-theme="dark"] .main-nav a {
+        color: #eee !important;
+    }
+
+    /* 3. Фиксим левую колонку (контакты) */
+    aside.profile {
+        position: relative !important;
+        top: 0 !important;
+        margin-top: 20px !important;
+        padding-top: 10px !important;
+    }
+    .profile-role {
+        margin-top: 15px !important; /* Текст под фото */
+    }
+}
+
+/* === ПОРТРЕТ === */
 @media (max-width: 899px) and (orientation: portrait) {
     .nav-menu {
         display: flex !important;
