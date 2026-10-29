@@ -1167,3 +1167,68 @@ details.orcid-details[open] summary::before {
     color: #eee !important;
     border-color: #444 !important;
 }
+
+/* --- ПРИНУДИТЕЛЬНЫЙ ГАМБУРГЕР НА ВСЕХ ЭКРАНАХ --- */
+.header-actions {
+    display: flex !important;
+    align-items: center !important;
+    gap: 15px !important;
+}
+.nav-menu {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-around !important;
+    width: 24px !important;
+    height: 24px !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+    z-index: 10000 !important;
+}
+.nav-menu span {
+    display: block !important;
+    width: 100% !important;
+    height: 2px !important;
+    background: var(--text-color, #333) !important;
+    border-radius: 2px !important;
+}
+[data-theme="dark"] .nav-menu span {
+    background: #eee !important;
+}
+
+/* Выпадающее меню теперь работает на ЛЮБЫХ экранах */
+.main-nav {
+    display: none !important; /* Скрыто по умолчанию */
+}
+.main-nav.is-open {
+    display: flex !important;
+    flex-direction: column !important;
+    position: absolute !important;
+    top: 100% !important;
+    right: 0 !important; /* Привязываем к правому краю */
+    width: 250px !important; /* Ширина меню на планшете */
+    background: var(--bg-color, #f5f3eb) !important;
+    padding: 10px 0 !important;
+    z-index: 99999 !important;
+    box-shadow: -5px 10px 15px rgba(0,0,0,0.1) !important;
+    border: 1px solid var(--border-color, #ddd) !important;
+    border-radius: 8px 0 8px 8px !important;
+}
+.main-nav.is-open a {
+    padding: 15px 20px !important;
+    border-bottom: 1px solid var(--border-color, #ddd) !important;
+    color: var(--text-color, #333) !important;
+    text-decoration: none !important;
+    display: block !important;
+    font-size: 16px !important;
+}
+[data-theme="dark"] .main-nav.is-open {
+    background: #1e1e1e !important;
+    border-color: #333 !important;
+}
+[data-theme="dark"] .main-nav.is-open a {
+    color: #eee !important;
+    border-bottom-color: #333 !important;
+}
