@@ -26,7 +26,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuBtn.classList.remove('is-active');
             }
         }
-    });
+    
+    // Логика кнопки "Наверх"
+    var scrollBtn = document.getElementById('scroll-top');
+    if (scrollBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        scrollBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    }
+
+});
 
     // 3. Переключение темы
     var themeBtn = document.getElementById('theme-toggle');
@@ -61,11 +77,43 @@ document.addEventListener('DOMContentLoaded', function() {
                         }
                     }
                     return { title: work.title.title.value, year: year, doi: doi };
-                });
+                
+    // Логика кнопки "Наверх"
+    var scrollBtn = document.getElementById('scroll-top');
+    if (scrollBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        scrollBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    }
+
+});
 
                 var render = function(filter) {
                     filter = filter || '';
-                    var filtered = allPubs.filter(function(p){ return p.title.toLowerCase().indexOf(filter.toLowerCase()) !== -1 || p.year.indexOf(filter) !== -1; });
+                    var filtered = allPubs.filter(function(p){ return p.title.toLowerCase().indexOf(filter.toLowerCase()) !== -1 || p.year.indexOf(filter) !== -1; 
+    // Логика кнопки "Наверх"
+    var scrollBtn = document.getElementById('scroll-top');
+    if (scrollBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        scrollBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    }
+
+});
                     if (!filtered.length) { listContainer.innerHTML = '<p>Нет результатов.</p>'; return; }
                     var html = '<ol style="padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">';
                     for (var i = 0; i < filtered.length; i++) {
@@ -80,7 +128,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 var searchInput = document.getElementById('pub-search');
                 if (searchInput) searchInput.oninput = function(e) { render(e.target.value); };
             })
-            .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
+            .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; 
+    // Логика кнопки "Наверх"
+    var scrollBtn = document.getElementById('scroll-top');
+    if (scrollBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        scrollBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    }
+
+});
     }
 
     // 5. Резюме (SPA)
@@ -108,7 +172,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     })
                     .catch(function(err) {
                         resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме. Ошибка: ' + err.message + '</p>';
-                    });
+                    
+    // Логика кнопки "Наверх"
+    var scrollBtn = document.getElementById('scroll-top');
+    if (scrollBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        scrollBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    }
+
+});
             }
         };
     }
@@ -167,10 +247,74 @@ document.addEventListener('DOMContentLoaded', function() {
                     entry.target.classList.add('active');
                     observer.unobserve(entry.target);
                 }
-            });
-        }, { threshold: 0.1 });
+            
+    // Логика кнопки "Наверх"
+    var scrollBtn = document.getElementById('scroll-top');
+    if (scrollBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        scrollBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    }
+
+});
+        }, { threshold: 0.1 
+    // Логика кнопки "Наверх"
+    var scrollBtn = document.getElementById('scroll-top');
+    if (scrollBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        scrollBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    }
+
+});
         document.querySelectorAll('.reveal').forEach(function(el) {
             observer.observe(el);
+        
+    // Логика кнопки "Наверх"
+    var scrollBtn = document.getElementById('scroll-top');
+    if (scrollBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
         });
+        scrollBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
     }
+
+});
+    }
+
+    // Логика кнопки "Наверх"
+    var scrollBtn = document.getElementById('scroll-top');
+    if (scrollBtn) {
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                scrollBtn.style.display = 'block';
+            } else {
+                scrollBtn.style.display = 'none';
+            }
+        });
+        scrollBtn.onclick = function() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        };
+    }
+
 });
