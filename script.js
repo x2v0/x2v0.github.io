@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     var nav = document.getElementById('site-navigation');
     var menuBtn = document.getElementById('menu-toggle');
@@ -8,7 +7,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var resumeContent = document.getElementById('resume-content');
     var scrollBtn = document.getElementById('scroll-top');
 
-    // 1. Мобильное меню
     if (menuBtn && nav) {
         menuBtn.onclick = function(e) {
             e.preventDefault();
@@ -18,7 +16,6 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 2. Закрытие меню
     document.addEventListener('click', function(e) {
         if (nav && nav.classList.contains('is-open')) {
             if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
@@ -28,7 +25,6 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 3. Тема
     var themeBtn = document.getElementById('theme-toggle');
     var currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -43,7 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 4. Кнопка Наверх
     if (scrollBtn) {
         window.addEventListener('scroll', function() {
             scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
@@ -53,7 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 5. Резюме (как в Replit)
     var resumeLink = document.querySelector('a[href="#resume"]');
     if (resumeLink && resumePage) {
         resumeLink.onclick = function(e) {
@@ -63,9 +57,10 @@ document.addEventListener('DOMContentLoaded', function() {
             resumePage.hidden = false;
             resumePage.style.display = 'block';
             window.scrollTo(0, 0);
+            if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
 
             if (resumeContent && resumeContent.innerHTML.indexOf('Загрузка') !== -1) {
-                fetch('https://raw.githubusercontent.com/x2v0/Resume/main/README.md')
+                fetch('./resume.md')
                     .then(function(r) { return r.text(); })
                     .then(function(md) {
                         if (typeof marked !== 'undefined') {
@@ -92,10 +87,8 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 6. Загрузка Портфолио и Блога
     function loadPage(url, title) {
         if (!dynamicContent || !mainContent) return;
-        
         dynamicContent.innerHTML = '<p style="text-align:center; padding:50px;">Загрузка ' + title + '...</p>';
         dynamicContent.style.display = 'block';
         mainContent.style.display = 'none';
@@ -107,7 +100,6 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(function(htmlText) {
                 var parser = new DOMParser();
                 var doc = parser.parseFromString(htmlText, 'text/html');
-                
                 dynamicContent.innerHTML = '';
 
                 var backBtn = document.createElement('button');
@@ -122,7 +114,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 var contentDiv = document.createElement('div');
                 contentDiv.innerHTML = doc.body.innerHTML;
-                
+
                 var scripts = contentDiv.querySelectorAll('script');
                 for (var i = 0; i < scripts.length; i++) {
                     var newScript = document.createElement('script');
@@ -155,7 +147,6 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 7. Логотип (ВО) — возврат
     var brandLink = document.querySelector('.brand');
     if (brandLink) {
         brandLink.onclick = function(e) {
