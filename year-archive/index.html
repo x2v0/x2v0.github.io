@@ -7,33 +7,94 @@
     <link rel="stylesheet" href="../style.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <style>
-        .article { max-width: 800px; margin: 40px auto; padding: 0 20px; line-height: 1.7; }
-        .article h1 { color: #0288d1; }
-        .article pre { background: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; }
-        .article code { font-family: monospace; background: #eee; padding: 2px 4px; border-radius: 3px; }
+        .blog-container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
+        .post-list { list-style: none; padding: 0; }
+        .post-list li { margin-bottom: 10px; padding: 10px; border: 1px solid #ddd; border-radius: 5px; cursor: pointer; transition: background 0.2s; }
+        .post-list li:hover { background: #f0f0f0; }
+        .article-view { display: none; line-height: 1.7; }
+        .article-view h1 { color: #0288d1; }
+        .article-view pre { background: #f4f4f4; padding: 10px; border-radius: 5px; overflow-x: auto; }
+        .article-view code { font-family: monospace; background: #eee; padding: 2px 4px; border-radius: 3px; }
+        [data-theme="dark"] .post-list li { border-color: #333; }
+        [data-theme="dark"] .post-list li:hover { background: #1a1a1a; }
+        [data-theme="dark"] .article-view pre { background: #1a1a1a; }
+        [data-theme="dark"] .article-view code { background: #333; }
     </style>
 </head>
 <body style="font-family: monospace;">
     <nav style="padding: 20px; background: #f9f9f9; border-bottom: 1px solid #ddd;">
         <a href="../" style="color: #0288d1; text-decoration: none; font-weight: bold;">← На главную</a>
     </nav>
-    <div class="article" id="content">
-        <p style="color: #666;">Загрузка статьи...</p>
+    
+    <div class="blog-container">
+        <!-- Список статей -->
+        <div id="list-view">
+            <h1>Блог</h1>
+            <p>Мои заметки о коде и инженерии.</p>
+            <ul class="post-list" id="posts-ul">
+                <!-- Сюда будут подставляться статьи -->
+                <li onclick="loadPost('hello-world.md')">Добро пожаловать в мой блог!</li>
+                <!-- Чтобы добавить статью, просто допиши сюда <li onclick="loadPost('filename.md')">Название</li> -->
+            </ul>
+        </div>
+
+        <!-- Просмотр статьи -->
+        <div id="article-view" class="article-view">
+            <button onclick="backToList()" style="margin-bottom:20px; padding:8px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer;">← К списку статей</button>
+            <div id="article-content"></div>
+            
+            <!-- Блок комментариев Giscus (Форум) -->
+            <div id="giscus-container" style="margin-top: 50px; padding-top: 20px; border-top: 1px solid #ddd;">
+                <h3>Обсуждение статьи</h3>
+                <div class="giscus"></div>
+            </div>
+        </div>
     </div>
 
     <script>
-        // Загружаем тестовую статью (hello-world.md)
-        fetch('./posts/hello-world.md')
-            .then(r => {
-                if (!r.ok) throw new Error('File not found');
-                return r.text();
-            })
-            .then(md => {
-                document.getElementById('content').innerHTML = marked.parse(md);
-            })
-            .catch(e => {
-                document.getElementById('content').innerHTML = '<p style="color:red;">Статья не найдена.</p>';
-            });
+        function backToList() {
+            document.getElementById('article-view').style.display = 'none';
+            document.getElementById('list-view').style.display = 'block';
+        }
+
+        function loadPost(filename) {
+            document.getElementById('list-view').style.display = 'none';
+            document.getElementById('article-view').style.display = 'block';
+            document.getElementById('article-content').innerHTML = '<p>Загрузка...</p>';
+
+            fetch('./posts/' + filename)
+                .then(r => r.text())
+                .then(md => {
+                    document.getElementById('article-content').innerHTML = marked.parse(md);
+                    loadGiscus(filename);
+                })
+                .catch(e => {
+                    document.getElementById('article-content').innerHTML = '<p style="color:red;">Ошибка загрузки статьи.</p>';
+                });
+        }
+
+        function loadGiscus(filename) {
+            const container = document.querySelector('.giscus');
+            container.innerHTML = ''; // Очищаем старые комментарии
+            
+            const script = document.createElement('script');
+            script.src = 'https://giscus.app/client.js';
+            script.setAttribute('data-repo', 'x2v0/x2v0.github.io');
+            script.setAttribute('data-repo-id', 'R_kgDOPLq3eQ'); // Замените на свой ID
+            script.setAttribute('data-category', 'Announcements');
+            script.setAttribute('data-category-id', 'DIC_kwDOPLq3ec4CzZ2T'); // Замените на свой ID
+            script.setAttribute('data-mapping', 'specific');
+            script.setAttribute('data-term', filename); // Обсуждение привязано к имени файла
+            script.setAttribute('data-reactions-enabled', '1');
+            script.setAttribute('data-emit-metadata', '0');
+            script.setAttribute('data-input-position', 'bottom');
+            script.setAttribute('data-theme', 'preferred_color_scheme');
+            script.setAttribute('data-lang', 'ru');
+            script.crossOrigin = 'anonymous';
+            script.async = true;
+            
+            container.appendChild(script);
+        }
     </script>
 </body>
 </html>
