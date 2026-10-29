@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 2. Закрытие меню при клике вне его
+    // 2. Закрытие меню
     document.addEventListener('click', function(e) {
         if (nav && nav.classList.contains('is-open')) {
             if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 3. Переключение темы
+    // 3. Тема
     var themeBtn = document.getElementById('theme-toggle');
     var currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -53,7 +53,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 5. Резюме (Загружаем локальный файл и парсим Markdown)
+    // 5. Резюме (Локальный Markdown)
     var resumeLink = document.querySelector('a[href="#resume"]');
     if (resumeLink && resumePage) {
         resumeLink.onclick = function(e) {
@@ -63,70 +63,46 @@ document.addEventListener('DOMContentLoaded', function() {
             resumePage.hidden = false;
             resumePage.style.display = 'block';
             window.scrollTo(0, 0);
-
-            // Закрываем меню
             if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
 
-            // Если текст еще не загружен — грузим
             if (resumeContent && resumeContent.innerHTML.indexOf('Загрузка') !== -1) {
                 fetch('./resume.md')
                     .then(function(r) { return r.text(); })
                     .then(function(md) {
-                        if (typeof marked !== 'undefined') {
-                            resumeContent.innerHTML = marked.parse(md);
-                        } else {
-                            // Если marked не загрузился, просто выводим текст
-                            resumeContent.innerHTML = '<pre>' + md + '</pre>';
-                        }
+                        if (typeof marked !== 'undefined') resumeContent.innerHTML = marked.parse(md);
+                        else resumeContent.innerHTML = '<pre>' + md + '</pre>';
                     })
-                    .catch(function(err) {
-                        resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки: ' + err.message + '</p>';
-                    });
+                    .catch(function() { resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки</p>'; });
             }
         };
     }
 
-    // 6. Навигация Портфолио и Блог
+    // 6. Портфолио и Блог (ЧЕРЕЗ IFRAME, чтобы стили не ломались)
     function loadPage(url, title) {
         if (!dynamicContent || !mainContent) return;
-        dynamicContent.innerHTML = '<p style="text-align:center; padding:50px;">Загрузка ' + title + '...</p>';
+        
+        dynamicContent.innerHTML = '';
         dynamicContent.style.display = 'block';
         mainContent.style.display = 'none';
         if (resumePage) resumePage.style.display = 'none';
         window.scrollTo(0, 0);
 
-        fetch(url)
-            .then(function(r) { return r.text(); })
-            .then(function(htmlText) {
-                var parser = new DOMParser();
-                var doc = parser.parseFromString(htmlText, 'text/html');
-                dynamicContent.innerHTML = '';
+        // Кнопка Назад
+        var backBtn = document.createElement('button');
+        backBtn.innerHTML = '← Назад на главную';
+        backBtn.style.cssText = 'margin: 20px; padding: 10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer; font-size:16px;';
+        backBtn.onclick = function() {
+            dynamicContent.style.display = 'none';
+            mainContent.style.display = '';
+            window.scrollTo(0, 0);
+        };
+        dynamicContent.appendChild(backBtn);
 
-                var backBtn = document.createElement('button');
-                backBtn.innerHTML = '← Назад на главную';
-                backBtn.style.cssText = 'margin: 20px; padding: 10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer; font-size:16px;';
-                backBtn.onclick = function() {
-                    dynamicContent.style.display = 'none';
-                    mainContent.style.display = '';
-                    window.scrollTo(0, 0);
-                };
-                dynamicContent.appendChild(backBtn);
-
-                var contentDiv = document.createElement('div');
-                contentDiv.innerHTML = doc.body.innerHTML;
-
-                var scripts = contentDiv.querySelectorAll('script');
-                for (var i = 0; i < scripts.length; i++) {
-                    var newScript = document.createElement('script');
-                    if (scripts[i].src) newScript.src = scripts[i].src;
-                    else newScript.textContent = scripts[i].textContent;
-                    scripts[i].parentNode.replaceChild(newScript, scripts[i]);
-                }
-                dynamicContent.appendChild(contentDiv);
-            })
-            .catch(function() {
-                dynamicContent.innerHTML = '<p style="color:red; padding:20px;">Ошибка загрузки.</p>';
-            });
+        // Iframe с сайтом
+        var iframe = document.createElement('iframe');
+        iframe.src = url;
+        iframe.style.cssText = 'width: 100%; height: 85vh; border: none; border-top: 1px solid #ddd;';
+        dynamicContent.appendChild(iframe);
     }
 
     var navPortfolio = document.getElementById('nav-portfolio');
@@ -147,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 7. Логотип (ВО) — возврат
+    // 7. Логотип (ВО)
     var brandLink = document.querySelector('.brand');
     if (brandLink) {
         brandLink.onclick = function(e) {
