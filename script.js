@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var resumePage = document.getElementById('resume-page');
     var resumeContent = document.getElementById('resume-content');
 
-    // 1. Мобильное меню
+    // 1. Мобильное меню (с анимацией крестика)
     if (menuBtn && nav) {
         menuBtn.onclick = function(e) {
             e.preventDefault();
@@ -18,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // Закрытие меню вне
+    // 2. Закрытие меню при клике вне его
     document.addEventListener('click', function(e) {
         if (nav && nav.classList.contains('is-open')) {
             if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 2. Тема
+    // 3. Переключение темы
     var themeBtn = document.getElementById('theme-toggle');
     var currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -43,10 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 3. Загрузка API (GitHub, ORCID)
-    
-    }
-
+    // 4. Загрузка Публикаций (ORCID)
     var listContainer = document.getElementById('orcid-publications-list');
     if (listContainer) {
         fetch('https://pub.orcid.org/v3.0/0009-0000-3022-3529/works', { headers: { 'Accept': 'application/json' } })
@@ -86,7 +83,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
     }
 
-    // 4. Резюме (SPA)
+    // 5. Резюме (SPA)
     var resumeLink = document.querySelector('a[href="#resume"]');
     if (resumeLink && resumePage) {
         resumeLink.onclick = function(e) {
@@ -96,7 +93,6 @@ document.addEventListener('DOMContentLoaded', function() {
             resumePage.style.display = 'block';
             window.scrollTo(0, 0);
 
-            // Если резюме еще не загружено
             if (resumeContent && resumeContent.innerHTML === 'Загрузка резюме с GitHub...') {
                 fetch('https://raw.githubusercontent.com/x2v0/Resume/main/README.md')
                     .then(function(r) {
@@ -107,18 +103,17 @@ document.addEventListener('DOMContentLoaded', function() {
                         if (typeof marked !== 'undefined') {
                             resumeContent.innerHTML = marked.parse(md);
                         } else {
-                            // Если marked не загрузился, выводим как есть
                             resumeContent.innerHTML = '<pre style="white-space: pre-wrap;">' + md + '</pre>';
                         }
                     })
                     .catch(function(err) {
-                        resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме. Проверьте подключение к интернету.<br>Ошибка: ' + err.message + '</p>';
+                        resumeContent.innerHTML = '<p style="color:red;">Не удалось загрузить резюме. Ошибка: ' + err.message + '</p>';
                     });
             }
         };
     }
 
-    // 5. Навигация (Портфолио, Блог)
+    // 6. Навигация (Портфолио, Блог)
     function loadPage(url) {
         if (!dynamicContent || !mainContent) return;
         dynamicContent.innerHTML = '';
@@ -151,7 +146,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 6. Логотип (ВО) - возврат
+    // 7. Логотип (ВО) — возврат
     if (brandLink) {
         brandLink.onclick = function(e) {
             if ((dynamicContent && dynamicContent.style.display === 'block') || (resumePage && resumePage.style.display === 'block')) {
@@ -164,7 +159,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 7. Анимация скролла
+    // 8. Анимация скролла
     if ('IntersectionObserver' in window) {
         var observer = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
