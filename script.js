@@ -6,29 +6,48 @@ document.addEventListener('DOMContentLoaded', function() {
     var dynamicContent = document.getElementById('dynamic-content');
     var brandLink = document.querySelector('.brand'); // Логотип ВО
 
-    // 1. Мобильное меню
+    // 1. Мобильное меню (Открытие/Закрытие по кнопке)
     if (menuBtn && nav) {
         menuBtn.onclick = function(e) {
             e.preventDefault();
+            e.stopPropagation(); // Важно: останавливаем всплытие, чтобы клик не улетел в document
             nav.classList.toggle('is-open');
         };
     }
 
-    // 2. Логотип "ВО" как кнопка Назад
+    // 2. ЗАКРЫТИЕ МЕНЮ ПРИ КЛИКЕ В ЛЮБУЮ ДРУГУЮ ТОЧКУ
+    document.addEventListener('click', function(e) {
+        if (nav && nav.classList.contains('is-open')) {
+            // Если кликнули НЕ по меню и НЕ по кнопке-гамбургеру
+            if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
+                nav.classList.remove('is-open');
+            }
+        }
+    });
+
+    // 3. Закрываем меню при клике на любую ссылку внутри него
+    if (nav) {
+        var navLinks = nav.querySelectorAll('a');
+        for (var i = 0; i < navLinks.length; i++) {
+            navLinks[i].addEventListener('click', function() {
+                nav.classList.remove('is-open');
+            });
+        }
+    }
+
+    // 4. Логотип "ВО" как кнопка Назад
     if (brandLink) {
         brandLink.onclick = function(e) {
-            // Если мы внутри Портфолио или Блога (iframe открыт)
             if (dynamicContent && dynamicContent.style.display === 'block') {
-                e.preventDefault(); // Отменяем переход по #top
-                dynamicContent.style.display = 'none'; // Прячем iframe
-                mainContent.style.display = ''; // Показываем главную
-                window.scrollTo(0, 0); // Скроллим наверх
+                e.preventDefault();
+                dynamicContent.style.display = 'none';
+                mainContent.style.display = '';
+                window.scrollTo(0, 0);
             }
-            // Если мы на главной, то просто сработает стандартный href="#top" (скролл наверх)
         };
     }
 
-    // 3. Переключение темы
+    // 5. Переключение темы
     var themeBtn = document.getElementById('theme-toggle');
     var currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -43,7 +62,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 4. API Загрузки (GitHub, ORCID)
+    // 6. API Загрузки (GitHub, ORCID)
     var ghEl = document.getElementById('github-stats');
     if (ghEl) {
         fetch('https://api.github.com/users/x2v0')
@@ -94,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
     }
 
-    // 5. Кнопка вверх и форма
+    // 7. Кнопка вверх и форма
     var scrollBtn = document.getElementById('scroll-top');
     if (scrollBtn) {
         window.addEventListener('scroll', function() { scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none'; });
@@ -112,16 +131,14 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 6. SPA Навигация ЧЕРЕЗ IFRAME
+    // 8. SPA Навигация ЧЕРЕЗ IFRAME
     function loadPage(url) {
         if (!dynamicContent || !mainContent) return;
         
         dynamicContent.innerHTML = '';
         dynamicContent.style.display = 'block';
         mainContent.style.display = 'none';
-        window.scrollTo(0, 0); // Скролл наверх при открытии
-
-        // Мы больше не создаем кнопку backBtn, так как теперь есть логотип!
+        window.scrollTo(0, 0); 
 
         var iframe = document.createElement('iframe');
         iframe.src = url;
