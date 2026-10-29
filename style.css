@@ -1924,3 +1924,26 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
         text-align: right !important;
     }
 }
+
+/* --- ПЕРЕНОС ЛУНЫ ВЛЕВО --- */
+.header-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    gap: 15px !important;
+    margin-right: auto !important; /* Прижимает блок с луной и гамбургером влево */
+}
+
+/* Если меню идет после header-actions, оно автоматически уедет вправо */
+.topbar {
+    display: flex !important;
+    justify-content: flex-start !important; /* Начинаем с левого края */
+    align-items: center !important;
+}
+
+/* Отодвигаем меню вправо на десктопе */
+@media (min-width: 900px) {
+    .main-nav {
+        margin-left: auto !important; /* Прижимаем меню к правому краю */
+    }
+}
