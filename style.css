@@ -1760,7 +1760,6 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
     }
 }
 
-/* === ЖЕЛЕЗОБЕТОННОЕ МЕНЮ === */
 
 /* По умолчанию (Десктоп / Ландшафт) */
 .main-nav {
@@ -1821,5 +1820,45 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
     [data-theme="dark"] .main-nav.is-open a {
         color: #eee !important;
         border-bottom-color: #333 !important;
+    }
+}
+
+/* === 1. СУЖАЕМ МЕНЮ === */
+.main-nav.is-open {
+    width: 150px !important; /* Уменьшили до 150px */
+    padding: 5px 0 !important;
+}
+.main-nav.is-open a {
+    padding: 12px 15px !important;
+    font-size: 15px !important;
+}
+
+/* === 2. ФИКС ЛАНДШАФТА === */
+@media (orientation: landscape) and (max-height: 600px) {
+    /* Прячем гамбургер в ландшафте */
+    .nav-menu {
+        display: none !important;
+    }
+    /* Показываем меню в строку */
+    .main-nav {
+        display: flex !important;
+        flex-direction: row !important;
+        position: static !important;
+        gap: 15px !important;
+        margin-left: auto !important;
+    }
+    .main-nav a {
+        padding: 0 !important;
+        border: none !important;
+    }
+    /* Фиксим сайдбар, чтобы контакты были видны */
+    aside.profile {
+        position: relative !important;
+        top: 0 !important;
+        margin-top: 0 !important;
+        padding-top: 10px !important;
+    }
+    .portrait-frame {
+        width: 100px !important; /* Уменьшаем фото, чтобы все влезло */
     }
 }
