@@ -21,7 +21,33 @@
     <h1 style="color: #0288d1; margin-top: 20px;">Portfolio</h1>
     <p>Мои открытые проекты (подгружаются из GitHub API, отсортированы по звездам).</p>
     <div id="loading" style="color: #666; margin-top: 20px;">Загрузка репозиториев...</div>
-    <div class="projects-grid" id="repos-grid"></div>
+    <div class="projects-grid" id="repos-grid">
+        <!-- Избранные проекты (вручную) -->
+        <div class="project-card">
+            <h3>EBTfilm</h3>
+            <div class="tech-stack"><span>Medical Physics</span><span>DICOM</span></div>
+            <p>Обработка дозиметрических плёнок EBT2/EBT3 для протонной терапии.</p>
+            <a href="https://x2v0.github.io/EBTfilm/" class="btn" target="_blank">Открыть Demo</a>
+        </div>
+        <div class="project-card">
+            <h3>dicom2fmm</h3>
+            <div class="tech-stack"><span>DICOM</span><span>Web</span></div>
+            <p>Веб-просмотрщик DICOM-снимков с конвертацией в FMM.</p>
+            <a href="https://dicom2fmm.github.io/" class="btn" target="_blank">Открыть Demo</a>
+        </div>
+        <div class="project-card">
+            <h3>TM Protocol</h3>
+            <div class="tech-stack"><span>Documentation</span><span>Protocol</span></div>
+            <p>Документация и протоколы для системы облучения (TM).</p>
+            <a href="https://x2v0.github.io/TM/docs/" class="btn" target="_blank">Документация</a>
+        </div>
+        <div class="project-card">
+            <h3>AlignPatient</h3>
+            <div class="tech-stack"><span>Medical</span><span>Guide</span></div>
+            <p>Руководство пользователя и HTML-документация для AlignPatient.</p>
+            <a href="https://x2v0.github.io/AlignPatient/" class="btn" target="_blank">Открыть Guide</a>
+        </div>
+    </div>
 
     <script>
         fetch('https://api.github.com/users/x2v0/repos?per_page=100')
