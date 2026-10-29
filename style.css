@@ -1823,42 +1823,66 @@ body, .topbar, .profile-meta a, .section, .project-card, .tech-tag {
     }
 }
 
-/* === 1. СУЖАЕМ МЕНЮ === */
-.main-nav.is-open {
-    width: 150px !important; /* Уменьшили до 150px */
-    padding: 5px 0 !important;
-}
-.main-nav.is-open a {
-    padding: 12px 15px !important;
-    font-size: 15px !important;
-}
 
-/* === 2. ФИКС ЛАНДШАФТА === */
-@media (orientation: landscape) and (max-height: 600px) {
-    /* Прячем гамбургер в ландшафте */
+
+/* === ДЕСКТОП И ЛАНДШАФТ (ШИРОКИЙ ЭКРАН) === */
+@media (min-width: 900px), (orientation: landscape) and (max-height: 600px) {
+    /* 1. Убираем гамбургер полностью */
     .nav-menu {
         display: none !important;
     }
-    /* Показываем меню в строку */
+    
+    /* 2. Показываем меню в строку */
     .main-nav {
         display: flex !important;
         flex-direction: row !important;
-        position: static !important;
-        gap: 15px !important;
+        position: static !important; /* Убираем выпадающий стиль */
+        width: auto !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        gap: 20px !important;
         margin-left: auto !important;
     }
+    
     .main-nav a {
-        padding: 0 !important;
         border: none !important;
+        padding: 0 !important;
+        font-size: 16px !important;
+        color: var(--text-color, #333) !important;
     }
-    /* Фиксим сайдбар, чтобы контакты были видны */
-    aside.profile {
-        position: relative !important;
-        top: 0 !important;
-        margin-top: 0 !important;
-        padding-top: 10px !important;
+    
+    [data-theme="dark"] .main-nav a {
+        color: #eee !important;
     }
-    .portrait-frame {
-        width: 100px !important; /* Уменьшаем фото, чтобы все влезло */
+}
+
+/* === ПОРТРЕТ (УЗКИЙ ЭКРАН) === */
+@media (max-width: 899px) and (orientation: portrait) {
+    .nav-menu {
+        display: flex !important;
+    }
+    .main-nav {
+        display: none !important;
+    }
+    /* Выпадающее меню (узкое, справа) */
+    .main-nav.is-open {
+        display: flex !important;
+        flex-direction: column !important;
+        position: absolute !important;
+        top: 100% !important;
+        right: 0 !important;
+        width: 150px !important;
+        background: var(--bg-color, #f5f3eb) !important;
+        padding: 5px 0 !important;
+        box-shadow: -5px 5px 15px rgba(0,0,0,0.1) !important;
+        border: 1px solid var(--border-color, #ddd) !important;
+        z-index: 10000 !important;
+    }
+    .main-nav.is-open a {
+        padding: 12px 15px !important;
+        border-bottom: 1px solid var(--border-color, #ddd) !important;
+        text-align: right !important;
     }
 }
