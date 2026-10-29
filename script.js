@@ -2,7 +2,10 @@
 document.addEventListener('DOMContentLoaded', function() {
     var nav = document.getElementById('site-navigation');
     var menuBtn = document.getElementById('menu-toggle');
-    
+    var mainContent = document.getElementById('home-page');
+    var dynamicContent = document.getElementById('dynamic-content');
+    var brandLink = document.querySelector('.brand'); // Логотип ВО
+
     // 1. Мобильное меню
     if (menuBtn && nav) {
         menuBtn.onclick = function(e) {
@@ -11,7 +14,21 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 2. Переключение темы
+    // 2. Логотип "ВО" как кнопка Назад
+    if (brandLink) {
+        brandLink.onclick = function(e) {
+            // Если мы внутри Портфолио или Блога (iframe открыт)
+            if (dynamicContent && dynamicContent.style.display === 'block') {
+                e.preventDefault(); // Отменяем переход по #top
+                dynamicContent.style.display = 'none'; // Прячем iframe
+                mainContent.style.display = ''; // Показываем главную
+                window.scrollTo(0, 0); // Скроллим наверх
+            }
+            // Если мы на главной, то просто сработает стандартный href="#top" (скролл наверх)
+        };
+    }
+
+    // 3. Переключение темы
     var themeBtn = document.getElementById('theme-toggle');
     var currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -26,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 3. API Загрузки (GitHub, ORCID)
+    // 4. API Загрузки (GitHub, ORCID)
     var ghEl = document.getElementById('github-stats');
     if (ghEl) {
         fetch('https://api.github.com/users/x2v0')
@@ -77,7 +94,7 @@ document.addEventListener('DOMContentLoaded', function() {
             .catch(function() { listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки ORCID</p>'; });
     }
 
-    // 4. Кнопка вверх и форма
+    // 5. Кнопка вверх и форма
     var scrollBtn = document.getElementById('scroll-top');
     if (scrollBtn) {
         window.addEventListener('scroll', function() { scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none'; });
@@ -95,25 +112,16 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 5. SPA Навигация ЧЕРЕЗ IFRAME (чтобы скрипты работали)
-    var mainContent = document.getElementById('home-page');
-    var dynamicContent = document.getElementById('dynamic-content');
-
+    // 6. SPA Навигация ЧЕРЕЗ IFRAME
     function loadPage(url) {
         if (!dynamicContent || !mainContent) return;
         
         dynamicContent.innerHTML = '';
         dynamicContent.style.display = 'block';
         mainContent.style.display = 'none';
+        window.scrollTo(0, 0); // Скролл наверх при открытии
 
-        var backBtn = document.createElement('button');
-        backBtn.innerHTML = '← Назад на главную';
-        backBtn.style.cssText = 'margin: 20px; padding: 10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer; font-family:inherit;';
-        backBtn.onclick = function() {
-            dynamicContent.style.display = 'none';
-            mainContent.style.display = ''; 
-        };
-        dynamicContent.appendChild(backBtn);
+        // Мы больше не создаем кнопку backBtn, так как теперь есть логотип!
 
         var iframe = document.createElement('iframe');
         iframe.src = url;
