@@ -1284,3 +1284,11 @@ h1 span, .hero-title span {
         font-size: 1.8rem !important; /* На телефоне 1.8rem */
     }
 }
+
+/* --- ПОЛНОЕ УДАЛЕНИЕ ДУБЛИРУЮЩЕГОСЯ ЗАГОЛОВКА --- */
+.hero-title, 
+.display-title,
+section.hero h1,
+#home-page > .layout > div > h1:first-of-type {
+    display: none !important;
+}
