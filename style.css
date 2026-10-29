@@ -1318,3 +1318,104 @@ aside.profile h2,
 .metrics-grid > div, .stats-grid > div {
     padding: 5px !important;
 }
+
+/* --- МЕНЮ КАК В REPLIT --- */
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+/* По умолчанию (десктоп) меню горизонтальное, гамбургер скрыт */
+.main-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    gap: 20px !important;
+    position: static !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+}
+.main-nav a {
+    border: none !important;
+    padding: 0 !important;
+    font-size: 16px !important;
+    color: var(--text-color, #333) !important;
+    text-decoration: none !important;
+}
+[data-theme="dark"] .main-nav a {
+    color: #eee !important;
+}
+.nav-menu {
+    display: none !important;
+}
+
+/* На мобилке (меньше 900px) показываем гамбургер */
+@media (max-width: 900px) {
+    .nav-menu {
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+        gap: 5px !important;
+        width: 30px !important;
+        height: 30px !important;
+        background: none !important;
+        border: none !important;
+        cursor: pointer !important;
+        z-index: 10000 !important;
+        position: relative !important;
+    }
+    
+    /* Три палочки */
+    .nav-menu span {
+        display: block !important;
+        width: 100% !important;
+        height: 2px !important;
+        background: var(--text-color, #333) !important;
+        transition: transform 0.3s, opacity 0.3s !important;
+    }
+    [data-theme="dark"] .nav-menu span {
+        background: #eee !important;
+    }
+
+    /* Когда меню открыто, превращаем палочки в крестик */
+    .nav-menu.is-active span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg) !important;
+    }
+    .nav-menu.is-active span:nth-child(2) {
+        opacity: 0 !important;
+    }
+    .nav-menu.is-active span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg) !important;
+    }
+
+    /* Мобильное меню (выпадает под шапку) */
+    .main-nav {
+        display: none !important;
+        flex-direction: row !important; /* В строку, как у Replit */
+        flex-wrap: wrap !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        width: 100% !important;
+        background: var(--bg-color, #f5f3eb) !important;
+        padding: 15px 20px !important;
+        box-sizing: border-box !important;
+        border-bottom: 1px solid var(--border-color, #ddd) !important;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.1) !important;
+        z-index: 9999 !important;
+        justify-content: space-between !important;
+    }
+    .main-nav.is-open {
+        display: flex !important;
+    }
+    .main-nav a {
+        padding: 10px 5px !important;
+        font-size: 16px !important;
+    }
+    [data-theme="dark"] .main-nav {
+        background: #1e1e1e !important;
+        border-bottom-color: #333 !important;
+    }
+}

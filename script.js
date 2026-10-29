@@ -4,33 +4,35 @@ document.addEventListener('DOMContentLoaded', function() {
     var menuBtn = document.getElementById('menu-toggle');
     var mainContent = document.getElementById('home-page');
     var dynamicContent = document.getElementById('dynamic-content');
-    var brandLink = document.querySelector('.brand'); // Логотип ВО
+    var brandLink = document.querySelector('.brand');
 
-    // 1. Мобильное меню (Открытие/Закрытие по кнопке)
+    // 1. Мобильное меню (с анимацией крестика)
     if (menuBtn && nav) {
         menuBtn.onclick = function(e) {
             e.preventDefault();
-            e.stopPropagation(); // Важно: останавливаем всплытие, чтобы клик не улетел в document
+            e.stopPropagation();
             nav.classList.toggle('is-open');
+            menuBtn.classList.toggle('is-active'); // Класс для превращения в крестик
         };
     }
 
-    // 2. ЗАКРЫТИЕ МЕНЮ ПРИ КЛИКЕ В ЛЮБУЮ ДРУГУЮ ТОЧКУ
+    // 2. Закрытие меню при клике вне его
     document.addEventListener('click', function(e) {
         if (nav && nav.classList.contains('is-open')) {
-            // Если кликнули НЕ по меню и НЕ по кнопке-гамбургеру
             if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
                 nav.classList.remove('is-open');
+                menuBtn.classList.remove('is-active');
             }
         }
     });
 
-    // 3. Закрываем меню при клике на любую ссылку внутри него
+    // 3. Закрываем меню при клике на ссылку
     if (nav) {
-        var navLinks = nav.querySelectorAll('a');
-        for (var i = 0; i < navLinks.length; i++) {
-            navLinks[i].addEventListener('click', function() {
+        var links = nav.querySelectorAll('a');
+        for (var i = 0; i < links.length; i++) {
+            links[i].addEventListener('click', function() {
                 nav.classList.remove('is-open');
+                if (menuBtn) menuBtn.classList.remove('is-active');
             });
         }
     }
@@ -131,14 +133,13 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 8. SPA Навигация ЧЕРЕЗ IFRAME
+    // 8. SPA Навигация
     function loadPage(url) {
         if (!dynamicContent || !mainContent) return;
-        
         dynamicContent.innerHTML = '';
         dynamicContent.style.display = 'block';
         mainContent.style.display = 'none';
-        window.scrollTo(0, 0); 
+        window.scrollTo(0, 0);
 
         var iframe = document.createElement('iframe');
         iframe.src = url;
@@ -152,14 +153,14 @@ document.addEventListener('DOMContentLoaded', function() {
     if (navPortfolio) {
         navPortfolio.onclick = function(e) {
             e.preventDefault();
-            if (nav) nav.classList.remove('is-open');
+            if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
             loadPage('./portfolio/index.html');
         };
     }
     if (navBlog) {
         navBlog.onclick = function(e) {
             e.preventDefault();
-            if (nav) nav.classList.remove('is-open');
+            if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
             loadPage('./year-archive/index.html');
         };
     }
