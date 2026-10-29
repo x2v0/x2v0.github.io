@@ -1065,3 +1065,37 @@ button:focus-visible {
     nav, .profile, #scroll-top, #theme-toggle, button { display: none !important; }
     body { background: white !important; color: black !important; }
 }
+
+/* Анимации при скролле */
+.reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
+.reveal.active { opacity: 1; transform: translateY(0); }
+
+/* --- ФИКС МОБИЛЬНОГО МЕНЮ --- */
+@media (max-width: 900px) {
+    .main-nav {
+        display: none !important;
+    }
+    .main-nav.is-open {
+        display: flex !important;
+        flex-direction: column !important;
+        position: absolute !important;
+        top: 100% !important;
+        left: 0 !important;
+        right: 0 !important;
+        background: var(--bg-color, #fff) !important;
+        padding: 20px !important;
+        z-index: 10000 !important;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.2) !important;
+        border-bottom: 1px solid var(--border-color, #ddd) !important;
+    }
+    .main-nav.is-open a {
+        padding: 10px 0 !important;
+        border-bottom: 1px solid var(--border-color, #eee) !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+}
+[data-theme="dark"] .main-nav.is-open {
+    background: #1e1e1e !important;
+    border-color: #333 !important;
+}

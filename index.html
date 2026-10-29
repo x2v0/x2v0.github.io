@@ -11,7 +11,9 @@
     <title>Валерий Онучин — инженер-программист</title>
     <link rel="stylesheet" href="./style.css">
     <script src="./script.js" defer></script>
-  </head>
+      <link rel="manifest" href="/manifest.json">
+    <script data-goatcounter="https://x2v0.goatcounter.com/count" async src="//gc.zgo.at/count.js"></script>
+</head>
   <body>
     <header class="topbar" id="top">
       <a class="brand" href="#top" aria-label="Валерий Онучин — главная">
@@ -128,13 +130,13 @@
             </article>
             <article class="metric-card metric-card-wide">
               <span class="metric-label">Citations</span>
-              <strong>15,102</strong>
-              <span class="metric-note">by 10,390 documents</span>
+              <strong>15,108</strong>
+              <span class="metric-note">by 10,394 documents</span>
             </article>
           </div>
         </section>
 
-        <section class="section" id="publications">
+        <section class="section reveal" id="publications">
           <div class="section-head">
             <span class="section-index">04 /</span>
             <h2 class="section-title">Key Publications</h2>
@@ -198,6 +200,17 @@
           <a href="https://github.com/x2v0" target="_blank" rel="noopener noreferrer">github.com/x2v0 ↗</a>
         </footer>
       </div>
+    
+    <section class="section reveal" id="contact" style="margin-top: 40px;">
+        <h2 class="section-title">Связаться со мной</h2>
+        <form id="contact-form" style="display: flex; flex-direction: column; gap: 10px; max-width: 500px;">
+            <input type="text" id="c-name" placeholder="Ваше имя" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <input type="email" id="c-email" placeholder="Ваш Email" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <textarea id="c-msg" placeholder="Сообщение..." rows="4" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+            <button type="submit" style="padding: 10px; background: #0288d1; color: white; border: none; border-radius: 4px; cursor: pointer;">Отправить</button>
+        </form>
+    </section>
+    
     </main>
 
     <main class="resume-page" id="resume-page" hidden>
@@ -214,6 +227,17 @@
         <span>© <span data-current-year>2026</span> Валерий Онучин</span>
         <a href="#top">На главную ↑</a>
       </footer>
+    
+    <section class="section reveal" id="contact" style="margin-top: 40px;">
+        <h2 class="section-title">Связаться со мной</h2>
+        <form id="contact-form" style="display: flex; flex-direction: column; gap: 10px; max-width: 500px;">
+            <input type="text" id="c-name" placeholder="Ваше имя" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <input type="email" id="c-email" placeholder="Ваш Email" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+            <textarea id="c-msg" placeholder="Сообщение..." rows="4" required style="padding: 10px; border: 1px solid #ccc; border-radius: 4px;"></textarea>
+            <button type="submit" style="padding: 10px; background: #0288d1; color: white; border: none; border-radius: 4px; cursor: pointer;">Отправить</button>
+        </form>
+    </section>
+    
     </main>
   <script src="https://replit-cdn.com/replit-pill/replit-pill.global.js" data-referral-code="c0f4ol704kib" data-repl-id="c9fcad4a-4a1b-4c83-987e-bb60c71392ff"></script>  <button id="scroll-top" title="Наверх">↑</button>
 </body>

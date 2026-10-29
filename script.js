@@ -434,7 +434,7 @@ document.addEventListener('DOMContentLoaded', async () => {
         }
     } catch (error) {
         console.error('Error fetching ORCID:', error);
-        listContainer.innerHTML = '<p style="color: red;">Failed to load publications.</p>';
+        listContainer.innerHTML = '<p style="color: #f66;">Не удалось загрузить публикации с ORCID.<br>Возможно, ваш VPN блокирует запросы к pub.orcid.org.<br><button onclick="location.reload()" style="margin-top:10px; padding:5px 10px; background:#0288d1; color:#fff; border:none; border-radius:4px; cursor:pointer;">Повторить</button></p>';
     }
 });
         if (!response.ok) throw new Error('Network response was not ok');
@@ -512,7 +512,11 @@ fetch('https://api.github.com/users/x2v0')
         if (el) {
             el.innerHTML = `<span>Repos: <b>${data.public_repos}</b></span><span>Followers: <b>${data.followers}</b></span>`;
         }
-    }).catch(e => console.log('GitHub API error', e));
+    }).catch(e => {
+        console.error('GitHub API error', e);
+        const el = document.getElementById('github-stats');
+        if (el) el.innerHTML = '<span style="color:#888">GitHub API limit reached</span>';
+    });
 
 // PWA Service Worker
 if ('serviceWorker' in navigator) {
