@@ -1070,10 +1070,28 @@ button:focus-visible {
 .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease-out, transform 0.8s ease-out; }
 .reveal.active { opacity: 1; transform: translateY(0); }
 
-/* --- ФИКС МОБИЛЬНОГО МЕНЮ --- */
+
+/* --- ЖЕСТКИЙ ФИКС ШАПКИ И МЕНЮ --- */
+.topbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+#theme-toggle {
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-right: 10px;
+    padding: 5px;
+}
+
+/* Мобильная версия */
 @media (max-width: 900px) {
     .main-nav {
-        display: none !important;
+        display: none !important; /* Скрыто по умолчанию */
     }
     .main-nav.is-open {
         display: flex !important;
@@ -1081,21 +1099,27 @@ button:focus-visible {
         position: absolute !important;
         top: 100% !important;
         left: 0 !important;
-        right: 0 !important;
+        width: 100% !important;
         background: var(--bg-color, #fff) !important;
         padding: 20px !important;
-        z-index: 10000 !important;
-        box-shadow: 0 10px 15px rgba(0,0,0,0.2) !important;
+        z-index: 99999 !important;
+        box-shadow: 0 10px 15px rgba(0,0,0,0.1) !important;
         border-bottom: 1px solid var(--border-color, #ddd) !important;
     }
     .main-nav.is-open a {
-        padding: 10px 0 !important;
+        padding: 12px 0 !important;
         border-bottom: 1px solid var(--border-color, #eee) !important;
         width: 100% !important;
         text-align: center !important;
+        display: block !important;
     }
 }
+
+/* Темная тема для меню */
 [data-theme="dark"] .main-nav.is-open {
     background: #1e1e1e !important;
     border-color: #333 !important;
+}
+[data-theme="dark"] .main-nav.is-open a {
+    border-bottom-color: #333 !important;
 }
