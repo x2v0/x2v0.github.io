@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var mainContent = document.getElementById('home-page');
     var dynamicContent = document.getElementById('dynamic-content');
     var resumePage = document.getElementById('resume-page');
-    var resumeBackBtn = document.getElementById('resume-back-btn');
+    var resumeContent = document.getElementById('resume-content');
     var scrollBtn = document.getElementById('scroll-top');
 
     // 1. Мобильное меню
@@ -53,28 +53,46 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 5. Резюме (через iframe)
+    // 5. Резюме (как в Replit)
     var resumeLink = document.querySelector('a[href="#resume"]');
     if (resumeLink && resumePage) {
         resumeLink.onclick = function(e) {
             e.preventDefault();
             if (mainContent) mainContent.style.display = 'none';
             if (dynamicContent) dynamicContent.style.display = 'none';
+            resumePage.hidden = false;
             resumePage.style.display = 'block';
             window.scrollTo(0, 0);
-            if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
+
+            if (resumeContent && resumeContent.innerHTML.indexOf('Загрузка') !== -1) {
+                fetch('https://raw.githubusercontent.com/x2v0/Resume/main/README.md')
+                    .then(function(r) { return r.text(); })
+                    .then(function(md) {
+                        if (typeof marked !== 'undefined') {
+                            resumeContent.innerHTML = marked.parse(md);
+                        } else {
+                            resumeContent.innerHTML = '<pre>' + md + '</pre>';
+                        }
+                    })
+                    .catch(function() {
+                        resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки</p>';
+                    });
+            }
         };
     }
 
-    if (resumeBackBtn) {
-        resumeBackBtn.onclick = function() {
-            if (resumePage) resumePage.style.display = 'none';
+    var resumeBack = document.querySelector('[data-resume-back]');
+    if (resumeBack) {
+        resumeBack.onclick = function(e) {
+            e.preventDefault();
+            resumePage.hidden = true;
+            resumePage.style.display = 'none';
             if (mainContent) mainContent.style.display = '';
             window.scrollTo(0, 0);
         };
     }
 
-    // 6. Загрузка Портфолио и Блога (через fetch)
+    // 6. Загрузка Портфолио и Блога
     function loadPage(url, title) {
         if (!dynamicContent || !mainContent) return;
         
@@ -141,11 +159,13 @@ document.addEventListener('DOMContentLoaded', function() {
     var brandLink = document.querySelector('.brand');
     if (brandLink) {
         brandLink.onclick = function(e) {
-            if ((dynamicContent && dynamicContent.style.display === 'block') || 
-                (resumePage && resumePage.style.display === 'block')) {
+            if ((dynamicContent && dynamicContent.style.display === 'block') || (resumePage && resumePage.style.display === 'block')) {
                 e.preventDefault();
                 if (dynamicContent) dynamicContent.style.display = 'none';
-                if (resumePage) resumePage.style.display = 'none';
+                if (resumePage) {
+                    resumePage.hidden = true;
+                    resumePage.style.display = 'none';
+                }
                 if (mainContent) mainContent.style.display = '';
                 window.scrollTo(0, 0);
             }

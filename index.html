@@ -222,10 +222,20 @@
       
     </main>
 
-    <main class="resume-page" id="resume-page" style="display: none; padding: 20px; max-width: 900px; margin: 0 auto;">
-        <button id="resume-back-btn" style="margin-bottom: 20px; padding: 10px 15px; background: #0288d1; color: white; border: none; border-radius: 5px; cursor: pointer; font-family: monospace;">← Назад на главную</button>
-        <!-- Встраиваем страницу резюме с GitHub через iframe -->
-        <iframe src="https://x2v0.github.io/Resume/" style="width: 100%; height: 80vh; border: 1px solid #ddd; border-radius: 8px; background: white; box-shadow: 0 4px 12px rgba(0,0,0,0.1);"></iframe>
+    <main class="resume-page" id="resume-page" hidden>
+      <header class="resume-heading">
+        <p class="eyebrow">ВАЛЕРИЙ ОНУЧИН · РЕЗЮМЕ</p>
+        <h1>Полное резюме</h1>
+        <a class="back-link" href="#top">← На главную</a>
+      </header>
+      <section class="resume-card" aria-label="Текст резюме">
+        <div class="resume-status" id="resume-status" role="status" aria-live="polite">Загружаем резюме…</div>
+        <article class="markdown-content" id="resume-content"></article>
+      </section>
+      <footer class="footer resume-footer">
+        <span>© <span data-current-year>2026</span> Валерий Онучин</span>
+        <a href="#top">На главную ↑</a>
+      </footer>
     </main>
     <button id="scroll-top" title="Наверх">↑</button>
   <script src="./test.js"></script>
