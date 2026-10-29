@@ -912,3 +912,41 @@ a[href*="replit.com"], iframe[src*="replit.com"], .replit-badge, #replit-badge, 
     [data-theme="dark"] .main-nav.is-open { background: #1e1e1e !important; }
     [data-theme="dark"] .main-nav.is-open a { border-bottom-color: #333 !important; color: #eee !important; }
 }
+
+/* --- СТРОГИЙ ФИКС МОБИЛЬНОЙ ВЕРСТКИ (Replit Layout) --- */
+@media (max-width: 900px) {
+    html, body {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+    }
+    /* Сетку выстраиваем в колонку */
+    .layout {
+        display: flex !important;
+        flex-direction: column !important;
+        width: 100% !important;
+        padding: 0 15px !important;
+        box-sizing: border-box !important;
+    }
+    /* Сайдбар (с портретом) на всю ширину */
+    .profile {
+        width: 100% !important;
+        max-width: 100% !important;
+        border-right: none !important;
+        border-bottom: 1px solid var(--border-color, #ddd) !important;
+        padding-bottom: 20px !important;
+        margin-bottom: 20px !important;
+        box-sizing: border-box !important;
+    }
+    /* Основной контент тоже на всю ширину */
+    .layout > div, .layout > article, #dynamic-content {
+        width: 100% !important;
+        max-width: 100% !important;
+        padding: 0 !important;
+        box-sizing: border-box !important;
+    }
+    /* Уменьшаем гигантские шрифты, которые ломают экран */
+    h1, .huge-text {
+        font-size: 2.2rem !important;
+        word-break: break-word !important;
+    }
+}
