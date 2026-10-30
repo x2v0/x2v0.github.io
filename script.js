@@ -1,25 +1,12 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     var nav = document.getElementById('site-navigation');
     var menuBtn = document.getElementById('menu-toggle');
     var mainContent = document.getElementById('home-page');
     var dynamicContent = document.getElementById('dynamic-content');
-    var resumePage = document.getElementById('resume-page');
-    var resumeContent = document.getElementById('resume-content');
     var scrollBtn = document.getElementById('scroll-top');
-
-    // Функция возврата на главную
-    window._showHome = function() {
-        if (mainContent) mainContent.style.display = '';
-        if (dynamicContent) {
-            dynamicContent.style.display = 'none';
-            dynamicContent.innerHTML = ''; // Очищаем iframe
-        }
-        if (resumePage) {
-            resumePage.hidden = true;
-            resumePage.style.display = 'none';
-        }
-    };
+    
+    // Защита от повторного вызова
+    var resumeLoaded = false;
 
     // 1. Мобильное меню
     if (menuBtn && nav) {
@@ -31,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 2. Закрытие меню
+    // 2. Закрытие меню при клике вне его
     document.addEventListener('click', function(e) {
         if (nav && nav.classList.contains('is-open')) {
             if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
@@ -41,7 +28,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 3. Тема
+    // 3. Переключение темы
     var themeBtn = document.getElementById('theme-toggle');
     var currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -66,27 +53,55 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 5. Резюме
+    // 5. Резюме (Безопасная ленивая загрузка)
     var resumeLink = document.querySelector('a[href="#resume"]');
+    var resumePage = document.getElementById('resume-page');
+    var resumeContent = document.getElementById('resume-content');
+    var resumeBackBtn = document.getElementById('resume-back-btn');
+
     if (resumeLink && resumePage) {
         resumeLink.onclick = function(e) {
             e.preventDefault();
             if (mainContent) mainContent.style.display = 'none';
-            if (dynamicContent) dynamicContent.style.display = 'none';
-            resumePage.hidden = false;
+            if (dynamicContent) { dynamicContent.style.display = 'none'; dynamicContent.innerHTML = ''; }
             resumePage.style.display = 'block';
             window.scrollTo(0, 0);
             if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
 
-            if (resumeContent && resumeContent.innerHTML.indexOf('Загрузка') !== -1) {
+            // Если уже загружено или в процессе - ничего не делаем
+            if (resumeLoaded) return;
+            resumeLoaded = true;
+
+            // Загружаем marked.js динамически, если его нет
+            function fetchAndRender() {
                 fetch('./resume.md')
                     .then(function(r) { return r.text(); })
                     .then(function(md) {
-                        if (typeof marked !== 'undefined') resumeContent.innerHTML = marked.parse(md);
-                        else resumeContent.innerHTML = '<pre>' + md + '</pre>';
+                        if (typeof marked !== 'undefined') {
+                            resumeContent.innerHTML = marked.parse(md);
+                        } else {
+                            resumeContent.innerHTML = '<pre>' + md + '</pre>';
+                        }
                     })
                     .catch(function() { resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки</p>'; });
             }
+
+            if (typeof marked === 'undefined') {
+                var script = document.createElement('script');
+                script.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
+                script.onload = fetchAndRender;
+                document.head.appendChild(script);
+            } else {
+                fetchAndRender();
+            }
+        };
+    }
+
+    if (resumeBackBtn) {
+        resumeBackBtn.onclick = function() {
+            resumePage.style.display = 'none';
+            if (mainContent) mainContent.style.display = '';
+            window.scrollTo(0, 0);
         };
     }
 
@@ -102,7 +117,11 @@ document.addEventListener('DOMContentLoaded', function() {
         var backBtn = document.createElement('button');
         backBtn.innerHTML = '← Назад на главную';
         backBtn.style.cssText = 'margin: 20px; padding: 10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer; font-size:16px;';
-        backBtn.onclick = function() { window._showHome(); window.scrollTo(0, 0); };
+        backBtn.onclick = function() {
+            dynamicContent.style.display = 'none';
+            mainContent.style.display = '';
+            window.scrollTo(0, 0);
+        };
         dynamicContent.appendChild(backBtn);
 
         var iframe = document.createElement('iframe');
@@ -129,7 +148,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 7. Якоря (Публикации и т.д.) - Сначала Назад, потом Скролл
+    // 7. Якоря (Публикации) - Сначала Назад, потом Скролл
     var navLinks = document.querySelectorAll('.main-nav a');
     for (var i = 0; i < navLinks.length; i++) {
         var link = navLinks[i];
@@ -141,12 +160,14 @@ document.addEventListener('DOMContentLoaded', function() {
                 var targetId = this.getAttribute('href');
                 var targetEl = document.querySelector(targetId);
                 
-                window._showHome(); // 1. Назад
+                if (mainContent) mainContent.style.display = '';
+                if (dynamicContent) { dynamicContent.style.display = 'none'; dynamicContent.innerHTML = ''; }
+                if (resumePage) resumePage.style.display = 'none';
                 if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
                 
                 if (targetEl) {
                     setTimeout(function() {
-                        targetEl.scrollIntoView({ behavior: 'smooth' }); // 2. Скролл
+                        targetEl.scrollIntoView({ behavior: 'smooth' });
                     }, 50);
                 }
             };
@@ -159,7 +180,9 @@ document.addEventListener('DOMContentLoaded', function() {
         brandLink.onclick = function(e) {
             if ((dynamicContent && dynamicContent.style.display === 'block') || (resumePage && resumePage.style.display === 'block')) {
                 e.preventDefault();
-                window._showHome();
+                if (dynamicContent) { dynamicContent.style.display = 'none'; dynamicContent.innerHTML = ''; }
+                if (resumePage) resumePage.style.display = 'none';
+                if (mainContent) mainContent.style.display = '';
                 window.scrollTo(0, 0);
             }
         };
