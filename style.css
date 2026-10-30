@@ -2394,6 +2394,7 @@ a, .accent {
     color: var(--accent) !important;
 }
 
+/* === ФИНАЛЬНЫЙ ШТРИХ (ЛУНА ВПРАВО, ТАБЛИЦА КРУПНЕЕ) === */
 
 /* 1. Принудительно убираем луну из центра */
 .topbar {
@@ -2414,88 +2415,4 @@ a, .accent {
 .tech-table, table, td, th {
     font-size: 15px !important; /* Было 13px, стало 15px */
     line-height: 1.5 !important;
-}
-
-/* === ИДЕАЛЬНАЯ ШАПКА (ВСЁ СПРАВА, ЛОГОТИП СЛЕВА) === */
-
-/* 1. Основной контейнер шапки */
-header.topbar {
-    display: flex !important;
-    align-items: center !important;
-    justify-content: space-between !important; /* Логотип слева, всё остальное справа */
-    padding: 15px 20px !important;
-    width: 100% !important;
-    box-sizing: border-box !important;
-}
-
-/* 2. Логотип (прижимается влево) */
-.brand {
-    margin-right: auto !important; /* Выталкивает всё остальное вправо */
-    display: flex !important;
-    align-items: center !important;
-    gap: 10px !important;
-}
-
-/* 3. Контейнер для меню (если он есть в Replit) или само меню */
-.main-nav, 
-.header-right, 
-.header-actions {
-    display: flex !important;
-    align-items: center !important;
-    gap: 20px !important;
-    margin-left: auto !important; /* Прижимается к правому краю */
-}
-
-/* 4. Кнопка луны (встает в один ряд с меню) */
-#theme-toggle {
-    position: static !important; /* Убираем абсолютное позиционирование */
-    transform: none !important;
-    margin: 0 !important;
-    padding: 0 10px !important;
-    font-size: 24px !important;
-    background: none !important;
-    border: none !important;
-    cursor: pointer !important;
-    order: -1 !important; /* Ставим луну перед гамбургером */
-}
-
-/* 5. Кнопка гамбургера (самая правая) */
-.nav-menu {
-    display: flex !important;
-    flex-direction: column !important;
-    justify-content: space-between !important;
-    width: 24px !important;
-    height: 18px !important;
-    background: none !important;
-    border: none !important;
-    cursor: pointer !important;
-    padding: 0 !important;
-    margin: 0 !important;
-    order: 1 !important; /* Гамбургер после луны */
-}
-
-/* 6. На мобильных (меньше 900px) меню прячется, но луна и гамбургер остаются справа */
-@media (max-width: 900px) {
-    .main-nav {
-        display: none !important; /* Прячем ссылки */
-    }
-    .main-nav.is-open {
-        display: flex !important;
-        flex-direction: column !important;
-        position: absolute !important;
-        top: 100% !important;
-        right: 0 !important;
-        left: auto !important;
-        width: 200px !important;
-        background: var(--bg) !important;
-        padding: 10px 0 !important;
-        box-shadow: -5px 5px 15px rgba(0,0,0,0.2) !important;
-        border: 1px solid var(--border) !important;
-        z-index: 9999 !important;
-    }
-    .main-nav.is-open a {
-        padding: 12px 20px !important;
-        text-align: right !important;
-        border-bottom: 1px solid var(--border) !important;
-    }
 }
