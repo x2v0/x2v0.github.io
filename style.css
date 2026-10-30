@@ -2401,7 +2401,6 @@ aside.profile {
     font-size: 24px !important;
 }
 
-/* === УМНЫЙ ФИКС ТЕМНОЙ ТЕМЫ === */
 
 /* 1. Основной текст делаем светлым */
 [data-theme="dark"] body,
@@ -2441,4 +2440,59 @@ aside.profile {
 /* 5. Увеличиваем шрифт в таблицах для Коли */
 table, td, th {
     font-size: 15px !important;
+}
+
+/* === МЕГА-ФИКС ДЛЯ КОЛИ === */
+
+/* 1. УВЕЛИЧИВАЕМ ВЕСЬ БАЗОВЫЙ ТЕКСТ (чтобы читалось без очков) */
+body {
+    font-size: 18px !important; /* Было 16px */
+}
+p, li, td, span, div {
+    font-size: 1.1rem !important; /* Относительно body */
+    line-height: 1.6 !important;
+}
+h1, h2, h3 {
+    font-size: 2rem !important;
+}
+
+/* 2. ПРИНУДИТЕЛЬНО УБИРАЕМ ЛУНУ ИЗ ЦЕНТРА (ставим вправо) */
+.topbar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+.nav-menu {
+    order: 2 !important; /* Гамбургер - самый правый */
+}
+#theme-toggle {
+    order: 1 !important; /* Луна перед гамбургером */
+    position: static !important;
+    transform: none !important;
+    margin-right: 15px !important;
+    font-size: 24px !important;
+}
+.main-nav {
+    order: 0 !important;
+    margin-right: auto !important; /* Прижимает меню влево */
+}
+
+/* 3. ФИКСИМ СВЕТЛЫЙ БЛОК ВНИЗУ (прячем белый фон) */
+[data-theme="dark"] .resume-callout,
+[data-theme="dark"] .bg-white,
+[data-theme="dark"] .light-box {
+    background-color: transparent !important;
+    color: #e0e0e0 !important;
+}
+[data-theme="dark"] a {
+    color: #4fc3f7 !important;
+}
+
+/* 4. ЧИНИМ ТЕМНУЮ ТЕМУ В ТАБЛИЦАХ (заголовки делаем темными на светлом фоне) */
+[data-theme="dark"] th {
+    color: #333 !important;
+    background-color: #e0e0e0 !important;
+}
+[data-theme="dark"] td {
+    color: #e0e0e0 !important;
 }
