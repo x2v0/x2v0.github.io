@@ -2382,7 +2382,6 @@ aside.profile {
     margin-right: 2px !important;
 }
 
-/* === ТОЧЕЧНЫЙ ФИКС ЦВЕТОВ ДЛЯ КОЛИ === */
 
 /* 1. Белый текст на светлом фоне (плашка ROOT и заголовки таблиц) -> делаем ТЕМНЫМ */
 [data-theme="dark"] .hero-note,
@@ -2404,4 +2403,54 @@ aside.profile {
 [data-theme="dark"] td,
 [data-theme="dark"] li {
     color: #e0e0e0 !important;
+}
+
+/* === ФИНАЛЬНЫЙ ФИКС ЦВЕТОВ === */
+
+/* 1. ЗЕЛЕНЫЙ АКЦЕНТ (Светло-зеленый) */
+[data-theme="dark"] .eyebrow,
+[data-theme="dark"] .section-title,
+[data-theme="dark"] h1 span {
+    color: #81c784 !important; /* Приятный светло-зеленый */
+}
+
+/* 2. ПЛАШКА ROOT / CERN (Светлый фон, темный текст) */
+[data-theme="dark"] .hero-note {
+    background-color: #f5f3eb !important; /* Светлый фон */
+    border: 1px solid #ddd !important;
+}
+[data-theme="dark"] .hero-note * {
+    color: #1a1a1a !important; /* Темный текст внутри */
+}
+[data-theme="dark"] .hero-note a,
+[data-theme="dark"] .hero-note strong {
+    color: #2e7d32 !important; /* Темно-зеленый для читаемости на светлом */
+}
+
+/* 3. ЗАГОЛОВКИ ТАБЛИЦ (Светлый фон, темный текст) */
+[data-theme="dark"] th {
+    background-color: #e0e0e0 !important; /* Светлый фон */
+    color: #1a1a1a !important;           /* Темный текст */
+    border-color: #555 !important;
+}
+
+/* 4. ОСНОВНОЙ ТЕКСТ (Светло-серый, не черный) */
+[data-theme="dark"] body,
+[data-theme="dark"] p,
+[data-theme="dark"] td,
+[data-theme="dark"] li,
+[data-theme="dark"] span {
+    color: #e0e0e0 !important;
+}
+
+/* 5. ПИЛЮЛИ (Компактные, светло-зеленые) */
+[data-theme="dark"] .tech-tag, 
+.tech-tag {
+    font-size: 11px !important;
+    padding: 1px 6px !important;
+    margin: 1px !important;
+    border-radius: 4px !important;
+    line-height: 1.2 !important;
+    color: #81c784 !important;
+    border-color: #81c784 !important;
 }
