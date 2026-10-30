@@ -89,11 +89,7 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Кнопка "Назад" внутри Резюме
-    window._showHome = function() {
-        goHome();
-        window.scrollTo(0, 0);
-    };
-
+    
     // 6. Портфолио и Блог (через iframe)
     function loadPage(url, title) {
         if (!dynamicContent || !mainContent) return;
