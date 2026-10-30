@@ -1,4 +1,3 @@
-
 document.addEventListener('DOMContentLoaded', function() {
     var nav = document.getElementById('site-navigation');
     var menuBtn = document.getElementById('menu-toggle');
@@ -8,20 +7,20 @@ document.addEventListener('DOMContentLoaded', function() {
     var resumeContent = document.getElementById('resume-content');
     var scrollBtn = document.getElementById('scroll-top');
 
-    // Функция возврата на главную
-    window._showHome = function() {
+    // Вспомогательная функция: возврат на главную
+    function goHome() {
         if (mainContent) mainContent.style.display = '';
         if (dynamicContent) {
             dynamicContent.style.display = 'none';
-            dynamicContent.innerHTML = ''; // Очищаем iframe
+            dynamicContent.innerHTML = '';
         }
         if (resumePage) {
             resumePage.hidden = true;
             resumePage.style.display = 'none';
         }
-    };
+    }
 
-    // 1. Мобильное меню
+    // 1. Мобильное меню (Гамбургер)
     if (menuBtn && nav) {
         menuBtn.onclick = function(e) {
             e.preventDefault();
@@ -31,7 +30,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 2. Закрытие меню
+    // 2. Закрытие меню при клике вне его
     document.addEventListener('click', function(e) {
         if (nav && nav.classList.contains('is-open')) {
             if (!nav.contains(e.target) && !menuBtn.contains(e.target)) {
@@ -41,7 +40,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     });
 
-    // 3. Тема
+    // 3. Переключение темы
     var themeBtn = document.getElementById('theme-toggle');
     var currentTheme = localStorage.getItem('theme') || 'light';
     document.documentElement.setAttribute('data-theme', currentTheme);
@@ -66,13 +65,12 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 5. Резюме
+    // 5. Загрузка Резюме
     var resumeLink = document.querySelector('a[href="#resume"]');
     if (resumeLink && resumePage) {
         resumeLink.onclick = function(e) {
             e.preventDefault();
-            if (mainContent) mainContent.style.display = 'none';
-            if (dynamicContent) dynamicContent.style.display = 'none';
+            goHome();
             resumePage.hidden = false;
             resumePage.style.display = 'block';
             window.scrollTo(0, 0);
@@ -90,19 +88,24 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
+    // Кнопка "Назад" внутри Резюме
+    window._showHome = function() {
+        goHome();
+        window.scrollTo(0, 0);
+    };
+
     // 6. Портфолио и Блог (через iframe)
-    function loadPage(url) {
+    function loadPage(url, title) {
         if (!dynamicContent || !mainContent) return;
-        dynamicContent.innerHTML = '';
+        goHome();
         dynamicContent.style.display = 'block';
         mainContent.style.display = 'none';
-        if (resumePage) resumePage.style.display = 'none';
         window.scrollTo(0, 0);
 
         var backBtn = document.createElement('button');
         backBtn.innerHTML = '← Назад на главную';
         backBtn.style.cssText = 'margin: 20px; padding: 10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer; font-size:16px;';
-        backBtn.onclick = function() { window._showHome(); window.scrollTo(0, 0); };
+        backBtn.onclick = function() { goHome(); };
         dynamicContent.appendChild(backBtn);
 
         var iframe = document.createElement('iframe');
@@ -118,18 +121,18 @@ document.addEventListener('DOMContentLoaded', function() {
         navPortfolio.onclick = function(e) {
             e.preventDefault();
             if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
-            loadPage('./portfolio/index.html');
+            loadPage('./portfolio/index.html', 'Portfolio');
         };
     }
     if (navBlog) {
         navBlog.onclick = function(e) {
             e.preventDefault();
             if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
-            loadPage('./year-archive/index.html');
+            loadPage('./year-archive/index.html', 'Блог');
         };
     }
 
-    // 7. Якоря (Публикации и т.д.) - Сначала Назад, потом Скролл
+    // 7. Обработка якорей (Публикации и т.д.) — "Сначала Назад, потом Скролл"
     var navLinks = document.querySelectorAll('.main-nav a');
     for (var i = 0; i < navLinks.length; i++) {
         var link = navLinks[i];
@@ -141,26 +144,25 @@ document.addEventListener('DOMContentLoaded', function() {
                 var targetId = this.getAttribute('href');
                 var targetEl = document.querySelector(targetId);
                 
-                window._showHome(); // 1. Назад
+                goHome(); // 1. Возвращаемся на главную
                 if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
                 
                 if (targetEl) {
                     setTimeout(function() {
-                        targetEl.scrollIntoView({ behavior: 'smooth' }); // 2. Скролл
+                        targetEl.scrollIntoView({ behavior: 'smooth' }); // 2. Скроллим
                     }, 50);
                 }
             };
         }
     }
 
-    // 8. Логотип (ВО)
+    // 8. Логотип (ВО) — возврат на главную
     var brandLink = document.querySelector('.brand');
     if (brandLink) {
         brandLink.onclick = function(e) {
             if ((dynamicContent && dynamicContent.style.display === 'block') || (resumePage && resumePage.style.display === 'block')) {
                 e.preventDefault();
                 window._showHome();
-                window.scrollTo(0, 0);
             }
         };
     }
