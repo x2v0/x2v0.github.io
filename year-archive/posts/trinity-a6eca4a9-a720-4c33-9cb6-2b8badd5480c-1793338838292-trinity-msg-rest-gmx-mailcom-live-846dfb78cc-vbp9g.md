@@ -1,7 +1,7 @@
-# Aw: Re: Aw: Re: Aw: debug Android with M$
+# debug Android with M$
 
 **От:** voronkov@engineer.com
-**Дата:** 2026-10-30
+**Дата:** 2026-10-30 05:40
 
 ---
 

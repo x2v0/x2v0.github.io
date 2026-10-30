@@ -1,7 +1,7 @@
-# Re: Aw: Re: Aw: Re: Aw: debug Android with M$
+# debug Android with M$
 
 **От:** Artem Onuchin <onuchinart@gmail.com>
-**Дата:** 2026-10-30
+**Дата:** 2026-10-30 10:44
 
 ---
 
