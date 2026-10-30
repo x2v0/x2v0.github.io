@@ -1,0 +1,142 @@
+# RE: Re: Aw: debug Android with M$
+
+**От:** =?utf-8?B?0JDQu9C10LrRgdC10Lkg0KHQvtC70L7QstGM0LXQsg==?= <salonf@mrrc.obninsk.ru>
+**Дата:** 2026-10-29
+
+---
+
+Ну да, копирование прям влезло эпично)))
+
+
+
+ 
+
+А ещё не забывай, что есть не просто 4K (это кстати нет, у меня 4К только на работе), а ещё 4K ретина) под них вообще вёрстка забавная)
+
+ 
+
+Не, в целом оптимистичненько)))
+
+ 
+
+ 
+
+А, чуть не забыл - https://habr.com/ru/amp/publications/1100988/
+
+ 
+
+ 
+
+From: voronkov@engineer.com [mailto:voronkov@engineer.com] 
+Sent: Thursday, October 29, 2026 8:17 PM
+To: valeriy.onuchin@ya.ru; andom@bk.ru
+Cc: golovanenko@bluewin.ch; onuchinart@gmail.com; salonf@mrrc.obninsk.ru
+Subject: Aw: Re: Aw: debug Android with M$
+
+ 
+
+Шапка перестала плавать. Шрифт остался мелким, переключатель фона исчез, ну и хрен с ним, Mail -> Email, может все-таки вместо Email написать реальный твой email и рядом поставить иконку для копирования в буфер, также можно и с другими ссылками поступить, но email я бы показал все равно.
+
+ 
+
+Этот вариант, конечно, лучше гораздо. На телефонах и планшетах норально смотрится. Шрифт мелкий для десктопа наверное. надо как-то ловить это дело.
+
+ 
+
+Коля.
+
+ 
+
+Sent: Thursday, October 29, 2026 at 8:00 PM
+
+From: "Valeriy Onuchin" <valeriy.onuchin@ya.ru <mailto:valeriy.onuchin@ya.ru> >
+
+To: "voronkov@engineer.com <mailto:voronkov@engineer.com> " <voronkov@engineer.com <mailto:voronkov@engineer.com> >, "andom@bk.ru <mailto:andom@bk.ru> " <andom@bk.ru <mailto:andom@bk.ru> >
+
+CC: "golovanenko@bluewin.ch <mailto:golovanenko@bluewin.ch> " <golovanenko@bluewin.ch <mailto:golovanenko@bluewin.ch> >,"onuchinart@gmail.com <mailto:onuchinart@gmail.com> " <onuchinart@gmail.com <mailto:onuchinart@gmail.com> >,"salonf@mrrc.obninsk.ru <mailto:salonf@mrrc.obninsk.ru> " <salonf@mrrc.obninsk.ru <mailto:salonf@mrrc.obninsk.ru> >
+
+Subject: Re: Aw: debug Android with M$
+
+
+ Я разделяю твое восхищение. 
+
+Сделал вторую страницу  - оригинал от профессионала replit.
+
+Это был наш 0 вариант.
+
+ 
+
+https://x2v0.github.io/replit
+
+ 
+
+ 
+
+Что скажешь?
+
+ 
+
+ 
+
+To: "valeriy.onuchin@ya.ru <mailto:valeriy.onuchin@ya.ru> " <valeriy.onuchin@ya.ru <mailto:valeriy.onuchin@ya.ru> >, "andom@bk.ru <mailto:andom@bk.ru> " <andom@bk.ru <mailto:andom@bk.ru> >; 
+Cc: "golovanenko@bluewin.ch <mailto:golovanenko@bluewin.ch> " <golovanenko@bluewin.ch <mailto:golovanenko@bluewin.ch> >, "onuchinart@gmail.com <mailto:onuchinart@gmail.com> " <onuchinart@gmail.com <mailto:onuchinart@gmail.com> >, "salonf@mrrc.obninsk.ru <mailto:salonf@mrrc.obninsk.ru> " <salonf@mrrc.obninsk.ru <mailto:salonf@mrrc.obninsk.ru> >; 
+Subject: Aw: debug Android with M$; 
+19:23, October 29, 2026, "voronkov@engineer.com <mailto:voronkov@engineer.com> " <voronkov@engineer.com <mailto:voronkov@engineer.com> >: 
+
+Богато! Твои труды, Валера, не пропали даром! Стало еще хуже, чем было. Скрин я сделал в хроме на компе, шрифт мелкий совершенно, разметка телефонная, меню в виде бутерброда слева и переключение свотовой темы прямо посередине заголовка. Заголовок уплывает, если крутить вниз, при этом левый sidebar стоит на месте (прибит на совесть, это хорошо). Твой портрет в сортире в черной рамке, для некролога что ли заготовка или это типа тень, и она налазит на текст, который ниже.
+
+ 
+
+У меня появилась теория, что чем дальше в лес, тем толще партизаны, и, что чем больше давать ИИ-агенту улучшать дизайн, то будет становиться все хуже и хуже. 
+
+ 
+
+Коля.
+
+ 
+
+Sent: Thursday, October 29, 2026 at 6:30 PM
+
+From: "Valeriy Onuchin" <valeriy.onuchin@ya.ru <mailto:valeriy.onuchin@ya.ru> >
+
+To: "voronkov@engineer.com <mailto:voronkov@engineer.com> " <voronkov@engineer.com <mailto:voronkov@engineer.com> >, "andom@bk.ru <mailto:andom@bk.ru> " <andom@bk.ru <mailto:andom@bk.ru> >
+
+CC: "golovanenko@bluewin.ch <mailto:golovanenko@bluewin.ch> " <golovanenko@bluewin.ch <mailto:golovanenko@bluewin.ch> >,"onuchinart@gmail.com <mailto:onuchinart@gmail.com> " <onuchinart@gmail.com <mailto:onuchinart@gmail.com> >,"salonf@mrrc.obninsk.ru <mailto:salonf@mrrc.obninsk.ru> " <salonf@mrrc.obninsk.ru <mailto:salonf@mrrc.obninsk.ru> >
+
+Subject: debug Android with M$
+
+Наконец-то закончили с https://x2v0.github.io 
+
+ 
+
+ IMHO, выглядит профессионально (Коля, Леша?).
+
+ 
+
+Вернулись к mtapi. 
+
+К автоматическому тестированию Андроид приложения mtapi, а именно его веб дубля (demo), с помощью microsoftовской системы тестирования Playwright.
+
+https://ebaev.ru/wiki/tekhnologii-razrabotki/playwright/
+
+ 
+
+Так как функционально mtapi и demo - 1:1 , мы получили уникальную возможность тестирования андроида с помощью майкрософта.
+
+ 
+
+Честно. Не ожидал такого крутого поворота.
+
+ 
+
+ 
+
+ 
+
+ 
+
+ 
+
+
+
+С уважением. Валерий Онучин
