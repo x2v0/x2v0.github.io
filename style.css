@@ -2482,3 +2482,60 @@ aside.profile {
 [data-theme="dark"] td {
     color: #e0e0e0 !important;
 }
+
+/* === ИСПРАВЛЕНИЕ ЗАМЕЧАНИЙ ДРУЗЕЙ (ТЕМНАЯ ТЕМА И UI) === */
+
+/* 1. ЛУНА/СОЛНЦЕ ВПРАВО (убираем из центра) */
+.topbar {
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+#theme-toggle {
+    position: static !important;
+    transform: none !important;
+    margin-left: auto !important; /* Прижимаем вправо */
+    margin-right: 15px !important;
+    font-size: 24px !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+}
+
+/* 2. УБИРАЕМ СВЕТЛЫЕ ПЯТНА В ТЕМНОЙ ТЕМЕ (Блоки Scopus, карточки проектов, ROOT) */
+[data-theme="dark"] .scopus-metrics > div,
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .hero-note,
+[data-theme="dark"] .stat-box {
+    background-color: #1e1e1e !important; /* Темно-серый вместо белого */
+    border: 1px solid #333 !important;
+    color: #e0e0e0 !important;
+}
+
+/* 3. ПОЛЯ ВВОДА В ТЕМНОЙ ТЕМЕ (форма связи) */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #444 !important;
+}
+[data-theme="dark"] input::placeholder,
+[data-theme="dark"] textarea::placeholder {
+    color: #888 !important;
+}
+
+/* 4. ЛЕВЫЙ САЙДБАР (Sticky) НА ДЕСКТОПЕ */
+@media (min-width: 901px) {
+    aside.profile {
+        position: sticky !important;
+        top: 20px !important;
+        align-self: start !important;
+        height: fit-content !important;
+    }
+}
+
+/* 5. ЗЕЛЕНЫЙ ТЕКСТ (SENIOR SOFTWARE ENGINEER) - делаем приятным */
+[data-theme="dark"] .eyebrow,
+[data-theme="dark"] .section-title span {
+    color: #81c784 !important;
+}
