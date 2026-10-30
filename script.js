@@ -50,7 +50,8 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 5. Резюме (Безопасная загрузка)
+    
+    // Резюме
     var resumeLink = document.querySelector('a[href="#resume"]');
     var resumePage = document.getElementById('resume-page');
     var resumeContent = document.getElementById('resume-content');
@@ -65,40 +66,16 @@ document.addEventListener('DOMContentLoaded', function() {
             window.scrollTo(0, 0);
             if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
 
-            // Если текст уже загружен (не "Загрузка"), ничего не делаем
-            if (resumeContent && resumeContent.innerHTML.indexOf('Загрузка') === -1 && resumeContent.innerHTML.length > 50) {
-                return;
-            }
-
-            // Иначе показываем загрузку и грузим
-            if (resumeContent) resumeContent.innerHTML = 'Загрузка резюме...';
-
-            function fetchAndRender() {
+            // Просто грузим
+            if (resumeContent) {
+                resumeContent.innerHTML = 'Загрузка...';
                 fetch('./resume.md')
-                    .then(function(r) {
-                        if (!r.ok) throw new Error('Сеть: ' + r.status);
-                        return r.text();
-                    })
+                    .then(function(r) { return r.text(); })
                     .then(function(md) {
-                        if (typeof marked !== 'undefined') {
-                            resumeContent.innerHTML = marked.parse(md);
-                        } else {
-                            resumeContent.innerHTML = '<pre style="white-space: pre-wrap;">' + md + '</pre>';
-                        }
+                        if (typeof marked !== 'undefined') resumeContent.innerHTML = marked.parse(md);
+                        else resumeContent.innerHTML = '<pre>' + md + '</pre>';
                     })
-                    .catch(function(err) {
-                        resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки: ' + err.message + '</p>';
-                    });
-            }
-
-            if (typeof marked === 'undefined') {
-                var script = document.createElement('script');
-                script.src = 'https://cdn.jsdelivr.net/npm/marked/marked.min.js';
-                script.onload = fetchAndRender;
-                script.onerror = fetchAndRender; // fallback to raw text
-                document.head.appendChild(script);
-            } else {
-                fetchAndRender();
+                    .catch(function() { resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки</p>'; });
             }
         };
     }
@@ -110,8 +87,7 @@ document.addEventListener('DOMContentLoaded', function() {
             window.scrollTo(0, 0);
         };
     }
-
-    // 6. Портфолио и Блог (через iframe)
+// 6. Портфолио и Блог (через iframe)
     function loadPage(url) {
         if (!dynamicContent || !mainContent) return;
         dynamicContent.innerHTML = '';
