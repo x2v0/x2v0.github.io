@@ -2321,7 +2321,6 @@ aside.profile {
     background: transparent !important;
 }
 
-/* === ИСПРАВЛЕНИЕ ЗАМЕЧАНИЙ КОЛИ === */
 
 /* 1. Темная тема: делаем текст светлым, чтобы его было видно */
 [data-theme="dark"] body {
@@ -2365,4 +2364,40 @@ aside.profile {
 }
 .tech-table td, .tech-table th, table td, table th {
     padding: 10px !important;
+}
+
+/* === ФИНАЛЬНЫЙ ФИКС ДЛЯ КОЛИ (ТЕМНАЯ ТЕМА) === */
+
+/* 1. Принудительно делаем ВЕСЬ текст светлым в темной теме */
+[data-theme="dark"] * {
+    color: #e0e0e0 !important;
+}
+
+/* Исключения для ссылок и акцентов */
+[data-theme="dark"] a,
+[data-theme="dark"] .accent {
+    color: #4fc3f7 !important;
+}
+
+/* 2. Увеличиваем шрифт в таблицах и списках */
+[data-theme="dark"] table,
+[data-theme="dark"] td,
+[data-theme="dark"] th,
+[data-theme="dark"] .experience-list,
+[data-theme="dark"] li {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+}
+
+/* 3. Переносим луну вправо (убираем из центра) */
+.topbar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+#theme-toggle {
+    position: static !important;
+    transform: none !important;
+    margin-right: 15px !important;
+    font-size: 24px !important;
 }
