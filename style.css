@@ -2320,3 +2320,49 @@ aside.profile {
     border: none !important;
     background: transparent !important;
 }
+
+/* === ИСПРАВЛЕНИЕ ЗАМЕЧАНИЙ КОЛИ === */
+
+/* 1. Темная тема: делаем текст светлым, чтобы его было видно */
+[data-theme="dark"] body {
+    color: #e0e0e0 !important;
+}
+[data-theme="dark"] p, 
+[data-theme="dark"] li, 
+[data-theme="dark"] td, 
+[data-theme="dark"] th,
+[data-theme="dark"] .eyebrow,
+[data-theme="dark"] .section-title {
+    color: #e0e0e0 !important;
+}
+[data-theme="dark"] strong {
+    color: #ffffff !important;
+}
+[data-theme="dark"] a {
+    color: #4fc3f7 !important;
+}
+
+/* 2. Убираем луну из центра шапки, ставим её вправо (перед гамбургером) */
+.topbar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+#theme-toggle {
+    position: static !important; /* Убираем absolute, который ставил её в центр */
+    transform: none !important;
+    margin-right: 15px !important;
+    font-size: 24px !important;
+    background: none !important;
+    border: none !important;
+    cursor: pointer !important;
+}
+
+/* 3. Увеличиваем шрифт в таблице (Область / Технологии) и в опыте работы */
+.tech-table, table, .experience-list {
+    font-size: 16px !important; /* Было 12-13px, стало 16px */
+    line-height: 1.5 !important;
+}
+.tech-table td, .tech-table th, table td, table th {
+    padding: 10px !important;
+}
