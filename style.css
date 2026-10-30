@@ -2366,7 +2366,6 @@ aside.profile {
     padding: 10px !important;
 }
 
-/* === ФИНАЛЬНЫЙ ФИКС ДЛЯ КОЛИ (ТЕМНАЯ ТЕМА) === */
 
 /* 1. Принудительно делаем ВЕСЬ текст светлым в темной теме */
 [data-theme="dark"] * {
@@ -2400,4 +2399,46 @@ aside.profile {
     transform: none !important;
     margin-right: 15px !important;
     font-size: 24px !important;
+}
+
+/* === УМНЫЙ ФИКС ТЕМНОЙ ТЕМЫ === */
+
+/* 1. Основной текст делаем светлым */
+[data-theme="dark"] body,
+[data-theme="dark"] p,
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] li {
+    color: #e0e0e0 !important;
+}
+
+/* 2. Заголовки таблиц (ОБЛАСТЬ / ТЕХНОЛОГИИ) возвращаем к темному цвету, т.к. фон у них светлый */
+[data-theme="dark"] th,
+[data-theme="dark"] .tech-table th {
+    color: #333333 !important;
+    background-color: #f0f0f0 !important;
+}
+
+/* 3. Плашки (например, про ROOT) делаем темными */
+[data-theme="dark"] .hero-note,
+[data-theme="dark"] blockquote,
+[data-theme="dark"] .highlight-box {
+    background-color: #1e1e1e !important;
+    border: 1px solid #333 !important;
+    color: #e0e0e0 !important;
+}
+
+/* 4. Текст в таблицах (кроме заголовков) делаем светлым */
+[data-theme="dark"] td {
+    color: #e0e0e0 !important;
+}
+[data-theme="dark"] td strong,
+[data-theme="dark"] td b {
+    color: #ffffff !important;
+}
+
+/* 5. Увеличиваем шрифт в таблицах для Коли */
+table, td, th {
+    font-size: 15px !important;
 }
