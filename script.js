@@ -37,7 +37,35 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuBtn.classList.remove('is-active');
             }
         }
-    });
+    
+    // 8. Обработка якорей в меню (Публикации, Квалификация и т.д.)
+    var navLinks = document.querySelectorAll('.main-nav a');
+    for (var i = 0; i < navLinks.length; i++) {
+        var link = navLinks[i];
+        var href = link.getAttribute('href');
+        
+        // Если это ссылка-якорь (начинается с #), но не портфолио, блог или резюме
+        if (href && href.indexOf('#') === 0 && href !== '#portfolio' && href !== '#blog' && href !== '#resume') {
+            link.onclick = function(e) {
+                e.preventDefault();
+                var targetId = this.getAttribute('href');
+                var targetEl = document.querySelector(targetId);
+                
+                // 1. Возвращаемся на главную (убираем iframe, блог и т.д.)
+                window._showHome();
+                if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
+                
+                // 2. Скроллим к нужному разделу (с небольшой задержкой, чтобы страница успела перестроиться)
+                if (targetEl) {
+                    setTimeout(function() {
+                        targetEl.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            };
+        }
+    }
+
+});
 
     // 3. Тема
     var themeBtn = document.getElementById('theme-toggle');
@@ -58,9 +86,65 @@ document.addEventListener('DOMContentLoaded', function() {
     if (scrollBtn) {
         window.addEventListener('scroll', function() {
             scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
+        
+    // 8. Обработка якорей в меню (Публикации, Квалификация и т.д.)
+    var navLinks = document.querySelectorAll('.main-nav a');
+    for (var i = 0; i < navLinks.length; i++) {
+        var link = navLinks[i];
+        var href = link.getAttribute('href');
+        
+        // Если это ссылка-якорь (начинается с #), но не портфолио, блог или резюме
+        if (href && href.indexOf('#') === 0 && href !== '#portfolio' && href !== '#blog' && href !== '#resume') {
+            link.onclick = function(e) {
+                e.preventDefault();
+                var targetId = this.getAttribute('href');
+                var targetEl = document.querySelector(targetId);
+                
+                // 1. Возвращаемся на главную (убираем iframe, блог и т.д.)
+                window._showHome();
+                if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
+                
+                // 2. Скроллим к нужному разделу (с небольшой задержкой, чтобы страница успела перестроиться)
+                if (targetEl) {
+                    setTimeout(function() {
+                        targetEl.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            };
+        }
+    }
+
+});
         scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'smooth' 
+    // 8. Обработка якорей в меню (Публикации, Квалификация и т.д.)
+    var navLinks = document.querySelectorAll('.main-nav a');
+    for (var i = 0; i < navLinks.length; i++) {
+        var link = navLinks[i];
+        var href = link.getAttribute('href');
+        
+        // Если это ссылка-якорь (начинается с #), но не портфолио, блог или резюме
+        if (href && href.indexOf('#') === 0 && href !== '#portfolio' && href !== '#blog' && href !== '#resume') {
+            link.onclick = function(e) {
+                e.preventDefault();
+                var targetId = this.getAttribute('href');
+                var targetEl = document.querySelector(targetId);
+                
+                // 1. Возвращаемся на главную (убираем iframe, блог и т.д.)
+                window._showHome();
+                if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
+                
+                // 2. Скроллим к нужному разделу (с небольшой задержкой, чтобы страница успела перестроиться)
+                if (targetEl) {
+                    setTimeout(function() {
+                        targetEl.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            };
+        }
+    }
+
+});
         };
     }
 
@@ -83,7 +167,35 @@ document.addEventListener('DOMContentLoaded', function() {
                         if (typeof marked !== 'undefined') resumeContent.innerHTML = marked.parse(md);
                         else resumeContent.innerHTML = '<pre>' + md + '</pre>';
                     })
-                    .catch(function() { resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки</p>'; });
+                    .catch(function() { resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки</p>'; 
+    // 8. Обработка якорей в меню (Публикации, Квалификация и т.д.)
+    var navLinks = document.querySelectorAll('.main-nav a');
+    for (var i = 0; i < navLinks.length; i++) {
+        var link = navLinks[i];
+        var href = link.getAttribute('href');
+        
+        // Если это ссылка-якорь (начинается с #), но не портфолио, блог или резюме
+        if (href && href.indexOf('#') === 0 && href !== '#portfolio' && href !== '#blog' && href !== '#resume') {
+            link.onclick = function(e) {
+                e.preventDefault();
+                var targetId = this.getAttribute('href');
+                var targetEl = document.querySelector(targetId);
+                
+                // 1. Возвращаемся на главную (убираем iframe, блог и т.д.)
+                window._showHome();
+                if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
+                
+                // 2. Скроллим к нужному разделу (с небольшой задержкой, чтобы страница успела перестроиться)
+                if (targetEl) {
+                    setTimeout(function() {
+                        targetEl.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            };
+        }
+    }
+
+});
             }
         };
     }
@@ -142,4 +254,32 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
     }
+
+    // 8. Обработка якорей в меню (Публикации, Квалификация и т.д.)
+    var navLinks = document.querySelectorAll('.main-nav a');
+    for (var i = 0; i < navLinks.length; i++) {
+        var link = navLinks[i];
+        var href = link.getAttribute('href');
+        
+        // Если это ссылка-якорь (начинается с #), но не портфолио, блог или резюме
+        if (href && href.indexOf('#') === 0 && href !== '#portfolio' && href !== '#blog' && href !== '#resume') {
+            link.onclick = function(e) {
+                e.preventDefault();
+                var targetId = this.getAttribute('href');
+                var targetEl = document.querySelector(targetId);
+                
+                // 1. Возвращаемся на главную (убираем iframe, блог и т.д.)
+                window._showHome();
+                if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
+                
+                // 2. Скроллим к нужному разделу (с небольшой задержкой, чтобы страница успела перестроиться)
+                if (targetEl) {
+                    setTimeout(function() {
+                        targetEl.scrollIntoView({ behavior: 'smooth' });
+                    }, 100);
+                }
+            };
+        }
+    }
+
 });
