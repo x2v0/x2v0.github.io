@@ -26,7 +26,23 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuBtn.classList.remove('is-active');
             }
         }
-    });
+    
+    // Глобальная функция возврата на главную (для inline-вызовов)
+    window._showHome = function() {
+        var mainContent = document.getElementById('home-page');
+        var dynamicContent = document.getElementById('dynamic-content');
+        var resumePage = document.getElementById('resume-page');
+        
+        if (mainContent) mainContent.style.display = '';
+        if (dynamicContent) dynamicContent.style.display = 'none';
+        if (resumePage) {
+            resumePage.hidden = true;
+            resumePage.style.display = 'none';
+        }
+        window.scrollTo(0, 0);
+    };
+
+});
 
     // 3. Тема
     var themeBtn = document.getElementById('theme-toggle');
@@ -47,9 +63,41 @@ document.addEventListener('DOMContentLoaded', function() {
     if (scrollBtn) {
         window.addEventListener('scroll', function() {
             scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        });
+        
+    // Глобальная функция возврата на главную (для inline-вызовов)
+    window._showHome = function() {
+        var mainContent = document.getElementById('home-page');
+        var dynamicContent = document.getElementById('dynamic-content');
+        var resumePage = document.getElementById('resume-page');
+        
+        if (mainContent) mainContent.style.display = '';
+        if (dynamicContent) dynamicContent.style.display = 'none';
+        if (resumePage) {
+            resumePage.hidden = true;
+            resumePage.style.display = 'none';
+        }
+        window.scrollTo(0, 0);
+    };
+
+});
         scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            window.scrollTo({ top: 0, behavior: 'smooth' 
+    // Глобальная функция возврата на главную (для inline-вызовов)
+    window._showHome = function() {
+        var mainContent = document.getElementById('home-page');
+        var dynamicContent = document.getElementById('dynamic-content');
+        var resumePage = document.getElementById('resume-page');
+        
+        if (mainContent) mainContent.style.display = '';
+        if (dynamicContent) dynamicContent.style.display = 'none';
+        if (resumePage) {
+            resumePage.hidden = true;
+            resumePage.style.display = 'none';
+        }
+        window.scrollTo(0, 0);
+    };
+
+});
         };
     }
 
@@ -79,7 +127,23 @@ document.addEventListener('DOMContentLoaded', function() {
                     })
                     .catch(function(err) {
                         resumeContent.innerHTML = '<p style="color:red;">Ошибка: ' + err.message + '</p>';
-                    });
+                    
+    // Глобальная функция возврата на главную (для inline-вызовов)
+    window._showHome = function() {
+        var mainContent = document.getElementById('home-page');
+        var dynamicContent = document.getElementById('dynamic-content');
+        var resumePage = document.getElementById('resume-page');
+        
+        if (mainContent) mainContent.style.display = '';
+        if (dynamicContent) dynamicContent.style.display = 'none';
+        if (resumePage) {
+            resumePage.hidden = true;
+            resumePage.style.display = 'none';
+        }
+        window.scrollTo(0, 0);
+    };
+
+});
             }
         };
     }
@@ -144,4 +208,20 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         };
     }
+
+    // Глобальная функция возврата на главную (для inline-вызовов)
+    window._showHome = function() {
+        var mainContent = document.getElementById('home-page');
+        var dynamicContent = document.getElementById('dynamic-content');
+        var resumePage = document.getElementById('resume-page');
+        
+        if (mainContent) mainContent.style.display = '';
+        if (dynamicContent) dynamicContent.style.display = 'none';
+        if (resumePage) {
+            resumePage.hidden = true;
+            resumePage.style.display = 'none';
+        }
+        window.scrollTo(0, 0);
+    };
+
 });
