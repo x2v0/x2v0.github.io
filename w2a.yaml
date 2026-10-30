@@ -1,0 +1,15 @@
+app:
+  name: "Resume Card"
+  package: "com.example.resumecard"
+  version_name: "1.0.0"
+  version_code: 1
+  icon: "images/me.jpg"
+
+web:
+  start_url: "index.html"
+  settings:
+    allow_file_access: true  # Важно для локального JSON (orcid_works.json)
+    dom_storage_enabled: true # Важно для сохранения темы
+    java_script_enabled: true
+  permissions:
+    - android.permission.INTERNET
