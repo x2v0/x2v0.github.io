@@ -2393,3 +2393,26 @@ a, .accent {
     border: 1px solid var(--border) !important;
     color: var(--accent) !important;
 }
+
+/* === ФИНАЛЬНЫЙ ШТРИХ (ЛУНА ВПРАВО, ТАБЛИЦА КРУПНЕЕ) === */
+
+/* 1. Принудительно убираем луну из центра */
+.topbar {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+}
+#theme-toggle {
+    position: static !important; /* Убираем центрирование Replit */
+    transform: none !important;
+    margin-left: auto !important; /* Толкаем вправо */
+    margin-right: 15px !important;
+    font-size: 24px !important;
+    z-index: 100 !important; /* Чтобы была поверх */
+}
+
+/* 2. Чуть увеличиваем шрифт в таблице (для Коли) */
+.tech-table, table, td, th {
+    font-size: 15px !important; /* Было 13px, стало 15px */
+    line-height: 1.5 !important;
+}
