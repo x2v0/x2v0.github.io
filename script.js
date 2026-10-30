@@ -8,15 +8,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var resumeContent = document.getElementById('resume-content');
     var scrollBtn = document.getElementById('scroll-top');
 
-    // Глобальная функция возврата на главную (для кнопки в резюме)
+    // Функция возврата на главную
     window._showHome = function() {
         if (mainContent) mainContent.style.display = '';
-        if (dynamicContent) dynamicContent.style.display = 'none';
+        if (dynamicContent) {
+            dynamicContent.style.display = 'none';
+            dynamicContent.innerHTML = ''; // Очищаем iframe
+        }
         if (resumePage) {
             resumePage.hidden = true;
             resumePage.style.display = 'none';
         }
-        window.scrollTo(0, 0);
     };
 
     // 1. Мобильное меню
@@ -37,35 +39,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuBtn.classList.remove('is-active');
             }
         }
-    
-    // 8. Обработка якорей в меню (Публикации, Квалификация и т.д.)
-    var navLinks = document.querySelectorAll('.main-nav a');
-    for (var i = 0; i < navLinks.length; i++) {
-        var link = navLinks[i];
-        var href = link.getAttribute('href');
-        
-        // Если это ссылка-якорь (начинается с #), но не портфолио, блог или резюме
-        if (href && href.indexOf('#') === 0 && href !== '#portfolio' && href !== '#blog' && href !== '#resume') {
-            link.onclick = function(e) {
-                e.preventDefault();
-                var targetId = this.getAttribute('href');
-                var targetEl = document.querySelector(targetId);
-                
-                // 1. Возвращаемся на главную (убираем iframe, блог и т.д.)
-                window._showHome();
-                if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
-                
-                // 2. Скроллим к нужному разделу (с небольшой задержкой, чтобы страница успела перестроиться)
-                if (targetEl) {
-                    setTimeout(function() {
-                        targetEl.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                }
-            };
-        }
-    }
-
-});
+    });
 
     // 3. Тема
     var themeBtn = document.getElementById('theme-toggle');
@@ -86,69 +60,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (scrollBtn) {
         window.addEventListener('scroll', function() {
             scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        
-    // 8. Обработка якорей в меню (Публикации, Квалификация и т.д.)
-    var navLinks = document.querySelectorAll('.main-nav a');
-    for (var i = 0; i < navLinks.length; i++) {
-        var link = navLinks[i];
-        var href = link.getAttribute('href');
-        
-        // Если это ссылка-якорь (начинается с #), но не портфолио, блог или резюме
-        if (href && href.indexOf('#') === 0 && href !== '#portfolio' && href !== '#blog' && href !== '#resume') {
-            link.onclick = function(e) {
-                e.preventDefault();
-                var targetId = this.getAttribute('href');
-                var targetEl = document.querySelector(targetId);
-                
-                // 1. Возвращаемся на главную (убираем iframe, блог и т.д.)
-                window._showHome();
-                if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
-                
-                // 2. Скроллим к нужному разделу (с небольшой задержкой, чтобы страница успела перестроиться)
-                if (targetEl) {
-                    setTimeout(function() {
-                        targetEl.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                }
-            };
-        }
-    }
-
-});
+        });
         scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' 
-    // 8. Обработка якорей в меню (Публикации, Квалификация и т.д.)
-    var navLinks = document.querySelectorAll('.main-nav a');
-    for (var i = 0; i < navLinks.length; i++) {
-        var link = navLinks[i];
-        var href = link.getAttribute('href');
-        
-        // Если это ссылка-якорь (начинается с #), но не портфолио, блог или резюме
-        if (href && href.indexOf('#') === 0 && href !== '#portfolio' && href !== '#blog' && href !== '#resume') {
-            link.onclick = function(e) {
-                e.preventDefault();
-                var targetId = this.getAttribute('href');
-                var targetEl = document.querySelector(targetId);
-                
-                // 1. Возвращаемся на главную (убираем iframe, блог и т.д.)
-                window._showHome();
-                if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
-                
-                // 2. Скроллим к нужному разделу (с небольшой задержкой, чтобы страница успела перестроиться)
-                if (targetEl) {
-                    setTimeout(function() {
-                        targetEl.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                }
-            };
-        }
-    }
-
-});
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         };
     }
 
-    // 5. Резюме (Локальный Markdown)
+    // 5. Резюме
     var resumeLink = document.querySelector('a[href="#resume"]');
     if (resumeLink && resumePage) {
         resumeLink.onclick = function(e) {
@@ -167,43 +85,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         if (typeof marked !== 'undefined') resumeContent.innerHTML = marked.parse(md);
                         else resumeContent.innerHTML = '<pre>' + md + '</pre>';
                     })
-                    .catch(function() { resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки</p>'; 
-    // 8. Обработка якорей в меню (Публикации, Квалификация и т.д.)
-    var navLinks = document.querySelectorAll('.main-nav a');
-    for (var i = 0; i < navLinks.length; i++) {
-        var link = navLinks[i];
-        var href = link.getAttribute('href');
-        
-        // Если это ссылка-якорь (начинается с #), но не портфолио, блог или резюме
-        if (href && href.indexOf('#') === 0 && href !== '#portfolio' && href !== '#blog' && href !== '#resume') {
-            link.onclick = function(e) {
-                e.preventDefault();
-                var targetId = this.getAttribute('href');
-                var targetEl = document.querySelector(targetId);
-                
-                // 1. Возвращаемся на главную (убираем iframe, блог и т.д.)
-                window._showHome();
-                if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
-                
-                // 2. Скроллим к нужному разделу (с небольшой задержкой, чтобы страница успела перестроиться)
-                if (targetEl) {
-                    setTimeout(function() {
-                        targetEl.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
-                }
-            };
-        }
-    }
-
-});
+                    .catch(function() { resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки</p>'; });
             }
         };
     }
 
     // 6. Портфолио и Блог (через iframe)
-    function loadPage(url, title) {
+    function loadPage(url) {
         if (!dynamicContent || !mainContent) return;
-        
         dynamicContent.innerHTML = '';
         dynamicContent.style.display = 'block';
         mainContent.style.display = 'none';
@@ -213,11 +102,7 @@ document.addEventListener('DOMContentLoaded', function() {
         var backBtn = document.createElement('button');
         backBtn.innerHTML = '← Назад на главную';
         backBtn.style.cssText = 'margin: 20px; padding: 10px 15px; background:#0288d1; color:#fff; border:none; border-radius:5px; cursor:pointer; font-size:16px;';
-        backBtn.onclick = function() {
-            dynamicContent.style.display = 'none';
-            mainContent.style.display = '';
-            window.scrollTo(0, 0);
-        };
+        backBtn.onclick = function() { window._showHome(); window.scrollTo(0, 0); };
         dynamicContent.appendChild(backBtn);
 
         var iframe = document.createElement('iframe');
@@ -233,53 +118,50 @@ document.addEventListener('DOMContentLoaded', function() {
         navPortfolio.onclick = function(e) {
             e.preventDefault();
             if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
-            loadPage('./portfolio/index.html', 'Portfolio');
+            loadPage('./portfolio/index.html');
         };
     }
     if (navBlog) {
         navBlog.onclick = function(e) {
             e.preventDefault();
             if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
-            loadPage('./year-archive/index.html', 'Блог');
+            loadPage('./year-archive/index.html');
         };
     }
 
-    // 7. Логотип (ВО)
-    var brandLink = document.querySelector('.brand');
-    if (brandLink) {
-        brandLink.onclick = function(e) {
-            if ((dynamicContent && dynamicContent.style.display === 'block') || (resumePage && resumePage.style.display === 'block')) {
-                e.preventDefault();
-                window._showHome();
-            }
-        };
-    }
-
-    // 8. Обработка якорей в меню (Публикации, Квалификация и т.д.)
+    // 7. Якоря (Публикации и т.д.) - Сначала Назад, потом Скролл
     var navLinks = document.querySelectorAll('.main-nav a');
     for (var i = 0; i < navLinks.length; i++) {
         var link = navLinks[i];
         var href = link.getAttribute('href');
         
-        // Если это ссылка-якорь (начинается с #), но не портфолио, блог или резюме
         if (href && href.indexOf('#') === 0 && href !== '#portfolio' && href !== '#blog' && href !== '#resume') {
             link.onclick = function(e) {
                 e.preventDefault();
                 var targetId = this.getAttribute('href');
                 var targetEl = document.querySelector(targetId);
                 
-                // 1. Возвращаемся на главную (убираем iframe, блог и т.д.)
-                window._showHome();
+                window._showHome(); // 1. Назад
                 if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
                 
-                // 2. Скроллим к нужному разделу (с небольшой задержкой, чтобы страница успела перестроиться)
                 if (targetEl) {
                     setTimeout(function() {
-                        targetEl.scrollIntoView({ behavior: 'smooth' });
-                    }, 100);
+                        targetEl.scrollIntoView({ behavior: 'smooth' }); // 2. Скролл
+                    }, 50);
                 }
             };
         }
     }
 
+    // 8. Логотип (ВО)
+    var brandLink = document.querySelector('.brand');
+    if (brandLink) {
+        brandLink.onclick = function(e) {
+            if ((dynamicContent && dynamicContent.style.display === 'block') || (resumePage && resumePage.style.display === 'block')) {
+                e.preventDefault();
+                window._showHome();
+                window.scrollTo(0, 0);
+            }
+        };
+    }
 });
