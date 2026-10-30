@@ -2320,3 +2320,76 @@ aside.profile {
     border: none !important;
     background: transparent !important;
 }
+
+/* --- КОМПАКТНЫЕ ПИЛЮЛИ (КОМПРОМИСС ДЛЯ ВСЕХ БРАУЗЕРОВ) --- */
+.tech-tag, 
+.tech-stack span, 
+span[class*="tag"],
+td span {
+    font-size: 11px !important;       /* Уменьшаем шрифт (было 12) */
+    padding: 1px 6px !important;      /* Очень компактные отступы */
+    border-radius: 8px !important;    /* Мягкое скругление */
+    margin: 1px !important;           /* Убираем лишние отступы */
+    display: inline-block !important;
+    line-height: 1.2 !important;
+    border: 1px solid #444 !important; /* Тонкая рамка для четкости */
+    background-color: transparent !important;
+    color: #4fc3f7 !important;
+}
+
+/* В светлой теме рамка и цвет тоже должны быть аккуратными */
+[data-theme="light"] .tech-tag, 
+[data-theme="light"] .tech-stack span,
+[data-theme="light"] td span {
+    border-color: #0288d1 !important;
+    color: #0288d1 !important;
+}
+
+/* === ОРИГИНАЛЬНАЯ ПАЛИТРА REPLIT === */
+
+/* Светлая тема (по умолчанию) */
+:root {
+    --bg: #f5f3eb;
+    --text: #1a1a1a;
+    --border: #dcdcdc;
+    --accent: #0288d1;
+    --card-bg: #ffffff;
+}
+
+/* Темная тема (как задумал Replit) */
+[data-theme="dark"] {
+    --bg: #121212;
+    --text: #e0e0e0;
+    --border: #333333;
+    --accent: #4fc3f7; /* Мягкий голубой, чтобы не резал глаза */
+    --card-bg: #1e1e1e;
+}
+
+/* Принудительное применение переменных */
+body {
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+}
+
+/* Таблицы (чтобы не было белых колонок) */
+table, th, td {
+    background-color: var(--bg) !important;
+    color: var(--text) !important;
+    border-color: var(--border) !important;
+}
+
+th {
+    color: var(--text) !important;
+}
+
+/* Ссылки и акценты */
+a, .accent {
+    color: var(--accent) !important;
+}
+
+/* Пилюли (C++, Go) */
+.tech-tag {
+    background-color: transparent !important;
+    border: 1px solid var(--border) !important;
+    color: var(--accent) !important;
+}
