@@ -2454,3 +2454,31 @@ aside.profile {
     color: #81c784 !important;
     border-color: #81c784 !important;
 }
+
+/* === ИСПРАВЛЕНИЕ ГАМБУРГЕРА И ТАБЛИЦЫ === */
+
+/* 1. Гамбургер (палочки) в темной теме всегда светлый */
+[data-theme="dark"] .nav-menu span {
+    background-color: #e0e0e0 !important;
+    display: block !important; /* На случай, если Mi Browser их скрыл */
+}
+
+/* 2. Таблица: убираем белый фон, делаем темно-серым */
+[data-theme="dark"] table,
+[data-theme="dark"] th,
+[data-theme="dark"] td {
+    background-color: #1e1e1e !important; /* Общий темный фон для всей таблицы */
+    border-color: #444 !important;
+}
+
+/* 3. Заголовки (ОБЛАСТЬ, ТЕХНОЛОГИИ) и левая колонка (Языки, Сборка) - серые */
+[data-theme="dark"] th,
+[data-theme="dark"] td:first-child {
+    background-color: #2a2a2a !important; /* Темно-серый фон */
+    color: #e0e0e0 !important;            /* Светлый текст */
+}
+
+/* 4. Обычный текст в ячейках (C++, Go и описания) */
+[data-theme="dark"] td {
+    color: #e0e0e0 !important;
+}
