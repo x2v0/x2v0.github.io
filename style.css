@@ -2442,7 +2442,6 @@ table, td, th {
     font-size: 15px !important;
 }
 
-/* === МЕГА-ФИКС ДЛЯ КОЛИ === */
 
 /* 1. УВЕЛИЧИВАЕМ ВЕСЬ БАЗОВЫЙ ТЕКСТ (чтобы читалось без очков) */
 body {
@@ -2494,5 +2493,55 @@ h1, h2, h3 {
     background-color: #e0e0e0 !important;
 }
 [data-theme="dark"] td {
+    color: #e0e0e0 !important;
+}
+
+/* === АККУРАТНЫЙ ФИКС (ЧИТАЕМОСТЬ И ТЕМНАЯ ТЕМА) === */
+
+/* 1. Умеренно увеличиваем шрифт (17px вместо 18px) */
+body {
+    font-size: 17px !important;
+}
+p, li, td, span, div {
+    font-size: 1.05rem !important;
+    line-height: 1.6 !important;
+}
+
+/* 2. Темная тема: вся таблица темная, текст светлый */
+[data-theme="dark"] table,
+[data-theme="dark"] th,
+[data-theme="dark"] td {
+    background-color: #1e1e1e !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+}
+[data-theme="dark"] th {
+    background-color: #2a2a2a !important; /* Чуть светлее для заголовков */
+    color: #ffffff !important;
+    font-weight: bold !important;
+}
+
+/* 3. Выравниваем контакты (LOC, MAIL и т.д.) в одну линию */
+.profile-meta {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 15px !important;
+}
+.profile-meta a, 
+.profile-meta span {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 15px !important; /* Расстояние между "LOC" и "Протвино" */
+    line-height: 1.4 !important;
+}
+.meta-label {
+    min-width: 80px !important; /* Фиксируем ширину иконки+текста */
+    color: #888 !important; /* Делаем подписи серыми */
+}
+
+/* 4. Убираем белый фон у плашек в темной теме */
+[data-theme="dark"] blockquote,
+[data-theme="dark"] .hero-note {
+    background-color: #1e1e1e !important;
     color: #e0e0e0 !important;
 }
