@@ -9,18 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var scrollBtn = document.getElementById('scroll-top');
 
     // Функция возврата на главную
-    window._showHome = function() {
-        if (mainContent) mainContent.style.display = '';
-        if (dynamicContent) {
-            dynamicContent.style.display = 'none';
-            dynamicContent.innerHTML = ''; // Очищаем iframe
-        }
-        if (resumePage) {
-            resumePage.hidden = true;
-            resumePage.style.display = 'none';
-        }
-    };
-
+    
     // 1. Мобильное меню
     if (menuBtn && nav) {
         menuBtn.onclick = function(e) {
@@ -66,22 +55,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 5. Резюме
-    var resumeLink = document.querySelector('a[href="#resume"]');
-    if (resumeLink && resumePage) {
-        resumeLink.onclick = function(e) {
-            e.preventDefault();
-            if (mainContent) mainContent.style.display = 'none';
-            if (dynamicContent) dynamicContent.style.display = 'none';
-            resumePage.hidden = false;
-            resumePage.style.display = 'block';
-            window.scrollTo(0, 0);
-            if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
-
-            if (resumeContent && resumeContent.innerHTML.indexOf('Загрузка') !== -1) {
-                
-            }
-        };
+    };
     }
 
     // 6. Портфолио и Блог (через iframe)
