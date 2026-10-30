@@ -2321,13 +2321,6 @@ aside.profile {
     background: transparent !important;
 }
 
-/* === УЛУЧШЕНИЯ ТЕМНОЙ ТЕМЫ (ЯРЧЕ И КОМПАКТНЕЕ) === */
-
-[data-theme="dark"] {
-    --fg: #f0f0f0 !important;      /* Основной текст делаем почти белым */
-    --fg2: #d0d0d0 !important;     /* Вторичный текст (описания) */
-    --fg3: #a0a0a0 !important;     /* Третичный текст (подписи) */
-}
 
 /* Улучшаем читаемость таблицы в темной теме */
 [data-theme="dark"] td {
@@ -2349,6 +2342,43 @@ aside.profile {
 }
 
 /* Убираем лишние пробелы между пилюлями в таблице */
+[data-theme="dark"] td .tech-tag {
+    margin-right: 2px !important;
+}
+
+/* === ЖЕСТКИЙ ФИКС ТЕМНОЙ ТЕМЫ (ВИДИМЫЕ ИЗМЕНЕНИЯ) === */
+
+/* 1. Делаем ВЕСЬ текст в темной теме ярко-белым */
+[data-theme="dark"] body,
+[data-theme="dark"] p,
+[data-theme="dark"] td,
+[data-theme="dark"] span,
+[data-theme="dark"] div,
+[data-theme="dark"] li {
+    color: #ffffff !important;
+}
+
+/* 2. Левая колонка таблицы (Языки, Сборка) - светло-серая, но не белая */
+[data-theme="dark"] td:first-child,
+[data-theme="dark"] .meta-label {
+    color: #b0b0b0 !important;
+}
+
+/* 3. Пилюли (C++, Go) делаем маленькими и аккуратными */
+[data-theme="dark"] .tech-tag, 
+.tech-tag {
+    font-size: 10px !important;       /* Еще меньше */
+    padding: 1px 5px !important;      /* Очень компактно */
+    margin: 1px !important;
+    border-radius: 4px !important;    /* Мягкое скругление */
+    border: 1px solid #555 !important;
+    background: transparent !important;
+    color: #4fc3f7 !important;
+    display: inline-block !important;
+    line-height: 1.2 !important;
+}
+
+/* 4. Убираем лишнее пространство вокруг пилюль в таблице */
 [data-theme="dark"] td .tech-tag {
     margin-right: 2px !important;
 }
