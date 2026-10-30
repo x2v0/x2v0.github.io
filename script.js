@@ -79,13 +79,7 @@ document.addEventListener('DOMContentLoaded', function() {
             if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
 
             if (resumeContent && resumeContent.innerHTML.indexOf('Загрузка') !== -1) {
-                fetch('./resume.md')
-                    .then(function(r) { return r.text(); })
-                    .then(function(md) {
-                        if (typeof marked !== 'undefined') resumeContent.innerHTML = marked.parse(md);
-                        else resumeContent.innerHTML = '<pre>' + md + '</pre>';
-                    })
-                    .catch(function() { resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки</p>'; });
+                
             }
         };
     }
