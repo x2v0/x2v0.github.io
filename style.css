@@ -2496,7 +2496,6 @@ h1, h2, h3 {
     color: #e0e0e0 !important;
 }
 
-/* === АККУРАТНЫЙ ФИКС (ЧИТАЕМОСТЬ И ТЕМНАЯ ТЕМА) === */
 
 /* 1. Умеренно увеличиваем шрифт (17px вместо 18px) */
 body {
@@ -2544,4 +2543,26 @@ p, li, td, span, div {
 [data-theme="dark"] .hero-note {
     background-color: #1e1e1e !important;
     color: #e0e0e0 !important;
+}
+
+/* === ВОЗВРАТ НОРМАЛЬНЫХ РАЗМЕРОВ ШРИФТОВ === */
+body {
+    font-size: 16px !important; /* Стандартный размер */
+}
+p, li, td, span, div {
+    font-size: 1rem !important; /* Сбрасываем до стандартного */
+    line-height: 1.5 !important;
+}
+h1 { font-size: 2.5rem !important; }
+h2 { font-size: 2rem !important; }
+h3 { font-size: 1.5rem !important; }
+
+/* Выравниваем контакты в одну линию (без изменений размера) */
+.profile-meta a, .profile-meta span {
+    display: flex !important;
+    align-items: center !important;
+    gap: 10px !important;
+}
+.meta-label {
+    min-width: 60px !important; /* Компактный отступ */
 }
