@@ -2346,7 +2346,6 @@ aside.profile {
     margin-right: 2px !important;
 }
 
-/* === ЖЕСТКИЙ ФИКС ТЕМНОЙ ТЕМЫ (ВИДИМЫЕ ИЗМЕНЕНИЯ) === */
 
 /* 1. Делаем ВЕСЬ текст в темной теме ярко-белым */
 [data-theme="dark"] body,
@@ -2381,4 +2380,28 @@ aside.profile {
 /* 4. Убираем лишнее пространство вокруг пилюль в таблице */
 [data-theme="dark"] td .tech-tag {
     margin-right: 2px !important;
+}
+
+/* === ТОЧЕЧНЫЙ ФИКС ЦВЕТОВ ДЛЯ КОЛИ === */
+
+/* 1. Белый текст на светлом фоне (плашка ROOT и заголовки таблиц) -> делаем ТЕМНЫМ */
+[data-theme="dark"] .hero-note,
+[data-theme="dark"] .hero-note *,
+[data-theme="dark"] th {
+    color: #1a1a1a !important;
+}
+
+/* 2. Зеленоватый текст (SENIOR SOFTWARE ENGINEER) -> делаем ЯРКО-ЗЕЛЕНЫМ */
+[data-theme="dark"] .eyebrow,
+[data-theme="dark"] .hero-note strong,
+[data-theme="dark"] .section-title {
+    color: #4caf50 !important; /* Насыщенный зеленый */
+}
+
+/* Остальной текст в темной теме оставляем светло-серым (не белым, чтобы глаза не резало) */
+[data-theme="dark"] body,
+[data-theme="dark"] p,
+[data-theme="dark"] td,
+[data-theme="dark"] li {
+    color: #e0e0e0 !important;
 }
