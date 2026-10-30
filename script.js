@@ -43,7 +43,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 4. Наверх
+    // 4. Кнопка Наверх
     if (scrollBtn) {
         window.addEventListener('scroll', function() {
             scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
@@ -82,7 +82,49 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 6. Портфолио и Блог
+    // 6. Загрузка Публикаций (ORCID) из локального файла
+    var listContainer = document.getElementById('orcid-publications-list');
+    if (listContainer) {
+        fetch('./orcid_works.json')
+            .then(function(r) { return r.json(); })
+            .then(function(data) {
+                if (!data.group) throw new Error('No data');
+                var allPubs = data.group.map(function(item) {
+                    var work = item['work-summary'][0];
+                    var year = work['publication-date'] && work['publication-date'].year ? work['publication-date'].year.value : '';
+                    var doi = '';
+                    if (work['external-ids'] && work['external-ids']['external-id']) {
+                        var ids = work['external-ids']['external-id'];
+                        for (var k = 0; k < ids.length; k++) {
+                            if (ids[k]['external-id-type'] === 'doi') doi = ids[k]['external-id-value'];
+                        }
+                    }
+                    return { title: work.title.title.value, year: year, doi: doi };
+                });
+
+                var render = function(filter) {
+                    filter = filter || '';
+                    var filtered = allPubs.filter(function(p){ return p.title.toLowerCase().indexOf(filter.toLowerCase()) !== -1 || p.year.indexOf(filter) !== -1; });
+                    if (!filtered.length) { listContainer.innerHTML = '<p>Нет результатов.</p>'; return; }
+                    var html = '<ol style="padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">';
+                    for (var i = 0; i < filtered.length; i++) {
+                        var p = filtered[i];
+                        html += '<li><strong>' + p.title + '</strong> (' + p.year + ')';
+                        if (p.doi) html += ' <a href="https://doi.org/' + p.doi + '" target="_blank">[DOI]</a>';
+                        html += '</li>';
+                    }
+                    listContainer.innerHTML = html + '</ol>';
+                };
+                render();
+                var searchInput = document.getElementById('pub-search');
+                if (searchInput) searchInput.oninput = function(e) { render(e.target.value); };
+            })
+            .catch(function(err) { 
+                listContainer.innerHTML = '<p style="color:red;">Ошибка загрузки публикаций: ' + err.message + '</p>'; 
+            });
+    }
+
+    // 7. Портфолио и Блог
     function loadPage(url) {
         if (!dynamicContent || !mainContent) return;
         dynamicContent.innerHTML = '';
@@ -121,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function() {
         };
     }
 
-    // 7. Якоря (Публикации) - Назад + Скролл
+    // 8. Якоря (Публикации) - Назад + Скролл
     var navLinks = document.querySelectorAll('.main-nav a');
     for (var i = 0; i < navLinks.length; i++) {
         var href = navLinks[i].getAttribute('href');
@@ -138,7 +180,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
     }
 
-    // 8. Логотип (ВО)
+    // 9. Логотип (ВО)
     var brandLink = document.querySelector('.brand');
     if (brandLink) {
         brandLink.onclick = function(e) {
