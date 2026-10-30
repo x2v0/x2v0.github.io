@@ -104,16 +104,40 @@ document.addEventListener('DOMContentLoaded', function() {
 
                 var render = function(filter) {
                     filter = filter || '';
-                    var filtered = allPubs.filter(function(p){ return p.title.toLowerCase().indexOf(filter.toLowerCase()) !== -1 || p.year.indexOf(filter) !== -1; });
-                    if (!filtered.length) { listContainer.innerHTML = '<p>Нет результатов.</p>'; return; }
-                    var html = '<ol style="padding-left: 20px; display: flex; flex-direction: column; gap: 10px;">';
+                    var filtered = allPubs.filter(function(p){ 
+                        return p.title.toLowerCase().indexOf(filter.toLowerCase()) !== -1 || p.year.indexOf(filter) !== -1; 
+                    });
+                    
+                    if (!filtered.length) { 
+                        listContainer.innerHTML = '<p>Нет результатов.</p>'; 
+                        return; 
+                    }
+                    
+                    // Оборачиваем таблицу в div для горизонтальной прокрутки на узких экранах
+                    var html = '<div style="overflow-x: auto;"><table class="publications-table" style="width: 100%; border-collapse: collapse; font-size: 14px; margin-top: 10px;">';
+                    html += '<thead><tr>';
+                    html += '<th style="text-align: left; padding: 8px; border-bottom: 2px solid var(--border, #444); white-space: nowrap;">Год</th>';
+                    html += '<th style="text-align: left; padding: 8px; border-bottom: 2px solid var(--border, #444);">Название</th>';
+                    html += '<th style="text-align: left; padding: 8px; border-bottom: 2px solid var(--border, #444);">Ссылка</th>';
+                    html += '</tr></thead><tbody>';
+                    
                     for (var i = 0; i < filtered.length; i++) {
                         var p = filtered[i];
-                        html += '<li><strong>' + p.title + '</strong> (' + p.year + ')';
-                        if (p.doi) html += ' <a href="https://doi.org/' + p.doi + '" target="_blank">[DOI]</a>';
-                        html += '</li>';
+                        html += '<tr>';
+                        html += '<td style="padding: 8px; border-bottom: 1px solid var(--border, #333); white-space: nowrap; vertical-align: top;">' + p.year + '</td>';
+                        html += '<td style="padding: 8px; border-bottom: 1px solid var(--border, #333); vertical-align: top;">' + p.title + '</td>';
+                        html += '<td style="padding: 8px; border-bottom: 1px solid var(--border, #333); vertical-align: top;">';
+                        if (p.doi) {
+                            html += '<a href="https://doi.org/' + p.doi + '" target="_blank" style="color: #4fc3f7;">DOI</a>';
+                        } else {
+                            html += '-';
+                        }
+                        html += '</td>';
+                        html += '</tr>';
                     }
-                    listContainer.innerHTML = html + '</ol>';
+                    
+                    html += '</tbody></table></div>';
+                    listContainer.innerHTML = html;
                 };
                 render();
                 var searchInput = document.getElementById('pub-search');
