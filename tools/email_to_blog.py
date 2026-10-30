@@ -77,8 +77,16 @@ def fetch_emails():
                 except:
                     date_iso = datetime.now().strftime("%Y-%m-%d")
 
-                # Уникальный ID (дата + тема)
-                post_id = f"{date_iso}-{subject[:20].replace(' ', '-')}"
+                # Уникальный ID (используем Message-ID из заголовков, чтобы избежать дублей)
+                msg_id = msg.get("Message-ID", "")
+                if msg_id:
+                    # Очищаем ID от угловых скобок и символа @
+                    safe_id = msg_id.replace("<", "").replace(">", "").replace("@", "-")
+                else:
+                    # Запасной вариант, если Message-ID нет
+                    safe_id = f"{date_iso}-{datetime.now().strftime('%H%M%S')}"
+                
+                post_id = safe_id
 
                 if post_id in existing_ids:
                     continue # Пропускаем, если уже есть
