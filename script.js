@@ -8,6 +8,17 @@ document.addEventListener('DOMContentLoaded', function() {
     var resumeContent = document.getElementById('resume-content');
     var scrollBtn = document.getElementById('scroll-top');
 
+    // Глобальная функция возврата на главную (для кнопки в резюме)
+    window._showHome = function() {
+        if (mainContent) mainContent.style.display = '';
+        if (dynamicContent) dynamicContent.style.display = 'none';
+        if (resumePage) {
+            resumePage.hidden = true;
+            resumePage.style.display = 'none';
+        }
+        window.scrollTo(0, 0);
+    };
+
     // 1. Мобильное меню
     if (menuBtn && nav) {
         menuBtn.onclick = function(e) {
@@ -26,23 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 menuBtn.classList.remove('is-active');
             }
         }
-    
-    // Глобальная функция возврата на главную (для inline-вызовов)
-    window._showHome = function() {
-        var mainContent = document.getElementById('home-page');
-        var dynamicContent = document.getElementById('dynamic-content');
-        var resumePage = document.getElementById('resume-page');
-        
-        if (mainContent) mainContent.style.display = '';
-        if (dynamicContent) dynamicContent.style.display = 'none';
-        if (resumePage) {
-            resumePage.hidden = true;
-            resumePage.style.display = 'none';
-        }
-        window.scrollTo(0, 0);
-    };
-
-});
+    });
 
     // 3. Тема
     var themeBtn = document.getElementById('theme-toggle');
@@ -63,45 +58,13 @@ document.addEventListener('DOMContentLoaded', function() {
     if (scrollBtn) {
         window.addEventListener('scroll', function() {
             scrollBtn.style.display = window.scrollY > 300 ? 'block' : 'none';
-        
-    // Глобальная функция возврата на главную (для inline-вызовов)
-    window._showHome = function() {
-        var mainContent = document.getElementById('home-page');
-        var dynamicContent = document.getElementById('dynamic-content');
-        var resumePage = document.getElementById('resume-page');
-        
-        if (mainContent) mainContent.style.display = '';
-        if (dynamicContent) dynamicContent.style.display = 'none';
-        if (resumePage) {
-            resumePage.hidden = true;
-            resumePage.style.display = 'none';
-        }
-        window.scrollTo(0, 0);
-    };
-
-});
+        });
         scrollBtn.onclick = function() {
-            window.scrollTo({ top: 0, behavior: 'smooth' 
-    // Глобальная функция возврата на главную (для inline-вызовов)
-    window._showHome = function() {
-        var mainContent = document.getElementById('home-page');
-        var dynamicContent = document.getElementById('dynamic-content');
-        var resumePage = document.getElementById('resume-page');
-        
-        if (mainContent) mainContent.style.display = '';
-        if (dynamicContent) dynamicContent.style.display = 'none';
-        if (resumePage) {
-            resumePage.hidden = true;
-            resumePage.style.display = 'none';
-        }
-        window.scrollTo(0, 0);
-    };
-
-});
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         };
     }
 
-    // 5. Резюме (Загрузка локального Markdown)
+    // 5. Резюме (Локальный Markdown)
     var resumeLink = document.querySelector('a[href="#resume"]');
     if (resumeLink && resumePage) {
         resumeLink.onclick = function(e) {
@@ -117,33 +80,10 @@ document.addEventListener('DOMContentLoaded', function() {
                 fetch('./resume.md')
                     .then(function(r) { return r.text(); })
                     .then(function(md) {
-                        // Если marked загружен, рендерим красиво
-                        if (typeof marked !== 'undefined') {
-                            resumeContent.innerHTML = marked.parse(md);
-                        } else {
-                            // Если нет — выводим как текст
-                            resumeContent.innerHTML = '<pre style="white-space: pre-wrap;">' + md + '</pre>';
-                        }
+                        if (typeof marked !== 'undefined') resumeContent.innerHTML = marked.parse(md);
+                        else resumeContent.innerHTML = '<pre>' + md + '</pre>';
                     })
-                    .catch(function(err) {
-                        resumeContent.innerHTML = '<p style="color:red;">Ошибка: ' + err.message + '</p>';
-                    
-    // Глобальная функция возврата на главную (для inline-вызовов)
-    window._showHome = function() {
-        var mainContent = document.getElementById('home-page');
-        var dynamicContent = document.getElementById('dynamic-content');
-        var resumePage = document.getElementById('resume-page');
-        
-        if (mainContent) mainContent.style.display = '';
-        if (dynamicContent) dynamicContent.style.display = 'none';
-        if (resumePage) {
-            resumePage.hidden = true;
-            resumePage.style.display = 'none';
-        }
-        window.scrollTo(0, 0);
-    };
-
-});
+                    .catch(function() { resumeContent.innerHTML = '<p style="color:red;">Ошибка загрузки</p>'; });
             }
         };
     }
@@ -198,30 +138,8 @@ document.addEventListener('DOMContentLoaded', function() {
         brandLink.onclick = function(e) {
             if ((dynamicContent && dynamicContent.style.display === 'block') || (resumePage && resumePage.style.display === 'block')) {
                 e.preventDefault();
-                if (dynamicContent) dynamicContent.style.display = 'none';
-                if (resumePage) {
-                    resumePage.hidden = true;
-                    resumePage.style.display = 'none';
-                }
-                if (mainContent) mainContent.style.display = '';
-                window.scrollTo(0, 0);
+                window._showHome();
             }
         };
     }
-
-    // Глобальная функция возврата на главную (для inline-вызовов)
-    window._showHome = function() {
-        var mainContent = document.getElementById('home-page');
-        var dynamicContent = document.getElementById('dynamic-content');
-        var resumePage = document.getElementById('resume-page');
-        
-        if (mainContent) mainContent.style.display = '';
-        if (dynamicContent) dynamicContent.style.display = 'none';
-        if (resumePage) {
-            resumePage.hidden = true;
-            resumePage.style.display = 'none';
-        }
-        window.scrollTo(0, 0);
-    };
-
 });
