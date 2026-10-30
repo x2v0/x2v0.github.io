@@ -2320,3 +2320,35 @@ aside.profile {
     border: none !important;
     background: transparent !important;
 }
+
+/* === УЛУЧШЕНИЯ ТЕМНОЙ ТЕМЫ (ЯРЧЕ И КОМПАКТНЕЕ) === */
+
+[data-theme="dark"] {
+    --fg: #f0f0f0 !important;      /* Основной текст делаем почти белым */
+    --fg2: #d0d0d0 !important;     /* Вторичный текст (описания) */
+    --fg3: #a0a0a0 !important;     /* Третичный текст (подписи) */
+}
+
+/* Улучшаем читаемость таблицы в темной теме */
+[data-theme="dark"] td {
+    color: #f0f0f0 !important;
+}
+[data-theme="dark"] td:first-child {
+    color: #a0a0a0 !important; /* Левая колонка (Языки) чуть тусклее */
+}
+
+/* Делаем пилюли (C++, Go) компактнее */
+[data-theme="dark"] .tech-tag, 
+.tech-tag {
+    font-size: 11px !important;      /* Уменьшаем шрифт */
+    padding: 2px 6px !important;     /* Уменьшаем отступы */
+    margin: 1px !important;          /* Убираем лишние отступы вокруг */
+    border-radius: 6px !important;   /* Мягкое скругление */
+    line-height: 1.2 !important;
+    display: inline-block !important;
+}
+
+/* Убираем лишние пробелы между пилюлями в таблице */
+[data-theme="dark"] td .tech-tag {
+    margin-right: 2px !important;
+}
