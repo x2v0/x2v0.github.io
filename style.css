@@ -2483,7 +2483,6 @@ aside.profile {
     color: #e0e0e0 !important;
 }
 
-/* === ИСПРАВЛЕНИЕ ЗАМЕЧАНИЙ ДРУЗЕЙ (ТЕМНАЯ ТЕМА И UI) === */
 
 /* 1. ЛУНА/СОЛНЦЕ ВПРАВО (убираем из центра) */
 .topbar {
@@ -2538,4 +2537,54 @@ aside.profile {
 [data-theme="dark"] .eyebrow,
 [data-theme="dark"] .section-title span {
     color: #81c784 !important;
+}
+
+/* === ПАСТЕЛЬНЫЙ ФИКС ДЛЯ ТЕМНОЙ ТЕМЫ === */
+
+/* Плашка ROOT/CERN: мягкий темно-серый фон, светлый текст */
+[data-theme="dark"] .hero-note {
+    background-color: #252525 !important; /* Темно-серый пастельный */
+    border: 1px solid #3a3a3a !important;
+    color: #e0e0e0 !important;
+}
+[data-theme="dark"] .hero-note * {
+    color: #e0e0e0 !important; /* Весь текст светлый */
+}
+[data-theme="dark"] .hero-note strong,
+[data-theme="dark"] .hero-note a {
+    color: #81c784 !important; /* Акценты - светло-зеленые */
+}
+
+/* Таблица: мягкий темно-серый фон, светлый текст */
+[data-theme="dark"] table,
+[data-theme="dark"] thead,
+[data-theme="dark"] tbody,
+[data-theme="dark"] tr {
+    background-color: #1e1e1e !important;
+}
+[data-theme="dark"] th {
+    background-color: #2a2a2a !important; /* Заголовки чуть светлее для контраста */
+    color: #ffffff !important;
+    border-color: #3a3a3a !important;
+}
+[data-theme="dark"] td {
+    color: #e0e0e0 !important;
+    border-color: #3a3a3a !important;
+}
+[data-theme="dark"] td:first-child {
+    color: #aaaaaa !important; /* Левая колонка (Языки) чуть тусклее */
+}
+
+/* Поля ввода (форма связи) - пастельные */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea {
+    background-color: #252525 !important;
+    color: #e0e0e0 !important;
+    border: 1px solid #444 !important;
+}
+
+/* Луна вправо */
+#theme-toggle {
+    margin-left: auto !important;
+    margin-right: 15px !important;
 }
