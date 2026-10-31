@@ -1,3 +1,11 @@
+import socket
+# --- ФИКС IPv4 ---
+_orig_getaddrinfo = socket.getaddrinfo
+def getaddrinfo_ipv4(host, port, family=0, type=0, proto=0, flags=0):
+    return _orig_getaddrinfo(host, port, socket.AF_INET, type, proto, flags)
+socket.getaddrinfo = getaddrinfo_ipv4
+# ------------------
+
 import imaplib
 import email
 from email.header import decode_header
@@ -15,16 +23,13 @@ PASSWORD_FILE = os.path.expanduser("~/.yandex_app_password")
 SEARCH_SUBJECT = "debug Android with M$"
 OUTPUT_DIR = "blog/posts"
 MANIFEST_FILE = "blog/posts.json"
-MAX_THREAD_DEPTH = 3
 
 BANNED_WORDS = ['vpn', 'telegram', 'телеграм', 'лубянка', 'фсб', 'кгб', 'кремль', 'война', 'спецоперация', 'сво', 'нато', 'россия', 'украина', 'концлагерь', 'митинг', 'протест', 'политик', 'власть', 'госдума', 'закон', 'хуй', 'пизд', 'бля', 'еба', 'ёб', 'сук', 'муд', 'говн', 'дерьм', 'жоп', 'залуп', 'манда']
 
 def get_anon_name(real_name):
-    """Анонимизирует: Валерий Онучин -> В.О., Вася -> Вас."""
     if not real_name: return '[Аноним]'
     parts = real_name.strip().split()
     if not parts: return '[Аноним]'
-    
     clean_name = parts[0].lower()
     if len(clean_name) < 2: return '[Аноним]'
     
@@ -41,22 +46,31 @@ def get_color(name):
 def censor_text(text):
     if not text: return ""
     text = re.sub(r'[\w\.-]+@[\w\.-]+\.\w+', '[EMAIL СКРЫТ]', text)
-    text = re.sub(r'https?://\S+', '[ССЫЛКА]', text)
     for word in BANNED_WORDS:
         text = re.sub(r'(?i)\b' + re.escape(word) + r'[а-яё]*', '[ЦЕНЗУРА]', text)
     return text.strip()
 
 def fetch_emails():
-    if not os.path.exists(PASSWORD_FILE): return
-    with open(PASSWORD_FILE, "r") as f: password = f.read().strip()
+    if not os.path.exists(PASSWORD_FILE):
+        print("⚠ Файл с паролем не найден")
+        return
 
-    mail = imaplib.IMAP4_SSL(IMAP_SERVER)
-    try: mail.login(EMAIL_USER, password)
-    except: return
-        
-    mail.select("inbox")
+    with open(PASSWORD_FILE, "r") as f:
+        password = f.read().strip()
+
+    print(f"Подключение к {IMAP_SERVER}...")
+    try:
+        mail = imaplib.IMAP4_SSL(IMAP_SERVER)
+        mail.login(EMAIL_USER, password)
+        mail.select("inbox")
+    except Exception as e:
+        print(f"❌ Ошибка подключения: {e}")
+        return
+
     status, messages = mail.search(None, f'(SUBJECT "{SEARCH_SUBJECT}")')
-    if status != "OK": return
+    if status != "OK":
+        print("Ошибка поиска писем.")
+        return
 
     email_ids = messages[0].split()
     print(f"Найдено писем: {len(email_ids)}")
@@ -77,8 +91,6 @@ def fetch_emails():
 
                 from_raw = msg.get("From")
                 from_name, from_addr = email.utils.parseaddr(from_raw)
-                
-                # Инициалы
                 anon_sender = get_anon_name(from_name or from_addr)
                 sender_color = get_color(anon_sender)
 
@@ -106,6 +118,7 @@ def fetch_emails():
 
                 if safe_id in existing_ids: continue
 
+                # Извлекаем тело
                 body = ""
                 if msg.is_multipart():
                     for part in msg.walk():
@@ -114,25 +127,41 @@ def fetch_emails():
                 else:
                     body = msg.get_payload(decode=True).decode(msg.get_content_charset() or "utf-8", errors="replace")
 
-                # ЧИСТКА ЦИТАТ (отрезаем всё с To:, From:, Subject:)
-                body_lines = []
+                # Очистка от HTML
+                body = re.sub(r'<[^>]+>', '', body)
+                body = html.unescape(body)
+
+                # Разделяем на "свой текст" и "цитату"
+                main_text_lines = []
+                quote_lines = []
+                in_quote = False
+
                 for line in body.split("\n"):
                     stripped = line.strip()
-                    if stripped.lower().startswith(("to:", "from:", "subject:", "cc:", "sent:", "date:")): break
-                    if stripped.lower().startswith("on ") and "wrote:" in stripped.lower(): break
-                    if not stripped.startswith(">"): body_lines.append(line)
+                    if re.match(r'^On .*wrote:', stripped, re.IGNORECASE) or \
+                       re.match(r'^\d{1,2} \w+ \d{4}.*пишет:', stripped, re.IGNORECASE) or \
+                       re.match(r'^[\s\W]*(To|From):', stripped, re.IGNORECASE) or \
+                       stripped.startswith(">"):
+                        in_quote = True
+                    
+                    if in_quote:
+                        quote_lines.append(line)
+                    else:
+                        main_text_lines.append(line)
+
+                cleaned_main = "\n".join(main_text_lines).strip()
+                cleaned_quote = "\n".join(quote_lines).strip()
                 
-                cleaned_body = "\n".join(body_lines).strip()
-                cleaned_body = censor_text(cleaned_body)
+                cleaned_main = censor_text(cleaned_main)
+                cleaned_quote = censor_text(cleaned_quote)
 
-                # Очистка превью от HTML
-                clean_for_preview = re.sub(r'<[^>]+>', '', cleaned_body)
-                clean_for_preview = html.unescape(clean_for_preview)
-                preview_text = re.sub(r'\s+', ' ', clean_for_preview)[:120] + "..."
-
+                preview_text = re.sub(r'\s+', ' ', cleaned_main)[:120] + "..."
                 display_title = f"{clean_subject} ({anon_sender}, {time_str})"
 
-                md_content = f"# {clean_subject}\n\n**От:** {anon_sender}\n**Дата:** {date_iso} {time_str}\n\n---\n\n{cleaned_body}"
+                md_content = f"# {clean_subject}\n\n**От:** {anon_sender}\n**Дата:** {date_iso} {time_str}\n\n---\n\n{cleaned_main}"
+                
+                if cleaned_quote:
+                    md_content += f"\n\n<details>\n<summary>📎 Показать цитируемое письмо</summary>\n\n```text\n{cleaned_quote}\n```\n</details>"
 
                 filename = f"{safe_id}.md"
                 with open(os.path.join(OUTPUT_DIR, filename), "w", encoding="utf-8") as f:
@@ -146,20 +175,11 @@ def fetch_emails():
                 })
                 print(f"  ✓ Сохранено: {filename} [{anon_sender}]")
 
-    # Обрезка по глубине
     posts.sort(key=lambda x: x["date"], reverse=True)
-    thread_counts = {}
-    final_posts = []
-    for post in posts:
-        tid = post.get("thread_id", "general")
-        if tid not in thread_counts: thread_counts[tid] = 0
-        thread_counts[tid] += 1
-        if thread_counts[tid] <= MAX_THREAD_DEPTH:
-            final_posts.append(post)
-
     with open(MANIFEST_FILE, "w", encoding="utf-8") as f:
-        json.dump(final_posts, f, ensure_ascii=False, indent=2)
-    print("✓ Пайплайн завершен.")
+        json.dump(posts, f, ensure_ascii=False, indent=2)
+        
+    print(f"✓ Пайплайн завершен. Сохранено {len(posts)} писем.")
     mail.logout()
 
 if __name__ == "__main__":

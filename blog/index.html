@@ -12,7 +12,7 @@
 
     <style>
         body { background-color: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; }
-        .container { max-width: 760px; margin: 40px auto; padding: 0 20px; }
+        .container { max-width: 800px; margin: 40px auto; padding: 0 20px; }
         .header { font-family: monospace; font-size: 32px; margin-bottom: 25px; }
         
         .search-bar { width: 100%; padding: 15px; border: 1px solid var(--border); border-radius: 10px; font-size: 16px; margin-bottom: 30px; box-sizing: border-box; background: var(--card-bg); color: var(--text); }
@@ -41,32 +41,52 @@
         .btn-back { padding: 12px 20px; margin-bottom: 20px; background: #0288d1; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 16px; }
         .article-content { background: var(--card-bg); padding: 30px; border-radius: 12px; border: 1px solid var(--border); font-size: 16px; line-height: 1.7; }
         
+        /* Детали (цитаты) внутри статьи */
+        details { background: var(--bg3); padding: 15px; border-radius: 8px; margin-top: 25px; border: 1px solid var(--border); }
+        summary { cursor: pointer; font-weight: bold; color: var(--accent); }
+        details pre { background: transparent; border: none; padding: 0; margin-top: 15px; font-size: 14px; color: var(--fg3); white-space: pre-wrap; }
+
         /* Типографика статьи */
         .article-content h1 { font-size: 28px; margin-top: 0; }
-        .article-content blockquote { border-left: 4px solid var(--accent); padding-left: 15px; margin: 20px 0; color: var(--fg3); font-style: italic; background: var(--bg3); padding: 10px 15px; border-radius: 0 6px 6px 0; }
         .article-content pre { background: #282c34; padding: 15px; border-radius: 8px; overflow-x: auto; position: relative; }
         .article-content code { font-family: monospace; font-size: 14px; }
         .article-content p code { background: var(--bg3); padding: 2px 6px; border-radius: 4px; color: #e83e8c; }
         .copy-btn { position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; padding: 4px 8px; font-size: 12px; cursor: pointer; }
         .copy-btn:hover { background: rgba(255,255,255,0.2); }
+
+        /* Навигация */
+        .nav-buttons { display: flex; justify-content: space-between; margin-top: 30px; }
+        .nav-btn { padding: 10px 15px; background: var(--bg3); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-weight: bold; }
+        .nav-btn:hover { background: var(--accent); color: white; }
+        .nav-btn:disabled { opacity: 0.5; cursor: not-allowed; }
+
+        mark { background: #ffeb3b; color: #000; padding: 0 2px; border-radius: 2px; }
     </style>
 </head>
 <body>
     <div class="container">
+        <!-- СПИСОК -->
         <div id="list-view">
             <div class="header">Оглавление</div>
             <input type="text" id="search-input" class="search-bar" placeholder="🔍 Поиск по всем темам...">
             <div id="feed"><p style="text-align:center; padding:20px;">Загрузка...</p></div>
         </div>
 
+        <!-- СТАТЬЯ -->
         <div id="article-view" class="article-view">
             <button class="btn-back" onclick="backToFeed()">← Назад к оглавлению</button>
             <div id="article-content" class="article-content"></div>
+            <div class="nav-buttons">
+                <button id="btn-prev" class="nav-btn">← Предыдущее</button>
+                <button id="btn-next" class="nav-btn">Следующее →</button>
+            </div>
         </div>
     </div>
 
     <script>
         var allPosts = [];
+        var currentTopicPosts = [];
+        var currentPostIndex = -1;
         var openTopics = new Set();
 
         fetch('./posts.json').then(r => r.json()).then(data => { allPosts = data; renderFeed(allPosts); })
@@ -119,7 +139,7 @@
                     card.innerHTML = '<div class="sender-header"><div class="sender-avatar">' + initial + '</div><span class="sender-name">' + (post.sender_name || 'Аноним') + '</span></div>' +
                                      '<h3 class="post-title">' + highlight(post.title, query) + '</h3>' +
                                      '<p class="post-preview">' + highlight(post.preview || '', query) + '</p>';
-                    card.onclick = () => loadPost(post.filename);
+                    card.onclick = () => loadPost(post, group.posts);
                     container.appendChild(card);
                 });
 
@@ -132,7 +152,7 @@
         function highlight(text, q) {
             if (!q || !text) return text;
             var safeQ = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            return text.replace(new RegExp('(' + safeQ + ')', 'gi'), '<mark style="background:#ffeb3b;color:#000;">$1</mark>');
+            return text.replace(new RegExp('(' + safeQ + ')', 'gi'), '<mark>$1</mark>');
         }
 
         function backToFeed() {
@@ -141,14 +161,20 @@
             window.scrollTo(0,0);
         }
 
-        function loadPost(filename) {
+        function loadPost(post, topicPosts) {
+            currentTopicPosts = topicPosts;
+            currentPostIndex = topicPosts.findIndex(p => p.id === post.id);
+
             document.getElementById('list-view').style.display = 'none';
             document.getElementById('article-view').style.display = 'block';
             document.getElementById('article-content').innerHTML = 'Загрузка...';
             window.scrollTo(0,0);
 
-            fetch('./posts/' + filename).then(r => r.text()).then(md => {
+            updateNavButtons();
+
+            fetch('./posts/' + post.filename).then(r => r.text()).then(md => {
                 document.getElementById('article-content').innerHTML = marked.parse(md);
+                
                 if (typeof hljs !== 'undefined') {
                     document.querySelectorAll('pre code').forEach(block => {
                         hljs.highlightElement(block);
@@ -161,6 +187,25 @@
                     });
                 }
             }).catch(e => { document.getElementById('article-content').innerHTML = 'Ошибка загрузки: ' + e.message; });
+        }
+
+        function updateNavButtons() {
+            var btnPrev = document.getElementById('btn-prev');
+            var btnNext = document.getElementById('btn-next');
+
+            if (currentPostIndex > 0) {
+                btnPrev.disabled = false;
+                btnPrev.onclick = () => loadPost(currentTopicPosts[currentPostIndex - 1], currentTopicPosts);
+            } else {
+                btnPrev.disabled = true;
+            }
+
+            if (currentPostIndex !== -1 && currentPostIndex < currentTopicPosts.length - 1) {
+                btnNext.disabled = false;
+                btnNext.onclick = () => loadPost(currentTopicPosts[currentPostIndex + 1], currentTopicPosts);
+            } else {
+                btnNext.disabled = true;
+            }
         }
     </script>
 </body>
