@@ -28,21 +28,30 @@ BANNED_TECH = ['vpn', 'телеграм', 'telegram', 'тор', 'tor', 'onion']
 PARTICIPANTS = {}
 
 def get_anon_name(real_name):
-    """Анонимизирует имя: Вася -> [Участник 1]"""
-    if not real_name: return '[?]'
-    # Берем первое слово
-    clean_name = real_name.strip().split()[0].lower()
-    if len(clean_name) < 2: return '[?]'
+    """Анонимизирует имя: Валерий Онучин -> В.О., Вася -> Вас."""
+    if not real_name: return '[Аноним]'
     
-    # Если имя уже известно
+    parts = real_name.strip().split()
+    if not parts: return '[Аноним]'
+    
+    # Если это email
+    if '@' in parts[0]:
+        clean_name = parts[0].split('@')[0].lower()
+    else:
+        clean_name = parts[0].lower()
+        
+    if len(clean_name) < 2: return '[Аноним]'
+    
+    # Проверяем известных
     for base, fake in PARTICIPANTS.items():
         if clean_name.startswith(base): return fake
         
-    # Если новое — генерируем псевдоним
-    new_id = len(PARTICIPANTS) + 1
-    fake_name = f'[{new_id}]'
+    # Генерируем новый
+    if len(parts) >= 2 and len(parts[1]) > 1:
+        fake_name = parts[0][0].upper() + '.' + parts[1][0].upper() + '.'
+    else:
+        fake_name = parts[0][:4].capitalize() + '.'
     
-    # Корень для поиска падежей (Вася -> Вас, Валерий -> Валер)
     base = clean_name[:-1] if clean_name[-1] in 'яаий' else clean_name
     PARTICIPANTS[base] = fake_name
     return fake_name
@@ -161,8 +170,11 @@ def fetch_emails():
                 body_lines = []
                 for line in body.split("\n"):
                     stripped = line.strip()
-                    # Если встретили начало цитаты или пересылки — прекращаем чтение
-                    if stripped.startswith("To:") or stripped.startswith("From:") or stripped.startswith("Subject:") or stripped.startswith("Cc:") or stripped.startswith("Sent:") or stripped.startswith("On ") and "wrote:" in stripped:
+                    # Проверка на служебные заголовки (To:, Cc:, Subject:, From: и т.д.)
+                    header_prefixes = ("to:", "from:", "subject:", "cc:", "sent:", "date:")
+                    if stripped.lower().startswith(header_prefixes):
+                        break
+                    if stripped.lower().startswith("on ") and "wrote:" in stripped.lower():
                         break
                     # Убираем символы цитирования ">"
                     if not stripped.startswith(">"):
@@ -178,7 +190,10 @@ def fetch_emails():
                     print(f"  ✕ Пропущено письмо от {anon_sender} (слишком короткое после цензуры)")
                     continue
 
-                preview_text = re.sub(r'\s+', ' ', cleaned_body)[:120] + "..."
+                import html
+                clean_for_preview = re.sub(r'<[^>]+>', '', cleaned_body)
+                clean_for_preview = html.unescape(clean_for_preview)
+                preview_text = re.sub(r'\s+', ' ', clean_for_preview)[:120] + "..."
                 display_title = f"{clean_subject} ({anon_sender}, {time_str})"
 
                 # Формируем Markdown
