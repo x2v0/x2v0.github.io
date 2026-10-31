@@ -93,7 +93,11 @@
 
         #giscus-container { background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 30px; }
         [data-theme="dark"] #giscus-container { background: #1e1e1e; border-color: #333; }
-    </style>
+    
+        .load-more-btn { width: 100%; padding: 12px; margin-top: 10px; background: var(--bg3); color: var(--text); border: 1px dashed var(--border); border-radius: 8px; cursor: pointer; font-weight: bold; transition: 0.2s; }
+        .load-more-btn:hover { background: var(--border); }
+        .loading-warning { text-align: center; font-size: 12px; color: #e65100; background: #fff3e0; padding: 8px; border-radius: 8px; margin-bottom: 15px; display: none; }
+</style>
 </head>
 <body style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
     
@@ -109,6 +113,7 @@
             <div class="search-wrapper">
                 <input type="text" id="search-input" class="search-bar" placeholder="🔍 Поиск по всем темам...">
             </div>
+            <div id="offline-warning" class="loading-warning">⚠️ Сеть недоступна. Показаны сохраненные данные.</div>
             <div id="posts-feed">
                 <p style="color: var(--fg3); text-align: center; padding: 40px 0;">Загрузка...</p>
             </div>
@@ -151,16 +156,45 @@
             document.getElementById('theme-toggle').textContent = newTheme === 'dark' ? '☀️' : '🌙';
         }
 
-        // --- ЗАГРУЗКА И ГРУППИРОВКА ---
-        fetch('./posts.json')
+        // --- УМНАЯ ЗАГРУЗКА (КЭШ + ТАЙМАУТ) ---
+        function initBlogData(posts) {
+            allPosts = posts;
+            searchIndex = new FlexSearch.Document({ document: { id: "id", index: ["title", "preview"], store: true }, tokenize: "forward" });
+            posts.forEach(p => searchIndex.add(p));
+            renderFeed(posts);
+        }
+
+        // 1. Пытаемся загрузить из кэша мгновенно
+        const cached = localStorage.getItem('blog_posts_cache');
+        if (cached) {
+            try { initBlogData(JSON.parse(cached)); } catch(e) { console.error("Cache error", e); }
+        } else {
+            document.getElementById('posts-feed').innerHTML = '<p style="text-align:center; padding: 40px;">Загрузка...</p>';
+        }
+
+        // 2. Скачиваем свежие данные в фоне (с таймаутом 8 секунд)
+        const controller = new AbortController();
+        const timeoutId = setTimeout(() => controller.abort(), 8000);
+
+        fetch('./posts.json', { signal: controller.signal })
             .then(r => r.json())
             .then(posts => {
-                allPosts = posts;
-                searchIndex = new FlexSearch.Document({ document: { id: "id", index: ["title", "preview"], store: true }, tokenize: "forward" });
-                posts.forEach(p => searchIndex.add(p));
-                renderFeed(posts);
+                clearTimeout(timeoutId);
+                const postsString = JSON.stringify(posts);
+                // Если данные изменились или кэша не было — обновляем
+                if (cached !== postsString) {
+                    localStorage.setItem('blog_posts_cache', postsString);
+                    initBlogData(posts);
+                }
             })
-            .catch(e => { document.getElementById('posts-feed').innerHTML = '<p style="color:red; text-align:center;">Ошибка загрузки.</p>'; });
+            .catch(e => {
+                clearTimeout(timeoutId);
+                if (!cached) {
+                    document.getElementById('posts-feed').innerHTML = '<p style="color:red; text-align:center;">Ошибка загрузки. Проверьте интернет.</p>';
+                } else {
+                    document.getElementById('offline-warning').style.display = 'block';
+                }
+            });
 
         document.getElementById('search-input').addEventListener('input', (e) => {
             currentQuery = e.target.value.trim();
@@ -223,23 +257,48 @@
                 const postsContainer = document.createElement('div');
                 postsContainer.className = 'topic-posts ' + (isOpen ? 'open' : '');
 
-                group.posts.forEach(post => {
-                    const card = document.createElement('div');
-                    card.className = 'post-card';
-                    const isBookmarked = localStorage.getItem('bm_' + post.id) === '1';
-                    
-                    card.innerHTML = `
-                        <div class="bookmark-btn ${isBookmarked ? 'active' : ''}" onclick="toggleBookmark(event, '${post.id}')">★</div>
-                        <h3 class="post-title">${highlight(post.title, query)}</h3>
-                        <p class="post-preview">${highlight(post.preview || '', query)}</p>
-                        <div class="post-meta">
-                            <span>${post.date}</span>
-                            <span>Читать →</span>
-                        </div>
-                    `;
-                    card.onclick = (e) => { if (!e.target.classList.contains('bookmark-btn')) loadPost(post.filename); };
-                    postsContainer.appendChild(card);
-                });
+                // ИНКРЕМЕНТАЛЬНАЯ ЗАГРУЗКА (по 10 штук)
+                const POSTS_PER_PAGE = 10;
+                let currentPage = 1;
+                let renderChunk;
+
+                renderChunk = () => {
+                    postsContainer.innerHTML = '';
+                    const end = currentPage * POSTS_PER_PAGE;
+                    const chunk = group.posts.slice(0, end);
+
+                    chunk.forEach(post => {
+                        const card = document.createElement('div');
+                        card.className = 'post-card';
+                        const isBookmarked = localStorage.getItem('bm_' + post.id) === '1';
+                        
+                        card.innerHTML = `
+                            <div class="bookmark-btn ${isBookmarked ? 'active' : ''}" onclick="toggleBookmark(event, '${post.id}')">★</div>
+                            <h3 class="post-title">${highlight(post.title, query)}</h3>
+                            <p class="post-preview">${highlight(post.preview || '', query)}</p>
+                            <div class="post-meta">
+                                <span>${post.date}</span>
+                                <span>Читать →</span>
+                            </div>
+                        `;
+                        card.onclick = (e) => { if (!e.target.classList.contains('bookmark-btn')) loadPost(post.filename); };
+                        postsContainer.appendChild(card);
+                    });
+
+                    // Если есть еще посты — показываем кнопку
+                    if (group.posts.length > end) {
+                        const btn = document.createElement('button');
+                        btn.className = 'load-more-btn';
+                        btn.innerText = `Показать еще ${group.posts.length - end} писем ↓`;
+                        btn.onclick = () => {
+                            currentPage++;
+                            renderChunk();
+                        };
+                        postsContainer.appendChild(btn);
+                    }
+                };
+
+                renderChunk();
 
                 groupEl.appendChild(header);
                 groupEl.appendChild(postsContainer);
