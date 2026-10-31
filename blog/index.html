@@ -6,132 +6,55 @@
     <title>Блог — Валерий Онучин</title>
     <link rel="stylesheet" href="../style.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- Подключаем FlexSearch для быстрого поиска -->
+    <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.31/dist/flexsearch.bundle.js"></script>
     <style>
-        /* --- СТИЛИ ДЛЯ ЛЕНТЫ В СТИЛЕ СОЦСЕТЕЙ --- */
-        body {
-            background-color: var(--bg);
-            color: var(--text);
-        }
-        .feed-container {
-            max-width: 680px; /* Ширина как у постов в соцсетях */
-            margin: 40px auto;
-            padding: 0 15px;
-        }
-        .feed-header {
-            font-family: monospace;
-            margin-bottom: 20px;
-            border-bottom: 2px solid var(--accent);
-            padding-bottom: 10px;
-        }
+        body { background-color: var(--bg); color: var(--text); }
+        .feed-container { max-width: 680px; margin: 40px auto; padding: 0 15px; }
+        .feed-header { font-family: monospace; margin-bottom: 20px; border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
         
+        /* Поиск */
+        .search-bar { margin-bottom: 25px; }
+        .search-bar input { width: 100%; padding: 12px 15px; border: 2px solid var(--border); border-radius: 8px; font-size: 16px; background: var(--card-bg); color: var(--text); box-sizing: border-box; }
+        .search-bar input:focus { outline: none; border-color: var(--accent); }
+
+        /* Заголовки групп (деревья) */
+        .group-header { margin: 30px 0 15px 0; border-bottom: 1px solid var(--accent); padding-bottom: 5px; color: var(--accent); font-size: 18px; font-family: monospace; }
+
         /* Карточка поста */
-        .post-card {
-            background-color: var(--card-bg, #ffffff);
-            border: 1px solid var(--border, #ddd);
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 20px;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-        }
-        .post-card:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 15px rgba(0,0,0,0.1);
-            border-color: var(--accent);
-        }
-        [data-theme="dark"] .post-card {
-            background-color: #1e1e1e;
-            border-color: #333;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-        }
-        [data-theme="dark"] .post-card:hover {
-            border-color: var(--accent);
-        }
+        .post-card { position: relative; background-color: var(--card-bg, #ffffff); border: 1px solid var(--border, #ddd); border-radius: 12px; padding: 20px; margin-bottom: 20px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
+        .post-card:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); border-color: var(--accent); }
+        [data-theme="dark"] .post-card { background-color: #1e1e1e; border-color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
+        [data-theme="dark"] .post-card:hover { border-color: var(--accent); }
 
-        /* Шапка поста (Аватар + Имя + Дата) */
-        .post-header {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-        .post-avatar {
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            object-fit: cover;
-            margin-right: 12px;
-            border: 1px solid var(--border);
-        }
-        .post-meta {
-            display: flex;
-            flex-direction: column;
-        }
-        .post-author {
-            font-weight: bold;
-            font-size: 15px;
-            color: var(--text);
-        }
-        .post-date {
-            font-size: 12px;
-            color: var(--fg3, #888);
-            font-family: monospace;
-        }
+        /* Звездочка (Избранное) */
+        .bookmark-btn { position: absolute; top: 20px; right: 20px; cursor: pointer; font-size: 24px; opacity: 0.3; transition: opacity 0.2s, color 0.2s; user-select: none; }
+        .bookmark-btn.active { opacity: 1; color: gold; }
 
-        /* Содержимое поста */
-        .post-title {
-            margin: 0 0 10px 0;
-            font-size: 18px;
-            color: var(--accent);
-            line-height: 1.3;
-        }
-        .post-preview {
-            margin: 0;
-            font-size: 15px;
-            color: var(--text);
-            line-height: 1.5;
-            /* Обрезаем текст до 3 строк */
-            display: -webkit-box;
-            -webkit-line-clamp: 3;
-            -webkit-box-orient: vertical;
-            overflow: hidden;
-        }
-        
-        /* Кнопка "Читать далее" */
-        .post-footer {
-            margin-top: 15px;
-            font-size: 13px;
-            color: var(--accent);
-            font-weight: bold;
-        }
+        /* Шапка поста */
+        .post-header { display: flex; align-items: center; margin-bottom: 15px; }
+        .post-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; margin-right: 12px; border: 1px solid var(--border); }
+        .post-meta { display: flex; flex-direction: column; }
+        .post-author { font-weight: bold; font-size: 15px; color: var(--text); }
+        .post-date { font-size: 12px; color: var(--fg3, #888); font-family: monospace; }
 
-        /* --- ПРОСМОТР ПОЛНОЙ СТАТЬИ --- */
-        .article-view {
-            display: none;
-            background: var(--card-bg, #fff);
-            border: 1px solid var(--border, #ddd);
-            border-radius: 12px;
-            padding: 30px;
-        }
-        [data-theme="dark"] .article-view {
-            background-color: #1e1e1e;
-            border-color: #333;
-        }
+        /* Содержимое */
+        .post-title { margin: 0 0 10px 0; font-size: 18px; color: var(--accent); line-height: 1.3; padding-right: 30px; }
+        .post-preview { margin: 0; font-size: 15px; color: var(--text); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .post-footer { margin-top: 15px; font-size: 13px; color: var(--accent); font-weight: bold; }
+
+        /* Подсветка поиска */
+        mark { background: #ffeb3b; color: #000; padding: 0 2px; border-radius: 2px; }
+
+        /* Просмотр статьи */
+        .article-view { display: none; background: var(--card-bg, #fff); border: 1px solid var(--border, #ddd); border-radius: 12px; padding: 30px; }
+        [data-theme="dark"] .article-view { background-color: #1e1e1e; border-color: #333; }
         .article-view h1 { color: var(--accent); margin-top: 0; }
         .article-view pre { background: var(--bg3, #f4f4f4); padding: 10px; border-radius: 5px; overflow-x: auto; }
         .article-view code { font-family: monospace; background: var(--bg3, #eee); padding: 2px 4px; border-radius: 3px; }
-        
-        .btn-back {
-            display: inline-block;
-            margin-bottom: 20px;
-            padding: 8px 15px;
-            background: var(--accent);
-            color: #fff;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-size: 14px;
-        }
+
+        .btn-back { display: inline-block; margin-bottom: 20px; padding: 10px 18px; background: #0288d1; color: #ffffff; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold; text-decoration: none; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .btn-back:hover { background: #0277bd; }
     </style>
 </head>
 <body style="font-family: system-ui, -apple-system, sans-serif;">
@@ -139,6 +62,12 @@
         <!-- Список постов -->
         <div id="list-view">
             <h1 class="feed-header">Лента</h1>
+            
+            <!-- Поиск -->
+            <div class="search-bar">
+                <input type="text" id="search-input" placeholder="Поиск по письмам (тема, текст)...">
+            </div>
+
             <div id="posts-feed">
                 <p style="color: var(--fg3);">Загрузка постов...</p>
             </div>
@@ -146,9 +75,9 @@
 
         <!-- Просмотр статьи -->
         <div id="article-view" class="article-view">
-            <button onclick="backToFeed()" style="display:inline-block; margin-bottom:20px; padding:10px 18px; background:#0288d1; color:#ffffff; border:none; border-radius:6px; cursor:pointer; font-size:16px; font-weight:bold; text-decoration:none; box-shadow: 0 2px 5px rgba(0,0,0,0.2);">← К списку статей</button>
+            <button class="btn-back" onclick="backToFeed()">← К списку статей</button>
             <div id="article-content"></div>
-            
+
             <div id="giscus-container" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border);">
                 <h3>Комментарии</h3>
                 <div class="giscus"></div>
@@ -157,47 +86,134 @@
     </div>
 
     <script>
-        // 1. Загружаем манифест
+        let allPosts = [];
+        let searchIndex = null;
+
+        // --- 1. Загрузка данных и инициализация поиска ---
         fetch('./posts.json')
             .then(r => r.json())
             .then(posts => {
-                const feed = document.getElementById('posts-feed');
-                feed.innerHTML = '';
+                allPosts = posts;
                 
-                if (posts.length === 0) {
-                    feed.innerHTML = '<p>Пока нет постов.</p>';
-                    return;
-                }
-
-                posts.forEach(post => {
-                    const card = document.createElement('div');
-                    card.className = 'post-card';
-                    
-                    // Используем картинку из корня сайта
-                    const avatarSrc = '../images/me.jpg'; 
-
-                    card.innerHTML = `
-                        <div class="post-header">
-                            <img src="${avatarSrc}" class="post-avatar" alt="Avatar">
-                            <div class="post-meta">
-                                <span class="post-author">Валерий Онучин</span>
-                                <span class="post-date">${post.date}</span>
-                            </div>
-                        </div>
-                        <h3 class="post-title">${post.title}</h3>
-                        <p class="post-preview">${post.preview || ''}</p>
-                        <div class="post-footer">Читать далее →</div>
-                    `;
-                    
-                    card.onclick = () => loadPost(post.filename, post.title);
-                    feed.appendChild(card);
+                // Инициализация FlexSearch
+                searchIndex = new FlexSearch.Document({
+                    document: {
+                        id: "id",
+                        index: ["title", "preview"],
+                        store: true
+                    },
+                    tokenize: "forward",
+                    threshold: 0
                 });
+                posts.forEach(p => searchIndex.add(p));
+                
+                renderFeed(posts);
             })
             .catch(e => {
                 document.getElementById('posts-feed').innerHTML = '<p style="color:red;">Ошибка загрузки списка постов.</p>';
             });
 
-        // 2. Переключение экранов
+        // --- 2. Поиск ---
+        document.getElementById('search-input').addEventListener('input', (e) => {
+            const query = e.target.value.trim();
+            if (!query) {
+                renderFeed(allPosts);
+                return;
+            }
+            if (!searchIndex) return;
+            
+            const results = searchIndex.search(query, { limit: 50 });
+            const matchedIds = new Set();
+            results.forEach(res => res.result.forEach(id => matchedIds.add(id)));
+            
+            const filtered = allPosts.filter(p => matchedIds.has(p.id));
+            renderFeed(filtered, query);
+        });
+
+        // --- 3. Рендеринг ленты с группировкой ---
+        function renderFeed(posts, query = '') {
+            const feed = document.getElementById('posts-feed');
+            feed.innerHTML = '';
+
+            if (posts.length === 0) {
+                feed.innerHTML = '<p>Ничего не найдено.</p>';
+                return;
+            }
+
+            // Группировка по thread_id
+            const groups = {};
+            posts.forEach(p => {
+                const tid = p.thread_id || 'general';
+                if (!groups[tid]) {
+                    // Берем тему из заголовка (до скобок) для названия группы
+                    let groupName = (p.title || '').split('(')[0].replace(/Re:|Aw:|Fwd:/gi, '').trim();
+                    if (!groupName) groupName = 'Общее';
+                    groups[tid] = { name: groupName, posts: [] };
+                }
+                groups[tid].posts.push(p);
+            });
+
+            // Рендер групп
+            Object.values(groups).forEach(group => {
+                const groupDiv = document.createElement('div');
+                groupDiv.innerHTML = `<h2 class="group-header">${highlight(group.name, query)} (${group.posts.length})</h2>`;
+
+                group.posts.forEach(post => {
+                    const card = document.createElement('div');
+                    card.className = 'post-card';
+
+                    const isBookmarked = localStorage.getItem('bm_' + post.id) === '1';
+                    const title = highlight(post.title, query);
+                    const preview = highlight(post.preview || '', query);
+
+                    card.innerHTML = `
+                        <div class="bookmark-btn ${isBookmarked ? 'active' : ''}" onclick="toggleBookmark(event, '${post.id}')">★</div>
+                        <div class="post-header">
+                            <img src="../images/me.jpg" class="post-avatar" alt="Avatar">
+                            <div class="post-meta">
+                                <span class="post-author">Валерий Онучин</span>
+                                <span class="post-date">${post.date}</span>
+                            </div>
+                        </div>
+                        <h3 class="post-title">${title}</h3>
+                        <p class="post-preview">${preview}</p>
+                        <div class="post-footer">Читать далее →</div>
+                    `;
+                    
+                    // Клик по карточке (если не нажали на звездочку)
+                    card.onclick = (e) => {
+                        if (e.target.classList.contains('bookmark-btn')) return;
+                        loadPost(post.filename, post.title);
+                    };
+                    
+                    groupDiv.appendChild(card);
+                });
+                feed.appendChild(groupDiv);
+            });
+        }
+
+        // --- 4. Подсветка поиска ---
+        function highlight(text, query) {
+            if (!query) return text;
+            const regex = new RegExp(`(${query})`, 'gi');
+            return text.replace(regex, '<mark>$1</mark>');
+        }
+
+        // --- 5. Избранное (Звездочки) ---
+        function toggleBookmark(e, id) {
+            e.stopPropagation();
+            const key = 'bm_' + id;
+            const el = e.target;
+            if (localStorage.getItem(key) === '1') {
+                localStorage.removeItem(key);
+                el.classList.remove('active');
+            } else {
+                localStorage.setItem(key, '1');
+                el.classList.add('active');
+            }
+        }
+
+        // --- 6. Чтение поста ---
         function backToFeed() {
             document.getElementById('article-view').style.display = 'none';
             document.getElementById('list-view').style.display = 'block';
@@ -221,7 +237,6 @@
                 });
         }
 
-        // 3. Комментарии (Utterances)
         function loadUtterances(term) {
             const container = document.querySelector('.giscus');
             container.innerHTML = '';
