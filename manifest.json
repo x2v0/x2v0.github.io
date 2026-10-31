@@ -1,14 +1,19 @@
 {
-  "name": "Valeriy Onuchin Portfolio",
+  "name": "Валерий Онучин — Блог",
   "short_name": "x2v0",
-  "start_url": "/",
+  "start_url": "./index.html",
   "display": "standalone",
-  "background_color": "#121212",
+  "background_color": "#ffffff",
   "theme_color": "#0288d1",
   "icons": [
     {
-      "src": "images/me.jpg",
+      "src": "./images/me.jpg",
       "sizes": "192x192",
+      "type": "image/jpeg"
+    },
+    {
+      "src": "./images/me.jpg",
+      "sizes": "512x512",
       "type": "image/jpeg"
     }
   ]

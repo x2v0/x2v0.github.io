@@ -6,7 +6,6 @@
     <title>Блог — Валерий Онучин</title>
     <link rel="stylesheet" href="../style.css">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-    <!-- Подключаем FlexSearch для быстрого поиска -->
     <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.31/dist/flexsearch.bundle.js"></script>
     <style>
         body { background-color: var(--bg); color: var(--text); }
@@ -18,7 +17,7 @@
         .search-bar input { width: 100%; padding: 12px 15px; border: 2px solid var(--border); border-radius: 8px; font-size: 16px; background: var(--card-bg); color: var(--text); box-sizing: border-box; }
         .search-bar input:focus { outline: none; border-color: var(--accent); }
 
-        /* Заголовки групп (деревья) */
+        /* Заголовки групп */
         .group-header { margin: 30px 0 15px 0; border-bottom: 1px solid var(--accent); padding-bottom: 5px; color: var(--accent); font-size: 18px; font-family: monospace; }
 
         /* Карточка поста */
@@ -27,7 +26,7 @@
         [data-theme="dark"] .post-card { background-color: #1e1e1e; border-color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
         [data-theme="dark"] .post-card:hover { border-color: var(--accent); }
 
-        /* Звездочка (Избранное) */
+        /* Звездочка */
         .bookmark-btn { position: absolute; top: 20px; right: 20px; cursor: pointer; font-size: 24px; opacity: 0.3; transition: opacity 0.2s, color 0.2s; user-select: none; }
         .bookmark-btn.active { opacity: 1; color: gold; }
 
@@ -43,10 +42,9 @@
         .post-preview { margin: 0; font-size: 15px; color: var(--text); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
         .post-footer { margin-top: 15px; font-size: 13px; color: var(--accent); font-weight: bold; }
 
-        /* Подсветка поиска */
         mark { background: #ffeb3b; color: #000; padding: 0 2px; border-radius: 2px; }
 
-        /* Просмотр статьи */
+        /* Статья */
         .article-view { display: none; background: var(--card-bg, #fff); border: 1px solid var(--border, #ddd); border-radius: 12px; padding: 30px; }
         [data-theme="dark"] .article-view { background-color: #1e1e1e; border-color: #333; }
         .article-view h1 { color: var(--accent); margin-top: 0; }
@@ -55,28 +53,35 @@
 
         .btn-back { display: inline-block; margin-bottom: 20px; padding: 10px 18px; background: #0288d1; color: #ffffff; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold; text-decoration: none; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
         .btn-back:hover { background: #0277bd; }
+
+        /* Навигация вверх/вниз */
+        .nav-container { display: flex; justify-content: space-between; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); }
+        .btn-nav { padding: 10px 15px; background: var(--bg3, #eee); color: var(--text); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-weight: bold; text-decoration: none; display: none; }
+        .btn-nav:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
     </style>
+
+    <link rel="manifest" href="../manifest.json">
+    <meta name="theme-color" content="#0288d1">
 </head>
 <body style="font-family: system-ui, -apple-system, sans-serif;">
     <div class="feed-container">
-        <!-- Список постов -->
         <div id="list-view">
             <h1 class="feed-header">Лента</h1>
-            
-            <!-- Поиск -->
             <div class="search-bar">
                 <input type="text" id="search-input" placeholder="Поиск по письмам (тема, текст)...">
             </div>
-
-            <div id="posts-feed">
-                <p style="color: var(--fg3);">Загрузка постов...</p>
-            </div>
+            <div id="posts-feed"><p style="color: var(--fg3);">Загрузка постов...</p></div>
         </div>
 
-        <!-- Просмотр статьи -->
         <div id="article-view" class="article-view">
             <button class="btn-back" onclick="backToFeed()">← К списку статей</button>
             <div id="article-content"></div>
+            
+            <!-- Кнопки навигации -->
+            <div class="nav-container">
+                <button id="btn-prev" class="btn-nav">← Предыдущая</button>
+                <button id="btn-next" class="btn-nav">Следующая →</button>
+            </div>
 
             <div id="giscus-container" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border);">
                 <h3>Комментарии</h3>
@@ -87,85 +92,56 @@
 
     <script>
         let allPosts = [];
+        let currentPostsList = []; // Отфильтрованный список для навигации
+        let currentPostIndex = -1;
         let searchIndex = null;
 
-        // --- 1. Загрузка данных и инициализация поиска ---
+        // 1. Загрузка
         fetch('./posts.json')
             .then(r => r.json())
             .then(posts => {
                 allPosts = posts;
-                
-                // Инициализация FlexSearch
-                searchIndex = new FlexSearch.Document({
-                    document: {
-                        id: "id",
-                        index: ["title", "preview"],
-                        store: true
-                    },
-                    tokenize: "forward",
-                    threshold: 0
-                });
+                searchIndex = new FlexSearch.Document({ document: { id: "id", index: ["title", "preview"], store: true }, tokenize: "forward" });
                 posts.forEach(p => searchIndex.add(p));
-                
                 renderFeed(posts);
             })
-            .catch(e => {
-                document.getElementById('posts-feed').innerHTML = '<p style="color:red;">Ошибка загрузки списка постов.</p>';
-            });
+            .catch(e => { document.getElementById('posts-feed').innerHTML = '<p style="color:red;">Ошибка загрузки.</p>'; });
 
-        // --- 2. Поиск ---
+        // 2. Поиск
         document.getElementById('search-input').addEventListener('input', (e) => {
             const query = e.target.value.trim();
-            if (!query) {
-                renderFeed(allPosts);
-                return;
-            }
+            if (!query) { renderFeed(allPosts); return; }
             if (!searchIndex) return;
-            
             const results = searchIndex.search(query, { limit: 50 });
-            const matchedIds = new Set();
-            results.forEach(res => res.result.forEach(id => matchedIds.add(id)));
-            
-            const filtered = allPosts.filter(p => matchedIds.has(p.id));
-            renderFeed(filtered, query);
+            const ids = new Set();
+            results.forEach(res => res.result.forEach(id => ids.add(id)));
+            renderFeed(allPosts.filter(p => ids.has(p.id)), query);
         });
 
-        // --- 3. Рендеринг ленты с группировкой ---
+        // 3. Рендеринг
         function renderFeed(posts, query = '') {
+            currentPostsList = posts; // Запоминаем текущий список
             const feed = document.getElementById('posts-feed');
             feed.innerHTML = '';
+            if (posts.length === 0) { feed.innerHTML = '<p>Ничего не найдено.</p>'; return; }
 
-            if (posts.length === 0) {
-                feed.innerHTML = '<p>Ничего не найдено.</p>';
-                return;
-            }
-
-            // Группировка по thread_id
             const groups = {};
             posts.forEach(p => {
                 const tid = p.thread_id || 'general';
                 if (!groups[tid]) {
-                    // Берем тему из заголовка (до скобок) для названия группы
-                    let groupName = (p.title || '').split('(')[0].replace(/Re:|Aw:|Fwd:/gi, '').trim();
-                    if (!groupName) groupName = 'Общее';
+                    let groupName = (p.title || '').split('(')[0].replace(/Re:|Aw:|Fwd:/gi, '').trim() || 'Общее';
                     groups[tid] = { name: groupName, posts: [] };
                 }
                 groups[tid].posts.push(p);
             });
 
-            // Рендер групп
             Object.values(groups).forEach(group => {
                 const groupDiv = document.createElement('div');
                 groupDiv.innerHTML = `<h2 class="group-header">${highlight(group.name, query)} (${group.posts.length})</h2>`;
-
                 group.posts.forEach(post => {
                     const card = document.createElement('div');
                     card.className = 'post-card';
-
                     const isBookmarked = localStorage.getItem('bm_' + post.id) === '1';
-                    const title = highlight(post.title, query);
-                    const preview = highlight(post.preview || '', query);
-
                     card.innerHTML = `
                         <div class="bookmark-btn ${isBookmarked ? 'active' : ''}" onclick="toggleBookmark(event, '${post.id}')">★</div>
                         <div class="post-header">
@@ -175,56 +151,45 @@
                                 <span class="post-date">${post.date}</span>
                             </div>
                         </div>
-                        <h3 class="post-title">${title}</h3>
-                        <p class="post-preview">${preview}</p>
+                        <h3 class="post-title">${highlight(post.title, query)}</h3>
+                        <p class="post-preview">${highlight(post.preview || '', query)}</p>
                         <div class="post-footer">Читать далее →</div>
                     `;
-                    
-                    // Клик по карточке (если не нажали на звездочку)
-                    card.onclick = (e) => {
-                        if (e.target.classList.contains('bookmark-btn')) return;
-                        loadPost(post.filename, post.title);
-                    };
-                    
+                    card.onclick = (e) => { if (!e.target.classList.contains('bookmark-btn')) loadPost(post.filename); };
                     groupDiv.appendChild(card);
                 });
                 feed.appendChild(groupDiv);
             });
         }
 
-        // --- 4. Подсветка поиска ---
         function highlight(text, query) {
             if (!query) return text;
-            const regex = new RegExp(`(${query})`, 'gi');
-            return text.replace(regex, '<mark>$1</mark>');
+            return text.replace(new RegExp(`(${query})`, 'gi'), '<mark>$1</mark>');
         }
 
-        // --- 5. Избранное (Звездочки) ---
         function toggleBookmark(e, id) {
             e.stopPropagation();
             const key = 'bm_' + id;
-            const el = e.target;
-            if (localStorage.getItem(key) === '1') {
-                localStorage.removeItem(key);
-                el.classList.remove('active');
-            } else {
-                localStorage.setItem(key, '1');
-                el.classList.add('active');
-            }
+            if (localStorage.getItem(key) === '1') { localStorage.removeItem(key); e.target.classList.remove('active'); }
+            else { localStorage.setItem(key, '1'); e.target.classList.add('active'); }
         }
 
-        // --- 6. Чтение поста ---
+        // 4. Чтение и навигация
         function backToFeed() {
             document.getElementById('article-view').style.display = 'none';
             document.getElementById('list-view').style.display = 'block';
-            document.querySelector('.giscus').innerHTML = ''; 
+            document.querySelector('.giscus').innerHTML = '';
         }
 
-        function loadPost(filename, title) {
+        function loadPost(filename) {
             document.getElementById('list-view').style.display = 'none';
             document.getElementById('article-view').style.display = 'block';
             document.getElementById('article-content').innerHTML = '<p>Загрузка...</p>';
             window.scrollTo(0,0);
+
+            // Запоминаем индекс текущей статьи
+            currentPostIndex = currentPostsList.findIndex(p => p.filename === filename);
+            updateNavButtons();
 
             fetch('./posts/' + filename)
                 .then(r => r.text())
@@ -232,9 +197,26 @@
                     document.getElementById('article-content').innerHTML = marked.parse(md);
                     loadUtterances(filename);
                 })
-                .catch(e => {
-                    document.getElementById('article-content').innerHTML = '<p style="color:red;">Ошибка загрузки статьи.</p>';
-                });
+                .catch(e => { document.getElementById('article-content').innerHTML = '<p style="color:red;">Ошибка.</p>'; });
+        }
+
+        function updateNavButtons() {
+            const btnPrev = document.getElementById('btn-prev');
+            const btnNext = document.getElementById('btn-next');
+
+            if (currentPostIndex > 0) {
+                btnPrev.style.display = 'inline-block';
+                btnPrev.onclick = () => loadPost(currentPostsList[currentPostIndex - 1].filename);
+            } else {
+                btnPrev.style.display = 'none';
+            }
+
+            if (currentPostIndex !== -1 && currentPostIndex < currentPostsList.length - 1) {
+                btnNext.style.display = 'inline-block';
+                btnNext.onclick = () => loadPost(currentPostsList[currentPostIndex + 1].filename);
+            } else {
+                btnNext.style.display = 'none';
+            }
         }
 
         function loadUtterances(term) {
@@ -248,6 +230,12 @@
             script.setAttribute('crossorigin', 'anonymous');
             script.async = true;
             container.appendChild(script);
+        }
+    </script>
+
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('../sw.js');
         }
     </script>
 </body>
