@@ -119,13 +119,12 @@
             <div class="article-content-wrapper">
                 <div id="article-content"></div>
             </div>
-            <div id="giscus-container" style="margin-top: 30px;">
-                <h3 style="margin-top:0; font-family: monospace;">Комментарии</h3>
-                <div class="giscus"></div>
-                <div id="giscus-fallback" style="display:none; margin-top: 15px; font-size: 14px;">
-                    <p style="color: var(--fg3);">Не удалось загрузить виджет.</p>
-                    <a id="giscus-link" href="#" target="_blank" style="color: var(--accent); font-weight: bold;">Открыть на GitHub →</a>
-                </div>
+            <div id="feedback-container" style="margin-top: 30px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 16px; padding: 30px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.02);">
+                <h3 style="margin-top:0; font-family: monospace; font-size: 20px;">Оставить отзыв</h3>
+                <p style="color: var(--fg2); font-size: 15px; margin-bottom: 20px;">Есть вопросы, замечания или предложения по этой статье? Напишите мне напрямую!</p>
+                <a id="email-feedback-btn" href="#" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 24px; background: #0288d1; color: white; border-radius: 8px; font-weight: bold; text-decoration: none; font-size: 16px; transition: all 0.2s; box-shadow: 0 4px 10px rgba(2, 136, 209, 0.3);">
+                    ✉️ Написать письмо
+                </a>
             </div>
         </div>
     </div>
@@ -267,7 +266,7 @@
             document.getElementById('progress-container').style.display = 'none';
             document.getElementById('btn-prev-fixed').style.display = 'none';
             document.getElementById('btn-next-fixed').style.display = 'none';
-            document.querySelector('.giscus').innerHTML = '';
+            
             window.scrollTo(0,0);
         }
 
@@ -303,7 +302,12 @@
                     });
 
                     if (currentQuery) highlightArticleText(currentQuery);
-                    loadUtterances(filename);
+                    // Устанавливаем ссылку для отправки письма
+                    const postTitle = currentPostsList[currentPostIndex].title;
+                    const emailAddr = 'valeriy.onuchin@yandex.ru'; // Твой email
+                    const subject = encodeURIComponent(`Отзыв на статью: ${postTitle}`);
+                    const body = encodeURIComponent(`Привет, Валерий!\n\nПишу по поводу статьи "${postTitle}".\n\n[Твой текст здесь]\n`);
+                    document.getElementById('email-feedback-btn').href = `mailto:${emailAddr}?subject=${subject}&body=${body}`;
                 })
                 .catch(e => { document.getElementById('article-content').innerHTML = '<p style="color:red;">Ошибка.</p>'; });
         }
@@ -353,27 +357,7 @@
             }
         };
 
-        function loadUtterances(term) {
-            const container = document.querySelector('.giscus');
-            const fallback = document.getElementById('giscus-fallback');
-            const link = document.getElementById('giscus-link');
-            container.innerHTML = '';
-            fallback.style.display = 'none';
-
-            const script = document.createElement('script');
-            script.src = 'https://utteranc.es/client.js';
-            script.setAttribute('repo', 'x2v0/x2v0.github.io');
-            script.setAttribute('issue-term', term);
-            script.setAttribute('theme', 'preferred-color-scheme');
-            script.setAttribute('crossorigin', 'anonymous');
-            script.async = true;
-            
-            const timeout = setTimeout(() => {
-                if (!container.querySelector('iframe')) {
-                    fallback.style.display = 'block';
-                    link.href = 'https://github.com/x2v0/x2v0.github.io/issues/new?title=' + encodeURIComponent(term);
-                }
-            }, 4000);
+                    }, 4000);
 
             script.onload = () => {
                 setTimeout(() => { if (container.querySelector('iframe')) clearTimeout(timeout); }, 500);
