@@ -1,16 +1,0 @@
-# debug Android with M$
-
-**От:** Voro.
-**Дата:** 2026-10-29 17:17
-
----
-
-Шапка перестала плавать. Шрифт остался мелким, переключатель фона исчез, ну и хрен с ним, Mail -&gt; Email, может все-таки вместо Email написать реальный твой email и рядом поставить иконку для копирования в буфер, также можно и с другими ссылками поступить, но email я бы показал все равно.<br> <br>Этот вариант, конечно, лучше гораздо. На телефонах и планшетах норально смотрится. Шрифт мелкий для десктопа наверное. надо как-то ловить это дело.<br> <br>Коля.
-
-<details>
-<summary>📎 Показать цитируемое письмо</summary>
-
-<div style='font-size:14px; color:var(--fg3);'>
-Sent: Thursday, October 29, 2026 at 8:00 PM<br>From: &quot;Valeriy Onuchin&quot; &lt;[EMAIL СКРЫТ]&gt;<br>To: &quot;[EMAIL СКРЫТ]&quot; &lt;[EMAIL СКРЫТ]&gt;, &quot;[EMAIL СКРЫТ]&quot; &lt;[EMAIL СКРЫТ]&gt;<br>CC: &quot;[EMAIL СКРЫТ]&quot; &lt;[EMAIL СКРЫТ]&gt;,&quot;[EMAIL СКРЫТ]&quot; &lt;[EMAIL СКРЫТ]&gt;,&quot;[EMAIL СКРЫТ]&quot; &lt;[EMAIL СКРЫТ]&gt;<br>Subject: Re: Aw: debug Android with M$<br><br> Я разделяю твое восхищение. <br>Сделал вторую страницу  - оригинал от профессионала replit.<br>Это был наш 0 вариант.<br> <br>https://x2v0.github.io/replit<br> <br> <br>Что скажешь?<br> <br> <br>To: &quot;[EMAIL СКРЫТ]&quot; &lt;[EMAIL СКРЫТ]&gt;, &quot;[EMAIL СКРЫТ]&quot; &lt;[EMAIL СКРЫТ]&gt;; Cc: &quot;[EMAIL СКРЫТ]&quot; &lt;[EMAIL СКРЫТ]&gt;, &quot;[EMAIL СКРЫТ]&quot; &lt;[EMAIL СКРЫТ]&gt;, &quot;[EMAIL СКРЫТ]&quot; &lt;[EMAIL СКРЫТ]&gt;; Subject: Aw: debug Android with M$; 19:23, October 29, 2026, &quot;[EMAIL СКРЫТ]&quot; &lt;[EMAIL СКРЫТ]&gt;: <br><br>Богато! Твои труды, Валера, не пропали даром! Стало еще хуже, чем было. Скрин я сделал в хроме на компе, шрифт мелкий совершенно, разметка телефонная, меню в виде бутерброда слева и переключение [ЦЕНЗУРА] темы прямо посередине заголовка. Заголовок уплывает, если крутить вниз, при этом левый sidebar стоит на месте (прибит на совесть, это хорошо). Твой портрет в сортире в черной рамке, для некролога что ли заготовка или это типа тень, и она налазит на текст, который ниже.<br> <br>У меня появилась теория, что чем дальше в лес, тем толще партизаны, и, что чем больше давать ИИ-агенту улучшать дизайн, то будет становиться все хуже и хуже. <br> <br>Коля.<br> <br><br><br>Sent: Thursday, October 29, 2026 at 6:30 PM<br>From: &quot;Valeriy Onuchin&quot; &lt;[EMAIL СКРЫТ]&gt;<br>To: &quot;[EMAIL СКРЫТ]&quot; &lt;[EMAIL СКРЫТ]&gt;, &quot;[EMAIL СКРЫТ]&quot; &lt;[EMAIL СКРЫТ]&gt;<br>CC: &quot;[EMAIL СКРЫТ]&quot; &lt;[EMAIL СКРЫТ]&gt;,&quot;[EMAIL СКРЫТ]&quot; &lt;[EMAIL СКРЫТ]&gt;,&quot;[EMAIL СКРЫТ]&quot; &lt;[EMAIL СКРЫТ]&gt;<br>Subject: debug Android with M$<br><br>Наконец-то [ЦЕНЗУРА] с https://x2v0.github.io<br> <br> IMHO, выглядит профессионально (Коля, Леша?).<br> <br>Вернулись к mtapi. <br>К автоматическому тестированию Андроид приложения mtapi, а именно его веб дубля (demo), с помощью microsoftовской системы тестирования Playwright.<br>https://ebaev.ru/wiki/tekhnologii-razrabotki/playwright/<br> <br>Так как функционально mtapi и demo - 1:1 , мы получили уникальную возможность тестирования андроида с помощью майкрософта.<br> <br>Честно. Не ожидал такого крутого поворота.<br> <br> <br> <br> <br> <br><br><br>С уважением. Валерий Онучин
-</div>
-</details>
