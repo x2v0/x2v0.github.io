@@ -6,165 +6,138 @@
     <title>Блог — Валерий Онучин</title>
     <link rel="stylesheet" href="../style.css">
     
-    <!-- Подключаем библиотеки -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.31/dist/flexsearch.bundle.js"></script>
-    
-    <!-- Подсветка кода (Highlight.js) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
 
     <style>
-        /* --- ОБЩИЕ СТИЛИ --- */
         body { background-color: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
         .feed-container { max-width: 760px; margin: 40px auto; padding: 0 20px; }
         
-        /* --- ПОЛОСА ПРОГРЕССА ЧТЕНИЯ --- */
+        /* --- ПЕРЕКЛЮЧАТЕЛЬ ТЕМЫ (Плавающий) --- */
+        #theme-toggle { position: fixed; top: 20px; right: 20px; z-index: 9999; font-size: 24px; background: var(--card-bg); border: 1px solid var(--border); border-radius: 50%; width: 45px; height: 45px; display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: transform 0.2s; }
+        #theme-toggle:hover { transform: scale(1.1); }
+
+        /* --- ПОЛОСА ПРОГРЕССА --- */
         #progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: transparent; z-index: 9999; display: none; }
         #progress-bar { height: 100%; background: var(--accent); width: 0%; transition: width 0.1s ease; box-shadow: 0 0 10px var(--accent); }
 
-        /* --- ЗАГОЛОВОК И СТЕКЛЯННЫЙ ПОИСК --- */
+        /* --- ЗАГОЛОВОК И ПОИСК --- */
         .feed-header { font-family: monospace; font-size: 32px; margin-bottom: 25px; letter-spacing: -1px; }
         .search-wrapper { position: sticky; top: 15px; z-index: 100; margin-bottom: 30px; }
-        .search-bar { 
-            width: 100%; padding: 16px 20px; border: 1px solid var(--border); border-radius: 12px; 
-            font-size: 16px; background: rgba(255, 255, 255, 0.85); color: var(--text); 
-            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
-            box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;
-        }
+        .search-bar { width: 100%; padding: 16px 20px; border: 1px solid var(--border); border-radius: 12px; font-size: 16px; background: rgba(255, 255, 255, 0.85); color: var(--text); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: all 0.3s ease; }
         [data-theme="dark"] .search-bar { background: rgba(30, 30, 30, 0.85); }
         .search-bar:focus { outline: none; border-color: var(--accent); box-shadow: 0 4px 20px rgba(2, 136, 209, 0.2); }
 
-        /* --- ЗАГОЛОВКИ ГРУПП --- */
-        .group-header { 
-            margin: 40px 0 20px 0; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px;
-            color: var(--accent); font-family: monospace; display: flex; align-items: center; gap: 10px;
-        }
+        /* --- ГРУППЫ И КАРТОЧКИ --- */
+        .group-header { margin: 40px 0 20px 0; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--accent); font-family: monospace; display: flex; align-items: center; gap: 10px; }
         .group-header::after { content: ""; flex: 1; height: 1px; background: var(--border); }
-
-        /* --- КАРТОЧКА ПОСТА (АНИМАЦИЯ) --- */
+        
         @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
-        .post-card { 
-            position: relative; background: var(--card-bg, #fff); border: 1px solid var(--border, #ddd); 
-            border-radius: 16px; padding: 25px; margin-bottom: 20px; cursor: pointer; 
-            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
-            animation: fadeInUp 0.5s ease backwards;
-        }
+        .post-card { position: relative; background: var(--card-bg, #fff); border: 1px solid var(--border, #ddd); border-radius: 16px; padding: 25px; margin-bottom: 20px; cursor: pointer; transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); box-shadow: 0 4px 10px rgba(0,0,0,0.03); animation: fadeInUp 0.5s ease backwards; }
         .post-card:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 12px 25px rgba(0,0,0,0.1); border-color: var(--accent); }
         [data-theme="dark"] .post-card { background: #1e1e1e; border-color: #333; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
         [data-theme="dark"] .post-card:hover { border-color: var(--accent); box-shadow: 0 12px 25px rgba(0,0,0,0.5); }
 
-        /* --- ЗВЕЗДОЧКА --- */
         .bookmark-btn { position: absolute; top: 25px; right: 25px; cursor: pointer; font-size: 22px; opacity: 0.2; transition: all 0.2s; user-select: none; }
         .bookmark-btn:hover { transform: scale(1.2); opacity: 0.6; }
         .bookmark-btn.active { opacity: 1; color: #fbc02d; text-shadow: 0 0 10px rgba(251, 192, 45, 0.4); }
 
-        /* --- ШАПКА КАРТОЧКИ --- */
         .post-header { display: flex; align-items: center; margin-bottom: 18px; }
         .post-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 2px solid var(--border); }
         .post-meta { display: flex; flex-direction: column; }
         .post-author { font-weight: 700; font-size: 16px; color: var(--text); letter-spacing: -0.3px; }
         .post-date { font-size: 13px; color: var(--fg3, #888); font-family: monospace; margin-top: 2px; }
 
-        /* --- ТЕКСТ КАРТОЧКИ --- */
         .post-title { margin: 0 0 12px 0; font-size: 20px; color: var(--text); line-height: 1.4; padding-right: 35px; font-weight: 700; letter-spacing: -0.5px; }
         .post-preview { margin: 0; font-size: 15px; color: var(--fg2); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
         .post-footer { margin-top: 20px; font-size: 13px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
         
         mark { background: #ffeb3b; color: #000; padding: 0 4px; border-radius: 4px; font-weight: bold; }
 
-        /* --- ПРОСМОТР СТАТЬИ (ЧИСТЫЙ ДИЗАЙН) --- */
+        /* --- ПРОСМОТР СТАТЬИ --- */
         .article-view { display: none; animation: fadeInUp 0.4s ease; }
-        .article-content-wrapper {
-            background: var(--card-bg, #fff); border: 1px solid var(--border, #ddd);
-            border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 30px;
-        }
+        .article-content-wrapper { background: var(--card-bg, #fff); border: 1px solid var(--border, #ddd); border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 30px; position: relative; }
         [data-theme="dark"] .article-content-wrapper { background: #1e1e1e; border-color: #333; }
         
-        /* Типографика статьи (как в Medium) */
         .article-view h1 { color: var(--text); font-size: 32px; line-height: 1.3; margin-top: 0; margin-bottom: 25px; letter-spacing: -1px; }
         .article-view h2 { color: var(--text); font-size: 24px; margin-top: 40px; margin-bottom: 15px; }
         .article-view h3 { color: var(--text); font-size: 20px; margin-top: 30px; margin-bottom: 10px; }
         .article-view p { font-size: 17px; line-height: 1.7; color: var(--fg2); margin-bottom: 20px; }
         .article-view img { max-width: 100%; border-radius: 8px; margin: 20px 0; }
         .article-view blockquote { border-left: 4px solid var(--accent); padding-left: 20px; margin: 25px 0; color: var(--fg3); font-style: italic; background: var(--bg3); padding: 15px 20px; border-radius: 0 8px 8px 0; }
-        .article-view pre { background: #282c34; padding: 20px; border-radius: 10px; overflow-x: auto; margin: 25px 0; }
+        
+        /* Блок кода и Кнопка COPY */
+        .article-view pre { background: #282c34; padding: 20px; border-radius: 10px; overflow-x: auto; margin: 25px 0; position: relative; }
         .article-view code { font-family: 'Fira Code', 'Courier New', monospace; font-size: 14px; }
         .article-view p code, .article-view li code { background: var(--bg3); padding: 3px 6px; border-radius: 4px; font-size: 14px; color: #e83e8c; }
+        
+        .copy-btn { position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.3); border-radius: 4px; padding: 5px 10px; font-size: 12px; cursor: pointer; transition: 0.2s; font-family: sans-serif; }
+        .copy-btn:hover { background: rgba(255,255,255,0.2); }
 
         /* Кнопки управления */
-        .btn-back { 
-            display: inline-flex; align-items: center; gap: 8px; margin-bottom: 25px; padding: 12px 20px; 
-            background: #0288d1; color: #fff; border: none; border-radius: 8px; cursor: pointer; 
-            font-size: 15px; font-weight: 600; transition: all 0.2s; box-shadow: 0 4px 10px rgba(2, 136, 209, 0.3);
-        }
+        .btn-back { display: inline-flex; align-items: center; gap: 8px; margin-bottom: 25px; padding: 12px 20px; background: #0288d1; color: #fff; border: none; border-radius: 8px; cursor: pointer; font-size: 15px; font-weight: 600; transition: all 0.2s; box-shadow: 0 4px 10px rgba(2, 136, 209, 0.3); }
         .btn-back:hover { background: #0277bd; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(2, 136, 209, 0.4); }
 
-        /* Навигация Prev/Next */
-        .nav-container { display: flex; justify-content: space-between; gap: 15px; margin-top: 30px; }
-        .btn-nav { 
-            flex: 1; padding: 15px 20px; background: var(--card-bg, #fff); color: var(--text); 
-            border: 1px solid var(--border); border-radius: 12px; cursor: pointer; 
-            font-weight: 600; font-size: 15px; transition: all 0.2s; display: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        /* --- ФИКСИРОВАННЫЕ СТРЕЛКИ ПРЕД/СЛЕД --- */
+        .btn-nav-fixed { position: fixed; top: 50%; transform: translateY(-50%); width: 50px; height: 50px; border-radius: 50%; background: var(--card-bg); color: var(--text); border: 1px solid var(--border); font-size: 24px; cursor: pointer; display: none; z-index: 900; box-shadow: 0 4px 15px rgba(0,0,0,0.15); transition: all 0.2s; align-items: center; justify-content: center; }
+        .btn-nav-fixed:hover { background: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-50%) scale(1.1); }
+        .btn-nav-prev { left: 20px; }
+        .btn-nav-next { right: 20px; }
+        
+        @media (max-width: 900px) {
+            .btn-nav-fixed { top: auto; bottom: 80px; transform: none; width: 45px; height: 45px; font-size: 20px; background: #0288d1; color: white; border: none; }
+            .btn-nav-fixed:hover { transform: scale(1.1); }
+            .btn-nav-prev { left: 20px; }
+            .btn-nav-next { right: 20px; }
+            .article-content-wrapper { padding: 20px; }
         }
-        .btn-nav:hover { background: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(2, 136, 209, 0.2); }
 
-        /* Кнопка Наверх (FAB) */
-        #btn-up {
-            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%;
-            background: var(--accent); color: white; border: none; font-size: 24px; cursor: pointer;
-            box-shadow: 0 4px 15px rgba(2, 136, 209, 0.4); display: none; z-index: 1000;
-            transition: all 0.3s;
-        }
+        #btn-up { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%; background: #0288d1; color: white; border: none; font-size: 24px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(2, 136, 209, 0.4); display: none; z-index: 1000; transition: all 0.3s; }
         #btn-up:hover { transform: scale(1.1) translateY(-3px); }
 
-        /* Комментарии */
         #giscus-container { background: var(--card-bg, #fff); border: 1px solid var(--border, #ddd); border-radius: 16px; padding: 30px; }
         [data-theme="dark"] #giscus-container { background: #1e1e1e; border-color: #333; }
     </style>
 </head>
 <body style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
     
-    <!-- Полоса прогресса -->
+    <button id="theme-toggle" onclick="toggleTheme()">🌙</button>
     <div id="progress-container"><div id="progress-bar"></div></div>
 
+    <!-- Стрелки по бокам -->
+    <button id="btn-prev-fixed" class="btn-nav-fixed btn-nav-prev" onclick="navPrev()">←</button>
+    <button id="btn-next-fixed" class="btn-nav-fixed btn-nav-next" onclick="navNext()">→</button>
+
     <div class="feed-container">
-        <!-- СПИСОК -->
         <div id="list-view">
             <h1 class="feed-header">Лента записей</h1>
-            
             <div class="search-wrapper">
                 <input type="text" id="search-input" class="search-bar" placeholder="🔍 Поиск по письмам...">
             </div>
-
             <div id="posts-feed">
                 <p style="color: var(--fg3); text-align: center; padding: 40px 0;">Загрузка постов...</p>
             </div>
         </div>
 
-        <!-- СТАТЬЯ -->
         <div id="article-view" class="article-view">
             <button class="btn-back" onclick="backToFeed()">← Назад в ленту</button>
-            
             <div class="article-content-wrapper">
                 <div id="article-content"></div>
             </div>
-            
-            <div class="nav-container">
-                <button id="btn-prev" class="btn-nav">← Предыдущая</button>
-                <button id="btn-next" class="btn-nav">Следующая →</button>
-            </div>
-
             <div id="giscus-container" style="margin-top: 30px;">
                 <h3 style="margin-top:0; font-family: monospace;">Комментарии</h3>
                 <div class="giscus"></div>
+                <!-- Запасной вариант, если Utterances не загрузился -->
+                <div id="giscus-fallback" style="display:none; margin-top: 15px; font-size: 14px;">
+                    <p style="color: var(--fg3);">Не удалось загрузить виджет комментариев (возможно, блокируется VPN).</p>
+                    <a id="giscus-link" href="#" target="_blank" style="color: var(--accent); font-weight: bold;">Оставить комментарий напрямую на GitHub →</a>
+                </div>
             </div>
         </div>
     </div>
 
-    <!-- Кнопка Наверх -->
     <button id="btn-up" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
 
     <script>
@@ -172,8 +145,22 @@
         let currentPostsList = []; 
         let currentPostIndex = -1;
         let searchIndex = null;
+        let currentQuery = ''; // Запоминаем текущий поиск
 
-        // 1. Загрузка данных
+        // --- ТЕМА ---
+        var currentTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', currentTheme);
+        document.getElementById('theme-toggle').textContent = currentTheme === 'dark' ? '☀️' : '🌙';
+        
+        function toggleTheme() {
+            var isDark = document.documentElement.getAttribute('data-theme') === 'dark';
+            var newTheme = isDark ? 'light' : 'dark';
+            document.documentElement.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            document.getElementById('theme-toggle').textContent = newTheme === 'dark' ? '☀️' : '🌙';
+        }
+
+        // --- ЗАГРУЗКА ---
         fetch('./posts.json')
             .then(r => r.json())
             .then(posts => {
@@ -184,18 +171,17 @@
             })
             .catch(e => { document.getElementById('posts-feed').innerHTML = '<p style="color:red; text-align:center;">Ошибка загрузки.</p>'; });
 
-        // 2. Поиск
+        // --- ПОИСК ---
         document.getElementById('search-input').addEventListener('input', (e) => {
-            const query = e.target.value.trim();
-            if (!query) { renderFeed(allPosts); return; }
+            currentQuery = e.target.value.trim();
+            if (!currentQuery) { renderFeed(allPosts); return; }
             if (!searchIndex) return;
-            const results = searchIndex.search(query, { limit: 50 });
+            const results = searchIndex.search(currentQuery, { limit: 50 });
             const ids = new Set();
             results.forEach(res => res.result.forEach(id => ids.add(id)));
-            renderFeed(allPosts.filter(p => ids.has(p.id)), query);
+            renderFeed(allPosts.filter(p => ids.has(p.id)), currentQuery);
         });
 
-        // 3. Рендеринг ленты
         function renderFeed(posts, query = '') {
             currentPostsList = posts; 
             const feed = document.getElementById('posts-feed');
@@ -221,7 +207,7 @@
                     const card = document.createElement('div');
                     card.className = 'post-card';
                     card.style.animationDelay = `${animationDelay}ms`;
-                    animationDelay += 50; // Каскадная анимация
+                    animationDelay += 50;
 
                     const isBookmarked = localStorage.getItem('bm_' + post.id) === '1';
                     card.innerHTML = `
@@ -256,11 +242,13 @@
             else { localStorage.setItem(key, '1'); e.target.classList.add('active'); }
         }
 
-        // 4. Чтение статьи
+        // --- СТАТЬЯ ---
         function backToFeed() {
             document.getElementById('article-view').style.display = 'none';
             document.getElementById('list-view').style.display = 'block';
             document.getElementById('progress-container').style.display = 'none';
+            document.getElementById('btn-prev-fixed').style.display = 'none';
+            document.getElementById('btn-next-fixed').style.display = 'none';
             document.querySelector('.giscus').innerHTML = '';
             window.scrollTo(0,0);
         }
@@ -279,33 +267,81 @@
                 .then(r => r.text())
                 .then(md => {
                     document.getElementById('article-content').innerHTML = marked.parse(md);
+                    
                     // Подсветка кода
                     document.querySelectorAll('pre code').forEach((block) => {
                         hljs.highlightElement(block);
+                        // Добавляем кнопку Copy
+                        const pre = block.parentNode;
+                        const btn = document.createElement('button');
+                        btn.className = 'copy-btn';
+                        btn.innerText = 'Copy';
+                        btn.onclick = (e) => {
+                            e.stopPropagation();
+                            navigator.clipboard.writeText(block.innerText).then(() => {
+                                btn.innerText = 'Copied!';
+                                setTimeout(() => btn.innerText = 'Copy', 2000);
+                            });
+                        };
+                        pre.appendChild(btn);
                     });
+
+                    // Подсветка поиска внутри статьи
+                    if (currentQuery) {
+                        highlightArticleText(currentQuery);
+                    }
+
                     loadUtterances(filename);
                 })
                 .catch(e => { document.getElementById('article-content').innerHTML = '<p style="color:red;">Ошибка.</p>'; });
         }
 
+        // Подсветка текста внутри статьи
+        function highlightArticleText(query) {
+            const content = document.getElementById('article-content');
+            const walker = document.createTreeWalker(content, NodeFilter.SHOW_TEXT, null, false);
+            let node;
+            const safeQuery = query.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+            const regex = new RegExp(`(${safeQuery})`, 'gi');
+            const nodesToReplace = [];
+            
+            while (node = walker.nextNode()) {
+                if (node.parentNode.nodeName !== 'SCRIPT' && node.parentNode.nodeName !== 'STYLE' && node.parentNode.nodeName !== 'MARK' && node.parentNode.nodeName !== 'PRE' && node.parentNode.nodeName !== 'CODE') {
+                    if (regex.test(node.nodeValue)) {
+                        nodesToReplace.push(node);
+                    }
+                }
+            }
+            nodesToReplace.forEach(n => {
+                const span = document.createElement('span');
+                const escapedText = n.nodeValue.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+                span.innerHTML = escapedText.replace(regex, '<mark>$1</mark>');
+                n.parentNode.replaceChild(span, n);
+            });
+        }
+
         function updateNavButtons() {
-            const btnPrev = document.getElementById('btn-prev');
-            const btnNext = document.getElementById('btn-next');
+            const btnPrev = document.getElementById('btn-prev-fixed');
+            const btnNext = document.getElementById('btn-next-fixed');
 
             if (currentPostIndex > 0) {
-                btnPrev.style.display = 'block';
-                btnPrev.onclick = () => loadPost(currentPostsList[currentPostIndex - 1].filename);
+                btnPrev.style.display = 'flex';
             } else { btnPrev.style.display = 'none'; }
 
             if (currentPostIndex !== -1 && currentPostIndex < currentPostsList.length - 1) {
-                btnNext.style.display = 'block';
-                btnNext.onclick = () => loadPost(currentPostsList[currentPostIndex + 1].filename);
+                btnNext.style.display = 'flex';
             } else { btnNext.style.display = 'none'; }
         }
 
-        // 5. Скролл и Прогресс
+        function navPrev() {
+            if (currentPostIndex > 0) loadPost(currentPostsList[currentPostIndex - 1].filename);
+        }
+        function navNext() {
+            if (currentPostIndex !== -1 && currentPostIndex < currentPostsList.length - 1) loadPost(currentPostsList[currentPostIndex + 1].filename);
+        }
+
+        // --- СКРОЛЛ ---
         window.onscroll = function() {
-            // Кнопка Наверх
             const btnUp = document.getElementById('btn-up');
             if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
                 btnUp.style.display = "block";
@@ -313,7 +349,6 @@
                 btnUp.style.display = "none";
             }
 
-            // Полоса прогресса
             if (document.getElementById('article-view').style.display === 'block') {
                 const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
                 const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -322,9 +357,14 @@
             }
         };
 
+        // --- КОММЕНТАРИИ С FALLBACK ---
         function loadUtterances(term) {
             const container = document.querySelector('.giscus');
+            const fallback = document.getElementById('giscus-fallback');
+            const link = document.getElementById('giscus-link');
             container.innerHTML = '';
+            fallback.style.display = 'none';
+
             const script = document.createElement('script');
             script.src = 'https://utteranc.es/client.js';
             script.setAttribute('repo', 'x2v0/x2v0.github.io');
@@ -332,6 +372,21 @@
             script.setAttribute('theme', 'preferred-color-scheme');
             script.setAttribute('crossorigin', 'anonymous');
             script.async = true;
+            
+            // Если через 4 секунды iframe не появился — показываем ссылку
+            const timeout = setTimeout(() => {
+                if (!container.querySelector('iframe')) {
+                    fallback.style.display = 'block';
+                    link.href = 'https://github.com/x2v0/x2v0.github.io/issues/new?title=' + encodeURIComponent(term);
+                }
+            }, 4000);
+
+            script.onload = () => {
+                setTimeout(() => {
+                    if (container.querySelector('iframe')) clearTimeout(timeout);
+                }, 500);
+            };
+
             container.appendChild(script);
         }
     </script>
