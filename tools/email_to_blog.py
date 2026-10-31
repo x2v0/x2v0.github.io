@@ -91,6 +91,18 @@ def fetch_emails():
 
                 from_raw = msg.get("From")
                 from_name, from_addr = email.utils.parseaddr(from_raw)
+                
+                # Принудительная декодировка для Outlook
+                if from_name and from_name.startswith('=?'):
+                    from_name_parts = decode_header(from_name)
+                    decoded_name = ""
+                    for part, encoding in from_name_parts:
+                        if isinstance(part, bytes):
+                            decoded_name += part.decode(encoding or 'utf-8', errors='replace')
+                        else:
+                            decoded_name += part
+                    from_name = decoded_name
+                
                 anon_sender = get_anon_name(from_name or from_addr)
                 sender_color = get_color(anon_sender)
 
