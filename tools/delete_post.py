@@ -1,7 +1,7 @@
 import json
 import pathlib
 
-manifest_path = pathlib.Path('year-archive/posts.json')
+manifest_path = pathlib.Path('blog/posts.json')
 posts = json.loads(manifest_path.read_text(encoding='utf-8'))
 
 print("\n=== СПИСОК СТАТЕЙ ===")
@@ -15,7 +15,7 @@ if choice.isdigit():
         post = posts.pop(idx)
         
         # Удаляем файл .md
-        md_file = pathlib.Path('year-archive/posts') / post['filename']
+        md_file = pathlib.Path('blog/posts') / post['filename']
         if md_file.exists():
             md_file.unlink()
             print(f"✓ Файл {post['filename']} удален.")

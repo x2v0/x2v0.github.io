@@ -1,0 +1,800 @@
+<title>Valeriy Onuchin Resume</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Валерий Онучин — Senior Software Engineer: системное программирование, научное и медицинское ПО, DevOps. Соавтор ROOT (ЦЕРН).">
+<meta property="og:type" content="profile">
+<meta property="og:title" content="Валерий Онучин — инженер-программист">
+<meta property="og:description" content="Системное программирование, научное и медицинское ПО, DevOps. Соавтор ROOT (ЦЕРН).">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='16' fill='%230e6f78'/%3E%3Ctext x='16' y='21.5' font-family='Fira Sans,sans-serif' font-weight='600' font-size='14' fill='white' text-anchor='middle'%3EВО%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fira+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&display=swap">
+<style>
+/* Layout: a sticky profile column on the left (name, summary, section nav, contacts) and the record scrolling on the right; one column on phones and on paper. */
+:root {
+  --bg: #f7f8f8;
+  --surface: #ffffff;
+  --ink: #14181c;
+  --ink-2: #48505a;
+  --ink-3: #7b838d;
+  --rule: #e2e5e8;
+  --accent: #0e6f78;
+  --accent-soft: #dff0f1;
+  --sans: "Fira Sans", "PT Sans", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --step--1: 0.8125rem;
+  --step-0: 1.0625rem;
+  --step-1: 1.25rem;
+  --step-2: 1.5rem;
+  --step-4: clamp(2.5rem, 4.4vw, 3.5rem);
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0e1214; --surface: #151b1e; --ink: #eef1f3; --ink-2: #aab3bb; --ink-3: #78838c;
+    --rule: #242c31; --accent: #62c6cc; --accent-soft: #13343a; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0e1214; --surface: #151b1e; --ink: #eef1f3; --ink-2: #aab3bb; --ink-3: #78838c;
+  --rule: #242c31; --accent: #62c6cc; --accent-soft: #13343a; color-scheme: dark;
+}
+
+/* Both languages live in the markup; one is hidden. */
+html[data-lang="en"] [data-l="ru"],
+html[data-lang="ru"] [data-l="en"] { display: none !important; }
+
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } * { transition: none !important; } }
+body {
+  margin: 0; background: var(--bg); color: var(--ink-2);
+  font: 400 var(--step-0)/1.65 var(--sans);
+  -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  font-variant-numeric: lining-nums;
+}
+body::before {
+  content: ""; position: fixed; inset: 0 0 auto; height: env(safe-area-inset-top, 0px); z-index: 10; background: var(--bg);
+}
+h1, h2, h3 { margin: 0; color: var(--ink); text-wrap: balance; }
+p, ul, ol, dl, dd { margin: 0; padding: 0; }
+li { list-style: none; }
+a { color: var(--ink); text-decoration: none; }
+a:hover { color: var(--accent); }
+:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; border-radius: 3px; }
+.visually-hidden { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+.prose a, .link { color: var(--accent); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--accent) 35%, transparent); text-underline-offset: 0.2em; }
+.prose a:hover, .link:hover { text-decoration-color: currentColor; }
+.ext::after { content: "↗"; display: inline-block; margin-left: 0.15em; font-size: 0.8em; transition: transform .15s; }
+a:hover > .ext::after, a.ext:hover::after { transform: translate(1px, -1px); }
+
+.draft-note {
+  font-size: var(--step--1); text-align: center; color: var(--ink-2);
+  background: var(--accent-soft); padding: 0.45rem 16px;
+}
+
+.page {
+  max-width: 78rem; margin: 0 auto;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+}
+@media (min-width: 1024px) {
+  .page {
+    display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(0, 1.18fr); gap: 5rem;
+    padding-left: max(3rem, env(safe-area-inset-left, 0px)); padding-right: max(3rem, env(safe-area-inset-right, 0px));
+  }
+}
+
+/* ---------- Profile column ---------- */
+.profile { padding-block: 3rem 1rem; display: flex; flex-direction: column; gap: 1.75rem; }
+@media (min-width: 1024px) {
+  .profile { position: sticky; top: 0; height: 100vh; padding-block: 5.5rem 3rem; }
+}
+.who { display: grid; gap: 1rem; }
+.portrait {
+  width: 5.5rem; height: 5.5rem; max-width: 100%; border-radius: 50%; object-fit: cover;
+  box-shadow: 0 0 0 4px var(--surface), 0 0 0 5px var(--rule);
+}
+h1 { font-size: var(--step-4); font-weight: 600; line-height: 1.02; letter-spacing: -0.025em; }
+.role { font-size: var(--step-1); font-weight: 500; color: var(--ink); margin-top: -0.25rem; }
+.place { font-size: 0.9375rem; color: var(--ink-3); }
+.tagline { max-width: 26em; }
+
+.toc { display: none; }
+@media (min-width: 1024px) {
+  .toc { display: grid; gap: 0.15rem; margin-top: 0.5rem; }
+  .toc a {
+    display: flex; align-items: center; gap: 0.9rem; width: max-content;
+    font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+    color: var(--ink-3); padding-block: 0.45rem;
+  }
+  .toc a::before {
+    content: ""; height: 1px; width: 2rem; background: currentColor; transition: width .2s ease, background .2s;
+  }
+  .toc a:hover, .toc a[aria-current="true"] { color: var(--ink); }
+  .toc a:hover::before, .toc a[aria-current="true"]::before { width: 4rem; background: var(--accent); }
+}
+
+.contact { display: grid; gap: 0.6rem; font-size: 0.9375rem; }
+.email { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.email output { color: var(--ink); font-weight: 500; user-select: all; }
+.links { display: flex; flex-wrap: wrap; gap: 0.35rem 1.1rem; }
+.links a { color: var(--ink-2); font-weight: 500; }
+.links a:hover { color: var(--accent); }
+
+.controls { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; }
+@media (min-width: 1024px) { .controls { margin-top: auto; } }
+.pill {
+  font: 500 0.8125rem/1 var(--sans); border: 1px solid var(--rule); background: var(--surface);
+  color: var(--ink-2); border-radius: 999px; padding: 0.5rem 0.8rem; cursor: pointer;
+}
+.pill:hover { color: var(--ink); border-color: var(--ink-3); }
+.pill.solid { background: var(--ink); color: var(--bg); border-color: var(--ink); }
+.pill.solid:hover { opacity: 0.88; color: var(--bg); }
+.seg { display: inline-flex; border: 1px solid var(--rule); background: var(--surface); border-radius: 999px; padding: 3px; }
+.seg button {
+  font: 600 0.75rem/1 var(--sans); letter-spacing: 0.06em; border: 0; background: none; color: var(--ink-3);
+  padding: 0.45rem 0.65rem; border-radius: 999px; cursor: pointer;
+}
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
+.icon-btn {
+  width: 2.15rem; height: 2.15rem; display: inline-grid; place-items: center; padding: 0;
+  border: 1px solid var(--rule); background: var(--surface); color: var(--ink-2); border-radius: 50%; cursor: pointer;
+}
+.icon-btn:hover { color: var(--ink); border-color: var(--ink-3); }
+.icon-btn svg { width: 1rem; height: 1rem; }
+
+/* ---------- Record column ---------- */
+.record { padding-block: 1rem 4rem; min-width: 0; }
+@media (min-width: 1024px) { .record { padding-block: 5.5rem 6rem; } }
+.block { padding-block: 2.5rem; scroll-margin-top: 1rem; }
+.block + .block { border-top: 1px solid var(--rule); }
+.label {
+  font-size: 0.8125rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 1.5rem;
+}
+
+/* About */
+.about { display: grid; gap: 1rem; max-width: 36em; }
+.about strong { color: var(--ink); font-weight: 500; }
+.facts {
+  display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; margin-top: 2rem;
+}
+.fact { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 1.1rem 1.1rem 1rem; }
+.fact b { display: block; color: var(--ink); font-size: var(--step-2); font-weight: 600; line-height: 1.1; letter-spacing: -0.01em; }
+.fact > span { display: block; font-size: 0.875rem; line-height: 1.45; margin-top: 0.45rem; }
+@media (max-width: 640px) { .facts { grid-template-columns: minmax(0, 1fr); } }
+
+/* Experience */
+.jobs { display: grid; gap: 0.5rem; }
+.job {
+  display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 0.25rem 1.5rem;
+  padding: 1.5rem; margin-inline: -1.5rem; border-radius: 12px; border: 1px solid transparent;
+  transition: background .2s, border-color .2s;
+}
+@media (hover: hover) and (min-width: 1024px) {
+  .job:hover { background: var(--surface); border-color: var(--rule); }
+}
+.when { font-size: var(--step--1); font-weight: 500; letter-spacing: 0.04em; text-transform: uppercase; color: var(--ink-3); padding-top: 0.3rem; font-variant-numeric: tabular-nums; }
+.job h3 { font-size: var(--step-1); font-weight: 600; line-height: 1.3; }
+.job h3 .at { color: var(--ink-3); font-weight: 400; }
+.job h3 a:hover { color: var(--accent); }
+.job-body { min-width: 0; display: grid; gap: 0.75rem; }
+.job-body > p { max-width: 38em; }
+.bullets { display: grid; gap: 0.4rem; max-width: 38em; }
+.bullets li { position: relative; padding-left: 1.1rem; }
+.bullets li::before { content: ""; position: absolute; left: 0; top: 0.72em; width: 5px; height: 5px; border-radius: 50%; background: var(--accent); }
+.sub { font-size: 0.75rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-3); margin-top: 0.4rem; }
+.works { display: grid; gap: 0.55rem; max-width: 38em; }
+.work { display: grid; grid-template-columns: 10rem minmax(0, 1fr); gap: 0.1rem 1rem; font-size: 0.9375rem; }
+.work > :first-child { color: var(--ink); font-weight: 500; overflow-wrap: anywhere; }
+a.work-name:hover { color: var(--accent); }
+.tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.25rem; }
+.tag {
+  font-size: 0.78rem; font-weight: 500; color: var(--accent); background: var(--accent-soft);
+  border-radius: 999px; padding: 0.28rem 0.7rem; line-height: 1.3;
+}
+@media (max-width: 640px) {
+  .job { grid-template-columns: minmax(0, 1fr); padding: 1.25rem 0; margin-inline: 0; }
+  .work { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Skills */
+.skills { display: grid; grid-template-columns: 9rem minmax(0, 1fr); }
+.skills dt, .skills dd { padding-block: 0.8rem; border-bottom: 1px solid var(--rule); }
+.skills dt { color: var(--ink); font-weight: 500; padding-right: 1.5rem; }
+.skills dd b { color: var(--ink); font-weight: 500; }
+.langs { margin-top: 1.25rem; }
+@media (max-width: 640px) {
+  .skills { grid-template-columns: minmax(0, 1fr); }
+  .skills dt { border-bottom: 0; padding-bottom: 0; }
+}
+
+/* Publications */
+.metrics { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1rem; }
+.metric b { display: block; color: var(--ink); font-size: 2.25rem; font-weight: 300; line-height: 1; letter-spacing: -0.02em; font-variant-numeric: tabular-nums; }
+.metric > span { display: block; font-size: 0.875rem; margin-top: 0.5rem; line-height: 1.4; }
+.metrics-src { font-size: var(--step--1); color: var(--ink-3); margin-top: 1rem; }
+@media (max-width: 640px) { .metrics { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.5rem; } }
+.papers { display: grid; gap: 0.25rem; margin-top: 1rem; }
+.paper {
+  display: grid; grid-template-columns: 3.5rem minmax(0, 1fr); gap: 1rem;
+  padding: 0.9rem 1rem; margin-inline: -1rem; border-radius: 10px; transition: background .2s;
+}
+@media (hover: hover) { .paper:hover { background: var(--surface); } }
+.paper .yr { font-size: var(--step--1); font-weight: 500; color: var(--ink-3); padding-top: 0.2rem; font-variant-numeric: tabular-nums; }
+.paper-title { color: var(--ink); font-weight: 500; line-height: 1.4; }
+.paper-title a:hover { color: var(--accent); }
+.paper-meta { font-size: 0.9rem; margin-top: 0.25rem; }
+.pubs-head { margin-top: 2.5rem; }
+details.all-pubs { margin-top: 2rem; background: var(--surface); border: 1px solid var(--rule); border-radius: 12px; }
+details.all-pubs > summary {
+  cursor: pointer; list-style: none; padding: 1rem 1.25rem; color: var(--ink); font-weight: 500;
+  display: flex; justify-content: space-between; align-items: center; gap: 1rem;
+}
+details.all-pubs > summary::-webkit-details-marker { display: none; }
+details.all-pubs > summary::after { content: "+"; font-size: 1.25rem; font-weight: 300; color: var(--ink-3); }
+details.all-pubs[open] > summary::after { content: "−"; }
+.pubs-inner { padding: 0 1.25rem 1.25rem; }
+.pubs-tools { display: flex; flex-wrap: wrap; gap: 0.75rem; align-items: center; }
+.pubs-tools input {
+  flex: 1 1 16rem; min-width: 0; font: inherit; font-size: 0.9375rem; color: var(--ink);
+  background: var(--bg); border: 1px solid var(--rule); border-radius: 8px; padding: 0.6rem 0.8rem;
+}
+.pubs-count { font-size: var(--step--1); color: var(--ink-3); }
+.pubs-list { margin-top: 0.75rem; max-height: 32rem; overflow-y: auto; }
+.pubs-list li {
+  display: grid; grid-template-columns: 3rem minmax(0, 1fr) auto; gap: 0.75rem;
+  padding-block: 0.6rem; border-bottom: 1px solid var(--rule); font-size: 0.9rem; line-height: 1.45;
+}
+.pubs-list li > :nth-child(2) { color: var(--ink); }
+.pubs-list .yr { color: var(--ink-3); font-variant-numeric: tabular-nums; }
+.pubs-list .jr { display: block; color: var(--ink-3); font-size: 0.8125rem; }
+.pubs-list a { color: var(--accent); font-size: 0.8125rem; font-weight: 500; white-space: nowrap; }
+
+/* Education & footer */
+.edu { display: grid; grid-template-columns: 7.5rem minmax(0, 1fr); gap: 0.25rem 1.5rem; }
+.edu h3 { font-size: var(--step-1); font-weight: 600; line-height: 1.3; }
+@media (max-width: 640px) { .edu { grid-template-columns: minmax(0, 1fr); } }
+.foot { font-size: var(--step--1); color: var(--ink-3); padding-top: 2rem; }
+
+.toast {
+  position: fixed; left: 50%; bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px)); transform: translateX(-50%);
+  background: var(--ink); color: var(--bg); font-size: 0.875rem; font-weight: 500; padding: 0.7rem 1rem; border-radius: 8px; z-index: 20;
+}
+
+/* ---------- Print: one plain column, A4 ---------- */
+@media print {
+  @page { size: A4; margin: 13mm 15mm; }
+  :root { --bg: #fff; --surface: #fff; --ink: #000; --ink-2: #2b2f33; --ink-3: #5c636a; --rule: #c9cdd1; --accent: #0e5f67; --accent-soft: #fff; color-scheme: light; }
+  html { font-size: 9.4pt; }
+  body { background: #fff; line-height: 1.45; }
+  body::before, .draft-note, .toc, .controls, .pill, .icon-btn, details.all-pubs, .tags, .toast, .print-hide { display: none !important; }
+  .page { display: block; padding: 0 !important; max-width: none; }
+  .profile { position: static; height: auto; padding: 0 0 0.6rem; gap: 0.6rem; border-bottom: 1.5px solid #000; }
+  .who { grid-template-columns: auto 1fr; align-items: center; column-gap: 1rem; row-gap: 0.1rem; }
+  .who .portrait { grid-row: span 4; width: 4.2rem; height: 4.2rem; box-shadow: none; }
+  h1 { font-size: 2.2rem; }
+  .role { margin-top: 0; font-size: 1.1rem; }
+  .contact { grid-auto-flow: column; justify-content: start; gap: 1.5rem; }
+  .links a .ext::after, .ext::after { content: none; }
+  .record { padding: 0; }
+  .block { padding-block: 0.7rem; }
+  .label { margin-bottom: 0.5rem; }
+  .facts { margin-top: 0.7rem; gap: 0.6rem; }
+  .fact { padding: 0.5rem 0.6rem; border-radius: 4px; }
+  .fact b { font-size: 1.15rem; }
+  .jobs { gap: 0; }
+  .job { padding: 0.5rem 0; margin: 0; break-inside: avoid; }
+  .job-body { gap: 0.35rem; }
+  .bullets, .works { gap: 0.15rem; }
+  .bullets li::before { top: 0.6em; }
+  .skills dt, .skills dd { padding-block: 0.3rem; }
+  .metric b { font-size: 1.6rem; }
+  .paper { padding: 0.3rem 0; margin: 0; break-inside: avoid; }
+  .label, .sub { break-after: avoid; }
+  .edu, .skills, .metrics { break-inside: avoid; }
+  a { color: inherit; text-decoration: none; }
+}
+</style>
+<script>
+(function () {
+  var root = document.documentElement;
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+  var h = location.hash.slice(1);
+  var lang = (h === 'en' || h === 'ru') ? h : store('lang');
+  if (lang !== 'en' && lang !== 'ru') lang = /^(ru|uk|be|kk)/i.test(navigator.language || '') ? 'ru' : 'en';
+  root.setAttribute('data-lang', lang);
+  root.lang = lang;
+  var theme = store('theme');
+  if (theme === 'dark' || theme === 'light') root.setAttribute('data-theme', theme);
+})();
+</script>
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Person","name":"Valeriy Onuchin","alternateName":"Валерий Онучин","jobTitle":"Senior Software Engineer","address":{"@type":"PostalAddress","addressLocality":"Protvino","addressCountry":"RU"},"email":"mailto:valeriy.onuchin@yandex.ru","sameAs":["https://github.com/x2v0","https://orcid.org/0009-0000-3022-3529","https://www.scopus.com/authid/detail.uri?authorId=8401982000"]}
+</script>
+
+
+<div class="draft-note" id="draft-note" hidden>
+  <span data-l="ru">Черновик редизайна x2v0.github.io — для обсуждения.</span>
+  <span data-l="en">Redesign draft of x2v0.github.io, for review.</span>
+</div>
+
+<div class="page">
+
+  <!-- ===================== Profile column ===================== -->
+  <header class="profile">
+    <div class="who">
+      <img class="portrait" src="data:image/jpeg;base64,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" width="480" height="480" alt="">
+      <h1><span data-l="ru">Валерий Онучин</span><span data-l="en">Valeriy Onuchin</span></h1>
+      <p class="role">Senior Software Engineer</p>
+      <p class="place"><span data-l="ru">Протвино, Московская область</span><span data-l="en">Protvino, Moscow region, Russia</span></p>
+    </div>
+
+    <p class="tagline">
+      <span data-l="ru">Прикладное и системное программирование, разработка научного и медицинского ПО, DevOps.</span>
+      <span data-l="en">Application and systems programming, scientific and medical software, DevOps.</span>
+    </p>
+
+    <nav class="toc" aria-label="Sections">
+      <a href="#about"><span data-l="ru">Обо мне</span><span data-l="en">About</span></a>
+      <a href="#experience"><span data-l="ru">Опыт</span><span data-l="en">Experience</span></a>
+      <a href="#skills"><span data-l="ru">Навыки</span><span data-l="en">Skills</span></a>
+      <a href="#publications"><span data-l="ru">Публикации</span><span data-l="en">Publications</span></a>
+      <a href="#education"><span data-l="ru">Образование</span><span data-l="en">Education</span></a>
+    </nav>
+
+    <div class="contact">
+      <div class="email">
+        <output id="email-text">valeriy.onuchin@yandex.ru</output>
+        <button type="button" class="pill" data-copy="valeriy.onuchin@yandex.ru"><span data-l="ru">Копировать</span><span data-l="en">Copy</span></button>
+      </div>
+      <div class="links">
+        <a href="https://github.com/x2v0" target="_blank" rel="noopener"><span class="ext">GitHub</span></a>
+        <a href="https://orcid.org/0009-0000-3022-3529" target="_blank" rel="noopener"><span class="ext">ORCID</span></a>
+        <a href="https://www.scopus.com/authid/detail.uri?authorId=8401982000" target="_blank" rel="noopener"><span class="ext">Scopus</span></a>
+      </div>
+    </div>
+
+    <div class="controls">
+      <div class="seg" role="group" aria-label="Language / Язык">
+        <button type="button" data-set-lang="ru" aria-pressed="false">RU</button>
+        <button type="button" data-set-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <button type="button" class="icon-btn" id="theme-toggle" aria-label="Light / dark theme">
+        <svg viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6.25" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M8 1.75a6.25 6.25 0 0 1 0 12.5z" fill="currentColor"/></svg>
+      </button>
+      <button type="button" class="pill solid" id="pdf-btn" hidden><span data-l="ru">Скачать PDF</span><span data-l="en">Save as PDF</span></button>
+    </div>
+  </header>
+
+  <!-- ===================== Record column ===================== -->
+  <main class="record">
+
+    <section class="block" id="about">
+      <h2 class="label"><span data-l="ru">Обо мне</span><span data-l="en">About</span></h2>
+      <div class="about prose">
+        <p>
+          <span data-l="ru">Почти 40 лет работы в научных институтах и в промышленной разработке. Знаю, что нужно физику от программы, и умею построить её так, чтобы она работала годами.</span>
+          <span data-l="en">Almost 40 years in research institutes and in industry. I know what physicists need from software, and how to build it so it keeps running for years.</span>
+        </p>
+        <p>
+          <span data-l="ru">Соавтор пакета <a href="https://root.cern" target="_blank" rel="noopener">ROOT</a> (ЦЕРН), который использовался при открытии бозона Хиггса. Двенадцать лет писал ПО для комплекса протонной терапии. Последние годы собираю Linux-дистрибутивы и ОС для x86_64, Эльбруса и aarch64.</span>
+          <span data-l="en">Co-author of <a href="https://root.cern" target="_blank" rel="noopener">ROOT</a>, CERN’s data analysis framework, which was used in the discovery of the Higgs boson. Twelve years of software for a proton therapy system. Most recently, Linux distributions and operating systems for x86_64, Elbrus and aarch64.</span>
+        </p>
+      </div>
+      <div class="facts">
+        <div class="fact">
+          <b>ROOT</b>
+          <span data-l="ru">Соавтор: GUI, графика, сигналы и слоты, около 520 коммитов</span>
+          <span data-l="en">Co-author: GUI, graphics, signals and slots, about 520 commits</span>
+        </div>
+        <div class="fact">
+          <b><span data-l="ru">12 лет</span><span data-l="en">12 years</span></b>
+          <span data-l="ru">ПО для протонной терапии, более 1000 пациентов</span>
+          <span data-l="en">Proton therapy software, more than 1,000 patients</span>
+        </div>
+        <div class="fact">
+          <b>h-index 43</b>
+          <span data-l="ru">15 108 цитирований в Scopus</span>
+          <span data-l="en">15,108 citations in Scopus</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="experience">
+      <h2 class="label"><span data-l="ru">Опыт работы</span><span data-l="en">Experience</span></h2>
+      <div class="jobs">
+
+        <article class="job">
+          <p class="when">03.2025 – 12.2025</p>
+          <div class="job-body">
+            <h3>
+              <span data-l="ru">Инженер-программист</span><span data-l="en">Software Engineer</span>
+              <span class="at">· <a href="https://elvees.ru" target="_blank" rel="noopener"><span data-l="ru">АО НПЦ «ЭЛВИС»</span><span data-l="en">ELVEES R&amp;D Center</span></a></span>
+            </h3>
+            <p class="prose">
+              <span data-l="ru">Разработка «Альтель ОС» на базе <a href="https://www.basealt.ru" target="_blank" rel="noopener">Альт</a> под отечественные платформы Эльбрус-2000 и Скиф (aarch64), кросс-компиляция.</span>
+              <span data-l="en">Altel OS, based on <a href="https://www.basealt.ru" target="_blank" rel="noopener">ALT Linux</a>, for the Russian Elbrus-2000 and Skif (aarch64) platforms; cross-compilation.</span>
+            </p>
+            <ul class="bullets prose">
+              <li>
+                <span data-l="ru">Образы ОС для процессора <a href="https://support.elvees.com/docs/Microchips/SKIF/" target="_blank" rel="noopener">Скиф</a> (1892ВА018, 4 × Cortex-A53): 8 вариантов, от сборочного и маршрутизатора до GNOME и KDE, ядро Linux 6.6.</span>
+                <span data-l="en">OS images for the <a href="https://support.elvees.com/docs/Microchips/SKIF/" target="_blank" rel="noopener">Skif</a> SoC (1892VA018, 4 × Cortex-A53): 8 variants, from build host and router to GNOME and KDE, Linux kernel 6.6.</span>
+              </li>
+            </ul>
+            <div class="works">
+              <div class="work">
+                <a class="work-name" href="https://github.com/x2v0/mkimage-profiles-skif" target="_blank" rel="noopener"><span class="ext">mkimage-profiles-skif</span></a>
+                <p><span data-l="ru">Профили сборки образов Альт для Скифа.</span><span data-l="en">ALT image build profiles for Skif.</span></p>
+              </div>
+            </div>
+            <ul class="tags"><li class="tag">aarch64</li><li class="tag">e2k</li><li class="tag">ALT Linux</li><li class="tag">cross-compilation</li><li class="tag">Linux kernel</li></ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <p class="when">2022 – 2024</p>
+          <div class="job-body">
+            <h3>
+              <span data-l="ru">Системный программист</span><span data-l="en">Systems Programmer</span>
+              <span class="at">· <a href="https://jinr.ru" target="_blank" rel="noopener"><span data-l="ru">ОИЯИ, Дубна</span><span data-l="en">JINR, Dubna</span></a></span>
+            </h3>
+            <p class="prose">
+              <span data-l="ru">ПО для эксперимента <a href="https://spd.jinr.ru" target="_blank" rel="noopener">SPD на коллайдере NICA</a>, Объединённый институт ядерных исследований.</span>
+              <span data-l="en">Software for the <a href="https://spd.jinr.ru" target="_blank" rel="noopener">SPD experiment at the NICA collider</a>, Joint Institute for Nuclear Research.</span>
+            </p>
+            <ul class="bullets">
+              <li>
+                <span data-l="ru">Docker-образ для распределённых вычислений: моделирование детектора и реконструкция физических событий (Geant4, Pythia8, ROOT, Gaudi).</span>
+                <span data-l="en">Docker image for distributed computing: detector simulation and physics event reconstruction (Geant4, Pythia8, ROOT, Gaudi).</span>
+              </li>
+              <li>
+                <span data-l="ru">Автоматическая сборка Linux-дистрибутива из исходников: 170+ пакетов, включая математические и физические, под x86_64, e2k и aarch64.</span>
+                <span data-l="en">Automated from-source build of a Linux distribution: 170+ packages, including maths and physics libraries, for x86_64, e2k and aarch64.</span>
+              </li>
+              <li>
+                <span data-l="ru">CI/CD-пайплайны для автоматической сборки Docker-образов и тестирования.</span>
+                <span data-l="en">CI/CD pipelines for automated Docker image builds and testing.</span>
+              </li>
+              <li>
+                <span data-l="ru">CMake-инфраструктура для гетерогенной среды разработки.</span>
+                <span data-l="en">CMake infrastructure for a heterogeneous development environment.</span>
+              </li>
+              <li>
+                <span data-l="ru">Соавтор Technical Design Report детектора SPD (2024).</span>
+                <span data-l="en">Co-author of the SPD detector Technical Design Report (2024).</span>
+              </li>
+            </ul>
+            <div class="works">
+              <div class="work">
+                <a class="work-name" href="https://github.com/x2v0/lfspd/blob/main/README.ru.md" target="_blank" rel="noopener"><span class="ext">lfspd</span></a>
+                <p><span data-l="ru">Docker-образ для параллельных вычислений на основе Linux From Scratch.</span><span data-l="en">Docker image for parallel computing, based on Linux From Scratch.</span></p>
+              </div>
+              <div class="work">
+                <span>SpdCMake</span>
+                <p><span data-l="ru">CMake-функции для эксперимента SPD (внутренний репозиторий ОИЯИ).</span><span data-l="en">CMake functions for the SPD experiment (internal JINR repository).</span></p>
+              </div>
+            </div>
+            <ul class="tags"><li class="tag">Docker</li><li class="tag">Python</li><li class="tag">bash</li><li class="tag">CMake</li><li class="tag">chroot</li><li class="tag">Geant4</li><li class="tag">ROOT</li></ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <p class="when">2009 – 2021</p>
+          <div class="job-body">
+            <h3>
+              <span data-l="ru">Ведущий разработчик медицинского ПО</span><span data-l="en">Lead Medical Software Developer</span>
+              <span class="at">· <a href="https://protom.ru" target="_blank" rel="noopener"><span data-l="ru">АО «ПРОТОМ», Протвино</span><span data-l="en">Protom, Protvino</span></a></span>
+            </h3>
+            <p>
+              <span data-l="ru">ПО для протонной терапии онкологических заболеваний: 3D DICOM-просмотрщик, система видеоконтроля пациента (C#, C++, реальное время), диагностика, базы данных. Синхротрон ПРОТОМ работает в комплексах «Прометеус» и Radiance 330 в Протвино, Обнинске, США и Израиле; к 2021 году на них пролечено более 1000 пациентов.</span>
+              <span data-l="en">Software for proton cancer therapy: a 3D DICOM viewer, a patient video monitoring system (C#, C++, real time), diagnostics, databases. The Protom synchrotron runs in the Prometheus and Radiance 330 systems in Protvino, Obninsk, the USA and Israel; by 2021 they had treated more than 1,000 patients.</span>
+            </p>
+            <p class="sub"><span data-l="ru">Программы</span><span data-l="en">Software</span></p>
+            <div class="works">
+              <div class="work">
+                <a class="work-name" href="https://dicom2fmm.github.io" target="_blank" rel="noopener"><span class="ext">3D DICOM Viewer</span></a>
+                <p><span data-l="ru">Просмотр КТ в 3D, редактор контуров и доз, конвертация DICOM в формат системы планирования облучения. C#, C++, DevExpress.</span><span data-l="en">3D CT viewer with contour and dose editing; converts DICOM into the treatment planning system’s format. C#, C++, DevExpress.</span></p>
+              </div>
+              <div class="work">
+                <a class="work-name" href="https://x2v0.github.io/AlignPatient/HTML/" target="_blank" rel="noopener"><span class="ext">AlignPatient</span></a>
+                <p><span data-l="ru">Видеоконтроль положения пациента: живое видео сравнивается с эталонным снимком; видео- и аудиосвязь с врачом, запись пульса и дыхания. C#, C++, COM, DirectShow; multicast UDP, TCP/IP, RTP, SIP.</span><span data-l="en">Patient position monitoring: live video is compared with a reference image; video and audio link to the doctor, pulse and breathing recording. C#, C++, COM, DirectShow; multicast UDP, TCP/IP, RTP, SIP.</span></p>
+              </div>
+              <div class="work">
+                <a class="work-name" href="https://x2v0.github.io/TM/docs" target="_blank" rel="noopener"><span class="ext">PFS/TM</span></a>
+                <p><span data-l="ru">C#-реализация протокола обмена данными внутри ускорительного комплекса; работает и как модуль PowerShell.</span><span data-l="en">C# implementation of the data exchange protocol inside the accelerator complex; also works as a PowerShell module.</span></p>
+              </div>
+              <div class="work">
+                <a class="work-name" href="https://github.com/x2v0/MainCClient.NET" target="_blank" rel="noopener"><span class="ext"><span data-l="ru">План облучения</span><span data-l="en">MainCClient.NET</span></span></a>
+                <p><span data-l="ru">Клиент: отправка плана облучения на сервер, запуск, пауза и отмена облучения.</span><span data-l="en">Client that sends the treatment plan to the server and starts, pauses or cancels irradiation.</span></p>
+              </div>
+              <div class="work">
+                <a class="work-name" href="https://x2v0.github.io/EBTfilm" target="_blank" rel="noopener"><span class="ext">EBTfilm</span></a>
+                <p><span data-l="ru">Обработка дозиметрических плёнок EBT2/EBT3 после облучения протонным пучком. C#, C++, ROOT.</span><span data-l="en">Analysis of EBT2/EBT3 dosimetry films after proton beam exposure. C#, C++, ROOT.</span></p>
+              </div>
+            </div>
+            <ul class="tags"><li class="tag">C#</li><li class="tag">C++</li><li class="tag">.NET</li><li class="tag">DirectShow</li><li class="tag">DICOM</li><li class="tag">real-time video</li><li class="tag">ROOT</li></ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <p class="when">2004 – 2008</p>
+          <div class="job-body">
+            <h3>
+              <span data-l="ru">Программист, команда ROOT</span><span data-l="en">Software Developer, ROOT team</span>
+              <span class="at">· <a href="https://root.cern" target="_blank" rel="noopener"><span data-l="ru">ЦЕРН, Женева</span><span data-l="en">CERN, Geneva</span></a></span>
+            </h3>
+            <p>
+              <span data-l="ru">Соавтор пакета ROOT для экспериментов физики высоких энергий: более 4 миллионов строк кода на C++, сотни тысяч пользователей. Сегодня в файлах ROOT хранится более 2 эксабайт данных; бозон Хиггса был открыт с помощью ROOT. Около 520 коммитов в ROOT за 2000–2009 годы.</span>
+              <span data-l="en">Co-author of ROOT, the data analysis framework of high energy physics: more than 4 million lines of C++, hundreds of thousands of users. More than 2 exabytes of data are stored in ROOT files today, and the Higgs boson was discovered with ROOT. About 520 commits to ROOT in 2000–2009.</span>
+            </p>
+            <p class="sub"><span data-l="ru">Основной вклад</span><span data-l="en">Main contributions</span></p>
+            <ul class="bullets prose">
+              <li><span data-l="ru">Порт GUI и графики ROOT на Windows (TGWin32).</span><span data-l="en">Windows GUI and graphics port of ROOT (TGWin32).</span></li>
+              <li><span data-l="ru">Механизм сигналов и слотов (TQObject, TQConnection).</span><span data-l="en">The signals and slots mechanism (TQObject, TQConnection).</span></li>
+              <li><span data-l="ru">GUI-классы и <a href="https://root.cern.ch/root/htmldoc/guides/users-guide/WritingGUI.html" target="_blank" rel="noopener">GUI Builder</a>.</span><span data-l="en">GUI classes and the <a href="https://root.cern.ch/root/htmldoc/guides/users-guide/WritingGUI.html" target="_blank" rel="noopener">GUI Builder</a>.</span></li>
+              <li><span data-l="ru">Классы обработки изображений, TASImage на основе libAfterImage (<a href="https://root.cern.ch/doc/v630/group__tutorial__image.html" target="_blank" rel="noopener">примеры</a>).</span><span data-l="en">Image processing classes, TASImage on top of libAfterImage (<a href="https://root.cern.ch/doc/v630/group__tutorial__image.html" target="_blank" rel="noopener">examples</a>).</span></li>
+              <li><span data-l="ru">HTML-виджет TGHtml.</span><span data-l="en">The TGHtml HTML widget.</span></li>
+              <li><span data-l="ru"><a href="https://sourceforge.net/projects/carrot/" target="_blank" rel="noopener">Carrot</a> — Apache-модуль для выполнения C++ скриптов на стороне сервера (аналог PHP).</span><span data-l="en"><a href="https://sourceforge.net/projects/carrot/" target="_blank" rel="noopener">Carrot</a>, an Apache module that runs C++ scripts on the server side, like PHP.</span></li>
+              <li><span data-l="ru">QtRoot (Qt, C++).</span><span data-l="en">QtRoot (Qt, C++).</span></li>
+              <li><span data-l="ru">RDBC (ROOT DataBase Connectivity) — доступ к базам данных через ODBC, реализация JDBC API в виде классов ROOT.</span><span data-l="en">RDBC (ROOT DataBase Connectivity): database access over ODBC, the JDBC API implemented as ROOT classes.</span></li>
+            </ul>
+            <ul class="tags"><li class="tag">C++</li><li class="tag">Win32</li><li class="tag">X11</li><li class="tag">Qt</li><li class="tag">Apache</li><li class="tag">ODBC</li></ul>
+          </div>
+        </article>
+
+        <article class="job">
+          <p class="when">1987 – 2004</p>
+          <div class="job-body">
+            <h3>
+              <span data-l="ru">Научный сотрудник, физик-экспериментатор</span><span data-l="en">Research Scientist, Experimental Physicist</span>
+              <span class="at">· <a href="http://ihep.ru" target="_blank" rel="noopener"><span data-l="ru">ИФВЭ, Протвино</span><span data-l="en">IHEP, Protvino</span></a></span>
+            </h3>
+            <ul class="bullets">
+              <li><span data-l="ru">Физика тяжёлых ионов и кварк-глюонная плазма: соавтор ключевых публикаций коллаборации PHENIX на ускорителе RHIC (США).</span><span data-l="en">Heavy-ion physics and quark-gluon plasma: co-author of key PHENIX collaboration papers at RHIC (USA).</span></li>
+              <li><span data-l="ru">Физика нейтрино: эксперимент MINOS (Fermilab, США).</span><span data-l="en">Neutrino physics: the MINOS experiment (Fermilab, USA).</span></li>
+              <li><span data-l="ru">Физика каонов и редких распадов: установка «Комплекс меченых нейтрино» (ИФВЭ).</span><span data-l="en">Kaon physics and rare decays: the Tagged Neutrino Facility (IHEP).</span></li>
+              <li><span data-l="ru">Эксперимент «Гиперон-М» (У-70): многомашинный комплекс сбора данных.</span><span data-l="en">The Hyperon-M experiment (U-70): a multi-computer data acquisition system.</span></li>
+              <li><span data-l="ru">Разработка и эксплуатация электромагнитных и адронных калориметров.</span><span data-l="en">Design and operation of electromagnetic and hadronic calorimeters.</span></li>
+            </ul>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <section class="block" id="skills">
+      <h2 class="label"><span data-l="ru">Навыки</span><span data-l="en">Skills</span></h2>
+      <dl class="skills">
+        <dt><span data-l="ru">Языки</span><span data-l="en">Languages</span></dt>
+        <dd><b>C++</b>, <b>C#</b>, <b>Python</b>, Go, Kotlin, bash, PowerShell</dd>
+        <dt><span data-l="ru">Сборка</span><span data-l="en">Build</span></dt>
+        <dd>CMake, Meson/Ninja, autotools, Make, msbuild, pkg-config</dd>
+        <dt>DevOps</dt>
+        <dd>Docker, CI/CD, <span data-l="ru">кросс-компиляция, ядро Linux, сборка ОС</span><span data-l="en">cross-compilation, Linux kernel, OS builds</span></dd>
+        <dt><span data-l="ru">Платформы</span><span data-l="en">Platforms</span></dt>
+        <dd>Linux, Windows, Android, <span data-l="ru">Эльбрус-2000, Скиф (aarch64)</span><span data-l="en">Elbrus-2000, Skif (aarch64)</span></dd>
+        <dt><span data-l="ru">Экспертиза</span><span data-l="en">Expertise</span></dt>
+        <dd><span data-l="ru">Высоконагруженные системы, кросс-платформенная сборка, анализ и визуализация научных данных, медицинское ПО.</span><span data-l="en">High-load systems, cross-platform builds, scientific data analysis and visualisation, medical software.</span></dd>
+        <dt><span data-l="ru">Языки общения</span><span data-l="en">Spoken</span></dt>
+        <dd><span data-l="ru">Русский — родной. Английский — разговорный, техническая документация.</span><span data-l="en">Russian: native. English: conversational; technical documentation.</span></dd>
+      </dl>
+
+      <p class="sub pubs-head"><span data-l="ru">Собственные проекты</span><span data-l="en">Personal projects</span></p>
+      <div class="works" style="margin-top:0.75rem">
+        <div class="work">
+          <a class="work-name" href="https://github.com/x2v0/mtapi" target="_blank" rel="noopener"><span class="ext">mtapi</span></a>
+          <p class="prose">
+            <span data-l="ru">Android HTTP-мост: 60+ API-эндпоинтов, отладочный оверлей, браузер.</span>
+            <span data-l="en">Android HTTP bridge: 60+ API endpoints, debug overlay, browser.</span>
+            <a class="print-hide" href="https://x2v0.github.io/mtapi/demo/" target="_blank" rel="noopener">Demo</a>
+          </p>
+        </div>
+        <div class="work">
+          <a class="work-name" href="https://github.com/x2v0/ROOT.NET" target="_blank" rel="noopener"><span class="ext">ROOT.NET</span></a>
+          <p><span data-l="ru">Мост C# — ROOT: холст ROOT внутри формы .NET.</span><span data-l="en">C# to ROOT bridge: a ROOT canvas inside a .NET form.</span></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="block" id="publications">
+      <h2 class="label"><span data-l="ru">Публикации</span><span data-l="en">Publications</span></h2>
+      <div class="metrics">
+        <div class="metric"><b>43</b><span>h-index</span></div>
+        <div class="metric"><b><span data-l="ru">15 108</span><span data-l="en">15,108</span></b><span><span data-l="ru">цитирований</span><span data-l="en">citations</span></span></div>
+        <div class="metric"><b>78</b><span><span data-l="ru">публикаций</span><span data-l="en">publications</span></span></div>
+        <div class="metric"><b>34</b><span><span data-l="ru">в Physical Review Letters</span><span data-l="en">in Physical Review Letters</span></span></div>
+      </div>
+      <p class="metrics-src">
+        <span data-l="ru">Scopus (h-index, цитирования, публикации) и ORCID (статьи в PRL). Аффилиация в Scopus: ОИЯИ, Дубна.</span>
+        <span data-l="en">Scopus (h-index, citations, publications) and ORCID (PRL papers). Scopus affiliation: JINR, Dubna.</span>
+      </p>
+
+      <p class="sub pubs-head"><span data-l="ru">Избранные работы</span><span data-l="en">Selected work</span></p>
+      <ol class="papers">
+        <li class="paper">
+          <span class="yr">2009</span>
+          <div>
+            <p class="paper-title"><a href="https://doi.org/10.1016/j.cpc.2009.08.005" target="_blank" rel="noopener">ROOT — A C++ framework for petabyte data storage, statistical analysis and visualization</a></p>
+            <p class="paper-meta prose">Antcheva I. et al. Comput. Phys. Commun. 180 (2009) 2499–2512 · <span data-l="ru">421 цитирование. Обновление для версии 5.28: <a href="https://doi.org/10.1016/j.cpc.2011.02.008" target="_blank" rel="noopener">CPC 182 (2011) 1384</a>, 126 цитирований.</span><span data-l="en">421 citations. Update for version 5.28: <a href="https://doi.org/10.1016/j.cpc.2011.02.008" target="_blank" rel="noopener">CPC 182 (2011) 1384</a>, 126 citations.</span></p>
+          </div>
+        </li>
+        <li class="paper">
+          <span class="yr">2008</span>
+          <div>
+            <p class="paper-title"><a href="https://doi.org/10.1088/1748-0221/3/08/S08002" target="_blank" rel="noopener">The ALICE experiment at the CERN LHC</a></p>
+            <p class="paper-meta">ALICE Collaboration. JINST 3 (2008) S08002 · <span data-l="ru">1 996 цитирований</span><span data-l="en">1,996 citations</span></p>
+          </div>
+        </li>
+        <li class="paper">
+          <span class="yr">2008</span>
+          <div>
+            <p class="paper-title"><a href="https://doi.org/10.1016/j.nima.2008.08.003" target="_blank" rel="noopener">The magnetized steel and scintillator calorimeters of the MINOS experiment</a></p>
+            <p class="paper-meta">MINOS Collaboration. Nucl. Instrum. Meth. A (2008) · <span data-l="ru">294 цитирования</span><span data-l="en">294 citations</span></p>
+          </div>
+        </li>
+        <li class="paper">
+          <span class="yr">2007</span>
+          <div>
+            <p class="paper-title"><a href="https://doi.org/10.1134/S0020441207050041" target="_blank" rel="noopener">A multicomputer data acquisition complex based on MISS and SUMMA electronics for the Hyperon-M experiment</a></p>
+            <p class="paper-meta">Instrum. Exp. Tech. 50 (2007)</p>
+          </div>
+        </li>
+        <li class="paper">
+          <span class="yr">2024</span>
+          <div>
+            <p class="paper-title"><a href="https://arxiv.org/abs/2404.08317" target="_blank" rel="noopener">Technical Design Report of the Spin Physics Detector at NICA</a></p>
+            <p class="paper-meta">SPD Collaboration. arXiv:2404.08317</p>
+          </div>
+        </li>
+        <li class="paper">
+          <span class="yr">2020</span>
+          <div>
+            <p class="paper-title"><a href="https://habr.com/ru/articles/495090" target="_blank" rel="noopener">40 лет анализа больших объёмов данных в Физике Высоких Энергий: интервью с Рене Браном</a></p>
+            <p class="paper-meta">
+              <span data-l="ru">Хабр. Интервью с создателем ROOT.</span>
+              <span data-l="en">Habr, in Russian: an interview with René Brun, the creator of ROOT.</span>
+            </p>
+          </div>
+        </li>
+      </ol>
+
+      <details class="all-pubs">
+        <summary><span data-l="ru">Все публикации из ORCID</span><span data-l="en">All publications from ORCID</span></summary>
+        <div class="pubs-inner">
+          <div class="pubs-tools">
+            <label class="visually-hidden" for="pub-search"><span data-l="ru">Поиск</span><span data-l="en">Search</span></label>
+            <input type="search" id="pub-search" data-ph-ru="Поиск по названию, журналу или году" data-ph-en="Search by title, journal or year">
+            <span class="pubs-count" id="pubs-count" aria-live="polite"></span>
+          </div>
+          <ul class="pubs-list" id="pubs-list"></ul>
+        </div>
+      </details>
+    </section>
+
+    <section class="block" id="education">
+      <h2 class="label"><span data-l="ru">Образование</span><span data-l="en">Education</span></h2>
+      <div class="edu">
+        <p class="when">1981 – 1987</p>
+        <div>
+          <h3><span data-l="ru">Харьковский национальный университет имени В. Н. Каразина</span><span data-l="en">V. N. Karazin Kharkiv National University</span></h3>
+          <p><span data-l="ru">Физико-технический факультет. Специальность: экспериментальная ядерная физика.</span><span data-l="en">Faculty of Physics and Technology. Major: experimental nuclear physics.</span></p>
+        </div>
+      </div>
+      <p class="foot">© 2026 <span data-l="ru">Валерий Онучин · обновлено в октябре 2026</span><span data-l="en">Valeriy Onuchin · updated October 2026</span></p>
+    </section>
+
+  </main>
+</div>
+
+<script type="application/json" id="pubs-data">[{"y":"2024","t":"Technical Design Report of the Spin Physics Detector at NICA","j":"Arxiv","doi":"10.48550/arXiv.2404.08317"},{"y":"2011","t":"ROOT-A C++ framework for petabyte data storage, statistical analysis and visualization","j":"Computer Physics Communications","doi":"10.1016/j.cpc.2011.02.008"},{"y":"2009","t":"ROOT - A C++ framework for petabyte data storage, statistical analysis and visualization","j":"Computer Physics Communications","doi":"10.1016/j.cpc.2009.08.005"},{"y":"2009","t":"The ALICE Collaboration","j":"Nuclear Physics A","doi":"10.1016/j.nuclphysa.2009.10.142"},{"y":"2008","t":"Study of K ± → e ± νπ 0 decays at the KMN setup","j":"Physics of Atomic Nuclei","doi":"10.1134/S1063778808120089"},{"y":"2008","t":"The alice experiment at the CERN LHC","j":"Journal of Instrumentation","doi":"10.1088/1748-0221/3/08/S08002"},{"y":"2008","t":"The magnetized steel and scintillator calorimeters of the MINOS experiment","j":"Nuclear Instruments and Methods in Physics Research Section A Accelerators Spectrometers Detectors and Associated Equipment","doi":"10.1016/j.nima.2008.08.003"},{"y":"2007","t":"A multicomputer data acquisition complex based on MISS and SUMMA electronics for the Hyperon-M experiment","j":"Instruments and Experimental Techniques","doi":"10.1134/S0020441207050041"},{"y":"2007","t":"Detailed study of high-pT neutral pion suppression and azimuthal anisotropy in Au+Au collisions at sNN=200 GeV","j":"Physical Review C Nuclear Physics","doi":"10.1103/PhysRevC.76.034904"},{"y":"2007","t":"Evidence for a long-range component in the pion emission source in Au+Au collisions at sNN=200GeV","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.98.132301"},{"y":"2007","t":"High transverse momentum η meson production in p+p,d+Au, and Au+Au collisions at sNN=200 GeV","j":"Physical Review C Nuclear Physics","doi":"10.1103/PhysRevC.75.024909"},{"y":"2007","t":"Measurement of density correlations in pseudorapidity via charged particle multiplicity fluctuations in Au+Au collisions at sNN=200 GeV","j":"Physical Review C Nuclear Physics","doi":"10.1103/PhysRevC.76.034903"},{"y":"2007","t":"Measurement of single muons at forward rapidity in p+p collisions at s=200GeV and implications for charm production","j":"Physical Review D Particles Fields Gravitation and Cosmology","doi":"10.1103/PhysRevD.76.092002"},{"y":"2006","t":"Common suppression pattern of η and π0 mesons at high transverse momentum in Au+Au collisions at sNN=200GeV","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.96.202301"},{"y":"2006","t":"Dense-medium modifications to jet-induced Hadron pair distributions in Au+Au collisions at sNN=200GeV","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.97.052301"},{"y":"2006","t":"First observations of separated atmospheric νμ and ν̄μ events in the MINOS detector","j":"Physical Review D Particles Fields Gravitation and Cosmology","doi":"10.1103/PhysRevD.73.072002"},{"y":"2006","t":"Measurement of identified π0 and inclusive photon second-harmonic parameter v2 and implications for direct photon production in sNN=200GeV Au+Au","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.96.032302"},{"y":"2006","t":"Nuclear modification of electron spectra and implications for heavy quark energy loss in Au+Au collisions at sNN=200GeV","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.96.032301"},{"y":"2006","t":"Observation of muon neutrino disappearance with the MINOS detectors in the NuMI neutrino beam","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.97.191801"},{"y":"2006","t":"Single electrons from heavy-flavor decays in p+p collisions at s=200GeV","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.96.032001"},{"y":"2005","t":"Erratum: Systematic studies of the centrality and √SN N dependence of the deT/dη and dNch/dη in heavy ion collisions at midrapidity (Physical Review C - Nuclear Physics (2005) 71)","j":"Physical Review C Nuclear Physics","doi":"10.1103/PhysRevC.71.049901"},{"y":"2005","t":"Formation of dense partonic matter in relativistic nucleus-nucleus collisions at RHIC: Experimental evaluation by the PHENIX Collaboration","j":"Nuclear Physics A","doi":"10.1016/j.nuclphysa.2005.03.086"},{"y":"2005","t":"Jet structure of baryon excess in Au+Au collisions at sNN=200GeV","j":"Physical Review C Nuclear Physics","doi":"10.1103/PhysRevC.71.051902"},{"y":"2005","t":"Measurement of single electron event anisotropy in Au+Au collisions at sNN=200 GeV","j":"Physical Review C Nuclear Physics","doi":"10.1103/PhysRevC.72.024901"},{"y":"2005","t":"Measurement of the charge asymmetry of the dalitz plot parameters for K± → π±π0π 0 decays","j":"Physics of Atomic Nuclei","doi":"10.1134/1.1954821"},{"y":"2005","t":"Measurements of the charge asymmetry of the Dalitz plot parameters for K± → π±π0π0decays","j":"European Physical Journal C","doi":"10.1140/epjc/s2005-02138-8"},{"y":"2005","t":"Midrapidity direct-photon production in p + p collisions at √s=200 GeV","j":"Physical Review D Particles Fields Gravitation and Cosmology","doi":"10.1103/PhysRevD.71.071102"},{"y":"2005","t":"Production of i mesons at midrapidity in sNN=200GeVAu+Au collisions at relativistic energies","j":"Physical Review C Nuclear Physics","doi":"10.1103/PhysRevC.72.014903"},{"y":"2005","t":"Systematic studies of the centrality and √SNN dependence of the dET/dη and dNch/dη in heavy ion collisions at midrapidity","j":"Physical Review C Nuclear Physics","doi":"10.1103/PhysRevC.71.034908"},{"y":"2004","t":"Bose-einstein correlations of charged pion pairs in Au + Au collisions at √sNN = 200 GeV","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.93.152302"},{"y":"2004","t":"High-pT charged hadron suppression in Au+Au collisions at √SNN=200 GeV","j":"Physical Review C Nuclear Physics","doi":"10.1103/PhysRevC.69.034910"},{"y":"2004","t":"Identified charged particle spectra and yields in Au+Au collisions at √SNN=200 GeV","j":"Physical Review C Nuclear Physics","doi":"10.1103/PhysRevC.69.034909"},{"y":"2004","t":"J/ψ Production from Proton-Proton Collisions at √s = 200 GeV","j":"Physical Review Letters","doi":""},{"y":"2004","t":"J/ψ production in Au-Au collisions at √Snn=200 GeV","j":"Physical Review C Nuclear Physics","doi":"10.1103/PhysRevC.69.014901"},{"y":"2004","t":"Measurement of nonrandom event-by-event fluctuations of average transverse momentum in √s NN = 200 GeV Au + Au and p + p collisions","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.93.092301"},{"y":"2004","t":"Single identified hadron spectra from √SNN=130 GeV Au+Au collisions","j":"Physical Review C Nuclear Physics","doi":"10.1103/PhysRevC.69.024904"},{"y":"2004","t":"[Formula presented] Production from Proton-Proton Collisions at [Formula presented]","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.92.051802"},{"y":"2003","t":"Centrality dependence of the high pT charged hadron suppression in Au + Au collisions at √sNN = 130 GeV","j":"Physics Letters Section B Nuclear Elementary Particle and High Energy Physics","doi":"10.1016/S0370-2693(03)00423-4"},{"y":"2003","t":"Elliptic flow of identified hadrons in [formula presented] collisions at [formula presented]","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.91.182301"},{"y":"2003","t":"Midrapidity neutral-pion production in proton-proton collisions at [formula presented]","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.91.241803"},{"y":"2003","t":"Midrapidity neutral-pion production in proton-proton collisions at √s = 200 GeV","j":"Physical Review Letters","doi":""},{"y":"2003","t":"PHENIX calorimeter","j":"Nuclear Instruments and Methods in Physics Research Section A Accelerators Spectrometers Detectors and Associated Equipment","doi":"10.1016/S0168-9002(02)01954-X"},{"y":"2003","t":"PHENIX detector overview","j":"Nuclear Instruments and Methods in Physics Research Section A Accelerators Spectrometers Detectors and Associated Equipment","doi":"10.1016/S0168-9002(02)01950-2"},{"y":"2003","t":"Scaling Properties of Proton and Antiproton Production in √S NN = 200 GeV Au + Au Collisions","j":"Physical Review Letters","doi":""},{"y":"2003","t":"Scaling properties of proton and antiproton production in [formula presented] [formula presented] collisions","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.91.172301"},{"y":"2003","t":"Suppressed [Formula presented] Production at Large Transverse Momentum in Central [Formula presented] Collisions at [Formula presented]","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.91.072301"},{"y":"2003","t":"Suppressed π0 Production at Large Transverse Momentum in Central Au + Au Collisions at √sNN = 200 GeV","j":"Physical Review Letters","doi":""},{"y":"2002","t":"Centrality Dependence of [Formula presented], [Formula presented], [Formula presented], and [Formula presented] Production from [Formula presented] Au + Au Collisions at RHIC","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.88.242301"},{"y":"2002","t":"Centrality dependence of charged particle multiplicity in Au-Au collisions at √sNN = 130 GeV","j":"Physical Review C Nuclear Physics","doi":"10.1103/PhysRevC.65.031901"},{"y":"2002","t":"Centrality dependence of π+/-, K+/-, p, and p̄ production from √sNN = 130 GeV Au + Au collisions at RHIC","j":"Physical Review Letters","doi":""},{"y":"2002","t":"Event-by-event fluctuations in mean pt and mean et in√Snn = 130 GeV Au+Au collisions","j":"Physical Review C Nuclear Physics","doi":"10.1103/PhysRevC.66.024901"},{"y":"2002","t":"Flow Measurements via Two-Particle Azimuthal Correlations in [Formula presented] Collisions at [Formula presented]","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.89.212301"},{"y":"2002","t":"Flow measurements via two-particle azimuthal correlations in Au + Au collisions √SNN = 130 GeV","j":"Physical Review Letters","doi":""},{"y":"2002","t":"Measurement of Single Electrons and Implications for Charm Production in [Formula presented] Collisions at [Formula presented]","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.88.192303"},{"y":"2002","t":"Measurement of [Formula presented] and [Formula presented] Particles in [Formula presented] Collisions at [Formula presented]","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.89.092302"},{"y":"2002","t":"Measurement of single electrons and implications for charm production in Au + Au collisions at √SNN = 130 GeV","j":"Physical Review Letters","doi":""},{"y":"2002","t":"Measurement of Λ and Λ̄ particles in Au + Au collisions at √sNN = 130 GeV","j":"Physical Review Letters","doi":""},{"y":"2002","t":"Net Charge Fluctuations in [Formula presented] Interactions at [Formula Presented]","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.89.082301"},{"y":"2002","t":"Overview of PHENIX results from the first RHIC run","j":"Nuclear Physics A","doi":"10.1016/S0375-9474(01)01347-1"},{"y":"2002","t":"Suppression of Hadrons with Large Transverse Momentum in Central [Formula presented] Collisions at [Formula presented]","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.88.022301"},{"y":"2002","t":"Suppression of hadrons with large transverse momentum in central Au + Au collisions at √sNN = 130 GeV","j":"Physical Review Letters","doi":""},{"y":"2002","t":"The MINOS scintillator calorimeter system","j":"IEEE Transactions on Nuclear Science","doi":"10.1109/TNS.2002.1039579"},{"y":"2002","t":"Transverse-Mass Dependence of Two-Pion Correlations in [Formula presented] Collisions at [Formula presented]","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.88.192302"},{"y":"2002","t":"Transverse-mass dependence of two-pion correlations in Au + Au collisions at √SNN = 130 GeV","j":"Physical Review Letters","doi":""},{"y":"2001","t":"Centrality dependence of charged particle multiplicity in Au-Au collisions at √SNN = 130 GeV","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.86.3500"},{"y":"2001","t":"First results from RHIC-PHENIX","j":"Pramana Journal of Physics","doi":"10.1007/s12043-001-0045-5"},{"y":"2001","t":"Measurement of the midrapidity transverse energy distribution from √SNN = 130 Ge V Au + Au collisions at RHIC","j":"Physical Review Letters","doi":""},{"y":"2001","t":"Measurement of the midrapidity transverse energy distribution from √sNN = 130GeV Au + Au collisions at RHIC","j":"Physical Review Letters","doi":"10.1103/PhysRevLett.87.052301"},{"y":"2000","t":"Pattern recognition in the PHENIX PbSc electromagnetic calorimeter","j":"IEEE Transactions on Nuclear Science","doi":"10.1109/23.903833"},{"y":"1999","t":"Composite scintillators for high-precision calorimetry","j":"Instruments and Experimental Techniques","doi":""},{"y":"1999","t":"Pattern recognition in the PHENIX PbSc electromagnetic calorimeter","j":"IEEE Nuclear Science Symposium and Medical Imaging Conference","doi":""},{"y":"1997","t":"Calibration and monitoring system for the PHENIX lead-scintillator electromagnetic calorimeter","j":"IEEE Nuclear Science Symposium Medical Imaging Conference","doi":""},{"y":"1997","t":"First investigation of the gas ionization electromagnetic calorimeter using heavy freon C3F8","j":"Instruments and Experimental Techniques","doi":""},{"y":"1996","t":"Performance of the PHENIX EM Calorimeter","j":"IEEE Transactions on Nuclear Science","doi":"10.1109/23.507090"},{"y":"1995","t":"PHENIX shish-kebab EM calorimeter","j":"IEEE Nuclear Science Symposium Medical Imaging Conference","doi":""},{"y":"1993","t":"A concentrating light guide for threshold Cherenkov counters","j":"Pribory I Tekhnika Eksperimenta","doi":""},{"y":"1993","t":"A fine grain gas ionization calorimeter","j":"Nuclear Inst and Methods in Physics Research A","doi":"10.1016/0168-9002(93)90261-F"},{"y":"1993","t":"A hadron gas ionization calorimeter","j":"Pribory I Tekhnika Eksperimenta","doi":""}]</script>
+<script>
+(function () {
+  var root = document.documentElement;
+  function store(k, v) { try { if (v === undefined) return localStorage.getItem(k); localStorage.setItem(k, v); } catch (e) { return null; } }
+  var pubs = [];
+  try { pubs = JSON.parse(document.getElementById('pubs-data').textContent); } catch (e) {}
+
+  function lang() { return root.getAttribute('data-lang') || 'ru'; }
+
+  function setLang(l, save) {
+    root.setAttribute('data-lang', l);
+    root.lang = l;
+    document.title = l === 'ru' ? 'Валерий Онучин — инженер-программист' : 'Valeriy Onuchin — Software Engineer';
+    document.querySelectorAll('[data-set-lang]').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-set-lang') === l));
+    });
+    var s = document.getElementById('pub-search');
+    if (s) s.placeholder = s.getAttribute('data-ph-' + l);
+    if (save) store('lang', l);
+    renderPubs();
+  }
+
+  function toast(text) {
+    var t = document.createElement('div');
+    t.className = 'toast';
+    t.setAttribute('role', 'status');
+    t.textContent = text;
+    document.body.appendChild(t);
+    setTimeout(function () { t.remove(); }, 1800);
+  }
+
+  function renderPubs() {
+    var list = document.getElementById('pubs-list');
+    var count = document.getElementById('pubs-count');
+    var q = (document.getElementById('pub-search').value || '').trim().toLowerCase();
+    var shown = pubs.filter(function (p) { return !q || (p.t + ' ' + p.j + ' ' + p.y).toLowerCase().indexOf(q) !== -1; });
+    list.textContent = '';
+    shown.forEach(function (p) {
+      var li = document.createElement('li');
+      var yr = document.createElement('span'); yr.className = 'yr'; yr.textContent = p.y;
+      var body = document.createElement('span'); body.textContent = p.t;
+      if (p.j) { var jr = document.createElement('span'); jr.className = 'jr'; jr.textContent = p.j; body.appendChild(jr); }
+      li.appendChild(yr); li.appendChild(body);
+      if (p.doi) {
+        var a = document.createElement('a');
+        a.href = 'https://doi.org/' + p.doi; a.target = '_blank'; a.rel = 'noopener'; a.textContent = 'DOI ↗';
+        li.appendChild(a);
+      } else { li.appendChild(document.createElement('span')); }
+      list.appendChild(li);
+    });
+    count.textContent = lang() === 'ru' ? shown.length + ' из ' + pubs.length : shown.length + ' of ' + pubs.length;
+  }
+
+  document.addEventListener('click', function (e) {
+    var b = e.target.closest('[data-set-lang]');
+    if (b) setLang(b.getAttribute('data-set-lang'), true);
+
+    if (e.target.closest('#theme-toggle')) {
+      var cur = root.getAttribute('data-theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+      var next = cur === 'dark' ? 'light' : 'dark';
+      root.setAttribute('data-theme', next);
+      store('theme', next);
+    }
+
+    var c = e.target.closest('[data-copy]');
+    if (c) {
+      var ru = lang() === 'ru';
+      var fallback = function () {
+        var r = document.createRange();
+        r.selectNodeContents(document.getElementById('email-text'));
+        var sel = getSelection(); sel.removeAllRanges(); sel.addRange(r);
+        toast(ru ? 'Адрес выделен — нажмите Ctrl+C' : 'Address selected — press Ctrl+C');
+      };
+      try {
+        navigator.clipboard.writeText(c.getAttribute('data-copy')).then(function () {
+          toast(ru ? 'Адрес скопирован' : 'Address copied');
+        }, fallback);
+      } catch (err) { fallback(); }
+    }
+
+    if (e.target.closest('#pdf-btn')) window.print();
+  });
+
+  window.addEventListener('hashchange', function () {
+    var h = location.hash.slice(1);
+    if (h === 'en' || h === 'ru') setLang(h, true);
+  });
+
+  document.getElementById('pub-search').addEventListener('input', renderPubs);
+
+  // Printing and the draft label depend on whether the page runs inside a frame (the review copy does).
+  var framed = window.self !== window.top;
+  document.getElementById('pdf-btn').hidden = framed;
+  document.getElementById('draft-note').hidden = !framed;
+
+  // Highlight the section in view in the side navigation.
+  var links = {};
+  document.querySelectorAll('.toc a').forEach(function (a) { links[a.getAttribute('href').slice(1)] = a; });
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        Object.keys(links).forEach(function (id) { links[id].setAttribute('aria-current', String(id === en.target.id)); });
+      });
+    }, { rootMargin: '-35% 0px -60% 0px' });
+    Object.keys(links).forEach(function (id) { var s = document.getElementById(id); if (s) io.observe(s); });
+  }
+
+  setLang(lang(), false);
+})();
+</script>

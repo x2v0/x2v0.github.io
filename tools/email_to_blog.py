@@ -18,8 +18,8 @@ EMAIL_USER = "valeriy.onuchin@yandex.ru"
 PASSWORD_FILE = os.path.expanduser("~/.yandex_app_password")
 
 SEARCH_SUBJECT = "debug Android with M$"
-OUTPUT_DIR = "year-archive/posts"
-MANIFEST_FILE = "year-archive/posts.json"
+OUTPUT_DIR = "blog/posts"
+MANIFEST_FILE = "blog/posts.json"
 
 def fetch_emails():
     if not os.path.exists(PASSWORD_FILE):

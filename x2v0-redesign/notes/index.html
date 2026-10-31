@@ -1,0 +1,117 @@
+<title>x2v0 Redesign Notes</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;600&family=Spectral:wght@500&display=swap">
+<style>
+/* Layout: a tabbed reader for the redesign archive — one document at a time, ~70ch column. */
+:root {
+  --paper: #f5f6f8; --paper-2: #eaedf2; --ink: #151922; --ink-2: #4b5363; --ink-3: #737b8b;
+  --rule: #d3d8e0; --accent: #2a44c4;
+  --display: "Spectral", Georgia, serif;
+  --body: "IBM Plex Sans", system-ui, sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) { --paper: #0f1218; --paper-2: #171b24; --ink: #e5e8ef; --ink-2: #a5adbd; --ink-3: #7f8798; --rule: #2a303d; --accent: #93a5ff; color-scheme: dark; }
+}
+:root[data-theme="dark"] { --paper: #0f1218; --paper-2: #171b24; --ink: #e5e8ef; --ink-2: #a5adbd; --ink-3: #7f8798; --rule: #2a303d; --accent: #93a5ff; color-scheme: dark; }
+body { background: var(--paper); color: var(--ink); font: 400 16px/1.6 var(--body); margin: 0; }
+.wrap { max-width: 50rem; margin: 0 auto; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+header { padding-block: 2.5rem 1rem; }
+.eyebrow { font: 500 0.75rem/1.4 var(--mono); letter-spacing: 0.08em; text-transform: uppercase; color: var(--ink-3); margin: 0; }
+h1 { font: 500 2.25rem/1.1 var(--display); margin: 0.5rem 0 0.75rem; text-wrap: balance; }
+.intro { color: var(--ink-2); margin: 0; max-width: 40em; }
+.intro a, .doc a { color: var(--accent); }
+nav { position: sticky; top: env(safe-area-inset-top, 0px); background: var(--paper); border-bottom: 1px solid var(--rule); z-index: 2; }
+nav .wrap { display: flex; gap: 0.25rem; overflow-x: auto; padding-block: 0.5rem; }
+nav button { font: 500 0.875rem/1 var(--body); border: 1px solid transparent; background: none; color: var(--ink-2); padding: 0.55rem 0.8rem; border-radius: 999px; cursor: pointer; white-space: nowrap; }
+nav button[aria-selected="true"] { background: var(--ink); color: var(--paper); }
+nav button:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.doc { padding-block: 2rem 4rem; min-width: 0; }
+.doc h1 { font-size: 1.875rem; }
+.doc h2 { font: 500 1.375rem/1.25 var(--display); margin: 2.25rem 0 0.75rem; padding-top: 1rem; border-top: 1px solid var(--rule); }
+.doc h3 { font-size: 1.0625rem; margin: 1.5rem 0 0.5rem; }
+.doc code { font-family: var(--mono); font-size: 0.875em; background: var(--paper-2); padding: 0.1em 0.3em; border-radius: 3px; }
+.doc pre { overflow-x: auto; background: var(--paper-2); padding: 0.9rem; border-radius: 4px; }
+.doc pre code { background: none; padding: 0; }
+.doc blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 2px solid var(--accent); color: var(--ink-2); }
+.doc li { margin-block: 0.3rem; }
+.doc .table-wrap { overflow-x: auto; }
+.doc table { border-collapse: collapse; font-size: 0.9375rem; margin-block: 1rem; }
+.doc th, .doc td { text-align: left; vertical-align: top; padding: 0.5rem 0.75rem 0.5rem 0; border-bottom: 1px solid var(--rule); }
+.doc img { max-width: 100%; height: auto; border: 1px solid var(--rule); }
+.shots { display: grid; grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)); gap: 1rem; margin-top: 1rem; }
+.shots figure { margin: 0; }
+.shots figcaption { font-size: 0.8125rem; color: var(--ink-3); margin-top: 0.4rem; }
+</style>
+
+<header>
+  <div class="wrap">
+    <p class="eyebrow">x2v0.github.io · October 2026</p>
+    <h1>Redesign notes</h1>
+    <p class="intro">Everything behind the redesign of Valeriy Onuchin's resume site: the audit of the old site, the decisions, the open questions, the research with sources, and the requests that started it. The new site itself is at <a href="https://claude.ai/artifact/PjUJET7iTeS3RLy8B9NNHs" target="_blank" rel="noopener">the review link</a>.</p>
+  </div>
+</header>
+
+<nav aria-label="Documents">
+  <div class="wrap" role="tablist">
+    <button role="tab" data-doc="decisions" aria-selected="true">Decisions</button>
+    <button role="tab" data-doc="questions" aria-selected="false">Questions for Valeriy</button>
+    <button role="tab" data-doc="audit" aria-selected="false">Audit of the old site</button>
+    <button role="tab" data-doc="design" aria-selected="false">Design research</button>
+    <button role="tab" data-doc="research" aria-selected="false">Fact research</button>
+    <button role="tab" data-doc="prompts" aria-selected="false">Prompts</button>
+    <button role="tab" data-doc="readme" aria-selected="false">Archive contents</button>
+  </div>
+</nav>
+
+<main class="wrap doc" id="doc" role="tabpanel" aria-live="polite">Loading…</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.2/marked.min.js"></script>
+<script>
+var DOCS = {
+  decisions: 'docs/decisions.md',
+  questions: 'docs/questions-for-valeriy.md',
+  audit: 'docs/audit.md',
+  research: 'docs/facts.md',
+  design: 'docs/resume-practices.md',
+  prompts: 'docs/prompts.md',
+  readme: 'docs/README.md'
+};
+var SHOTS = '<div class="shots">' +
+  '<figure><img src="shots/x2v0-desktop.jpeg" alt="Old site, desktop, full page"><figcaption>Old site, 1440px</figcaption></figure>' +
+  '<figure><img src="shots/x2v0-mobile.jpeg" alt="Old site, phone, first screen"><figcaption>Old site, 390px</figcaption></figure>' +
+  '<figure><img src="shots/draft-1-desktop-ru.jpeg" alt="First design of the new site"><figcaption>First design (replaced)</figcaption></figure>' +
+  '<figure><img src="shots/v2-desktop-en-full.jpeg" alt="Second design, desktop"><figcaption>Second design, 1440px</figcaption></figure>' +
+  '<figure><img src="shots/v2-mobile-en.jpeg" alt="Second design, phone"><figcaption>Second design, 390px</figcaption></figure>' +
+  '</div>';
+var docEl = document.getElementById('doc');
+
+function show(name) {
+  if (!DOCS[name]) name = 'decisions';
+  var tabs = document.querySelectorAll('[data-doc]');
+  for (var i = 0; i < tabs.length; i++) tabs[i].setAttribute('aria-selected', String(tabs[i].getAttribute('data-doc') === name));
+  docEl.textContent = 'Loading…';
+  fetch(DOCS[name]).then(function (r) {
+    if (!r.ok) throw new Error(r.status);
+    return r.text();
+  }).then(function (md) {
+    var html = window.marked ? marked.parse(md) : '<pre>' + md.replace(/</g, '&lt;') + '</pre>';
+    html = html.replace(/<table>/g, '<div class="table-wrap"><table>').replace(/<\/table>/g, '</table></div>');
+    docEl.innerHTML = html + (name === 'audit' ? SHOTS : '');
+    var links = docEl.querySelectorAll('a[href^="http"]');
+    for (var j = 0; j < links.length; j++) { links[j].target = '_blank'; links[j].rel = 'noopener'; }
+  }).catch(function (e) {
+    docEl.textContent = 'This document did not load (' + e.message + '). Reload the page to try again.';
+  });
+}
+
+document.addEventListener('click', function (e) {
+  var b = e.target.closest('[data-doc]');
+  if (!b) return;
+  var name = b.getAttribute('data-doc');
+  if (location.hash.slice(1) !== name) location.hash = name;
+  else show(name);
+});
+window.addEventListener('hashchange', function () { show(location.hash.slice(1)); });
+show(location.hash.slice(1));
+</script>

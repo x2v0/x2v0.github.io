@@ -183,7 +183,7 @@ document.addEventListener('DOMContentLoaded', function() {
         navBlog.onclick = function(e) {
             e.preventDefault();
             if (nav) { nav.classList.remove('is-open'); menuBtn.classList.remove('is-active'); }
-            loadPage('./year-archive/index.html');
+            loadPage('./blog/index.html');
         };
     }
 
