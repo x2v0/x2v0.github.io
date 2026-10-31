@@ -90,6 +90,9 @@ def fetch_emails():
                         break
                     clean_subject = new_sub
                 clean_subject = clean_subject.strip()
+                # --- ID темы (для древовидной структуры) ---
+                thread_id = re.sub(r'[^a-z0-9]+', '-', clean_subject.lower()).strip('-')
+                if not thread_id: thread_id = 'general'
 
                 # --- Уникальный ID ---
                 msg_id = msg.get("Message-ID", "")
@@ -131,6 +134,7 @@ def fetch_emails():
 
                 posts.append({
                     "id": safe_id,
+                    "thread_id": thread_id,
                     "title": display_title,
                     "preview": preview_text,
                     "date": date_iso,
