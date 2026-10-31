@@ -1,10 +1,8 @@
 import socket
-# --- ФИКС IPv4 ---
 _orig_getaddrinfo = socket.getaddrinfo
 def getaddrinfo_ipv4(host, port, family=0, type=0, proto=0, flags=0):
     return _orig_getaddrinfo(host, port, socket.AF_INET, type, proto, flags)
 socket.getaddrinfo = getaddrinfo_ipv4
-# ------------------
 
 import imaplib
 import email
@@ -50,6 +48,48 @@ def censor_text(text):
         text = re.sub(r'(?i)\b' + re.escape(word) + r'[а-яё]*', '[ЦЕНЗУРА]', text)
     return text.strip()
 
+def parse_email_body(body):
+    """Рекурсивный парсер, превращающий цитаты в <details>"""
+    # Очистка от HTML мусора
+    body = re.sub(r'<[^>]+>', '', body)
+    body = html.unescape(body)
+    
+    # Разбиваем на блоки (по паттернам начала цитаты)
+    # Ищем "On ... wrote:", "From:" или "To:" с начала строки (возможно с пробелами)
+    pattern = re.compile(r'(?m)^\s*(On .*wrote:|From:.*|To:.*|Sent:.*)')
+    
+    parts = []
+    last_idx = 0
+    for match in pattern.finditer(body):
+        start = match.start()
+        # Если это самое начало, то цитаты нет
+        if start > 0:
+            main_text = body[last_idx:start].strip()
+            if main_text:
+                parts.append(("main", main_text))
+        
+        # Начинаем цитату
+        last_idx = start
+        break # Берем только первую цитату (самую верхнюю), остальное будет внутри неё
+        
+    if not parts:
+        # Нет цитат, возвращаем просто текст
+        return html.escape(body).replace('\n', '<br>')
+    
+    # Основной текст
+    main_html = html.escape(parts[0][1]).replace('\n', '<br>')
+    
+    # Цитата (всё, что после main)
+    quote_text = body[last_idx:].strip()
+    
+    # Рекурсивно обрабатываем цитату
+    quote_html = html.escape(quote_text).replace('\n', '<br>')
+    
+    # Оборачиваем в details
+    main_html += f"\n\n<details>\n<summary>📎 Показать цитируемое письмо</summary>\n\n<div style='font-size:14px; color:var(--fg3);'>\n{quote_html}\n</div>\n</details>"
+    
+    return main_html
+
 def fetch_emails():
     if not os.path.exists(PASSWORD_FILE):
         print("⚠ Файл с паролем не найден")
@@ -68,9 +108,7 @@ def fetch_emails():
         return
 
     status, messages = mail.search(None, f'(SUBJECT "{SEARCH_SUBJECT}")')
-    if status != "OK":
-        print("Ошибка поиска писем.")
-        return
+    if status != "OK": return
 
     email_ids = messages[0].split()
     print(f"Найдено писем: {len(email_ids)}")
@@ -92,15 +130,12 @@ def fetch_emails():
                 from_raw = msg.get("From")
                 from_name, from_addr = email.utils.parseaddr(from_raw)
                 
-                # Принудительная декодировка для Outlook
                 if from_name and from_name.startswith('=?'):
                     from_name_parts = decode_header(from_name)
                     decoded_name = ""
                     for part, encoding in from_name_parts:
-                        if isinstance(part, bytes):
-                            decoded_name += part.decode(encoding or 'utf-8', errors='replace')
-                        else:
-                            decoded_name += part
+                        if isinstance(part, bytes): decoded_name += part.decode(encoding or 'utf-8', errors='replace')
+                        else: decoded_name += part
                     from_name = decoded_name
                 
                 anon_sender = get_anon_name(from_name or from_addr)
@@ -139,41 +174,16 @@ def fetch_emails():
                 else:
                     body = msg.get_payload(decode=True).decode(msg.get_content_charset() or "utf-8", errors="replace")
 
-                # Очистка от HTML
-                body = re.sub(r'<[^>]+>', '', body)
-                body = html.unescape(body)
-
-                # Разделяем на "свой текст" и "цитату"
-                main_text_lines = []
-                quote_lines = []
-                in_quote = False
-
-                for line in body.split("\n"):
-                    stripped = line.strip()
-                    if re.match(r'^On .*wrote:', stripped, re.IGNORECASE) or \
-                       re.match(r'^\d{1,2} \w+ \d{4}.*пишет:', stripped, re.IGNORECASE) or \
-                       re.match(r'^[\s\W]*(To|From):', stripped, re.IGNORECASE) or \
-                       stripped.startswith(">"):
-                        in_quote = True
-                    
-                    if in_quote:
-                        quote_lines.append(line)
-                    else:
-                        main_text_lines.append(line)
-
-                cleaned_main = "\n".join(main_text_lines).strip()
-                cleaned_quote = "\n".join(quote_lines).strip()
+                # ПРИМЕНЯЕМ ЦЕНЗУРУ КО ВСЕМУ ТЕКСТУ
+                body = censor_text(body)
                 
-                cleaned_main = censor_text(cleaned_main)
-                cleaned_quote = censor_text(cleaned_quote)
+                # ПАРСИМ ЦИТАТЫ В ДЕРЕВО
+                body_html = parse_email_body(body)
 
-                preview_text = re.sub(r'\s+', ' ', cleaned_main)[:120] + "..."
+                preview_text = re.sub(r'<[^>]+>', '', body_html)[:120] + "..."
                 display_title = f"{clean_subject} ({anon_sender}, {time_str})"
 
-                md_content = f"# {clean_subject}\n\n**От:** {anon_sender}\n**Дата:** {date_iso} {time_str}\n\n---\n\n{cleaned_main}"
-                
-                if cleaned_quote:
-                    md_content += f"\n\n<details>\n<summary>📎 Показать цитируемое письмо</summary>\n\n```text\n{cleaned_quote}\n```\n</details>"
+                md_content = f"# {clean_subject}\n\n**От:** {anon_sender}\n**Дата:** {date_iso} {time_str}\n\n---\n\n{body_html}"
 
                 filename = f"{safe_id}.md"
                 with open(os.path.join(OUTPUT_DIR, filename), "w", encoding="utf-8") as f:
