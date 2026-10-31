@@ -5,98 +5,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блог — Валерий Онучин</title>
     <link rel="stylesheet" href="../style.css">
+    
+    <!-- Подключаем библиотеки -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/flexsearch@0.7.31/dist/flexsearch.bundle.js"></script>
+    
+    <!-- Подсветка кода (Highlight.js) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
     <style>
-        body { background-color: var(--bg); color: var(--text); }
-        .feed-container { max-width: 680px; margin: 40px auto; padding: 0 15px; }
-        .feed-header { font-family: monospace; margin-bottom: 20px; border-bottom: 2px solid var(--accent); padding-bottom: 10px; }
+        /* --- ОБЩИЕ СТИЛИ --- */
+        body { background-color: var(--bg); color: var(--text); -webkit-font-smoothing: antialiased; }
+        .feed-container { max-width: 760px; margin: 40px auto; padding: 0 20px; }
         
-        /* Поиск */
-        .search-bar { margin-bottom: 25px; }
-        .search-bar input { width: 100%; padding: 12px 15px; border: 2px solid var(--border); border-radius: 8px; font-size: 16px; background: var(--card-bg); color: var(--text); box-sizing: border-box; }
-        .search-bar input:focus { outline: none; border-color: var(--accent); }
+        /* --- ПОЛОСА ПРОГРЕССА ЧТЕНИЯ --- */
+        #progress-container { position: fixed; top: 0; left: 0; width: 100%; height: 4px; background: transparent; z-index: 9999; display: none; }
+        #progress-bar { height: 100%; background: var(--accent); width: 0%; transition: width 0.1s ease; box-shadow: 0 0 10px var(--accent); }
 
-        /* Заголовки групп */
-        .group-header { margin: 30px 0 15px 0; border-bottom: 1px solid var(--accent); padding-bottom: 5px; color: var(--accent); font-size: 18px; font-family: monospace; }
+        /* --- ЗАГОЛОВОК И СТЕКЛЯННЫЙ ПОИСК --- */
+        .feed-header { font-family: monospace; font-size: 32px; margin-bottom: 25px; letter-spacing: -1px; }
+        .search-wrapper { position: sticky; top: 15px; z-index: 100; margin-bottom: 30px; }
+        .search-bar { 
+            width: 100%; padding: 16px 20px; border: 1px solid var(--border); border-radius: 12px; 
+            font-size: 16px; background: rgba(255, 255, 255, 0.85); color: var(--text); 
+            backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+            box-sizing: border-box; box-shadow: 0 4px 15px rgba(0,0,0,0.05); transition: all 0.3s ease;
+        }
+        [data-theme="dark"] .search-bar { background: rgba(30, 30, 30, 0.85); }
+        .search-bar:focus { outline: none; border-color: var(--accent); box-shadow: 0 4px 20px rgba(2, 136, 209, 0.2); }
 
-        /* Карточка поста */
-        .post-card { position: relative; background-color: var(--card-bg, #ffffff); border: 1px solid var(--border, #ddd); border-radius: 12px; padding: 20px; margin-bottom: 20px; cursor: pointer; transition: transform 0.2s, box-shadow 0.2s, border-color 0.2s; box-shadow: 0 2px 5px rgba(0,0,0,0.05); }
-        .post-card:hover { transform: translateY(-2px); box-shadow: 0 8px 15px rgba(0,0,0,0.1); border-color: var(--accent); }
-        [data-theme="dark"] .post-card { background-color: #1e1e1e; border-color: #333; box-shadow: 0 2px 5px rgba(0,0,0,0.3); }
-        [data-theme="dark"] .post-card:hover { border-color: var(--accent); }
+        /* --- ЗАГОЛОВКИ ГРУПП --- */
+        .group-header { 
+            margin: 40px 0 20px 0; font-size: 14px; text-transform: uppercase; letter-spacing: 1.5px;
+            color: var(--accent); font-family: monospace; display: flex; align-items: center; gap: 10px;
+        }
+        .group-header::after { content: ""; flex: 1; height: 1px; background: var(--border); }
 
-        /* Звездочка */
-        .bookmark-btn { position: absolute; top: 20px; right: 20px; cursor: pointer; font-size: 24px; opacity: 0.3; transition: opacity 0.2s, color 0.2s; user-select: none; }
-        .bookmark-btn.active { opacity: 1; color: gold; }
+        /* --- КАРТОЧКА ПОСТА (АНИМАЦИЯ) --- */
+        @keyframes fadeInUp { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+        .post-card { 
+            position: relative; background: var(--card-bg, #fff); border: 1px solid var(--border, #ddd); 
+            border-radius: 16px; padding: 25px; margin-bottom: 20px; cursor: pointer; 
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+            animation: fadeInUp 0.5s ease backwards;
+        }
+        .post-card:hover { transform: translateY(-4px) scale(1.01); box-shadow: 0 12px 25px rgba(0,0,0,0.1); border-color: var(--accent); }
+        [data-theme="dark"] .post-card { background: #1e1e1e; border-color: #333; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
+        [data-theme="dark"] .post-card:hover { border-color: var(--accent); box-shadow: 0 12px 25px rgba(0,0,0,0.5); }
 
-        /* Шапка поста */
-        .post-header { display: flex; align-items: center; margin-bottom: 15px; }
-        .post-avatar { width: 44px; height: 44px; border-radius: 50%; object-fit: cover; margin-right: 12px; border: 1px solid var(--border); }
+        /* --- ЗВЕЗДОЧКА --- */
+        .bookmark-btn { position: absolute; top: 25px; right: 25px; cursor: pointer; font-size: 22px; opacity: 0.2; transition: all 0.2s; user-select: none; }
+        .bookmark-btn:hover { transform: scale(1.2); opacity: 0.6; }
+        .bookmark-btn.active { opacity: 1; color: #fbc02d; text-shadow: 0 0 10px rgba(251, 192, 45, 0.4); }
+
+        /* --- ШАПКА КАРТОЧКИ --- */
+        .post-header { display: flex; align-items: center; margin-bottom: 18px; }
+        .post-avatar { width: 48px; height: 48px; border-radius: 50%; object-fit: cover; margin-right: 15px; border: 2px solid var(--border); }
         .post-meta { display: flex; flex-direction: column; }
-        .post-author { font-weight: bold; font-size: 15px; color: var(--text); }
-        .post-date { font-size: 12px; color: var(--fg3, #888); font-family: monospace; }
+        .post-author { font-weight: 700; font-size: 16px; color: var(--text); letter-spacing: -0.3px; }
+        .post-date { font-size: 13px; color: var(--fg3, #888); font-family: monospace; margin-top: 2px; }
 
-        /* Содержимое */
-        .post-title { margin: 0 0 10px 0; font-size: 18px; color: var(--accent); line-height: 1.3; padding-right: 30px; }
-        .post-preview { margin: 0; font-size: 15px; color: var(--text); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
-        .post-footer { margin-top: 15px; font-size: 13px; color: var(--accent); font-weight: bold; }
+        /* --- ТЕКСТ КАРТОЧКИ --- */
+        .post-title { margin: 0 0 12px 0; font-size: 20px; color: var(--text); line-height: 1.4; padding-right: 35px; font-weight: 700; letter-spacing: -0.5px; }
+        .post-preview { margin: 0; font-size: 15px; color: var(--fg2); line-height: 1.6; display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+        .post-footer { margin-top: 20px; font-size: 13px; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; }
+        
+        mark { background: #ffeb3b; color: #000; padding: 0 4px; border-radius: 4px; font-weight: bold; }
 
-        mark { background: #ffeb3b; color: #000; padding: 0 2px; border-radius: 2px; }
+        /* --- ПРОСМОТР СТАТЬИ (ЧИСТЫЙ ДИЗАЙН) --- */
+        .article-view { display: none; animation: fadeInUp 0.4s ease; }
+        .article-content-wrapper {
+            background: var(--card-bg, #fff); border: 1px solid var(--border, #ddd);
+            border-radius: 16px; padding: 40px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); margin-bottom: 30px;
+        }
+        [data-theme="dark"] .article-content-wrapper { background: #1e1e1e; border-color: #333; }
+        
+        /* Типографика статьи (как в Medium) */
+        .article-view h1 { color: var(--text); font-size: 32px; line-height: 1.3; margin-top: 0; margin-bottom: 25px; letter-spacing: -1px; }
+        .article-view h2 { color: var(--text); font-size: 24px; margin-top: 40px; margin-bottom: 15px; }
+        .article-view h3 { color: var(--text); font-size: 20px; margin-top: 30px; margin-bottom: 10px; }
+        .article-view p { font-size: 17px; line-height: 1.7; color: var(--fg2); margin-bottom: 20px; }
+        .article-view img { max-width: 100%; border-radius: 8px; margin: 20px 0; }
+        .article-view blockquote { border-left: 4px solid var(--accent); padding-left: 20px; margin: 25px 0; color: var(--fg3); font-style: italic; background: var(--bg3); padding: 15px 20px; border-radius: 0 8px 8px 0; }
+        .article-view pre { background: #282c34; padding: 20px; border-radius: 10px; overflow-x: auto; margin: 25px 0; }
+        .article-view code { font-family: 'Fira Code', 'Courier New', monospace; font-size: 14px; }
+        .article-view p code, .article-view li code { background: var(--bg3); padding: 3px 6px; border-radius: 4px; font-size: 14px; color: #e83e8c; }
 
-        /* Статья */
-        .article-view { display: none; background: var(--card-bg, #fff); border: 1px solid var(--border, #ddd); border-radius: 12px; padding: 30px; }
-        [data-theme="dark"] .article-view { background-color: #1e1e1e; border-color: #333; }
-        .article-view h1 { color: var(--accent); margin-top: 0; }
-        .article-view pre { background: var(--bg3, #f4f4f4); padding: 10px; border-radius: 5px; overflow-x: auto; }
-        .article-view code { font-family: monospace; background: var(--bg3, #eee); padding: 2px 4px; border-radius: 3px; }
+        /* Кнопки управления */
+        .btn-back { 
+            display: inline-flex; align-items: center; gap: 8px; margin-bottom: 25px; padding: 12px 20px; 
+            background: #0288d1; color: #fff; border: none; border-radius: 8px; cursor: pointer; 
+            font-size: 15px; font-weight: 600; transition: all 0.2s; box-shadow: 0 4px 10px rgba(2, 136, 209, 0.3);
+        }
+        .btn-back:hover { background: #0277bd; transform: translateY(-2px); box-shadow: 0 6px 15px rgba(2, 136, 209, 0.4); }
 
-        .btn-back { display: inline-block; margin-bottom: 20px; padding: 10px 18px; background: #0288d1; color: #ffffff; border: none; border-radius: 6px; cursor: pointer; font-size: 16px; font-weight: bold; text-decoration: none; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        .btn-back:hover { background: #0277bd; }
+        /* Навигация Prev/Next */
+        .nav-container { display: flex; justify-content: space-between; gap: 15px; margin-top: 30px; }
+        .btn-nav { 
+            flex: 1; padding: 15px 20px; background: var(--card-bg, #fff); color: var(--text); 
+            border: 1px solid var(--border); border-radius: 12px; cursor: pointer; 
+            font-weight: 600; font-size: 15px; transition: all 0.2s; display: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+        .btn-nav:hover { background: var(--accent); color: #fff; border-color: var(--accent); transform: translateY(-2px); box-shadow: 0 6px 15px rgba(2, 136, 209, 0.2); }
 
-        /* Навигация вверх/вниз */
-        .nav-container { display: flex; justify-content: space-between; margin-top: 30px; padding-top: 20px; border-top: 1px solid var(--border); }
-        .btn-nav { padding: 10px 15px; background: var(--bg3, #eee); color: var(--text); border: 1px solid var(--border); border-radius: 6px; cursor: pointer; font-weight: bold; text-decoration: none; display: none; }
-        .btn-nav:hover { background: var(--accent); color: #fff; border-color: var(--accent); }
+        /* Кнопка Наверх (FAB) */
+        #btn-up {
+            position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%;
+            background: var(--accent); color: white; border: none; font-size: 24px; cursor: pointer;
+            box-shadow: 0 4px 15px rgba(2, 136, 209, 0.4); display: none; z-index: 1000;
+            transition: all 0.3s;
+        }
+        #btn-up:hover { transform: scale(1.1) translateY(-3px); }
+
+        /* Комментарии */
+        #giscus-container { background: var(--card-bg, #fff); border: 1px solid var(--border, #ddd); border-radius: 16px; padding: 30px; }
+        [data-theme="dark"] #giscus-container { background: #1e1e1e; border-color: #333; }
     </style>
-
-    <link rel="manifest" href="../manifest.json">
-    <meta name="theme-color" content="#0288d1">
 </head>
-<body style="font-family: system-ui, -apple-system, sans-serif;">
+<body style="font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;">
+    
+    <!-- Полоса прогресса -->
+    <div id="progress-container"><div id="progress-bar"></div></div>
+
     <div class="feed-container">
+        <!-- СПИСОК -->
         <div id="list-view">
-            <h1 class="feed-header">Лента</h1>
-            <div class="search-bar">
-                <input type="text" id="search-input" placeholder="Поиск по письмам (тема, текст)...">
+            <h1 class="feed-header">Лента записей</h1>
+            
+            <div class="search-wrapper">
+                <input type="text" id="search-input" class="search-bar" placeholder="🔍 Поиск по письмам...">
             </div>
-            <div id="posts-feed"><p style="color: var(--fg3);">Загрузка постов...</p></div>
+
+            <div id="posts-feed">
+                <p style="color: var(--fg3); text-align: center; padding: 40px 0;">Загрузка постов...</p>
+            </div>
         </div>
 
+        <!-- СТАТЬЯ -->
         <div id="article-view" class="article-view">
-            <button class="btn-back" onclick="backToFeed()">← К списку статей</button>
-            <div id="article-content"></div>
+            <button class="btn-back" onclick="backToFeed()">← Назад в ленту</button>
             
-            <!-- Кнопки навигации -->
+            <div class="article-content-wrapper">
+                <div id="article-content"></div>
+            </div>
+            
             <div class="nav-container">
                 <button id="btn-prev" class="btn-nav">← Предыдущая</button>
                 <button id="btn-next" class="btn-nav">Следующая →</button>
             </div>
 
-            <div id="giscus-container" style="margin-top: 40px; padding-top: 20px; border-top: 1px solid var(--border);">
-                <h3>Комментарии</h3>
+            <div id="giscus-container" style="margin-top: 30px;">
+                <h3 style="margin-top:0; font-family: monospace;">Комментарии</h3>
                 <div class="giscus"></div>
             </div>
         </div>
     </div>
 
+    <!-- Кнопка Наверх -->
+    <button id="btn-up" onclick="window.scrollTo({top: 0, behavior: 'smooth'})">↑</button>
+
     <script>
         let allPosts = [];
-        let currentPostsList = []; // Отфильтрованный список для навигации
+        let currentPostsList = []; 
         let currentPostIndex = -1;
         let searchIndex = null;
 
-        // 1. Загрузка
+        // 1. Загрузка данных
         fetch('./posts.json')
             .then(r => r.json())
             .then(posts => {
@@ -105,7 +182,7 @@
                 posts.forEach(p => searchIndex.add(p));
                 renderFeed(posts);
             })
-            .catch(e => { document.getElementById('posts-feed').innerHTML = '<p style="color:red;">Ошибка загрузки.</p>'; });
+            .catch(e => { document.getElementById('posts-feed').innerHTML = '<p style="color:red; text-align:center;">Ошибка загрузки.</p>'; });
 
         // 2. Поиск
         document.getElementById('search-input').addEventListener('input', (e) => {
@@ -118,12 +195,12 @@
             renderFeed(allPosts.filter(p => ids.has(p.id)), query);
         });
 
-        // 3. Рендеринг
+        // 3. Рендеринг ленты
         function renderFeed(posts, query = '') {
-            currentPostsList = posts; // Запоминаем текущий список
+            currentPostsList = posts; 
             const feed = document.getElementById('posts-feed');
             feed.innerHTML = '';
-            if (posts.length === 0) { feed.innerHTML = '<p>Ничего не найдено.</p>'; return; }
+            if (posts.length === 0) { feed.innerHTML = '<p style="text-align:center; color:var(--fg3);">Ничего не найдено.</p>'; return; }
 
             const groups = {};
             posts.forEach(p => {
@@ -135,12 +212,17 @@
                 groups[tid].posts.push(p);
             });
 
+            let animationDelay = 0;
             Object.values(groups).forEach(group => {
                 const groupDiv = document.createElement('div');
                 groupDiv.innerHTML = `<h2 class="group-header">${highlight(group.name, query)} (${group.posts.length})</h2>`;
+                
                 group.posts.forEach(post => {
                     const card = document.createElement('div');
                     card.className = 'post-card';
+                    card.style.animationDelay = `${animationDelay}ms`;
+                    animationDelay += 50; // Каскадная анимация
+
                     const isBookmarked = localStorage.getItem('bm_' + post.id) === '1';
                     card.innerHTML = `
                         <div class="bookmark-btn ${isBookmarked ? 'active' : ''}" onclick="toggleBookmark(event, '${post.id}')">★</div>
@@ -174,20 +256,22 @@
             else { localStorage.setItem(key, '1'); e.target.classList.add('active'); }
         }
 
-        // 4. Чтение и навигация
+        // 4. Чтение статьи
         function backToFeed() {
             document.getElementById('article-view').style.display = 'none';
             document.getElementById('list-view').style.display = 'block';
+            document.getElementById('progress-container').style.display = 'none';
             document.querySelector('.giscus').innerHTML = '';
+            window.scrollTo(0,0);
         }
 
         function loadPost(filename) {
             document.getElementById('list-view').style.display = 'none';
             document.getElementById('article-view').style.display = 'block';
-            document.getElementById('article-content').innerHTML = '<p>Загрузка...</p>';
+            document.getElementById('progress-container').style.display = 'block';
+            document.getElementById('article-content').innerHTML = '<p style="text-align:center; padding: 40px;">Загрузка...</p>';
             window.scrollTo(0,0);
 
-            // Запоминаем индекс текущей статьи
             currentPostIndex = currentPostsList.findIndex(p => p.filename === filename);
             updateNavButtons();
 
@@ -195,6 +279,10 @@
                 .then(r => r.text())
                 .then(md => {
                     document.getElementById('article-content').innerHTML = marked.parse(md);
+                    // Подсветка кода
+                    document.querySelectorAll('pre code').forEach((block) => {
+                        hljs.highlightElement(block);
+                    });
                     loadUtterances(filename);
                 })
                 .catch(e => { document.getElementById('article-content').innerHTML = '<p style="color:red;">Ошибка.</p>'; });
@@ -205,19 +293,34 @@
             const btnNext = document.getElementById('btn-next');
 
             if (currentPostIndex > 0) {
-                btnPrev.style.display = 'inline-block';
+                btnPrev.style.display = 'block';
                 btnPrev.onclick = () => loadPost(currentPostsList[currentPostIndex - 1].filename);
-            } else {
-                btnPrev.style.display = 'none';
-            }
+            } else { btnPrev.style.display = 'none'; }
 
             if (currentPostIndex !== -1 && currentPostIndex < currentPostsList.length - 1) {
-                btnNext.style.display = 'inline-block';
+                btnNext.style.display = 'block';
                 btnNext.onclick = () => loadPost(currentPostsList[currentPostIndex + 1].filename);
-            } else {
-                btnNext.style.display = 'none';
-            }
+            } else { btnNext.style.display = 'none'; }
         }
+
+        // 5. Скролл и Прогресс
+        window.onscroll = function() {
+            // Кнопка Наверх
+            const btnUp = document.getElementById('btn-up');
+            if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+                btnUp.style.display = "block";
+            } else {
+                btnUp.style.display = "none";
+            }
+
+            // Полоса прогресса
+            if (document.getElementById('article-view').style.display === 'block') {
+                const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+                const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+                const scrolled = (winScroll / height) * 100;
+                document.getElementById("progress-bar").style.width = scrolled + "%";
+            }
+        };
 
         function loadUtterances(term) {
             const container = document.querySelector('.giscus');
@@ -230,12 +333,6 @@
             script.setAttribute('crossorigin', 'anonymous');
             script.async = true;
             container.appendChild(script);
-        }
-    </script>
-
-    <script>
-        if ('serviceWorker' in navigator) {
-            navigator.serviceWorker.register('../sw.js');
         }
     </script>
 </body>
