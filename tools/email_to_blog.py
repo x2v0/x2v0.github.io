@@ -29,10 +29,10 @@ PARTICIPANTS = {}
 
 def get_anon_name(real_name):
     """Анонимизирует имя: Вася -> [Участник 1]"""
-    if not real_name: return '[Участник]'
+    if not real_name: return '[?]'
     # Берем первое слово
     clean_name = real_name.strip().split()[0].lower()
-    if len(clean_name) < 2: return '[Участник]'
+    if len(clean_name) < 2: return '[?]'
     
     # Если имя уже известно
     for base, fake in PARTICIPANTS.items():
@@ -40,7 +40,7 @@ def get_anon_name(real_name):
         
     # Если новое — генерируем псевдоним
     new_id = len(PARTICIPANTS) + 1
-    fake_name = f'[Участник {new_id}]'
+    fake_name = f'[{new_id}]'
     
     # Корень для поиска падежей (Вася -> Вас, Валерий -> Валер)
     base = clean_name[:-1] if clean_name[-1] in 'яаий' else clean_name
@@ -62,10 +62,9 @@ def censor_text(text):
     # 2. Вырезаем ссылки
     text = re.sub(r'https?://\S+', '[ССЫЛКА]', text)
     
-    # 3. Цензура политики и ругани
+    # 3. Цензура политики и ругани (только целые слова, чтобы не калечить текст)
     for word in BANNED_POLITICS + BANNED_PROFANITY + BANNED_TECH:
-        # Ищем как отдельные слова, так и внутри слов (для мата)
-        text = re.sub(r'(?i)' + re.escape(word) + r'[а-яё]*', '[ЦЕНЗУРА]', text)
+        text = re.sub(r'(?i)\b' + re.escape(word) + r'\b', '[ЦЕНЗУРА]', text)
         
     # 4. Анонимизация имен
     for base, fake in PARTICIPANTS.items():
@@ -158,7 +157,17 @@ def fetch_emails():
                     body = msg.get_payload(decode=True).decode(msg.get_content_charset() or "utf-8", errors="replace")
 
                 # Чистка цитат
-                cleaned_body = "\n".join([line for line in body.split("\n") if not line.strip().startswith(">")]).strip()
+                # Отрезаем всё, что начинается с цитаты (To:, Subject:, On ... wrote:)
+                body_lines = []
+                for line in body.split("\n"):
+                    stripped = line.strip()
+                    # Если встретили начало цитаты или пересылки — прекращаем чтение
+                    if stripped.startswith("To:") or stripped.startswith("From:") or stripped.startswith("Subject:") or stripped.startswith("Cc:") or stripped.startswith("Sent:") or stripped.startswith("On ") and "wrote:" in stripped:
+                        break
+                    # Убираем символы цитирования ">"
+                    if not stripped.startswith(">"):
+                        body_lines.append(line)
+                cleaned_body = "\n".join(body_lines).strip()
                 
                 # ПРИМЕНЯЕМ ЦЕНЗУРУ
                 cleaned_body = censor_text(cleaned_body)
@@ -170,7 +179,7 @@ def fetch_emails():
                     continue
 
                 preview_text = re.sub(r'\s+', ' ', cleaned_body)[:120] + "..."
-                display_title = f"[ЧЕРНОВИК] {clean_subject} ({anon_sender}, {time_str})"
+                display_title = f"{clean_subject} ({anon_sender}, {time_str})"
 
                 # Формируем Markdown
                 md_content = f"# {clean_subject}\n\n"

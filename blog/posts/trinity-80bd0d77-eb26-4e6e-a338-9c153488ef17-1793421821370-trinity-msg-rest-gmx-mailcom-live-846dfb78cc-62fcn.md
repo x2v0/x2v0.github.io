@@ -1,15 +1,15 @@
 # debug Android with M$
 
-**От:** [Участник 6]
+**От:** [6]
 **Дата:** 2026-10-31 04:43
 
 ---
 
 <html><body><div style="font-family: 'verdana'; font-size: 12px; color: #000;">Привет всем.</div>
 <div style="font-family: 'verdana'; font-size: 12px; color: #000;">&nbsp;</div>
-<div style="font-family: 'verdana'; font-size: 12px; color: #000;">Валера, ты точно сумашедший, хотел резче сказать. Шли нашу переписку сразу на Лубянку что ли, чтобы люди сил не тратили на нашу&nbsp;<span style="background-color: #ffffff;">поимку!</span> Там сейчас будут ласты народу вязать за наличие в телефоне [ЦЕНЗУРА] , [ЦЕНЗУРА] и потертой в [ЦЕНЗУРА] ис[ЦЕНЗУРА] . От того что ты хочешь выборочно публиковать легче не будет, надо теперь думать, постоянно и письма дробить: это Валера наружу выкинет, а это, может, оставит.</div>
+<div style="font-family: 'verdana'; font-size: 12px; color: #000;">Валера, ты точно сумашедший, хотел резче сказать. Шли нашу переписку сразу на Лубянку что ли, чтобы люди сил не тратили на нашу&nbsp;<span style="background-color: #ffffff;">поимку!</span> Там сейчас будут ласты народу вязать за наличие в телефоне [ЦЕНЗУРА] , телеграма и потертой в телеграме истории. От того что ты хочешь выборочно публиковать легче не будет, надо теперь думать, постоянно и письма дробить: это Валера наружу выкинет, а это, может, оставит.</div>
 <div style="font-family: 'verdana'; font-size: 12px; color: #000;">&nbsp;</div>
-<div style="font-family: 'verdana'; font-size: 12px; color: #000;">Насчет дизайна. То, что ты в дизайне не понимаешь ничего, это просто следует из моих жизненных наблюдений: это такой же навык, как умение рисовать, лошадь рисовать нужно научиться сначала, а потом говорить миру, что ты создаешь прекрасные вещи. Я, кстати, тоже в дизайне не понимаю ничего, этому надо посвятить много времени и усилий, следить за мейнстримом, обшаться с <span style="background-color: #ffffff;">единомышленниками.</span> Отсюда же следует и другой вывод: ты ни хрена никому не продашь никакого дизайна, Андрей хорошо про сценарии рассказал, только сценариев меньше, чем дизайнов на продажу, а сейчас вообще дело труба. Вот тебе Артем подогнал сайт, ко[ЦЕНЗУРА] сделан нормальным современным ИИ, они умеют сейчас это делать хорошо, с кем и с чем ты, Валера, хочешь состязаться? Как было написано на воротах концлагеря: входящий сюда, оставь всякую надежду. Велком в цифровой [ЦЕНЗУРА] ! Когда уже ИИ начнет на шару жратву делать, чтобы не думать, где еды достать, только проги падла пишет и дизайны делает, еще [ЦЕНЗУРА] всяким типа роликов ютюб завалил, да северные корейцы им биткоинные биржи ломают.</div>
+<div style="font-family: 'verdana'; font-size: 12px; color: #000;">Насчет дизайна. То, что ты в дизайне не понимаешь ничего, это просто следует из моих жизненных наблюдений: это такой же навык, как умение рисовать, лошадь рисовать нужно научиться сначала, а потом говорить миру, что ты создаешь прекрасные вещи. Я, кстати, тоже в дизайне не понимаю ничего, этому надо посвятить много времени и усилий, следить за мейнстримом, обшаться с <span style="background-color: #ffffff;">единомышленниками.</span> Отсюда же следует и другой вывод: ты ни хрена никому не продашь никакого дизайна, Андрей хорошо про сценарии рассказал, только сценариев меньше, чем дизайнов на продажу, а сейчас вообще дело труба. Вот тебе Артем подогнал сайт, который сделан нормальным современным ИИ, они умеют сейчас это делать хорошо, с кем и с чем ты, Валера, хочешь состязаться? Как было написано на воротах концлагеря: входящий сюда, оставь всякую надежду. Велком в цифровой [ЦЕНЗУРА] ! Когда уже ИИ начнет на шару жратву делать, чтобы не думать, где еды достать, только проги падла пишет и дизайны делает, еще дерьмом всяким типа роликов ютюб завалил, да северные корейцы им биткоинные биржи ломают.</div>
 <div style="font-family: 'verdana'; font-size: 12px; color: #000;">&nbsp;</div>
 <div style="font-family: 'verdana'; font-size: 12px; color: #000;">&nbsp;</div>
 <div id="signature-container" style="background-color: #ffffff; font-size: 12px; font-family: verdana; color: #000000;">Коля.</div>
@@ -17,38 +17,38 @@
 <div id="sub-body-container" style="margin: 10px 5px 5px 10px; padding: 10px 0px 10px 10px; border-left: 2px solid rgb(195, 217, 229);">
 <div style="margin: 0px 0px 10px;">
 <div><strong>Sent: </strong>Saturday, October 31, 2026 at 1:40 AM</div>
-<div><strong>From: </strong>"[Участник 1] Onuchin" &lt;[EMAIL СКРЫТ]&gt;</div>
-<div><strong>To: </strong>"[Участник 5] Onuchin" &lt;[EMAIL СКРЫТ]&gt;, "Алексей Соловьев" &lt;[EMAIL СКРЫТ]&gt;</div>
-<div><strong>CC: </strong>"[Участник 6] nikolay" &lt;[EMAIL СКРЫТ]&gt;,"Омельченко Андрей" &lt;[EMAIL СКРЫТ]&gt;,"[EMAIL СКРЫТ]" &lt;[EMAIL СКРЫТ]&gt;</div>
+<div><strong>From: </strong>"[1] Onuchin" &lt;[EMAIL СКРЫТ]&gt;</div>
+<div><strong>To: </strong>"[5] Onuchin" &lt;[EMAIL СКРЫТ]&gt;, "Алексей Соловьев" &lt;[EMAIL СКРЫТ]&gt;</div>
+<div><strong>CC: </strong>"[6] nikolay" &lt;[EMAIL СКРЫТ]&gt;,"Омельченко Андрей" &lt;[EMAIL СКРЫТ]&gt;,"[EMAIL СКРЫТ]" &lt;[EMAIL СКРЫТ]&gt;</div>
 <div><strong>Subject: </strong>Re: Aw: Re: Aw: Re: Aw: debug Android with M$</div>
 </div>
 <div>Коля,</div>
 <div>&nbsp;</div>
-<div>мы тут с Пациентом немного поэкспериментировали с блогом. Превратили его в ленту, как в [ЦЕНЗУРА] или Фейсбуке. А еще сделали автоматический пайплайн: скрипт заходит на почту, вытаскивает нашу переписку с темой "debug Android with M$" и автоматически публикует её в виде постов с комментариями.</div>
+<div>мы тут с Пациентом немного поэкспериментировали с блогом. Превратили его в ленту, как в Телеграме или Фейсбуке. А еще сделали автоматический пайплайн: скрипт заходит на почту, вытаскивает нашу переписку с темой "debug Android with M$" и автоматически публикует её в виде постов с комментариями.</div>
 <div>&nbsp;</div>
-<div>Твои письма теперь — официальная ис[ЦЕНЗУРА] проекта. Зацени, как выглядит:&nbsp;</div>
+<div>Твои письма теперь — официальная история проекта. Зацени, как выглядит:&nbsp;</div>
 <div>[ССЫЛКА]
 <div>&nbsp;</div>
 <div>(Внизу под каждым постом можно даже оставить комментарий через GitHub).</div>
 <div>&nbsp;</div>
-<div>(Кстати, под каждой статьей внизу есть блок «Комментарии» через Utterances. Коля сможет оставить там [ЦЕНЗУРА] отзыв, если захочет, ав[ЦЕНЗУРА] через [ЦЕНЗУРА] GitHub).</div>
-<strong>To:</strong> [Участник 5] Onuchin &lt;[EMAIL СКРЫТ]&gt;, "Алексей Соловьев" &lt;[EMAIL СКРЫТ]&gt;; <br><strong>Cc:</strong> [Участник 6] nikolay &lt;[EMAIL СКРЫТ]&gt;, "Омельченко Андрей" &lt;[EMAIL СКРЫТ]&gt;, "[EMAIL СКРЫТ]" &lt;[EMAIL СКРЫТ]&gt;; <br><strong>Subject:</strong> Aw: Re: Aw: Re: Aw: debug Android with M$; <br>21:42, October 30, 2026, [Участник 1] Onuchin &lt;[EMAIL СКРЫТ]&gt;: <br>
+<div>(Кстати, под каждой статьей внизу есть блок «Комментарии» через Utterances. Коля сможет оставить там свой отзыв, если захочет, авторизовавшись через свой GitHub).</div>
+<strong>To:</strong> [5] Onuchin &lt;[EMAIL СКРЫТ]&gt;, "Алексей Соловьев" &lt;[EMAIL СКРЫТ]&gt;; <br><strong>Cc:</strong> [6] nikolay &lt;[EMAIL СКРЫТ]&gt;, "Омельченко Андрей" &lt;[EMAIL СКРЫТ]&gt;, "[EMAIL СКРЫТ]" &lt;[EMAIL СКРЫТ]&gt;; <br><strong>Subject:</strong> Aw: Re: Aw: Re: Aw: debug Android with M$; <br>21:42, October 30, 2026, [1] Onuchin &lt;[EMAIL СКРЫТ]&gt;: <br>
 <blockquote><br> Вот что еще надо срочно добавить: <br>
 <div>- на x2v0.github.io есть:</div>
 <div>&nbsp; &nbsp;1. блог</div>
-<div>&nbsp; &nbsp;2. форма&nbsp; диалога - оставить отзыв, ко[ЦЕНЗУРА] отсылает мне мэйл с фиксированным subj</div>
+<div>&nbsp; &nbsp;2. форма&nbsp; диалога - оставить отзыв, который отсылает мне мэйл с фиксированным subj</div>
 <div>&nbsp;+ есть наш e-mail переписка</div>
 <div>&nbsp;</div>
 <div>Необходимо как-то это объединить.&nbsp;</div>
 <div>Создать bridge, pipeline - выбранную переписку с определенным сабжом -&gt; в структурированный блог на x2v0.github.io</div>
-<div>Для ис[ЦЕНЗУРА] , для протокола, чтобы не кануло в вечность, как реальное применение блога.</div>
+<div>Для истории, для протокола, чтобы не кануло в вечность, как реальное применение блога.</div>
 <div>&nbsp;</div>
-<strong>To:</strong> [Участник 5] Onuchin &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "Алексей Соловьев" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Cc:</strong> [Участник 6] nikolay &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "Омельченко Андрей" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Subject:</strong> Aw: Re: Aw: Re: Aw: debug Android with M$; <br>20:55, October 30, 2026, [Участник 1] Onuchin &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;: <br>
+<strong>To:</strong> [5] Onuchin &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "Алексей Соловьев" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Cc:</strong> [6] nikolay &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "Омельченко Андрей" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Subject:</strong> Aw: Re: Aw: Re: Aw: debug Android with M$; <br>20:55, October 30, 2026, [1] Onuchin &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;: <br>
 <blockquote><br> СПАСИБО, сын!
 <div>Классссс!</div>
 <div>Надо непременно добавить. <br>
 <div>&nbsp;</div>
-<strong>To:</strong> "Алексей Соловьев" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Cc:</strong> [Участник 1] Onuchin &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, [Участник 6] nikolay &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "Омельченко Андрей" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Subject:</strong> Aw: Re: Aw: Re: Aw: debug Android with M$; <br>20:44, October 30, 2026, [Участник 5] Onuchin &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;: <br>
+<strong>To:</strong> "Алексей Соловьев" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Cc:</strong> [1] Onuchin &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, [6] nikolay &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "Омельченко Андрей" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Subject:</strong> Aw: Re: Aw: Re: Aw: debug Android with M$; <br>20:44, October 30, 2026, [5] Onuchin &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;: <br>
 <blockquote>
 <div>
 <div><br>
@@ -73,25 +73,25 @@
 <div>On Fri, Oct 30, 2026 at 10:07 AM Алексей Соловьев &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt; wrote: </div>
 <blockquote style="border-left-color: #cccccc; border-left-style: solid; border-left-width: 1.0px; margin: 0 0 0 0.8ex; padding-left: 1.0ex;">
 <div>
-<div>Kimi добавили оплату ру[ЦЕНЗУРА] — теперь можно купить подписку карточкой Мир. Для этого нужно открыть официальный сайт без [ЦЕНЗУРА] . <br><br>Как раз недавно вышла модель Kimi 3.1 Pro, ко[ЦЕНЗУРА] согласно Artificial Analysis уступает только флагманским Gemini, Claude и ChatGPT. <br><br>Мож пригодится кому</div>
+<div>Kimi добавили оплату рублями — теперь можно купить подписку карточкой Мир. Для этого нужно открыть официальный сайт без [ЦЕНЗУРА] . <br><br>Как раз недавно вышла модель Kimi 3.1 Pro, которая согласно Artificial Analysis уступает только флагманским Gemini, Claude и ChatGPT. <br><br>Мож пригодится кому</div>
 <br><br>
 <div>
-<div>30 октября 2026 г. 09:46:25 GMT+03:00, [Участник 1] Onuchin &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt; пишет:</div>
+<div>30 октября 2026 г. 09:46:25 GMT+03:00, [1] Onuchin &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt; пишет:</div>
 <blockquote style="border-left-color: #cccccc; border-left-style: solid; border-left-width: 1.0px; margin: 0 0 0 0.8ex; padding-left: 1.0ex;">Коля, я не могу реагировать мгновенно.
 <div>Когда я посылаю изменения на сервер нужно время чтобы они там переварились.</div>
 <div>Мы посмотрим и поправим.</div>
 <div>&nbsp;</div>
 <div>Все эти телодвижения привели меня к важным выводам:</div>
-<div>1. доверяй профессионалам. я послал мой сайт на доработку replit и он выдал стили css, ко[ЦЕНЗУРА] соответствуют стандартам или их внутренней экспертизе. Отсюда вывод - всегда прогоняй хотя бы раз через replit</div>
+<div>1. доверяй профессионалам. я послал мой сайт на доработку replit и он выдал стили css, которые соответствуют стандартам или их внутренней экспертизе. Отсюда вывод - всегда прогоняй хотя бы раз через replit</div>
 <div>2.&nbsp; перепроверяй на максимальном количестве устройств. ничто не заменит, к сожалению, человеческий глаз</div>
-<div>3. нельзя угодить сразу всем. нужен компромисс исходя из приоритетной ауди[ЦЕНЗУРА] . важно вовремя остановиться.</div>
+<div>3. нельзя угодить сразу всем. нужен компромисс исходя из приоритетной аудитории. важно вовремя остановиться.</div>
 <div>&nbsp;</div>
 <div>пока останавливаться не время, но уже пора.</div>
 <div>&nbsp;</div>
 <div>посмотрим. <br>  </div>
 <strong>To:</strong> "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Cc:</strong> "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Subject:</strong> Aw: Re: Aw: Re: Aw: debug Android with M$; <br>08:48, October 30, 2026, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;: <br>
 <blockquote>
-<div style="color: #000000; font-family: verdana; font-size: 12.0px;">Сейчас почти все приходит в норму: шрифт увеличился, читать все можно в обоих цветовых режимах и т.д. Но я хочу обратить <span style="background-color: #ffffff;">внимание</span> на вещь о ко[ЦЕНЗУРА] говорил раньше, я рассказывал про [ЦЕНЗУРА] опыт с редак[ЦЕНЗУРА] HTML, как приходилось мучиться. Вот сейчас я вижу ту же картину. Месяц в шапке пошел вправо, это хорошо, но меню сильно ушло влево, ИИ не смог слепить их вместе в правом углу. Интересно, долго вы вдвоем будете напрягаться, чтобы поместить их туда?</div>
+<div style="color: #000000; font-family: verdana; font-size: 12.0px;">Сейчас почти все приходит в норму: шрифт увеличился, читать все можно в обоих цветовых режимах и т.д. Но я хочу обратить <span style="background-color: #ffffff;">внимание</span> на вещь о которой говорил раньше, я рассказывал про свой опыт с редактором HTML, как приходилось мучиться. Вот сейчас я вижу ту же картину. Месяц в шапке пошел вправо, это хорошо, но меню сильно ушло влево, ИИ не смог слепить их вместе в правом углу. Интересно, долго вы вдвоем будете напрягаться, чтобы поместить их туда?</div>
 <div style="color: #000000; font-family: verdana; font-size: 12.0px;">&nbsp;</div>
 <div style="color: #000000; font-family: verdana; font-size: 12.0px;">&nbsp;</div>
 <div id="33898719344e9d6f5755900d1401699784e8c16ce89e9ef5c347726be5e495caf1acfa9fc61cfbf3f6a9ef0f48f1750fm_-8405349119554127506m_-9069457855225448909bb639162c6911f5a7bd6cee9c1d909asignature-container" style="background-color: #ffffff; color: #000000; font-family: verdana; font-size: 12.0px;">Коля.</div>
@@ -99,7 +99,7 @@
 <div id="f4643a9a8c5995c937324e8b970620a48ce01cd7a5811b8f9436fdae438a0141124b3a4107d061fdbb75a66416162530m_-8405349119554127506m_-90694578552254489095200e868229d611a1a76fd569856a59sub-body-container" style="border-left-color: #c3d9e5; border-left-style: solid; border-left-width: 2.0px; margin: 10.0px 5.0px 5.0px 10.0px; padding: 10.0px 0 10.0px 10.0px;">
 <div style="margin: 0 0 10.0px;">
 <div><strong>Sent: </strong>Friday, October 30, 2026 at 8:09 AM</div>
-<div><strong>From: </strong>"[Участник 1] Onuchin" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;</div>
+<div><strong>From: </strong>"[1] Onuchin" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;</div>
 <div><strong>To: </strong>"<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;</div>
 <div><strong>CC: </strong>"<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;,"<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;</div>
 <div><strong>Subject: </strong>Re: Aw: Re: Aw: debug Android with M$</div>
@@ -113,16 +113,16 @@
 <div>&nbsp;</div>
 <div>1. Разные экраны (Железо): У ноутбуков (особенно старых или бюджетных) матрицы часто имеют узкий цветовой охват и низкую контрастность. У современных смартфонов (особенно OLED) — наоборот, очень широкий охват и высокая яркость . Поэтому один и тот же серый цвет на телефоне может выглядеть насыщенным, а на ноуте — блеклым.</div>
 <div>2. Разное управление цветом (Софт): Браузеры по-разному обрабатывают цвета. Например, Safari на iPhone корректно читает цветовые профили (ICC), а Chrome на Android часто игнорирует профиль устройства и растягивает цвета из стандартного пространства sRGB в более широкое, делая их «ядовитыми» .</div>
-<div>3. Настройки системы: У Коли на ноуте может быть включен «Ночной режим» (Night Light), ко[ЦЕНЗУРА] делает все цвета теплее и желтее, или изменена цветовая температура в драйвере видеокарты.</div>
+<div>3. Настройки системы: У Коли на ноуте может быть включен «Ночной режим» (Night Light), который делает все цвета теплее и желтее, или изменена цветовая температура в драйвере видеокарты.</div>
 <div>&nbsp;</div>
 <div>🤝 Какой компромисс выбрать?</div>
 <div>&nbsp;</div>
-<div>Полностью синхронизировать цвета на всех устройствах невозможно (если только ты не купишь Коле калиброванный мони[ЦЕНЗУРА] и не заставишь его отключить все настройки). Но можно сделать так, чтобы сайт выглядел хорошо везде.</div>
+<div>Полностью синхронизировать цвета на всех устройствах невозможно (если только ты не купишь Коле калиброванный монитор и не заставишь его отключить все настройки). Но можно сделать так, чтобы сайт выглядел хорошо везде.</div>
 <div>&nbsp;</div>
-<div>Вот три шага, ко[ЦЕНЗУРА] мы можем сделать:</div>
+<div>Вот три шага, которые мы можем сделать:</div>
 <div>&nbsp;</div>
 <div>1. Использовать безопасную палитру (sRGB)</div>
-<div>Твой сайт уже использует стандартные цвета (#0288d1, #f5f3eb и т.д.). Это правильно. Главное — не использовать «неоновые» цвета, ко[ЦЕНЗУРА] на OLED-экранах телефонов будут «выжигать глаза», а на ноутах станут тусклыми.</div>
+<div>Твой сайт уже использует стандартные цвета (#0288d1, #f5f3eb и т.д.). Это правильно. Главное — не использовать «неоновые» цвета, которые на OLED-экранах телефонов будут «выжигать глаза», а на ноутах станут тусклыми.</div>
 <div>&nbsp;</div>
 <div>2. Учесть темную тему Коли (Приоритет)</div>
 <div>Коля жалуется, что в темной теме текст серый на черном фоне. Это самая критичная проблема. Мы уже исправили это в прошлом патче, сделав текст белым. Это решит 90% его проблем с читаемостью.</div>
@@ -133,7 +133,7 @@
 <div>🛠 Что делаем прямо сейчас?</div>
 <div>&nbsp;</div>
 <div>Давай сосредоточимся на самой большой боли Коли — темной теме.</div>
-<div>В прошлом сообщении мы добавили код, ко[ЦЕНЗУРА] делает текст в темной теме белым (color: #e0e0e0 !important). Если Коля обновил страницу и все равно видит серый текст, значит, старые стили Replit перебивают наши.</div>
+<div>В прошлом сообщении мы добавили код, который делает текст в темной теме белым (color: #e0e0e0 !important). Если Коля обновил страницу и все равно видит серый текст, значит, старые стили Replit перебивают наши.</div>
 <div>&nbsp;</div>
 <div>Сейчас мы применим «ядерный» фикс для темной темы, чтобы текст стал гарантированно белым, а таблица — крупнее.</div>
 <div>&nbsp;</div>
@@ -210,7 +210,7 @@
 <div>&nbsp;</div>
 <div>&nbsp;</div>
 <div>&nbsp;</div>
-<div>&nbsp;<strong>To:</strong> "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Cc:</strong> "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Subject:</strong> Aw: Re: Aw: debug Android with M$; <br>07:59, October 30, 2026, [Участник 1] Onuchin &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;: <br>
+<div>&nbsp;<strong>To:</strong> "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Cc:</strong> "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Subject:</strong> Aw: Re: Aw: debug Android with M$; <br>07:59, October 30, 2026, [1] Onuchin &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;: <br>
 <blockquote>Обожаю Пациента за его мгновенную реакцию.
 <div>&nbsp;</div>
 <div>
@@ -231,7 +231,7 @@
 <div id="f2288cba6b16b3e38721c11aa680408380d566297d2be1ef5e43cb82654202cd400c59fe8da354f86ffec161f4e3234bm_-8405349119554127506m_-90694578552254489059c904e0fa43fe0964cbf6d4fa5f4822c9976b2082dcd3770c1ed41d2bfbc1395200e868229d611a1a76fd569856a59sub-body-container" style="border-left-color: #c3d9e5; border-left-style: solid; border-left-width: 2.0px; margin: 10.0px 5.0px 5.0px 10.0px; padding: 10.0px 0 10.0px 10.0px;">
 <div style="margin: 0 0 10.0px;">
 <div><strong>Sent: </strong>Friday, October 30, 2026 at 7:25 AM</div>
-<div><strong>From: </strong>"[Участник 1] Onuchin" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;</div>
+<div><strong>From: </strong>"[1] Onuchin" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;</div>
 <div><strong>To: </strong>"<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;</div>
 <div><strong>CC: </strong>"<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;,"<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;</div>
 <div><strong>Subject: </strong>Re: Aw: debug Android with M$</div>
@@ -252,15 +252,15 @@
 <div>Самый главный, неожиданный, профит - использование Playwright для автоматического тестирования GUI Android application.</div>
 <div>Уже используется - тесты Playwright mtapi запускаются через github Actions.</div>
 <div>&nbsp;</div>
-<strong>To:</strong> "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Cc:</strong> "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Subject:</strong> Aw: debug Android with M$; <br>06:24, October 30, 2026, [Участник 1] Onuchin &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;: <br>
+<strong>To:</strong> "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Cc:</strong> "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Subject:</strong> Aw: debug Android with M$; <br>06:24, October 30, 2026, [1] Onuchin &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;: <br>
 <blockquote>
 <div>&nbsp;</div>
 Цитата из Лешиной статьи - это то, о чем я все время тут говорю.
 <div>--------------------------------------------</div>
 <div>
-<div>Самые ценные на рынке сейчас — те самые старые разработчики, ко[ЦЕНЗУРА] успели 5–10 лет пописать код руками, почитать документации и под[ЦЕНЗУРА] ночами. Этот опыт важный, потому что без него вообще непонятно, что именно спрашивать у LLM, как понять, что она выдала нормальную архитектуру, и где поставить барьеры качества и какие.</div>
+<div>Самые ценные на рынке сейчас — те самые старые разработчики, которые успели 5–10 лет пописать код руками, почитать документации и подебажить ночами. Этот опыт важный, потому что без него вообще непонятно, что именно спрашивать у LLM, как понять, что она выдала нормальную архитектуру, и где поставить барьеры качества и какие.</div>
 <div>&nbsp;</div>
-<div>А вот что будет с новыми джунами, ко[ЦЕНЗУРА] вкатываются прямо сейчас, — огромный вопрос. Они не успевают научиться писать код руками, от них требуют быстрых результатов через ИИ-агентов. Опыт у них не появляется, а шишки за них набивают агенты. И как они будут контролировать архитектуру в будущем, пока не совсем понятно. Но рынок уже сломался и поменялся навсегда. Мы просто быстро адаптируемся и смотрим, к чему это приведёт.</div>
+<div>А вот что будет с новыми джунами, которые вкатываются прямо сейчас, — огромный вопрос. Они не успевают научиться писать код руками, от них требуют быстрых результатов через ИИ-агентов. Опыт у них не появляется, а шишки за них набивают агенты. И как они будут контролировать архитектуру в будущем, пока не совсем понятно. Но рынок уже сломался и поменялся навсегда. Мы просто быстро адаптируемся и смотрим, к чему это приведёт.</div>
 <div>&nbsp;</div>
 <div>++</div>
 <div>Вывод приводится в конце статьи. А, все начало посвящено тому, что сейчас невозможно найти работу seniorам.</div>
@@ -313,7 +313,7 @@
 <p style="font-family: 'times new roman' , serif; font-size: 12.0pt;"><strong>Sent: </strong>Thursday, October 29, 2026 at 8:00 PM</p>
 </div>
 <div>
-<p style="font-family: 'times new roman' , serif; font-size: 12.0pt;"><strong>From: </strong>"[Участник 1] Onuchin" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;</p>
+<p style="font-family: 'times new roman' , serif; font-size: 12.0pt;"><strong>From: </strong>"[1] Onuchin" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;</p>
 </div>
 <div>
 <p style="font-family: 'times new roman' , serif; font-size: 12.0pt;"><strong>To: </strong>"<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;</p>
@@ -327,7 +327,7 @@
 </div>
 <p style="font-family: 'times new roman' , serif; font-size: 12.0pt;"><br> Я разделяю твое восхищение.</p>
 <div>
-<p style="font-family: 'times new roman' , serif; font-size: 12.0pt;">Сделал в[ЦЕНЗУРА] страницу&nbsp; - оригинал от профессионала replit.</p>
+<p style="font-family: 'times new roman' , serif; font-size: 12.0pt;">Сделал вторую страницу&nbsp; - оригинал от профессионала replit.</p>
 </div>
 <div>
 <p style="font-family: 'times new roman' , serif; font-size: 12.0pt;">Это был наш 0 вариант.</p>
@@ -356,7 +356,7 @@
 <p style="font-family: 'times new roman' , serif; font-size: 12.0pt;"><strong>To:</strong> "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Cc:</strong> "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;; <br><strong>Subject:</strong> Aw: debug Android with M$; <br>19:23, October 29, 2026, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;:</p>
 <blockquote style="margin-bottom: 5.0pt; margin-top: 5.0pt;">
 <div>
-<p style="font-family: 'times new roman' , serif; font-size: 12.0pt;"><span style="background: white; color: black; font-family: verdana , sans-serif; font-size: 9.0pt;">Богато! Твои труды, Валера, не пропали даром! Стало еще хуже, чем было. Скрин я сделал в хроме на компе, шрифт мелкий совершенно, разметка телефонная, меню в виде бутерброда слева и переключение [ЦЕНЗУРА] темы прямо посередине заголовка. Заголовок уплывает, если крутить вниз, при этом левый sidebar стоит на месте (прибит на совесть, это хорошо). Твой портрет в сортире в черной рамке, для некролога что ли заготовка или это типа тень, и она налазит на текст, ко[ЦЕНЗУРА] ниже.</span></p>
+<p style="font-family: 'times new roman' , serif; font-size: 12.0pt;"><span style="background: white; color: black; font-family: verdana , sans-serif; font-size: 9.0pt;">Богато! Твои труды, Валера, не пропали даром! Стало еще хуже, чем было. Скрин я сделал в хроме на компе, шрифт мелкий совершенно, разметка телефонная, меню в виде бутерброда слева и переключение свотовой темы прямо посередине заголовка. Заголовок уплывает, если крутить вниз, при этом левый sidebar стоит на месте (прибит на совесть, это хорошо). Твой портрет в сортире в черной рамке, для некролога что ли заготовка или это типа тень, и она налазит на текст, который ниже.</span></p>
 </div>
 <div>
 <p style="font-family: 'times new roman' , serif; font-size: 12.0pt;"><span style="background: white; color: black; font-family: verdana , sans-serif; font-size: 9.0pt;">&nbsp;</span></p>
@@ -379,7 +379,7 @@
 <p style="font-family: 'times new roman' , serif; font-size: 12.0pt;"><strong>Sent: </strong>Thursday, October 29, 2026 at 6:30 PM</p>
 </div>
 <div>
-<p style="font-family: 'times new roman' , serif; font-size: 12.0pt;"><strong>From: </strong>"[Участник 1] Onuchin" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;</p>
+<p style="font-family: 'times new roman' , serif; font-size: 12.0pt;"><strong>From: </strong>"[1] Onuchin" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;</p>
 </div>
 <div>
 <p style="font-family: 'times new roman' , serif; font-size: 12.0pt;"><strong>To: </strong>"<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;, "<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>" &lt;<a href="mailto:[EMAIL СКРЫТ]" target="_blank" rel="noopener noreferrer noreferrer" data-href="mailto:[EMAIL СКРЫТ]">[EMAIL СКРЫТ]</a>&gt;</p>
@@ -391,7 +391,7 @@
 <p style="font-family: 'times new roman' , serif; font-size: 12.0pt;"><strong>Subject: </strong>debug Android with M$</p>
 </div>
 </div>
-<p style="font-family: 'times new roman' , serif; font-size: 12.0pt;">Наконец-то [ЦЕНЗУРА] с <a href="[ССЫЛКА] target="_blank" rel="noopener noreferrer" data-href="[ССЫЛКА]
+<p style="font-family: 'times new roman' , serif; font-size: 12.0pt;">Наконец-то закончили с <a href="[ССЫЛКА] target="_blank" rel="noopener noreferrer" data-href="[ССЫЛКА]
 <div>
 <p style="font-family: 'times new roman' , serif; font-size: 12.0pt;">&nbsp;</p>
 </div>
@@ -405,7 +405,7 @@
 <p style="font-family: 'times new roman' , serif; font-size: 12.0pt;">Вернулись к mtapi.&nbsp;</p>
 </div>
 <div>
-<p style="font-family: 'times new roman' , serif; font-size: 12.0pt;">К автоматическому тестированию Андроид приложения mtapi, а именно его веб ду[ЦЕНЗУРА] (demo), с помощью microsoftовской системы тестирования Playwright.</p>
+<p style="font-family: 'times new roman' , serif; font-size: 12.0pt;">К автоматическому тестированию Андроид приложения mtapi, а именно его веб дубля (demo), с помощью microsoftовской системы тестирования Playwright.</p>
 </div>
 <div>
 <p style="font-family: 'times new roman' , serif; font-size: 12.0pt;"><a href="[ССЫЛКА] target="_blank" rel="noopener noreferrer" data-href="[ССЫЛКА]

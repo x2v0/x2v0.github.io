@@ -5,7 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Блог — Валерий Онучин</title>
     <link rel="stylesheet" href="../style.css">
-    <script src="../marked.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/atom-one-dark.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+
     <style>
         body { background-color: var(--bg); color: var(--text); font-family: system-ui, -apple-system, sans-serif; }
         .container { max-width: 760px; margin: 40px auto; padding: 0 20px; }
@@ -13,94 +17,85 @@
         
         .search-bar { width: 100%; padding: 15px; border: 1px solid var(--border); border-radius: 10px; font-size: 16px; margin-bottom: 30px; box-sizing: border-box; background: var(--card-bg); color: var(--text); }
         
-        .topic-group { margin-bottom: 20px; border-radius: 12px; border: 1px solid var(--border); background: var(--card-bg); overflow: hidden; }
-        .topic-header { padding: 15px 20px; cursor: pointer; background: var(--bg3); font-weight: bold; display: flex; justify-content: space-between; }
+        /* Дерево (Папки) */
+        .topic-group { margin-bottom: 15px; border-radius: 12px; border: 1px solid var(--border); background: var(--card-bg); overflow: hidden; }
+        .topic-header { padding: 18px 20px; cursor: pointer; background: var(--bg3); font-weight: bold; display: flex; justify-content: space-between; user-select: none; }
         .topic-header:hover { color: var(--accent); }
         .topic-posts { display: none; padding: 15px; }
         .topic-posts.open { display: block; }
         
-        .post-card { border: 1px solid var(--border); border-radius: 8px; padding: 15px; margin-bottom: 15px; cursor: pointer; background: var(--bg); }
-        .post-card:hover { border-color: var(--accent); }
+        /* Карточки */
+        .post-card { position: relative; border: 1px solid var(--border); border-radius: 8px; padding: 20px; margin-bottom: 15px; cursor: pointer; background: var(--bg); overflow: hidden; transition: all 0.2s; }
+        .post-card:hover { transform: translateY(-2px); border-color: var(--accent); box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+        .post-card::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 6px; background: var(--sender-color, #0288d1); }
+        
+        .sender-header { margin-bottom: 10px; display: flex; align-items: center; }
+        .sender-avatar { width: 30px; height: 30px; border-radius: 50%; background: var(--sender-color, #0288d1); color: white; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; font-size: 14px; margin-right: 10px; }
+        .sender-name { font-size: 13px; color: var(--fg3); font-weight: bold; }
+        
         .post-title { margin: 0 0 10px 0; font-size: 18px; color: var(--text); }
-        .post-preview { margin: 0; font-size: 14px; color: var(--fg3); line-height: 1.5; }
+        .post-preview { margin: 0; font-size: 14px; color: var(--fg2); line-height: 1.5; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .load-more { width: 100%; padding: 12px; margin-top: 10px; background: var(--bg3); border: 1px dashed var(--border); border-radius: 6px; cursor: pointer; font-weight: bold; }
         
-        .load-more { width: 100%; padding: 10px; margin-top: 10px; background: var(--bg3); border: 1px dashed var(--border); border-radius: 6px; cursor: pointer; font-weight: bold; }
-        
+        /* Статья */
         .article-view { display: none; }
-        .btn-back { padding: 10px 15px; margin-bottom: 20px; background: #0288d1; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; }
+        .btn-back { padding: 12px 20px; margin-bottom: 20px; background: #0288d1; color: white; border: none; border-radius: 6px; cursor: pointer; font-weight: bold; font-size: 16px; }
         .article-content { background: var(--card-bg); padding: 30px; border-radius: 12px; border: 1px solid var(--border); font-size: 16px; line-height: 1.7; }
         
-        .error-box { background: #ffebee; color: #c62828; padding: 15px; border-radius: 8px; font-family: monospace; font-size: 14px; margin-bottom: 20px; white-space: pre-wrap; border: 1px solid #ef9a9a; display: none; }
+        /* Типографика статьи */
+        .article-content h1 { font-size: 28px; margin-top: 0; }
+        .article-content pre { background: #282c34; padding: 15px; border-radius: 8px; overflow-x: auto; position: relative; }
+        .article-content code { font-family: monospace; font-size: 14px; }
+        .article-content p code { background: var(--bg3); padding: 2px 6px; border-radius: 4px; color: #e83e8c; }
+        .copy-btn { position: absolute; top: 10px; right: 10px; background: rgba(255,255,255,0.1); color: #fff; border: 1px solid rgba(255,255,255,0.2); border-radius: 4px; padding: 4px 8px; font-size: 12px; cursor: pointer; }
+        .copy-btn:hover { background: rgba(255,255,255,0.2); }
+        
+        mark { background: #ffeb3b; color: #000; padding: 0 2px; border-radius: 2px; }
     </style>
 </head>
 <body>
-    <div id="error-box" class="error-box"></div>
-    
     <div class="container">
-        <!-- СПИСОК -->
         <div id="list-view">
             <div class="header">Оглавление</div>
-            <input type="text" id="search-input" class="search-bar" placeholder="🔍 Поиск по темам...">
+            <input type="text" id="search-input" class="search-bar" placeholder="🔍 Поиск по всем темам...">
             <div id="feed">
                 <p style="text-align:center; padding:20px;">Загрузка...</p>
             </div>
         </div>
 
-        <!-- СТАТЬЯ -->
         <div id="article-view" class="article-view">
-            <button class="btn-back" onclick="backToFeed()">← Назад</button>
+            <button class="btn-back" onclick="backToFeed()">← Назад к оглавлению</button>
             <div id="article-content" class="article-content"></div>
         </div>
     </div>
 
     <script>
-        // --- ПЕРЕХВАТ ОШИБОК ---
-        window.onerror = function(msg, url, line) {
-            var box = document.getElementById('error-box');
-            box.style.display = 'block';
-            box.innerHTML += "ОШИБКА: " + msg + "\nСтрока: " + line + "\n\n";
-        };
-
         var allPosts = [];
-        var currentList = [];
         var openTopics = new Set();
 
-        // --- ЗАГРУЗКА ---
         fetch('./posts.json')
-            .then(function(r) {
-                if (!r.ok) throw new Error("HTTP " + r.status);
-                return r.json();
-            })
+            .then(function(r) { return r.json(); })
             .then(function(data) {
                 allPosts = data;
-                currentList = data;
                 renderFeed(allPosts);
             })
             .catch(function(err) {
-                document.getElementById('feed').innerHTML = '<p style="color:red; text-align:center;">Ошибка загрузки данных: ' + err.message + '</p>';
+                document.getElementById('feed').innerHTML = '<p style="color:red; text-align:center;">Ошибка загрузки: ' + err.message + '</p>';
             });
 
-        // --- ПОИСК ---
         document.getElementById('search-input').addEventListener('input', function(e) {
             var q = e.target.value.toLowerCase().trim();
             if (!q) { renderFeed(allPosts); return; }
             var filtered = allPosts.filter(function(p) {
-                return (p.title && p.title.toLowerCase().indexOf(q) !== -1) || 
-                       (p.preview && p.preview.toLowerCase().indexOf(q) !== -1);
+                return (p.title && p.title.toLowerCase().includes(q)) || (p.preview && p.preview.toLowerCase().includes(q));
             });
             renderFeed(filtered, q);
         });
 
-        // --- РЕНДЕРИНГ ---
         function renderFeed(posts, query) {
-            currentList = posts;
             var feed = document.getElementById('feed');
             feed.innerHTML = '';
-            
-            if (posts.length === 0) {
-                feed.innerHTML = '<p style="text-align:center;">Ничего не найдено.</p>';
-                return;
-            }
+            if (posts.length === 0) { feed.innerHTML = '<p style="text-align:center;">Ничего не найдено.</p>'; return; }
 
             var groups = {};
             posts.forEach(function(p) {
@@ -128,17 +123,14 @@
                 head.innerHTML = '<span>' + (isOpen ? '📂' : '📁') + ' ' + group.name + '</span><span>' + group.posts.length + '</span>';
                 head.onclick = function() {
                     if (query) return;
-                    if (openTopics.has(group.id)) openTopics.delete(group.id);
-                    else openTopics.add(group.id);
+                    if (openTopics.has(group.id)) openTopics.delete(group.id); else openTopics.add(group.id);
                     renderFeed(posts, query);
                 };
 
                 var container = document.createElement('div');
                 container.className = 'topic-posts ' + (isOpen ? 'open' : '');
 
-                var page = 1;
-                var perPage = 10;
-                
+                var page = 1, perPage = 10;
                 var drawChunk = function() {
                     container.innerHTML = '';
                     var end = page * perPage;
@@ -147,7 +139,15 @@
                     chunk.forEach(function(post) {
                         var card = document.createElement('div');
                         card.className = 'post-card';
-                        card.innerHTML = '<h3 class="post-title">' + highlight(post.title, query) + '</h3>' +
+                        card.style.setProperty('--sender-color', post.sender_color || '#0288d1');
+                        
+                        var initial = post.sender_name ? post.sender_name.replace(/\[|\]/g, '') : '?';
+                        
+                        card.innerHTML = '<div class="sender-header">' +
+                                         '<div class="sender-avatar">' + initial + '</div>' +
+                                         '<span class="sender-name">' + (post.sender_name || 'Аноним') + '</span>' +
+                                         '</div>' +
+                                         '<h3 class="post-title">' + highlight(post.title, query) + '</h3>' +
                                          '<p class="post-preview">' + highlight(post.preview || '', query) + '</p>';
                         card.onclick = function() { loadPost(post.filename); };
                         container.appendChild(card);
@@ -156,7 +156,7 @@
                     if (group.posts.length > end) {
                         var btn = document.createElement('button');
                         btn.className = 'load-more';
-                        btn.innerText = 'Показать еще ' + (group.posts.length - end) + ' ↓';
+                        btn.innerText = 'Показать еще ↓';
                         btn.onclick = function() { page++; drawChunk(); };
                         container.appendChild(btn);
                     }
@@ -172,10 +172,9 @@
         function highlight(text, q) {
             if (!q || !text) return text;
             var safeQ = q.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-            return text.replace(new RegExp('(' + safeQ + ')', 'gi'), '<mark style="background:#ffeb3b;color:#000;">$1</mark>');
+            return text.replace(new RegExp('(' + safeQ + ')', 'gi'), '<mark>$1</mark>');
         }
 
-        // --- СТАТЬЯ ---
         function backToFeed() {
             document.getElementById('article-view').style.display = 'none';
             document.getElementById('list-view').style.display = 'block';
@@ -191,14 +190,31 @@
             fetch('./posts/' + filename)
                 .then(function(r) { return r.text(); })
                 .then(function(md) {
-                    if (typeof marked !== 'undefined') {
-                        document.getElementById('article-content').innerHTML = marked.parse(md);
-                    } else {
-                        document.getElementById('article-content').innerHTML = '<pre>' + md + '</pre>';
+                    // Парсим Markdown
+                    document.getElementById('article-content').innerHTML = marked.parse(md);
+                    
+                    // Включаем подсветку кода
+                    if (typeof hljs !== 'undefined') {
+                        document.querySelectorAll('pre code').forEach(function(block) {
+                            hljs.highlightElement(block);
+                            // Добавляем кнопку Copy
+                            var pre = block.parentNode;
+                            var btn = document.createElement('button');
+                            btn.className = 'copy-btn';
+                            btn.innerText = 'Copy';
+                            btn.onclick = function(e) {
+                                e.stopPropagation();
+                                navigator.clipboard.writeText(block.innerText).then(function() {
+                                    btn.innerText = 'Copied!';
+                                    setTimeout(function() { btn.innerText = 'Copy'; }, 2000);
+                                });
+                            };
+                            pre.appendChild(btn);
+                        });
                     }
                 })
                 .catch(function(e) {
-                    document.getElementById('article-content').innerHTML = 'Ошибка загрузки статьи: ' + e.message;
+                    document.getElementById('article-content').innerHTML = 'Ошибка загрузки: ' + e.message;
                 });
         }
     </script>
