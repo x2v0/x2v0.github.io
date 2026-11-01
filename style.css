@@ -2588,3 +2588,59 @@ aside.profile {
     margin-left: auto !important;
     margin-right: 15px !important;
 }
+
+/* =========================================
+   ЖЁСТКАЯ ТЁМНАЯ ТЕМА (FIX)
+   ========================================= */
+[data-theme="dark"],
+[data-theme="dark"] body,
+[data-theme="dark"] main,
+[data-theme="dark"] .container,
+[data-theme="dark"] section {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+}
+
+/* Карточки, профиль, секции */
+[data-theme="dark"] .project-card,
+[data-theme="dark"] .card,
+[data-theme="dark"] .profile,
+[data-theme="dark"] .section,
+[data-theme="dark"] .post,
+[data-theme="dark"] article,
+[data-theme="dark"] .content {
+    background-color: #1e1e1e !important;
+    border-color: #333 !important;
+    color: #e0e0e0 !important;
+}
+
+/* Текст внутри карточек */
+[data-theme="dark"] .project-card p,
+[data-theme="dark"] .project-card div,
+[data-theme="dark"] .card p,
+[data-theme="dark"] .section p,
+[data-theme="dark"] .description {
+    color: #b0b0b0 !important;
+}
+
+/* Заголовки */
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4,
+[data-theme="dark"] .title {
+    color: #4fc3f7 !important;
+}
+
+/* Ссылки */
+[data-theme="dark"] a {
+    color: #64b5f6 !important;
+}
+
+/* Теги (Go, Kotlin, Android) */
+[data-theme="dark"] .tag,
+[data-theme="dark"] .badge,
+[data-theme="dark"] span {
+    background-color: #333 !important;
+    color: #e0e0e0 !important;
+}
