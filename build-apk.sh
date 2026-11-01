@@ -1,5 +1,4 @@
-#!/bin/bash
-echo "Сборка APK из шаблона..."
-# Предполагается, что w2a установлен в Termux (например, через go install)
-w2a build -c w2a.yaml
+#!/data/data/com.termux/files/usr/bin/bash
+echo "Сборка APK через wta..."
+~/w2a/bin/wta build -c wta.yaml
 echo "✓ Готово! APK находится в папке build/"
