@@ -2644,3 +2644,48 @@ aside.profile {
     background-color: #333 !important;
     color: #e0e0e0 !important;
 }
+
+/* =========================================
+   ЯДЕРНЫЙ ФИКС ТЁМНОЙ ТЕМЫ (ПЕРЕБИВАЕТ ВСЁ)
+   ========================================= */
+html[data-theme="dark"] body,
+html[data-theme="dark"] body *:not(a):not(button):not(img):not(svg):not(i) {
+    background-color: #121212 !important;
+    color: #e0e0e0 !important;
+    border-color: #333 !important;
+}
+
+/* Исключения для карточек (чтобы они были чуть светлее фона) */
+html[data-theme="dark"] body .project-card,
+html[data-theme="dark"] body .card,
+html[data-theme="dark"] body .section,
+html[data-theme="dark"] body article,
+html[data-theme="dark"] body .post-node {
+    background-color: #1e1e1e !important;
+}
+
+/* Текст в карточках */
+html[data-theme="dark"] body .project-card *,
+html[data-theme="dark"] body .card * {
+    background-color: transparent !important;
+}
+
+/* Ссылки и кнопки оставляем цветными */
+html[data-theme="dark"] body a,
+html[data-theme="dark"] body a * {
+    color: #64b5f6 !important;
+    background-color: transparent !important;
+}
+
+html[data-theme="dark"] body .btn,
+html[data-theme="dark"] body button:not(#theme-toggle):not(#scroll-top) {
+    background-color: #0288d1 !important;
+    color: #ffffff !important;
+}
+
+/* Заголовки */
+html[data-theme="dark"] body h1, 
+html[data-theme="dark"] body h2, 
+html[data-theme="dark"] body h3 {
+    color: #4fc3f7 !important;
+}
