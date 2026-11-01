@@ -292,32 +292,5 @@ document.addEventListener("DOMContentLoaded", function() {
     </div>
 
 
-    <script>
-        function openResumeOverlay(e) {
-            e.preventDefault();
-            const overlay = document.getElementById('resume-overlay');
-            const iframe = document.getElementById('resume-iframe');
-            
-            // Загружаем en/index.html в iframe
-            if (iframe.src === '' || iframe.src.endsWith('/')) {
-                iframe.src = './en/index.html';
-            }
-            
-            overlay.style.display = 'flex';
-            document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
-        }
-
-        function closeResumeOverlay() {
-            const overlay = document.getElementById('resume-overlay');
-            overlay.style.display = 'none';
-            document.body.style.overflow = ''; // Возвращаем прокрутку
-        }
-        
-        // Закрытие по клику на темный фон (вне окна)
-        document.getElementById('resume-overlay').addEventListener('click', function(e) {
-            if (e.target === this) closeResumeOverlay();
-        });
-    </script>
-
-</body>
+    </body>
 </html>
