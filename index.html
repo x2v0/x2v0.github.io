@@ -279,5 +279,45 @@ document.addEventListener("DOMContentLoaded", function() {
     });
 });
 </script>
+
+    <!-- Оверлей для резюме (en/index.html) -->
+    <div id="resume-overlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.8); z-index: 10000; justify-content: center; align-items: center;">
+        <div style="position: relative; width: 95%; max-width: 900px; height: 90%; background: var(--card-bg); border-radius: 12px; overflow: hidden; display: flex; flex-direction: column; box-shadow: 0 10px 30px rgba(0,0,0,0.5);">
+            <div style="padding: 10px 15px; background: var(--accent); color: #fff; display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-weight: bold; font-family: monospace;">Резюме (EN)</span>
+                <button onclick="closeResumeOverlay()" style="background: none; border: none; color: #fff; font-size: 24px; cursor: pointer; line-height: 1;">&times;</button>
+            </div>
+            <iframe id="resume-iframe" src="" style="width: 100%; height: 100%; border: none; background: #fff;"></iframe>
+        </div>
+    </div>
+
+
+    <script>
+        function openResumeOverlay(e) {
+            e.preventDefault();
+            const overlay = document.getElementById('resume-overlay');
+            const iframe = document.getElementById('resume-iframe');
+            
+            // Загружаем en/index.html в iframe
+            if (iframe.src === '' || iframe.src.endsWith('/')) {
+                iframe.src = './en/index.html';
+            }
+            
+            overlay.style.display = 'flex';
+            document.body.style.overflow = 'hidden'; // Блокируем прокрутку фона
+        }
+
+        function closeResumeOverlay() {
+            const overlay = document.getElementById('resume-overlay');
+            overlay.style.display = 'none';
+            document.body.style.overflow = ''; // Возвращаем прокрутку
+        }
+        
+        // Закрытие по клику на темный фон (вне окна)
+        document.getElementById('resume-overlay').addEventListener('click', function(e) {
+            if (e.target === this) closeResumeOverlay();
+        });
+    </script>
+
 </body>
 </html>
