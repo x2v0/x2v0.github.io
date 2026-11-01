@@ -37,7 +37,38 @@
     </style>
         <script src="./marked.min.js"></script>
 
-    </head>
+    
+    <style id="force-dark-theme">
+        html[data-theme="dark"] body,
+        html[data-theme="dark"] body *:not(a):not(button):not(img):not(svg):not(i) {
+            background-color: #121212 !important;
+            color: #e0e0e0 !important;
+            border-color: #333 !important;
+        }
+        html[data-theme="dark"] body .project-card,
+        html[data-theme="dark"] body .card,
+        html[data-theme="dark"] body .section,
+        html[data-theme="dark"] body article,
+        html[data-theme="dark"] body .post-node {
+            background-color: #1e1e1e !important;
+        }
+        html[data-theme="dark"] body .project-card *,
+        html[data-theme="dark"] body .card * {
+            background-color: transparent !important;
+        }
+        html[data-theme="dark"] body a,
+        html[data-theme="dark"] body a * {
+            color: #64b5f6 !important;
+            background-color: transparent !important;
+        }
+        html[data-theme="dark"] body h1, 
+        html[data-theme="dark"] body h2, 
+        html[data-theme="dark"] body h3 {
+            color: #4fc3f7 !important;
+        }
+    </style>
+
+</head>
   <body>
     <header class="topbar" id="top">
       <a class="brand" href="#top" aria-label="Валерий Онучин — главная">
@@ -263,6 +294,15 @@
     <button id="resume-back-btn" style="margin-bottom: 20px; padding: 10px 15px; background: #0288d1; color: white; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; font-family: inherit;">← Назад на главную</button>
     <div id="resume-content" style="font-size: 16px; line-height: 1.6;">Загрузка резюме...</div>
 </main>
+
+
+    <script>
+        (function() {
+            var savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            document.body.setAttribute('data-theme', savedTheme); // Дублируем на body
+        })();
+    </script>
 
 </body>
 </html>
