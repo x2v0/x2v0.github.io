@@ -1,6 +1,14 @@
 <!doctype html>
 <html lang="ru">
   <head>
+    <script>
+        // Мгновенная инициализация темы (как в блоге)
+        (function() {
+            var savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Портфолио Валерия Онучина: системное программирование, DevOps, научное и медицинское ПО, Scopus metrics и публикации.">
@@ -29,14 +37,7 @@
     </style>
         <script src="./marked.min.js"></script>
 
-    <script>
-        // Принудительная установка темы при загрузке
-        (function() {
-            var savedTheme = localStorage.getItem('theme') || 'light';
-            document.documentElement.setAttribute('data-theme', savedTheme);
-        })();
-    </script>
-</head>
+    </head>
   <body>
     <header class="topbar" id="top">
       <a class="brand" href="#top" aria-label="Валерий Онучин — главная">
