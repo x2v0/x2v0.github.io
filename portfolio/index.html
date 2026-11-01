@@ -20,6 +20,7 @@
         [data-theme="dark"] .section-title { color: #eee; }
         [data-theme="dark"] .tech-stack span { background: #333; color: #4fc3f7; }
     </style>
+<style>#scroll-top { position: fixed; bottom: 30px; right: 30px; width: 50px; height: 50px; border-radius: 50%; background: #0288d1; color: #fff; border: none; font-size: 24px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.3); display: block; z-index: 9999; opacity: 0.7; transition: opacity 0.2s; } #scroll-top:hover { opacity: 1; }</style>
 </head>
 <body style="font-family: monospace; padding: 20px; max-width: 1000px; margin: auto;">
     <h1 style="color: #0288d1; margin-top: 20px;">Portfolio</h1>
@@ -122,5 +123,7 @@
                 document.getElementById('loading').innerText = 'Ошибка загрузки репозиториев.';
             });
     </script>
+<button id="scroll-top" title="Наверх">↑</button>
+<script>document.getElementById("scroll-top").addEventListener("click", function() { window.scrollTo({ top: 0, behavior: "smooth" }); });</script>
 </body>
 </html>
