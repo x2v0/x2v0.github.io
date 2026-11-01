@@ -28,6 +28,14 @@
         }
     </style>
         <script src="./marked.min.js"></script>
+
+    <script>
+        // Принудительная установка темы при загрузке
+        (function() {
+            var savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
 </head>
   <body>
     <header class="topbar" id="top">
