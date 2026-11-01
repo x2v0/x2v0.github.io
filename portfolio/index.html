@@ -6,6 +6,13 @@
         (function() {
             var savedTheme = localStorage.getItem('theme') || 'light';
             document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            // Слушаем изменения темы (если открыто в другой вкладке или через меню)
+            window.addEventListener('storage', function(e) {
+                if (e.key === 'theme') {
+                    document.documentElement.setAttribute('data-theme', e.newValue || 'light');
+                }
+            });
         })();
     </script>
 
