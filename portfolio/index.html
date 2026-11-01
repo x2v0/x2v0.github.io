@@ -67,6 +67,31 @@
         }
     </style>
 
+
+    <style id="fix-button-text">
+        /* Любой элемент внутри синей кнопки/ссылки должен быть белым */
+        html[data-theme="dark"] a[href*="github"],
+        html[data-theme="dark"] a[href*="github"] *,
+        html[data-theme="dark"] a[href*="demo"],
+        html[data-theme="dark"] a[href*="demo"] *,
+        html[data-theme="dark"] a[href*="docs"],
+        html[data-theme="dark"] a[href*="docs"] *,
+        html[data-theme="dark"] a[href*="mailto"],
+        html[data-theme="dark"] a[href*="mailto"] *,
+        html[data-theme="dark"] .project-card a,
+        html[data-theme="dark"] .project-card a * {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+        
+        /* Но ссылки в тексте (protom.ru) оставляем синими */
+        html[data-theme="dark"] p a,
+        html[data-theme="dark"] .project-card p a {
+            color: #64b5f6 !important;
+            text-decoration: underline !important;
+        }
+    </style>
+
 </head>
 <body style="font-family: monospace; padding: 20px; max-width: 1000px; margin: auto;">
     <h1 style="color: #0288d1; margin-top: 20px;">Portfolio</h1>
