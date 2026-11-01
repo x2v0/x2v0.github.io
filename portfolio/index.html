@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
+    <script>
+        // Мгновенная установка темы до отрисовки страницы
+        (function() {
+            var savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+        })();
+    </script>
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio — Валерий Онучин</title>
@@ -20,7 +28,7 @@
         [data-theme="dark"] .section-title { color: #eee; }
         [data-theme="dark"] .tech-stack span { background: #333; color: #4fc3f7; }
     </style>
-<style> </style>
+
 
     <style>
         
@@ -28,6 +36,30 @@
     </style>
 
 <style>#scroll-top { position: fixed; bottom: 80px; right: 20px; width: 50px; height: 50px; border-radius: 50%; background: #0288d1; color: #fff; border: none; font-size: 24px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.4); display: none; z-index: 99999; opacity: 0.9; transition: opacity 0.2s; } #scroll-top:hover { opacity: 1; } #scroll-top.visible { display: block; }</style>
+
+    <style id="portfolio-dark-fix">
+        html[data-theme="dark"] body {
+            background-color: #121212 !important;
+            color: #e0e0e0 !important;
+        }
+        html[data-theme="dark"] .project-card,
+        html[data-theme="dark"] .card,
+        html[data-theme="dark"] .section {
+            background-color: #1e1e1e !important;
+            border-color: #333 !important;
+        }
+        html[data-theme="dark"] h1, 
+        html[data-theme="dark"] h2, 
+        html[data-theme="dark"] h3 {
+            color: #4fc3f7 !important;
+        }
+        html[data-theme="dark"] p, 
+        html[data-theme="dark"] span, 
+        html[data-theme="dark"] div {
+            color: #b0b0b0 !important;
+        }
+    </style>
+
 </head>
 <body style="font-family: monospace; padding: 20px; max-width: 1000px; margin: auto;">
     <h1 style="color: #0288d1; margin-top: 20px;">Portfolio</h1>
@@ -131,7 +163,7 @@
             });
     </script>
 
-<script> });</script>
+
 <button id="scroll-top" title="Наверх">↑</button>
 <script>
 document.addEventListener("DOMContentLoaded", function() {
