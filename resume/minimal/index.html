@@ -2,38 +2,181 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Valeriy Onuchin &mdash; Minimal Resume</title>
+<title>Valeriy Onuchin — Resume</title>
 <style>
-    :root { --bg: #fff; --text: #111; --muted: #555; --border: #ddd; }
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); margin: 0; padding: 40px 20px; line-height: 1.5; }
-    .container { max-width: 800px; margin: 0 auto; }
-    h1 { font-size: 2.5rem; margin: 0 0 5px 0; font-weight: 700; letter-spacing: -0.02em; }
-    h2 { font-size: 1.2rem; border-bottom: 2px solid var(--text); padding-bottom: 5px; margin: 30px 0 15px 0; text-transform: uppercase; letter-spacing: 0.05em; }
-    .header { text-align: center; margin-bottom: 40px; }
-    .contact { font-size: 0.9rem; color: var(--muted); margin-top: 10px; }
-    .contact a { color: var(--text); text-decoration: none; border-bottom: 1px solid var(--border); }
-    .job { margin-bottom: 20px; }
-    .job-header { display: flex; justify-content: space-between; font-weight: 600; margin-bottom: 5px; }
-    .job-company { color: var(--muted); font-style: italic; margin-bottom: 8px; }
-    ul { margin: 0; padding-left: 20px; }
-    li { margin-bottom: 5px; }
+    /* Точный стиль ArthurViniNunes/open-CV-template */
+    :root {
+        --text: #000;
+        --muted: #333;
+        --border: #000;
+    }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #fff;
+        color: var(--text);
+        margin: 0;
+        padding: 40px 20px;
+        line-height: 1.4;
+        -webkit-print-color-adjust: exact;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    /* Шапка */
+    h1 {
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 0 5px 0;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+    .role {
+        font-size: 1.1rem;
+        text-align: center;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+    .contact {
+        text-align: center;
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+    .contact a {
+        color: var(--text);
+        text-decoration: none;
+    }
+    .print-trigger {
+        cursor: pointer;
+        user-select: none;
+    }
+    .print-trigger:hover {
+        text-decoration: underline;
+    }
+
+    /* Секции */
+    h2 {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        border-bottom: 1.5px solid var(--border);
+        padding-bottom: 4px;
+        margin: 25px 0 15px 0;
+        letter-spacing: 0.5px;
+    }
+    
+    /* Контент */
+    p {
+        margin: 0 0 10px 0;
+        text-align: justify;
+    }
+    .skills-line {
+        margin-bottom: 8px;
+        text-align: left;
+    }
+    .skills-line strong {
+        font-weight: bold;
+    }
+
+    /* Опыт работы */
+    .job {
+        margin-bottom: 20px;
+    }
+    .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 2px;
+    }
+    .company {
+        font-weight: bold;
+    }
+    .dates {
+        font-style: italic;
+        white-space: nowrap;
+    }
+    .job-title {
+        font-style: italic;
+        margin-bottom: 8px;
+    }
+    ul {
+        margin: 0;
+        padding-left: 20px;
+    }
+    li {
+        margin-bottom: 5px;
+        text-align: justify;
+    }
+
+    /* Стили для печати */
+    @media print {
+        body { padding: 0; margin: 0; background: #fff; }
+        .container { max-width: 100%; }
+        .print-trigger { display: none; }
+        a { color: #000; text-decoration: none; }
+        @page { margin: 1.5cm; size: A4; }
+    }
 </style>
 </head>
 <body>
     <div class="container">
-        <div class="header">
-            <h1>Valeriy Onuchin</h1>
-            <div class="contact">Senior Software Engineer &middot; Protvino, Russia<br>
-            <a href="mailto:valeriy.onuchin@yandex.ru">valeriy.onuchin@yandex.ru</a> &middot; <a href="https://github.com/x2v0">GitHub</a> &middot; <a href="https://orcid.org/0009-0000-3022-3529">ORCID</a></div>
+        <h1>Valeriy Onuchin</h1>
+        <div class="role">Senior Software Engineer</div>
+        
+        <div class="contact">
+            <a href="mailto:valeriy.onuchin@yandex.ru">valeriy.onuchin@yandex.ru</a> | 
+            <a href="https://github.com/x2v0">github.com/x2v0</a> | 
+            <a href="https://orcid.org/0009-0000-3022-3529">ORCID</a> | 
+            <span class="print-trigger" onclick="window.print()">🖨️ Print</span>
         </div>
-        <h2>Experience</h2>
-        <div class="job"><div class="job-header"><span>Software Engineer</span><span>2025 &ndash; 2025</span></div><div class="job-company">ELVEES R&amp;D Center</div><ul><li>Altel OS, based on ALT Linux, for Russian Elbrus-2000 and Skif platforms.</li><li>Cross-compilation and Linux kernel 6.6.</li></ul></div>
-        <div class="job"><div class="job-header"><span>Systems Programmer</span><span>2022 &ndash; 2024</span></div><div class="job-company">JINR, Dubna</div><ul><li>Software for SPD experiment at NICA collider.</li><li>Automated from-source build of a Linux distribution: 170+ packages.</li></ul></div>
-        <div class="job"><div class="job-header"><span>Lead Medical Software Developer</span><span>2009 &ndash; 2021</span></div><div class="job-company">Protom, Protvino</div><ul><li>Software for proton cancer therapy.</li><li>3D DICOM viewer and patient video monitoring system.</li></ul></div>
-        <h2>Skills</h2>
-        <p><strong>Languages:</strong> C++, C#, Python, Go, Kotlin, bash.<br>
-        <strong>Build:</strong> CMake, Meson/Ninja, autotools, Make.<br>
-        <strong>DevOps:</strong> Docker, CI/CD, cross-compilation.</p>
+
+        <h2>Professional Summary</h2>
+        <p>Application and systems programming, scientific and medical software development, DevOps. Almost 40 years of experience in scientific institutes and high-tech companies.</p>
+
+        <h2>Technical Skills</h2>
+        <div class="skills-line"><strong>Languages:</strong> C++, C#, Python, Go, Kotlin, bash.</div>
+        <div class="skills-line"><strong>Build Systems:</strong> CMake, Meson/Ninja, autotools, Make.</div>
+        <div class="skills-line"><strong>DevOps & Infrastructure:</strong> Docker, CI/CD, cross-compilation, Linux kernel 6.6.</div>
+
+        <h2>Professional Experience</h2>
+        
+        <div class="job">
+            <div class="job-header">
+                <span class="company">ELVEES R&amp;D Center</span>
+                <span class="dates">2025 – 2025</span>
+            </div>
+            <div class="job-title">Software Engineer</div>
+            <ul>
+                <li>Altel OS, based on ALT Linux, for Russian Elbrus-2000 and Skif platforms.</li>
+                <li>Cross-compilation and Linux kernel 6.6.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="company">JINR, Dubna</span>
+                <span class="dates">2022 – 2024</span>
+            </div>
+            <div class="job-title">Systems Programmer</div>
+            <ul>
+                <li>Software for SPD experiment at NICA collider.</li>
+                <li>Automated from-source build of a Linux distribution: 170+ packages.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="company">Protom, Protvino</span>
+                <span class="dates">2009 – 2021</span>
+            </div>
+            <div class="job-title">Lead Medical Software Developer</div>
+            <ul>
+                <li>Software for proton cancer therapy.</li>
+                <li>3D DICOM viewer and patient video monitoring system.</li>
+            </ul>
+        </div>
     </div>
 </body>
 </html>

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Валерий Онучин — Resume</title>
+<style>
+    /* Точный стиль ArthurViniNunes/open-CV-template */
+    :root {
+        --text: #000;
+        --muted: #333;
+        --border: #000;
+    }
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        background: #fff;
+        color: var(--text);
+        margin: 0;
+        padding: 40px 20px;
+        line-height: 1.4;
+        -webkit-print-color-adjust: exact;
+    }
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    /* Шапка */
+    h1 {
+        font-size: 2.2rem;
+        text-transform: uppercase;
+        text-align: center;
+        margin: 0 0 5px 0;
+        font-weight: bold;
+        letter-spacing: 1px;
+    }
+    .role {
+        font-size: 1.1rem;
+        text-align: center;
+        margin-bottom: 10px;
+        text-transform: uppercase;
+    }
+    .contact {
+        text-align: center;
+        font-size: 0.95rem;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+    .contact a {
+        color: var(--text);
+        text-decoration: none;
+    }
+    .print-trigger {
+        cursor: pointer;
+        user-select: none;
+    }
+    .print-trigger:hover {
+        text-decoration: underline;
+    }
+
+    /* Секции */
+    h2 {
+        font-size: 1.1rem;
+        text-transform: uppercase;
+        border-bottom: 1.5px solid var(--border);
+        padding-bottom: 4px;
+        margin: 25px 0 15px 0;
+        letter-spacing: 0.5px;
+    }
+    
+    /* Контент */
+    p {
+        margin: 0 0 10px 0;
+        text-align: justify;
+    }
+    .skills-line {
+        margin-bottom: 8px;
+        text-align: left;
+    }
+    .skills-line strong {
+        font-weight: bold;
+    }
+
+    /* Опыт работы */
+    .job {
+        margin-bottom: 20px;
+    }
+    .job-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        margin-bottom: 2px;
+    }
+    .company {
+        font-weight: bold;
+    }
+    .dates {
+        font-style: italic;
+        white-space: nowrap;
+    }
+    .job-title {
+        font-style: italic;
+        margin-bottom: 8px;
+    }
+    ul {
+        margin: 0;
+        padding-left: 20px;
+    }
+    li {
+        margin-bottom: 5px;
+        text-align: justify;
+    }
+
+    /* Стили для печати */
+    @media print {
+        body { padding: 0; margin: 0; background: #fff; }
+        .container { max-width: 100%; }
+        .print-trigger { display: none; }
+        a { color: #000; text-decoration: none; }
+        @page { margin: 1.5cm; size: A4; }
+    }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Валерий Онучин</h1>
+        <div class="role">Senior Инженер-программист</div>
+        
+        <div class="contact">
+            <a href="mailto:valeriy.onuchin@yandex.ru">valeriy.onuchin@yandex.ru</a> | 
+            <a href="https://github.com/x2v0">github.com/x2v0</a> | 
+            <a href="https://orcid.org/0009-0000-3022-3529">ORCID</a> | 
+            <span class="print-trigger" onclick="window.print()">🖨️ Печать</span>
+        </div>
+
+        <h2>Professional Summary</h2>
+        <p>Почти 40 лет опыта в научных институтах и промышленной разработке. Соавтор фреймворка ROOT (ЦЕРН), использованного при открытии бозона Хиггса. 12 лет опыта разработки ПО для протонной терапии (более 1000 пациентов). Специализируюсь на системном программировании, медицинском ПО, DevOps и сборке Linux-дистрибутивов для x86_64, Эльбрус и aarch64.</p>
+
+        <h2>Technical Skills</h2>
+        <div class="skills-line"><strong>Языки:</strong> C++, C#, Python, Go, Kotlin, bash, PowerShell.</div>
+        <div class="skills-line"><strong>Сборка:</strong> CMake, Meson/Ninja, autotools, Make, msbuild.</div>
+        <div class="skills-line"><strong>DevOps и платформы:</strong> Docker, CI/CD, кросс-компиляция, ядро Linux, Эльбрус-2000, Скиф (aarch64).</div>
+
+        <h2>Professional Experience</h2>
+        
+        <div class="job">
+            <div class="job-header">
+                <span class="company">АО НПЦ «ЭЛВИС»</span>
+                <span class="dates">2025 – 2025</span>
+            </div>
+            <div class="job-title">Инженер-программист</div>
+            <ul>
+                <li>Разработка «Альтель ОС» на базе ALT Linux для Эльбрус-2000 и Скиф (aarch64).</li>
+                <li>Сборка 8 вариантов образов (от роутера до GNOME/KDE), ядро Linux 6.6, кросс-компиляция.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="company">Объединенный институт ядерных исследований (ОИЯИ)</span>
+                <span class="dates">2022 – 2024</span>
+            </div>
+            <div class="job-title">Системный программист</div>
+            <ul>
+                <li>Разработка ПО для эксперимента SPD (коллайдер NICA): моделирование (Geant4, ROOT), реконструкция событий.</li>
+                <li>Автоматизированная сборка дистрибутива Linux (170+ пакетов) под x86_64, e2k, aarch64. Создание Docker-образов и CI/CD.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">
+                <span class="company">АО «ПРОТОМ»</span>
+                <span class="dates">2009 – 2021</span>
+            </div>
+            <div class="job-title">Ведущий разработчик медицинского ПО</div>
+            <ul>
+                <li>ПО для протонной терапии: 3D DICOM-просмотрщик, видеоконтроль пациента в реальном времени (C++, C#, DirectShow, RTP/SIP).</li>
+                <li>Обработка дозиметрических пленок (EBT2/EBT3). Системы работают в России, США и Израиле.</li>
+            </ul>
+        </div>
+
+        <h2>ЦЕРН (CERN)</h2>
+        <div class="job">
+            <div class="job-header"><span class="company">CERN, Geneva</span><span class="dates">2004 – 2008</span></div>
+            <div class="job-title">Программист, команда ROOT</div>
+            <ul>
+                <li>Соавтор ROOT (~520 коммитов). Порт GUI и графики на Windows (TGWin32).</li>
+                <li>Реализация сигналов и слотов (TQObject), GUI Builder, TASImage, TGHtml, RDBC.</li>
+            </ul>
+        </div>
+        <div class="job">
+            <div class="job-header"><span class="company">ИФВЭ (Протвино)</span><span class="dates">1987 – 2004</span></div>
+            <div class="job-title">Научный сотрудник, физик-экспериментатор</div>
+            <ul>
+                <li>Физика тяжелых ионов (PHENIX, RHIC) и нейтрино (MINOS, Fermilab).</li>
+                <li>Разработка и эксплуатация электромагнитных и адронных калориметров.</li>
+            </ul>
+        </div>
+        <h2>ПУБЛИКАЦИИ И ДОСТИЖЕНИЯ</h2>
+        <div class="skills-line"><strong>Наукометрия:</strong> h-index 43, 15 108 цитирований, 78 публикаций (Scopus).</div>
+        <div class="skills-line"><strong>Ключевые работы:</strong> ROOT (Comput. Phys. Commun., 421 цит.), ALICE (JINST, 1996 цит.), MINOS (NIM A, 294 цит.).</div>
+        <h2>ОБРАЗОВАНИЕ</h2>
+        <div class="job">
+            <div class="job-header"><span class="company">Харьковский национальный университет им. В. Н. Каразина</span><span class="dates">1981 – 1987</span></div>
+            <div class="job-title">Физико-технический факультет (экспериментальная ядерная физика)</div>
+        </div>
+    </div>
+</body>
+</html>
