@@ -6,7 +6,7 @@ app:
 
 type: html
 html:
-  source: .
+  source: build/site
   entryFile: index.html
 
 output:

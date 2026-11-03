@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resume catalog</title>
+<style>
+    :root { --bg:#121212; --card:#1e1e1e; --text:#e0e0e0; --muted:#888; --accent:#0288d1; --border:#333; }
+    [data-theme="light"] { --bg:#f5f3eb; --card:#fff; --text:#1a1a1a; --muted:#666; --accent:#0288d1; --border:#ddd; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); margin:0; padding:30px 20px; }
+    .container { max-width: 900px; margin: 0 auto; }
+    h1 { font-weight: 300; letter-spacing: 1px; margin-bottom: 30px; }
+    .grid { display: grid; gap: 15px; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); }
+    .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; gap: 15px; transition: transform .2s, border-color .2s; }
+    .card:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .ico { width: 56px; height: 56px; border-radius: 12px; flex-shrink: 0; }
+    .body h2 { margin: 0 0 5px 0; font-size: 1.05rem; }
+    .body p { margin: 0 0 12px 0; font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
+    .actions { display: flex; gap: 8px; }
+    .btn { display: inline-block; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border); color: var(--text); }
+    .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .btn:hover { opacity: .85; }
+</style>
+</head>
+<body>
+    <div class="container">
+        <h1>Resume templates</h1>
+        <div class="grid">
+        <div class="card">
+            <img src="./x2v0-resume/icon.png" alt="" class="ico">
+            <div class="body">
+                <h2>x2v0 Resume (Android App)</h2>
+                <p>Ультра-легкое (98 КБ), полностью офлайн-приложение-визитка, собранное с помощью `wta`.</p>
+                <div class="actions">
+                    <a class="btn primary" href="./x2v0-resume/index.html">Open</a>
+                    <a class="btn" href="../build/x2v0-resume.apk" download>APK</a>
+                </div>
+            </div>
+        </div>
+        <div class="card">
+            <img src="./minimal/icon.png" alt="" class="ico">
+            <div class="body">
+                <h2>Resume: Minimal (ATS)</h2>
+                <p>Strict white template for ATS systems. Black text on white background, standard fonts, clear structure.</p>
+                <div class="actions">
+                    <a class="btn primary" href="./minimal/index.html">Open</a>
+                    <a class="btn" href="../build/minimal.apk" download>APK</a>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <script>
+    (function() {
+        var t = localStorage.getItem('theme') || 'dark';
+        document.documentElement.setAttribute('data-theme', t);
+    })();
+    </script>
+</body>
+</html>

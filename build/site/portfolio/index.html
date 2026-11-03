@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <script>
+        // Мгновенная установка темы до отрисовки страницы
+        (function() {
+            var savedTheme = localStorage.getItem('theme') || 'light';
+            document.documentElement.setAttribute('data-theme', savedTheme);
+            
+            // Слушаем изменения темы (если открыто в другой вкладке или через меню)
+            window.addEventListener('storage', function(e) {
+                if (e.key === 'theme') {
+                    document.documentElement.setAttribute('data-theme', e.newValue || 'light');
+                }
+            });
+        })();
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio — Валерий Онучин</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; margin-top: 20px; margin-bottom: 40px; }
+        .project-card { padding: 20px; border: 1px solid var(--border-color, #ddd); border-radius: 8px; background: var(--card-bg, #fff); transition: transform 0.2s; display: flex; flex-direction: column; }
+        .project-card:hover { transform: translateY(-5px); box-shadow: 0 5px 15px rgba(0,0,0,0.1); }
+        .project-card h3 { margin-top: 0; color: #0288d1; }
+        .project-card.archive { opacity: 0.85; border-style: dashed; }
+        .tech-stack { font-size: 12px; color: #666; margin-bottom: 15px; }
+        .tech-stack span { background: #e3f2fd; color: #0288d1; padding: 2px 6px; border-radius: 4px; margin-right: 5px; display: inline-block; margin-bottom: 5px; }
+        .btn { display: inline-block; padding: 8px 16px; background: #0288d1; color: #fff; text-decoration: none; border-radius: 4px; font-size: 14px; margin-top: auto; text-align: center; }
+        .btn:hover { background: #0277bd; color: #fff; }
+        .section-title { margin-top: 40px; border-bottom: 2px solid #0288d1; padding-bottom: 5px; color: #333; }
+        [data-theme="dark"] .project-card { background: #1e1e1e; border-color: #333; }
+        [data-theme="dark"] .section-title { color: #eee; }
+        [data-theme="dark"] .tech-stack span { background: #333; color: #4fc3f7; }
+    </style>
+
+
+    <style>
+        
+        
+    </style>
+
+<style>#scroll-top { position: fixed; bottom: 80px; right: 20px; width: 50px; height: 50px; border-radius: 50%; background: #0288d1; color: #fff; border: none; font-size: 24px; font-weight: bold; cursor: pointer; box-shadow: 0 4px 15px rgba(0,0,0,0.4); display: none; z-index: 99999; opacity: 0.9; transition: opacity 0.2s; } #scroll-top:hover { opacity: 1; } #scroll-top.visible { display: block; }</style>
+
+    <style id="portfolio-dark-fix">
+        html[data-theme="dark"] body {
+            background-color: #121212 !important;
+            color: #e0e0e0 !important;
+        }
+        html[data-theme="dark"] .project-card,
+        html[data-theme="dark"] .card,
+        html[data-theme="dark"] .section {
+            background-color: #1e1e1e !important;
+            border-color: #333 !important;
+        }
+        html[data-theme="dark"] h1, 
+        html[data-theme="dark"] h2, 
+        html[data-theme="dark"] h3 {
+            color: #4fc3f7 !important;
+        }
+        html[data-theme="dark"] p, 
+        html[data-theme="dark"] span, 
+        html[data-theme="dark"] div {
+            color: #b0b0b0 !important;
+        }
+    </style>
+
+
+    <style id="fix-button-text">
+        /* Любой элемент внутри синей кнопки/ссылки должен быть белым */
+        html[data-theme="dark"] a[href*="github"],
+        html[data-theme="dark"] a[href*="github"] *,
+        html[data-theme="dark"] a[href*="demo"],
+        html[data-theme="dark"] a[href*="demo"] *,
+        html[data-theme="dark"] a[href*="docs"],
+        html[data-theme="dark"] a[href*="docs"] *,
+        html[data-theme="dark"] a[href*="mailto"],
+        html[data-theme="dark"] a[href*="mailto"] *,
+        html[data-theme="dark"] .project-card a,
+        html[data-theme="dark"] .project-card a * {
+            color: #ffffff !important;
+            text-decoration: none !important;
+        }
+        
+        /* Но ссылки в тексте (protom.ru) оставляем синими */
+        html[data-theme="dark"] p a,
+        html[data-theme="dark"] .project-card p a {
+            color: #64b5f6 !important;
+            text-decoration: underline !important;
+        }
+    </style>
+
+</head>
+<body style="font-family: monospace; padding: 20px; max-width: 1000px; margin: auto;">
+    <h1 style="color: #0288d1; margin-top: 20px;">Portfolio</h1>
+    <p>Мои проекты, разделенные по статусу.</p>
+
+    <!-- БЛОК 1: АКТИВНЫЕ ПРОЕКТЫ -->
+    <h2 class="section-title">🚀 Активные проекты</h2>
+    <div class="projects-grid">
+        <div class="project-card">
+            <h3>mtapi</h3>
+            <div class="tech-stack"><span>Go</span><span>Kotlin</span><span>Android</span></div>
+            <p>Android HTTP bridge с 60+ API эндпоинтами, debug-оверлеем и встроенным браузером.</p>
+            <a href="https://github.com/x2v0/mtapi" class="btn" target="_blank">GitHub</a>
+        </div>
+        <div class="project-card">
+            <h3>w2a</h3>
+            <div class="tech-stack"><span>Go</span><span>Termux</span><span>CI/CD</span></div>
+            <p>Инструмент для сборки Android APK прямо на телефоне (Termux) с шаблонами и встроенным AI-чатом.</p>
+            <a href="#" class="btn" style="background:#666; cursor:not-allowed;">В разработке</a>
+        </div>
+        <!-- Добавляй сюда новые активные проекты -->
+    </div>
+
+    <!-- БЛОК 2: МЕДИЦИНСКИЕ / НАСЛЕДИЕ -->
+    <h2 class="section-title">🏥 Медицинское ПО и научные проекты</h2>
+    <div class="projects-grid">
+        <div class="project-card archive">
+            <h3>EBTfilm</h3>
+            <div class="tech-stack"><span>Medical Physics</span><span>DICOM</span></div>
+            <p>Обработка дозиметрических плёнок EBT2/EBT3 для протонной терапии.</p>
+            <div style="display: flex; gap: 10px; margin-top: auto;"><a href="https://x2v0.github.io/EBTfilm" class="btn" target="_blank" style="flex: 1; background: #0288d1;">Документация</a>
+            <a href="https://x2v0.github.io/EBTfilm/ebtfilm_content.htm" class="btn" target="_blank">Открыть на GitHub</a></div>
+        </div>
+        <div class="project-card archive">
+            <h3>dicom2fmm</h3>
+            <div class="tech-stack"><span>DICOM viewer</span><span>Web</span></div>
+            <p>Просмотрщик DICOM-снимков с конвертацией во внутренний FMM формат комплекса протонной терапии ПРОТОМ</p>
+            <a href="https://dicom2fmm.github.io/index.html?hm_plane.htm" class="btn" target="_blank" style="margin-bottom: 15px;">Открыть Demo</a>
+            <div style="margin-top: 10px; font-size: 12px; color: #666;">
+                Сайты: <a href="https://protom.ru/" target="_blank" style="color: #0288d1;">protom.ru</a> | <a href="https://protomasia.com/" target="_blank" style="color: #0288d1;">protomasia.com</a>
+            </div>
+        </div>
+        <div class="project-card archive">
+            <h3>TM Protocol</h3>
+            <div class="tech-stack"><span>Documentation</span><span>Protocol</span></div>
+            <p>Документация и протоколы для системы облучения (TM).</p>
+            <a href="https://x2v0.github.io/TM/docs/" class="btn" target="_blank">Документация</a>
+        </div>
+        <div class="project-card archive">
+            <h3>AlignPatient</h3>
+            <div class="tech-stack"><span>Medical</span><span>DICOM</span></div>
+            <p>Руководство пользователя и HTML-документация для AlignPatient.</p>
+            <div style="display: flex; gap: 10px; margin-top: auto;">
+                <a href="https://github.com/x2v0/AlignPatient" class="btn" target="_blank" style="background:#555; flex: 1;">GitHub</a>
+                <a href="https://x2v0.github.io/AlignPatient/HTML/intro.htm" class="btn" target="_blank" style="flex: 2;">Открыть Guide</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- БЛОК 3: АРХИВ ИЗ GITHUB -->
+    <h2 class="section-title">🗄️ Архив (GitHub)</h2>
+    <div id="loading" style="color: #666; margin-top: 10px;">Загрузка архива...</div>
+    <div class="projects-grid" id="repos-grid"></div>
+
+    <script>
+        fetch('https://api.github.com/users/x2v0/repos?per_page=100')
+            .then(r => r.json())
+            .then(repos => {
+                document.getElementById('loading').style.display = 'none';
+                const grid = document.getElementById('repos-grid');
+                
+                // Исключаем проекты, которые мы уже показали вручную (активные и медицинские)
+                const excludeList = ['mtapi', 'w2a', 'x2v0.github.io', 'EBTfilm', 'AlignPatient', 'TM'];
+                
+                const archivedRepos = repos
+                    .filter(r => !r.fork && !excludeList.includes(r.name))
+                    .sort((a, b) => b.stargazers_count - a.stargazers_count);
+                
+                if (archivedRepos.length === 0) {
+                    document.getElementById('loading').innerText = 'Архив пуст.';
+                    return;
+                }
+
+                archivedRepos.forEach(repo => {
+                    const card = document.createElement('div');
+                    card.className = 'project-card archive';
+                    card.innerHTML = `
+                        <h3>${repo.name}</h3>
+                        <div class="tech-stack">
+                            ${repo.language ? `<span>${repo.language}</span>` : ''}
+                            <span>⭐ ${repo.stargazers_count}</span>
+                        </div>
+                        <p>${repo.description || 'Без описания'}</p>
+                        <a href="${repo.html_url}" class="btn" target="_blank" style="background:#555;">GitHub</a>
+                    `;
+                    grid.appendChild(card);
+                });
+            })
+            .catch(e => {
+                document.getElementById('loading').innerText = 'Ошибка загрузки репозиториев.';
+            });
+    </script>
+
+
+<button id="scroll-top" title="Наверх">↑</button>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    var btn = document.getElementById("scroll-top");
+    if(!btn) return;
+    window.addEventListener("scroll", function() {
+        if (window.scrollY > 300) btn.classList.add("visible");
+        else btn.classList.remove("visible");
+    });
+    btn.addEventListener("click", function() {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+});
+</script>
+</body>
+</html>
