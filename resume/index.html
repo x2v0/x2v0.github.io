@@ -9,7 +9,6 @@
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: var(--bg); color: var(--text); margin:0; padding:30px 20px; }
     .container { max-width: 900px; margin: 0 auto; }
     h1 { font-weight: 300; letter-spacing: 1px; margin-bottom: 30px; }
-    
     .intro-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 30px; }
     .intro-box h2 { margin-top: 0; font-size: 1.3rem; }
     .intro-box p { font-size: 0.95rem; color: var(--muted); margin-bottom: 15px; }
@@ -18,7 +17,6 @@
     .intro-box .steps code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-family: monospace; color: var(--accent); }
     .intro-box .blog-link a { color: var(--accent); font-weight: bold; text-decoration: none; }
     .intro-box .blog-link a:hover { text-decoration: underline; }
-
     .grid { display: grid; gap: 15px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
     .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; gap: 15px; transition: transform .2s, border-color .2s; }
     .card:hover { transform: translateY(-2px); border-color: var(--accent); }
@@ -26,9 +24,8 @@
     .body { flex: 1; min-width: 0; }
     .body h2 { margin: 0 0 5px 0; font-size: 1.05rem; }
     .body p { margin: 0 0 12px 0; font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
-    
-    .actions { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; width: 100%; margin-top: 15px; }
-    .btn { display: flex; align-items: center; justify-content: center; padding: 8px 10px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border); color: var(--text); box-sizing: border-box; }
+    .actions { display: flex; flex-wrap: nowrap; gap: 4px; width: 100%; margin-top: 15px; }
+    .btn { display: flex; align-items: center; justify-content: center; flex: 1; padding: 7px 2px; border-radius: 6px; text-decoration: none; font-size: 0.72rem; font-weight: 600; border: 1px solid var(--border); color: var(--text); box-sizing: border-box; white-space: nowrap; }
     .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
     .btn:hover { opacity: .85; }
 </style>
@@ -36,7 +33,6 @@
 <body>
     <div class="container">
         <h1>Resume templates</h1>
-        
         <div class="intro-box">
             <h2>🚀 Хочешь такую же визитку, но со своими данными?</h2>
             <p>Это проще, чем кажется! Не нужно быть программистом. Понадобится только телефон или компьютер.</p>
@@ -54,7 +50,6 @@
                 📖 <a href="https://x2v0.github.io/blog/#post-9" target="_blank">Читать подробную инструкцию для пешехода в блоге</a>
             </p>
         </div>
-
         <div class="grid">
 
         <div class="card">
@@ -66,7 +61,7 @@
                     <a class="btn primary" href="./x2v0-resume/index.html">Open</a>
                     <a class="btn primary" href="./apk/x2v0-resume.apk" download>APK</a>
                     <a class="btn" href="./src/x2v0-resume.zip" download>ZIP</a>
-                    <a class="btn" href="./src/x2v0-resume.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/x2v0-resume.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
@@ -80,7 +75,7 @@
                     <a class="btn primary" href="./minimal/index.html">Open</a>
                     <a class="btn primary" href="./apk/minimal.apk" download>APK</a>
                     <a class="btn" href="./src/minimal.zip" download>ZIP</a>
-                    <a class="btn" href="./src/minimal.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/minimal.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
@@ -94,7 +89,7 @@
                     <a class="btn primary" href="./minimal-ru/index.html">Open</a>
                     <a class="btn primary" href="./apk/minimal-ru.apk" download>APK</a>
                     <a class="btn" href="./src/minimal-ru.zip" download>ZIP</a>
-                    <a class="btn" href="./src/minimal-ru.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/minimal-ru.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
@@ -108,7 +103,7 @@
                     <a class="btn primary" href="./ats-tech/index.html">Open</a>
                     <a class="btn primary" href="./apk/ats-tech.apk" download>APK</a>
                     <a class="btn" href="./src/ats-tech.zip" download>ZIP</a>
-                    <a class="btn" href="./src/ats-tech.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/ats-tech.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
@@ -122,7 +117,7 @@
                     <a class="btn primary" href="./developer/index.html">Open</a>
                     <a class="btn primary" href="./apk/developer.apk" download>APK</a>
                     <a class="btn" href="./src/developer.zip" download>ZIP</a>
-                    <a class="btn" href="./src/developer.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/developer.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
@@ -136,7 +131,7 @@
                     <a class="btn primary" href="./business-card/index.html">Open</a>
                     <a class="btn primary" href="./apk/business-card.apk" download>APK</a>
                     <a class="btn" href="./src/business-card.zip" download>ZIP</a>
-                    <a class="btn" href="./src/business-card.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/business-card.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
@@ -150,7 +145,7 @@
                     <a class="btn primary" href="./designer/index.html">Open</a>
                     <a class="btn primary" href="./apk/designer.apk" download>APK</a>
                     <a class="btn" href="./src/designer.zip" download>ZIP</a>
-                    <a class="btn" href="./src/designer.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/designer.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
@@ -164,7 +159,7 @@
                     <a class="btn primary" href="./neon/index.html">Open</a>
                     <a class="btn primary" href="./apk/neon.apk" download>APK</a>
                     <a class="btn" href="./src/neon.zip" download>ZIP</a>
-                    <a class="btn" href="./src/neon.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/neon.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
@@ -178,7 +173,7 @@
                     <a class="btn primary" href="./brutalist/index.html">Open</a>
                     <a class="btn primary" href="./apk/brutalist.apk" download>APK</a>
                     <a class="btn" href="./src/brutalist.zip" download>ZIP</a>
-                    <a class="btn" href="./src/brutalist.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/brutalist.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
@@ -192,7 +187,7 @@
                     <a class="btn primary" href="./gradient-mesh/index.html">Open</a>
                     <a class="btn primary" href="./apk/gradient-mesh.apk" download>APK</a>
                     <a class="btn" href="./src/gradient-mesh.zip" download>ZIP</a>
-                    <a class="btn" href="./src/gradient-mesh.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/gradient-mesh.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
@@ -206,7 +201,7 @@
                     <a class="btn primary" href="./glassmorphism/index.html">Open</a>
                     <a class="btn primary" href="./apk/glassmorphism.apk" download>APK</a>
                     <a class="btn" href="./src/glassmorphism.zip" download>ZIP</a>
-                    <a class="btn" href="./src/glassmorphism.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/glassmorphism.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
@@ -220,7 +215,7 @@
                     <a class="btn primary" href="./swiss/index.html">Open</a>
                     <a class="btn primary" href="./apk/swiss.apk" download>APK</a>
                     <a class="btn" href="./src/swiss.zip" download>ZIP</a>
-                    <a class="btn" href="./src/swiss.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/swiss.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
@@ -234,7 +229,7 @@
                     <a class="btn primary" href="./terminal/index.html">Open</a>
                     <a class="btn primary" href="./apk/terminal.apk" download>APK</a>
                     <a class="btn" href="./src/terminal.zip" download>ZIP</a>
-                    <a class="btn" href="./src/terminal.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/terminal.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
@@ -248,7 +243,7 @@
                     <a class="btn primary" href="./retro-wave/index.html">Open</a>
                     <a class="btn primary" href="./apk/retro-wave.apk" download>APK</a>
                     <a class="btn" href="./src/retro-wave.zip" download>ZIP</a>
-                    <a class="btn" href="./src/retro-wave.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/retro-wave.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
@@ -262,7 +257,7 @@
                     <a class="btn primary" href="./magazine/index.html">Open</a>
                     <a class="btn primary" href="./apk/magazine.apk" download>APK</a>
                     <a class="btn" href="./src/magazine.zip" download>ZIP</a>
-                    <a class="btn" href="./src/magazine.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/magazine.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
@@ -276,7 +271,7 @@
                     <a class="btn primary" href="./bento-neon/index.html">Open</a>
                     <a class="btn primary" href="./apk/bento-neon.apk" download>APK</a>
                     <a class="btn" href="./src/bento-neon.zip" download>ZIP</a>
-                    <a class="btn" href="./src/bento-neon.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/bento-neon.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
@@ -290,7 +285,7 @@
                     <a class="btn primary" href="./blueprint/index.html">Open</a>
                     <a class="btn primary" href="./apk/blueprint.apk" download>APK</a>
                     <a class="btn" href="./src/blueprint.zip" download>ZIP</a>
-                    <a class="btn" href="./src/blueprint.tar.gz" download>TAR.GZ</a>
+                    <a class="btn" href="./src/blueprint.tar.gz" download>TAR</a>
                 </div>
             </div>
         </div>
