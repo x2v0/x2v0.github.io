@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Valeriy Onuchin — Developer CV</title>
+<style>
+    :root { --bg: #0d1117; --surface: #161b22; --text: #c9d1d9; --accent: #58a6ff; --border: #30363d; }
+    body { font-family: "Fira Code", "Consolas", monospace; background: var(--bg); color: var(--text); margin: 0; padding: 40px 20px; line-height: 1.6; }
+    .container { max-width: 850px; margin: 0 auto; }
+    h1 { color: #fff; font-size: 2.2rem; margin-bottom: 5px; }
+    .role { color: var(--accent); font-size: 1.1rem; margin-bottom: 20px; }
+    .grid { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; }
+    @media (max-width: 600px) { .grid { grid-template-columns: 1fr; } }
+    h2 { color: #fff; font-size: 1.1rem; border-bottom: 1px dashed var(--border); padding-bottom: 5px; margin-top: 0; text-transform: uppercase; }
+    .sidebar p { margin: 0 0 10px 0; font-size: 0.9rem; }
+    .job { margin-bottom: 25px; }
+    .job h3 { margin: 0 0 5px 0; color: #fff; font-size: 1rem; }
+    .job .date { color: var(--accent); font-size: 0.85rem; margin-bottom: 10px; }
+    ul { margin: 0; padding-left: 15px; }
+    li { margin-bottom: 5px; }
+    .tag { background: var(--surface); border: 1px solid var(--border); padding: 2px 8px; border-radius: 4px; font-size: 0.8rem; margin-right: 5px; display: inline-block; margin-bottom: 5px; }
+    a { color: var(--accent); text-decoration: none; }
+    @media print { body { background: #fff; color: #000; padding: 0; } h1, h2, .job h3 { color: #000; } .role, .date { color: #0066cc; } .tag { border-color: #ccc; background: #f5f5f5; } a { color: #000; } @page { margin: 1.5cm; size: A4; } }
+</style>
+<script>
+(function() {
+    var op = window.print;
+    window.print = function() {
+        if (window.AndroidPrint && window.AndroidPrint.print) window.AndroidPrint.print();
+        else if (op) op();
+    };
+})();
+</script>
+</head>
+<body>
+    <div class="container">
+        <h1>Valeriy Onuchin</h1>
+        <div class="role">Senior Software Engineer</div>
+        <div class="grid">
+            <div class="sidebar">
+                <h2>Contact</h2>
+                <p>valeriy.onuchin@yandex.ru<br><a href="https://github.com/x2v0">github.com/x2v0</a></p>
+                <h2>Skills</h2>
+                <div><span class="tag">C++</span><span class="tag">C#</span><span class="tag">Python</span><span class="tag">Go</span><span class="tag">Docker</span><span class="tag">Linux</span><span class="tag">CMake</span><span class="tag">ROOT</span><span class="tag">aarch64</span></div>
+            </div>
+            <div class="main">
+                <h2>Experience</h2>
+                <div class="job"><h3>Software Engineer @ ELVEES</h3><div class="date">2025</div><ul><li>Altel OS for Elbrus-2000 and Skif (aarch64).</li><li>Cross-compilation, Linux kernel 6.6.</li></ul></div>
+                <div class="job"><h3>Systems Programmer @ JINR</h3><div class="date">2022 – 2024</div><ul><li>Docker image for distributed computing (Geant4, ROOT).</li><li>170+ packages from source for x86_64, e2k, aarch64.</li><li>Co-author SPD Technical Design Report (2024).</li></ul></div>
+                <div class="job"><h3>Lead Medical Dev @ Protom</h3><div class="date">2009 – 2021</div><ul><li>3D DICOM viewer, real-time patient video monitoring (C#, C++).</li><li>More than 1,000 patients treated.</li></ul></div>
+                <div class="job"><h3>ROOT team @ CERN</h3><div class="date">2004 – 2008</div><ul><li>Co-author of ROOT (~520 commits).</li><li>Windows GUI port (TGWin32), signals/slots (TQObject), TASImage, RDBC.</li></ul></div>
+                <div class="job"><h3>Research Scientist @ IHEP</h3><div class="date">1987 – 2004</div><ul><li>PHENIX (RHIC), MINOS (Fermilab), kaon physics.</li><li>EM and hadron calorimeters.</li></ul></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
