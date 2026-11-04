@@ -19,11 +19,36 @@
     .btn { display: inline-block; padding: 6px 14px; border-radius: 6px; text-decoration: none; font-size: 0.85rem; font-weight: 600; border: 1px solid var(--border); color: var(--text); }
     .btn.primary { background: var(--accent); color: #fff; border-color: var(--accent); }
     .btn:hover { opacity: .85; }
+
+    .intro-box { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; margin-bottom: 30px; color: var(--text); }
+    .intro-box h2 { margin-top: 0; font-size: 1.3rem; }
+    .intro-box p { font-size: 0.95rem; color: var(--muted); margin-bottom: 15px; }
+    .intro-box .steps { margin: 0 0 15px 0; padding-left: 20px; font-size: 0.95rem; line-height: 1.6; }
+    .intro-box .steps li { margin-bottom: 10px; }
+    .intro-box .steps code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-family: monospace; color: var(--accent); }
+    .intro-box .blog-link a { color: var(--accent); font-weight: bold; text-decoration: none; }
+    .intro-box .blog-link a:hover { text-decoration: underline; }
 </style>
 </head>
 <body>
     <div class="container">
         <h1>Resume templates</h1>
+
+        <div class="intro-box">
+            <h2>🚀 Хочешь такую же визитку, но со своими данными?</h2>
+            <p>Это проще, чем кажется! Тебе не нужно быть программистом. Понадобится только телефон или компьютер.</p>
+            
+            <ol class="steps">
+                <li><b>Скачай шаблон.</b> Нажми на кнопку <b>ZIP</b> у понравившегося дизайна ниже и распакуй архив.</li>
+                <li><b>Отредактируй.</b> Открой файл <code>index.html</code> в любом блокноте и замени текст (имя, контакты, опыт) на свой.</li>
+                <li><b>Опубликуй бесплатно.</b> Зайди на <a href="https://app.netlify.com/drop" target="_blank">Netlify Drop</a> или <a href="https://pages.cloudflare.com/" target="_blank">Cloudflare Pages</a> и просто перетащи туда папку с твоим отредактированным резюме. Сайт в интернете готов!</li>
+            </ol>
+            
+            <p class="blog-link">
+                📖 <a href="https://x2v0.github.io/blog/#post-1" target="_blank">Читать подробную инструкцию для пешехода в блоге</a>
+            </p>
+        </div>
+
         <div class="grid">
         <div class="card">
             <img src="./x2v0-resume/icon.png" alt="" class="ico">
@@ -33,6 +58,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./x2v0-resume/index.html">Open</a>
                     <a class="btn" href="./apk/x2v0-resume.apk" download>APK</a>
+                    <a class="btn" href="./src/x2v0-resume.zip" download>ZIP</a>
+                    <a class="btn" href="./src/x2v0-resume.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
@@ -44,6 +71,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./minimal/index.html">Open</a>
                     <a class="btn" href="./apk/minimal.apk" download>APK</a>
+                    <a class="btn" href="./src/minimal.zip" download>ZIP</a>
+                    <a class="btn" href="./src/minimal.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
@@ -55,6 +84,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./minimal-ru/index.html">Open</a>
                     <a class="btn" href="./apk/minimal-ru.apk" download>APK</a>
+                    <a class="btn" href="./src/minimal-ru.zip" download>ZIP</a>
+                    <a class="btn" href="./src/minimal-ru.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
@@ -66,6 +97,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./ats-tech/index.html">Open</a>
                     <a class="btn" href="./apk/ats-tech.apk" download>APK</a>
+                    <a class="btn" href="./src/ats-tech.zip" download>ZIP</a>
+                    <a class="btn" href="./src/ats-tech.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
@@ -77,6 +110,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./developer/index.html">Open</a>
                     <a class="btn" href="./apk/developer.apk" download>APK</a>
+                    <a class="btn" href="./src/developer.zip" download>ZIP</a>
+                    <a class="btn" href="./src/developer.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
@@ -88,6 +123,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./business-card/index.html">Open</a>
                     <a class="btn" href="./apk/business-card.apk" download>APK</a>
+                    <a class="btn" href="./src/business-card.zip" download>ZIP</a>
+                    <a class="btn" href="./src/business-card.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
@@ -99,6 +136,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./designer/index.html">Open</a>
                     <a class="btn" href="./apk/designer.apk" download>APK</a>
+                    <a class="btn" href="./src/designer.zip" download>ZIP</a>
+                    <a class="btn" href="./src/designer.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
@@ -110,6 +149,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./neon/index.html">Open</a>
                     <a class="btn" href="./apk/neon.apk" download>APK</a>
+                    <a class="btn" href="./src/neon.zip" download>ZIP</a>
+                    <a class="btn" href="./src/neon.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
@@ -121,6 +162,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./brutalist/index.html">Open</a>
                     <a class="btn" href="./apk/brutalist.apk" download>APK</a>
+                    <a class="btn" href="./src/brutalist.zip" download>ZIP</a>
+                    <a class="btn" href="./src/brutalist.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
@@ -132,6 +175,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./gradient-mesh/index.html">Open</a>
                     <a class="btn" href="./apk/gradient-mesh.apk" download>APK</a>
+                    <a class="btn" href="./src/gradient-mesh.zip" download>ZIP</a>
+                    <a class="btn" href="./src/gradient-mesh.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
@@ -143,6 +188,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./glassmorphism/index.html">Open</a>
                     <a class="btn" href="./apk/glassmorphism.apk" download>APK</a>
+                    <a class="btn" href="./src/glassmorphism.zip" download>ZIP</a>
+                    <a class="btn" href="./src/glassmorphism.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
@@ -154,6 +201,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./swiss/index.html">Open</a>
                     <a class="btn" href="./apk/swiss.apk" download>APK</a>
+                    <a class="btn" href="./src/swiss.zip" download>ZIP</a>
+                    <a class="btn" href="./src/swiss.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
@@ -165,6 +214,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./terminal/index.html">Open</a>
                     <a class="btn" href="./apk/terminal.apk" download>APK</a>
+                    <a class="btn" href="./src/terminal.zip" download>ZIP</a>
+                    <a class="btn" href="./src/terminal.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
@@ -176,6 +227,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./retro-wave/index.html">Open</a>
                     <a class="btn" href="./apk/retro-wave.apk" download>APK</a>
+                    <a class="btn" href="./src/retro-wave.zip" download>ZIP</a>
+                    <a class="btn" href="./src/retro-wave.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
@@ -187,6 +240,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./magazine/index.html">Open</a>
                     <a class="btn" href="./apk/magazine.apk" download>APK</a>
+                    <a class="btn" href="./src/magazine.zip" download>ZIP</a>
+                    <a class="btn" href="./src/magazine.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
@@ -198,6 +253,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./bento-neon/index.html">Open</a>
                     <a class="btn" href="./apk/bento-neon.apk" download>APK</a>
+                    <a class="btn" href="./src/bento-neon.zip" download>ZIP</a>
+                    <a class="btn" href="./src/bento-neon.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
@@ -209,6 +266,8 @@
                 <div class="actions">
                     <a class="btn primary" href="./blueprint/index.html">Open</a>
                     <a class="btn" href="./apk/blueprint.apk" download>APK</a>
+                    <a class="btn" href="./src/blueprint.zip" download>ZIP</a>
+                    <a class="btn" href="./src/blueprint.tar.gz" download>TAR.GZ</a>
                 </div>
             </div>
         </div>
