@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Valeriy Onuchin — Gradient</title>
+<style>
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;background:#1a1a2e;color:#fff;line-height:1.6;
+background-image:radial-gradient(circle at 20% 20%,#ff6b6b 0%,transparent 40%),radial-gradient(circle at 80% 70%,#4ecdc4 0%,transparent 40%),radial-gradient(circle at 90% 20%,#ffe66d 0%,transparent 35%);background-attachment:fixed}
+.c{max-width:850px;margin:0 auto;padding:60px 20px}
+h1{font-size:4rem;line-height:1;margin:0 0 10px;font-weight:900;letter-spacing:-2px;background:linear-gradient(135deg,#fff,#ffe66d);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+.role{font-size:1.3rem;color:#4ecdc4;font-weight:600;margin-bottom:30px}
+.contact{font-size:0.95rem;color:#ccc;margin-bottom:40px}
+.contact a{color:#ffe66d;text-decoration:none}
+h2{margin:40px 0 20px;font-size:0.9rem;text-transform:uppercase;letter-spacing:3px;color:#ffe66d;font-weight:700}
+.job{background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);border-radius:16px;padding:20px;margin-bottom:15px;backdrop-filter:blur(10px)}
+.co{font-size:1.15rem;font-weight:700;color:#fff}
+.dt{font-size:0.85rem;color:#4ecdc4;margin-bottom:8px;font-weight:600}
+ul{margin:10px 0;padding-left:20px}
+li{margin-bottom:5px;color:#ddd}
+.skills{display:flex;flex-wrap:wrap;gap:8px}
+.k{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);padding:6px 14px;border-radius:20px;font-size:0.85rem}
+@media print{body{background:#fff;color:#000;background-image:none}h1{-webkit-text-fill-color:#000;color:#000}.role{color:#000}.job{background:#fff;border:1px solid #ccc;backdrop-filter:none}.k{background:#f0f0f0;border-color:#ccc;color:#000}@page{margin:1.5cm;size:A4}}
+</style>
+<script>
+(function() {
+    var op = window.print;
+    window.print = function() {
+        if (window.AndroidPrint && window.AndroidPrint.print) window.AndroidPrint.print();
+        else if (op) op();
+    };
+})();
+</script>
+</head><body><div class="c">
+<h1>Valeriy<br>Onuchin</h1>
+<div class="role">Senior Software Engineer</div>
+<div class="contact">valeriy.onuchin@yandex.ru · <a href="https://github.com/x2v0">github.com/x2v0</a> · ORCID</div>
+<h2>Summary</h2>
+<p>40 years of scientific and industrial software. Co-author of ROOT (CERN). 12 years of proton therapy software (1000+ patients).</p>
+<h2>Experience</h2>
+<div class="job"><div class="co">ELVEES R&D Center</div><div class="dt">2025</div><ul><li>Altel OS for Elbrus-2000 and Skif (aarch64).</li><li>Cross-compilation, Linux kernel 6.6.</li></ul></div>
+<div class="job"><div class="co">JINR, Dubna</div><div class="dt">2022–2024</div><ul><li>Docker for distributed computing (Geant4, ROOT).</li><li>170+ packages from source.</li></ul></div>
+<div class="job"><div class="co">Protom, Protvino</div><div class="dt">2009–2021</div><ul><li>3D DICOM viewer, real-time video.</li><li>1000+ patients.</li></ul></div>
+<div class="job"><div class="co">CERN, Geneva</div><div class="dt">2004–2008</div><ul><li>Co-author of ROOT (~520 commits).</li><li>Windows port, signals/slots, TASImage.</li></ul></div>
+<h2>Skills</h2>
+<div class="skills"><span class="k">C++</span><span class="k">C#</span><span class="k">Python</span><span class="k">Go</span><span class="k">Docker</span><span class="k">Linux</span><span class="k">CMake</span><span class="k">ROOT</span></div>
+<h2>Publications</h2>
+<p>h-index 43 · 15,108 citations · 78 publications (Scopus)</p>
+</div></body></html>

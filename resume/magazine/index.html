@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Valeriy Onuchin — Magazine</title>
+<style>
+body{margin:0;background:#f4f1ea;color:#1a1a1a;font-family:Georgia,"Times New Roman",serif;line-height:1.6;padding:40px 20px}
+.c{max-width:850px;margin:0 auto}
+.masthead{text-align:center;border-bottom:4px double #1a1a1a;padding-bottom:20px;margin-bottom:30px}
+.masthead .kicker{font-family:Arial,sans-serif;font-size:0.75rem;letter-spacing:4px;text-transform:uppercase;color:#c62828;margin-bottom:10px;font-weight:bold}
+h1{font-size:4.5rem;margin:0;font-weight:700;letter-spacing:-2px;line-height:0.9;font-family:Georgia,serif}
+.role{font-family:Arial,sans-serif;font-size:0.95rem;text-transform:uppercase;letter-spacing:3px;color:#555;margin-top:15px}
+.lead{font-size:1.15rem;font-style:italic;color:#333;margin-bottom:30px;border-left:4px solid #c62828;padding-left:20px}
+h2{font-family:Arial,sans-serif;font-size:0.8rem;text-transform:uppercase;letter-spacing:4px;color:#c62828;border-bottom:1px solid #1a1a1a;padding-bottom:8px;margin:35px 0 15px;font-weight:bold}
+.job{margin-bottom:20px;break-inside:avoid}
+.co{font-weight:bold;font-size:1.1rem}
+.dt{font-family:Arial,sans-serif;font-size:0.75rem;color:#666;text-transform:uppercase;letter-spacing:1px;margin:2px 0 6px}
+ul{margin:6px 0;padding-left:20px}
+li{margin-bottom:3px;font-size:0.95rem}
+.dropcap::first-letter{font-size:3.5rem;float:left;line-height:0.8;padding:4px 8px 0 0;color:#c62828;font-weight:bold}
+.cols{columns:2;column-gap:30px;font-size:0.9rem}
+@media(max-width:600px){h1{font-size:2.8rem}.cols{columns:1}}
+@media print{body{padding:0;background:#fff}h1{font-size:3rem}@page{margin:1.5cm;size:A4}}
+</style>
+<script>
+(function() {
+    var op = window.print;
+    window.print = function() {
+        if (window.AndroidPrint && window.AndroidPrint.print) window.AndroidPrint.print();
+        else if (op) op();
+    };
+})();
+</script>
+</head><body><div class="c">
+<div class="masthead">
+<div class="kicker">Curriculum Vitae · Est. 1987</div>
+<h1>Valeriy Onuchin</h1>
+<div class="role">Senior Software Engineer</div>
+</div>
+<div class="lead">40 years of scientific and industrial software. Co-author of ROOT (CERN). 12 years of proton therapy software. 1000+ patients.</div>
+<h2>Contact</h2>
+<p style="font-family:Arial,sans-serif;font-size:0.9rem">valeriy.onuchin@yandex.ru · <a href="https://github.com/x2v0" style="color:#c62828">github.com/x2v0</a> · ORCID 0009-0000-3022-3529</p>
+<h2>Experience</h2>
+<div class="job"><div class="co">ELVEES R&D Center</div><div class="dt">2025</div><ul><li>Altel OS for Elbrus-2000 and Skif (aarch64).</li><li>Cross-compilation, Linux kernel 6.6.</li></ul></div>
+<div class="job"><div class="co">JINR, Dubna</div><div class="dt">2022–2024</div><ul><li>Docker for distributed computing (Geant4, ROOT).</li><li>170+ packages from source.</li></ul></div>
+<div class="job"><div class="co">Protom, Protvino</div><div class="dt">2009–2021</div><ul><li>3D DICOM viewer, real-time video.</li><li>1000+ patients.</li></ul></div>
+<div class="job"><div class="co">CERN, Geneva</div><div class="dt">2004–2008</div><ul><li>Co-author of ROOT (~520 commits).</li><li>Windows port, signals/slots, TASImage.</li></ul></div>
+<div class="job"><div class="co">IHEP, Protvino</div><div class="dt">1987–2004</div><ul><li>PHENIX (RHIC), MINOS (Fermilab).</li></ul></div>
+<h2>Skills & Publications</h2>
+<div class="cols">
+<p>C++, C#, Python, Go, Kotlin, bash, PowerShell. CMake, Meson, Make. Docker, CI/CD, cross-compilation.</p>
+<p>h-index 43. 15,108 citations. 78 publications in Scopus.</p>
+</div>
+</div></body></html>

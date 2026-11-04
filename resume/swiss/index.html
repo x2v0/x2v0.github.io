@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Valeriy Onuchin — Swiss</title>
+<style>
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:#000;font-family:Helvetica,Arial,sans-serif;line-height:1.3;padding:40px 20px}
+.c{max-width:900px;margin:0 auto}
+h1{font-size:5rem;font-weight:900;letter-spacing:-3px;line-height:0.9;margin:0 0 10px}
+.role{font-size:1.4rem;font-weight:400;color:#e30613;margin-bottom:40px}
+.grid{display:grid;grid-template-columns:1fr 2fr;gap:40px;border-top:4px solid #000;padding-top:20px}
+h2{font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:3px;margin:0 0 12px;padding-bottom:6px;border-bottom:1px solid #000}
+.info{font-size:0.9rem;margin-bottom:20px}
+.job{margin-bottom:20px}
+.co{font-weight:700;font-size:1rem}
+.dt{font-size:0.8rem;color:#666;font-style:italic;margin-bottom:5px}
+ul{margin:5px 0;padding-left:18px;font-size:0.9rem}
+li{margin-bottom:3px}
+.metrics{font-size:2.5rem;font-weight:900;line-height:1;letter-spacing:-1px;margin-bottom:5px}
+.metrics small{font-size:0.85rem;font-weight:400;letter-spacing:0;color:#666;display:block}
+@media(max-width:600px){.grid{grid-template-columns:1fr}h1{font-size:3rem}}
+@media print{body{padding:0;font-size:10pt}h1{font-size:3rem}.role{color:#000}@page{margin:1.5cm;size:A4}}
+</style>
+<script>
+(function() {
+    var op = window.print;
+    window.print = function() {
+        if (window.AndroidPrint && window.AndroidPrint.print) window.AndroidPrint.print();
+        else if (op) op();
+    };
+})();
+</script>
+</head><body><div class="c">
+<h1>Valeriy<br>Onuchin</h1>
+<div class="role">Senior Software Engineer</div>
+<div class="grid">
+<div>
+<h2>Contact</h2>
+<div class="info">valeriy.onuchin@yandex.ru<br>github.com/x2v0<br>ORCID 0009-0000-3022-3529</div>
+<h2>Metrics</h2>
+<div class="metrics">43<small>h-index</small></div>
+<div class="metrics">15,108<small>citations</small></div>
+<div class="metrics">78<small>publications</small></div>
+<h2>Skills</h2>
+<div class="info">C++, C#, Python, Go, Kotlin, bash<br>CMake, Meson, Make<br>Docker, CI/CD, cross-compilation</div>
+</div>
+<div>
+<h2>Summary</h2>
+<div class="info" style="margin-bottom:30px">40 years of scientific and industrial software. Co-author of ROOT (CERN). 12 years of proton therapy software (1000+ patients).</div>
+<h2>Experience</h2>
+<div class="job"><div class="co">ELVEES R&D Center</div><div class="dt">2025</div><ul><li>Altel OS for Elbrus-2000 and Skif (aarch64).</li><li>Cross-compilation, Linux kernel 6.6.</li></ul></div>
+<div class="job"><div class="co">JINR, Dubna</div><div class="dt">2022–2024</div><ul><li>Docker for distributed computing (Geant4, ROOT).</li><li>170+ packages from source for x86_64, e2k, aarch64.</li></ul></div>
+<div class="job"><div class="co">Protom, Protvino</div><div class="dt">2009–2021</div><ul><li>3D DICOM viewer, real-time patient video monitoring.</li><li>1000+ patients treated.</li></ul></div>
+<div class="job"><div class="co">CERN, Geneva</div><div class="dt">2004–2008</div><ul><li>Co-author of ROOT (~520 commits).</li><li>Windows GUI port, signals/slots, TASImage, RDBC.</li></ul></div>
+<div class="job"><div class="co">IHEP, Protvino</div><div class="dt">1987–2004</div><ul><li>PHENIX (RHIC), MINOS (Fermilab).</li></ul></div>
+</div>
+</div>
+</div></body></html>

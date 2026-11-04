@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Valeriy Onuchin — Terminal</title>
+<style>
+body{margin:0;background:#0a0a0a;color:#00ff41;font-family:"Courier New",monospace;font-size:14px;padding:30px 20px;line-height:1.5}
+.c{max-width:850px;margin:0 auto}
+.prompt::before{content:"$ ";color:#00ff41;font-weight:bold}
+.header{border:1px solid #00ff41;padding:15px;margin-bottom:25px}
+h1{margin:0 0 5px;font-size:1.6rem;color:#00ff41;font-weight:bold}
+.role{color:#00ff88;font-size:0.95rem;margin-bottom:10px}
+.contact{font-size:0.85rem;color:#008800}
+.contact a{color:#00ff41}
+h2{color:#00ff41;font-size:0.95rem;margin:20px 0 10px;border-bottom:1px dashed #00ff41;padding-bottom:4px}
+h2::before{content:"./";color:#008800}
+.job{margin-bottom:18px}
+.co{color:#00ff41;font-weight:bold}
+.dt{color:#008800;font-size:0.8rem}
+ul{margin:6px 0;padding-left:20px;list-style:none}
+li::before{content:"→ ";color:#008800}
+li{margin-bottom:3px;color:#00cc33}
+.kw{display:inline-block;border:1px solid #00ff41;padding:1px 6px;margin:2px 2px 2px 0;font-size:0.8rem}
+.cursor::after{content:"_";animation:blink 1s infinite}
+@keyframes blink{0%,50%{opacity:1}51%,100%{opacity:0}}
+@media print{body{background:#fff;color:#000;font-size:10pt}.header{border-color:#000}h1,h2,.co,.role{color:#000}.dt,.contact,.contact a{color:#555}h2{border-color:#000}.kw{border-color:#000}@page{margin:1.5cm;size:A4}}
+</style>
+<script>
+(function() {
+    var op = window.print;
+    window.print = function() {
+        if (window.AndroidPrint && window.AndroidPrint.print) window.AndroidPrint.print();
+        else if (op) op();
+    };
+})();
+</script>
+</head><body><div class="c">
+<div class="header">
+<div class="prompt">whoami</div>
+<h1>Valeriy Onuchin</h1>
+<div class="role">Senior Software Engineer</div>
+<div class="contact">valeriy.onuchin@yandex.ru | <a href="https://github.com/x2v0">github.com/x2v0</a> | ORCID 0009-0000-3022-3529</div>
+</div>
+<h2>summary</h2>
+<p>40 years of scientific and industrial software. Co-author of ROOT (CERN). 12 years of proton therapy software (1000+ patients).</p>
+<h2>experience</h2>
+<div class="job"><div class="co">ELVEES R&D Center</div><div class="dt">2025</div><ul><li>Altel OS for Elbrus-2000 and Skif.</li><li>Cross-compilation, Linux kernel 6.6.</li></ul></div>
+<div class="job"><div class="co">JINR, Dubna</div><div class="dt">2022–2024</div><ul><li>Docker for distributed computing (Geant4, ROOT).</li><li>170+ packages from source.</li></ul></div>
+<div class="job"><div class="co">Protom, Protvino</div><div class="dt">2009–2021</div><ul><li>3D DICOM viewer, real-time video.</li><li>1000+ patients.</li></ul></div>
+<div class="job"><div class="co">CERN, Geneva</div><div class="dt">2004–2008</div><ul><li>Co-author of ROOT (~520 commits).</li></ul></div>
+<h2>skills</h2>
+<div><span class="kw">C++</span><span class="kw">C#</span><span class="kw">Python</span><span class="kw">Go</span><span class="kw">Docker</span><span class="kw">Linux</span><span class="kw">CMake</span><span class="kw">ROOT</span></div>
+<h2>publications</h2>
+<p>h-index 43 | 15,108 citations | 78 publications</p>
+<div class="prompt cursor" style="margin-top:20px">exit</div>
+</div></body></html>

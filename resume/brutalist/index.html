@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Valeriy Onuchin — Brutalist</title>
+<style>
+*{box-sizing:border-box}
+body{background:#fff;color:#000;font-family:"Courier New",monospace;margin:0;padding:20px;line-height:1.4}
+.c{max-width:800px;margin:0 auto;border:6px solid #000}
+h1{background:#000;color:#fff;margin:0;padding:15px;font-size:2.5rem;font-weight:900;text-transform:uppercase;letter-spacing:-1px}
+.sub{background:#ff0000;color:#fff;padding:8px 15px;font-weight:900;text-transform:uppercase;letter-spacing:2px;font-size:0.95rem}
+.block{padding:15px;border-bottom:6px solid #000}
+h2{margin:0 0 10px;font-size:1rem;text-transform:uppercase;letter-spacing:3px;background:#000;color:#fff;padding:4px 8px;display:inline-block}
+.job{margin-bottom:15px;border-left:4px solid #ff0000;padding-left:12px}
+.co{font-weight:900;font-size:1.05rem;text-transform:uppercase}
+.dt{color:#666;font-size:0.85rem;font-weight:bold}
+ul{margin:6px 0;padding-left:20px}
+li{margin-bottom:3px}
+.kw{background:#ff0000;color:#fff;padding:2px 6px;font-weight:bold;font-size:0.8rem;display:inline-block;margin:2px 2px 2px 0}
+@media print{body{padding:0}.c{border:4px solid #000}h1{background:#000 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}.sub{background:#ff0000 !important;-webkit-print-color-adjust:exact;print-color-adjust:exact}@page{margin:1cm;size:A4}}
+</style>
+<script>
+(function() {
+    var op = window.print;
+    window.print = function() {
+        if (window.AndroidPrint && window.AndroidPrint.print) window.AndroidPrint.print();
+        else if (op) op();
+    };
+})();
+</script>
+</head><body><div class="c">
+<h1>Valeriy Onuchin</h1>
+<div class="sub">Senior Software Engineer</div>
+<div class="block"><h2>Contact</h2>valeriy.onuchin@yandex.ru · github.com/x2v0 · ORCID 0009-0000-3022-3529</div>
+<div class="block"><h2>Summary</h2>40 years of scientific and industrial software. Co-author of ROOT (CERN). 12 years of proton therapy software (1000+ patients).</div>
+<div class="block"><h2>Experience</h2>
+<div class="job"><div class="co">ELVEES R&D Center</div><div class="dt">2025</div><ul><li>Altel OS for Elbrus-2000 and Skif (aarch64).</li><li>Cross-compilation, Linux kernel 6.6.</li></ul></div>
+<div class="job"><div class="co">JINR, Dubna</div><div class="dt">2022–2024</div><ul><li>Docker image for distributed computing (Geant4, ROOT).</li><li>170+ packages from source.</li></ul></div>
+<div class="job"><div class="co">Protom, Protvino</div><div class="dt">2009–2021</div><ul><li>3D DICOM viewer, real-time video monitoring.</li><li>1000+ patients treated.</li></ul></div>
+<div class="job"><div class="co">CERN, Geneva</div><div class="dt">2004–2008</div><ul><li>Co-author of ROOT (~520 commits).</li><li>Windows GUI port, signals/slots, TASImage, RDBC.</li></ul></div>
+<div class="job"><div class="co">IHEP, Protvino</div><div class="dt">1987–2004</div><ul><li>PHENIX (RHIC), MINOS (Fermilab).</li></ul></div>
+</div>
+<div class="block"><h2>Skills</h2><span class="kw">C++</span><span class="kw">C#</span><span class="kw">Python</span><span class="kw">Go</span><span class="kw">Docker</span><span class="kw">Linux</span><span class="kw">CMake</span><span class="kw">ROOT</span></div>
+<div class="block"><h2>Publications</h2>h-index 43 · 15,108 citations · 78 publications</div>
+</div></body></html>

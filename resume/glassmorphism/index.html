@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Valeriy Onuchin — Glass</title>
+<style>
+body{margin:0;font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;color:#fff;line-height:1.6;min-height:100vh;
+background:linear-gradient(135deg,#667eea 0%,#764ba2 50%,#f093fb 100%);background-attachment:fixed;padding:40px 20px;box-sizing:border-box}
+.c{max-width:850px;margin:0 auto}
+.glass{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:20px;padding:30px;margin-bottom:20px;backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);box-shadow:0 8px 32px rgba(0,0,0,0.1)}
+h1{font-size:3rem;margin:0 0 5px;font-weight:800;letter-spacing:-1px;text-shadow:0 2px 10px rgba(0,0,0,0.2)}
+.role{font-size:1.1rem;opacity:0.9;margin-bottom:15px;font-weight:500}
+.contact{font-size:0.9rem;opacity:0.85}
+.contact a{color:#fff;text-decoration:underline}
+h2{margin:0 0 15px;font-size:0.85rem;text-transform:uppercase;letter-spacing:3px;opacity:0.85;font-weight:700}
+.job{margin-bottom:18px;padding-bottom:18px;border-bottom:1px solid rgba(255,255,255,0.2)}
+.job:last-child{border-bottom:none;margin-bottom:0;padding-bottom:0}
+.co{font-weight:700;font-size:1.05rem}
+.dt{font-size:0.85rem;opacity:0.8;margin-bottom:6px}
+ul{margin:6px 0;padding-left:20px}
+li{margin-bottom:4px;opacity:0.9}
+p{margin:0}
+@media print{body{background:#fff;color:#000;padding:0}.glass{background:#fff;border:1px solid #ccc;backdrop-filter:none;box-shadow:none;padding:15px;margin-bottom:10px}h1{color:#000;text-shadow:none}.role,.contact,.dt{opacity:1;color:#555}.contact a{color:#000}@page{margin:1.5cm;size:A4}}
+</style>
+<script>
+(function() {
+    var op = window.print;
+    window.print = function() {
+        if (window.AndroidPrint && window.AndroidPrint.print) window.AndroidPrint.print();
+        else if (op) op();
+    };
+})();
+</script>
+</head><body><div class="c">
+<div class="glass"><h1>Valeriy Onuchin</h1><div class="role">Senior Software Engineer</div><div class="contact">valeriy.onuchin@yandex.ru · <a href="https://github.com/x2v0">github.com/x2v0</a> · ORCID</div></div>
+<div class="glass"><h2>Summary</h2><p>40 years of scientific and industrial software. Co-author of ROOT (CERN). 12 years of proton therapy software (1000+ patients).</p></div>
+<div class="glass"><h2>Experience</h2>
+<div class="job"><div class="co">ELVEES R&D Center</div><div class="dt">2025</div><ul><li>Altel OS for Elbrus-2000 and Skif.</li><li>Cross-compilation, Linux kernel 6.6.</li></ul></div>
+<div class="job"><div class="co">JINR, Dubna</div><div class="dt">2022–2024</div><ul><li>Docker for distributed computing (Geant4, ROOT).</li><li>170+ packages from source.</li></ul></div>
+<div class="job"><div class="co">Protom, Protvino</div><div class="dt">2009–2021</div><ul><li>3D DICOM viewer, real-time video.</li><li>1000+ patients.</li></ul></div>
+<div class="job"><div class="co">CERN, Geneva</div><div class="dt">2004–2008</div><ul><li>Co-author of ROOT (~520 commits).</li></ul></div>
+</div>
+<div class="glass"><h2>Skills</h2><p>C++, C#, Python, Go, Kotlin, bash · CMake, Meson, Make · Docker, CI/CD, cross-compilation</p></div>
+<div class="glass"><h2>Publications</h2><p>h-index 43 · 15,108 citations · 78 publications</p></div>
+</div></body></html>
