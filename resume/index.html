@@ -17,6 +17,9 @@
     .intro-box .steps code { background: var(--bg); padding: 2px 6px; border-radius: 4px; font-family: monospace; color: var(--accent); }
     .intro-box .blog-link a { color: var(--accent); font-weight: bold; text-decoration: none; }
     .intro-box .blog-link a:hover { text-decoration: underline; }
+    .site-links { display: flex; flex-wrap: wrap; gap: 15px; margin-bottom: 25px; }
+    .site-links a { color: var(--accent); text-decoration: none; font-size: 0.9rem; font-weight: 500; border-bottom: 1px dashed var(--accent); }
+    .site-links a:hover { border-bottom-style: solid; }
     .grid { display: grid; gap: 15px; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); }
     .card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; display: flex; gap: 15px; transition: transform .2s, border-color .2s; }
     .card:hover { transform: translateY(-2px); border-color: var(--accent); }
@@ -33,16 +36,32 @@
 <body>
     <div class="container">
         <h1>Resume templates</h1>
+        <div class="site-links">
+            <a href="https://x2v0.github.io" target="_blank">Главный сайт</a>
+            <a href="https://x2v0.github.io/blog/" target="_blank">Блог</a>
+            <a href="https://x2v0.neocities.org" target="_blank">Демо на Neocities</a>
+            <a href="https://x2v0-resume.layero.app" target="_blank">Демо на Layero</a>
+        </div>
         <div class="intro-box">
             <h2>🚀 Хочешь такую же визитку, но со своими данными?</h2>
             <p>Это проще, чем кажется! Не нужно быть программистом. Понадобится только телефон или компьютер.</p>
             <ol class="steps">
                 <li><b>Скачай шаблон.</b> Нажми на кнопку <b>ZIP</b> у понравившегося дизайна ниже и распакуй архив (на телефоне это сделает любой файловый менеджер).</li>
                 <li><b>Отредактируй.</b> Открой файл <code>index.html</code> в любом текстовом редакторе или блокноте. Замени текст (имя, должность, опыт, контакты) на свой. Сохрани изменения.</li>
-                <li><b>Опубликуй бесплатно (без VPN!).</b> В России это можно сделать за пару минут:
-                    <ul style="margin-top: 5px; margin-bottom: 5px;">
-                        <li><b>Самый простой способ:</b> Зайди на <a href="https://tuqo.ru" target="_blank" style="color: var(--accent);">Tuqo.ru</a> и просто перетащи папку с твоим отредактированным резюме в окно браузера. Получишь готовую ссылку!</li>
-                        <li><b>Для продвинутых:</b> Зарегистрируйся на <a href="https://gitverse.ru" target="_blank" style="color: var(--accent);">GitVerse.ru</a> (российский аналог GitHub), загрузи файлы в репозиторий и включи «Pages».</li>
+                <li><b>Опубликуй бесплатно (без VPN).</b> Мы проверили два рабочих способа. Выбирай, что больше нравится:
+                    <ul style="margin-top: 8px; margin-bottom: 8px; padding-left: 20px;">
+                        <li style="margin-bottom: 10px;">
+                            <b>Способ 1: Neocities</b> (для тех, кто хочет чистый сайт без логотипов)<br>
+                            <span style="color: #81c784;">✔️ Плюсы:</span> Постоянный сайт, никаких сторонних логотипов внизу.<br>
+                            <span style="color: #e57373;">❌ Минусы:</span> Надо пройти дурацкий тест из 10 шагов, можно создать только один сайт, а картинки приходится загружать по одной.<br>
+                            <b>Как сделать:</b> Зарегистрируйся на <a href="https://neocities.org" target="_blank" style="color: var(--accent);">Neocities.org</a>, нажми <b>Upload</b> и загрузи файл <code>index.html</code> (и картинки, если они есть, в папку <code>images</code>).
+                        </li>
+                        <li>
+                            <b>Способ 2: Layero</b> (для тех, кому лень возиться)<br>
+                            <span style="color: #81c784;">✔️ Плюсы:</span> Загружает сразу целую папку (ZIP-архив), ничего не надо распаковывать вручную.<br>
+                            <span style="color: #e57373;">❌ Минусы:</span> В самом низу сайта будет висеть логотип Layero, а время жизни бесплатного тарифа под вопросом (может исчезнуть).<br>
+                            <b>Как сделать:</b> Зайди на <a href="https://layero.ru/drop" target="_blank" style="color: var(--accent);">layero.ru/drop</a> и просто перетащи туда свой ZIP-архив. Получишь ссылку на час. Для постоянного сайта — зарегистрируйся на <a href="https://app.layero.ru" target="_blank" style="color: var(--accent);">app.layero.ru</a>.
+                        </li>
                     </ul>
                 </li>
             </ol>
