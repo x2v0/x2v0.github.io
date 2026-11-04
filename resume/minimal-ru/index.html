@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Валерий Онучин — Resume</title>
@@ -119,11 +119,24 @@
         @page { margin: 1.5cm; size: A4; }
     }
 </style>
+
+<script>
+(function() {
+    var originalPrint = window.print;
+    window.print = function() {
+        if (window.AndroidPrint && window.AndroidPrint.print) {
+            window.AndroidPrint.print();
+        } else {
+            if (originalPrint) originalPrint();
+        }
+    };
+})();
+</script>
 </head>
 <body>
     <div class="container">
         <h1>Валерий Онучин</h1>
-        <div class="role">Senior Инженер-программист</div>
+        <div class="role">Инженер-программист</div>
         
         <div class="contact">
             <a href="mailto:valeriy.onuchin@yandex.ru">valeriy.onuchin@yandex.ru</a> | 
@@ -132,15 +145,15 @@
             <span class="print-trigger" onclick="window.print()">🖨️ Печать</span>
         </div>
 
-        <h2>Professional Summary</h2>
+        <h2>Краткое резюме</h2>
         <p>Почти 40 лет опыта в научных институтах и промышленной разработке. Соавтор фреймворка ROOT (ЦЕРН), использованного при открытии бозона Хиггса. 12 лет опыта разработки ПО для протонной терапии (более 1000 пациентов). Специализируюсь на системном программировании, медицинском ПО, DevOps и сборке Linux-дистрибутивов для x86_64, Эльбрус и aarch64.</p>
 
-        <h2>Technical Skills</h2>
+        <h2>Навыки</h2>
         <div class="skills-line"><strong>Языки:</strong> C++, C#, Python, Go, Kotlin, bash, PowerShell.</div>
         <div class="skills-line"><strong>Сборка:</strong> CMake, Meson/Ninja, autotools, Make, msbuild.</div>
         <div class="skills-line"><strong>DevOps и платформы:</strong> Docker, CI/CD, кросс-компиляция, ядро Linux, Эльбрус-2000, Скиф (aarch64).</div>
 
-        <h2>Professional Experience</h2>
+        <h2>Опыт работы</h2>
         
         <div class="job">
             <div class="job-header">
@@ -195,7 +208,7 @@
                 <li>Разработка и эксплуатация электромагнитных и адронных калориметров.</li>
             </ul>
         </div>
-        <h2>ПУБЛИКАЦИИ И ДОСТИЖЕНИЯ</h2>
+        <h2>ПУБЛИКАЦИИ</h2>
         <div class="skills-line"><strong>Наукометрия:</strong> h-index 43, 15 108 цитирований, 78 публикаций (Scopus).</div>
         <div class="skills-line"><strong>Ключевые работы:</strong> ROOT (Comput. Phys. Commun., 421 цит.), ALICE (JINST, 1996 цит.), MINOS (NIM A, 294 цит.).</div>
         <h2>ОБРАЗОВАНИЕ</h2>

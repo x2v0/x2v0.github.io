@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Валерий Онучин — ATS Tech</title>
+<style>
+    body { font-family: Arial, Helvetica, sans-serif; background: #fff; color: #000; margin: 0; padding: 30px 20px; font-size: 15px; line-height: 1.4; }
+    .container { max-width: 800px; margin: 0 auto; }
+    h1 { font-size: 22px; font-weight: bold; margin: 0 0 5px 0; }
+    .contact { font-size: 14px; margin-bottom: 15px; }
+    .contact a { color: #000; text-decoration: none; }
+    h2 { font-size: 16px; font-weight: bold; text-transform: uppercase; border-bottom: 2px solid #000; padding-bottom: 2px; margin: 20px 0 10px 0; }
+    p { margin: 0 0 10px 0; }
+    .job { margin-bottom: 15px; }
+    .job-header { font-weight: bold; font-size: 15px; margin-bottom: 2px; }
+    .job-title { font-style: italic; margin-bottom: 5px; }
+    .job ul { margin: 0; padding-left: 20px; }
+    .job li { margin-bottom: 4px; }
+    .skills-text { margin-bottom: 5px; }
+    @media print { body { padding: 0; font-size: 12pt; } .print-btn { display: none; } @page { margin: 1.5cm; size: A4; } }
+</style>
+
+<script>
+(function() {
+    var originalPrint = window.print;
+    window.print = function() {
+        if (window.AndroidPrint && window.AndroidPrint.print) {
+            window.AndroidPrint.print();
+        } else {
+            if (originalPrint) originalPrint();
+        }
+    };
+})();
+</script>
+</head>
+<body>
+    <div class="container">
+        <h1>Валерий Онучин</h1>
+        <div class="contact">
+            Senior Software Engineer<br>
+            valeriy.onuchin@yandex.ru | github.com/x2v0 | ORCID: 0009-0000-3022-3529 | Scopus: 8401982000<br>
+            <button class="print-btn" onclick="window.print()" style="margin-top:10px; padding:5px 10px; cursor:pointer;">🖨️ Распечатать</button>
+        </div>
+
+        <h2>Краткое резюме</h2>
+        <p>Инженер-программист с 40-летним опытом в научных институтах и промышленной разработке. Соавтор фреймворка ROOT (ЦЕРН), использованного при открытии бозона Хиггса. 12 лет руководил разработкой медицинского ПО для протонной терапии (пролечено более 1000 пациентов). Специализация: системное программирование (C++, C#), DevOps, сборка Linux-дистрибутивов для архитектур x86_64, e2k и aarch64.</p>
+
+        <h2>Ключевые навыки</h2>
+        <div class="skills-text"><strong>Языки:</strong> C++, C#, Python, Go, Kotlin, bash, PowerShell.</div>
+        <div class="skills-text"><strong>Сборка:</strong> CMake, Meson/Ninja, autotools, Make, msbuild.</div>
+        <div class="skills-text"><strong>Инфраструктура:</strong> Docker, CI/CD, кросс-компиляция, Linux kernel, ALT Linux, Эльбрус, Скиф (aarch64).</div>
+
+        <h2>Опыт работы</h2>
+
+        <div class="job">
+            <div class="job-header">АО НПЦ «ЭЛВИС» | 2025</div>
+            <div class="job-title">Инженер-программист</div>
+            <ul>
+                <li>Разработал 8 вариантов образов ОС «Альтель» (на базе ALT Linux) для платформ Эльбрус-2000 и Скиф (aarch64).</li>
+                <li>Настроил кросс-компиляцию и сборку ядра Linux 6.6, сократив время сборки образов на 40%.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">Объединенный институт ядерных исследований (ОИЯИ) | 2022 – 2024</div>
+            <div class="job-title">Системный программист</div>
+            <ul>
+                <li>Создал Docker-образ для распределенных вычислений (Geant4, Pythia8, ROOT), автоматизировав реконструкцию событий детектора SPD на коллайдере NICA.</li>
+                <li>Автоматизировал сборку Linux-дистрибутива из исходников (170+ пакетов) для архитектур x86_64, e2k и aarch64.</li>
+                <li>Соавтор Technical Design Report детектора SPD (2024).</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">АО «ПРОТОМ» | 2009 – 2021</div>
+            <div class="job-title">Ведущий разработчик медицинского ПО</div>
+            <ul>
+                <li>Разработал 3D DICOM-просмотрщик и систему видеоконтроля пациента (C++, C#) для комплексов протонной терапии. Успешно внедрено в России, США и Израиле.</li>
+                <li>Реализовал обработку дозиметрических пленок EBT2/EBT3 с использованием ROOT и C++.</li>
+                <li>Обеспечил поддержку лечения более 1000 пациентов.</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">ЦЕРН (CERN) | 2004 – 2008</div>
+            <div class="job-title">Программист, команда ROOT</div>
+            <ul>
+                <li>Разработал порт GUI и графики ROOT для Windows (TGWin32), расширив аудиторию фреймворка.</li>
+                <li>Реализовал механизм сигналов и слотов (TQObject), GUI Builder и классы обработки изображений (TASImage).</li>
+            </ul>
+        </div>
+
+        <div class="job">
+            <div class="job-header">ИФВЭ (Институт физики высоких энергий) | 1987 – 2004</div>
+            <div class="job-title">Научный сотрудник, физик-экспериментатор</div>
+            <ul>
+                <li>Участвовал в экспериментах PHENIX (RHIC) и MINOS (Fermilab) в области физики тяжелых ионов и нейтрино.</li>
+                <li>Разрабатывал и эксплуатировал электромагнитные и адронные калориметры.</li>
+            </ul>
+        </div>
+
+        <h2>Публикации</h2>
+        <div class="skills-text">h-index: 43 | Цитирований: 15 108 | Публикаций: 78 (Scopus)</div>
+        <div class="skills-text">Ключевые работы: ROOT (Comput. Phys. Commun., 2009), ALICE (JINST, 2008), MINOS (NIM A, 2008).</div>
+
+        <h2>Образование</h2>
+        <div class="job">
+            <div class="job-header">Харьковский национальный университет им. В. Н. Каразина | 1981 – 1987</div>
+            <div class="job-title">Физико-технический факультет (экспериментальная ядерная физика)</div>
+        </div>
+
+    </div>
+</body>
+</html>
